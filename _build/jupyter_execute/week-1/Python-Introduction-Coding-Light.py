@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Open this notebook in Colab
-# 
 # <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-1/Python-Introduction-Coding-Light.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
-# # Introduction to Colab Notebooks
+# # Introduction to Python Notebooks
 # 
 # This first notebook will introduce you to Colab Notebooks using Google's "Colaboratory" server. Colab notebooks are a handy coding environment for learning as well as sharing code with others.
 # 
