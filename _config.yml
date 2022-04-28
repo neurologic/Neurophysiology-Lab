@@ -31,3 +31,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Add Colab launch button to each .ipynb file
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
