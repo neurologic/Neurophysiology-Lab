@@ -1,3 +1,1 @@
-# Week 1 
-
-## Introduction to Passive Physiology Principles
+# Week 1. Introduction to Passive Physiology Principles
