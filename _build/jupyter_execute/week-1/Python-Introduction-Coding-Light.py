@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Open this notebook in Colab
+# 
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-1/Python-Introduction-Coding-Light.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+
 # <a id="intro"></a>
 # # Introduction to Colab Notebooks
 # 
@@ -21,7 +25,7 @@
 # 3. [Part IV. Generate some plots](#four)
 
 # <a id="one"></a>
-# # **Part I. Getting started**
+# # Part I. Getting started
 # 
 # At any point, you can click navigation hyperlinks to jump around between sections. For example, return to the Introduction by clicking: [Return to the Introduction](#intro)
 # 
@@ -51,7 +55,7 @@
 # If you accidentally get "inside of" a Markdown cell, simply double click the version on the right-hand side of the cell to get back to normal-looking formatting. 
 
 # <a id="two"></a>
-# # **Part II. About Python Code**
+# # Part II. About Python Code
 # [Return to Table of Contents](#toc)
 # 
 # As you read in ["Part I. Getting Started"](#one), the document you are reading is not a static web page, but an interactive environment that lets you write and execute code.
@@ -59,7 +63,7 @@
 # For example, here is a **code cell** with a short Python script that computes a value, stores it in a variable, and prints the result:
 # 
 
-# In[1]:
+# In[ ]:
 
 
 seconds_in_a_day = 24 * 60 * 60
@@ -71,7 +75,7 @@ print(seconds_in_a_day)
 # 
 # Variables that you define in one cell can later be used in other cells:
 
-# In[2]:
+# In[ ]:
 
 
 seconds_in_a_week = 7 * seconds_in_a_day
@@ -104,7 +108,7 @@ print('Nice work!')
 
 
 # <a id="three"></a>
-# # **Part III. Using Markdown**
+# # Part III. Using Markdown
 # [Return to Table of Contents](#toc)
 # 
 # Markdown is useful because it can be formatted using simple symbols.
@@ -118,7 +122,7 @@ print('Nice work!')
 # Edit this markdown cell!
 
 # <a id="four"></a>
-# # **Part IV: Generate some plots**
+# # Part IV: Generate some plots
 # [Return to Table of Contents](#toc)
 # 
 # ## Step 1. Import packages 
