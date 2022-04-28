@@ -3,11 +3,12 @@
 
 # <a href="https://colab.research.google.com/github/neurologic/NeurophysiologyModules/blob/main/ColabNotebook_Introduction_CodingLight.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+# <a id="intro"></a>
 # # Introduction to Colab Notebooks
 # 
 # This first notebook will introduce you to Colab Notebooks using Google's "Colaboratory" server. Colab notebooks are a handy coding environment for learning as well as sharing code with others.
 # 
-# ### At the end of this notebook, you'll be able to:
+# At the end of this notebook, you'll be able to:
 # * Recognize the main features of Colab Notebooks
 # * Use Colab Notebooks to run Python3 Code
 # * Identify and edit simple Markdown code
@@ -15,33 +16,33 @@
 # 
 
 # <hr>
-# 
-# ### Table of Contents
-# 1. [Part I. Getting Started](#scrollTo=cYOzaYcQ0nzj)
-# 2. [Part II. About Python Code](#scrollTo=JX0q9xKQcXVE)
-# 2. [Part III. Using Markdown](#scrollTo=oj1HYRSacXVI)
-# 3. [Part IV. Generate some plots](#scrollTo=SJDS0Lc1cXVJ)
+# <a id="toc"></a>
+# # Table of Contents
+# 1. [Part I. Getting Started](#one)
+# 2. [Part II. About Python Code](#two)
+# 2. [Part III. Using Markdown](#three)
+# 3. [Part IV. Generate some plots](#four)
 # 
 # <hr>
 
-# ## **Part I. Getting started**
+# # **Part I. Getting started**
 # 
-# At any point, you can click navigation hyperlinks to jump around between sections. For example, return to the Introduction by clicking: [Return to the Introduction](#scrollTo=roBKSNUFcXVD)
+# At any point, you can click navigation hyperlinks to jump around between sections. For example, return to the Introduction by clicking: [Return to the Introduction](#intro)
 # 
-# ### About Colab Notebooks
-# Colab notebooks allow you to combine **executable code**, **text**, and **code output** (such as images) in a single document. To save any work you do in a Colab notebook, it needs to be stored in your Google Drive account. You can then easily share your Colab notebooks with co-workers or friends, allowing them to comment on your notebooks or even edit them. To learn more, see [Overview of Colab](/notebooks/basic_features_overview.ipynb). 
+# ## About Colab Notebooks
+# Colab notebooks allow you to combine **executable code**, **text**, and **code output** (such as images) in a single document. To save any work you do in a Colab notebook, it needs to be stored in your Google Drive account. You can then easily share your Colab notebooks with co-workers or friends, allowing them to comment on your notebooks or even edit them. To learn more, see Overview of Colab (/notebooks/basic_features_overview.ipynb). 
 # 
 # To save a Colab notebook to your drive, you can use the File menu above and select ```Save a copy in Drive```. Notebooks will automatically be saved in a "Colab Notebooks" folder in your Google Drive. You can reorganize from there if you like. To re-open a notebook to view your work and/or continue working, open it directly from your Google Drive (If necessary: ```Open With``` -> ```connected apps``` -> ```Google Colaboratory```) 
 # 
 # Colab notebooks are Jupyter notebooks that are hosted by Colab. To learn more about the Jupyter project, see [jupyter.org](https://www.jupyter.org). They can run on Google's 'Research Collaboratory' platform (as you are doing now) so that you do not need to download any programs locally. However, working with these notebooks on Colab does require an internet connection. 
 # 
-# ### Menu Options & Shortcuts
+# ## Menu Options & Shortcuts
 # There are also a large number of useful keyboard shortcuts. Click on the 'Tools' menu, and then 'Keyboard Shortcuts' to see a list.
 # 
-# ### "Running" Code
+# ## "Running" Code
 # In order for the text (code) written in these notebooks to **do** anything, the text needs to be **run**. Running code means *executing* it. The python <b>'kernel'</b> is the thing that executes your code. It is what connects the notebook (as you see it) with the DataHub computers at Google that run/execute code.
 # 
-# ### Types of Cells
+# ## Types of Cells
 # Colab Notebooks have two types of cells, a <b>Markdown</b> (like this one) and <b>Code</b>. You won't need to *run* the Markdown cells, just read through them. However, when we get to a code cell, you need to tell the kernel to run the lines of code that it contains. Then, the Python kernel will run whatever it recognizes as code within the cell.
 # 
 # *How do you recognize a code cell?* Each code cell has a ```play button``` at the top left corner (a circle with a right-pointing triangle in it).
@@ -54,10 +55,10 @@
 # If you accidentally get "inside of" a Markdown cell, simply double click the version on the right-hand side of the cell to get back to normal-looking formatting. 
 
 # <a id="two"></a>
-# ## **Part II. About Python Code**
-# [Return to Table of Contents](#scrollTo=mTOgljlHoJxv)
+# # **Part II. About Python Code**
+# [Return to Table of Contents](#toc)
 # 
-# As you read in ["Part I. Getting Started"](#scrollTo=cYOzaYcQ0nzj), the document you are reading is not a static web page, but an interactive environment that lets you write and execute code.
+# As you read in ["Part I. Getting Started"](#one), the document you are reading is not a static web page, but an interactive environment that lets you write and execute code.
 # 
 # For example, here is a **code cell** with a short Python script that computes a value, stores it in a variable, and prints the result:
 # 
@@ -108,7 +109,7 @@ print('Nice work!')
 
 # <a id="three"></a>
 # ## **Part III. Using Markdown**
-# [Return to Table of Contents](#scrollTo=mTOgljlHoJxv)
+# [Return to Table of Contents](#toc)
 # 
 # Markdown is useful because it can be formatted using simple symbols.
 # * You can create bulleted lists using asterisks.
@@ -122,7 +123,7 @@ print('Nice work!')
 
 # <a id="four"></a>
 # ## **Part IV: Generate some plots**
-# [Return to Table of Contents](#scrollTo=mTOgljlHoJxv)
+# [Return to Table of Contents](#toc)
 # 
 # ### Step 1. Import packages 
 # We can take advantage of pre-packaged code for many common functions in Python. But first, we need to tell Python to import it. This is a really common step for most Python code.
@@ -225,7 +226,7 @@ from IPython.display import HTML
 HTML('<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">')
 
 
-# [Return to Table of Contents](#scrollTo=mTOgljlHoJxv)
+# [Return to Table of Contents](#toc)
 
 # ## Additional Resources
 # For additional Jupyter Notebook information and practice if you want it for your own data science needs in the future, see [this tutorial](https://www.dataquest.io/blog/jupyter-notebook-tutorial/) from DataQuest. 
