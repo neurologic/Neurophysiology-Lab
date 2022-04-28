@@ -4,7 +4,7 @@
 # <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-1/Passive-Membrane-Properties.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
-# # Introduction
+# # Passive Membrane Properties
 # 
 # Today you will use electrical circuit models of a passive cell membrane to introduce yourself to some of the basic components of your essential electrophysiology toolkit. You will interrogate some of the passive properties of neural membranes and compare the difference between membrane potentials recorded intracellularly and membrane potentials recorded extracellularly. 
 # 

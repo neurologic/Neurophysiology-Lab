@@ -9,6 +9,4 @@ chapters:
 - file: week-1/week-1
   sections:
     - file: week-1/Python-Introduction-Coding-Light
-      title: Introduction to Python
     - file: week-1/Passive-Membrane-Properties
-      title: Passive Membrane Properties
