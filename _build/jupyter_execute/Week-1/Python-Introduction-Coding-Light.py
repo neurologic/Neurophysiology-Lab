@@ -25,6 +25,7 @@
 # 
 # <hr>
 
+# <a id="one"></a>
 # # **Part I. Getting started**
 # 
 # At any point, you can click navigation hyperlinks to jump around between sections. For example, return to the Introduction by clicking: [Return to the Introduction](#intro)
@@ -108,7 +109,7 @@ print('Nice work!')
 
 
 # <a id="three"></a>
-# ## **Part III. Using Markdown**
+# # **Part III. Using Markdown**
 # [Return to Table of Contents](#toc)
 # 
 # Markdown is useful because it can be formatted using simple symbols.
@@ -122,10 +123,10 @@ print('Nice work!')
 # Edit this markdown cell!
 
 # <a id="four"></a>
-# ## **Part IV: Generate some plots**
+# # **Part IV: Generate some plots**
 # [Return to Table of Contents](#toc)
 # 
-# ### Step 1. Import packages 
+# ## Step 1. Import packages 
 # We can take advantage of pre-packaged code for many common functions in Python. But first, we need to tell Python to import it. This is a really common step for most Python code.
 # 
 # We'll import a package called ["numpy"](https://numpy.org/doc/stable/user/index.html) and nickname it "np", ["plotly" graph objects](https://plotly.com/python/graph-objects/) and nickname it "go", and ['pandas'](https://pandas.pydata.org/docs/user_guide/index.html) and nickname it "pd". When you see "np" in our script, it's actually calling scripts from the numpy package. 
@@ -213,7 +214,7 @@ fig.show()
 # 
 # 6. Click on your downloaded png file by clicking on it in your computer's file system navigator. This is how you will be saving the figure you create in future notebooks. 
 
-# ### **Part V: Bonus celebration** 
+# # **Part V: Bonus celebration** 
 # That's the Colab Notebook tutorial! You're ready to tackle Colab Notebooks in the course. 
 # 
 # Celebrate your new skills by running the code cell below.
