@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/NeurophysiologyModules/blob/main/ColabNotebook_Introduction_CodingLight.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
 # <a id="intro"></a>
 # # Introduction to Colab Notebooks
 # 
@@ -16,6 +14,7 @@
 # 
 
 # <hr>
+# 
 # <a id="toc"></a>
 # # Table of Contents
 # 1. [Part I. Getting Started](#one)
@@ -64,7 +63,7 @@
 # For example, here is a **code cell** with a short Python script that computes a value, stores it in a variable, and prints the result:
 # 
 
-# In[1]:
+# In[ ]:
 
 
 seconds_in_a_day = 24 * 60 * 60
@@ -76,7 +75,7 @@ print(seconds_in_a_day)
 # 
 # Variables that you define in one cell can later be used in other cells:
 
-# In[2]:
+# In[ ]:
 
 
 seconds_in_a_week = 7 * seconds_in_a_day
@@ -86,7 +85,7 @@ print(seconds_in_a_week)
 
 # To edit the code, just click the cell and start editing. In the code cell below, type in a value for x after ```x = ``` (on the same line) and then run the code cell to print the value you assigned as an output of the code cell. 
 
-# In[3]:
+# In[ ]:
 
 
 x = 
