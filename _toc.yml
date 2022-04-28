@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: syllabus
+- file: standards
+- file: week-1
+  sections: 
+    - file: week-1/Python-Introduction-Coding-Light
+      title: Python Introduction
