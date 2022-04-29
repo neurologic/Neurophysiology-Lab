@@ -9,18 +9,20 @@
 
 # Draw what you think the equivalent electrical circuit of a neuron's membrane would look like in this scenario.
 
-# Insert your image in this markdown cell following the instructions. 
+# ```{hint} 
+# Insert an image from your google drive in this markdown cell following these instructions. 
 # 
-# Upload your image to google drive (or get the share link from google drawings)
+# Get the "Anyone can view" share link from google drive. 
+# With a  share link in the following format: https://drive.google.com/file/d/ID-of-image-/view?usp=sharing,
+# all you need is the *ID-of-image* from the URL share link. 
 # 
-# With a "Anyone can view" share link in the following format: https://drive.google.com/file/d/ID-of-image-/view?usp=sharing,
-# all you need is the ```ID-of-image``` from the URL share link. 
+# In the following URL, replace *ID-of-image* with the just the ID from the link you see in google drive's "share link" screen.
 # 
-# In the following URL, replace ```ID-of-image``` with the just the ID from the link you see in google drive's "share link" screen.
+# ```
 # 
-# <img src='https://drive.google.com/uc?id=ID-of-image' width="500" >
+# <!-- <img src='https://drive.google.com/uc?id=ID-of-image' width="500" > -->
 # 
-# <!-- <img src='https://drive.google.com/uc?id=1L72QgScDwrfShQFdg3iaH7Vdz6_BGtPv' width="500" > -->
+# <img src='https://drive.google.com/uc?id=1L72QgScDwrfShQFdg3iaH7Vdz6_BGtPv' width="300" >
 # 
 # Then "run" this markdown cell (or double click it).
 
