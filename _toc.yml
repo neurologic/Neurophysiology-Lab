@@ -3,10 +3,16 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: syllabus
-- file: standards
-- file: week-1/week-1
-  sections:
-    - file: week-1/Python-Introduction-Coding-Light
-    - file: week-1/Passive-Membrane-Properties
+parts:
+  - caption: General
+    chapters:
+    - file: syllabus
+    - file: standards
+    - file: howto/howto
+      sections:
+        - file: howto/Python-Introduction-Coding-Light
+  - caption: Weekly Materials
+    chapters:
+    - file: week-1/week-1
+      sections:
+        - file: week-1/Passive-Membrane-Properties

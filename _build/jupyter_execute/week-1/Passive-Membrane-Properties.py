@@ -15,6 +15,17 @@
 # - Store, manage, and visualize data on the computer.
 # - Create figures that summarize your data and analysis - enabling you to discuss your results.
 # 
+# The first model membrane circuit you will be working with contains 3 different resistances 
+# ![model membrane](../images/fig.1.1-Model_Membrane.png)
+# - Rinside = 
+# - Routside = 
+# - Rmembrane = 
+# 
+# A complete model of the cell membrane would include its capacitance. A capacitor is an electronic device that consists of two conducting plates separated by a thin insulator. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. If one side of a membrane becomes more positive, positive ions are repelled from and negative ions are attracted to the other side. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value, charges separated by the membrane flow again, discharging the membrane capacitance. In effect, current flows across the membrane capacitance only when voltage across the membrane changes.
+# 
+# You will work with a simple RC (resistor-capacitor) circuit to model membrane responses to voltage changes. Membrane capacitance is parallel to membrane resistance. 
+# ![model membrane_RC](../images/fig.1.5-RC_Explanation.png)
+# The RC circuit you will use represents an intracellular recording from one patch of membrane when the voltage is changed.
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -27,6 +38,7 @@
 # In[14]:
 
 
+#@markdown Run this code cell to initialize the notebook
 import numpy as np
 import matplotlib.pyplot as plt
 
