@@ -16,3 +16,8 @@ parts:
     - file: week-1/week-1
       sections:
         - file: week-1/Passive-Membrane-Properties
+        - file: week-1/Passive-Membrane-Properties_Responses
+    - file: week-2/week-2
+      sections:
+        - file: week-2/Electric-Organ-Discharge
+        
