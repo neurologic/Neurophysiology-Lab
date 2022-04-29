@@ -38,10 +38,6 @@
 # In[2]:
 
 
-#@markdown Run this code cell to initialize the notebook
-
-# Why are comments disappearing
-
 import numpy as np
 import matplotlib.pyplot as plt
 
