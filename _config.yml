@@ -3,7 +3,7 @@
 
 title: Neurophysiology Lab
 author: Dr. Krista Perks
-logo: logo.png
+logo: images/NeuronImage_CourseHeader.jpeg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

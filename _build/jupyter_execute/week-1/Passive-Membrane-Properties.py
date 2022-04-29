@@ -19,20 +19,22 @@
 # 
 # A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons.
 # <!-- ![electrical components](../images/Electrical_Components.png) -->
-# <img src='../images/Electrical_Components.png' width="300" alt='electrical components'>
+# <img src='../images/Electrical_Components.png' width="300" alt='electrical components'/>
 # 
 # Resistors are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: I = V/R, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, V = IR determines the voltage in response to a current across a resistor. 
 # 
 # In an electrical circuit, a capacitor possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.
 # 
 # The first model membrane circuit you will be working with contains 3 different resistances for each patch of "memrbane". These are arranged both in serial and parallel across the "membrane".  
-# <img src='../images/Passive-Membrane-Resistance-Circuit.png' width="500" alt='model membrane resistance'>
+# 
+# <img src='../images/Passive-Membrane-Resistance-Circuit.png' width="500" alt='model membrane'/>
+# 
 # - Rinside = 1 kOhm
 # - Routside = 100 Ohm
 # - Rmembrane = 10 kOhm
 # 
 # The second model membrane circuit you will be working with is a complete model of a patch of cell membrane. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series would be equivalent for this lab). 
-# <img src='../images/Passive-Membrane-Resistance-Capacitance-Circuit.png' width="400" alt='model membrane RC'>
+# <img src='../images/Passive-Membrane-Resistance-Capacitance-Circuit.png' width="400" alt='model membrane RC'/>
 # 
 # Current flows across the membrane capacitance only when voltage across the membrane changes. Wen one side of a membrane becomes more positive (for example when an excitatory synaptic input is "activated"), positive ions are repelled from and negative ions are attracted to the other side of the membrane. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value (for example, when synaptic ion channels close), charges separated by the membrane flow again, discharging the membrane capacitance. 
 # 

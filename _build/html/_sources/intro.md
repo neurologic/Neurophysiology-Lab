@@ -1,11 +1,8 @@
-# Welcome to your Jupyter Book
+# Welcome to Neurophysiology Lab
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This is a course designed to deepen your understanding of fundamental principles of neurophysiology, guide your skills in data processing and analysis, and enforce effective science communication. 
 
-Check out the content pages bundled with this sample book to see more.
+You can navigate the course website using the menu bar to the left. The table of contents below gives you an overview of the course materials as well as links to each section.
 
 ```{tableofcontents}
 ```
