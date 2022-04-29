@@ -18,6 +18,14 @@
 # - Create figures that summarize your data and analysis - enabling you to discuss your results.
 # 
 # A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons.
+# 
+# ```{image} ../images/Electrical_Components.png
+# :alt: fishy
+# :class: bg-primary mb-1
+# :width: 300px
+# :align: center
+# ```
+# 
 # <!-- ![electrical components](../images/Electrical_Components.png) -->
 # <img src='../images/Electrical_Components.png' width="300" alt='electrical components'/>
 # 
@@ -148,7 +156,7 @@ plt.plot(nodes,voltage)
 
 
 # <a id="three"></a>
-# # Part III. Intracellular Recording of Membrane Potential (with capacitance).
+# # Part III. Intracellular Recording of Membrane Potential (with capacitance)
 # 
 # [TOC](#toc)
 # 

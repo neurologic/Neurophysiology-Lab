@@ -10,21 +10,21 @@
 # Draw what you think the equivalent electrical circuit of a neuron's membrane would look like in this scenario.
 
 # ```{hint} 
-# Insert an image from your google drive in this markdown cell following these instructions. 
+# Insert an image from your google drive in this markdown cell by doing the following... 
 # 
 # Get the "Anyone can view" share link from google drive. 
 # With a  share link in the following format: https://drive.google.com/file/d/ID-of-image-/view?usp=sharing,
 # all you need is the *ID-of-image* from the URL share link. 
 # 
-# In the following URL, replace *ID-of-image* with the just the ID from the link you see in google drive's "share link" screen.
+# Enter editing mode on this Markdown cell if needed.
+# 
+# In the following URL, replace *1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae* with the just the ID from the link you see in google drive's "share link" screen.
+# 
+# Then "run" this markdown cell (or double click it). Your image will replace the one below.
 # 
 # ```
 # 
-# <!-- <img src='https://drive.google.com/uc?id=ID-of-image' width="500" > -->
-# 
-# <img src='https://drive.google.com/uc?id=1L72QgScDwrfShQFdg3iaH7Vdz6_BGtPv' width="300" >
-# 
-# Then "run" this markdown cell (or double click it).
+# <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
 # What electrical circuit component that you used in this lab best describes ion channels in the cell membrane?
 
@@ -56,4 +56,4 @@
 
 # Would you expect small neurons to have higher or lower capacitance than large neurons?
 
-# 
+# ...
