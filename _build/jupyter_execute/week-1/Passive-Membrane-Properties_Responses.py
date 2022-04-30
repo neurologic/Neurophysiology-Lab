@@ -1,7 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-1/Passive-Membrane-Properties_Responses.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+
 # # Responses
+# 
+# Markdown cells awaiting your responses to the following questions contain ```...```
+# 
+# Edit these cells by replacing ```...``` with your responses. 
+# 
+# ---
 
 # In the absence of any passive or voltage-gated ion channels in the neuron membrane, what would determine the voltage across the membrane?
 
