@@ -30,6 +30,9 @@ parts:
     - file: week-10/week-10
     - file: week-11/week-11
     - file: week-12/week-12
+      sections:
+        - file: week-12/Geometric-View-Of-Data-Tutorial
+        - file: week-12/Dimensionality-Reduction-Tutorial
     - file: week-13/week-13
   - caption: Wrapping Up
     chapters:
