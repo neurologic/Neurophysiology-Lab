@@ -1,3 +1,3 @@
-# Week 6 Surgery for Crayfish Preparations
+# Week 6 Motor Nerve
 
-crayfish; learn the surgery to access the motor nerve while keeping the superficial flexor muscle healthy
+crayfish; improve surgery and obtain successful motor nerve recordings; try to go for two simultaneous

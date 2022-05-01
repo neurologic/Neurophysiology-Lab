@@ -1,3 +1,4 @@
-# Week 7 Motor Nerve
+# Week 7 Intracellular Recording Techniques
 
-crayfish; improve surgery and obtain successful motor nerve recordings; try to go for two simultaneous
+Crayfish
+Ionic basis of the membrane potential 

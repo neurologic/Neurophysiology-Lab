@@ -1,1 +1,1 @@
-# Week 9 Synaptic Connectivity
+# Week 9 Synaptic Plasticity

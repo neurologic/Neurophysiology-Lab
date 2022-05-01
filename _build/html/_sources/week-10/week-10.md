@@ -1,3 +1,7 @@
-# Week 10 Synaptic Plasticity
+# Week 10 Motor Unit Specificity 
 
-Synaptic Plasticity
+First dorsal interossei
+motor unit coding
+concentric
+isometric
+eccentric
