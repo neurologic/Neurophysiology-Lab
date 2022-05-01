@@ -4,7 +4,11 @@
 # <a id="intro"></a>
 # # Electric Organ Discharge
 # 
-# 
+# Event detection and sorting
+# Time series analysis
+# - rate
+# - isi
+# - smoothed probability
 
 # <a id="toc"></a>
 # # Table of Contents
