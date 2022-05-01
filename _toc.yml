@@ -28,6 +28,8 @@ parts:
     - file: week-8/week-8
     - file: week-9/week-9
     - file: week-10/week-10
+      sections:
+        - file: week-10/Human-Motor-Neuron-Coding
     - file: week-11/week-11
       sections:
         - file: week-11/Motor-Coordination-and-Big-Data
