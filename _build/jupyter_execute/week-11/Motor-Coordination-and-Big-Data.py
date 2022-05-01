@@ -42,9 +42,8 @@
 # In[ ]:
 
 
-#@markdown **TASK:** Run this code cell to load packages, { display-mode: "form" }
+#@markdown Run this code cell to load packages and { display-mode: "form" }
 #@markdown initialize the notebook.
-
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -64,11 +63,6 @@ import seaborn as sns
 from datetime import datetime,timezone,timedelta
 pal = sns.color_palette(n_colors=15)
 pal = pal.as_hex()
-
-
-##@markdown **TASK:** Run this code cell to upgrade colab packages
-##@markdown >IMPORTANT: Hit the "RESTART RUNTIME" button that appears after the code cell finishes executing.
-# !pip install --upgrade tables
 
 
 

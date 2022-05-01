@@ -1,4 +1,4 @@
-# Week 10 Motor Unit Specificity 
+# Week 10 Human Motor Neuron Activity 
 
 First dorsal interossei
 motor unit coding
