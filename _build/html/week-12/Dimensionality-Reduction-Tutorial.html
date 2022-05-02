@@ -214,17 +214,29 @@ const thebe_selector_output = ".output, .cell_output"
    Week 9 Synaptic Plasticity
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../week-10/week-10.html">
-   Week 10 Motor Unit Specificity
+   Week 10 Human Motor Neuron Activity
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-10/Human-Motor-Neuron-Coding.html">
+     Human Motor Neuron Activity
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../week-11/week-11.html">
    Week 11 Motor Coordination and Big Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -240,8 +252,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="week-12.html">
    Week 12 Big Data and Robotic Control
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -837,8 +849,8 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt='Solution hint' align='center' width=400.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial2_Solution_97bca56d_0.png>
 <p>The goal of PCA is to find an orthonormal basis capturing the direction(s) of maximum variance of the data. More precisely, the $i$th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em> or <em>weights</em>).</p>
 <p>To perform PCA, we project the data onto the eigenvectors of the covariance matrix, i.e.:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7cf928b-d31f-4c61-b99f-16a02039b6ee">
-<span class="eqno">(12)<a class="headerlink" href="#equation-f7cf928b-d31f-4c61-b99f-16a02039b6ee" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-730bcfe8-c72f-4353-af19-8dd7c9fe9319">
+<span class="eqno">(12)<a class="headerlink" href="#equation-730bcfe8-c72f-4353-af19-8dd7c9fe9319" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \bf S = X W
 \end{align}\]</div>
 <p>where $\bf S$ is an $N_\text{samples} \times N$ matrix representing the projected data (also called <em>scores</em>), and $\bf W$ is an $N\times N$ orthogonal matrix, each of whose columns represents the eigenvectors of the covariance matrix (also called <em>weights</em> or <em>loadings</em>).</p>
@@ -1087,8 +1099,8 @@ In the example scree plot below, most of the eigenvalues are near zero, with few
 <div class="tex2jax_ignore mathjax_ignore section" id="notation">
 <h1>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<div class="amsmath math notranslate nohighlight" id="equation-a414c518-8a9a-4b3f-917a-2388f48fe243">
-<span class="eqno">(13)<a class="headerlink" href="#equation-a414c518-8a9a-4b3f-917a-2388f48fe243" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0ed4cdca-9134-4c83-b61c-2c964bd05ebd">
+<span class="eqno">(13)<a class="headerlink" href="#equation-0ed4cdca-9134-4c83-b61c-2c964bd05ebd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{x_i}  &amp;\quad \text{all measurements of neuron } i\\
 \bar{\bf x_i}  &amp;\quad \text{mean across samples for neuron } i \\
 \bf \Sigma &amp;\quad \text{covariance matrix}\\
