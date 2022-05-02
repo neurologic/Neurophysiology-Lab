@@ -231,3 +231,9 @@ HTML('<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">')
 # 
 # This notebook was modified from [Introduction to Jupyter Notebooks.ipynb](https://colab.research.google.com/github/ajuavinett/CellTypesLesson/blob/master/Introduction%20to%20Jupyter%20Notebooks.ipynb) created by [Ashley Juavinett](https://github.com/ajuavinett/)
 # 
+
+# In[ ]:
+
+
+
+

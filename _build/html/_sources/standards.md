@@ -71,3 +71,4 @@ _____ Foundational Computing Skills
 - File transfers across computers 
 
 _____ Personal Goals For Yourself in the Course
+Please consider goals that you have for yourself (why are you here?) that you can work to achieve. 

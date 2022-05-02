@@ -58,7 +58,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import csv
 from scipy.signal import hilbert,medfilt,resample
-from scipy.io import wavfile
 from sklearn.decomposition import PCA
 import scipy
 import seaborn as sns
@@ -357,14 +356,11 @@ fig.update_layout(xaxis2_title="time(seconds)",
 
 
 
-# <hr>
-# 
-# Krista Perks, PhD 
-# 
-# Written for courses at Wesleyan University. 
-
 # In[ ]:
 
 
 
 
+
+# <hr> 
+# Written by Dr. Krista Perks for courses taught at Wesleyan University.

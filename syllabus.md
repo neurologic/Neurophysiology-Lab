@@ -133,3 +133,4 @@ I remind students of the Wesleyan honor code (http://www.wesleyan.edu/studentaff
 For written and multimedia work: In accordance with the Honor Code, I affirm that this work is my own and all content taken from other sources has been properly acknowledged
  
 It is expressly forbidden to submit a paper from another course without my permission. While written reports will be accepted, they must be accompanied by an electronic format too. Submitting only in electronic format is acceptable. Please note that active checking for plagiarism will occur. Ensure that all sources are cited and in sufficient detail for the reader to locate your primary source. Consult with me if you are uncertain whether a source needs citing. Don’t risk plagiarism as this is an academic violation with severe consequences. Should I suspect the honor code has been violated, I will consult the Vice President for Student Affairs to decide whether to refer the matter to the Honor Board.
+

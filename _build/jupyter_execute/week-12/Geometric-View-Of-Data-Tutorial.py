@@ -497,3 +497,9 @@ _ = widgets.interact(refresh, corr_coef=(-1,1,0.1), theta=(-90, 90, 5))
 # This tutorial was written by Krista Perks for courses taught at Wesleyan University. Based on content from **Neuromatch Academy 2020: Week 1, Day 5: Dimensionality Reduction** by Alex Cayco Gajic, John Murray
 # 
 # 
+
+# In[ ]:
+
+
+
+

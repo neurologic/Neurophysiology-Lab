@@ -168,6 +168,9 @@ plt.plot(nodes,voltage)
 # - "Enable" the "Matrix Writer" node to collect the data. 
 # - Upload the data file to the Colab session with the file manager and follow the rest of the steps below.
 
+# <hr> 
+# Written by Dr. Krista Perks for courses taught at Wesleyan University.
+
 # In[ ]:
 
 
