@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Human Motor Neuron Activity &#8212; Neurophysiology Lab</title>
+    <title>Human Motor Neuron Coding &#8212; Neurophysiology Lab</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -139,6 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
      Response Notebooks
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -186,6 +191,11 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../week-2/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../week-2/Electric-Organ-Discharge.html">
      Electric Organ Discharge
     </a>
@@ -208,8 +218,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis.html">
      Experimental Design for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -328,7 +348,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Human Motor Neuron Activity
+     Human Motor Neuron Coding
     </a>
    </li>
   </ul>
@@ -524,7 +544,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Human Motor Neuron Activity
+   Human Motor Neuron Coding
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -567,7 +587,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Human Motor Neuron Activity</h1>
+                <h1>Human Motor Neuron Coding</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -579,7 +599,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Human Motor Neuron Activity
+   Human Motor Neuron Coding
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -622,8 +642,8 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <p><a id=intro></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="human-motor-neuron-activity">
-<h1>Human Motor Neuron Activity<a class="headerlink" href="#human-motor-neuron-activity" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="human-motor-neuron-coding">
+<h1>Human Motor Neuron Coding<a class="headerlink" href="#human-motor-neuron-coding" title="Permalink to this headline">¶</a></h1>
 <p>In vertebrates, every voltage spike in a motor neuron generates a voltage spike in the muscle fibers it innervates. A single motor neuron and the muscle fibers it innervates are called a <em>motor unit</em>. In humans, the only single-unit neural activity that we can measure non-invasively is from motor neurons. We measure motor neuron activity via muscle voltage spikes. Muscle voltage spikes can be measured by electrodes placed on the surface of the skin overlying the muscle.</p>
 <p>You will acquire electromyograms using differential surface electrodes above the <em>belly</em> of several dorsal interossei muscles. These muscles (along with palmar interossei) move fingers side to side.</p>
 <ul class="simple">
@@ -651,7 +671,9 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; RUN this cell to set up the notebook (import packages, etc) { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; RUN this cell to set up the notebook (import packages, etc) </span>
 <span class="c1"># In Python, anything with a &quot;#&quot; in front of it is code annotation,</span>
 <span class="c1"># and is not read by the computer.</span>
 <span class="c1"># You can run a cell (this box) by pressing ctrl-enter or shift-enter.</span>
@@ -663,7 +685,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 
 <span class="c1"># No need to edit anything in this code cell</span>
 <span class="c1">#################################</span>
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="c1"># from google.colab import files</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
@@ -682,6 +704,8 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span>
+
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
 <span class="n">pal</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">pal</span> <span class="o">=</span> <span class="n">pal</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
@@ -693,7 +717,9 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; RUN this cell to mount your Google Drive. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; RUN this cell to mount your Google Drive. { display-mode: &quot;form&quot; }</span>
 <span class="c1">#@markdown &gt; Follow all instructions as prompted by pop-ups.</span>
 <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
@@ -709,39 +735,95 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <h1>Part I. Load data<a class="headerlink" href="#part-i-load-data" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Specify the file path { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Specify the file path </span>
 <span class="c1">#@markdown to your recorded data on Drive:</span>
 <span class="c1">#@markdown &gt; Also specify the sampling rate and number of channels recorded.</span>
 <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
 
 <span class="c1">#@markdown After you have copied/typed in a filepath and specified the metadata, </span>
-<span class="c1">#@markdown run this code cell to load the EMG data. </span>
+<span class="c1">#@markdown run this code cell to load the data and plot it. &lt;br&gt; </span>
+<span class="c1">#@markdown Use the range slider under the plot to scroll through the data in time.</span>
+<span class="c1">#@markdown &gt; NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork</span>
 
-<span class="n">sampling_rate</span> <span class="o">=</span> <span class="n">NaN</span> <span class="c1">#@param</span>
-<span class="n">number_channels</span> <span class="o">=</span> <span class="n">NaN</span> <span class="c1">#@param</span>
+<span class="c1"># sampling_rate = NaN #@param</span>
+<span class="c1"># number_channels = NaN #@param</span>
+
+<span class="n">downsample</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
+
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/kperks/Downloads/analogin_lift2022-05-04T14_10_46.bin&quot;</span>  <span class="c1">#@param </span>
+<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">30000</span> <span class="c1">#@param</span>
+<span class="n">number_channels</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#@param</span>
 
 <span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
 
+
+
 <span class="c1"># No need to edit below this line</span>
 <span class="c1">#################################</span>
-<span class="n">emg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
-<span class="n">emg</span> <span class="o">=</span> <span class="n">emg</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">number_channels</span><span class="p">)</span>
-<span class="n">dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">emg</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">number_channels</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">number_channels</span><span class="p">)</span>
+<span class="n">dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">dur</span>)
-<span class="n">newfs</span> <span class="o">=</span> <span class="mi">2500</span> <span class="c1">#downsample emg data</span>
-<span class="n">chunksize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sampling_rate</span><span class="o">/</span><span class="n">newfs</span><span class="p">)</span>
-<span class="n">emg</span> <span class="o">=</span> <span class="n">emg</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="n">chunksize</span><span class="p">,:]</span>
-<span class="n">newfs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">emg</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">dur</span>
 
-<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">emg</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">newfs</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">emg</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">sampling_rate</span>
+<span class="k">if</span> <span class="n">downsample</span><span class="p">:</span>
+    <span class="n">newfs</span> <span class="o">=</span> <span class="mi">2500</span> <span class="c1">#downsample emg data</span>
+    <span class="n">chunksize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sampling_rate</span><span class="o">/</span><span class="n">newfs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">number_channels</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="n">chunksize</span><span class="p">,:]</span>
+    <span class="k">if</span> <span class="n">number_channels</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="n">chunksize</span><span class="p">]</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">dur</span><span class="p">)</span>
 
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data upload completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Now be a bit patient while it plots.&#39;</span><span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">emg</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;emg0&#39;</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;time(seconds)&quot;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">number_channels</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span>
+                             <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">number_channels</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">number_channels</span><span class="p">)):</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">chan</span><span class="p">],</span>
+                             <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
+
+<span class="c1"># our function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">number_channels</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">number_channels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_channels</span><span class="p">):</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
+<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
+<span class="n">vb</span>
+
+<span class="c1"># print(&#39;Now be a bit patient while it plots.&#39;)</span>
+<span class="c1"># fig = go.Figure()</span>
+<span class="c1"># fig.add_trace(go.Scatter(x = time, y = data,line_color=&#39;black&#39;,name=&#39;channel 1&#39;))</span>
+<span class="c1"># fig.update_layout(xaxis_title=&quot;time(seconds)&quot;, yaxis_title=&#39;amplitude&#39;,width=800, height=500)</span>
+<span class="c1"># fig.show()</span>
 </pre></div>
 </div>
 </div>
@@ -753,16 +835,28 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <p>You need to set a detection threshold that will be used to detect electrical events produced by motor units in the interossei muscle.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; Type in the start and stop time (in seconds) { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; Type in the start and stop time (in seconds) </span>
 <span class="c1">#@markdown that you want to focus on in the recording.</span>
-<span class="n">start_time</span> <span class="o">=</span>   <span class="kc">None</span><span class="c1">#@param {type: &quot;number&quot;}</span>
-<span class="n">stop_time</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
+<span class="c1"># start_time =   None#@param {type: &quot;number&quot;}</span>
+<span class="c1"># stop_time = None  #@param {type: &quot;number&quot;}</span>
+<span class="c1"># #@markdown &lt;b&gt;TASK: &lt;/b&gt; Type in an appropriate event threshold amplitude for detection.</span>
+<span class="c1"># threshold = None  #@param {type: &quot;number&quot;}</span>
+<span class="c1"># #@markdown &lt;b&gt;TASK: &lt;/b&gt; Then from the dropdown, select a polarity (whether peaks are up or down)</span>
+<span class="c1"># peaks = &quot;up&quot;  #@param [&#39;select peak direction&#39;,&#39;up&#39;, &#39;down&#39;]</span>
+<span class="c1"># #@markdown &lt;b&gt;TASK: &lt;/b&gt; Finally, RUN this cell to set these values.</span>
+
+<span class="n">start_time</span> <span class="o">=</span>   <span class="mi">21</span><span class="c1">#@param {type: &quot;number&quot;}</span>
+<span class="n">stop_time</span> <span class="o">=</span> <span class="mi">27</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
 <span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; Type in an appropriate event threshold amplitude for detection.</span>
-<span class="n">threshold</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
 <span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; Then from the dropdown, select a polarity (whether peaks are up or down)</span>
-<span class="n">peaks</span> <span class="o">=</span> <span class="s2">&quot;up&quot;</span>  <span class="c1">#@param [&#39;select peak direction&#39;,&#39;up&#39;, &#39;down&#39;]</span>
+<span class="n">peaks</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span>  <span class="c1">#@param [&#39;select peak direction&#39;,&#39;up&#39;, &#39;down&#39;]</span>
 <span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; Finally, RUN this cell to set these values.</span>
+
 <span class="n">spike_detection_threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+
 <span class="k">if</span> <span class="n">peaks</span><span class="o">==</span><span class="s1">&#39;up&#39;</span><span class="p">:</span> <span class="n">polarity</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">if</span> <span class="n">peaks</span><span class="o">==</span><span class="s1">&#39;down&#39;</span><span class="p">:</span> <span class="n">polarity</span><span class="o">=-</span><span class="mi">1</span>
 
@@ -771,12 +865,12 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <span class="c1">#@markdown the fundamental waveform shapes across all events.</span>
 <span class="c1">#@markdown &lt;br&gt; You will see a histogram of event peak amplitudes </span>
 <span class="c1">#@markdown as well as a plot of waveform PCs (principle components).</span>
-<span class="n">min_isi</span> <span class="o">=</span> <span class="mf">0.0035</span> <span class="c1">#seconds</span>
+<span class="n">min_isi</span> <span class="o">=</span> <span class="mf">0.0025</span> <span class="c1">#seconds</span>
 
 <span class="c1"># samples_inwin = samples[int(start_time/sample_rate):int(stop_time/sample_rate)]</span>
-<span class="n">peaks</span><span class="p">,</span><span class="n">props</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">polarity</span> <span class="o">*</span> <span class="n">samples</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">spike_detection_threshold</span><span class="p">,</span> 
-                         <span class="n">prominence</span> <span class="o">=</span> <span class="n">spike_detection_threshold</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="p">(</span><span class="n">min_isi</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">))</span>
-<span class="n">peaks_t</span> <span class="o">=</span> <span class="n">peaks</span><span class="o">/</span><span class="n">sample_rate</span>
+<span class="n">peaks</span><span class="p">,</span><span class="n">props</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">polarity</span> <span class="o">*</span> <span class="n">data</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">spike_detection_threshold</span><span class="p">,</span> 
+                         <span class="n">prominence</span> <span class="o">=</span> <span class="n">spike_detection_threshold</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">min_isi</span><span class="o">*</span><span class="n">fs</span><span class="p">))</span>
+<span class="n">peaks_t</span> <span class="o">=</span> <span class="n">peaks</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">inwin_inds</span> <span class="o">=</span> <span class="p">((</span><span class="n">peaks_t</span><span class="o">&gt;</span><span class="n">start_time</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">peaks_t</span><span class="o">&lt;</span><span class="n">stop_time</span><span class="p">))</span>
 <span class="n">df_props</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
         <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">props</span><span class="p">[</span><span class="s1">&#39;peak_heights&#39;</span><span class="p">][</span><span class="n">inwin_inds</span><span class="p">],</span>
@@ -792,10 +886,10 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;amplitude&#39;</span><span class="p">)</span>
 
 <span class="n">windur</span> <span class="o">=</span> <span class="mf">0.005</span>
-<span class="n">winsamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">)</span>
+<span class="n">winsamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
 <span class="n">spkarray</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;spikeInd&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
-    <span class="n">spkarray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">winsamp</span> <span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="n">winsamp</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">spkarray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">winsamp</span> <span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="n">winsamp</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">spkarray</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">df_norm</span> <span class="o">=</span><span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># normalize for pca</span>
@@ -814,7 +908,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;amplitude (a.u.)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_pca</span><span class="p">[</span><span class="n">c</span><span class="p">],</span><span class="n">label</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 
@@ -831,13 +925,17 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 “Kmeans” is an algorithm built to automatically assign events to “clusters” based on similarity to each other and dissimilarity from other clusters.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Let&#39;s start by clustering the events into putative motor units. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Let&#39;s start by clustering the events into putative motor units. { display-mode: &quot;form&quot; }</span>
 <span class="c1">#@markdown Choose the number of clusters you want to split the data into and type that number below. &lt;br&gt;</span>
 <span class="c1">#@markdown &gt;Note: It can sometimes help to &quot;over-split&quot; the events into more clusters </span>
 <span class="c1">#@markdown than you think will be necessary. You can try both strategies and assess the results.</span>
 <span class="n">number_of_clusters</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param {type: &quot;number&quot;}</span>
 <span class="c1">#@markdown RUN this cell to cluster events categorically based on waveform shape (in PC space) and amplitude. </span>
 <span class="c1">#@markdown &lt;br&gt;As a result, you will see a plot of the mean waveform from each cluster (with standard deviation shaded)</span>
+
+<span class="n">number_of_clusters</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#@param {type: &quot;number&quot;}</span>
 
 <span class="c1"># No need to edit below this line</span>
 <span class="c1">#################################</span>
@@ -846,7 +944,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <span class="c1"># df_props[&#39;peaks_t&#39;] = peaks_t</span>
 <span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
 
-<span class="n">winsamps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">)</span>
+<span class="n">winsamps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span> <span class="o">*</span> <span class="n">fs</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">windur</span><span class="p">,</span><span class="n">windur</span><span class="p">,</span><span class="n">winsamps</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
 <span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Volts recorded&#39;</span><span class="p">)</span>
@@ -856,9 +954,9 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]):</span>
     <span class="n">spkt</span> <span class="o">=</span> <span class="n">df_props</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;spikeT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1">#[&#39;peaks_t&#39;].values</span>
-    <span class="n">spkt</span> <span class="o">=</span> <span class="n">spkt</span><span class="p">[(</span><span class="n">spkt</span><span class="o">&gt;</span><span class="n">windur</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spkt</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">((</span><span class="n">samples</span><span class="p">)</span><span class="o">/</span><span class="n">sample_rate</span><span class="p">)</span><span class="o">-</span><span class="n">windur</span><span class="p">))]</span>
+    <span class="n">spkt</span> <span class="o">=</span> <span class="n">spkt</span><span class="p">[(</span><span class="n">spkt</span><span class="o">&gt;</span><span class="n">windur</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spkt</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">((</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span><span class="o">-</span><span class="n">windur</span><span class="p">))]</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">spkt</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; spikes in cluster number &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
-    <span class="n">spkwav</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">samples</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">)</span><span class="o">-</span><span class="n">winsamps</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">)</span><span class="o">+</span><span class="n">winsamps</span><span class="p">)]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">spkt</span><span class="p">])</span>
+    <span class="n">spkwav</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">-</span><span class="n">winsamps</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="n">winsamps</span><span class="p">)]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">spkt</span><span class="p">])</span>
     <span class="n">wav_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">spkwav</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">wav_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">spkwav</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="c1"># fig.add_trace(go.Scatter(x = x, y = wav_u,line_color=pal[k],name=&#39;cluster &#39; + str(k)),</span>
@@ -884,7 +982,9 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </ul>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown ONLY DO THIS TASK IF YOU WANT TO MERGE CLUSTERS. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown ONLY DO THIS TASK IF YOU WANT TO MERGE CLUSTERS. { display-mode: &quot;form&quot; }</span>
 <span class="c1">#@markdown OTHERWISE, MOVE ON. </span>
 <span class="c1">#@markdown &lt;br&gt; Below, create your list (of sublists) of clusters to merge.</span>
 <span class="c1">#@markdown &gt;Just leave out from the list any clusters that you want unmerged.</span>
@@ -903,9 +1003,11 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Now, RUN this cell to plot the average waveform for your new clusters. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Now, RUN this cell to plot the average waveform for your new clusters. { display-mode: &quot;form&quot; }</span>
 <span class="c1">##@markdown And to plot a color-coded scatter of each detected and categorized emg event.</span>
-<span class="n">winsamps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">)</span>
+<span class="n">winsamps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span> <span class="o">*</span> <span class="n">fs</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">windur</span><span class="p">,</span><span class="n">windur</span><span class="p">,</span><span class="n">winsamps</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
 <span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;amplitude&#39;</span><span class="p">)</span>
@@ -915,9 +1017,9 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]):</span>
     <span class="n">spkt</span> <span class="o">=</span> <span class="n">df_props</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;spikeT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">spkt</span> <span class="o">=</span> <span class="n">spkt</span><span class="p">[(</span><span class="n">spkt</span><span class="o">&gt;</span><span class="n">windur</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spkt</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">((</span><span class="n">samples</span><span class="p">)</span><span class="o">/</span><span class="n">sample_rate</span><span class="p">)</span><span class="o">-</span><span class="n">windur</span><span class="p">))]</span>
+    <span class="n">spkt</span> <span class="o">=</span> <span class="n">spkt</span><span class="p">[(</span><span class="n">spkt</span><span class="o">&gt;</span><span class="n">windur</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spkt</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">((</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span><span class="o">-</span><span class="n">windur</span><span class="p">))]</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">spkt</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; spikes in cluster number &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
-    <span class="n">spkwav</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">samples</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">)</span><span class="o">-</span><span class="n">winsamps</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">)</span><span class="o">+</span><span class="n">winsamps</span><span class="p">)]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">spkt</span><span class="p">])</span>
+    <span class="n">spkwav</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">-</span><span class="n">winsamps</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="n">winsamps</span><span class="p">)]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">spkt</span><span class="p">])</span>
     <span class="n">wav_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">spkwav</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">wav_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">spkwav</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="c1"># fig.add_trace(go.Scatter(x = x, y = wav_u,line_color=pal[k],name=&#39;cluster &#39; + str(k)),</span>
@@ -945,25 +1047,28 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <h1>Part IV. Analyze motor unit activity<a class="headerlink" href="#part-iv-analyze-motor-unit-activity" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; If you are satisfied with your clustering, { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown &lt;b&gt;TASK: &lt;/b&gt; If you are satisfied with your clustering, { display-mode: &quot;form&quot; }</span>
 <span class="c1">#@markdown RUN this cell to plot: </span>
 
 <span class="c1">#@markdown 1) a scatter of event times overlaid on the raw emg signal </span>
 
-<span class="c1">#@markdown 2) a scatter of instantaneous spike rate for each cluster. </span>
+<span class="c1">#@markdown 2) a line plot of instantaneous spike rate for each cluster. </span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                     <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="n">vertical_spacing</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
 
-
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtime</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">samples</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;raw emg&#39;</span><span class="p">),</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">start_time</span><span class="o">*</span><span class="n">fs</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">stop_time</span><span class="o">*</span><span class="n">fs</span><span class="p">)],</span>
+                         <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">start_time</span><span class="o">*</span><span class="n">fs</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">stop_time</span><span class="o">*</span><span class="n">fs</span><span class="p">)],</span>
+                         <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;raw emg&#39;</span><span class="p">),</span>
              <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]):</span>
     <span class="n">df_</span> <span class="o">=</span> <span class="n">df_props</span><span class="p">[</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">k</span><span class="p">]</span>
     
     <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_</span><span class="p">[</span><span class="s1">&#39;spikeT&#39;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">polarity</span><span class="o">*</span><span class="n">df_</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">],</span>
-                             <span class="n">line_color</span><span class="o">=</span><span class="n">pal</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">),</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                             <span class="n">line_color</span><span class="o">=</span><span class="n">pal</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; times&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">),</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="c1"># fig.add_trace(go.Scatter(x = df_[&#39;peaks_t&#39;], y = polarity*df_[&#39;height&#39;],</span>
     <span class="c1">#                          line_color=pal[k],name=str(k),mode=&#39;markers&#39;),row=1,col=1)</span>
 
@@ -971,7 +1076,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]):</span>
     <span class="n">df_</span> <span class="o">=</span> <span class="n">df_props</span><span class="p">[</span><span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">k</span><span class="p">]</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_</span><span class="p">[</span><span class="s1">&#39;spikeT&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">df_</span><span class="p">[</span><span class="s1">&#39;spikeT&#39;</span><span class="p">]),</span>
-                             <span class="n">line_color</span><span class="o">=</span><span class="n">pal</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cluster &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; rate&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">),</span>
+                             <span class="n">line_color</span><span class="o">=</span><span class="n">pal</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cluster &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; rate&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">),</span>
                  <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="c1"># fig.add_trace(go.Scatter(x = df_[&#39;peaks_t&#39;][1:], y = 1/np.diff(df_[&#39;peaks_t&#39;]),</span>
     <span class="c1">#                          line_color=pal[k],name=&#39;cluster &#39; + str(k) + &#39; rate&#39;,mode=&#39;markers&#39;),</span>

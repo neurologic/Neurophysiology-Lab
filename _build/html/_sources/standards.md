@@ -2,7 +2,7 @@
 
 This course uses a continuous "standards-based" grading format. For each of the following sections, you will be assessed throughout the course. Your grade (0-5) will increase as you achieve and master more skills in each section. This standards-based assessment will be averaged across sections at the end of the course and count toward 80% of your final grade. 
 
-____ / ____ Concepts
+____ / ____ Concepts <font color = green>(Demonstrated through Response notebooks)</font>
 - V = IR
 - T = RC
 - Signal versus noise
@@ -18,7 +18,7 @@ ____ / ____ Concepts
 - Ionic basis of the membrane potential
 - Geometric view of big data
 
-_____ Experimental Execution
+_____ Experimental Execution <font color = green>(Demonstrated during lab)</font>
 - Patience (what tools can you find to increase this skill)
 - Persistence
 - Identifying when something is wrong
@@ -30,7 +30,7 @@ _____ Experimental Execution
 - Not breaking the glass electrodes
 - Independent research exploration
 
-_____ Data Visualization / Presentation
+_____ Data Visualization / Presentation <font color = green>(Demonstrated through Response notebooks)</font>
 - Turned in as good quality PDFs
 - Figures are clear (font size, axis zoom, resolution, etc)
 - Figures are relevant to the point being made
@@ -41,14 +41,14 @@ _____ Data Visualization / Presentation
 - A logical selection of potential options has been curated to make a point
 
 
-_____ Execution and Communication of Data Processing and Analysis
+_____ Execution and Communication of *Data Processing and Analysis* <font color = green>(Demonstrated through Analysis and Response notebooks)</font>
 - Clear descriptions of any data processing and analysis steps
 - Correct use of experimental and neurophysiology vocabulary
 - Poses relevant hypotheses to frame the work
 - Uses analysis tools appropriately 
 - Describes analytic results correctly
 
-_____ Execution and Communication of Data Interpretation and Connections to Course Concepts
+_____ Execution and Communication of *Data Interpretation and Connections to Course Concepts* <font color = green>(Demonstrated through Response notebooks)</font>
 - Correct use of experimental and neurophysiology vocabulary
 - Writing is clear (requires first clear thinking) using effective sentence structure (no run-ons, active voice).
 - Demonstrates logical reasoning
@@ -56,13 +56,13 @@ _____ Execution and Communication of Data Interpretation and Connections to Cour
 - Demonstrates critical thinking
 - Makes connections between data and core concepts
 
-_____ Execution and Communication of Experimental Context and Observations
+_____ Execution and Communication of *Experimental Context and Observations* <font color = green>(Demonstrated through Lab Writeups)</font>
 - Using clear non-jargon language to describe what you observe
 - Correct use of experimental and neurophysiology vocabulary
 - Demonstrates attention to detail
 - Applying core concepts appropriately to frame work
 
-_____ Foundational Computing Skills
+_____ Foundational Computing Skills <font color = green>(Demonstrated during lab and in ability to complete assignments)</font>
 - Keeping track of files
 - Maintaining logical file structure
 - Saving data
@@ -70,5 +70,5 @@ _____ Foundational Computing Skills
 - Basic level of Python coding to explore and analyze data
 - File transfers across computers 
 
-_____ Personal Goals For Yourself in the Course
-Please consider goals that you have for yourself (why are you here?) that you can work to achieve. 
+_____ Personal Goals For Yourself in the Course <font color = green>(How will you demonstrate your achievement in these?)</font>
+> Please consider goals that you have for yourself (why are you here?) that you can work to achieve. 

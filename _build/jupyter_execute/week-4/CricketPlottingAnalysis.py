@@ -42,7 +42,7 @@ if number_channels>1:
 dur = np.shape(data)[0]/sampling_rate
 print('duration of recording was %0.2f seconds' %dur)
 
-fs = 1/sampling_rate
+fs = sampling_rate
 if downsample:
     newfs = 2500 #downsample emg data
     chunksize = int(sampling_rate/newfs)
@@ -50,7 +50,7 @@ if downsample:
         data = data[0::chunksize,:]
     if number_channels==1:
         data = data[0::chunksize]
-    fs = np.shape(data)[0]/dur
+    fs = int(np.shape(data)[0]/dur)
 
 time = np.linspace(0,dur,np.shape(data)[0])
 
