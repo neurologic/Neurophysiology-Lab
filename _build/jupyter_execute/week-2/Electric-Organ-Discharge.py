@@ -51,7 +51,7 @@
 # In[ ]:
 
 
-#@markdown { display-mode: "form" }
+#@title {display-mode: "form" }
 
 
 # Import and define functions
