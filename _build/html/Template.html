@@ -204,7 +204,12 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="week-3/Experimental-Design-for-Analysis.html">
+     Experimental Design for Analysis
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -634,7 +639,7 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><a id="intro"></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="template">
 <h1>Template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h1>
@@ -643,6 +648,7 @@ const thebe_selector_output = ".output, .cell_output"
 <figcaption align = "center"><b>Electric organ discharge waveform</b> and sex, in three snoutfish species of southern Africa. All electric organ discharges represented as voltage over time, recorded in the field immediately after capture. Same time bar for all. (a) Sexual dimorphism in Marcusenius altisambesi with two distinct waveforms. (b) Sex difference of only a statistical nature in Petrocephalus catostoma (Upper Zambezi form) with, in most males, a stronger second positive phase than in females, such as shown here. (c) Petrocephalus wesselsi (Sabie River, South Africa) with no difference between the sexes. P. wesselsi was recognized as distinct from P. catostoma only recently.
 </figcaption>
 </figure> -->
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer">Link to Other Notebooks (colab link)</a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
@@ -670,7 +676,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Setup<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
 </pre></div>
 </div>
 </div>
@@ -678,7 +684,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Import and define functions</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to import packages and define functions { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to import packages and define functions </span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
@@ -699,7 +707,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Mount Google Drive</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this cell to mount your Google Drive. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this cell to mount your Google Drive.</span>
 
 <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
@@ -712,7 +722,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Import data digitized with <em>Nidaq USB6211</em> and recorded using <em>Bonsai-rx</em> as a <em>.bin</em> file</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Specify the file path { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Specify the file path </span>
 <span class="c1">#@markdown to your recorded data on Drive (find the filepath in the colab file manager:</span>
 
 <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
@@ -760,22 +772,27 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-i">
 <h1>Part I.<a class="headerlink" href="#part-i" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p><a id="two"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-ii">
 <h1>Part II.<a class="headerlink" href="#part-ii" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p><a id="three"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-iii">
 <h1>Part III.<a class="headerlink" href="#part-iii" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p><a id="four"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-iv">
 <h1>Part IV.<a class="headerlink" href="#part-iv" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p><a id="five"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-v">
 <h1>Part V.<a class="headerlink" href="#part-v" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <hr> 
 Written by Dr. Krista Perks for courses taught at Wesleyan University.<p><a id="setup"></a></p>
 <p><a id="one"></a></p>

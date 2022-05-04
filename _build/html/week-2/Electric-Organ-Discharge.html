@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Responses" href="Electric-Organ-Discharge_Responses.html" />
-    <link rel="prev" title="Week 2. Dynamic Electrical Signals" href="week-2.html" />
+    <link rel="prev" title="Lab Manual" href="Lab-Manual.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -185,6 +185,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Electric Organ Discharge
@@ -208,8 +213,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis.html">
      Experimental Design for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -717,14 +732,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Import and define functions</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to import packages and define functions { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this code cell to import packages and define functions </span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
 <span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">hilbert</span><span class="p">,</span><span class="n">medfilt</span><span class="p">,</span><span class="n">resample</span><span class="p">,</span> <span class="n">find_peaks</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">hilbert</span><span class="p">,</span><span class="n">medfilt</span><span class="p">,</span><span class="n">resample</span><span class="p">,</span> <span class="n">find_peaks</span><span class="p">,</span> <span class="n">unit_impulse</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
 <span class="n">pal</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -744,7 +761,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Mount Google Drive</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this cell to mount your Google Drive. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this cell to mount your Google Drive.</span>
 
 <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
@@ -757,11 +776,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Import data digitized with <em>Nidaq USB6211</em> and recorded using <em>Bonsai-rx</em> as a <em>.bin</em> file</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Specify the file path { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Specify the file path </span>
 <span class="c1">#@markdown to your recorded data on Drive (find the filepath in the colab file manager:</span>
 
 <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/kperks/Downloads/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin&quot;</span> <span class="c1">#@param</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/kperks/mnt/GoogleDrive/Shared Drives/PerksLab/EODdata/20220218/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin&quot;</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
 
@@ -801,7 +822,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to plot imported data. &lt;br&gt; { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to plot imported data. &lt;br&gt; </span>
 <span class="c1">#@markdown Use the range slider under the plot to scroll through the data in time.</span>
 <span class="c1">#@markdown &gt; NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork</span>
 
@@ -844,7 +867,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>First, we will subtract the median of the signal, take the absolute value of the signal, and sum across all channels (if you recorded more than one). With this single combined signal, we will detect peaks.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to plot the combined signal for peak detection. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to plot the combined signal for peak detection. </span>
 <span class="c1">#@markdown Use the plot to determine an appropriate detection threshold.</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -881,11 +906,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Fill in this form with the detection threshold. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Fill in this form with the detection threshold. </span>
 
 <span class="n">detection_threshold</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown Then run the code cell to detect peaks (events)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="mf">0.0003</span><span class="o">*</span><span class="n">fs</span> <span class="c1">#minimum time allowed between distinct events</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">detection_threshold</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
@@ -897,7 +927,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to plot the signal on each trial { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to plot the signal on each trial </span>
 <span class="c1">#@markdown overlaid with a scatter of EOD times detected using your threshold. </span>
 <span class="c1">#@markdown &gt; NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork</span>
 
@@ -943,7 +975,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div></blockquote>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Select a channel to plot event waveforms from. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Select a channel to plot event waveforms from. </span>
 
 <span class="n">chan</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param</span>
 
@@ -996,10 +1030,20 @@ const thebe_selector_output = ".output, .cell_output"
     <li> <code class="lang-python">+ - * / </code> are the symbols for addition, subtraction, multiplication, and division</li>
     <li><b>eod_times</b> is a variable that contains the list of EOD times</li>
 </div>
-<p>In the code cell below, write code that would calculate the average EOD rate in your recording</p>
+<p>In the code cell below, write code that would calculate the average EOD rate in your recording. Store the result as a variable called <code class="docutils literal notranslate"><span class="pre">average_rate</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to print the result of your average rate calculation. </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The average EOD rate is </span><span class="si">{</span><span class="n">average_rate</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1014,7 +1058,9 @@ The script (hidden) in the code cell below randomly selects samples of the speci
 <p>Once you specify the bootstrapping parameters in the form below, run the code cell. You will see a plot of the average rate of each subsample (each black point in the scatterplot), and the distribution (quantiles) of the set of subsamples in boxplot format.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Specify a duration time to subsample and a number of times to sample. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Specify a duration time to subsample and a number of times to sample. </span>
 <span class="c1">#@markdown The duration should be at least half the duration of your recording. </span>
 <span class="c1">#@markdown See what changing these parameters does to your result.</span>
 <span class="c1">#@markdown &gt; NOTE: duration is in seconds</span>
@@ -1054,14 +1100,16 @@ The script (hidden) in the code cell below randomly selects samples of the speci
 Store the result as a variable called <code class="docutils literal notranslate"><span class="pre">isi</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isi</span> <span class="o">=</span> <span class="o">...</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to calculate the average isi and plot the isi over time. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to calculate the average isi and plot the isi over time. </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Average isi is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 
@@ -1076,14 +1124,86 @@ Store the result as a variable called <code class="docutils literal notranslate"
 </div>
 <p>What should the titles of the x and y axes be?</p>
 <p>How does the isi relate to the rate? How would you calculate <em>instantaneous</em> rate (as opposed to the average rate across some window of time)?</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to plot the isi distribution (in boxplot format)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">isi</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">);</span>
+<span class="c1"># sns.stripplot(y = isi, color = &#39;black&#39;,size=10);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;isi&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p><a id="four"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-iv-filtered">
 <h1>Part IV. Filtered<a class="headerlink" href="#part-iv-filtered" title="Permalink to this headline">¶</a></h1>
 <p>By <em>convolving</em> a waveform with a time series, each event is transformed into a waveform. When all of these event waveforms are added together, you get a continuous signal instead of a discrete time series. This transformation is sometimes called “smoothing” and is required before some calculations can be made (such as correlation analysis).</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display_mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Choose a smoothing filter width (the standard deviation of the *gaussian kernel*). &lt;br&gt;</span>
+<span class="c1">#@markdown Then run this code cell to plot the smoothed signal from discrete EOD times. </span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>
+
+<span class="n">filtered_fs</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">eod_samps</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">filtered_fs</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">eod_times</span><span class="p">]</span>
+
+<span class="n">filtered_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">dur</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">dur</span><span class="o">*</span><span class="n">filtered_fs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">filtered_y</span> <span class="o">=</span> <span class="n">unit_impulse</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_time</span><span class="p">),</span><span class="n">eod_samps</span><span class="p">)</span>
+<span class="n">filtered_y</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">gaussian_filter1d</span><span class="p">(</span><span class="n">filtered_y</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span><span class="o">*</span><span class="n">filtered_fs</span>
+
+
+
+<span class="c1"># Create plotly widget plot</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">),</span> <span class="n">layout_yaxis_range</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">filtered_y</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">filtered_y</span><span class="p">)])</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">filtered_time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">filtered_y</span><span class="p">,</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;smoothed EOD times&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">))</span>
+    
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
+
+<span class="c1"># our function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">filtered_fs</span><span class="p">)</span>
+        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">filtered_fs</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">filtered_time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">filtered_y</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+            
+<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
+<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
+<span class="n">vb</span>
+
+<span class="c1">## simple plot</span>
+<span class="c1"># plt.figure()</span>
+<span class="c1"># plt.plot(filtered_time,ndimage.gaussian_filter1d(filtered_y,10,axis=0)*filtered_fs)</span>
+<span class="c1"># plt.xlim(0,4)</span>
+<span class="c1"># plt.scatter(eod_times[1:],1/np.diff(eod_times))</span>
+
+<span class="c1">## simple plotly</span>
+<span class="c1"># plot the isi at each EOD time.</span>
+<span class="c1"># f = go.Figure(layout=go.Layout(height=500, width=800))</span>
+<span class="c1"># f.add_trace(go.Scatter(x=filtered_time, y=filtered_y, mode=&#39;lines&#39;,name=&#39;filtered EOD times&#39;,line_color=&#39;black&#39;))</span>
+<span class="c1"># f</span>
 </pre></div>
 </div>
 </div>
@@ -1122,11 +1242,11 @@ Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="week-2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Lab-Manual.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 2. Dynamic Electrical Signals</p>
+            <p class="prev-next-title">Lab Manual</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Electric-Organ-Discharge_Responses.html" title="next page">

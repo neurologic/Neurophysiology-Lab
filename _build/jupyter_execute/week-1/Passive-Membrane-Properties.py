@@ -25,7 +25,7 @@
 # 
 # In an electrical circuit, a capacitor possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.
 # 
-# The first model membrane circuit you will be working with contains 3 different resistances for each patch of "memrbane". These are arranged both in serial and parallel across the "membrane". 
+# The first model membrane circuit you will be working with contains 3 different resistances for each patch of "membrane". These are arranged both in serial and parallel across the "membrane". 
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Passive-Membrane-Resistance-Circuit.png?raw=True' width="500" alt='model membrane'/>
 # 
@@ -33,7 +33,7 @@
 # - Routside = 100 Ohm
 # - Rmembrane = 10 kOhm
 # 
-# The second model membrane circuit you will be working with is a complete model of a patch of cell membrane. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series would be equivalent for this lab). 
+# The second model membrane circuit you will be working with is a complete model of one small patch of cell membrane. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series would be equivalent for this lab). 
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Passive-Membrane-Resistance-Capacitance-Circuit.png?raw=True' width="400" alt='model membrane RC'/>
 # 
@@ -54,7 +54,9 @@
 # In[ ]:
 
 
-#@title Run this cell to initialize packages and functions { display-mode: "form" }
+#@title {display-mode:"form"}
+
+#@title Run this cell to initialize packages and functions 
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -94,6 +96,8 @@ voltage_intracellular = {
 
 # In[ ]:
 
+
+#@title {display-mode:"form"}
 
 #@markdown Run to plot data.
 
@@ -138,6 +142,8 @@ voltage_extracellular = {
 
 # In[ ]:
 
+
+#@title {display-mode:"form"}
 
 #@markdown Run to plot data.
 

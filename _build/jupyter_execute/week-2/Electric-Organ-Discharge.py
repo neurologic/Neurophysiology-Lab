@@ -59,14 +59,16 @@
 # In[ ]:
 
 
-#@markdown Run this code cell to import packages and define functions { display-mode: "form" }
+#@title {display-mode: "form" }
+
+#@markdown Run this code cell to import packages and define functions 
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from scipy import ndimage
-from scipy.signal import hilbert,medfilt,resample, find_peaks
+from scipy.signal import hilbert,medfilt,resample, find_peaks, unit_impulse
 import seaborn as sns
 from datetime import datetime,timezone,timedelta
 pal = sns.color_palette(n_colors=15)
@@ -86,7 +88,9 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@markdown Run this cell to mount your Google Drive. { display-mode: "form" }
+#@title {display-mode: "form" }
+
+#@markdown Run this cell to mount your Google Drive.
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -99,11 +103,13 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@markdown Specify the file path { display-mode: "form" }
+#@title {display-mode: "form" }
+
+#@markdown Specify the file path 
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-filepath = "/Users/kperks/Downloads/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin" #@param
+filepath = "/Users/kperks/mnt/GoogleDrive/Shared Drives/PerksLab/EODdata/20220218/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin" #@param
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
@@ -142,7 +148,9 @@ print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5
 # In[ ]:
 
 
-#@markdown Run this code cell to plot imported data. <br> { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to plot imported data. <br> 
 #@markdown Use the range slider under the plot to scroll through the data in time.
 #@markdown > NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork
 
@@ -185,7 +193,9 @@ vb
 # In[ ]:
 
 
-#@markdown Run this code cell to plot the combined signal for peak detection. { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to plot the combined signal for peak detection. 
 #@markdown Use the plot to determine an appropriate detection threshold.
 
 y = data - np.median(data)
@@ -221,11 +231,16 @@ vb
 # In[ ]:
 
 
-#@markdown Fill in this form with the detection threshold. { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Fill in this form with the detection threshold. 
 
 detection_threshold = 0.01 #@param
 
 #@markdown Then run the code cell to detect peaks (events)
+
+y = data - np.median(data)
+y = np.sum(np.abs(y),1)
 
 d = 0.0003*fs #minimum time allowed between distinct events
 r = find_peaks(y,height=detection_threshold,distance=d)
@@ -236,7 +251,9 @@ eod_times = r[0]/fs
 # In[ ]:
 
 
-#@markdown Run this code cell to plot the signal on each trial { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to plot the signal on each trial 
 #@markdown overlaid with a scatter of EOD times detected using your threshold. 
 #@markdown > NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork
 
@@ -281,7 +298,9 @@ vb
 # In[ ]:
 
 
-#@markdown Select a channel to plot event waveforms from. { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Select a channel to plot event waveforms from. 
 
 chan = 0 #@param
 
@@ -334,12 +353,21 @@ vb
 #     <li><b>eod_times</b> is a variable that contains the list of EOD times</li>
 # </div>
 # 
-# In the code cell below, write code that would calculate the average EOD rate in your recording
+# In the code cell below, write code that would calculate the average EOD rate in your recording. Store the result as a variable called ```average_rate```. 
 
 # In[ ]:
 
 
 ...
+
+
+# In[ ]:
+
+
+#@title {display-mode:"form"}
+
+#@markdown Run this code cell to print the result of your average rate calculation. 
+print(f'The average EOD rate is {average_rate}')
 
 
 # ## Subsampling (*bootstrapping*) the average rate
@@ -356,7 +384,9 @@ vb
 # In[ ]:
 
 
-#@markdown Specify a duration time to subsample and a number of times to sample. { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Specify a duration time to subsample and a number of times to sample. 
 #@markdown The duration should be at least half the duration of your recording. 
 #@markdown See what changing these parameters does to your result.
 #@markdown > NOTE: duration is in seconds
@@ -400,13 +430,15 @@ plt.yticks(fontsize=14);
 # In[ ]:
 
 
-...
+isi = ...
 
 
 # In[ ]:
 
 
-#@markdown Run this code cell to calculate the average isi and plot the isi over time. { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to calculate the average isi and plot the isi over time. 
 
 print(f'Average isi is {np.mean(isi):0.2f}.')
 
@@ -421,6 +453,20 @@ fig.show()
 # 
 # How does the isi relate to the rate? How would you calculate *instantaneous* rate (as opposed to the average rate across some window of time)?
 
+# In[ ]:
+
+
+#@title {display-mode:"form"}
+
+#@markdown Run this code cell to plot the isi distribution (in boxplot format)
+
+plt.figure(figsize=(3,5));
+sns.boxplot(y=isi, color = 'grey');
+# sns.stripplot(y = isi, color = 'black',size=10);
+plt.ylabel('isi',fontsize=14);
+plt.yticks(fontsize=14);
+
+
 # <a id="four"></a>
 # # Part IV. Filtered
 # 
@@ -429,7 +475,65 @@ fig.show()
 # In[ ]:
 
 
-...
+#@title {display_mode: "form"}
+
+#@markdown Choose a smoothing filter width (the standard deviation of the *gaussian kernel*). <br>
+#@markdown Then run this code cell to plot the smoothed signal from discrete EOD times. 
+
+sigma = 10 #@param
+
+filtered_fs = 100
+
+eod_samps = [int(t*filtered_fs) for t in eod_times]
+
+filtered_time = np.linspace(0,dur,int(dur*filtered_fs)+1)
+
+filtered_y = unit_impulse(len(filtered_time),eod_samps)
+filtered_y = ndimage.gaussian_filter1d(filtered_y,sigma)*filtered_fs
+
+
+
+# Create plotly widget plot
+f = go.FigureWidget(layout=go.Layout(height=500, width=800), layout_yaxis_range=[np.min(filtered_y),np.max(filtered_y)])
+
+i = 0
+f.add_trace(go.Scatter(x = filtered_time, y = filtered_y,
+                         name='smoothed EOD times',opacity=1,line_color='black',mode='lines'))
+    
+slider = widgets.FloatRangeSlider(
+    min=0,
+    max=dur,
+    value=(0,1),
+    step= 1,
+    readout=False,
+    description='Time')
+slider.layout.width = '800px'
+
+# our function that will modify the xaxis range
+def response(x):
+    with f.batch_update():
+        starti = int(x[0]*filtered_fs)
+        stopi = int(x[1]*filtered_fs)
+
+        f.data[0].x = filtered_time[starti:stopi]
+        f.data[0].y = filtered_y[starti:stopi]
+            
+vb = VBox((f, interactive(response, x=slider)))
+vb.layout.align_items = 'center'
+vb
+
+## simple plot
+# plt.figure()
+# plt.plot(filtered_time,ndimage.gaussian_filter1d(filtered_y,10,axis=0)*filtered_fs)
+# plt.xlim(0,4)
+# plt.scatter(eod_times[1:],1/np.diff(eod_times))
+
+## simple plotly
+# plot the isi at each EOD time.
+# f = go.Figure(layout=go.Layout(height=500, width=800))
+# f.add_trace(go.Scatter(x=filtered_time, y=filtered_y, mode='lines',name='filtered EOD times',line_color='black'))
+# f
+
 
 
 # <a id="five"></a>

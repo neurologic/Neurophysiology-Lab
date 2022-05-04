@@ -13,6 +13,7 @@ parts:
         - file: howto/Python-Introduction-Coding-Light
         - file: howto/Executable-Notebooks
         - file: howto/Response-Notebooks
+        - file: howto/NiUSB-6211
     - file: materials
   - caption: Weekly Chapters
     chapters:
@@ -22,11 +23,14 @@ parts:
         - file: week-1/Passive-Membrane-Properties_Responses
     - file: week-2/week-2
       sections:
+        - file: week-2/Lab-Manual
         - file: week-2/Electric-Organ-Discharge
         - file: week-2/Electric-Organ-Discharge_Responses
     - file: week-3/week-3
       sections:
+        - file: week-3/Lab-Manual
         - file: week-3/Experimental-Design-for-Analysis
+        - file: week-3/Experimental-Design-for-Analysis_Responses
     - file: week-4/week-4
       sections:
         - file: week-4/week-4-notebook

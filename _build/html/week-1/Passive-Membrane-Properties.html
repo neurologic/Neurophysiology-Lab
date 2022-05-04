@@ -186,6 +186,11 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../week-2/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../week-2/Electric-Organ-Discharge.html">
      Electric Organ Discharge
     </a>
@@ -206,7 +211,22 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis.html">
+     Experimental Design for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis_Responses.html">
+     Responses
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -624,14 +644,14 @@ const thebe_selector_output = ".output, .cell_output"
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Electrical_Components.png?raw=True' width="300" alt='electrical components'/>
 <p>Resistors are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: I = V/R, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, V = IR determines the voltage in response to a current across a resistor.</p>
 <p>In an electrical circuit, a capacitor possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.</p>
-<p>The first model membrane circuit you will be working with contains 3 different resistances for each patch of “memrbane”. These are arranged both in serial and parallel across the “membrane”.</p>
+<p>The first model membrane circuit you will be working with contains 3 different resistances for each patch of “membrane”. These are arranged both in serial and parallel across the “membrane”.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Passive-Membrane-Resistance-Circuit.png?raw=True' width="500" alt='model membrane'/>
 <ul class="simple">
 <li><p>Rinside = 1 kOhm</p></li>
 <li><p>Routside = 100 Ohm</p></li>
 <li><p>Rmembrane = 10 kOhm</p></li>
 </ul>
-<p>The second model membrane circuit you will be working with is a complete model of a patch of cell membrane. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series would be equivalent for this lab).</p>
+<p>The second model membrane circuit you will be working with is a complete model of one small patch of cell membrane. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series would be equivalent for this lab).</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Passive-Membrane-Resistance-Capacitance-Circuit.png?raw=True' width="400" alt='model membrane RC'/>
 <p>Current flows across the membrane capacitance only when voltage across the membrane changes. Wen one side of a membrane becomes more positive (for example when an excitatory synaptic input is “activated”), positive ions are repelled from and negative ions are attracted to the other side of the membrane. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value (for example, when synaptic ion channels close), charges separated by the membrane flow again, discharging the membrane capacitance.</p>
 <p><a id="toc"></a></p>
@@ -650,7 +670,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Initialize Notebook<a class="headerlink" href="#initialize-notebook" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Run this cell to initialize packages and functions { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@title Run this cell to initialize packages and functions </span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -692,9 +714,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Run the following code cell to plot your data</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run to plot data.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run to plot data.</span>
 
 <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_intracellular</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
 <span class="n">voltage</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_intracellular</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -739,9 +763,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Run the following code cell to plot your data</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run to plot data.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run to plot data.</span>
 
 <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_extracellular</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
 <span class="n">voltage</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_extracellular</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>

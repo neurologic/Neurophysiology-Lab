@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
 # # Template
@@ -12,6 +12,7 @@
 # </figcaption>
 # </figure> -->
 # 
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer">Link to Other Notebooks (colab link)</a>   
 # 
 
 # # Setup
@@ -36,7 +37,7 @@
 # In[ ]:
 
 
-#@markdown { display-mode: "form" }
+#@title {display-mode: "form"}
 
 
 # Import and define functions
@@ -44,7 +45,9 @@
 # In[ ]:
 
 
-#@markdown Run this code cell to import packages and define functions { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to import packages and define functions 
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -65,7 +68,9 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@markdown Run this cell to mount your Google Drive. { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Run this cell to mount your Google Drive.
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -78,7 +83,9 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@markdown Specify the file path { display-mode: "form" }
+#@title {display-mode: "form"}
+
+#@markdown Specify the file path 
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
@@ -122,18 +129,28 @@ fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800
 
 # <a id="one"></a>
 # # Part I.
+# 
+# [toc](#toc)
 
 # <a id="two"></a>
 # # Part II.
+# 
+# [toc](#toc)
 
 # <a id="three"></a>
 # # Part III.
+# 
+# [toc](#toc)
 
 # <a id="four"></a>
 # # Part IV.
+# 
+# [toc](#toc)
 
 # <a id="five"></a>
 # # Part V.
+# 
+# [toc](#toc)
 
 # <hr> 
 # Written by Dr. Krista Perks for courses taught at Wesleyan University.
