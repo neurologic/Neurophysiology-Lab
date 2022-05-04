@@ -109,7 +109,7 @@ if downsample:
     data = data[0::chunksize,:]
     fs = np.shape(data)[0]/dur
 
-time = np.linspace(0,np.shape(data)[0]/newfs,np.shape(data)[0])
+time = np.linspace(0,np.shape(data)[0]/fs,np.shape(data)[0])
 
 
 print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))

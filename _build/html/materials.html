@@ -177,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="week-2/week-2.html">
-   Week 2 Dynamic Electrical Signals
+   Week 2. Dynamic Electrical Signals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="week-2/Electric-Organ-Discharge.html">
      Electric Organ Discharge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="week-2/Electric-Organ-Discharge_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -203,8 +208,8 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="week-3/week-3-notebook.html">
-     Week 3
+    <a class="reference internal" href="week-3/Experimental-Design-for-Analysis.html">
+     Experimental Design for Analysis
     </a>
    </li>
   </ul>
@@ -581,7 +586,7 @@ Another motivation is to make the data processing and analysis materials general
 <div class="section" id="equipment">
 <h2>Equipment<a class="headerlink" href="#equipment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>suction electrodes <a class="footnote-reference brackets" href="#footnote3" id="id3">3</a></p></li>
+<li><p>suction electrodes <a class="footnote-reference brackets" href="#footnote3" id="id3">3</a><a class="footnote-reference brackets" href="#footnote4" id="id4">4</a></p></li>
 </ul>
 <ul class="simple">
 <li><p>Electrode holders with manipulators</p></li>
@@ -593,12 +598,12 @@ Another motivation is to make the data processing and analysis materials general
 <div class="section" id="software">
 <h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a href="https://bonsai-rx.org/">Bonsai-rx</a> is a package that can simultaneously manage streams of data coming from unrelated sources (for example video input and ADC input). <a class="footnote-reference brackets" href="#footnote5" id="id4">4</a></p></li>
+<li><p><a href="https://bonsai-rx.org/">Bonsai-rx</a> is a package that can simultaneously manage streams of data coming from unrelated sources (for example video input and ADC input). <a class="footnote-reference brackets" href="#footnote5" id="id5">5</a></p></li>
 </ul>
 <ul class="simple">
 <li><p><a href="">Anaconda</a> is a Python package manager that contains packages for managing, creating, and editing jupyter (.ipynb) notebooks.</p></li>
 <li><p><a href="">Google Colaboratory</a> is a cloud-based server on which anyone can run jupyter notebooks (.ipynb) without needing to install anything on their computer.</p></li>
-<li><p>Google Drive <a class="footnote-reference brackets" href="#footnote6" id="id5">5</a></p></li>
+<li><p>Google Drive <a class="footnote-reference brackets" href="#footnote6" id="id6">6</a></p></li>
 </ul>
 </div>
 <div class="section" id="animals">
@@ -606,10 +611,10 @@ Another motivation is to make the data processing and analysis materials general
 <ul class="simple">
 <li><p>Weakly electric fish (could be replaced with a function generator). I happen to study weakly electric fish anyway and love them so I have them around.</p></li>
 <li><p>Cockroaches</p></li>
-<li><p>Crayfish <a class="footnote-reference brackets" href="#footnote7" id="id6">6</a></p></li>
+<li><p>Crayfish <a class="footnote-reference brackets" href="#footnote7" id="id7">7</a></p></li>
 </ul>
 <ul class="simple">
-<li><p>Humans with muscles <a class="footnote-reference brackets" href="#footnote8" id="id7">7</a></p></li>
+<li><p>Humans with muscles <a class="footnote-reference brackets" href="#footnote8" id="id8">8</a></p></li>
 </ul>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -621,18 +626,21 @@ Another motivation is to make the data processing and analysis materials general
 A USB model was chosen so that a wider range of refurbished PCs could be used (instead of requiring a large form factor case to house PCI devices). Additionally, USB models seemed to be cheaper for similar features. I have found great results (low noise, good resolution, reliable drivers, etc) with USB acquisition from Nidaq.</p>
 </dd>
 <dt class="label" id="footnote3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>The Wesleyan machine shop fabricated AWESOME suction electrodes that replace the use of <em>Axon Instrument</em> style pipette holders normally referenced in the literature <a href="#id10"><span class="problematic" id="id8">[^footnote4]</span></a> for labs requiring suction electrodes.</p>
+<dd><p>The Wesleyan machine shop fabricated AWESOME suction electrodes that replace the use of <em>Axon Instrument</em> style pipette holders normally referenced in the literature for labs requiring suction electrodes.</p>
 </dd>
-<dt class="label" id="footnote5"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dt class="label" id="footnote4"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592669/">Johnson BR, Hauptman SA, Bonow RH. Construction of a simple suction electrode for extracellular recording and stimulation. J Undergrad Neurosci Educ. 2007;6(1):A21-A26.</a></p>
+</dd>
+<dt class="label" id="footnote5"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
 <dd><p>Unfortunately(?), currently Bonsai-rx only works on Windows PC.</p>
 </dd>
-<dt class="label" id="footnote6"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dt class="label" id="footnote6"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
 <dd><p>Google Drive was used for file storage and access when competing the executable notebooks. Wesleyan has GSuite with unlimited Drive storage. There are other ways to achieve this goal, but this has been a simple solution that was especially attractive because of Google Collaboratories “Mount Google Drive” module.</p>
 </dd>
-<dt class="label" id="footnote7"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
+<dt class="label" id="footnote7"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
 <dd><p>If you are in the United States, you can get them from LA crayfish company for pretty cheap (expect many from the shipment to not survive… plan to have a crawfish boil with the less healthy ones upon arrival). Or you can get them (at a higher cost) from Carolina Biological throughout the year.</p>
 </dd>
-<dt class="label" id="footnote8"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
+<dt class="label" id="footnote8"><span class="brackets"><a class="fn-backref" href="#id8">8</a></span></dt>
 <dd><p>Please be sensitive to people from cultures or backgrounds that would not feel comfortable exposing skin during class to apply surface EMG electrodes. In the classroom session before you do any of the human EMG modules, explain the procedure to the students and ask them to email you in private to address any concerns and to explore alternate (equally engaging) alternatives to the procedure. For example, you could have them use the lab room independently to explore their muscle activity in private. Or they could decide ahead of time that they will refrain from volunteering as a human subject. Having partners in lab means that not every student needs to do every procedure if they do not feel comfortable.</p>
 </dd>
 </dl>

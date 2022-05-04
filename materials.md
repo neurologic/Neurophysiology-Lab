@@ -17,9 +17,9 @@ A USB model was chosen so that a wider range of refurbished PCs could be used (i
 - PC computer running Windows OS
 
 ## Equipment
-- suction electrodes [^footnote3]
+- suction electrodes [^footnote3][^footnote4] 
 
-[^footnote3]: The Wesleyan machine shop fabricated AWESOME suction electrodes that replace the use of *Axon Instrument* style pipette holders normally referenced in the literature [^footnote4] for labs requiring suction electrodes.
+[^footnote3]: The Wesleyan machine shop fabricated AWESOME suction electrodes that replace the use of *Axon Instrument* style pipette holders normally referenced in the literature for labs requiring suction electrodes.
 
 [^footnote4]: [Johnson BR, Hauptman SA, Bonow RH. Construction of a simple suction electrode for extracellular recording and stimulation. J Undergrad Neurosci Educ. 2007;6(1):A21-A26.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592669/#)
 

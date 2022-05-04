@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 3. Experimental Design for Analysis" href="../week-3/week-3.html" />
-    <link rel="prev" title="Week 2 Dynamic Electrical Signals" href="week-2.html" />
+    <link rel="next" title="Responses" href="Electric-Organ-Discharge_Responses.html" />
+    <link rel="prev" title="Week 2. Dynamic Electrical Signals" href="week-2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -177,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="week-2.html">
-   Week 2 Dynamic Electrical Signals
+   Week 2. Dynamic Electrical Signals
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Electric Organ Discharge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Electric-Organ-Discharge_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -201,12 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week-3/week-3-notebook.html">
-     Week 3
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -662,13 +662,26 @@ const thebe_selector_output = ".output, .cell_output"
 <p><a id="intro"></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="electric-organ-discharge">
 <h1>Electric Organ Discharge<a class="headerlink" href="#electric-organ-discharge" title="Permalink to this headline">¶</a></h1>
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/weakly-electric-fish-efield-current_Kramer.jpeg?raw=True' width="300" align="center" alt='eod e-field'/>
-<figure align="center">
+<p>Weakly electric fish essentially have a battery in their tail. It is made of modified muscle fibers, which means that it is innervated by motor neurons. Acetylcholine is released at this neuro-electric junction and, in response, the modified muscle fibers become polarized in parallel to produce a dipole-like electric field source.</p>
+<div align="center">
+<figure>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/weakly-electric-fish-efield-current_Kramer.jpeg?raw=True' width="500" align="center" alt='eod e-field'/>
+</figure>
+</div>
+<p>Therefore, when you place a pair of electrodes in the water near the fish, you can measure the voltage produced by the fish. Different species of fish polarize their batteries (the <em>electric organ</em>) with different timecourses. In other words, across time, the polarization waveform is <em>species-specific</em>.</p>
+<div align="center">
+<figure>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/example-eods_Kramer.jpeg?raw=True' width="300" alt='eod e-field' align="center"/>
-<figcaption align = "center"><b>Electric organ discharge waveform</b> and sex, in three snoutfish species of southern Africa. All electric organ discharges represented as voltage over time, recorded in the field immediately after capture. Same time bar for all. (a) Sexual dimorphism in Marcusenius altisambesi with two distinct waveforms. (b) Sex difference of only a statistical nature in Petrocephalus catostoma (Upper Zambezi form) with, in most males, a stronger second positive phase than in females, such as shown here. (c) Petrocephalus wesselsi (Sabie River, South Africa) with no difference between the sexes. P. wesselsi was recognized as distinct from P. catostoma only recently.
+<figcaption align = "center"><b>Electric organ discharge (EDO) waveform</b> in three snoutfish species of southern Africa across sexes. All EODs are plotted as voltage over time, recorded immediately after capture. Same time bar for all. (a) Sexual dimorphism in Marcusenius altisambesi with two distinct waveforms. (b) Sex difference of only a statistical nature in Petrocephalus catostoma (Upper Zambezi form) with, in most males, a stronger second positive phase than in females, such as shown here. (c) Petrocephalus wesselsi (Sabie River, South Africa) with no difference between the sexes. P. wesselsi was recognized as distinct from P. catostoma only recently.
 </figcaption>
 </figure>
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/weakly-electric-fish-Efields-locate-communicate.jpeg?raw=True' width="300" alt='eod e-field'/><p><a id="toc"></a></p>
+</div>
+<p>Weakly electric fish use the electric field generated by their pulse-like <em>electric organ discharges</em> (EODs) to communicate with each other (<em>electrocommunication</em> and to sense the physical environment around them (via distortions of the electric field cause by the physical environment; <em>electrolocation</em>).</p>
+<div align="center">
+<figure>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/weakly-electric-fish-Efields-locate-communicate.jpeg?raw=True' width="600" alt='eod e-field'/>
+</figure>
+</div><p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
 <h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
@@ -711,6 +724,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
 <span class="n">pal</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">pal</span> <span class="o">=</span> <span class="n">pal</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
 </pre></div>
@@ -737,13 +756,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1">#@markdown to your recorded data on Drive (find the filepath in the colab file manager:</span>
 
 <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/kperks/Downloads/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin&quot;</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
 
-<span class="n">sampling_rate</span> <span class="o">=</span> <span class="n">NaN</span> <span class="c1">#@param</span>
-<span class="n">number_channels</span> <span class="o">=</span> <span class="n">NaN</span> <span class="c1">#@param</span>
+<span class="c1"># sampling_rate = NaN #@param</span>
+<span class="c1"># number_channels = NaN #@param</span>
+<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">50000</span> <span class="c1">#@param</span>
+<span class="n">number_channels</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#@param</span>
 
 <span class="n">downsample</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
+<span class="n">newfs</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown After you have filled out all form fields, </span>
 <span class="c1">#@markdown run this code cell to load the data. </span>
@@ -757,22 +780,53 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">dur</span>)
 
-<span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sampling_rate</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">sampling_rate</span>
 <span class="k">if</span> <span class="n">downsample</span><span class="p">:</span>
-    <span class="n">newfs</span> <span class="o">=</span> <span class="mi">2500</span> <span class="c1">#downsample emg data</span>
+    <span class="c1"># newfs = 10000 #downsample emg data</span>
     <span class="n">chunksize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sampling_rate</span><span class="o">/</span><span class="n">newfs</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="n">chunksize</span><span class="p">,:]</span>
-    <span class="n">fs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">dur</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">dur</span><span class="p">)</span>
 
-<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">newfs</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data upload completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to plot imported data. &lt;br&gt; { display-mode: &quot;form&quot; }</span>
+<span class="c1">#@markdown Use the range slider under the plot to scroll through the data in time.</span>
+<span class="c1">#@markdown &gt; NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Now be a bit patient while it plots.&#39;</span><span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;emg0&#39;</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;time(seconds)&quot;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">number_channels</span><span class="p">)):</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">chan</span><span class="p">],</span>
+                         <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
+
+<span class="c1"># our function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_channels</span><span class="p">):</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
+<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
+<span class="n">vb</span>
 </pre></div>
 </div>
 </div>
@@ -782,22 +836,147 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tex2jax_ignore mathjax_ignore section" id="part-i-event-detection">
 <h1>Part I. Event Detection<a class="headerlink" href="#part-i-event-detection" title="Permalink to this headline">¶</a></h1>
 <p>Python has built-in algorithms for detecting “peaks” in a signal. However, it will detect <em>all</em> peaks. Therefore, the function takes in arguments that specify parameters for minimum height that can count as a peak and a minimum acceptible interval between independent peaks.</p>
-<div class="cell docutils container">
+<p>First, we will subtract the median of the signal, take the absolute value of the signal, and sum across all channels (if you recorded more than one). With this single combined signal, we will detect peaks.</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to plot the combined signal for peak detection. { display-mode: &quot;form&quot; }</span>
+<span class="c1">#@markdown Use the plot to determine an appropriate detection threshold.</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;summed signal&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
+
+<span class="c1"># our function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+
+<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
+<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
+<span class="n">vb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Fill in this form with the detection threshold. { display-mode: &quot;form&quot; }</span>
+
+<span class="n">detection_threshold</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Then run the code cell to detect peaks (events)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="mf">0.0003</span><span class="o">*</span><span class="n">fs</span> <span class="c1">#minimum time allowed between distinct events</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">detection_threshold</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">eod_times</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to plot the signal on each trial { display-mode: &quot;form&quot; }</span>
+<span class="c1">#@markdown overlaid with a scatter of EOD times detected using your threshold. </span>
+<span class="c1">#@markdown &gt; NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">number_channels</span><span class="p">)):</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">chan</span><span class="p">],</span>
+                         <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">eod_times</span><span class="p">[(</span><span class="n">eod_times</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">eod_times</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)],</span>
+                       <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)))</span>
+    
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
+
+<span class="c1"># our function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_channels</span><span class="p">):</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">number_channels</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">eod_times</span><span class="p">[(</span><span class="n">eod_times</span><span class="o">&gt;</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">eod_times</span><span class="o">&lt;</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">number_channels</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">eod_times</span><span class="p">[(</span><span class="n">eod_times</span><span class="o">&gt;</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">eod_times</span><span class="o">&lt;</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+
+<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
+<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
+<span class="n">vb</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Once you know the times of each peak (each event), we can look at the waveforms of those events. To do this, we plot the peak of the signal at the event time and some duration before and after that peak.</p>
-<div class="cell docutils container">
+<blockquote>
+<div><p>Note: If you do not think you are detecting enough of the events or if you think you are detecting too much noise, modify your detection threshold and go through the detection steps in Part I again.</p>
+</div></blockquote>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Select a channel to plot event waveforms from. { display-mode: &quot;form&quot; }</span>
+
+<span class="n">chan</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events on that channel.</span>
+<span class="n">win</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.0003</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">win</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">win</span><span class="p">),</span><span class="n">chan</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">eod_times</span> 
+          <span class="k">if</span> <span class="p">(((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">win</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">win</span><span class="p">)</span><span class="o">&lt;</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">etime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.0003</span><span class="p">,</span><span class="mf">0.0003</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">events</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+
+<span class="c1"># Create plotly widget plot</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">),</span> <span class="n">layout_yaxis_range</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">events</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">events</span><span class="p">)])</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">etime</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">events</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;EOD #&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">events</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;EOD number&#39;</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
+
+<span class="c1"># our function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">events</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
+<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
+<span class="n">vb</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>There are a fundamental set of processing techniques we use to quantify event time series (such as spike from a neuron or EODs from a fish): rate, isi, filtered/smoothed.</p>
+<p>There are a fundamental set of processing techniques we use to quantify event time series (such as spike from a neuron or EODs from a fish): rate, isi, filtered/smoothed. In Part II - Part IV, you will work with each of these analyses.</p>
 <p><a id="two"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-ii-rate">
@@ -826,8 +1005,34 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In order to do statistics and compare EOD rates between different conditions or groups (for example, among different species of fish), we need more than just one estimate of the EOD rate.</p>
 <p><em>bootstrapping</em> is an analytic technique used to <em>subsample</em> your data. In this case, we will calculate a set of EOD rate averages. Then we can get the mean and standard deviation of the average EOD rate. A <em>subsample</em> of the data is a smaller continuous section of the data.</p>
 <p>You can control the number of subsampled sets and the duration of each set.
-The script (hidden) in the code cell below randomly selects samples of the specified duration from throughout the total recording. It repeats this random selection process <em><strong>n</strong></em> times.</p>
-<p>Once you specify the bootstrapping parameters in the form below, run the code cell. You will see a plot of the average rate of each subsample (each black point in the scatterplot), the average value across the set of subsamples (green star symbol), and the standard deviation (green bar).</p>
+The script (hidden) in the code cell below randomly selects samples of the specified duration from throughout the total recording. It repeats this random selection process <em><strong>N</strong></em> times.</p>
+<p>Once you specify the bootstrapping parameters in the form below, run the code cell. You will see a plot of the average rate of each subsample (each black point in the scatterplot), and the distribution (quantiles) of the set of subsamples in boxplot format.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Specify a duration time to subsample and a number of times to sample. { display-mode: &quot;form&quot; }</span>
+<span class="c1">#@markdown The duration should be at least half the duration of your recording. </span>
+<span class="c1">#@markdown See what changing these parameters does to your result.</span>
+<span class="c1">#@markdown &gt; NOTE: duration is in seconds</span>
+
+<span class="n">duration</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#@param</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>
+
+<span class="n">rate_</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">eod_times</span><span class="p">)</span><span class="o">+</span><span class="n">duration</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">eod_times</span><span class="p">)</span><span class="o">-</span><span class="n">duration</span><span class="p">)</span>
+    <span class="n">rate_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">eod_times</span><span class="o">&gt;</span><span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">eod_times</span><span class="o">&lt;</span><span class="n">t</span><span class="o">+</span><span class="n">duration</span><span class="p">))</span><span class="o">/</span><span class="n">duration</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">rate_</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rate_</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;rate&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you increase/decrease the duration of the subsampled data, does the variance of the estimated rate increase/decrease?</p>
+<p>If you decrease/increase N, does the distribution of the estimate change? How?</p>
 <p><a id="three"></a></p>
 </div>
 </div>
@@ -856,19 +1061,16 @@ Store the result as a variable called <code class="docutils literal notranslate"
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Average isi is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 
 <span class="c1"># plot the isi at each EOD time.</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">eod_times</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y</span><span class="o">=</span><span class="n">isi</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;isi&#39;</span><span class="p">,</span><span class="n">marker_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">eod_times</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y</span><span class="o">=</span><span class="n">isi</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;isi&#39;</span><span class="p">,</span><span class="n">marker_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">scene</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;EOD times&#39;</span><span class="p">),</span>
-        <span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;isi&#39;</span><span class="p">),</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">)</span>
-    
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>What should the titles of the x and y axes be?</p>
+<p>How does the isi relate to the rate? How would you calculate <em>instantaneous</em> rate (as opposed to the average rate across some window of time)?</p>
 <p><a id="four"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-iv-filtered">
@@ -886,13 +1088,7 @@ Store the result as a variable called <code class="docutils literal notranslate"
 <div class="tex2jax_ignore mathjax_ignore section" id="part-v-sampling-rate">
 <h1>Part V. Sampling Rate<a class="headerlink" href="#part-v-sampling-rate" title="Permalink to this headline">¶</a></h1>
 <p>In terms of electrophysiology data acquisition, sampling rate is the rate at which analog signals in the world are digitized and sent to the computer. The sampling rate that you choose impacts the size of data files as well as the resolution of the digitized signal.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Using the plots generated in Part I, compare EOD waveforms (from the same species) sampled with different sampling rates.</p>
 <hr> 
 Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
 
@@ -925,13 +1121,13 @@ Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 2 Dynamic Electrical Signals</p>
+            <p class="prev-next-title">Week 2. Dynamic Electrical Signals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../week-3/week-3.html" title="next page">
+    <a class='right-next' id="next-link" href="Electric-Organ-Discharge_Responses.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 3. Experimental Design for Analysis</p>
+        <p class="prev-next-title">Responses</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -26,7 +26,7 @@ parts:
         - file: week-2/Electric-Organ-Discharge_Responses
     - file: week-3/week-3
       sections:
-        - file: week-3/week-3-notebook
+        - file: week-3/Experimental-Design-for-Analysis
     - file: week-4/week-4
       sections:
         - file: week-4/week-4-notebook
