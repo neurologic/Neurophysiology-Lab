@@ -141,6 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
      Response Notebooks
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -188,6 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../week-2/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../week-2/Electric-Organ-Discharge.html">
      Electric Organ Discharge
     </a>
@@ -210,8 +220,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis.html">
      Experimental Design for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -330,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../week-10/Human-Motor-Neuron-Coding.html">
-     Human Motor Neuron Activity
+     Human Motor Neuron Coding
     </a>
    </li>
   </ul>
@@ -977,8 +997,8 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt='Solution hint' align='center' width=400.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial2_Solution_97bca56d_0.png>
 <p>The goal of PCA is to find an orthonormal basis capturing the direction(s) of maximum variance of the data. More precisely, the $i$th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em> or <em>weights</em>).</p>
 <p>To perform PCA, we project the data onto the eigenvectors of the covariance matrix, i.e.:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b005d0aa-b571-4a7c-8870-01eff6d213fa">
-<span class="eqno">(12)<a class="headerlink" href="#equation-b005d0aa-b571-4a7c-8870-01eff6d213fa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-906ad085-0f78-44bf-a413-e3d78a99da13">
+<span class="eqno">(12)<a class="headerlink" href="#equation-906ad085-0f78-44bf-a413-e3d78a99da13" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \bf S = X W
 \end{align}\]</div>
 <p>where $\bf S$ is an $N_\text{samples} \times N$ matrix representing the projected data (also called <em>scores</em>), and $\bf W$ is an $N\times N$ orthogonal matrix, each of whose columns represents the eigenvectors of the covariance matrix (also called <em>weights</em> or <em>loadings</em>).</p>
@@ -1227,8 +1247,8 @@ In the example scree plot below, most of the eigenvalues are near zero, with few
 <div class="tex2jax_ignore mathjax_ignore section" id="notation">
 <h1>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8f58b9a-0d7f-4b5e-b171-e6006ea3d7c3">
-<span class="eqno">(13)<a class="headerlink" href="#equation-f8f58b9a-0d7f-4b5e-b171-e6006ea3d7c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d55a1214-8561-48e3-bb06-b0281f1c7afd">
+<span class="eqno">(13)<a class="headerlink" href="#equation-d55a1214-8561-48e3-bb06-b0281f1c7afd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{x_i}  &amp;\quad \text{all measurements of neuron } i\\
 \bar{\bf x_i}  &amp;\quad \text{mean across samples for neuron } i \\
 \bf \Sigma &amp;\quad \text{covariance matrix}\\

@@ -1,6 +1,6 @@
 # Lab Manual
 
-Today you will again be using weakly electric fish and recording voltage in their tank using two sets of differential electrodes. You will also be presenting an electrical stimulus to the fish via a pair of electrodes controlled by a "stimulus isolation unit" (SIU). The SIU controls the voltage across the two output leads (which in this experiment provides a dipole source). 
+Today you will be using weakly electric fish and recording voltage in their tank using two sets of differential electrodes. 
 
 ## Software Setup
 The bonsai script for today has only one datastream pathway. 
