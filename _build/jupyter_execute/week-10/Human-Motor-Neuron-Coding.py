@@ -145,7 +145,7 @@ if number_channels == 1:
                              name=str(chan),opacity=1))
 if number_channels>1:
     for i,chan in enumerate(range(number_channels)):
-      f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,chan],
+        f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,chan],
                              name=str(chan),opacity=1))
 
 slider = widgets.FloatRangeSlider(

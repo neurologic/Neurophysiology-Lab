@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -995,13 +997,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Reduce correlations in the data.</p></li>
 </ol>
 <img alt='Solution hint' align='center' width=400.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial2_Solution_97bca56d_0.png>
-<p>The goal of PCA is to find an orthonormal basis capturing the direction(s) of maximum variance of the data. More precisely, the $i$th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em> or <em>weights</em>).</p>
-<p>To perform PCA, we project the data onto the eigenvectors of the covariance matrix, i.e.:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-906ad085-0f78-44bf-a413-e3d78a99da13">
-<span class="eqno">(12)<a class="headerlink" href="#equation-906ad085-0f78-44bf-a413-e3d78a99da13" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<p>The goal of PCA is to find an orthonormal basis capturing the direction(s) of maximum variance of the data. More precisely, the <span class="math notranslate nohighlight">\(i\)</span>th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em> or <em>weights</em>).</p>
+<p>To perform PCA, we project the data onto the eigenvectors of the covariance matrix, i.e.:
+\begin{align}
 \bf S = X W
-\end{align}\]</div>
-<p>where $\bf S$ is an $N_\text{samples} \times N$ matrix representing the projected data (also called <em>scores</em>), and $\bf W$ is an $N\times N$ orthogonal matrix, each of whose columns represents the eigenvectors of the covariance matrix (also called <em>weights</em> or <em>loadings</em>).</p>
+\end{align}
+where <span class="math notranslate nohighlight">\(\bf S\)</span> is an <span class="math notranslate nohighlight">\(N_\text{samples} \times N\)</span> matrix representing the projected data (also called <em>scores</em>), and <span class="math notranslate nohighlight">\(\bf W\)</span> is an <span class="math notranslate nohighlight">\(N\times N\)</span> orthogonal matrix, each of whose columns represents the eigenvectors of the covariance matrix (also called <em>weights</em> or <em>loadings</em>).</p>
 <p>Executing the following code cell will plot the eigenvectors of the covariance matrix for a set of random data with a correlation coefficient specified by the slider.</p>
 <blockquote>
 <div><p>Note that the sample number is sorted based on the value of neuron 1’s activity for each datapoint.</p>
@@ -1219,13 +1220,13 @@ We can perform PCA on the 1000-dimensional data just like we have been on 2-dime
 <p>But here is where PCA becomes particularly significant.
 In the example scree plot below, most of the eigenvalues are near zero, with fewer than 100 having large values (only the first 100 components are shown).</p>
 <img alt='Solution hint' align='center' width=500 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial3_Solution_d8411e54_0.png>
-<p>Based on the distribution of eigenvalues, we can understand something about the <em><strong>intrinsic dimensionality</strong></em> of the data. To determine the data’s intrinsic dimensionality we can consider the variance explained (eigenvalues) by the components of the PCA (the eigenvectors). This can be examined with a cumulative plot of the fraction of the total variance (eigenvalues) explained by the top $K$ components</p>
+<p>Based on the distribution of eigenvalues, we can understand something about the <em><strong>intrinsic dimensionality</strong></em> of the data. To determine the data’s intrinsic dimensionality we can consider the variance explained (eigenvalues) by the components of the PCA (the eigenvectors). This can be examined with a cumulative plot of the fraction of the total variance (eigenvalues) explained by the top <span class="math notranslate nohighlight">\(K\)</span> components</p>
 <details>
 <summary> <font color='blue'>Click here if you are interested in detials about the math behind calculating the total variance explained </font></summary>
 \begin{align}
 \text{var explained} = \frac{\sum_{i=1}^K \lambda_i}{\sum_{i=1}^N \lambda_i}
 \end{align}
-<p>where $\lambda_i$ is the $i^{th}$ eigenvalue and $N$ is the total number of components (the original number of dimensions in the data).</p>
+<p>where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> eigenvalue and <span class="math notranslate nohighlight">\(N\)</span> is the total number of components (the original number of dimensions in the data).</p>
 </details>
 <p>The intrinsic dimensionality is often quantified by the eigenvectors necessary to explain a large proportion of the total variance of the data (often a defined threshold, e.g., 90%).</p>
 <img alt='Solution hint' align='center' width=500 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial3_Solution_a4ac4c9c_0.png>
@@ -1237,7 +1238,7 @@ In the example scree plot below, most of the eigenvalues are near zero, with few
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
 <ul class="simple">
-<li><p>In this tutorial, you learned that The goal of PCA is to find an orthonormal basis capturing the directions of maximum variance of the data. More precisely, the $i$th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em>).</p></li>
+<li><p>In this tutorial, you learned that The goal of PCA is to find an orthonormal basis capturing the directions of maximum variance of the data. More precisely, the <span class="math notranslate nohighlight">\(i\)</span>th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em>).</p></li>
 <li><p>PCA also has the useful property that the projected data (<em>scores</em>) are uncorrelated.</p></li>
 <li><p>The projected variance along each basis vector is given by its corresponding eigenvalue. This is important because it allows us rank the “importance” of each basis vector in terms of how much of the data variability it explains. An eigenvalue of zero means there is no variation along that direction so it can be dropped without losing any information about the original data.</p></li>
 <li><p>Importantly, neuroscientists use this property to reduce the dimensionality of high-dimensional data.</p></li>
@@ -1247,18 +1248,17 @@ In the example scree plot below, most of the eigenvalues are near zero, with few
 <div class="tex2jax_ignore mathjax_ignore section" id="notation">
 <h1>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<div class="amsmath math notranslate nohighlight" id="equation-d55a1214-8561-48e3-bb06-b0281f1c7afd">
-<span class="eqno">(13)<a class="headerlink" href="#equation-d55a1214-8561-48e3-bb06-b0281f1c7afd" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\mathbf{x_i}  &amp;\quad \text{all measurements of neuron } i\\
-\bar{\bf x_i}  &amp;\quad \text{mean across samples for neuron } i \\
-\bf \Sigma &amp;\quad \text{covariance matrix}\\
-\bf \hat \Sigma &amp;\quad \text{sample covariance matrix}\\
-\bf W &amp;\quad \text{weights, loadings matrix}\\
-{\bf X} &amp;\quad \text{original data matrix}\\
-\bf S &amp;\quad \text{projected matrix, scores}\\
-N &amp;\quad \text{data dimensionality}\\
-N_\text{samples} &amp;\quad \text{number of samples}\\
-\end{align}\]</div>
+<p>\begin{align}
+\mathbf{x_i}  &amp;\quad \text{all measurements of neuron } i\
+\bar{\bf x_i}  &amp;\quad \text{mean across samples for neuron } i \
+\bf \Sigma &amp;\quad \text{covariance matrix}\
+\bf \hat \Sigma &amp;\quad \text{sample covariance matrix}\
+\bf W &amp;\quad \text{weights, loadings matrix}\
+{\bf X} &amp;\quad \text{original data matrix}\
+\bf S &amp;\quad \text{projected matrix, scores}\
+N &amp;\quad \text{data dimensionality}\
+N_\text{samples} &amp;\quad \text{number of samples}\
+\end{align}</p>
 <hr class="docutils" />
 <p>This tutorial was written by Krista Perks for courses taught at Wesleyan University. Based on content from <strong>Neuromatch Academy 2020: Week 1, Day 5: Dimensionality Reduction</strong> by Alex Cayco Gajic, John Murray</p>
 </div>

@@ -92,7 +92,9 @@ voltage_intracellular = {
 }
 
 
-# Run the following code cell to plot your data
+# Run the code cell in which you just defined your data dictionary.
+# 
+# Then, run the following code cell to plot your data.
 
 # In[ ]:
 
@@ -138,7 +140,9 @@ voltage_extracellular = {
 }
 
 
-# Run the following code cell to plot your data
+# Run the code cell in which you just defined your data dictionary.
+# 
+# Then, run the following code cell to plot your data.
 
 # In[ ]:
 

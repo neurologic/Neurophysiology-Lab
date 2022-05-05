@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -1129,16 +1131,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="section-1-1-the-lif-model">
 <h2>Section 1.1: The LIF Model<a class="headerlink" href="#section-1-1-the-lif-model" title="Permalink to this headline">¶</a></h2>
 <p>A <em>membrane equation</em> and a <em>reset condition</em> define our <em>leaky-integrate-and-fire (LIF)</em> neuron:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\\
-&amp;\tau_m\,\frac{d}{dt}\,V(t) = E_{L} - V(t) + R\,I(t) &amp;\text{if }\quad V(t) \leq V_{th}\\
-\\
-&amp;V(t) = V_{reset} &amp;\text{otherwise}\\
-\\
-\end{align*}\]</div>
-<p>where $V(t)$ is the membrane potential, $\tau_m$ is the membrane time constant, $E_{L}$ is the leak potential, $R$ is the membrane resistance, $I(t)$ is the synaptic input current, $V_{th}$ is the firing threshold, and $V_{reset}$ is the reset voltage. We can also write $V_m$ for membrane potential, which is more convenient for plot labels.</p>
-<p>The membrane equation describes the time evolution of membrane potential $V(t)$ in response to synaptic input and leaking of charge across the cell membrane. This is an <em>ordinary differential equation (ODE)</em>, a concept we will learn more about in future days.</p>
+<p>\begin{align*}
+\
+&amp;\tau_m,\frac{d}{dt},V(t) = E_{L} - V(t) + R,I(t) &amp;\text{if }\quad V(t) \leq V_{th}\
+\
+&amp;V(t) = V_{reset} &amp;\text{otherwise}\
+\
+\end{align*}</p>
+<p>where <span class="math notranslate nohighlight">\(V(t)\)</span> is the membrane potential, <span class="math notranslate nohighlight">\(\tau_m\)</span> is the membrane time constant, <span class="math notranslate nohighlight">\(E_{L}\)</span> is the leak potential, <span class="math notranslate nohighlight">\(R\)</span> is the membrane resistance, <span class="math notranslate nohighlight">\(I(t)\)</span> is the synaptic input current, <span class="math notranslate nohighlight">\(V_{th}\)</span> is the firing threshold, and <span class="math notranslate nohighlight">\(V_{reset}\)</span> is the reset voltage. We can also write <span class="math notranslate nohighlight">\(V_m\)</span> for membrane potential, which is more convenient for plot labels.</p>
+<p>The membrane equation describes the time evolution of membrane potential <span class="math notranslate nohighlight">\(V(t)\)</span> in response to synaptic input and leaking of charge across the cell membrane. This is an <em>ordinary differential equation (ODE)</em>, a concept we will learn more about in future days.</p>
 <p><strong>Note that, in this tutorial the neuron model will not implement a spiking mechanism.</strong></p>
 </div>
 <div class="section" id="section-1-2-comments-in-code">
@@ -1181,19 +1182,18 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="coding-exercise-2-simulating-an-input-current">
 <h3>Coding Exercise 2: Simulating an input current<a class="headerlink" href="#coding-exercise-2-simulating-an-input-current" title="Permalink to this headline">¶</a></h3>
 <p><img alt="synaptic input" src="https://github.com/mpbrigham/colaboratory-figures/raw/master/nma/python-for-nma/synaptic_input.png" /></p>
-<p>We need to simulate the synaptic input $I(t)$ that goes into our model neuron. We will start with a sinusoidal model to simulate this input (visualized above), using the equation:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\\
-I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01}\,t\right)\right)\\
-\\
-\end{align*}\]</div>
-<p>where $I_{mean}$ is the mean current input and $t$ is the time.</p>
-<p>In the next cell, you will compute the values of synaptic input $I(t)$ between $t=0$ and $t=0.009$ with step $\Delta t=0.001$.</p>
+<p>We need to simulate the synaptic input <span class="math notranslate nohighlight">\(I(t)\)</span> that goes into our model neuron. We will start with a sinusoidal model to simulate this input (visualized above), using the equation:
+\begin{align*}
+\
+I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01},t\right)\right)\
+\
+\end{align*}
+where <span class="math notranslate nohighlight">\(I_{mean}\)</span> is the mean current input and <span class="math notranslate nohighlight">\(t\)</span> is the time.</p>
+<p>In the next cell, you will compute the values of synaptic input <span class="math notranslate nohighlight">\(I(t)\)</span> between <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=0.009\)</span> with step <span class="math notranslate nohighlight">\(\Delta t=0.001\)</span>.</p>
 <p><strong>New coding concepts</strong>:</p>
 <ul class="simple">
 <li><p>We use a <strong>for loop</strong> in the code below. We will dive deeper into for loops later, but essentially for loops allow us to run the same code block multiple times. In this case, we loop over steps so the variable <em>step</em> equals something new each time. We use the syntax <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">step</span> <span class="pre">in</span> <span class="pre">range(10):</span></code>. This means that <code class="docutils literal notranslate"><span class="pre">step</span></code> will take each integer value between 0 and 10.</p></li>
-<li><p>You can use <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> as the value of $\pi$ and <code class="docutils literal notranslate"><span class="pre">np.sin(x)</span></code> to get the sine of x. These come from a package called numpy, which we’ll learn about later.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> as the value of <span class="math notranslate nohighlight">\(\pi\)</span> and <code class="docutils literal notranslate"><span class="pre">np.sin(x)</span></code> to get the sine of x. These come from a package called numpy, which we’ll learn about later.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1241,7 +1241,7 @@ I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01}\,t\right)\right)\\
 </div>
 <div class="section" id="coding-exercise-3-printing-pretty-numbers">
 <h3>Coding Exercise 3: Printing pretty numbers<a class="headerlink" href="#coding-exercise-3-printing-pretty-numbers" title="Permalink to this headline">¶</a></h3>
-<p>Repeat the loop from the previous exercise and print the <code class="docutils literal notranslate"><span class="pre">t</span></code> values with three decimal points, and synaptic input $I(t)$ with four decimal points in exponential notation.</p>
+<p>Repeat the loop from the previous exercise and print the <code class="docutils literal notranslate"><span class="pre">t</span></code> values with three decimal points, and synaptic input <span class="math notranslate nohighlight">\(I(t)\)</span> with four decimal points in exponential notation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize step_end</span>
@@ -1311,22 +1311,22 @@ I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01}\,t\right)\right)\\
 <h3>Video 4: Nano recap of discrete time integration<a class="headerlink" href="#video-4-nano-recap-of-discrete-time-integration" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>In the next exercises, we will simulate the evolution of the membrane equation in discrete time steps, with a sufficiently small $\Delta t$.</p>
-<p>We start by writing the time derivative $d/dt,V(t)$ in the membrane equation without taking the limit $\Delta t \to 0$:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\\
-\tau_m\,\frac{V\left(t+\Delta t\right)-V\left(t\right)}{\Delta t} &amp;= E_{L} - V(t) + R\,I(t) \qquad\qquad (1)\\
-\\
-\end{align*}\]</div>
-<p>The value of membrane potential $V\left(t+\Delta t\right)$ can be expressed in terms of its previous value $V(t)$ by simple algebraic manipulation. For <em>small enough</em> values of $\Delta t$, this provides a good approximation of the continuous-time integration.</p>
-<p>This operation is an integration since we obtain a sequence ${V(t), V(t+\Delta t), V(t+2\Delta t),…}$ starting from the ODE. Notice how the ODE describes the evolution of $\frac{d}{dt},V(t)$, the derivative of $V(t)$, but not directly the evolution of $V(t)$. For the evolution of $V(t)$ we need to integrate the ODE, and in this tutorial, we will do a discrete-time integration using the Euler method. See <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations">Numerical methods for ordinary differential equations</a> for additional details.</p>
+<p>In the next exercises, we will simulate the evolution of the membrane equation in discrete time steps, with a sufficiently small <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<p>We start by writing the time derivative <span class="math notranslate nohighlight">\(d/dt\,V(t)\)</span> in the membrane equation without taking the limit <span class="math notranslate nohighlight">\(\Delta t \to 0\)</span>:</p>
+<p>\begin{align*}
+\
+\tau_m,\frac{V\left(t+\Delta t\right)-V\left(t\right)}{\Delta t} &amp;= E_{L} - V(t) + R,I(t) \qquad\qquad (1)\
+\
+\end{align*}</p>
+<p>The value of membrane potential <span class="math notranslate nohighlight">\(V\left(t+\Delta t\right)\)</span> can be expressed in terms of its previous value <span class="math notranslate nohighlight">\(V(t)\)</span> by simple algebraic manipulation. For <em>small enough</em> values of <span class="math notranslate nohighlight">\(\Delta t\)</span>, this provides a good approximation of the continuous-time integration.</p>
+<p>This operation is an integration since we obtain a sequence <span class="math notranslate nohighlight">\(\{V(t), V(t+\Delta t), V(t+2\Delta t),...\}\)</span> starting from the ODE. Notice how the ODE describes the evolution of <span class="math notranslate nohighlight">\(\frac{d}{dt}\,V(t)\)</span>, the derivative of <span class="math notranslate nohighlight">\(V(t)\)</span>, but not directly the evolution of <span class="math notranslate nohighlight">\(V(t)\)</span>. For the evolution of <span class="math notranslate nohighlight">\(V(t)\)</span> we need to integrate the ODE, and in this tutorial, we will do a discrete-time integration using the Euler method. See <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations">Numerical methods for ordinary differential equations</a> for additional details.</p>
 </div>
 <div class="section" id="coding-exercise-4-simulating-membrane-potential">
 <h3>Coding Exercise 4: Simulating membrane potential<a class="headerlink" href="#coding-exercise-4-simulating-membrane-potential" title="Permalink to this headline">¶</a></h3>
-<p>Compute the values of $V(t)$ between $t=0$ and $t=0.01$ with step $\Delta t=0.001$ and $V(0)=E_L$.</p>
-<p>We need to reorganize the Eq. (1) to isolate $V\left(t+\Delta t\right)$ on the left side, and express it as function of $V(t)$ and the other terms:</p>
-<p>$$V(t + \Delta t) =  V(t) + \frac{\Delta t}{\tau_m}(E_l -V(t) + R I(t))$$</p>
+<p>Compute the values of <span class="math notranslate nohighlight">\(V(t)\)</span> between <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=0.01\)</span> with step <span class="math notranslate nohighlight">\(\Delta t=0.001\)</span> and <span class="math notranslate nohighlight">\(V(0)=E_L\)</span>.</p>
+<p>We need to reorganize the Eq. (1) to isolate <span class="math notranslate nohighlight">\(V\left(t+\Delta t\right)\)</span> on the left side, and express it as function of <span class="math notranslate nohighlight">\(V(t)\)</span> and the other terms:</p>
+<div class="math notranslate nohighlight">
+\[V(t + \Delta t) =  V(t) + \frac{\Delta t}{\tau_m}(E_l -V(t) + R I(t))\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
@@ -1388,7 +1388,7 @@ I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01}\,t\right)\right)\\
 </div>
 <div class="section" id="coding-exercise-5-plotting-current">
 <h2>Coding Exercise 5: Plotting current<a class="headerlink" href="#coding-exercise-5-plotting-current" title="Permalink to this headline">¶</a></h2>
-<p>In this exercise, we will plot the values of $I(t)$ between $t=0$ and $t=0.024$.</p>
+<p>In this exercise, we will plot the values of <span class="math notranslate nohighlight">\(I(t)\)</span> between <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=0.024\)</span>.</p>
 <p>You will first need to set the title and axis labels of the plot. Label these descriptively!  You will then need to fill out the code to actually create the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1433,7 +1433,7 @@ I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01}\,t\right)\right)\\
 </div>
 <div class="section" id="coding-exercise-6-plotting-membrane-potential">
 <h2>Coding Exercise 6: Plotting membrane potential<a class="headerlink" href="#coding-exercise-6-plotting-membrane-potential" title="Permalink to this headline">¶</a></h2>
-<p>Plot the values of $V(t)$ between $t=0$ and $t=t_{max}$. We can compute the number of steps required to get to $t=t_{max}$ given $\Delta t$ as <code class="docutils literal notranslate"><span class="pre">int(t_max/dt)</span></code> where <code class="docutils literal notranslate"><span class="pre">int</span></code> gets the nearest integer.</p>
+<p>Plot the values of <span class="math notranslate nohighlight">\(V(t)\)</span> between <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=t_{max}\)</span>. We can compute the number of steps required to get to <span class="math notranslate nohighlight">\(t=t_{max}\)</span> given <span class="math notranslate nohighlight">\(\Delta t\)</span> as <code class="docutils literal notranslate"><span class="pre">int(t_max/dt)</span></code> where <code class="docutils literal notranslate"><span class="pre">int</span></code> gets the nearest integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
@@ -1484,17 +1484,16 @@ I(t)=I_{mean}\left(1+\sin\left(\frac{2 \pi}{0.01}\,t\right)\right)\\
 <div class="tex2jax_ignore mathjax_ignore section" id="section-4-random-synaptic-input">
 <h1>Section 4: Random synaptic input<a class="headerlink" href="#section-4-random-synaptic-input" title="Permalink to this headline">¶</a></h1>
 <p>From the perspective of neurons, synaptic input is random (or stochastic). We’ll improve the synaptic input model by introducing random input current with statistical properties similar to the previous exercise:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\\
-I(t)=I_{mean}\left(1+0.1\sqrt{\frac{t_{max}}{\Delta t}}\,\xi(t)\right)\qquad\text{with }\xi(t)\sim U(-1,1)\\
-\\
-\end{align*}\]</div>
-<p>where $U(-1,1)$ is the <a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)">uniform distribution</a> with support $x\in[-1,1]$.</p>
+<p>\begin{align*}
+\
+I(t)=I_{mean}\left(1+0.1\sqrt{\frac{t_{max}}{\Delta t}},\xi(t)\right)\qquad\text{with }\xi(t)\sim U(-1,1)\
+\
+\end{align*}</p>
+<p>where <span class="math notranslate nohighlight">\(U(-1,1)\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)">uniform distribution</a> with support <span class="math notranslate nohighlight">\(x\in[-1,1]\)</span>.</p>
 <p>We can approximate randomness in code using a pseudo random number generator. The function <code class="docutils literal notranslate"><span class="pre">np.random.seed()</span></code> initializes the RNG. If we initialize this with a number (e.x. <code class="docutils literal notranslate"><span class="pre">np.random.seed(2)</span></code>), we will get the same random number draws each time we run the code. Basically, we are making the random number generation replicable. We do this here so you can get a figure that exactly matches the solution. The function <code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code> generates samples from the uniform distribution between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="section" id="coding-exercise-7-adding-randomness">
 <h2>Coding Exercise 7: Adding randomness<a class="headerlink" href="#coding-exercise-7-adding-randomness" title="Permalink to this headline">¶</a></h2>
-<p>Plot the values of $V(t)$ between $t=0$ and $t=t_{max}-\Delta t$ with random input $I(t)$.</p>
+<p>Plot the values of <span class="math notranslate nohighlight">\(V(t)\)</span> between <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=t_{max}-\Delta t\)</span> with random input <span class="math notranslate nohighlight">\(I(t)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
@@ -1544,7 +1543,7 @@ I(t)=I_{mean}\left(1+0.1\sqrt{\frac{t_{max}}{\Delta t}}\,\xi(t)\right)\qquad\tex
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/precourse/tree/main//tutorials/W0D1_PythonWorkshop1/solutions/W0D1_Tutorial1_Solution_413e2a3c.py"><em>Click for solution</em></a></p>
 <p><em>Example output:</em></p>
 <img alt='Solution hint' align='left' width=1120.0 height=832.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/precourse/main/tutorials/W0D1_PythonWorkshop1/static/W0D1_Tutorial1_Solution_413e2a3c_0.png>
-<p>Random synaptic input $I(t)$ results in random time course for $V(t)$.</p>
+<p>Random synaptic input <span class="math notranslate nohighlight">\(I(t)\)</span> results in random time course for <span class="math notranslate nohighlight">\(V(t)\)</span>.</p>
 </div>
 </div>
 <hr class="docutils" />
@@ -1559,22 +1558,21 @@ I(t)=I_{mean}\left(1+0.1\sqrt{\frac{t_{max}}{\Delta t}}\,\xi(t)\right)\qquad\tex
 <h2>Video 8: Nano recap of ensemble statistics &amp; lists<a class="headerlink" href="#video-8-nano-recap-of-ensemble-statistics-lists" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>Multiple runs of the previous exercise may give the impression of periodic regularity in the evolution of $V(t)$. We’ll collect the sample mean over $N=50$ realizations of $V(t)$  with random input to test such a hypothesis. The sample mean, sample variance and sample autocovariance at times $\left{t, s\right}\in[0,t_{max}]$, and for $N$ realizations $V_n(t)$ are given by:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\\
-\left\langle V(t)\right\rangle &amp;= \frac{1}{N}\sum_{n=1}^N V_n(t) &amp; &amp; \text{sample mean}\\
-\left\langle (V(t)-\left\langle V(t)\right\rangle)^2\right\rangle &amp;= \frac{1}{N-1} \sum_{n=1}^N \left(V_n(t)-\left\langle V(t)\right\rangle\right)^2 &amp; &amp; \text{sample variance} \\
+<p>Multiple runs of the previous exercise may give the impression of periodic regularity in the evolution of <span class="math notranslate nohighlight">\(V(t)\)</span>. We’ll collect the sample mean over <span class="math notranslate nohighlight">\(N=50\)</span> realizations of <span class="math notranslate nohighlight">\(V(t)\)</span>  with random input to test such a hypothesis. The sample mean, sample variance and sample autocovariance at times <span class="math notranslate nohighlight">\(\left\{t, s\right\}\in[0,t_{max}]\)</span>, and for <span class="math notranslate nohighlight">\(N\)</span> realizations <span class="math notranslate nohighlight">\(V_n(t)\)</span> are given by:</p>
+<p>\begin{align*}
+\
+\left\langle V(t)\right\rangle &amp;= \frac{1}{N}\sum_{n=1}^N V_n(t) &amp; &amp; \text{sample mean}\
+\left\langle (V(t)-\left\langle V(t)\right\rangle)^2\right\rangle &amp;= \frac{1}{N-1} \sum_{n=1}^N \left(V_n(t)-\left\langle V(t)\right\rangle\right)^2 &amp; &amp; \text{sample variance} \
 \left\langle \left(V(t)-\left\langle V(t)\right\rangle\right)\left(V(s)-\left\langle V(s)\right\rangle\right)\right\rangle
-&amp;= \frac{1}{N-1} \sum_{n=1}^N \left(V_n(t)-\left\langle V(t)\right\rangle\right)\left(V_n(s)-\left\langle V(s)\right\rangle\right) &amp; &amp; \text{sample autocovariance}\\
-\\
-\end{align*}\]</div>
+&amp;= \frac{1}{N-1} \sum_{n=1}^N \left(V_n(t)-\left\langle V(t)\right\rangle\right)\left(V_n(s)-\left\langle V(s)\right\rangle\right) &amp; &amp; \text{sample autocovariance}\
+\
+\end{align*}</p>
 </div>
 <div class="section" id="coding-exercise-8-storing-simulations-in-lists">
 <h2>Coding Exercise 8: Storing simulations in lists<a class="headerlink" href="#coding-exercise-8-storing-simulations-in-lists" title="Permalink to this headline">¶</a></h2>
-<p>Plot multiple simulations ($N=50$) of $V(t)$ by storing in a list the voltage of each neuron at time $t$.</p>
+<p>Plot multiple simulations (<span class="math notranslate nohighlight">\(N=50\)</span>) of <span class="math notranslate nohighlight">\(V(t)\)</span> by storing in a list the voltage of each neuron at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>Keep in mind that the plotting command <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y)</span></code> requires <code class="docutils literal notranslate"><span class="pre">x</span></code> to have the same number of elements as <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-<p>Mathematical symbols such as $\alpha$ and $\beta$ are specified as <code class="docutils literal notranslate"><span class="pre">$\alpha$</span></code> and <code class="docutils literal notranslate"><span class="pre">$\beta$</span></code> in <a class="reference external" href="https://en.wikipedia.org/wiki/TeX">TeX markup</a>. See additional details in <a class="reference external" href="https://matplotlib.org/3.2.2/tutorials/text/mathtext.html">Writing mathematical expressions</a> in Matplotlib.</p>
+<p>Mathematical symbols such as <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are specified as <code class="docutils literal notranslate"><span class="pre">$\alpha$</span></code> and <code class="docutils literal notranslate"><span class="pre">$\beta$</span></code> in <a class="reference external" href="https://en.wikipedia.org/wiki/TeX">TeX markup</a>. See additional details in <a class="reference external" href="https://matplotlib.org/3.2.2/tutorials/text/mathtext.html">Writing mathematical expressions</a> in Matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
@@ -1630,7 +1628,7 @@ I(t)=I_{mean}\left(1+0.1\sqrt{\frac{t_{max}}{\Delta t}}\,\xi(t)\right)\qquad\tex
 </div>
 <div class="section" id="coding-exercise-9-plotting-sample-mean">
 <h2>Coding Exercise 9: Plotting sample mean<a class="headerlink" href="#coding-exercise-9-plotting-sample-mean" title="Permalink to this headline">¶</a></h2>
-<p>Add the sample mean $\left\langle V(t)\right\rangle=\frac{1}{N}\sum_{n=1}^N V_n(t)$ to the plot.</p>
+<p>Add the sample mean <span class="math notranslate nohighlight">\(\left\langle V(t)\right\rangle=\frac{1}{N}\sum_{n=1}^N V_n(t)\)</span> to the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
@@ -1691,14 +1689,14 @@ I(t)=I_{mean}\left(1+0.1\sqrt{\frac{t_{max}}{\Delta t}}\,\xi(t)\right)\qquad\tex
 </div>
 <div class="section" id="coding-exercise-10-plotting-sample-standard-deviation">
 <h2>Coding Exercise 10: Plotting sample standard deviation<a class="headerlink" href="#coding-exercise-10-plotting-sample-standard-deviation" title="Permalink to this headline">¶</a></h2>
-<p>Add the sample standard deviation $\sigma(t)\equiv\sqrt{\text{Var}\left(t\right)}$ to the plot, with sample variance $\text{Var}(t) = \frac{1}{N-1} \sum_{n=1}^N \left(V_n(t)-\left\langle V(t)\right\rangle\right)^2$.</p>
+<p>Add the sample standard deviation <span class="math notranslate nohighlight">\(\sigma(t)\equiv\sqrt{\text{Var}\left(t\right)}\)</span> to the plot, with sample variance <span class="math notranslate nohighlight">\(\text{Var}(t) = \frac{1}{N-1} \sum_{n=1}^N \left(V_n(t)-\left\langle V(t)\right\rangle\right)^2\)</span>.</p>
 <p>Use a list comprehension to collect the sample variance <code class="docutils literal notranslate"><span class="pre">v_var</span></code>. Here’s an example to initialize a list with squares of <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 <span class="o">--&gt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Think: Why are we plotting $\sigma(t)$ rather than the $\text{Var}(t)$? What are the units of each and the units of $\left\langle V(t)\right\rangle$?</p>
+<p>Think: Why are we plotting <span class="math notranslate nohighlight">\(\sigma(t)\)</span> rather than the <span class="math notranslate nohighlight">\(\text{Var}(t)\)</span>? What are the units of each and the units of <span class="math notranslate nohighlight">\(\left\langle V(t)\right\rangle\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
@@ -1904,7 +1902,7 @@ We use <code class="docutils literal notranslate"><span class="pre">np.ones</spa
 </div>
 <div class="section" id="coding-exercise-13-using-2d-arrays">
 <h2>Coding Exercise 13: Using 2d arrays<a class="headerlink" href="#coding-exercise-13-using-2d-arrays" title="Permalink to this headline">¶</a></h2>
-<p>Plot multiple realizations ($N=50$) of $V(t)$ by storing the voltage of each neuron at time $t$ in a numpy array.</p>
+<p>Plot multiple realizations (<span class="math notranslate nohighlight">\(N=50\)</span>) of <span class="math notranslate nohighlight">\(V(t)\)</span> by storing the voltage of each neuron at time <span class="math notranslate nohighlight">\(t\)</span> in a numpy array.</p>
 <p>We first initialize a numpy array <code class="docutils literal notranslate"><span class="pre">v_n</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">step_end)</span></code> with membrane leak potential values <code class="docutils literal notranslate"><span class="pre">el</span></code>. We pre-compute synaptic current values in numpy array <code class="docutils literal notranslate"><span class="pre">i</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">step_end)</span></code>. After computing v, we plot results with a single plot command, by providing <code class="docutils literal notranslate"><span class="pre">v_n.T</span></code> to the plot function. <code class="docutils literal notranslate"><span class="pre">v_n.T</span></code> is the transposed version of <code class="docutils literal notranslate"><span class="pre">v_n</span></code> (with rows and columns swapped).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1948,7 +1946,7 @@ We use <code class="docutils literal notranslate"><span class="pre">np.ones</spa
 </div>
 <div class="section" id="coding-exercise-14-plotting-sample-mean-and-standard-deviation">
 <h2>Coding Exercise 14: Plotting sample mean and standard deviation<a class="headerlink" href="#coding-exercise-14-plotting-sample-mean-and-standard-deviation" title="Permalink to this headline">¶</a></h2>
-<p>Add sample mean $\left\langle V(t)\right\rangle$ and standard deviation $\sigma(t)\equiv\sqrt{\text{Var}\left(t\right)}$ to the plot.</p>
+<p>Add sample mean <span class="math notranslate nohighlight">\(\left\langle V(t)\right\rangle\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma(t)\equiv\sqrt{\text{Var}\left(t\right)}\)</span> to the plot.</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.mean(v_n,</span> <span class="pre">axis=0)</span></code> computes mean over rows, i.e. mean for each neuron</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.mean(v_n,</span> <span class="pre">axis=1)</span></code> computes mean over columns (axis <code class="docutils literal notranslate"><span class="pre">1</span></code>), i.e. mean for each time step</p>
 <p>We will use label argument in plt.plot to specify labels in each trace.  We label only the last voltage trace to avoid labeling all N of them.</p>
