@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Week 1. Introduction to Passive Physiology Principles" href="week-1/week-1.html" />
@@ -340,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="week-10/week-10.html">
-   Week 10 Human Motor Neuron Activity
+   Week 10 Human Motor Neuron Coding
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -612,8 +610,18 @@ Another motivation is to make the data processing and analysis materials general
 </ul>
 <ul class="simple">
 <li><p>Electrode holders with manipulators</p></li>
-<li><p>Backyard Brains</p></li>
-<li><p>Differential ‘extracellular’ amplifier. We have Grass Instruments P-15s in the lab. I love them. However, I have achieved equivalently good results by implementing <a class="reference external" href="https://backyardbrains.com/">Backyard Brains’</a> Neuron Spiker Box (<a class="reference external" href="https://backyardbrains.com/products/diyspikerbox">DIY</a> and <a class="reference external" href="https://backyardbrains.com/products/neuronspikerboxpro">Pro</a>). The DIY works great. The Pro is more expensive, but it does have a “volume” (aka amplification) control, which has been nice at times.</p></li>
+<li><p>Differential ‘extracellular’ amplifier for neural action potentials. We have Grass Instruments P-15s in the lab. I love them. However, I have achieved equivalently good results by implementing <a class="reference external" href="https://backyardbrains.com/">Backyard Brains’</a> Neuron Spiker Box (<a class="reference external" href="https://backyardbrains.com/products/diyspikerbox">DIY</a> and <a class="reference external" href="https://backyardbrains.com/products/neuronspikerboxpro">Pro</a>). The DIY works great. The Pro is more expensive, but it does have a “volume” (aka amplification) control, which has been nice at times.</p></li>
+<li><p>Differential (extracellular) amplifier for electromyogram (EMG) surface electrodes. The Grass P-15 would work for EMG as well. However, since the EMG series of modules in this course progresses to multichannel recordings, I used Backyard Brains’ muscle spiker shield (<a class="reference external" href="https://backyardbrains.com/products/diyMuscleSpikerShield">DIY</a>) even for single channel motor unit recordings. Instead of interfacing the amplifier with the Arduino Uno as per Backyard Brains’ specs, I used the NiDAQ ADC. This modification enabled me to implement high sampling rate multichannel recordings (20k for up to approx 12 single-ended channels at 250 kS/s multichannel aggregate maximum) instead of the 1k aggregate (6 channel max) of the Arduino Uno.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use the Backyard Brains’ Muscle Spiker Shield in this configuration with maximal signal resolution, you need to “hack” into <span class="xref myst">the PCB</span> of the spiker shield and access the VCC/2 signal for “ground” input to the NiDAQ. The spiker shield is designed to have the baseline voltage floating at 2.5V because Arduino does not handle negative voltage input. The PCB does have a pinout hole for VCC/2 (and several other signals). I soldered a single pin to access it with a plug-and-play configuration rather than hard-wiring it. The muscle spiker shields stack on top of each other to share power and ground. Because I do not use the Arduino to access the spiker shield, I run the spiker shield stack on battery power (6V into pins associated with 5V and GND on Arduino Uno pinout).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The modules in this course do not yet implement any of the Arduino Control options outlined by the Backyard Brains for the Muscle Spiker Shield. Therefore, the actual amplifier part of the circuit is all that is needed and the specs from the Backyard Brains PCB could be used to make a smaller format PCB specialized just for this function. I already had the spiker shields so I just used those so far. And with electronics shortages post-Covid, Backyard Brains has been a reliable way to get all the needed components without hastle.</p>
+</div>
+<ul class="simple">
 <li><p>Intracellular amplifier. I used the ____ that the course at Wesleyan has had for years. I love them. Simple and effective. Bruce Land has published <a class="reference external" href="https://people.ece.cornell.edu/land/PROJECTS/preamp2/index.html">circuit specs to make your own</a>. I have tried to make them for myself following his instructions, but have not had success yet (because I have not acutally needed to troubleshoot it yet, so it is just on the back-burner… I have full confidence his outline would produce great results.)</p></li>
 </ul>
 </div>

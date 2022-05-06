@@ -7,4 +7,4 @@ This section contains tutorials for all the little logistical bits surrounding t
 - [](../howto/Python-Introduction-Coding-Light.ipynb)
 - [](../howto/Executable-Notebooks.ipynb)
 - [](../howto/Response-Notebooks.ipynb)
-
+- [](../howto/NiUSB-6211.md)
