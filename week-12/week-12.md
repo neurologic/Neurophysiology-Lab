@@ -1,3 +1,3 @@
-# Week 12 Big Data and Robotic Control
+# Week 12. BCIs and Ghost Music
 
-Reverse engineering the system using concepts in dimensionality reduction.
+Creating novel movement-based music spaces. 

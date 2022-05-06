@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Neurophysiology Lab</title>
+    <title>Lab Manual &#8212; Neurophysiology Lab</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Human Motor Neuron Coding" href="Human-Motor-Neuron-Coding.html" />
+    <link rel="prev" title="Week 10 Human Motor Neuron Coding" href="week-10.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -155,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
   Weekly Chapters
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../week-1/week-1.html">
    Week 1. Introduction to Passive Physiology Principles
@@ -334,19 +336,29 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="week-10.html">
    Week 10 Human Motor Neuron Coding
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lab Manual
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Human-Motor-Neuron-Coding.html">
      Human Motor Neuron Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Human-Motor-Neuron-Coding_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -517,7 +529,27 @@ const thebe_selector_output = ".output, .cell_output"
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-setup">
+   Software Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-experiment">
+   Core Experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiment-options">
+   Experiment Options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
+   Copy data to your Google Drive for analysis
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -528,7 +560,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Lab Manual</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -537,7 +569,27 @@ const thebe_selector_output = ".output, .cell_output"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-setup">
+   Software Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-experiment">
+   Core Experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiment-options">
+   Experiment Options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
+   Copy data to your Google Drive for analysis
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -547,7 +599,61 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
+<h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
+<p>Today you will be recording the activity of individual neurons in the motor system of yourself and/or each other. Yes. Individual neurons in your own human nervous system. Specifically, you will be using differential electrodes on the surface of the skin to pick up the extracellular voltage signal associated with muscle cell action potentials. Every time a pre-synaptic motor neuron fires an action potential, the muscle cells that it innervates fire an action potential. This one-to-one relationship enables the muscle action potential to serve as a proxy for the motor neuron action potential.</p>
+<p>You will pick one of several experimental questions to explore (and/or create your own).
+The general strategy of this experiment is to selectively analyze the activity of individual motor neurons (by taking advantage of the diversity and specificity of motor unit action potential amplitude).</p>
+<p>The foundational configuration that you should start with to familiarize yourself with the technique is to measure EMG signals from the first dorsal interossei muscle. Contraction of the first dorsal interosseous muscle causes lateral movement of the index finger toward the thumb. As you move this finger note the bulge beneath the skin where the main meuscle contraction is ocurring. This bulge is the <i>belly</i> of the muscle.</p>
+<div class="section" id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
+<p>The bonsai script for today has only one datastream pathway.</p>
+<p>The Analog Input node contains one channel receiving input from the output of an extracellular amplifier. The extracellular amplifier takes input from a differential electrode, amplifies it, bandpasses the signal frequency, and transforms it to a monopolar signal (relative to ground). The <a class="reference external" href="https://backyardbrains.com/products/files/EMGSpikerShield.SMD.V2.61.pdf">amplifier</a> has a gain of approximately 2k and cutoff frequencies of 50-2500Hz. This amplified input is first digitized by the Nidaq ADC before being streamed by Bonsai. By clicking on this node, you can set the parameters of the ADC (sampling rate, type of electrode configuration, etc) and parameters of the display in Bonsai (buffer). The sampling rate controls the ADC conversion and the buffer controls the size of chunks from the datastream that you can visualize at once in Bonsai.</p>
+<p>The Matrix Writer node contains specifications for the file name and location where the file will be stored. Make sure the filename ends in <code class="docutils literal notranslate"><span class="pre">.bin</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'>DISABLE</font> the recording node.</p>
+</div>
+</div>
+<div class="section" id="core-experiment">
+<h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li>Find the <i>belly</i> of the muscle from which you want to measure motor neuron activity. </li>
+<li>Put electrode gell on three surface electrodes and cut athletic tape to secure them</li>
+<li>Place one surface electrode on the belly of the muscle</li>
+<li>Place one surface electrode </li>
+<li>Run the bonsai protocol (with the  <b>Analog Input </b> node <font color = 'green'>ENABLED</font> but the <b>Matrix Writer</b> node <font color = 'red'>DISABLED</font>. Double click the Analog Input node to visualize the measurement if it does not pop up upon start.</li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can set the y axis range explicitly by clicking on it so that the visualization does not jump around the screen and so that you can get a clear sense of the voltage picked up by the electrode.</p>
+</div>
+<li>Make sure that there is clear <i>signal</i> above the <i>noise</i>).</li>
+<li>Stop the bonsai protocol and <font color = 'green'>ENABLE</font> the write node. </li>
+<li>When you are ready to collect data, start the bonsai protocol as needed to execute your experiment.</li>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your experiment compares the same motor neuron pool across conditions, record all of your data in a single file. If your experiment involves recording from different motor neuron pools or with different electrode configurations, record each condition with a separate file.</p>
+</div>
+</ol>
+</div>
+<div class="section" id="experiment-options">
+<h2>Experiment Options<a class="headerlink" href="#experiment-options" title="Permalink to this headline">¶</a></h2>
+<p>Choose one of the following options to complete a comparative analysis:</p>
+<ul>
+<li>Eccentric, Concentric, and Isometric contractions.</li>
+<li>The motor neuron activity under different movement force (weight lifting): Rest the forearm comfortably in a "handshake" position at the edge of a table with your thumb up; Tie a string to objects with different weight and loop the string over the index finger; Lift the object with your index finger.</li>
+<li>The motor neuron activity of different interossei muscles: Perform lateral movements of the fingers in a palm-down hand configuration; Make sure to move each finger an equal distance.</li>
+<li>The timecourse of motor neuron activity: Move the finger to a position away from rest; Hold the finger in the final position for different durations of time.  </li>
+<li>Electrode placement (relative locations of differential electrode leads and ground): Try placing both differential leads on the belly of the muscle (make sure they are electrically isolated from each other on the surface); Switch the location of the two leads; Try the ground in the location of one of the differential leads; Try placing the differential lead off to the edge of the muscle belly rather than on the belly; etc....</li>
+	</ul>
+<p>For each of the experiment options, consider what conditions need to be held constant.</p>
+</div>
+<div class="section" id="copy-data-to-your-google-drive-for-analysis">
+<h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference internal" href="Human-Motor-Neuron-Coding.html"><span class="doc std std-doc">Human Motor Neuron Coding</span></a> notebook to analyse your data and answer the questions in the <a class="reference internal" href="Human-Motor-Neuron-Coding_Responses.html"><span class="doc std std-doc">Responses</span></a> notebook.</p>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -572,7 +678,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="week-10.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 10 Human Motor Neuron Coding</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Human-Motor-Neuron-Coding.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Human Motor Neuron Coding</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

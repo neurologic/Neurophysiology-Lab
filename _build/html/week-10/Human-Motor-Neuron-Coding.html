@@ -51,12 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 11 Motor Coordination and Big Data" href="../week-11/week-11.html" />
-    <link rel="prev" title="Week 10 Human Motor Neuron Activity" href="week-10.html" />
+    <link rel="next" title="Responses" href="Human-Motor-Neuron-Coding_Responses.html" />
+    <link rel="prev" title="Lab Manual" href="Lab-Manual.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -340,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="week-10.html">
-   Week 10 Human Motor Neuron Activity
+   Week 10 Human Motor Neuron Coding
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -348,9 +346,19 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Human Motor Neuron Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Human-Motor-Neuron-Coding_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -653,8 +661,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>abductor digiti minimi (lateral to the pinky finger)</p></li>
 <li><p>third dorsal (lateral to the middle finger) (you could also try second dorsal medial to the middle finger)</p></li>
 </ul>
-<p>First, you will try to isolate the smallest motor units from each of the interossei muscles.
-Then, you will put the muscle under load and analyze concentric and eccentric contraction</p>
+<p>First, you will try to isolate the smallest motor units from the first dorsal interossei muscles.
+Then, you will put the muscle under load, perform concentric/eccentric/isometric contractions, and create a comparative exploration of motor neuron coding.</p>
 <p><a id=toc></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
@@ -671,6 +679,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
@@ -735,6 +744,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-i-load-data">
 <h1>Part I. Load data<a class="headerlink" href="#part-i-load-data" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
@@ -834,6 +844,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-ii-process-the-data">
 <h1>Part II. Process the data<a class="headerlink" href="#part-ii-process-the-data" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p>You need to set a detection threshold that will be used to detect electrical events produced by motor units in the interossei muscle.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -923,6 +934,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-iii-sort-detected-events">
 <h1>Part III. Sort detected events<a class="headerlink" href="#part-iii-sort-detected-events" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p>Based on PC “loadings” and waveform height, we should be able to tell that there are distinct categories of events - each generated by a different motor unit.
 “Kmeans” is an algorithm built to automatically assign events to “clusters” based on similarity to each other and dissimilarity from other clusters.</p>
 <div class="cell tag_hide-input docutils container">
@@ -1047,6 +1059,7 @@ Then, you will put the muscle under load and analyze concentric and eccentric co
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-iv-analyze-motor-unit-activity">
 <h1>Part IV. Analyze motor unit activity<a class="headerlink" href="#part-iv-analyze-motor-unit-activity" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
@@ -1122,17 +1135,17 @@ Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="week-10.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Lab-Manual.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 10 Human Motor Neuron Activity</p>
+            <p class="prev-next-title">Lab Manual</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../week-11/week-11.html" title="next page">
+    <a class='right-next' id="next-link" href="Human-Motor-Neuron-Coding_Responses.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 11 Motor Coordination and Big Data</p>
+        <p class="prev-next-title">Responses</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

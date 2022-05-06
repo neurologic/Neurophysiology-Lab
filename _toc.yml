@@ -51,17 +51,21 @@ parts:
         - file: week-9/week-9-notebook
     - file: week-10/week-10
       sections:
+        - file: week-10/Lab-Manual
         - file: week-10/Human-Motor-Neuron-Coding
+        - file: week-10/Human-Motor-Neuron-Coding_Responses
     - file: week-11/week-11
       sections:
+        - file: week-11/Lab-Manual
         - file: week-11/Motor-Coordination-and-Big-Data
+        - file: week-11/Tutorial-Geometric-View-Of-Data
+        - file: week-11/Tutorial-Dimensionality-Reduction
     - file: week-12/week-12
       sections:
-        - file: week-12/Geometric-View-Of-Data-Tutorial
-        - file: week-12/Dimensionality-Reduction-Tutorial
+        - file: week-12/BCI-Ghost-Music
     - file: week-13/week-13
       sections:
-        - file: week-13/Basis-Set-Tutorial
+        - file: week-13/Tutorial-Basis-Set
   - caption: Wrapping Up
     chapters:
     - file: closure/closure
