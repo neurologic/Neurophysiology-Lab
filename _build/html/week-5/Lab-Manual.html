@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 1. Introduction to Passive Physiology Principles &#8212; Neurophysiology Lab</title>
+    <title>Lab Manual &#8212; Neurophysiology Lab</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Passive Membrane Properties" href="Passive-Membrane-Properties.html" />
-    <link rel="prev" title="Materials" href="../materials.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -157,24 +155,24 @@ const thebe_selector_output = ".output, .cell_output"
   Weekly Chapters
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-1/week-1.html">
    Week 1. Introduction to Passive Physiology Principles
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Passive-Membrane-Properties.html">
+    <a class="reference internal" href="../week-1/Passive-Membrane-Properties.html">
      Passive Membrane Properties
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Passive-Membrane-Properties_Responses.html">
+    <a class="reference internal" href="../week-1/Passive-Membrane-Properties_Responses.html">
      Responses
     </a>
    </li>
@@ -262,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week-5/week-5.html">
+  <a class="reference internal" href="week-5.html">
    Week 5 Sensory Processing
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -272,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../week-5/week-5-notebook.html">
+    <a class="reference internal" href="week-5-notebook.html">
      Template
     </a>
    </li>
@@ -504,7 +502,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week-1/week-1.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week-5/Lab-Manual.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -524,7 +522,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fweek-1/week-1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fweek-5/Lab-Manual.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -551,8 +549,33 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pages">
-   Pages:
+  <a class="reference internal nav-link" href="#software-setup">
+   Software Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#surgery">
+   Surgery
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physiology-setup">
+   Physiology Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-experiment">
+   Core Experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extended-exploration">
+   Extended Exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
+   Copy data to your Google Drive for analysis
   </a>
  </li>
 </ul>
@@ -565,7 +588,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Week 1. Introduction to Passive Physiology Principles</h1>
+                <h1>Lab Manual</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -576,8 +599,33 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pages">
-   Pages:
+  <a class="reference internal nav-link" href="#software-setup">
+   Software Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#surgery">
+   Surgery
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physiology-setup">
+   Physiology Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-experiment">
+   Core Experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extended-exploration">
+   Extended Exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
+   Copy data to your Google Drive for analysis
   </a>
  </li>
 </ul>
@@ -589,19 +637,59 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="week-1-introduction-to-passive-physiology-principles">
-<h1>Week 1. Introduction to Passive Physiology Principles<a class="headerlink" href="#week-1-introduction-to-passive-physiology-principles" title="Permalink to this headline">¶</a></h1>
-<p>Today’s ‘Lab Manual’ is contained in the same document you will use to analyze today’s data (<a class="reference internal" href="Passive-Membrane-Properties.html"><span class="doc std std-doc">Passive Membrane Properties</span></a>).</p>
-<p>Broadly, you will use electrical circuit models of a passive cell membrane to introduce yourself to some of the basic components of your essential electrophysiology toolkit. You will perform “intracellular” and “extracellular” measurements of membrane potential and, in an intracellular configuration, measure the membrane potential response to an “injected” current.</p>
-<p>Follow the instructions in the <a class="reference internal" href="Passive-Membrane-Properties.html"><span class="doc std std-doc">Passive Membrane Properties</span></a> page after opening it in Colab (using the <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-1/Passive-Membrane-Properties.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a> button here or at the top of the notebook page). Upload any files from the PC to your Google Drive as needed to access data from the Colab runtime.</p>
-<div class="section" id="pages">
-<h2>Pages:<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="Passive-Membrane-Properties.html"><span class="doc std std-doc">Passive Membrane Properties</span></a></p></li>
-<li><p><a class="reference internal" href="Passive-Membrane-Properties_Responses.html"><span class="doc std std-doc">Responses</span></a></p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
+<h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
+<p>Muscle receptor organs (MROs) contain sensory neurons that depolarize in response to muscle stretch. In crayfish,
+the superficial extensor muscle on each side of each abdominal segment (and in the two most posterior thoracic segments) are innervated by stretch-sensitive receptors. The superficial extensor muscles span adjacent segments, running from the middle of one tergite to the back edge of the next most anterior tergite. When these muscles contract, they pull the tergites together, causing the abdomen to straighten and extend (thus the name). Conversely, when the abdomen is curled ventrally, the tergites rotate around their joints and the extensor muscles are stretched, along with their associated MROs. MRO neurons receive inhibitory synaptic innervation from the central ganglion (this does not occur in vertebrate proprioceptors). These inhibitory inputs depress the receptor activity.</p>
+<p>Importantly, there are only two MRO cell types innervating each segmental superficial extensor muscle in crustaceans. The axons of the two MROs travel together from their dorsal muscles, laterally around the large abdominal muscles, to the ventral nerve cord to enter the abdominal ganglia as part of the second ganglionic nerve (nerve 2).</p>
+<p>You will record extracellularly from nerve 2 while curling the tail to stimulate these receptors. This recording will allow you to determine the stimulus-response tuning curve (sensory coding) of the MROs (including their adequate stimulus), and measure the adaptation rate of the MROs.</p>
+<div class="section" id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
+<p>The bonsai script for today has one measurement node. <b>Channel 0</b> receives amplified and digitized input from the differential measurement electrodes (referenced to a “ground”). The parameters of the analog input node can be adjusted to specify the NiUSB sampling rate, voltage range, and buffering rate (for visualization). Use a sampling rate of 30kHz. Adjust the voltage range as needed to maximize the signal resolution if needed once you start measuring voltage signals from the leg (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering rate according to your visualization preferences.</p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="surgery">
+<h2>Surgery<a class="headerlink" href="#surgery" title="Permalink to this headline">¶</a></h2>
+<p>For this lab, you will be removing the tail from a crayfish. A major benefit of targetting the MRO for measurement is that crude surgical techniques work better than fine surgincal techniques.</p>
+</div>
+<div class="section" id="physiology-setup">
+<h2>Physiology Setup<a class="headerlink" href="#physiology-setup" title="Permalink to this headline">¶</a></h2>
+<p><a id="experiment"></a></p>
+</div>
+<div class="section" id="core-experiment">
+<h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li>From an anaesthetized crayfish, cut off the tail.</li>
+<li>Cut along the ventral edge of the carapace to remove the ventral surface.</li>
+<li></li>
+<li></li>
+<li></li>
+<li>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</li>
+<li></li>
+<li></li>
+<li>Stimulation Protocol:</li>
+<ol>
+<li></li>
+<li></li>
+<li>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</li>
+<li>Rotate the knob to its retracted position and leave for 2 seconds before protracting.</li>
+<li>Repeat the stimulation 10 times, with care to rotate the knob the same amount each time.</li>
+</ol> 
+<li>Repeat the Stimulation Protocol with a second spine using the same stimulus protraction distance. Note which two spines you chose to compare and why you chose them.</li>
+</ol>
+</div>
+<div class="section" id="extended-exploration">
+<h2>Extended Exploration<a class="headerlink" href="#extended-exploration" title="Permalink to this headline">¶</a></h2>
+<p>If there is time, repeat <a class="reference external" href="#experiment">the core experiment</a> but select one of the following questions to explore:</p>
+<ul>
+<li>Do different spines have different response properties</li>
+<li>Does the spine response differ based on manual versus manipulator-controlled stimulation</li>
+<li>The effect of relative electrode location on measured response to the same barb stimulus</li>
+	</ul>
+"Response properties" include: spike amplitude, spike shape, rate, regularity, etc.
+</div>
+<div class="section" id="copy-data-to-your-google-drive-for-analysis">
+<h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference internal" href="../week-4/Sensory-Coding.html"><span class="doc std std-doc">Sensory Coding</span></a> notebook to analyse your data and answer the questions in the <a class="reference internal" href="../week-4/Sensory-Coding_Responses.html"><span class="doc std std-doc">Responses</span></a> notebook.</p>
 </div>
 </div>
 
@@ -618,7 +706,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week-1"
+            path: "./week-5"
         },
         predefinedOutput: true
     }
@@ -629,21 +717,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../materials.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Materials</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Passive-Membrane-Properties.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Passive Membrane Properties</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
