@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dimensionality Reduction Tutorial &#8212; Neurophysiology Lab</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 12. BCIs and Ghost Music" href="../week-12/week-12.html" />
+    <link rel="prev" title="Tutorial: Geometric view of data" href="Tutorial-Geometric-View-Of-Data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/NeuronImage_CourseHeader.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neurophysiology Lab</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Neurophysiology Lab
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  General
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../standards.html">
+   Standards
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../howto/howto.html">
+   How To Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Python-Introduction-Coding-Light.html">
+     Introduction to Python Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Executable-Notebooks.html">
+     Executable Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Response-Notebooks.html">
+     Response Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials.html">
+   Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weekly Chapters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-1/week-1.html">
+   Week 1. Introduction to Passive Physiology Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-1/Passive-Membrane-Properties.html">
+     Passive Membrane Properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-1/Passive-Membrane-Properties_Responses.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-2/week-2.html">
+   Week 2. Dynamic Electrical Signals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-2/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-2/Electric-Organ-Discharge.html">
+     Electric Organ Discharge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-2/Electric-Organ-Discharge_Responses.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-3/week-3.html">
+   Week 3. Experimental Design for Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis.html">
+     Experimental Design for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-3/Experimental-Design-for-Analysis_Responses.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-4/week-4.html">
+   Week 4 Sensory Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-4/Sensory-Coding.html">
+     Sensory Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-4/Sensory-Coding_Responses.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-5/week-5.html">
+   Week 5 Sensory Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-5/week-5-notebook.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-6/week-6.html">
+   Week 6 Motor Nerve
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-6/week-6-notebook.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-7/week-7.html">
+   Week 7 Intracellular Recording Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-7/week-7-notebook.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-8/week-8.html">
+   Week 8  Synaptic Connectivity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-8/week-8-notebook.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-9/week-9.html">
+   Week 9 Synaptic Plasticity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-9/week-9-notebook.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-10/week-10.html">
+   Week 10 Human Motor Neuron Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-10/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-10/Human-Motor-Neuron-Coding.html">
+     Human Motor Neuron Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-10/Human-Motor-Neuron-Coding_Responses.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="week-11.html">
+   Week 11. Motor Coordination and Big Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Motor-Coordination-and-Big-Data.html">
+     Motor Coordination and Big Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tutorial-Geometric-View-Of-Data.html">
+     Tutorial: Geometric view of data
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Dimensionality Reduction Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-12/week-12.html">
+   Week 12. BCIs and Ghost Music
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-12/BCI-Ghost-Music.html">
+     BCIs and Ghost Music
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week-13/week-13.html">
+   Week 13 Neural Circuits
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-13/Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wrapping Up
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../closure/closure.html">
+   Closure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Extensions of this Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../extensions/extensions.html">
+   Extensions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week-11/Tutorial-Dimensionality-Reduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fweek-11/Tutorial-Dimensionality-Reduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/neurologic/Neurophysiology-Lab/main?urlpath=tree/week-11/Tutorial-Dimensionality-Reduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-11/Tutorial-Dimensionality-Reduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Dimensionality Reduction Tutorial
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-what-does-pca-do">
+   Part I. What does PCA do?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-explained-variance">
+   Part II. Explained variance
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-demo-exploration-of-the-correlation-coefficient">
+     Interactive Demo: Exploration of the correlation coefficient
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iii-dimensionality-reduction">
+   Part III. Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   Notation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dimensionality Reduction Tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Dimensionality Reduction Tutorial
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-what-does-pca-do">
+   Part I. What does PCA do?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-explained-variance">
+   Part II. Explained variance
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-demo-exploration-of-the-correlation-coefficient">
+     Interactive Demo: Exploration of the correlation coefficient
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iii-dimensionality-reduction">
+   Part III. Dimensionality Reduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   Notation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><a id="intro"></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="dimensionality-reduction-tutorial">
+<h1>Dimensionality Reduction Tutorial<a class="headerlink" href="#dimensionality-reduction-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook you can explore how to use <a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">Principal Components Analysis</a> (PCA) by projecting data from two neurons (two dimensions) onto the <em>eigenvectors of its covariance matrix</em> (a new basis set). The principle components are factors that combine the values from all original dimensions. Each factor combines those original dimensions in different proportions.</p>
+<p>Overview:</p>
+<ul class="simple">
+<li><p>Perform PCA (Get the eigenvectors of the activity of two neurons).</p></li>
+<li><p>Plot and explore the eigenvalues.</p></li>
+</ul>
+<p><a id="toc"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p><a class="reference external" href="#setup">Setup</a></p></li>
+<li><p><a class="reference external" href="#one">Part I. What does PCA do?</a></p></li>
+<li><p><a class="reference external" href="#two">Part II. Explained Variance</a></p></li>
+<li><p><a class="reference external" href="#three">Part III. Dimensionality Reduction</a></p></li>
+<li><p><a class="reference external" href="#summary">Summary</a></p></li>
+<li><p><a class="reference external" href="#notation">Notation</a></p></li>
+</ol>
+<p><a id="setup"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Execute this cell to specify Imports and Functions { display-mode: &quot;form&quot; }</span>
+
+<span class="c1"># Imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Figure Settings</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>  <span class="c1"># interactive display</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plotting Functions</span>
+
+<span class="k">def</span> <span class="nf">plot_eigenvalues</span><span class="p">(</span><span class="n">evals</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Plots eigenvalues.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">      (numpy array of floats) : Vector of eigenvalues</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    Nothing.</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">evals</span><span class="p">,</span> <span class="s1">&#39;o-k&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Component&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eigenvalue&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scree plot&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">plot_data</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Plots bivariate data. Includes a plot of each random variable, and a scatter</span>
+<span class="sd">  scatter plot of their joint activity. The title indicates the sample</span>
+<span class="sd">  correlation calculated from the data.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    X (numpy array of floats) : Data matrix each column corresponds to a</span>
+<span class="sd">                                different random variable</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    Nothing.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+  <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Number (sorted)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+  <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">],</span>
+           <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1 activity&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2 activity&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample corr: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">plot_data_new_basis</span><span class="p">(</span><span class="n">Y</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Plots bivariate data after transformation to new bases. Similar to plot_data</span>
+<span class="sd">  but with colors corresponding to projections onto basis 1 (red) and</span>
+<span class="sd">  basis 2 (blue).</span>
+<span class="sd">  The title indicates the sample correlation calculated from the data.</span>
+
+<span class="sd">  Note that samples are re-sorted in ascending order for the first random</span>
+<span class="sd">  variable.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    Y (numpy array of floats) : Data matrix in new basis each column</span>
+<span class="sd">                                corresponds to a different random variable</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    Nothing.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Projection </span><span class="se">\n</span><span class="s1"> basis vector 1&#39;</span><span class="p">)</span>
+  <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample number&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Projection </span><span class="se">\n</span><span class="s1"> basis vector 2&#39;</span><span class="p">)</span>
+  <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">])</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Projection basis vector 1&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Projection basis vector 2&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample corr: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">plot_basis_vectors</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Plots bivariate data as well as new basis vectors.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    X (numpy array of floats) : Data matrix each column corresponds to a</span>
+<span class="sd">                                different random variable</span>
+<span class="sd">    W (numpy array of floats) : Square matrix representing new orthonormal</span>
+<span class="sd">                                basis each column represents a basis vector</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    Nothing.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">])</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1 activity&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2 activity&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 1&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 2&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Helper Functions</span>
+
+<span class="k">def</span> <span class="nf">sort_evals_descending</span><span class="p">(</span><span class="n">evals</span><span class="p">,</span> <span class="n">evectors</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Sorts eigenvalues and eigenvectors in decreasing order. Also aligns first two</span>
+<span class="sd">  eigenvectors to be in first two quadrants (if 2D).</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    evals (numpy array of floats)    : Vector of eigenvalues</span>
+<span class="sd">    evectors (numpy array of floats) : Corresponding matrix of eigenvectors</span>
+<span class="sd">                                        each column corresponds to a different</span>
+<span class="sd">                                        eigenvalue</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats)          : Vector of eigenvalues after sorting</span>
+<span class="sd">    (numpy array of floats)          : Matrix of eigenvectors after sorting</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">evals</span><span class="p">))</span>
+  <span class="n">evals</span> <span class="o">=</span> <span class="n">evals</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+  <span class="n">evectors</span> <span class="o">=</span> <span class="n">evectors</span><span class="p">[:,</span> <span class="n">index</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">evals</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">evectors</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+                           <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])))</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+      <span class="n">evectors</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">evectors</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">evectors</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                           <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])))</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+      <span class="n">evectors</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">evectors</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">evals</span><span class="p">,</span> <span class="n">evectors</span>
+
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Returns a matrix of 1000 samples from a bivariate, zero-mean Gaussian</span>
+
+<span class="sd">  Note that samples are sorted in ascending order for the first random</span>
+<span class="sd">  variable.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    var_1 (scalar)                     : variance of the first random variable</span>
+<span class="sd">    var_2 (scalar)                     : variance of the second random variable</span>
+<span class="sd">    cov_matrix (numpy array of floats) : desired covariance matrix</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats)            : samples from the bivariate Gaussian,</span>
+<span class="sd">                                          with each column corresponding to a</span>
+<span class="sd">                                          different random variable</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+  <span class="n">indices_for_sorting</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">indices_for_sorting</span><span class="p">,</span> <span class="p">:]</span>
+  <span class="k">return</span> <span class="n">X</span>
+
+
+<span class="k">def</span> <span class="nf">calculate_cov_matrix</span><span class="p">(</span><span class="n">var_1</span><span class="p">,</span> <span class="n">var_2</span><span class="p">,</span> <span class="n">corr_coef</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Calculates the covariance matrix based on the variances and</span>
+<span class="sd">  correlation coefficient.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    var_1 (scalar)         :  variance of the first random variable</span>
+<span class="sd">    var_2 (scalar)         :  variance of the second random variable</span>
+<span class="sd">    corr_coef (scalar)     :  correlation coefficient</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats) : covariance matrix</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">cov</span> <span class="o">=</span> <span class="n">corr_coef</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_1</span> <span class="o">*</span> <span class="n">var_2</span><span class="p">)</span>
+  <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">var_1</span><span class="p">,</span> <span class="n">cov</span><span class="p">],</span> <span class="p">[</span><span class="n">cov</span><span class="p">,</span> <span class="n">var_2</span><span class="p">]])</span>
+  <span class="k">return</span> <span class="n">cov_matrix</span>
+
+
+<span class="k">def</span> <span class="nf">define_orthonormal_basis</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Calculates an orthonormal basis given an arbitrary vector u.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    u (numpy array of floats) : arbitrary 2D vector used for new basis</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats)   : new orthonormal basis columns correspond to</span>
+<span class="sd">                                basis vectors</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+  <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">W</span>
+
+
+<span class="k">def</span> <span class="nf">change_of_basis</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Projects data onto a new basis.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    X (numpy array of floats) : Data matrix each column corresponding to a</span>
+<span class="sd">                                different random variable</span>
+<span class="sd">    W (numpy array of floats) : new orthonormal basis columns correspond to</span>
+<span class="sd">                                basis vectors</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats)   : Data matrix expressed in new basis</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">Y</span>
+
+<span class="k">def</span> <span class="nf">get_sample_cov_matrix</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Returns the sample covariance matrix of data X</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    X (numpy array of floats) : Data matrix each column corresponds to a</span>
+<span class="sd">                                different random variable</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats)   : Covariance matrix</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="c1"># Subtract the mean of X</span>
+  <span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+  <span class="c1"># Calculate the covariance matrix (hint: use np.matmul)</span>
+  <span class="n">cov_matrix</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">cov_matrix</span>
+
+<span class="k">def</span> <span class="nf">pca</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Performs PCA on multivariate data.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    X (numpy array of floats) : Data matrix each column corresponds to a</span>
+<span class="sd">                                different random variable</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    (numpy array of floats)   : Data projected onto the new basis</span>
+<span class="sd">    (numpy array of floats)   : Vector of eigenvalues</span>
+<span class="sd">    (numpy array of floats)   : Corresponding matrix of eigenvectors</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="c1"># Calculate the sample covariance matrix</span>
+  <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">get_sample_cov_matrix</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+  <span class="c1"># Calculate the eigenvalues and eigenvectors</span>
+  <span class="n">evals</span><span class="p">,</span> <span class="n">evectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">)</span>
+
+  <span class="c1"># Sort the eigenvalues in descending order</span>
+  <span class="n">evals</span><span class="p">,</span> <span class="n">evectors</span> <span class="o">=</span> <span class="n">sort_evals_descending</span><span class="p">(</span><span class="n">evals</span><span class="p">,</span> <span class="n">evectors</span><span class="p">)</span>
+
+  <span class="c1"># Project the data onto the new eigenvector basis</span>
+  <span class="n">score</span> <span class="o">=</span> <span class="n">change_of_basis</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">evectors</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">score</span><span class="p">,</span> <span class="n">evectors</span><span class="p">,</span> <span class="n">evals</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="one"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-i-what-does-pca-do">
+<h1>Part I. What does PCA do?<a class="headerlink" href="#part-i-what-does-pca-do" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<p>In the last tutorial (Geometric View of Data) you explored what it means to <em><strong>project</strong></em> data onto new <em>orthonormal</em> dimensions. The following plot shows data in two dimensions (the activity of two neurons) and an orthonormal basis that would:</p>
+<ol class="simple">
+<li><p>Explain the most variance in the data with the first basis.</p></li>
+<li><p>Reduce correlations in the data.</p></li>
+</ol>
+<img alt='Solution hint' align='center' width=400.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial2_Solution_97bca56d_0.png>
+<p>The goal of PCA is to find an orthonormal basis capturing the direction(s) of maximum variance of the data. More precisely, the <span class="math notranslate nohighlight">\(i\)</span>th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em> or <em>weights</em>).</p>
+<p>To perform PCA, we project the data onto the eigenvectors of the covariance matrix, i.e.:
+\begin{align}
+\bf S = X W
+\end{align}
+where <span class="math notranslate nohighlight">\(\bf S\)</span> is an <span class="math notranslate nohighlight">\(N_\text{samples} \times N\)</span> matrix representing the projected data (also called <em>scores</em>), and <span class="math notranslate nohighlight">\(\bf W\)</span> is an <span class="math notranslate nohighlight">\(N\times N\)</span> orthogonal matrix, each of whose columns represents the eigenvectors of the covariance matrix (also called <em>weights</em> or <em>loadings</em>).</p>
+<p>Executing the following code cell will plot the eigenvectors of the covariance matrix for a set of random data with a correlation coefficient specified by the slider.</p>
+<blockquote>
+<div><p>Note that the sample number is sorted based on the value of neuron 1’s activity for each datapoint.</p>
+</div></blockquote>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Execute this cell to enable widget { display-mode: &quot;form&quot; }</span>
+
+<span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="n">corr_coef</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+  <span class="c1"># corr_coef=0.5</span>
+  <span class="n">variance_1</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">variance_2</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="c1"># Compute covariance matrix</span>
+  <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">calculate_cov_matrix</span><span class="p">(</span><span class="n">variance_1</span><span class="p">,</span> <span class="n">variance_2</span><span class="p">,</span> <span class="n">corr_coef</span><span class="p">)</span>
+
+  <span class="c1"># Generate data with this covariance matrix</span>
+  <span class="n">X</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">)</span>
+
+  <span class="c1"># Perform PCA on the data matrix X</span>
+  <span class="n">score</span><span class="p">,</span> <span class="n">evectors</span><span class="p">,</span> <span class="n">evals</span> <span class="o">=</span> <span class="n">pca</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+  <span class="n">W</span> <span class="o">=</span> <span class="n">evectors</span>
+
+  <span class="c1"># Plot the data projected into the new basis</span>
+  <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">():</span>
+      <span class="c1"># plot_data_new_basis(Y)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample var 1: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+  
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Number&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample var 2: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])))</span>
+    
+    <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">],</span>
+            <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 1&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 2&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1 activity&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2 activity&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample corr: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+  
+    <span class="c1"># plot_data_new_basis(score)</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">score</span>
+    <span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Projection </span><span class="se">\n</span><span class="s1"> basis vector 1&#39;</span><span class="p">)</span>
+    <span class="n">ax5</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax5</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample number&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Projection </span><span class="se">\n</span><span class="s1"> basis vector 2&#39;</span><span class="p">)</span>
+    <span class="n">ax6</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax6</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">])</span>
+    <span class="n">ax6</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Projection basis vector 1&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Projection basis vector 2&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample corr: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">refresh</span><span class="p">,</span> <span class="n">corr_coef</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should be able to see that the eigenvectors align with the geometry of the data.</p>
+<p>PCA also has the useful property that the projected data (<em>scores</em>) are uncorrelated.</p>
+<p><a id="two"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-explained-variance">
+<h1>Part II. Explained variance<a class="headerlink" href="#part-ii-explained-variance" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<p>How much variance in the data is explained by each principle component?
+Finally, we will examine the eigenvalues of the covariance matrix. Remember that each eigenvalue describes the variance of the data projected onto its corresponding eigenvector. This is an important concept because it allows us to rank the PCA basis vectors based on how much variance each one can capture.</p>
+<p>First, run the code cell below to generate a random dataset and visualize the eigenvectors (orthonormal basis) of that dataset (computed by PCA). The first eigenvector is plotted in red and the second eigenvector is plotted in blue.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Execute this code cell to plot a new set of data (the activity of two neurons) { display-mode: &quot;form&quot; }</span>
+<span class="c1"># @markdown with correlation coefficient 0.8</span>
+
+<span class="n">corr_coef</span><span class="o">=</span><span class="mf">0.8</span>
+  <span class="c1"># corr_coef=0.5</span>
+<span class="n">variance_1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">variance_2</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Compute covariance matrix</span>
+<span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">calculate_cov_matrix</span><span class="p">(</span><span class="n">variance_1</span><span class="p">,</span> <span class="n">variance_2</span><span class="p">,</span> <span class="n">corr_coef</span><span class="p">)</span>
+
+<span class="c1"># Generate data with this covariance matrix</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">)</span>
+
+<span class="c1"># Perform PCA on the data matrix X</span>
+<span class="n">score</span><span class="p">,</span> <span class="n">evectors</span><span class="p">,</span> <span class="n">evals</span> <span class="o">=</span> <span class="n">pca</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">W</span> <span class="o">=</span> <span class="n">evectors</span>
+
+<span class="c1"># Plot the data projected into the new basis</span>
+<span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">():</span>
+    <span class="c1"># plot_data_new_basis(Y)</span>
+  <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+  <span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+  <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample var 1: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])))</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+
+  <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Number&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample var 2: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])))</span>
+
+  <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">],</span>
+          <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 1&#39;</span><span class="p">)</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 2&#39;</span><span class="p">)</span>
+  <span class="n">ax3</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1 activity&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2 activity&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample corr: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, run the code below to plot the eigenvalues of the eigenvectors for thsi dataset (sometimes called the “scree plot”). Which eigenvalue is larger?</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Execute this cell to plot the eigenvalues { display-mode: &quot;form&quot; }</span>
+<span class="c1">#@markdown for the new basis calculated by PCA on the data above</span>
+<span class="n">plot_eigenvalues</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="interactive-demo-exploration-of-the-correlation-coefficient">
+<h2>Interactive Demo: Exploration of the correlation coefficient<a class="headerlink" href="#interactive-demo-exploration-of-the-correlation-coefficient" title="Permalink to this headline">¶</a></h2>
+<p>How do the eigenvectors and eigenvalues change as the geometry of the original dataset changes? The correlation coefficient between the activity of two neurons is one parameter that can change the geometry of that original data.</p>
+<p>Run the following cell and use the slider to change the correlation coefficient in the data. You should see the scree plot and the plot of basis vectors update.</p>
+<ol class="simple">
+<li><p>What happens to the eigenvalues as you change the correlation coefficient?</p></li>
+<li><p>Can you find a value for which both eigenvalues are equal?</p></li>
+<li><p>Can you find a value for which only one eigenvalue is nonzero?</p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Execute this cell to enable the widget { display-mode: &quot;form&quot; }</span>
+
+<span class="k">def</span> <span class="nf">plot_eigenvalues</span><span class="p">(</span><span class="n">corr_coef</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+  <span class="n">variance_1</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">variance_2</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">calculate_cov_matrix</span><span class="p">(</span><span class="n">variance_1</span><span class="p">,</span> <span class="n">variance_2</span><span class="p">,</span> <span class="n">corr_coef</span><span class="p">)</span>
+  <span class="n">X</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">)</span>
+  <span class="n">score</span><span class="p">,</span> <span class="n">evectors</span><span class="p">,</span> <span class="n">evals</span> <span class="o">=</span> <span class="n">pca</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+  <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">]);</span>
+  <span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+  <span class="c1"># plot_basis_vectors(X, evectors)</span>
+
+  <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">])</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron 1 activity&#39;</span><span class="p">)</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron 2 activity&#39;</span><span class="p">)</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 1&#39;</span><span class="p">)</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis vector 2&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+  <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+  <span class="c1"># plot_eigenvalues(evals)</span>
+  <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">evals</span><span class="p">,</span> <span class="s1">&#39;o-k&#39;</span><span class="p">)</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Component&#39;</span><span class="p">)</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Eigenvalue&#39;</span><span class="p">)</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Scree plot&#39;</span><span class="p">)</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+  <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+  
+<span class="n">_</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">plot_eigenvalues</span><span class="p">,</span> <span class="n">corr_coef</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="three"></a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iii-dimensionality-reduction">
+<h1>Part III. Dimensionality Reduction<a class="headerlink" href="#part-iii-dimensionality-reduction" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<p>Now let’s consider data that has a higher dimensionality. For example, the activity of 1000 neurons. We can’t visualize that like we have been because on a computer screen we can only visualize two dimensions (or 3 with an interactive rotating plot).
+We can perform PCA on the 1000-dimensional data just like we have been on 2-dimensional data. Instead of 2 eigenvectors, PCA would result in up to 1000.</p>
+<p>But here is where PCA becomes particularly significant.
+In the example scree plot below, most of the eigenvalues are near zero, with fewer than 100 having large values (only the first 100 components are shown).</p>
+<img alt='Solution hint' align='center' width=500 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial3_Solution_d8411e54_0.png>
+<p>Based on the distribution of eigenvalues, we can understand something about the <em><strong>intrinsic dimensionality</strong></em> of the data. To determine the data’s intrinsic dimensionality we can consider the variance explained (eigenvalues) by the components of the PCA (the eigenvectors). This can be examined with a cumulative plot of the fraction of the total variance (eigenvalues) explained by the top <span class="math notranslate nohighlight">\(K\)</span> components</p>
+<details>
+<summary> <font color='blue'>Click here if you are interested in detials about the math behind calculating the total variance explained </font></summary>
+\begin{align}
+\text{var explained} = \frac{\sum_{i=1}^K \lambda_i}{\sum_{i=1}^N \lambda_i}
+\end{align}
+<p>where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> eigenvalue and <span class="math notranslate nohighlight">\(N\)</span> is the total number of components (the original number of dimensions in the data).</p>
+</details>
+<p>The intrinsic dimensionality is often quantified by the eigenvectors necessary to explain a large proportion of the total variance of the data (often a defined threshold, e.g., 90%).</p>
+<img alt='Solution hint' align='center' width=500 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/tutorials/W1D5_DimensionalityReduction/static/W1D5_Tutorial3_Solution_a4ac4c9c_0.png>
+<p>Based on the cummulative explained variance, we see that we could almost fully describe the 1000-dimensional data with just 100 components (eigenvectors from PCA).</p>
+<p>In the next couple of weeks, we will encounter specific examples of the utility of this concept in neuroscience.</p>
+<p><a id="summary"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<ul class="simple">
+<li><p>In this tutorial, you learned that The goal of PCA is to find an orthonormal basis capturing the directions of maximum variance of the data. More precisely, the <span class="math notranslate nohighlight">\(i\)</span>th basis vector is the direction that maximizes the projected variance, while being orthogonal to all previous basis vectors. Mathematically, these basis vectors are the eigenvectors of the covariance matrix (also called <em>loadings</em>).</p></li>
+<li><p>PCA also has the useful property that the projected data (<em>scores</em>) are uncorrelated.</p></li>
+<li><p>The projected variance along each basis vector is given by its corresponding eigenvalue. This is important because it allows us rank the “importance” of each basis vector in terms of how much of the data variability it explains. An eigenvalue of zero means there is no variation along that direction so it can be dropped without losing any information about the original data.</p></li>
+<li><p>Importantly, neuroscientists use this property to reduce the dimensionality of high-dimensional data.</p></li>
+</ul>
+<p><a id="notation"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="notation">
+<h1>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<p>\begin{align}
+\mathbf{x_i}  &amp;\quad \text{all measurements of neuron } i\
+\bar{\bf x_i}  &amp;\quad \text{mean across samples for neuron } i \
+\bf \Sigma &amp;\quad \text{covariance matrix}\
+\bf \hat \Sigma &amp;\quad \text{sample covariance matrix}\
+\bf W &amp;\quad \text{weights, loadings matrix}\
+{\bf X} &amp;\quad \text{original data matrix}\
+\bf S &amp;\quad \text{projected matrix, scores}\
+N &amp;\quad \text{data dimensionality}\
+N_\text{samples} &amp;\quad \text{number of samples}\
+\end{align}</p>
+<hr class="docutils" />
+<p>This tutorial was written by Krista Perks for courses taught at Wesleyan University. Based on content from <strong>Neuromatch Academy 2020: Week 1, Day 5: Dimensionality Reduction</strong> by Alex Cayco Gajic, John Murray</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week-11"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Tutorial-Geometric-View-Of-Data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tutorial: Geometric view of data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week-12/week-12.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 12. BCIs and Ghost Music</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. Krista Perks<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

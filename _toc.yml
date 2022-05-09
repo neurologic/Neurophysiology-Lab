@@ -33,6 +33,7 @@ parts:
         - file: week-3/Experimental-Design-for-Analysis_Responses
     - file: week-4/week-4
       sections:
+        - file: week-4/Lab-Manual
         - file: week-4/Sensory-Coding
         - file: week-4/Sensory-Coding_Responses
     - file: week-5/week-5
