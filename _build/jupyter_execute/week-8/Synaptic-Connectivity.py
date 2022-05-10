@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-8/Synaptic-Connectivity.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
 # # Synaptic Connectivity
@@ -45,12 +45,6 @@
 
 # <a id="setup"></a>
 # # Setup
-
-# In[ ]:
-
-
-#@title {display-mode: "form"}
-
 
 # Import and define functions
 
@@ -157,8 +151,9 @@ f.add_trace(go.Scatter(x = time[0:fs], y = pre[0:fs],
 f.add_trace(go.Scatter(x = time[0:fs], y = post[0:fs],
                              name='post synaptic',opacity=1),row=2,col=1)
 f.update_layout(height=600, width=800,
+                showlegend=False,
                xaxis2_title="time(seconds)", 
-                  yaxis_title='amplitude (volts)', yaxis2_title='amplitude (volts)')
+                  yaxis_title='pre-synaptic voltage', yaxis2_title='post-synaptic voltage')
 
 slider = widgets.FloatRangeSlider(
     min=0,
@@ -167,7 +162,7 @@ slider = widgets.FloatRangeSlider(
     step= 1,
     readout=False,
     description='Time')
-slider.layout.width = '800px'
+slider.layout.width = '600px'
 
 # our function that will modify the xaxis range
 def response(x):
@@ -200,17 +195,17 @@ vb
 
 #@title { display-mode: "form" }
 
-#@markdown <b>TASK: </b> Type in the start and stop time (in seconds) 
-#@markdown that you want to focus on in the recording.
+#@markdown Type in the start and stop time (in seconds) 
+#@markdown that specifies the section of your recording you want to focus on for analysis.
 # start_time =   None#@param {type: "number"}
 # stop_time = None  #@param {type: "number"}
-# #@markdown <b>TASK: </b> Type in an appropriate event threshold amplitude for detection.
+# #@markdown Also type in an appropriate threshold amplitude for event detection.
 # threshold = None  #@param {type: "number"}
-# #@markdown <b>TASK: </b> Then from the dropdown, select a polarity (whether peaks are up or down)
+# #@markdown Then from the dropdown, select a polarity (whether peaks are up or down)
 # peaks = "up"  #@param ['select peak direction','up', 'down']
-# #@markdown <b>TASK: </b> Finally, RUN this cell to set these values.
+# #@markdown Finally, run this cell to set these values.
 
-start_time =   0 #@param {type: "number"}
+start_time =   15 #@param {type: "number"}
 stop_time = 20  #@param {type: "number"}
 #@markdown <b>TASK: </b> Type in an appropriate event threshold amplitude for detection.
 threshold = 0.1  #@param {type: "number"}
@@ -244,9 +239,11 @@ df_props = pd.DataFrame({
 n,bins = np.histogram(df_props['height'],bins = 100) # calculate the histogram
 bins = bins[1:]
 hfig,ax = plt.subplots(1)
-ax.step(bins,n)
-ax.set_ylabel('count')
-ax.set_xlabel('amplitude')
+ax.step(bins,n,color='black')
+ax.set_ylabel('count',fontsize=14)
+ax.set_xlabel('amplitude',fontsize=14)
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
 
 windur = 0.001
 winsamp = int(windur*fs)
@@ -267,31 +264,36 @@ print('You detected %i events above threshold.' %len(df.columns))
 loadings = pd.DataFrame(pca.components_.T, columns=df_pca.columns, index=df.columns)
 df_data = loadings.join(df_props['height'])
 
-hfig,ax = plt.subplots(1)
-ax.set_xlabel('seconds')
-ax.set_ylabel('amplitude (a.u.)')
-ax.set_yticklabels([])
-for c in df_pca.columns[0:5]:
-    ax.plot(df_pca[c],label = c,alpha = 0.75)
-plt.legend(bbox_to_anchor=(1, 1));
+# hfig,ax = plt.subplots(1)
+# ax.set_xlabel('seconds')
+# ax.set_ylabel('amplitude (a.u.)')
+# ax.set_yticklabels([])
+# for c in df_pca.columns[0:5]:
+#     ax.plot(df_pca[c],label = c,alpha = 0.75)
+# plt.legend(bbox_to_anchor=(1, 1));
 
 print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
+
+# <a id = "cluster-events"></a>
+# 
+# The histogram plot can give you a sense for how many distinct motor neurons might be in your recording. 
+# 
+# We can cluster events based on peak height and waveform shape using ["Kmeans"](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) clustering. 
+# This will provide us with "putative single units" for further analysis.
 
 # In[ ]:
 
 
 #@title Cluster Detected Events { display-mode: "form" }
 
-#@markdown Let's start by clustering the events into putative motor units. { display-mode: "form" }
-#@markdown Choose the number of clusters you want to split the data into and type that number below. <br>
+#@markdown Choose the number of clusters you want to split the event-based data into and type that number below. <br>
 #@markdown >Note: It can sometimes help to "over-split" the events into more clusters 
 #@markdown than you think will be necessary. You can try both strategies and assess the results.
 number_of_clusters = None #@param {type: "number"}
-#@markdown RUN this cell to cluster events categorically based on waveform shape (in PC space) and amplitude. 
-#@markdown <br>As a result, you will see a plot of the mean waveform from each cluster (with standard deviation shaded)
+#@markdown Then run this cell to run the Kmeans algorithm. 
 
-number_of_clusters = 7 #@param {type: "number"}
+number_of_clusters = 5 #@param {type: "number"}
 
 # No need to edit below this line
 #################################
@@ -300,13 +302,26 @@ kmeans = KMeans(n_clusters=number_of_clusters).fit(df_data)
 # df_props['peaks_t'] = peaks_t
 df_props['cluster'] = kmeans.labels_
 
+
+# <a id = "display-clusters"></a>
+# 
+# Now that the events are clustered, you can visualize the mean spike waveform associated with each cluster (putative motor neuron).
+
+# In[ ]:
+
+
+#@title {display-mode:'form'}
+
+#@markdown Run this cell to display the mean (and std) waveform for each cluster.
+
+windur = 0.001
 winsamps = int(windur * fs)
 x = np.linspace(-windur,windur,winsamps*2)*1000
-hfig,ax = plt.subplots(1,figsize=(10,8))
-ax.set_ylabel('Volts recorded')
-ax.set_xlabel('milliseconds')
-
-# fig = go.Figure()
+hfig,ax = plt.subplots(1,figsize=(8,6))
+ax.set_ylabel('Volts recorded',fontsize=14)
+ax.set_xlabel('milliseconds',fontsize=14)
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
 
 for k in np.unique(df_props['cluster']):
     spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values #['peaks_t'].values
@@ -315,16 +330,14 @@ for k in np.unique(df_props['cluster']):
     spkwav = np.asarray([pre[(int(t*fs)-winsamps):(int(t*fs)+winsamps)] for t in spkt])
     wav_u = np.mean(spkwav,0)
     wav_std = np.std(spkwav,0)
-    # fig.add_trace(go.Scatter(x = x, y = wav_u,line_color=pal[k],name='cluster ' + str(k)),
-    #          row=1,col=1)
     ax.plot(x,wav_u,linewidth = 3,label='cluster '+ str(k),color=pal[k])
     ax.fill_between(x, wav_u-wav_std, wav_u+wav_std, alpha = 0.25,color=pal[k])
-# fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=500, height=500)
-plt.legend(bbox_to_anchor=[1.25,1]);
+plt.legend(bbox_to_anchor=[1.25,1],fontsize=14);
 
 print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 
+# <a id='merge-clusters'></a>
 # If there are multiple spike clusters you want to merge into a single cell class, *edit and run* the cell below.
 # 
 # > **merge_cluster_list** = a list of the clusters (identified by numbers associated with the colors specified in the legend above).
@@ -336,14 +349,14 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@title { display-mode: "form" }
+#@title Merge Clusters { display-mode: "form" }
 
-#@markdown ONLY DO THIS TASK IF YOU WANT TO MERGE CLUSTERS. { display-mode: "form" }
+#@markdown ONLY USE THIS CODE CELL IF YOU WANT TO MERGE CLUSTERS. 
 #@markdown OTHERWISE, MOVE ON. 
 #@markdown <br> Below, create your list (of sublists) of clusters to merge.
 #@markdown >Just leave out from the list any clusters that you want unmerged.
 merge_cluster_list = [[0,3,4],[1,2]] #@param
-#@markdown Then, RUN the cell to merge clusters as specified.
+#@markdown Then, run this cell to merge clusters as specified.
 
 for k_group in merge_cluster_list:
     for k in k_group:
@@ -353,50 +366,18 @@ print('you now have the following clusters: ' + str(np.unique(df_props['cluster'
 print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 
-# In[ ]:
+# After merging, return to the [display clusters](#display-clusters) code cell to plot the mean waveform of each new cluster (and determine if you need to [merge more](#merge-clusters)).
 
-
-#@title { display-mode: "form" }
-
-#@markdown Now, RUN this cell to plot the average waveform for your new clusters. { display-mode: "form" }
-##@markdown And to plot a color-coded scatter of each detected and categorized emg event.
-winsamps = int(windur * fs)
-x = np.linspace(-windur,windur,winsamps*2)*1000
-hfig,ax = plt.subplots(1,figsize=(8,6))
-ax.set_ylabel('amplitude')
-ax.set_xlabel('milliseconds')
-
-# fig = go.Figure()
-
-for k in np.unique(df_props['cluster']):
-    spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-    spkt = spkt[(spkt>windur) & (spkt<(len((pre)/fs)-windur))]
-    print(str(len(spkt)) + " spikes in cluster number " + str(k))
-    spkwav = np.asarray([pre[(int(t*fs)-winsamps):(int(t*fs)+winsamps)] for t in spkt])
-    wav_u = np.mean(spkwav,0)
-    wav_std = np.std(spkwav,0)
-    # fig.add_trace(go.Scatter(x = x, y = wav_u,line_color=pal[k],name='cluster ' + str(k)),
-    #          row=1,col=1)
-    ax.plot(x,wav_u,linewidth = 3,label='cluster '+ str(k),color=pal[k])
-    ax.fill_between(x, wav_u-wav_std, wav_u+wav_std, alpha = 0.25,color=pal[k])
-# fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=500, height=500)
-plt.legend(bbox_to_anchor=[1.25,1]);
-
-# fig = go.Figure()
-# fig.add_trace(go.Scatter(x = xtime, y = samples,line_color='black',name='emg0'))
-# for i,k in enumerate(np.unique(df_props['cluster'])):
-#     df_ = df_props[df_props['cluster']==k]
-#     fig.add_trace(go.Scatter(x = df_['peaks_t'], y = polarity*df_['height'],line_color=pal[k],name=str(k),mode='markers'))
-# fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800, height=400)
-
-print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
-
+# <a id="raw-cluster-scatter"></a>
+# 
+# Once you are happy with the clustering results based on the waveform shapes, check back with the raw data. 
 
 # In[ ]:
 
 
-#@title Overlay cluster identity on Raw signal {display-mode:"form"}
+#@title {display-mode:"form"}
 
+#@markdown Run this cell to overlay spike times by cluster identity on the raw signal
 
 f = go.FigureWidget()
 f.add_trace(go.Scatter(x = time[0:fs], y = pre[0:fs],
@@ -444,40 +425,59 @@ vb.layout.align_items = 'center'
 vb
 
 
+# If you think that two different spike waveforms are being lumped together, try going back to the [Kmeans clustering algorithm](#cluster-events) and increasing the cluster number constraint on the Kmeans algorithm - then [merge](#merge-clusters) as needed. 
+
 # <a id="two"></a>
-# # Part II.
+# # Part II. Spike-triggered voltage
 # 
 # [toc](#toc)
+# 
+# You can use the event times (spike times) to extract the pre-synaptic and/or post-synaptic voltage signal following each event. This is a helpful way to determine if you have recorded any synaptic pairs (a connected pair of pre and post-synaptic cells).  
 
 # In[ ]:
 
 
-#@title {display-mode:"form"}
+#@title Plot the average spike-triggered post-synaptic potential for each cluster {display-mode:"form"}
 
-windur = 0.1 #@param
+#@markdown Type in the window duration that you want to analyze following each spiking event. 
+
+window = 0.1 #@param
 
 # No need to edit below this line
 #################################
+windur = window
 winsamps = int(windur * fs)
 x = np.linspace(0,windur,winsamps)*1000 #transform time to milliseconds
 hfig,ax = plt.subplots(1)
-ax.set_ylabel('amplitude (volts)')
-ax.set_xlabel('milliseconds')
+ax.set_ylabel('volts recorded',fontsize=14)
+ax.set_xlabel('milliseconds',fontsize=14)
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
 for k in np.unique(df_props['cluster']):
     spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
     spkt = spkt[(spkt<((len(post)/fs)-windur))]
     synwav = np.asarray([post[(int(t*sampling_rate)):(int(t*sampling_rate)+winsamps)] for t in spkt])
     wav_u = np.mean(synwav,0)
     wav_std = np.std(synwav,0)
-    ax.plot(x,wav_u,linewidth = 3,color = pal[k])
+    ax.plot(x,wav_u,linewidth = 3,color = pal[k],label='cluster '+str(k))
     # ax.fill_between(x, wav_u-wav_std, wav_u+wav_std, alpha = 0.25, color = pal[k])
+plt.legend(bbox_to_anchor=[1,1], fontsize=14);
 
 
 # In[ ]:
 
 
-windur = 0.1 #@param
+#@title Plot the spike-triggered post-synaptic potential for each individual events in each cluster {display-mode:"form"}
 
+#@markdown Type in the window duration that you want to analyze following each spiking event. 
+
+window = 0.1 #@param
+
+#@markdown Run this code cell to plot a random set of 10 spike time triggered voltage signals
+#@markdown (pre and post synaptic) for each cluster (or maximum number of trials for that cluster).
+#@markdown Every time you select a new cluster, a new random sample of trials from that cluster will be plotted.
+#@markdown <br> The average waveform is plotted overlaid in black.
+windur = window
 winoffset = 0.002 # in milliseconds
 winsamps = int(windur * fs)
 xtime = ((np.linspace(0,windur,winsamps))- winoffset)*1000 #subtract pre-spike offset
@@ -508,10 +508,11 @@ f.add_trace(go.Scatter(x=xtime,y = syn_u,line_color = 'black'),row=2,col=1)
 
     
 f.update_layout(height=600, width=800,
+                showlegend=False,
                xaxis2_title="time(milliseconds)", 
                   yaxis_title='amplitude (volts)',yaxis2_title='amplitude (volts)')
 
-cluster_select = widgets.Dropdown(b
+cluster_select = widgets.Dropdown(
     options=np.unique(df_props['cluster']),
     value=k,
     description='Cluster ID:',
@@ -560,7 +561,17 @@ vb
 # In[ ]:
 
 
-windur = 0.1 #@param
+#@title Plot the spike-triggered post-synaptic potential for each individual events in each cluster {display-mode:"form"}
+
+#@markdown Type in the window duration that you want to analyze following each spiking event. 
+
+window = 0.1 #@param
+
+#@markdown Run this code cell to plot individual spike time triggered voltage signals
+#@markdown (pre and post synaptic) for each cluster. Select the cluster from the dropdown menu.
+#@markdown Select the spike event number using the slider.
+
+windur=window
 
 winoffset = 2 # in milliseconds
 winsamps = int(windur * fs)
@@ -576,14 +587,15 @@ spkt = spkt[(spkt>winoffset) & (spkt<(len(post)/fs)-windur)] - winoffset/1000
 spkt_ = spkt[0]
     
 spkwav = pre[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)] - pre[int(spkt_*fs)]
-f.add_trace(go.Scatter(x=xtime,y = spkwav,line_color = 'black'),row=1,col=1)
+f.add_trace(go.Scatter(x=xtime,y = spkwav,line_color = 'black',name='pre synaptic'),row=1,col=1)
 
-synwav = post[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)] - post[int(spkt_*fs)]
-f.add_trace(go.Scatter(x=xtime,y = synwav,line_color = 'black'),row=2,col=1)
+synwav = post[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)]# - post[int(spkt_*fs)]
+f.add_trace(go.Scatter(x=xtime,y = synwav,line_color = 'black',name='post synaptic'),row=2,col=1)
 
 f.update_layout(height=600, width=800,
+                showlegend=False,
                 xaxis2_title="time(milliseconds)", 
-                yaxis_title='amplitude (volts)',yaxis2_title='amplitude (volts)')
+                yaxis_title='pre-synaptic voltage',yaxis2_title='post-synaptic voltage')
 
 cluster_select = widgets.Dropdown(
     options=np.unique(df_props['cluster']),
@@ -597,13 +609,14 @@ event_select = widgets.IntSlider(
     min=0,
     max=len(spkt),
     step=1,
-    description='Test:',
+    description='Spike Event Number:',
     disabled=False,
     continuous_update=False,
     orientation='horizontal',
     readout=True,
     readout_format='d'
 )
+event_select.layout.width = '600px'
 
 # our function that will modify the xaxis range
 def response(k,t):
@@ -615,7 +628,7 @@ def response(k,t):
 
         spkt_ = spkt[event_select.value] # shoulod be able to use "t"
         spkwav = pre[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)] - pre[int(spkt_*fs)]
-        synwav = post[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)] - post[int(spkt_*fs)]
+        synwav = post[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)]# - post[int(spkt_*fs)]
         
         f.data[0].y = spkwav
         f.data[1].y = synwav
@@ -630,19 +643,48 @@ vb
 
 
 # <a id="three"></a>
-# # Part III.
+# # Part III. PSP amplitudes
 # 
 # [toc](#toc)
+# 
+# To detect post-synaptic potentials (psps), you can use the same method you used to find events (signal peaks) in the pre-synaptic signal. Did you record distinct classes of PSPs or was the distribution of PSPs continuous?
 
-# <a id="four"></a>
-# # Part IV.
-# 
-# [toc](#toc)
+# In[ ]:
 
-# <a id="five"></a>
-# # Part V.
-# 
-# [toc](#toc)
+
+#@title {display-mode:'form'}
+
+#@markdown <Type in an appropriate event threshold amplitude for detection of psps.
+threshold = 0.02  #@param {type: "number"}
+
+#@markdown Then, run this cell to detect psp peaks and calculate their height.
+
+#@markdown You will see a scatter plot of peaks (red) and bases (green) overlaid on the raw trace
+#@markdown and a histogram of event peak amplitudes.
+
+min_isi = 0.002 #seconds
+
+# samples_inwin = samples[int(start_time/sample_rate):int(stop_time/sample_rate)]
+peaks,props = find_peaks(post,prominence = threshold, distance=int(min_isi*fs))
+peaks_,props_ = find_peaks(-post,prominence = threshold, distance=int(min_isi*fs))
+
+plt.figure(figsize=(15,3))
+plt.plot(post)
+plt.scatter(peaks_,post[peaks_],color='green')
+plt.scatter(peaks,post[peaks],color='red')
+plt.xlim(0,2*fs)
+plt.ylim(-0.8,-0.5)
+
+psp_amp = []
+for p in peaks:
+    b = np.max(peaks_[peaks_<p])
+    psp_amp.append(post[p]-post[b])
+
+plt.figure(figsize=(3,5))
+n,bins = np.histogram(psp_amp,100)
+sns.stripplot(y=psp_amp,alpha=0.2,jitter=0.4)
+plt.ylim(0,0.2)
+
 
 # <hr> 
 # Written by Dr. Krista Perks for courses taught at Wesleyan University.
