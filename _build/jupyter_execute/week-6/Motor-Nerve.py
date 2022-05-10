@@ -1,34 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-8/Synaptic-Connectivity.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-6/Motor-Nerve.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
-# # Synaptic Connectivity
+# # Motor Neuron Types
 # 
-# Arthropod muscle innervation is different from vertebrate muscle innervation in several interesting ways:
-# <ul>
-#     <li>Arthropod muscles are innervated by relatively few excitatory motor neurons (sometimes only one).</li>
-#     <li>Arthropod motor neurons innervate each muscle fiber at multiple points (multiterminal innervation).</li>
-#     <li>More than one motor neuron may innervate one muscle fiber (polyneuronal innervation).</li>
-#     <li>Inhibitory motor neurons may innervate muscle fibers (and sometimes the terminals of the excitatory motor nerve endings).
-#     <li>The tonic superficial flexor does not have “all-or-none” propagated action potentials, but instead has graded electrical responses dependent upon the level of the excitation and inhibition. The degree of depolarization determines the amount of Ca2+ that enters the cell through voltage-gated channels; the amount of Ca2+ entry in turn determines the strength of muscle contraction. Note: unlike the superficial flexor, fast phasic crayfish muscles may fire Ca2+-based action potentials.</li>
-#     </ul>
-# 
-# <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.3-Comparison_with_Skeletal_Muscle.png?raw=True' width="600" alt='arthoropod versus vertebrate muscle innervation' align="center"/>
-# 
-# Therefore, arthropod skeletal muscle integration (innervation and summation) is actually more analagous to cortical dendritic integration in vertebrates. As in human brains, glutamate is an excitatory transmitter and GABA is an inhibitory transmitter. The multiterminal, polyneuronal, and inhibitory innervation of crustacean muscle, the use of glutamate and GABA as transmitters, and the extensive synaptic plasticity make the crayfish neuromuscular junction a good simplified model for the complex mix of synaptic interactions that occur in our own brains.
-# 
-# <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.4-Comparison_with_Brain_Synapses.png?raw=True' width="600" alt='arthoropod versus vertebrate muscle innervation' align="center"/>
-# 
-# 
-# <!-- <figure align="center">
-# <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.3-Comparison_with_Skeletal_Muscle.png?raw=True' width="300" alt='arthoropod versus vertebrate muscle innervation' align="center"/>
-# <figcaption align = "center"><b>Electric organ discharge waveform</b> and sex, in three snoutfish species of southern Africa. All electric organ discharges represented as voltage over time, recorded in the field immediately after capture. Same time bar for all. (a) Sexual dimorphism in Marcusenius altisambesi with two distinct waveforms. (b) Sex difference of only a statistical nature in Petrocephalus catostoma (Upper Zambezi form) with, in most males, a stronger second positive phase than in females, such as shown here. (c) Petrocephalus wesselsi (Sabie River, South Africa) with no difference between the sexes. P. wesselsi was recognized as distinct from P. catostoma only recently.
-# </figcaption>
-# </figure> -->
-# 
-# <!-- <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer">Link to Other Notebooks (colab link)</a>    -->
+# The superficial flexor muscle of the crayfish is innervated by a small number of motor neurons. Because each motor neuron has a different axon diameter, you can tell them apart in your recording. 
 # 
 
 # <a id="toc"></a>
@@ -37,8 +15,7 @@
 # - [Introduction](#intro)
 # - [Setup](#setup)
 # - [Part I. Process Data](#one)
-# - [Part II. Spike-Triggered Voltage](#two)
-# - [Part III. PSP amplitudes](#three)
+# - [Part II. Motor Neuron Activity](#two)
 # 
 
 # <a id="setup"></a>
@@ -403,265 +380,16 @@ vb
 # If you think that two different spike waveforms are being lumped together, try going back to the [Kmeans clustering algorithm](#cluster-events) and increasing the cluster number constraint on the Kmeans algorithm - then [merge](#merge-clusters) as needed. 
 
 # <a id="two"></a>
-# # Part II. Spike-triggered voltage
+# # Part II. Motor Neuron activity
 # 
 # [toc](#toc)
 # 
-# You can use the event times (spike times) to extract the pre-synaptic and/or post-synaptic voltage signal following each event. This is a helpful way to determine if you have recorded any synaptic pairs (a connected pair of pre and post-synaptic cells).  
+# How do different motor neuron types differ in their activity under different conditions?  
 
 # In[ ]:
 
 
-#@title {display-mode:"form"}
 
-#@markdown Type in the window duration that you want to analyze following each spiking event. 
-#@markdown Then run this cell to plot the average spike-triggered post-synaptic potential for each cluster
-
-window = 0.1 #@param
-
-# No need to edit below this line
-#################################
-windur = window
-winsamps = int(windur * fs)
-x = np.linspace(0,windur,winsamps)*1000 #transform time to milliseconds
-hfig,ax = plt.subplots(1)
-ax.set_ylabel('volts recorded',fontsize=14)
-ax.set_xlabel('milliseconds',fontsize=14)
-plt.xticks(fontsize=14)
-plt.yticks(fontsize=14)
-for k in np.unique(df_props['cluster']):
-    spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-    spkt = spkt[(spkt<((len(post)/fs)-windur))]
-    synwav = np.asarray([post[(int(t*sampling_rate)):(int(t*sampling_rate)+winsamps)] for t in spkt])
-    wav_u = np.mean(synwav,0)
-    wav_std = np.std(synwav,0)
-    ax.plot(x,wav_u,linewidth = 3,color = pal[k],label='cluster '+str(k))
-    # ax.fill_between(x, wav_u-wav_std, wav_u+wav_std, alpha = 0.25, color = pal[k])
-plt.legend(bbox_to_anchor=[1,1], fontsize=14);
-
-
-# It is helpful to look at individual trials (events) to get a sense of the variance/reliability in the pre and post-synaptic signal associated with each spike time.
-
-# In[ ]:
-
-
-#@title {display-mode:"form"}
-
-#@markdown Type in the window duration that you want to analyze following each spiking event. 
-
-window = 0.1 #@param
-
-#@markdown Then, run this code cell to plot a random set of 10 spike time triggered voltage signals
-#@markdown (pre and post synaptic) for each cluster (or maximum number of trials for that cluster).
-#@markdown Every time you select a new cluster, a new random sample of trials from that cluster will be plotted.
-#@markdown <br> The average waveform is plotted overlaid in black.
-windur = window
-winoffset = 0.002 # in milliseconds
-winsamps = int(windur * fs)
-xtime = ((np.linspace(0,windur,winsamps))- winoffset)*1000 #subtract pre-spike offset
-
-k = df_props['cluster'][0] #seed it to start
-
-f = go.FigureWidget(make_subplots(rows=2,cols=1,shared_xaxes=True))
-
-spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-spkt = spkt[(spkt>winoffset) & (spkt<(len(post)/fs)-windur)] - winoffset
-
-spkt_ = spkt[random.sample(range(0,len(spkt)),np.min([10,len(spkt)]))]
-    
-spkwav = np.asarray([pre[(int(t*fs)):(int(t*fs)+winsamps)] - pre[int(t*fs)] for t in spkt_]).T
-spk_u = np.mean(spkwav,1)
-spk_std = np.std(spkwav,1)
-
-for i in spkwav.T:
-    f.add_trace(go.Scatter(x = xtime, y = i, opacity = 0.5,line_color = pal[k]),row=1,col=1);
-f.add_trace(go.Scatter(x=xtime,y = spk_u,line_color = 'black'),row=1,col=1)
-
-synwav = np.asarray([post[(int(t*fs)):(int(t*fs)+winsamps)] - post[int(t*fs)] for t in spkt_]).T
-syn_u = np.mean(synwav,1)
-syn_std = np.std(synwav,1)
-for i in synwav.T:
-    f.add_trace(go.Scatter(x = xtime, y = i, opacity = 0.5,line_color = pal[k]),row=2,col=1);
-f.add_trace(go.Scatter(x=xtime,y = syn_u,line_color = 'black'),row=2,col=1)
-
-    
-f.update_layout(height=600, width=800,
-                showlegend=False,
-               xaxis2_title="time(milliseconds)", 
-                  yaxis_title='amplitude (volts)',yaxis2_title='amplitude (volts)')
-
-cluster_select = widgets.Dropdown(
-    options=np.unique(df_props['cluster']),
-    value=k,
-    description='Cluster ID:',
-    disabled=False,
-    )
-
-
-# our function that will modify the xaxis range
-def response(k):
-    with f.batch_update():
-        spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-        spkt = spkt[(spkt>winoffset) & (spkt<(len(post)/fs)-windur)] - winoffset
-        
-        spkt_ = spkt[random.sample(range(0,len(spkt)),np.min([10,len(spkt)]))]
-    
-        spkwav = np.asarray([pre[(int(t*fs)):(int(t*fs)+winsamps)] - pre[int(t*fs)] for t in spkt_]).T
-        spk_u = np.mean(spkwav,1)
-        spk_std = np.std(spkwav,1)
-
-        synwav = np.asarray([post[(int(t*fs)):(int(t*fs)+winsamps)] - post[int(t*fs)] for t in spkt_]).T
-        syn_u = np.mean(synwav,1)
-        syn_std = np.std(synwav,1)
-
-        trace_ = 0
-
-        for i in spkwav.T:
-            f.data[trace_].y = i
-            trace_+=1
-        f.data[trace_].y = spk_u
-        trace_+=1
-
-        for i in synwav.T:
-            f.data[trace_].y = i
-            trace_+=1
-        f.data[trace_].y = syn_u
-        trace_+=1
-
-
-vb = VBox((f, interactive(response, k=cluster_select)))
-vb.layout.align_items = 'center'
-vb
-
-
-# Finally, you can plot the pre and post synaptic signal associated with each individual event time in each cluster. This visualization enables you to extract more exact quantitative measurements from the signals associated with each event.
-
-# In[ ]:
-
-
-#@title  {display-mode:"form"}
-
-#@markdown Type in the window duration that you want to analyze following each spiking event. 
-
-window = 0.1 #@param
-
-#@markdown Then, run this code cell to plot individual spike-triggered voltage signals
-#@markdown (pre and post synaptic) for each cluster. Select the cluster from the dropdown menu.
-#@markdown Select the spike event number using the slider.
-
-windur=window
-
-winoffset = 2 # in milliseconds
-winsamps = int(windur * fs)
-xtime = ((np.linspace(0,windur,winsamps))*1000)- winoffset #subtract pre-spike offset
-
-k = df_props['cluster'][0] #seed it to start
-
-f = go.FigureWidget(make_subplots(rows=2,cols=1,shared_xaxes=True))
-
-spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-spkt = spkt[(spkt>winoffset) & (spkt<(len(post)/fs)-windur)] - winoffset/1000
-
-spkt_ = spkt[0]
-    
-spkwav = pre[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)] - pre[int(spkt_*fs)]
-f.add_trace(go.Scatter(x=xtime,y = spkwav,line_color = 'black',name='pre synaptic'),row=1,col=1)
-
-synwav = post[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)]# - post[int(spkt_*fs)]
-f.add_trace(go.Scatter(x=xtime,y = synwav,line_color = 'black',name='post synaptic'),row=2,col=1)
-
-f.update_layout(height=600, width=800,
-                showlegend=False,
-                xaxis2_title="time(milliseconds)", 
-                yaxis_title='pre-synaptic voltage',yaxis2_title='post-synaptic voltage')
-
-cluster_select = widgets.Dropdown(
-    options=np.unique(df_props['cluster']),
-    value=k,
-    description='Cluster ID:',
-    disabled=False,
-)
-
-event_select = widgets.IntSlider(
-    value=0,
-    min=0,
-    max=len(spkt),
-    step=1,
-    description='Spike Event Number:',
-    disabled=False,
-    continuous_update=False,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d'
-)
-event_select.layout.width = '600px'
-
-# our function that will modify the xaxis range
-def response(k,t):
-    with f.batch_update():
-        spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-        spkt = spkt[(spkt>winoffset) & (spkt<(len(post)/fs)-windur)] - winoffset/1000
-        
-        event_select.max=len(spkt)-1
-
-        spkt_ = spkt[event_select.value] # shoulod be able to use "t"
-        spkwav = pre[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)] - pre[int(spkt_*fs)]
-        synwav = post[(int(spkt_*fs)):(int(spkt_*fs)+winsamps)]# - post[int(spkt_*fs)]
-        
-        f.data[0].y = spkwav
-        f.data[1].y = synwav
-        
-        f.update_layout(yaxis1_range=[np.min(pre),np.max(pre)])
-
-
-vb = VBox((f, interactive(response, k=cluster_select, t=event_select)))
-vb.layout.align_items = 'center'
-vb
-
-
-
-# <a id="three"></a>
-# # Part III. PSP amplitudes
-# 
-# [toc](#toc)
-# 
-# To detect post-synaptic potentials (psps), you can use the same method you used to find events (signal peaks) in the pre-synaptic signal. Did you record distinct classes of PSPs or was the distribution of PSPs continuous?
-
-# In[ ]:
-
-
-#@title {display-mode:'form'}
-
-#@markdown Type in an appropriate event threshold amplitude for detection of psps.
-threshold = 0.02  #@param {type: "number"}
-
-#@markdown Then, run this cell to detect psp peaks and calculate their height.
-
-#@markdown You will see a scatter plot of peaks (red) and bases (green) overlaid on the raw trace
-#@markdown and a histogram of event peak amplitudes.
-
-min_isi = 0.002 #seconds
-
-# samples_inwin = samples[int(start_time/sample_rate):int(stop_time/sample_rate)]
-peaks,props = find_peaks(post,prominence = threshold, distance=int(min_isi*fs))
-peaks_,props_ = find_peaks(-post,prominence = threshold, distance=int(min_isi*fs))
-
-plt.figure(figsize=(15,3))
-plt.plot(post)
-plt.scatter(peaks_,post[peaks_],color='green')
-plt.scatter(peaks,post[peaks],color='red')
-plt.xlim(0,2*fs)
-plt.ylim(-0.8,-0.5)
-
-psp_amp = []
-for p in peaks:
-    b = np.max(peaks_[peaks_<p])
-    psp_amp.append(post[p]-post[b])
-
-plt.figure(figsize=(3,5))
-n,bins = np.histogram(psp_amp,100)
-sns.stripplot(y=psp_amp,alpha=0.2,jitter=0.4)
-plt.ylim(0,0.2)
 
 
 # <hr> 

@@ -41,7 +41,7 @@ parts:
         - file: week-5/week-5-notebook
     - file: week-6/week-6
       sections:
-        - file: week-6/week-6-notebook
+        - file: week-6/Motor-Nerve
     - file: week-7/week-7
       sections:
         - file: week-7/week-7-notebook
@@ -51,6 +51,7 @@ parts:
     - file: week-9/week-9
       sections:
         - file: week-9/Lab-Manual
+        - file: week-9/Synaptic-Plasticity
     - file: week-10/week-10
       sections:
         - file: week-10/Lab-Manual
