@@ -50,7 +50,9 @@ parts:
         - file: week-8/week-8-notebook
     - file: week-9/week-9
       sections:
-        - file: week-9/week-9-notebook
+        - file: week-9/Lab-Manual
+        - file: week-9/Synaptic-Plasticity
+        - file: week-9/Synaptic-Plasticity_Responses
     - file: week-10/week-10
       sections:
         - file: week-10/Lab-Manual
