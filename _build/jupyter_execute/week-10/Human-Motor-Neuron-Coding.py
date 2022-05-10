@@ -62,7 +62,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import csv
 from scipy.signal import hilbert,medfilt,resample
-from sklearn.decomposition import PCA
 import scipy
 import seaborn as sns
 from ipywidgets import interactive, HBox, VBox, widgets, interact

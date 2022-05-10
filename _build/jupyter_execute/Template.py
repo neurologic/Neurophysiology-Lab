@@ -48,6 +48,7 @@
 #@title {display-mode: "form"}
 
 #@markdown Run this code cell to import packages and define functions 
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -56,9 +57,12 @@ from plotly.subplots import make_subplots
 from scipy import ndimage
 from scipy.signal import hilbert,medfilt,resample, find_peaks
 import seaborn as sns
+import matplotlib.pyplot as plt
 from datetime import datetime,timezone,timedelta
 pal = sns.color_palette(n_colors=15)
 pal = pal.as_hex()
+
+from ipywidgets import interactive, HBox, VBox, widgets, interact
 
 print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
@@ -105,26 +109,67 @@ filepath = Path(filepath)
 # No need to edit below this line
 #################################
 data = np.fromfile(Path(filepath), dtype = np.float64)
-data = data.reshape(-1,number_channels)
+if number_channels>1:
+    data = data.reshape(-1,number_channels)
 dur = np.shape(data)[0]/sampling_rate
 print('duration of recording was %0.2f seconds' %dur)
 
-fs = 1/sampling_rate
+fs = sampling_rate
 if downsample:
     newfs = 2500 #downsample emg data
     chunksize = int(sampling_rate/newfs)
-    data = data[0::chunksize,:]
-    fs = np.shape(data)[0]/dur
+    if number_channels>1:
+        data = data[0::chunksize,:]
+    if number_channels==1:
+        data = data[0::chunksize]
+    fs = int(np.shape(data)[0]/dur)
 
-time = np.linspace(0,np.shape(data)[0]/fs,np.shape(data)[0])
+time = np.linspace(0,dur,np.shape(data)[0])
 
-
-print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 print('Now be a bit patient while it plots.')
-fig = go.Figure()
-fig.add_trace(go.Scatter(x = time, y = data,line_color='black',name='emg0'))
-fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800, height=500)
+
+f = go.FigureWidget(layout=go.Layout(height=500, width=800))
+if number_channels == 1:
+    f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs],
+                             name=str(chan),opacity=1))
+if number_channels>1:
+    for i,chan in enumerate(range(number_channels)):
+        f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,chan],
+                             name=str(chan),opacity=1))
+
+slider = widgets.FloatRangeSlider(
+    min=0,
+    max=dur,
+    value=(0,1),
+    step= 1,
+    readout=False,
+    description='Time')
+slider.layout.width = '800px'
+
+# our function that will modify the xaxis range
+def response(x):
+    with f.batch_update():
+        starti = int(x[0]*fs)
+        stopi = int(x[1]*fs)
+        
+        if number_channels == 1:
+            f.data[0].x = time[starti:stopi]
+            f.data[0].y = data[starti:stopi]
+        if number_channels > 1:
+            for i in range(number_channels):
+                f.data[i].x = time[starti:stopi]
+                f.data[i].y = data[starti:stopi,i]
+
+vb = VBox((f, interactive(response, x=slider)))
+vb.layout.align_items = 'center'
+vb
+
+# print('Now be a bit patient while it plots.')
+# fig = go.Figure()
+# fig.add_trace(go.Scatter(x = time, y = data,line_color='black',name='channel 1'))
+# fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800, height=500)
+# fig.show()
 
 
 # <a id="one"></a>
