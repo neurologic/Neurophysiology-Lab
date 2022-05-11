@@ -4,9 +4,11 @@
 # <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-6/Motor-Nerve.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
-# # Motor Neuron Types
+# # Neural Circuits
 # 
-# The superficial flexor muscle of the crayfish is innervated by a small number of motor neurons. Because each motor neuron has a different axon diameter, you can tell them apart in your recording. 
+# The anterior and posterior roots of N1 control swimmeret movement. How is the motor neuron activity in these two nerves coordinated?
+# 
+# Gaussian-filtered activity (like did for EODs) to plot analyze coordination (correlation) and plot phase-plane plot of output.
 # 
 
 # <a id="toc"></a>
@@ -16,7 +18,7 @@
 # - [Setup](#setup)
 # - [Part I. Process Data](#one)
 # - [Part II. Motor Neuron Activity](#two)
-# 
+# - [Part III. Gaussian-filtered Spikes](#two)
 
 # <a id="setup"></a>
 # # Setup
@@ -385,6 +387,19 @@ vb
 # [toc](#toc)
 # 
 # How do different motor neuron types differ in their activity under different conditions?  
+
+# In[ ]:
+
+
+
+
+
+# <a id="three"></a>
+# # Part III. Gaussian-filtered Spikes
+# 
+# [toc](#toc)
+# 
+# Smooth the signal to be able to perform continuous analysis... correlation and phase-plane trajectory plot.
 
 # In[ ]:
 

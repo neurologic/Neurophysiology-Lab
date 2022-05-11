@@ -31,5 +31,5 @@ How could you determine which signal corresponded to each channel in the Bonsai 
 </ol>
 
 ## Copy data to your Google Drive for analysis
-Use the [Experimental Design for Analysiis](../week-2/Electric-Organ-Discharge.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-2/Electric-Organ-Discharge_Responses.ipynb) notebook.
+Use the [Electric Organ Discharge](../week-2/Electric-Organ-Discharge.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-2/Electric-Organ-Discharge_Responses.ipynb) notebook.
 

@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # <a id="intro"></a>
-# # Dimensionality Reduction Tutorial
+# # Tutorial: Dimensionality Reduction 
 # 
 # In this notebook you can explore how to use [Principal Components Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) (PCA) by projecting data from two neurons (two dimensions) onto the *eigenvectors of its covariance matrix* (a new basis set). The principle components are factors that combine the values from all original dimensions. Each factor combines those original dimensions in different proportions.  
 # 

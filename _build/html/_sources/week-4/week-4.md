@@ -6,6 +6,7 @@ Before starting this lab, you should be familiar with:
 <li>The basics of electrophysiology</li>
 <li>How measuring action potentials from either inside or outside of a cell affects the data collected</li>
 <li>The basic anatomy of the cockroach leg and nervous system</li>
+<li>Trial-based experimental design</li>
 </ul>
 
 Most of the largest sensory neurons in the cockroach leg detect movements of the spines ("bristles"). When the spine is pushed from its resting position, the opening of mechanically sensitive ion channels produces a transduction current that changes the membrane potential of the mechanoreceptor cell. The number of action potentials (spikes) produced by the mechanoreceptors is proportional to the amount of depolarization. Mechanotransducers also occur in the lateral line receptors of fish, touch receptors in skin, and auditory ("hair cell") receptors.

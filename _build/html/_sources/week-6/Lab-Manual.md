@@ -18,7 +18,10 @@ Access from the ventral side involves cutting away less tissue and is therefore 
 	<li>Cut off the tail as close to the abdomen as possible.</li>
 </ol>
 
-### Ventral access
+### Option A. Motor Nerve Only access (Ventral)
+<a href="https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/lvids/CrayfishMotorUnits.html">Dissection Video</a> from <a href = "https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L7cns.html">Smith College</a>.
+
+### Option B. Ventral access with intact superficial flexor
 <ol>
 	<li>Pin the tail out in the silguard dish.</li>
 	<li>Cut along the midline with fine scissors or scalpel blade. Make sure not to cut too deep or else you will slice apart the nervous system.</li>
@@ -26,11 +29,11 @@ Access from the ventral side involves cutting away less tissue and is therefore 
 	<li>Cut along the posterior side of the superficial muscle attachment point and remove the exterior tissue flap.</li>
 </ol>
 
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.2.b-Segment-Dissected-Labeled.png?raw=True' width="600" alt='crayfish segment dissected labeled' align="center"/>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.2.b-Segment-Dissected-Labeled.jpg?raw=True' width="600" alt='crayfish segment dissected labeled' align="center"/>
 
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.2.d-Segment-Methylene_Blue-Labeled.png?raw=True' width="600" alt='segment methylene blue stained' align="center"/>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.2.d-Segment-Methylene_Blue-Labeled.jpg?raw=True' width="600" alt='segment methylene blue stained' align="center"/>
 
-### Dorsal access
+### Option C. Dorsal access with intact superficial flexor
 <ol>
 	<li>Cut the swimmerettes off with coarse scissors.</li>
 	<li>Cut along the exterior edges of the carapace with coarse scissors. Keep the cuts shallow so you don't destroy underlying tissue.</li>
@@ -41,30 +44,36 @@ Access from the ventral side involves cutting away less tissue and is therefore 
 
 ## Core Experiment
 <ol>
-	<li>Electrode setup
-		<ol>
-			<li>Make suction electrodes by breaking off the tip of a glass capilary tube pulled with a long taper: under a dissection microscope, break the tip off with a pair of #5 forceps. After breaking, the tip should be large enough to accommodate a loop of the third nerve within the pipette, BUT small enough that the nerve does not slip out when suction is released. A snug fit provides optimal signal to noise ratio for the recording of motor neuron action potentials. Start small and increase the size by breaking more as needed. Once you find a good electrode, you should be able to re-use it throughout the day if treated carefully (don't drop it or bang the tip and rinse tissue goop off or out of it). </li>
-			<li>Place the suction electrodes in the holder with the "active" recording wire inside the glass capilary. The glass capilary is not actually an "electrode" until it has both the wire and saline inside of it - and the saline is touching the wire.</li>
-			<li>Suck saline up into the electrode until it touches the electrode wire.
-			:::{attention}
-			Make sure that the suction electrode has good suction! If it is difficult to pull fluid up into the electrode, then there is a leak or a clog somewhere. It must be fixed or else you will note be able to get a recording from the motor nerve. 
-			:::
-			:::{attention}
-			Do not pull up more fluid than needed into the electrode (there should not be any fluid up into the tubing). 
-			:::
-			</li>
-			<li>Place the differential reference/ground electrode into the saline bath of the petri dish (off to the side). The reference needs to be touching the saline in the dish, but does not need to be near the crayfish tail. </li>
-		</li>
-	<li>Start the Bonsai protocol (make sure the write node is <font color='red'>disabled</font> and the data visualizer window is visible)</li>
-	<li>Lower the electrode toward N3. Once it is close enough, use the dissection scope to guide your movement of the electrode.</li>
-	<li>Once lightly touching N3, pull the plunger lightly to suck the nerve up. Apply more pressure if needed. If needing to pull excessively hard, consider that you might need to increase the tip size or that there might be a clog or leak in the electrode system.
-	:::{tip}
-	Monitor the voltage trace in Bonsai before, during, and after sucking up the nerve. You should immediately be able to see motor neuron action potentials if it gets sucked up correctly. 
-	:::</li>
-	<li>Stop the Bonsai protocol, <font color='green'>enable</font> the write node, and restart. Collect approximately 10s of <i>spontaneous</i> activity.</li>
-	:::{attention}
-	Monitor the amplitude of the signal peaks. The amplitudes should remain stable throughout the recording. If the amplitudes <i>drift</i>, that is likely a sign that the nerve is slipping out of the electrode. Stable recordings will be essential for analysis.
-	:::
+
+<li>Make suction electrodes by breaking off the tip of a glass capilary tube pulled with a long taper: under a dissection microscope, break the tip off with a pair of #5 forceps. After breaking, the tip should be large enough to accommodate a loop of the third nerve within the pipette, BUT small enough that the nerve does not slip out when suction is released. A snug fit provides optimal signal to noise ratio for the recording of motor neuron action potentials. Start small and increase the size by breaking more as needed. Once you find a good electrode, you should be able to re-use it throughout the day if treated carefully (don't drop it or bang the tip and rinse tissue goop off or out of it). </li>
+<li>Place the suction electrodes in the holder with the "active" recording wire inside the glass capilary. The glass capilary is not actually an "electrode" until it has both the wire and saline inside of it - and the saline is touching the wire. <a href="https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L7pix/electrode%20diagram.jpg">Example Suction Electrode</a></li>
+<li>Suck saline up into the electrode until it touches the electrode wire.</li>
+
+:::{attention}
+Make sure that the suction electrode has good suction! If it is difficult to pull fluid up into the electrode, then there is a leak or a clog somewhere. It must be fixed or else you will note be able to get a recording from the motor nerve. 
+:::
+
+:::{attention}
+Do not pull up more fluid than needed into the electrode (there should not be any fluid up into the tubing). 
+:::
+
+<li>Place the differential reference/ground electrode into the saline bath of the petri dish (off to the side). The reference needs to be touching the saline in the dish, but does not need to be near the crayfish tail. </li>
+
+
+<li>Start the Bonsai protocol (make sure the write node is <font color='red'>disabled</font> and the data visualizer window is visible)</li>
+<li>Lower the electrode toward N3. Once it is close enough, use the dissection scope to guide your movement of the electrode.</li>
+<li>Once lightly touching N3, pull the plunger lightly to suck the nerve up. Apply more pressure if needed. If needing to pull excessively hard, consider that you might need to increase the tip size or that there might be a clog or leak in the electrode system.</li>
+
+:::{tip}
+Monitor the voltage trace in Bonsai before, during, and after sucking up the nerve. You should immediately be able to see motor neuron action potentials if it gets sucked up correctly. 
+:::
+
+<li>Stop the Bonsai protocol, <font color='green'>enable</font> the write node, and restart. Collect approximately 10s of <i>spontaneous</i> activity.</li>
+
+:::{attention}
+Monitor the amplitude of the signal peaks. The amplitudes should remain stable throughout the recording. If the amplitudes <i>drift</i>, that is likely a sign that the nerve is slipping out of the electrode. Stable recordings will be essential for analysis.
+:::
+
 </ol>
 
 
@@ -74,3 +83,8 @@ Access from the ventral side involves cutting away less tissue and is therefore 
 	<li>Compare activity under different conditions: stroking or touching contralateral swimmeretts, stroking or touching ipsilateral swimmerettes, stroking or touching the telson.</li>
 	<li>Compare activity with different nerves (N1 or N2) of the same ganglia segment.</li>
 	</ul>
+
+
+## Copy data to your Google Drive for analysis
+Use the [Motor-Neuron-Coding](../week-6/Motor-Neuron-Coding.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-6/Motor-Neuron-Coding_Responses.ipynb) notebook.
+
