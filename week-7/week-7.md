@@ -1,4 +1,6 @@
-# Week 7 Intracellular Recording Techniques
+# Week 7. Neural Circuits
 
-Crayfish
-Ionic basis of the membrane potential 
+
+CPGs of crayfish system and antidromic sensory + orthodromic motor neuron stim
+Circuit Modelling
+Cell Types physiology

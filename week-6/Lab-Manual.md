@@ -1,8 +1,43 @@
-# Week 6 Motor Neuron Coding
+# Lab Manual
 
-In crayfish, the ventral branch of the third nerve (N3v) in each abdominal ganglia innervates the superficial flexor muscle in the corresponding segment of the tail. The superficial muscle seems to maintain the posture of the animal. Motor neurons of the N3v are tonically active while the animal is at rest or performing terrestrial walking (Moore and Larimer, 1988). Motor neurons that innervate deep muscles instead generate brief bursts of action potentials associated with the powerful tail-flip. 
+Today, you will primarily be recording activity of Motor Neurons in N3 of the abdominal ganglia of the crayfish. 
+
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.1-Abdomial_Musculature.png?raw=True' width="600" alt='crayfish muscles cartoon' align="center"/>
 
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Crayfish-Isolated-Nervous-System.Fig1_Seichter2014_JOVE.png?raw=True' width="600" alt='crayfish nerve cord' align="center"/>
+
+## Surgery
+There are two different ways that you can gain access to the abdominal ganglia nerve roots: from the ventral or dorsal side. 
+
+Access from the dorsal side involves cutting away a lot of bulky muscle and can feel like a bit of a mess. The result, if done well, can provide more visibility.
+
+Access from the ventral side involves cutting away less tissue and is therefore less messy. The result, if done well, will be cleaner and the tissue will often be more healthy. However, the nerves and muscle fibers from this perspective can sometimes be harder to distinguish for beginners. In this preparation you are able to keep the swimmerets intact and stimulate them during the experiment. 
+
+<ol>
+	<li>Get a crayfish from the ice bucket.</li>
+	<li>Cut off the tail as close to the abdomen as possible.</li>
+</ol>
+
+### Ventral access
+<ol>
+	<li>Pin the tail out in the silguard dish.</li>
+	<li>Cut along the midline with fine scissors or scalpel blade. Make sure not to cut too deep or else you will slice apart the nervous system.</li>
+	<li>Cut along the posterior sternite of the segment. Use the forcepts to lift the surface exterior tissue up off of the superficial muscle as you cut. Try not to cut the superficial muscle.</li>
+	<li>Cut along the posterior side of the superficial muscle attachment point and remove the exterior tissue flap.</li>
+</ol>
+
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.2.b-Segment-Dissected-Labeled.png?raw=True' width="600" alt='crayfish segment dissected labeled' align="center"/>
+
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.2.d-Segment-Methylene_Blue-Labeled.png?raw=True' width="600" alt='segment methylene blue stained' align="center"/>
+
+### Dorsal access
+<ol>
+	<li>Cut the swimmerettes off with coarse scissors.</li>
+	<li>Cut along the exterior edges of the carapace with coarse scissors. Keep the cuts shallow so you don't destroy underlying tissue.</li>
+	<li>Pin the ventral side of the tail to the dish.</li>
+	<li>Slowly lift the dorsal carapace away as you cut the deep flexor muscle from the ventral surface of the carapace at its attachment points. Be careful not to cut any of the nerves close to the ganglia or the ganglia connectives.</li>
+</ol>
+
 
 ## Core Experiment
 <ol>
@@ -39,18 +74,3 @@ In crayfish, the ventral branch of the third nerve (N3v) in each abdominal gangl
 	<li>Compare activity under different conditions: stroking or touching contralateral swimmeretts, stroking or touching ipsilateral swimmerettes, stroking or touching the telson.</li>
 	<li>Compare activity with different nerves (N1 or N2) of the same ganglia segment.</li>
 	</ul>
-
-
-crayfish; improve surgery and obtain successful motor nerve recordings; 
-
-cell types (implications of different axon diameters on conduction velocity)
-regularity of spiking
-recruitment under different environmental conditions (swimmeret versus telson stim, etc)
-differences between different ganglia
-
-
-## Pages
-- [](../week-6/Lab-Manual.md)
-- [](../week-6/Motor-Neuron-Coding.ipynb)
-- [](../week-6/Motor-Neuron-Coding_Responses.ipynb)
-

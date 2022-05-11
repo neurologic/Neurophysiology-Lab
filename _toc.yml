@@ -44,31 +44,35 @@ parts:
         - file: week-6/Motor-Nerve
     - file: week-7/week-7
       sections:
-        - file: week-7/week-7-notebook
+        - file: week-7/Lab-Manual
     - file: week-8/week-8
       sections:
-        - file: week-8/Synaptic-Connectivity
+        - file: week-8/Lab-Manual
     - file: week-9/week-9
       sections:
-        - file: week-9/Lab-Manual
-        - file: week-9/Synaptic-Plasticity
+        - file: week-9/Synaptic-Connectivity
+        - file: week-9/Synaptic-Connectivity_Responses
     - file: week-10/week-10
       sections:
         - file: week-10/Lab-Manual
-        - file: week-10/Human-Motor-Neuron-Coding
-        - file: week-10/Human-Motor-Neuron-Coding_Responses
+        - file: week-10/Synaptic-Plasticity
     - file: week-11/week-11
       sections:
         - file: week-11/Lab-Manual
-        - file: week-11/Motor-Coordination-and-Big-Data
-        - file: week-11/Tutorial-Geometric-View-Of-Data
-        - file: week-11/Tutorial-Dimensionality-Reduction
+        - file: week-11/Human-Motor-Neuron-Coding
+        - file: week-11/Human-Motor-Neuron-Coding_Responses
     - file: week-12/week-12
       sections:
-        - file: week-12/BCI-Ghost-Music
+        - file: week-12/Lab-Manual
+        - file: week-12/Tutorial-Geometric-View-Of-Data
+        - file: week-12/Tutorial-Dimensionality-Reduction
+        - file: week-12/Motor-Coordination-and-Big-Data
+        - file: week-12/Motor-Coordination-and-Big-Data_Responses
     - file: week-13/week-13
       sections:
         - file: week-13/Tutorial-Basis-Set
+        - file: week-13/BCI-Ghost-Music
+        - file: week-13/BCI-Ghost-Music_Responses
   - caption: Wrapping Up
     chapters:
     - file: closure/closure
