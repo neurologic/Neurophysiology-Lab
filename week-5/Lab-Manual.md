@@ -7,6 +7,10 @@ Importantly, there are only two MRO cell types innervating each segmental superf
 
 You will record extracellularly from nerve 2 while curling the tail to stimulate these receptors. This recording will allow you to determine the stimulus-response tuning curve (sensory coding) of the MROs (including their adequate stimulus), and measure the adaptation rate of the MROs. 
 
+You will also use this preparation to better understand how anaesthetics work.
+- MS222 is a common anaesthetic used for aquatic animals <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7438171/">MS222 protocol</a>
+- Ice is another common anaesthetic.
+
 
 ## Software Setup
 The bonsai script for today has one measurement node. <b>Channel 0</b> receives amplified and digitized input from the differential measurement electrodes (referenced to a "ground"). The parameters of the analog input node can be adjusted to specify the NiUSB sampling rate, voltage range, and buffering rate (for visualization). Use a sampling rate of 30kHz. Adjust the voltage range as needed to maximize the signal resolution if needed once you start measuring voltage signals from the leg (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering rate according to your visualization preferences. 
@@ -37,18 +41,12 @@ For this lab, you will be removing the tail from a crayfish. A major benefit of 
 <li>Rotate the knob to its retracted position and leave for 2 seconds before protracting.</li>
 <li>Repeat the stimulation 10 times, with care to rotate the knob the same amount each time.</li>
 </ol> 
-<li>Repeat the Stimulation Protocol with a second spine using the same stimulus protraction distance. Note which two spines you chose to compare and why you chose them.</li>
 </ol>
 
-## Extended Exploration
-If there is time, repeat [the core experiment](#experiment) but select one of the following questions to explore:
-<ul>
-<li>Do different spines have different response properties</li>
-<li>Does the spine response differ based on manual versus manipulator-controlled stimulation</li>
-<li>The effect of relative electrode location on measured response to the same barb stimulus</li>
-	</ul>
-"Response properties" include: spike amplitude, spike shape, rate, regularity, etc.
+## Anaesthetic effects
+Compare resutls from the core experiment under different aneasthetic conditions (none, MS222, and ice).
+Try to bring the response back to baseline after each manipulation.
 
 ## Copy data to your Google Drive for analysis
-Use the [Sensory Coding](../week-4/Sensory-Coding.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-4/Sensory-Coding_Responses.ipynb) notebook.
+Use the [Sensory Coding](../week-5/Sensory-Coding-MRO.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-5/Sensory-Coding-MRO_Responses.ipynb) notebook.
 

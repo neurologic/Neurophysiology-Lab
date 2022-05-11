@@ -1,47 +1,8 @@
-# Week 6 Motor Neuron Coding
+# Week 6. Motor Neuron Coding
 
 In crayfish, the ventral branch of the third nerve (N3v) in each abdominal ganglia innervates the superficial flexor muscle in the corresponding segment of the tail. The superficial muscle seems to maintain the posture of the animal. Motor neurons of the N3v are tonically active while the animal is at rest or performing terrestrial walking (Moore and Larimer, 1988). Motor neurons that innervate deep muscles instead generate brief bursts of action potentials associated with the powerful tail-flip. 
 
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Crayfish-Isolated-Nervous-System.Fig1_Seichter2014_JOVE.png?raw=True' width="600" alt='crayfish nerve cord' align="center"/>
-
-## Core Experiment
-<ol>
-	<li>Electrode setup
-		<ol>
-			<li>Make suction electrodes by breaking off the tip of a glass capilary tube pulled with a long taper: under a dissection microscope, break the tip off with a pair of #5 forceps. After breaking, the tip should be large enough to accommodate a loop of the third nerve within the pipette, BUT small enough that the nerve does not slip out when suction is released. A snug fit provides optimal signal to noise ratio for the recording of motor neuron action potentials. Start small and increase the size by breaking more as needed. Once you find a good electrode, you should be able to re-use it throughout the day if treated carefully (don't drop it or bang the tip and rinse tissue goop off or out of it). </li>
-			<li>Place the suction electrodes in the holder with the "active" recording wire inside the glass capilary. The glass capilary is not actually an "electrode" until it has both the wire and saline inside of it - and the saline is touching the wire.</li>
-			<li>Suck saline up into the electrode until it touches the electrode wire.
-			:::{attention}
-			Make sure that the suction electrode has good suction! If it is difficult to pull fluid up into the electrode, then there is a leak or a clog somewhere. It must be fixed or else you will note be able to get a recording from the motor nerve. 
-			:::
-			:::{attention}
-			Do not pull up more fluid than needed into the electrode (there should not be any fluid up into the tubing). 
-			:::
-			</li>
-			<li>Place the differential reference/ground electrode into the saline bath of the petri dish (off to the side). The reference needs to be touching the saline in the dish, but does not need to be near the crayfish tail. </li>
-		</li>
-	<li>Start the Bonsai protocol (make sure the write node is <font color='red'>disabled</font> and the data visualizer window is visible)</li>
-	<li>Lower the electrode toward N3. Once it is close enough, use the dissection scope to guide your movement of the electrode.</li>
-	<li>Once lightly touching N3, pull the plunger lightly to suck the nerve up. Apply more pressure if needed. If needing to pull excessively hard, consider that you might need to increase the tip size or that there might be a clog or leak in the electrode system.
-	:::{tip}
-	Monitor the voltage trace in Bonsai before, during, and after sucking up the nerve. You should immediately be able to see motor neuron action potentials if it gets sucked up correctly. 
-	:::</li>
-	<li>Stop the Bonsai protocol, <font color='green'>enable</font> the write node, and restart. Collect approximately 10s of <i>spontaneous</i> activity.</li>
-	:::{attention}
-	Monitor the amplitude of the signal peaks. The amplitudes should remain stable throughout the recording. If the amplitudes <i>drift</i>, that is likely a sign that the nerve is slipping out of the electrode. Stable recordings will be essential for analysis.
-	:::
-</ol>
-
-
-## Experiment Extension
-<ul>
-	<li>Compare activity between N3v of different abdominal ganglia. Repeating with the contralateral N3 for each ganglia can help control for differences in recording access or health (for example, the order would be N3 of A4, A5, and A6 on the right side and then N3 of A4, A5, and A6 on the left side).</li>
-	<li>Compare activity under different conditions: stroking or touching contralateral swimmeretts, stroking or touching ipsilateral swimmerettes, stroking or touching the telson.</li>
-	<li>Compare activity with different nerves (N1 or N2) of the same ganglia segment.</li>
-	</ul>
-
-
-crayfish; improve surgery and obtain successful motor nerve recordings; 
+You will continue to improve your surgery technique as you learn the surgery to access N3v today. You will continue to build off of this same surgery to complete the next several labs. 
 
 cell types (implications of different axon diameters on conduction velocity)
 regularity of spiking

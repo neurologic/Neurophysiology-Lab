@@ -38,13 +38,19 @@ parts:
         - file: week-4/Sensory-Coding_Responses
     - file: week-5/week-5
       sections:
-        - file: week-5/week-5-notebook
+        - file: week-5/Lab-Manual
+        - file: week-5/Sensory-Coding-MRO
+        - file: week-5/Sensory-Coding-MRO_Responses
     - file: week-6/week-6
       sections:
-        - file: week-6/Motor-Nerve
+        - file: week-6/Lab-Manual
+        - file: week-6/Motor-Neuron-Coding
+        - file: week-6/Motor-Neuron-Coding_Responses
     - file: week-7/week-7
       sections:
         - file: week-7/Lab-Manual
+        - file: week-7/Neural-Circuits
+        - file: week-7/Neural-Circuits_Responses
     - file: week-8/week-8
       sections:
         - file: week-8/Lab-Manual
