@@ -272,8 +272,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../week-5/week-5-notebook.html">
-     Template
+    <a class="reference internal" href="../week-5/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-5/Sensory-Coding-MRO.html">
+     Sensory Coding - MROs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-5/Sensory-Coding-MRO_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -287,7 +297,22 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-6/Lab-Manual.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-6/Motor-Neuron-Coding.html">
+     Motor Neuron Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-6/Motor-Neuron-Coding_Responses.html">
+     Responses
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -303,6 +328,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../week-7/Lab-Manual.html">
      Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-7/Neural-Circuits.html">
+     Neural Circuits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-7/Neural-Circuits_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -417,12 +452,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../week-12/Tutorial-Dimensionality-Reduction.html">
-     Dimensionality Reduction Tutorial
+     Tutorial: Dimensionality Reduction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../week-12/Motor-Coordination-and-Big-Data.html">
      Motor Coordination and Big Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week-12/Motor-Coordination-and-Big-Data_Responses.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -832,14 +872,11 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1">#@markdown to your recorded data on Drive (find the filepath in the colab file manager:</span>
 
 <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/kperks/mnt/GoogleDrive/Shared Drives/PerksLab/EODdata/20220218/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin&quot;</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
 
-<span class="c1"># sampling_rate = NaN #@param</span>
-<span class="c1"># number_channels = NaN #@param</span>
-<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">50000</span> <span class="c1">#@param</span>
-<span class="n">number_channels</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#@param</span>
+<span class="n">sampling_rate</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
+<span class="n">number_channels</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
 
 <span class="n">downsample</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
 <span class="n">newfs</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">#@param</span>
@@ -960,7 +997,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1">#@markdown Fill in this form with the detection threshold. </span>
 
-<span class="n">detection_threshold</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1">#@param</span>
+<span class="n">detection_threshold</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown Then run the code cell to detect peaks (events)</span>
 
@@ -1029,7 +1066,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1">#@markdown Select a channel to plot event waveforms from. </span>
 
-<span class="n">chan</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param</span>
+<span class="n">chan</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
 
 <span class="c1">#@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events on that channel.</span>
 <span class="n">win</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.0003</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
@@ -1115,8 +1152,8 @@ The script (hidden) in the code cell below randomly selects samples of the speci
 <span class="c1">#@markdown See what changing these parameters does to your result.</span>
 <span class="c1">#@markdown &gt; NOTE: duration is in seconds</span>
 
-<span class="n">duration</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#@param</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
+<span class="n">N</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
 
 <span class="n">rate_</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
@@ -1198,7 +1235,7 @@ Store the result as a variable called <code class="docutils literal notranslate"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display_mode: &quot;form&quot;}</span>
 
-<span class="c1">#@markdown Choose a smoothing filter width (the standard deviation of the *gaussian kernel*). &lt;br&gt;</span>
+<span class="c1">#@markdown Choose a smoothing filter width ```sigma``` (the standard deviation of the *gaussian kernel*). &lt;br&gt;</span>
 <span class="c1">#@markdown Then run this code cell to plot the smoothed signal from discrete EOD times. </span>
 
 <span class="n">sigma</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>

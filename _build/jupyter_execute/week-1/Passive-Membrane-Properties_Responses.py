@@ -15,8 +15,11 @@
 
 # ...
 
+# <a id="insert-photo"></a>
 # <font color="green">Draw what you think the equivalent electrical circuit of a neuron's membrane would look like in this scenario.</font>
 
+# ...
+# 
 # ```{hint} 
 # Insert an image from your google drive in this markdown cell by doing the following... 
 # 
@@ -58,16 +61,22 @@
 
 # ...
 
-# <font color = "green">Would you expect small neurons to have higher or lower membrane resistance than large neurons?</font>
+# <font color = "green">
+# What was the scaling factor for the measured peak amplitude between the intracellular and extracellular configuration (extracellular amplitude divided by intracellular amplitude)? 
+# </font>
 
 # ...
 
-# <font color = "green">Would you expect small neurons to have higher or lower capacitance than large neurons?</font>
+# <font color = "green">Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?</font>
 
 # ...
 
-# <font color = "green">The space constant is the distance it takes for voltage to decrease to 37% of its original value. Approximate the space constant of the model membrane using the intracellular recording during the movement of the voltage source along the membrane.
-# Calculate it first by starting at Node \#5 (the middle node) and then by starting at Node \#7.</font>
+# <font color = "green">Would you expect small neurons to have higher or lower capacitance than large neurons? Why?</font>
+
+# ...
+
+# <font color = "green">The space constant is the distance it takes for voltage to decrease to 37% of its original value. Approximate the space constant of the model membrane using the intracellular measurements of trans-"membrane" voltage as the battery source travelled down the "axon".
+# Calculate it first by starting at Node \#5 (the middle node) and then calculate it again by starting at Node \#7.</font>
 
 # ...
 
@@ -84,6 +93,12 @@
 # </div>
 
 # ...
+
+# <font color = "green">Think back to your other neuroscience courses. Draw a real action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape: baseline (resting) voltage, polarity, change in polarity, amplitude. Insert your photo using the same instructions as <a href="#insert-photo">response \#1</a></font>
+
+# ...
+# 
+# <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
 # In[ ]:
 

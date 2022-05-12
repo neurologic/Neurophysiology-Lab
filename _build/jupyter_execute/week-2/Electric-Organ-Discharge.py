@@ -109,14 +109,11 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-filepath = "/Users/kperks/mnt/GoogleDrive/Shared Drives/PerksLab/EODdata/20220218/TestingNiUSB_Bonsai2022-02-18T11_41_46.bin" #@param
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
-# sampling_rate = NaN #@param
-# number_channels = NaN #@param
-sampling_rate = 50000 #@param
-number_channels = 4 #@param
+sampling_rate = None #@param
+number_channels = None #@param
 
 downsample = False #@param
 newfs = 10000 #@param
@@ -235,7 +232,7 @@ vb
 
 #@markdown Fill in this form with the detection threshold. 
 
-detection_threshold = 0.01 #@param
+detection_threshold = None #@param
 
 #@markdown Then run the code cell to detect peaks (events)
 
@@ -302,7 +299,7 @@ vb
 
 #@markdown Select a channel to plot event waveforms from. 
 
-chan = 0 #@param
+chan = None #@param
 
 #@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events on that channel.
 win = int(0.0003*fs)
@@ -391,8 +388,8 @@ print(f'The average EOD rate is {average_rate}')
 #@markdown See what changing these parameters does to your result.
 #@markdown > NOTE: duration is in seconds
 
-duration = 0.5 #@param
-N = 10 #@param
+duration = None #@param
+N = None #@param
 
 rate_ = []
 for i in range(N):
@@ -477,7 +474,7 @@ plt.yticks(fontsize=14);
 
 #@title {display_mode: "form"}
 
-#@markdown Choose a smoothing filter width (the standard deviation of the *gaussian kernel*). <br>
+#@markdown Choose a smoothing filter width ```sigma``` (the standard deviation of the *gaussian kernel*). <br>
 #@markdown Then run this code cell to plot the smoothed signal from discrete EOD times. 
 
 sigma = 10 #@param
