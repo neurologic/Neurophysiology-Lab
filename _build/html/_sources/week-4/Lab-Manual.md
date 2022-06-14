@@ -16,6 +16,11 @@ Note: for this experiment we refer to "ground," "reference," and "recording" ele
 
 <a id="experiment"></a>
 ## Core Experiment
+
+:::{note}
+Can I use the potentiometer driving a rod to register the mechanical stimulus? A linear potentiometer might be better than a dial one for this... because need to push a linear rod without string to adapt to rotation like crayfish.
+:::
+
 <ol>
 <li>From an anaesthetized cockroach, obtain a mesothoracic leg by cutting within the coxa.</li>
 <li>Place the leg in your dish.</li>
