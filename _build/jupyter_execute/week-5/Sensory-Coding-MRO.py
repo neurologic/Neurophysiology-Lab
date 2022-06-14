@@ -41,7 +41,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from scipy import ndimage
+from scipy import ndimage, optimize
 from scipy.signal import hilbert,medfilt,resample, find_peaks
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -52,6 +52,9 @@ pal = sns.color_palette(n_colors=15)
 pal = pal.as_hex()
 
 from ipywidgets import interactive, HBox, VBox, widgets, interact
+
+def monoExp(x, m, t, b):
+    return m * np.exp(-x / t) + b
 
 print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
@@ -82,17 +85,18 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-filepath = "/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA21/Data/CrayfishNerve3/20211010_KP_SampleRate_SpikeRate/MotorNerve_30k2021-10-10T11_37_21.bin"
+filepath = "/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/20220609/MRO2022-06-09T12_59_19.bin"
 #@markdown Specify the sampling rate and number of channels recorded.
 
 sampling_rate = None #@param
 number_channels = None #@param
+channel_to_process = 0 #@param
 
 sampling_rate = 30000 #@param
-number_channels = 2 #@param
+number_channels = 1 #@param
 
 downsample = False #@param
-newfs = 2500 #@param
+newfs = 10000 #@param
 
 #@markdown After you have filled out all form fields, 
 #@markdown run this code cell to load the data. 
@@ -121,7 +125,7 @@ if downsample:
 time = np.linspace(0,dur,np.shape(data)[0])
 
 if len(np.shape(data))>1:
-    channel = 1
+    channel = channel_to_process
     channel_signal = data[:,channel]
 if len(np.shape(data))==1:
     channel_signal = data
@@ -194,7 +198,7 @@ start_time =   None #@param {type: "number"}
 stop_time = None  #@param {type: "number"}
 
 start_time =   0 #@param {type: "number"}
-stop_time = 50  #@param {type: "number"}
+stop_time = 153  #@param {type: "number"}
 
 
 # <a id='detect-spikes'></a>
@@ -222,10 +226,10 @@ stop_time = 50  #@param {type: "number"}
 
 #@markdown Type in the threshold amplitude for event detection determined by your SD calculations.
 spike_detection_threshold = None  #@param {type: "number"}
-spike_detection_threshold = 0.02  #@param {type: "number"}
+spike_detection_threshold = 0.1  #@param {type: "number"}
 #@markdown Then from the dropdown, select a polarity (whether peaks are up or down)
 peaks = "select peak direction"  #@param ['select peak direction','up', 'down']
-peaks = "down"  #@param ['select peak direction','up', 'down']
+peaks = "up"  #@param ['select peak direction','up', 'down']
 #@markdown Finally, run this cell to set these values and plot a histogram of peak amplitudes.
 
 
@@ -253,7 +257,7 @@ ax.set_xlabel('amplitude',fontsize=14)
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 
-windur = 0.001
+windur = 0.003
 winsamp = int(windur*fs)
 spkarray = []
 for i in df_props['spikeInd'].values:
@@ -286,7 +290,9 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # 
 # 3. Cluster events
 # 
-# The histogram plot produced in the last step can give you a sense for how many distinct motor neurons might be in your recording. The scatter plot of peak amplitude across time can give you a sense for how stable the recording was. If you had good recording stability, you can cluster spike events categorically to analyze the activity of individual motor neurons independently.
+# The histogram plot produced in the last step can give you a sense for how many distinct neurons might be in your recording. The scatter plot of peak amplitude across time can give you a sense for how stable the recording was. If you had good recording stability, you can cluster spike events categorically to analyze the activity of individual neurons independently. 
+# 
+# If your recording is not stable, or is too noisy, then you may not be able to distinguish cell types. In this case, your *number of clusters* should be one. 
 # 
 # We can cluster events based on peak height and waveform shape using ["Kmeans"](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) clustering. 
 # This will provide us with "putative single units" for further analysis.
@@ -300,6 +306,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown >Note: It can sometimes help to "over-split" the events into more clusters 
 #@markdown than you think will be necessary. You can try both strategies and assess the results.
 number_of_clusters = None #@param {type: "number"}
+number_of_clusters = 1
 #@markdown Then run this cell to run the Kmeans algorithm. 
 
 # No need to edit below this line
@@ -323,7 +330,7 @@ df_props['cluster'] = kmeans.labels_
 
 #@markdown Run this cell to display the mean (and std) waveform for each cluster.
 
-windur = 0.001
+windur = 0.003 #@param
 winsamps = int(windur * fs)
 x = np.linspace(-windur,windur,winsamps*2)*1000
 hfig,ax = plt.subplots(1,figsize=(8,6))
@@ -334,9 +341,9 @@ plt.yticks(fontsize=14)
 
 for k in np.unique(df_props['cluster']):
     spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values #['peaks_t'].values
-    spkt = spkt[(spkt>windur) & (spkt<(len((pre)/fs)-windur))]
+    spkt = spkt[(spkt>windur) & (spkt<(len(channel_signal)/fs)-windur)]
     print(str(len(spkt)) + " spikes in cluster number " + str(k))
-    spkwav = np.asarray([pre[(int(t*fs)-winsamps):(int(t*fs)+winsamps)] for t in spkt])
+    spkwav = np.asarray([channel_signal[(int(t*fs)-winsamps):(int(t*fs)+winsamps)] for t in spkt])
     wav_u = np.mean(spkwav,0)
     wav_std = np.std(spkwav,0)
     ax.plot(x,wav_u,linewidth = 3,label='cluster '+ str(k),color=pal[k])
@@ -392,7 +399,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown Run this cell to overlay spike times by cluster identity on the raw signal
 
 f = go.FigureWidget()
-f.add_trace(go.Scatter(x = time[0:fs], y = pre[0:fs],
+f.add_trace(go.Scatter(x = time[0:fs], y = channel_signal[0:fs],
                              name='pre synaptic',opacity=1,line_color='black'))
 for k in np.unique(df_props['cluster']):
     start = 0 
@@ -424,7 +431,7 @@ def response(x):
         starti = int(x[0]*fs)
         stopi = int(x[1]*fs)
         f.data[0].x = time[starti:stopi]
-        f.data[0].y = pre[starti:stopi]
+        f.data[0].y = channel_signal[starti:stopi]
         for i,k in enumerate(np.unique(df_props['cluster'])):
             inwin_inds = np.asarray([(df_props['spikeT'].values>x[0]) & (df_props['spikeT'].values<x[1])]).T
             df_ = df_props[inwin_inds]
@@ -449,26 +456,6 @@ vb
 # In[ ]:
 
 
-#@title {display-mode:"form"}]
-
-#@markdown Run this code cell to plot a normalized histogram of inter-spike-interval (ISI; the time between spikes) for each cluster overlaid
-#@markdown Within each cluster, the histogram is normalized by the total number of spikes. 
-
-f = go.FigureWidget()
-
-for k in np.unique(df_props['cluster']):
-    spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values * 1000
-    n,bins = np.histogram(np.diff(spkt),100)
-    f.add_trace(go.Scatter(x = bins[1:], y = n/sum(n), opacity = 0.5, name = 'cluster ' + str(k)))
-    
-f.update_layout(height=600, width=800,
-               xaxis_title="ISI (milliseconds)", 
-                  yaxis_title='proportion')
-
-
-# In[ ]:
-
-
 #@title {display-mode:"form"}
 
 #@markdown Run this code cell to plot: 1) a histogram of inter-spike-interval (ISI; the time between spikes)
@@ -479,13 +466,13 @@ f.update_layout(height=600, width=800,
 
 k = df_props['cluster'][0] #seed it to start
 
-f = go.FigureWidget(make_subplots(rows=2,cols=1))
+f = go.FigureWidget(make_subplots(rows=1,cols=1))
 
-bins = np.arange(0,202,2)
-spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values * 1000
-n,_ = np.histogram(np.diff(spkt),bins)
+# bins = np.arange(0,0.202,0.002)
+spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
+# n,_ = np.histogram(np.diff(spkt),bins)
 
-f.add_trace(go.Scatter(x = bins[1:], y = n/sum(n), line_color = 'black'),row=1,col=1)
+# f.add_trace(go.Scatter(x = bins[1:], y = n/sum(n), line_color = 'black'),row=1,col=1)
 
 isi = np.diff(spkt)
 f.add_trace(go.Scatter(x = spkt[1:], y = isi, line_color = 'black', mode='markers'),row=1,col=1)
@@ -493,9 +480,8 @@ f.add_trace(go.Scatter(x = spkt[1:], y = isi, line_color = 'black', mode='marker
     
 f.update_layout(height=600, width=800,
                 showlegend=False,
-                xaxis_title="isi (milliseconds)",
-               xaxis2_title="time (milliseconds)", 
-                  yaxis_title='proportion',yaxis2_title='isi (milliseconds)')
+                xaxis_title="isi (seconds)",
+                  yaxis_title='isi (seconds)')
 
 cluster_select = widgets.Dropdown(
     options=np.unique(df_props['cluster']),
@@ -508,20 +494,177 @@ cluster_select = widgets.Dropdown(
 # our function that will modify the xaxis range
 def response(k):
     with f.batch_update():
-        spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values * 1000
-        n,_ = np.histogram(np.diff(spkt),bins)
+        spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
+        # n,_ = np.histogram(np.diff(spkt),bins)
         isi = np.diff(spkt)
 
-        f.data[0].x = bins[1:]
-        f.data[0].y = n/sum(n)
+        # f.data[0].x = bins[1:]
+        # f.data[0].y = n/sum(n)
         
-        f.data[1].x = spkt[1:]
-        f.data[1].y = isi
+        f.data[0].x = spkt[1:]
+        f.data[0].y = isi
 
 
 vb = VBox((f, interactive(response, k=cluster_select)))
 vb.layout.align_items = 'center'
 vb
+
+
+# Determine peak response times for each *trial*. 
+# 
+# The next code cell will take those trial times and overlay a plot of isi for each trial. The amount of data plotted before and after the trial time are *hard-coded* (determined based on the lab protocol). 
+
+# In[ ]:
+
+
+trials = [6.345,13.836,21.63,32.635,40.319]
+plt.figure()
+win = 10
+for t in trials:
+    ti = np.argmin(np.abs(spkt-t))
+    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
+    sweep_rate = 1/np.diff(sweep)
+    
+    plt.plot(sweep[1:],sweep_rate)
+    
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+trials = [94.692,103.73,111.665,120.871,129.286]
+plt.figure()
+win = 10
+for t in trials:
+    ti = np.argmin(np.abs(spkt-t))
+    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
+    sweep_rate = 1/np.diff(sweep)
+    
+    plt.plot(sweep[1:],sweep_rate)
+
+
+# In[ ]:
+
+
+trials = [99.832,110,118.327,126.86]
+plt.figure()
+win = 10
+for t in trials:
+    ti = np.argmin(np.abs(spkt-t))
+    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
+    sweep_rate = 1/np.diff(sweep)
+    
+    plt.plot(sweep[1:],sweep_rate)
+
+
+# Data fitting software will report something like y = a + bemx, where τ is −1/m.
+# 
+# Data are fit with exponential equations, Rt = R∞ + R0e−t/τ, where Rt is the firing rate at time t, R∞ is the calculated firing rate if this degree of stretch were maintained infinitely, R∞ + R0 is the calculated “initial” peak firing rate at time 0, and τ is the adaptation rate. Thus the inverse of the exponent is the adaptation rate.
+
+# Choose a single trial. Specify trial onset (peak of response) and the duration of the trial (end of the smooth curve).
+
+# In[ ]:
+
+
+t = 99.832 #@param
+trial_dur = 3 #@param
+p0 = (1, 1, 10) #@param # start with values near those we expect
+
+
+ti = np.argmin(np.abs(spkt-t))
+xs = spkt[(spkt>=spkt[ti]) & (spkt<spkt[ti]+trial_dur)]-spkt[ti]
+ys = 1/np.diff(xs)
+xs = xs[1:]
+
+# perform the fit
+p0 = (1, 1, 10) # start with values near those we expect
+params_, cv = optimize.curve_fit(monoExp, xs, ys, p0)
+m, t, b = params_
+tauSec = (1 / t) 
+
+# determine quality of the fit
+squaredDiffs = np.square(ys - monoExp(xs, m, t, b))
+squaredDiffsFromMean = np.square(ys - np.mean(ys))
+rSquared = 1 - np.sum(squaredDiffs) / np.sum(squaredDiffsFromMean)
+print(f"R² = {rSquared}")
+
+# plot the results
+plt.plot(xs, ys, '.', label="data")
+plt.plot(xs, monoExp(xs, m, t, b), '--', label="fitted")
+plt.title("Fitted Exponential Curve")
+
+# inspect the parameters
+print(f"Y = {m} * e^(-t / {t}) + {b}")
+print(f"Tau = {tauSec} s")
+
+
+# Across multiple trials, get param distribution
+
+# In[ ]:
+
+
+# trials = [94.692,103.73,111.665,120.871,129.286]
+trials = [6.345,13.836,21.63,32.635,40.319]
+trial_dur = 3
+    
+# plt.figure()
+params = []
+for t in trials:
+    ti = np.argmin(np.abs(spkt-t))
+    xs = spkt[(spkt>=spkt[ti]) & (spkt<spkt[ti]+trial_dur)]-spkt[ti]
+    ys = 1/np.diff(xs)
+    xs = xs[1:]
+    
+    params_, cv = optimize.curve_fit(monoExp, xs, ys, p0)
+    m, t, b = params_
+    
+    squaredDiffs = np.square(ys - monoExp(xs, m, t, b))
+    squaredDiffsFromMean = np.square(ys - np.mean(ys))
+    rSquared = 1 - np.sum(squaredDiffs) / np.sum(squaredDiffsFromMean)
+    params_ = np.concatenate([params_, [rSquared]])
+    
+    params.extend(params_)
+
+fit_parameters = np.asarray(params).reshape(-1,4)
+
+u_fit = np.mean(fit_parameters,0)
+std_fit = np.std(fit_parameters,0)
+
+print('mean fit parameters: ')
+print(u_fit)
+print('')
+print('standard deviation fit parameters: ')
+print(std_fit)
+print('')
+# inspect the results
+print('results based on mean across trials:')
+print(f"R² = {u_fit[3]}")
+print(f"Y = {u_fit[0]} * e^(-x / {u_fit[1]}) + {u_fit[2]}")
+print(f"Tau = {1/u_fit[1]} s")
+
+
+# Use the mean parameters to plot the model equations.
+# For multiple conditions, list multiple values for each parameter.
+
+# In[ ]:
+
+
+m = [7.5,10] #@param
+t = [0.54,0.6] #@param
+b = [14,9.3] #@param
+trial_dur = 15
+
+x_ = np.linspace(0,trial_dur,trial_dur*100)
+
+for m_,t_,b_ in zip(m,t,b):
+    y_ = monoExp(x_, m_,t_,b_)
+    plt.plot(x_,y_)
 
 
 # <hr> 

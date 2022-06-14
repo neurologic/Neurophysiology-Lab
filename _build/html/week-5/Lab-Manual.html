@@ -51,8 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sensory Coding - MROs" href="Sensory-Coding-MRO.html" />
     <link rel="prev" title="Week 5 Sensory Coding" href="week-5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -275,6 +278,16 @@ const thebe_selector_output = ".output, .cell_output"
      Lab Manual
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sensory-Coding-MRO.html">
+     Sensory Coding - MROs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sensory-Coding-MRO_Responses.html">
+     Responses
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -321,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../week-7/Neural-Circuits.html">
-     Motor Neuron Types
+     Neural Circuits
     </a>
    </li>
    <li class="toctree-l2">
@@ -441,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../week-12/Tutorial-Dimensionality-Reduction.html">
-     Dimensionality Reduction Tutorial
+     Tutorial: Dimensionality Reduction
     </a>
    </li>
    <li class="toctree-l2">
@@ -615,6 +628,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experimental-exploration">
+   Experimental Exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaesthetic-effects">
    Anaesthetic effects
   </a>
@@ -665,6 +683,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experimental-exploration">
+   Experimental Exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaesthetic-effects">
    Anaesthetic effects
   </a>
@@ -701,6 +724,13 @@ the superficial extensor muscle on each side of each abdominal segment (and in t
 <div class="section" id="surgery">
 <h2>Surgery<a class="headerlink" href="#surgery" title="Permalink to this headline">¶</a></h2>
 <p>For this lab, you will be removing the tail from a crayfish. A major benefit of targetting the MRO for measurement is that crude surgical techniques work better than fine surgincal techniques.</p>
+<ol>
+	<li>From an anaesthetized crayfish, cut the tail from the abdomen (as close to the abdomen as possible).</li>
+	<li>Cut along the ventral edge of the carapace as close to the ventral side as possible.</li>
+	<li>Use your finger or the handle of a pair of blunt forcepts to push the fast flexor muscle away from the dorsal surface. Take care not to push down too hard against the tissue left on the dorsal surface. Use scissors if necessary to cut the nerves away instead of pulling at them.</li>
+	<li>Pin the anterior segment of the tail down on the dish (dorsal side down) using two pins. Take care not to crack the carapace apart.</li>
+	<li>Thread a thread through the anus of the tail. Tie it gently but firmly. Trim the thread so that it does not interfere with the electrode</li>
+</ol>
 </div>
 <div class="section" id="physiology-setup">
 <h2>Physiology Setup<a class="headerlink" href="#physiology-setup" title="Permalink to this headline">¶</a></h2>
@@ -708,24 +738,38 @@ the superficial extensor muscle on each side of each abdominal segment (and in t
 </div>
 <div class="section" id="core-experiment">
 <h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Try using a potentiometer as the tail pull device… then read in a voltage that is modulated by the potentiometer into the Nidaq!</p>
+</div>
 <ol>
-<li>From an anaesthetized crayfish, cut off the tail.</li>
-<li>Cut along the ventral edge of the carapace to remove the ventral surface.</li>
-<li></li>
-<li></li>
-<li></li>
-<li>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</li>
-<li></li>
-<li></li>
-<li>Stimulation Protocol:</li>
-<ol>
-<li></li>
-<li></li>
-<li>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</li>
-<li>Rotate the knob to its retracted position and leave for 2 seconds before protracting.</li>
-<li>Repeat the stimulation 10 times, with care to rotate the knob the same amount each time.</li>
-</ol> 
+	<li>Find the MRO nerve. Aim for one in the anterior segments. Use the suction electrode to suction up the nerve.</li>
+	<li>Pull the thread to bend the tail. Make sure you are getting a response from the MRO nerve. Make sure that the nerve is not falling out of the suction electrode when the tail is curled.</li>
+	<li>Attach the free end of the thread to the potentiometer horn.</li>
+	<li>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</li>
+	<li></li>
+	<li></li>
+	<li>Stimulation Protocol:</li>
+	<ol>
+		<li></li>
+		<li></li>
+		<li>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</li>
+		<li>Rotate the knob to its retracted position and leave for 5 seconds before protracting. Leave the knob protracted for 5 seconds before repeating.</li>
+		<li>Repeat the stimulation 5 times, with care to rotate the knob the same amount each time.</li>
+	</ol> 
 </ol>
+</div>
+<div class="section" id="experimental-exploration">
+<h2>Experimental Exploration<a class="headerlink" href="#experimental-exploration" title="Permalink to this headline">¶</a></h2>
+<p>Effects of:</p>
+<ul class="simple">
+<li><p>slow versus fast stretch?</p></li>
+<li><p>different amounts of stretch?</p></li>
+<li><p>starting from different positions?</p></li>
+<li><p>peak during stretch or at end of stretch?</p></li>
+<li><p>analytic results as a function of duration stretch is held</p></li>
+<li><p>is the onset and offset adaptation dynamics the same? (Need to start from a stretch that drives a non-zero baseline spike rate)</p></li>
+</ul>
 </div>
 <div class="section" id="anaesthetic-effects">
 <h2>Anaesthetic effects<a class="headerlink" href="#anaesthetic-effects" title="Permalink to this headline">¶</a></h2>
@@ -769,6 +813,13 @@ Try to bring the response back to baseline after each manipulation.</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Week 5 Sensory Coding</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Sensory-Coding-MRO.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sensory Coding - MROs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

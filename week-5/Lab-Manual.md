@@ -18,30 +18,50 @@ The bonsai script for today has one measurement node. <b>Channel 0</b> receives 
 ## Surgery
 For this lab, you will be removing the tail from a crayfish. A major benefit of targetting the MRO for measurement is that crude surgical techniques work better than fine surgincal techniques. 
 
+<ol>
+	<li>From an anaesthetized crayfish, cut the tail from the abdomen (as close to the abdomen as possible).</li>
+	<li>Cut along the ventral edge of the carapace as close to the ventral side as possible.</li>
+	<li>Use your finger or the handle of a pair of blunt forcepts to push the fast flexor muscle away from the dorsal surface. Take care not to push down too hard against the tissue left on the dorsal surface. Use scissors if necessary to cut the nerves away instead of pulling at them.</li>
+	<li>Pin the anterior segment of the tail down on the dish (dorsal side down) using two pins. Take care not to crack the carapace apart.</li>
+	<li>Thread a thread through the anus of the tail. Tie it gently but firmly. Trim the thread so that it does not interfere with the electrode</li>
+</ol>
+
 ## Physiology Setup
 
 
 
 <a id="experiment"></a>
 ## Core Experiment
+
+:::{note}
+Try using a potentiometer as the tail pull device... then read in a voltage that is modulated by the potentiometer into the Nidaq!
+:::
+
 <ol>
-<li>From an anaesthetized crayfish, cut off the tail.</li>
-<li>Cut along the ventral edge of the carapace to remove the ventral surface.</li>
-<li></li>
-<li></li>
-<li></li>
-<li>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</li>
-<li></li>
-<li></li>
-<li>Stimulation Protocol:</li>
-<ol>
-<li></li>
-<li></li>
-<li>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</li>
-<li>Rotate the knob to its retracted position and leave for 2 seconds before protracting.</li>
-<li>Repeat the stimulation 10 times, with care to rotate the knob the same amount each time.</li>
-</ol> 
+	<li>Find the MRO nerve. Aim for one in the anterior segments. Use the suction electrode to suction up the nerve.</li>
+	<li>Pull the thread to bend the tail. Make sure you are getting a response from the MRO nerve. Make sure that the nerve is not falling out of the suction electrode when the tail is curled.</li>
+	<li>Attach the free end of the thread to the potentiometer horn.</li>
+	<li>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</li>
+	<li></li>
+	<li></li>
+	<li>Stimulation Protocol:</li>
+	<ol>
+		<li></li>
+		<li></li>
+		<li>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</li>
+		<li>Rotate the knob to its retracted position and leave for 5 seconds before protracting. Leave the knob protracted for 5 seconds before repeating.</li>
+		<li>Repeat the stimulation 5 times, with care to rotate the knob the same amount each time.</li>
+	</ol> 
 </ol>
+
+## Experimental Exploration
+Effects of:
+- slow versus fast stretch?
+- different amounts of stretch?
+- starting from different positions?
+- peak during stretch or at end of stretch?
+- analytic results as a function of duration stretch is held
+- is the onset and offset adaptation dynamics the same? (Need to start from a stretch that drives a non-zero baseline spike rate)
 
 ## Anaesthetic effects
 Compare resutls from the core experiment under different aneasthetic conditions (none, MS222, and ice).
