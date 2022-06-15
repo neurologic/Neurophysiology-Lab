@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-6/Motor-Nerve.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-5/Sensory-Coding-MRO.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
 # # Sensory Coding - MROs
@@ -164,6 +164,7 @@ vb
 
 
 # <a id="one"></a>
+# 
 # # Part I. Process Data
 # 
 # [toc](#toc)
@@ -175,13 +176,19 @@ vb
 # There are lots of computational tools for automating this process. Computers can also help you extract patterns from large amounts of data (for example different "classes" of spike waveform). In neuroscience research, the process of clustering spiking events based on their amplitude and waveform is termed the "spike sorting."
 # 
 # For this dataset, you will proocess the data using the following sequence of steps:
-# <ol>
-#     <li><a href='#select-data'>Select Data</a></li>
-#     <li><a href='#detect-spikes'>Detect Peaks</a></li>
-#     <li><a href='#cluster-events'>Cluster Events</a></li>
-#     <li><a href='#display-clusters'>Visualize</a> (and <a href='#merge-clusters'>Merge</a> clusters if needed)</li>
-#     <li><a href='#raw-cluster-scatter'>Check event-category identity with raw data</a></li>
-#     </ol>
+# 
+# 1. [Select Data](#select-data)
+# 2. [Detect Peaks](#detect-spikes)
+# 3. [Cluster Events](#cluster-events)
+# 
+#     a. [Kmeans](#kmeans)
+#     
+#     b. [Visualize](#display-clusters)
+#     
+#     c. [Merge Clusters](#merge-clusters)
+#     
+#     d. [Check putative unit identity in raw data](#raw-cluster-scatter)
+#  
 
 # <a id='select-data'></a>
 # 
@@ -305,7 +312,18 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # The histogram plot produced in the last step can give you a sense for how many distinct neurons might be in your recording. The scatter plot of peak amplitude across time can give you a sense for how stable the recording was. If you had good recording stability, you can cluster spike events categorically to analyze the activity of individual neurons independently. 
 # 
 # If your recording is not stable, or is too noisy, then you may not be able to distinguish cell types. In this case, skip this clustering step. You will only have one cluster and its identity will be '0'. 
+# 
+# Clustering steps:
+# - [Kmeans](#kmeans)
+# - [Visualize](#display-clusters)
+# - [Merge Clusters](#merge-clusters)
+# - [Check event categorization against raw data](#raw-cluster-scatter)
+#  
 
+# <a id='kmeans'></a>
+# 
+# ### Kmeans
+# 
 # We can cluster events based on peak height and waveform shape using ["Kmeans"](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) clustering. 
 # This will provide us with "putative single units" for further analysis.
 
@@ -331,7 +349,7 @@ df_props['cluster'] = kmeans.labels_
 
 # <a id = "display-clusters"></a>
 # 
-# Visualize (and Merge Clusters if needed)
+# ### Visualize 
 # 
 # Now that the events are clustered, you can visualize the mean spike waveform associated with each cluster (putative motor neuron).
 
@@ -367,6 +385,8 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 # <a id='merge-clusters'></a>
 # 
+# ### Merge Clusters
+# You can skip this step if unecessary. 
 # If there are multiple spike clusters you want to merge into a single cell class, *edit and run* the cell below.
 # 
 # > **merge_cluster_list** = a list of the clusters (identified by numbers associated with the colors specified in the legend above).
@@ -399,7 +419,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 # <a id="raw-cluster-scatter"></a>
 # 
-# Check event-category identity with raw data.
+# ### Check event categorization against raw data.
 # 
 # Once you are happy with the clustering results based on the waveform shapes, check back with the raw data. 
 
@@ -456,40 +476,37 @@ vb.layout.align_items = 'center'
 vb
 
 
-# If you think that two different spike waveforms are being lumped together, try going back to the [Kmeans clustering algorithm](#cluster-events) and increasing the cluster number constraint on the Kmeans algorithm - then [merge](#merge-clusters) as needed. 
+# If you think that two different spike waveforms are being lumped together, try going back to the [Kmeans clustering algorithm](#kmeans) and increasing the cluster number constraint on the Kmeans algorithm - then [merge](#merge-clusters) as needed. 
 
 # <a id="two"></a>
-# # Part II. Sensory Neuron activity
+# # Part II. Processed Data Analysis
 # 
 # [toc](#toc)
 # 
-# How do MRO receptor neurons respond and encode muscle stretch? How do different MRO receptor neuron types differ in their activity? You can explore the answers to these questions using your data and simple analysis of spike rate and spike rate decay. 
+# This section provides tools to obtain two metrics of MRO spiking responses: ***spike rate*** and ***spike rate adaptation***.
+# 
+# First, you will plot the inter-spike interval (ISI; the time between spikes) for the event cluster that you want to analyze. You will also obtain a plot of the stimulus signal aligned in time to the spiking data.
+# 
+# From this plot, you should be able to determine 'trial' times for a trial-based analysis of spike rate and adaptation.
 
 # In[ ]:
 
 
 #@title {display-mode:"form"}
 
-#@markdown Run this code cell to plot: 1) a histogram of inter-spike-interval (ISI; the time between spikes)
-#@markdown and 2) a scatter of ISI across time for individual clusters.
+#@markdown Run this code cell to plot: 1) a scatter of ISI across time for individual clusters
+#@markdown and 2) the stimulus signal
 
 #@markdown <br> Once you run this code cell a first time, you will be able to select different clusters from the dropdown menu to change the plot data accordingly.
 
 
 k = df_props['cluster'][0] #seed it to start
+spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
+isi = np.diff(spkt)
 
 f = go.FigureWidget(make_subplots(rows=1,cols=1))
-
-# bins = np.arange(0,0.202,0.002)
-spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-# n,_ = np.histogram(np.diff(spkt),bins)
-
-# f.add_trace(go.Scatter(x = bins[1:], y = n/sum(n), line_color = 'black'),row=1,col=1)
-
-isi = np.diff(spkt)
 f.add_trace(go.Scatter(x = spkt[1:], y = isi, line_color = 'black', mode='markers'),row=1,col=1)
 
-    
 f.update_layout(height=600, width=800,
                 showlegend=False,
                 xaxis_title="isi (seconds)",
@@ -507,11 +524,7 @@ cluster_select = widgets.Dropdown(
 def response(k):
     with f.batch_update():
         spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values
-        # n,_ = np.histogram(np.diff(spkt),bins)
         isi = np.diff(spkt)
-
-        # f.data[0].x = bins[1:]
-        # f.data[0].y = n/sum(n)
         
         f.data[0].x = spkt[1:]
         f.data[0].y = isi
@@ -522,70 +535,71 @@ vb.layout.align_items = 'center'
 vb
 
 
-# Determine peak response times for each *trial*. 
+# In[ ]:
+
+
+#@title {display-mode:"form"}
+
+#@markdown Determine the start time for each *trial*.  
+#@markdown What defines the start of a trial will depend on your question.  
+#@markdown Enter the trial times as a list below.
+
+trials_list = [51.72, 61.65, 71.256, 83.063] #@params
+
+# # different amplitudes
+# trials = [6.345,13.836,21.63,32.635,40.319]
+# trials = [51.72, 61.65, 71.256, 80.063]
+# trials = [94.692,103.73,111.665,120.871,129.286]
+
+# # offset response
+# trials = [99.832,110,118.327,126.86]
+
+#@markdown How much time before and after the trial time do you want to visualize?
+window = 10
+
+#@markdown Run this code cell to plot the result (for the cluster you selected in the first code cell of this section)
+
+f = go.FigureWidget(make_subplots(rows=1,cols=1))
+
+for t in trials_list:
+    ti = np.argmin(np.abs(spkt-t))
+    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
+    sweep_rate = 1/np.diff(sweep)
+    f.add_trace(go.Scatter(x = sweep[1:], y = sweep_rate),row=1,col=1)
+
+
+f.update_layout(height=500, width=800,
+                showlegend=False,
+                xaxis_title="time (seconds)",
+                  yaxis_title='rate')
+
+
+# You can create a ***model*** of the MRO response. If the model is correct, you should be able to 'explain' the response in terms of the model (it should be able to predict all features of the response).
 # 
-# The next code cell will take those trial times and overlay a plot of isi for each trial. The amount of data plotted before and after the trial time are *hard-coded* (determined based on the lab protocol). 
-
-# In[ ]:
-
-
-trials = [6.345,13.836,21.63,32.635,40.319]
-plt.figure()
-win = 10
-for t in trials:
-    ti = np.argmin(np.abs(spkt-t))
-    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
-    sweep_rate = 1/np.diff(sweep)
-    
-    plt.plot(sweep[1:],sweep_rate)
-    
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-trials = [94.692,103.73,111.665,120.871,129.286]
-plt.figure()
-win = 10
-for t in trials:
-    ti = np.argmin(np.abs(spkt-t))
-    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
-    sweep_rate = 1/np.diff(sweep)
-    
-    plt.plot(sweep[1:],sweep_rate)
-
-
-# In[ ]:
-
-
-trials = [99.832,110,118.327,126.86]
-plt.figure()
-win = 10
-for t in trials:
-    ti = np.argmin(np.abs(spkt-t))
-    sweep = spkt[(spkt>spkt[ti]-10) & (spkt<spkt[ti]+10)]-spkt[ti]
-    sweep_rate = 1/np.diff(sweep)
-    
-    plt.plot(sweep[1:],sweep_rate)
-
-
-# Data fitting software will report something like y = a + bemx, where τ is −1/m.
+# The following code cells provide a tool to model the response using a single exponential function of the form:
 # 
-# Data are fit with exponential equations, Rt = R∞ + R0e−t/τ, where Rt is the firing rate at time t, R∞ is the calculated firing rate if this degree of stretch were maintained infinitely, R∞ + R0 is the calculated “initial” peak firing rate at time 0, and τ is the adaptation rate. Thus the inverse of the exponent is the adaptation rate.
-
-# Choose a single trial. Specify trial onset (peak of response) and the duration of the trial (end of the smooth curve).
+# $$
+# \Large y = a + b*e^{-x/\tau}
+# $$
+# 
+# For spiking adaptation, the following equation variables are more intuitive:
+# 
+# $$
+# \Large R_{t} = R_{\infty} + R_{0}e^{−t/\tau}
+# $$
+# 
+# Where $R_{t}$ is the firing rate at time $t$, $R_{\infty}$ is the calculated firing rate if this degree of stretch were maintained infinitely, $R_{\infty}$ + $R_{0}$ is the calculated “initial” peak firing rate at time 0, and $\tau$ is the adaptation rate. The adaptation rate is the time it takes the spike rate to fall by a factor of $1/e$.
+# 
+# To model the MRO response in this form, you will *fit* your data to the model. 
 
 # In[ ]:
 
 
-t = 99.832 #@param
-trial_dur = 3 #@param
+#@title Fitting the model {display-mode:"form"}
+
+#@markdown Specify a single trial time, the duration of the trial (after trial onset), and estimates for the model parameters.
+t = 83.063 #@param
+trial_dur = 10 #@param
 p0 = (1, 1, 10) #@param # start with values near those we expect
 
 
@@ -598,36 +612,54 @@ xs = xs[1:]
 p0 = (1, 1, 10) # start with values near those we expect
 params_, cv = optimize.curve_fit(monoExp, xs, ys, p0)
 m, t, b = params_
-tauSec = (1 / t) 
 
 # determine quality of the fit
 squaredDiffs = np.square(ys - monoExp(xs, m, t, b))
 squaredDiffsFromMean = np.square(ys - np.mean(ys))
 rSquared = 1 - np.sum(squaredDiffs) / np.sum(squaredDiffsFromMean)
-print(f"R² = {rSquared}")
-
-# plot the results
-plt.plot(xs, ys, '.', label="data")
-plt.plot(xs, monoExp(xs, m, t, b), '--', label="fitted")
-plt.title("Fitted Exponential Curve")
 
 # inspect the parameters
-print(f"Y = {m} * e^(-t / {t}) + {b}")
-print(f"Tau = {tauSec} s")
+print('What are the model parameters?')
+print(f"Y = {m:.2f} * e^(-x / {t:.2f}) + {b:.2f}")
+
+print('')
+
+# report the fit
+print('How good is the model fit to your data?')
+print(f"R² = {rSquared:.2f}")
+
+f = go.FigureWidget(make_subplots(rows=1,cols=1))
+
+f.add_trace(go.Scatter(x = xs, y = ys, line_color = 'black', name = 'data', mode='markers'),row=1,col=1)
+f.add_trace(go.Scatter(x = xs, y = monoExp(xs, m, t, b), line_color = 'green', name= 'fit'),row=1,col=1)
+
+f.update_layout(height=500, width=800,
+                showlegend=False,
+                xaxis_title="time (seconds)",
+                  yaxis_title='rate')
+
+# # plot the results
+# plt.plot(xs, ys, '.', label="data")
+# plt.plot(xs, monoExp(xs, m, t, b), '--', label="fitted")
+# plt.title("Fitted Exponential Curve")
 
 
-# Across multiple trials, get param distribution
+
+# There is likely *across trial* variability in the MRO response. You can get a model fit for each trial and then evaluate the distrubution of model parameters. Alternatively, you could take the average response across trials and fit the model to the average. What are the pros and cons of each of these methods in terms of statistical results? In other words, are the two methods equivalent or can you calculate different metrics of statistics depending on the method? 
 
 # In[ ]:
 
 
-# trials = [94.692,103.73,111.665,120.871,129.286]
-trials = [6.345,13.836,21.63,32.635,40.319]
-trial_dur = 3
-    
+#@title Fitting the model {display-mode:"form"}
+
+#@markdown Specify a list of trials times, the duration of the trial (after trial onset), and estimates for the model parameters.
+trial_list = [94.692,103.73,111.665,120.871,129.286] #@param 
+trial_dur = 3 #@param
+p0 = (1, 1, 10) #@param # start with values near those we expect
+
 # plt.figure()
 params = []
-for t in trials:
+for t in trial_list:
     ti = np.argmin(np.abs(spkt-t))
     xs = spkt[(spkt>=spkt[ti]) & (spkt<spkt[ti]+trial_dur)]-spkt[ti]
     ys = 1/np.diff(xs)
@@ -648,35 +680,55 @@ fit_parameters = np.asarray(params).reshape(-1,4)
 u_fit = np.mean(fit_parameters,0)
 std_fit = np.std(fit_parameters,0)
 
-print('mean fit parameters: ')
-print(u_fit)
-print('')
-print('standard deviation fit parameters: ')
-print(std_fit)
-print('')
+
 # inspect the results
 print('results based on mean across trials:')
-print(f"R² = {u_fit[3]}")
-print(f"Y = {u_fit[0]} * e^(-x / {u_fit[1]}) + {u_fit[2]}")
-print(f"Tau = {1/u_fit[1]} s")
+print(f"R² = {u_fit[3]:0.2f}")
+print(f"Y = {u_fit[0]:0.2f} * e^(-x / {u_fit[1]:0.2f}) + {u_fit[2]:0.2f}")
+print('')
+
+print('array of fit parameters across all trials: (R0, tau, Rinf, R2)')
+print(fit_parameters)
+print('')
+
+print('mean fit parameters: (R0, tau, Rinf, R2)')
+print(u_fit)
+print('')
+print('standard deviation fit parameters: (R0, tau, Rinf, R2)')
+print(std_fit)
+print('')
 
 
-# Use the mean parameters to plot the model equations.
+
+# Now, use the mean parameters to plot the model equations.
 # For multiple conditions, list multiple values for each parameter.
 
 # In[ ]:
 
 
-m = [7.5,10] #@param
-t = [0.54,0.6] #@param
-b = [14,9.3] #@param
-trial_dur = 15
+m = [7.7,7.36,7.05] #@param
+t = [0.6,0.49, 0.48] #@param
+b = [10.54,13.63, 14.88] #@param
+trial_dur = 10
 
 x_ = np.linspace(0,trial_dur,trial_dur*100)
 
 for m_,t_,b_ in zip(m,t,b):
     y_ = monoExp(x_, m_,t_,b_)
     plt.plot(x_,y_)
+
+
+# Plot the model parameters as a function of stretch. Is there some predictable relationship between these?
+# Which parameters are a function of specific stretch amplitudes? Which parameters are independent of the specific stretch amplitude? In other words, which properties of the MRO response code for position of the tail and which code for other aspects of the movement?
+
+# In[ ]:
+
+
+stretch = [1,2,3]
+
+plt.plot(stretch,m)
+plt.plot(stretch,t)
+plt.plot(stretch,b)
 
 
 # <hr> 
