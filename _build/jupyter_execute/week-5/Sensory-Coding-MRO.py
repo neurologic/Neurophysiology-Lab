@@ -185,7 +185,9 @@ vb
 
 # <a id='select-data'></a>
 # 
-# 1. Specify the timerange for the data you want to analyze.
+# ## 1. Select Data
+# 
+# Specify the timerange for the data you want to analyze.
 
 # In[ ]:
 
@@ -203,7 +205,8 @@ stop_time = 153  #@param {type: "number"}
 
 # <a id='detect-spikes'></a>
 # 
-# 2. Detect peaks in the signal
+# ## 2. Detect Peaks
+# Detect peaks in the signal
 # 
 # First, in the code cell below, write a simple script that:
 # - calculates the standard deviation of voltage in the raw signal using the ```np.std()``` module to store the result as a variable called "<b>SD</b>". 
@@ -218,6 +221,13 @@ stop_time = 153  #@param {type: "number"}
 
 
 # Then use the result to determine a spike detection threshold used by the ```find peaks``` algorithm in the following code cell
+
+# In[ ]:
+
+
+np.shape([0]*sum(inwin_inds))
+inwin_inds
+
 
 # In[ ]:
 
@@ -245,7 +255,8 @@ inwin_inds = ((peaks_t>start_time) & (peaks_t<stop_time))
 df_props = pd.DataFrame({
         'height': props['peak_heights'][inwin_inds],
         'spikeT' : peaks_t[inwin_inds],
-        'spikeInd' : peaks[inwin_inds]
+        'spikeInd' : peaks[inwin_inds],
+        'cluster' : [0]*sum(inwin_inds)
             })
 
 bins = np.linspace(0,np.abs(np.max(polarity*channel_signal)),200)
@@ -288,12 +299,13 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 # <a id = "cluster-events"></a>
 # 
-# 3. Cluster events
+# ## 3. Cluster
+# Cluster events if needed. 
 # 
 # The histogram plot produced in the last step can give you a sense for how many distinct neurons might be in your recording. The scatter plot of peak amplitude across time can give you a sense for how stable the recording was. If you had good recording stability, you can cluster spike events categorically to analyze the activity of individual neurons independently. 
 # 
-# If your recording is not stable, or is too noisy, then you may not be able to distinguish cell types. In this case, your *number of clusters* should be one. 
-# 
+# If your recording is not stable, or is too noisy, then you may not be able to distinguish cell types. In this case, skip this clustering step. You will only have one cluster and its identity will be '0'. 
+
 # We can cluster events based on peak height and waveform shape using ["Kmeans"](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) clustering. 
 # This will provide us with "putative single units" for further analysis.
 
@@ -319,7 +331,7 @@ df_props['cluster'] = kmeans.labels_
 
 # <a id = "display-clusters"></a>
 # 
-# 4. Visualize (and Merge Clusters if needed)
+# Visualize (and Merge Clusters if needed)
 # 
 # Now that the events are clustered, you can visualize the mean spike waveform associated with each cluster (putative motor neuron).
 
@@ -387,7 +399,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 # <a id="raw-cluster-scatter"></a>
 # 
-# 5. Check event-category identity with raw data.
+# Check event-category identity with raw data.
 # 
 # Once you are happy with the clustering results based on the waveform shapes, check back with the raw data. 
 
