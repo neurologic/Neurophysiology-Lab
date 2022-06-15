@@ -18,7 +18,7 @@
 # - [Introduction](#intro)
 # - [Setup](#setup)
 # - [Part I. Process Data](#one)
-# - [Part II. Sensory Neuron Activity](#two)
+# - [Part II. Analyze Processed Data](#two)
 # 
 
 # <a id="setup"></a>
@@ -85,15 +85,15 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-filepath = "/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/20220609/MRO2022-06-09T12_59_19.bin"
-#@markdown Specify the sampling rate and number of channels recorded.
+# filepath = "/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/20220609/MRO2022-06-09T12_59_19.bin"
 
+#@markdown Specify the sampling rate and number of channels recorded.
 sampling_rate = None #@param
 number_channels = None #@param
 channel_to_process = 0 #@param
 
-sampling_rate = 30000 #@param
-number_channels = 1 #@param
+# sampling_rate = 30000 #@param
+# number_channels = 1 #@param
 
 downsample = False #@param
 newfs = 10000 #@param
@@ -206,8 +206,8 @@ vb
 start_time =   None #@param {type: "number"}
 stop_time = None  #@param {type: "number"}
 
-start_time =   0 #@param {type: "number"}
-stop_time = 153  #@param {type: "number"}
+# start_time =   0 #@param {type: "number"}
+# stop_time = 153  #@param {type: "number"}
 
 
 # <a id='detect-spikes'></a>
@@ -243,10 +243,12 @@ inwin_inds
 
 #@markdown Type in the threshold amplitude for event detection determined by your SD calculations.
 spike_detection_threshold = None  #@param {type: "number"}
-spike_detection_threshold = 0.1  #@param {type: "number"}
+# spike_detection_threshold = 0.1  #@param {type: "number"}
+
 #@markdown Then from the dropdown, select a polarity (whether peaks are up or down)
 peaks = "select peak direction"  #@param ['select peak direction','up', 'down']
-peaks = "up"  #@param ['select peak direction','up', 'down']
+# peaks = "up"  #@param ['select peak direction','up', 'down']
+
 #@markdown Finally, run this cell to set these values and plot a histogram of peak amplitudes.
 
 
@@ -335,8 +337,8 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown Choose the number of clusters you want to split the event-based data into and type that number below. <br>
 #@markdown >Note: It can sometimes help to "over-split" the events into more clusters 
 #@markdown than you think will be necessary. You can try both strategies and assess the results.
-number_of_clusters = None #@param {type: "number"}
-number_of_clusters = 1
+number_of_clusters = None #@param
+# number_of_clusters = 1
 #@markdown Then run this cell to run the Kmeans algorithm. 
 
 # No need to edit below this line
@@ -360,7 +362,9 @@ df_props['cluster'] = kmeans.labels_
 
 #@markdown Run this cell to display the mean (and std) waveform for each cluster.
 
+#@markdown Specify the time before and after each event peak to plot.
 windur = 0.003 #@param
+
 winsamps = int(windur * fs)
 x = np.linspace(-windur,windur,winsamps*2)*1000
 hfig,ax = plt.subplots(1,figsize=(8,6))
@@ -479,7 +483,7 @@ vb
 # If you think that two different spike waveforms are being lumped together, try going back to the [Kmeans clustering algorithm](#kmeans) and increasing the cluster number constraint on the Kmeans algorithm - then [merge](#merge-clusters) as needed. 
 
 # <a id="two"></a>
-# # Part II. Processed Data Analysis
+# # Part II. Analyze Processed Data 
 # 
 # [toc](#toc)
 # 
@@ -496,10 +500,10 @@ vb
 
 #@title {display-mode:"form"}
 
-#@markdown Run this code cell to plot: 1) a scatter of ISI across time for individual clusters
-#@markdown and 2) the stimulus signal
-
-#@markdown <br> Once you run this code cell a first time, you will be able to select different clusters from the dropdown menu to change the plot data accordingly.
+#@markdown Run this code cell to plot:  
+#@markdown - a scatter of ISI across time for individual clusters  
+#@markdown - the stimulus signal
+#@markdown > Once you run this code cell a first time, you will be able to select different clusters from the dropdown menu to change the plot data accordingly.
 
 
 k = df_props['cluster'][0] #seed it to start
@@ -605,7 +609,9 @@ f.update_layout(height=500, width=800,
 
 #@markdown Fitting the model on a single trial
 
-#@markdown Specify a single trial time, the duration of the trial (after trial onset), and estimates for the model parameters.
+#@markdown Specify a single trial time (t), 
+#@markdown the duration of the trial (trial_dur; after trial onset), 
+#@markdown and initial estimates for the model parameters (parameter_initialize).
 t = 83.063 #@param
 trial_dur = 10 #@param
 parameter_initialize = (1, 1, 10) #@param # start with values near those we expect
@@ -711,7 +717,7 @@ print('')
 # ## Generate model data
 # 
 # Now, use the mean parameters to plot the model equations.
-# For multiple conditions, list multiple values for each parameter.
+# For multiple conditions, list multiple values for each parameter. Keep the order of conditions the same in each list.
 
 # In[ ]:
 

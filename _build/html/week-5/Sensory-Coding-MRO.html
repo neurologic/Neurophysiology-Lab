@@ -691,8 +691,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-processed-data-analysis">
-   Part II. Processed Data Analysis
+  <a class="reference internal nav-link" href="#part-ii-analyze-processed-data">
+   Part II. Analyze Processed Data
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -802,8 +802,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-processed-data-analysis">
-   Part II. Processed Data Analysis
+  <a class="reference internal nav-link" href="#part-ii-analyze-processed-data">
+   Part II. Analyze Processed Data
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -857,7 +857,7 @@ How are sensory responses effected by anaesthetics (why would this be useful)?</
 <li><p><a class="reference external" href="#intro">Introduction</a></p></li>
 <li><p><a class="reference external" href="#setup">Setup</a></p></li>
 <li><p><a class="reference external" href="#one">Part I. Process Data</a></p></li>
-<li><p><a class="reference external" href="#two">Part II. Sensory Neuron Activity</a></p></li>
+<li><p><a class="reference external" href="#two">Part II. Analyze Processed Data</a></p></li>
 </ul>
 <p><a id="setup"></a></p>
 </div>
@@ -921,15 +921,15 @@ How are sensory responses effected by anaesthetics (why would this be useful)?</
 <span class="c1">#@markdown to your recorded data on Drive (find the filepath in the colab file manager:</span>
 
 <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/20220609/MRO2022-06-09T12_59_19.bin&quot;</span>
-<span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
+<span class="c1"># filepath = &quot;/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/20220609/MRO2022-06-09T12_59_19.bin&quot;</span>
 
+<span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
 <span class="n">sampling_rate</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
 <span class="n">number_channels</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
 <span class="n">channel_to_process</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param</span>
 
-<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">30000</span> <span class="c1">#@param</span>
-<span class="n">number_channels</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#@param</span>
+<span class="c1"># sampling_rate = 30000 #@param</span>
+<span class="c1"># number_channels = 1 #@param</span>
 
 <span class="n">downsample</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
 <span class="n">newfs</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">#@param</span>
@@ -1033,8 +1033,8 @@ How are sensory responses effected by anaesthetics (why would this be useful)?</
 <span class="n">start_time</span> <span class="o">=</span>   <span class="kc">None</span> <span class="c1">#@param {type: &quot;number&quot;}</span>
 <span class="n">stop_time</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
 
-<span class="n">start_time</span> <span class="o">=</span>   <span class="mi">0</span> <span class="c1">#@param {type: &quot;number&quot;}</span>
-<span class="n">stop_time</span> <span class="o">=</span> <span class="mi">153</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
+<span class="c1"># start_time =   0 #@param {type: &quot;number&quot;}</span>
+<span class="c1"># stop_time = 153  #@param {type: &quot;number&quot;}</span>
 </pre></div>
 </div>
 </div>
@@ -1073,10 +1073,12 @@ How are sensory responses effected by anaesthetics (why would this be useful)?</
 
 <span class="c1">#@markdown Type in the threshold amplitude for event detection determined by your SD calculations.</span>
 <span class="n">spike_detection_threshold</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
-<span class="n">spike_detection_threshold</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1">#@param {type: &quot;number&quot;}</span>
+<span class="c1"># spike_detection_threshold = 0.1  #@param {type: &quot;number&quot;}</span>
+
 <span class="c1">#@markdown Then from the dropdown, select a polarity (whether peaks are up or down)</span>
 <span class="n">peaks</span> <span class="o">=</span> <span class="s2">&quot;select peak direction&quot;</span>  <span class="c1">#@param [&#39;select peak direction&#39;,&#39;up&#39;, &#39;down&#39;]</span>
-<span class="n">peaks</span> <span class="o">=</span> <span class="s2">&quot;up&quot;</span>  <span class="c1">#@param [&#39;select peak direction&#39;,&#39;up&#39;, &#39;down&#39;]</span>
+<span class="c1"># peaks = &quot;up&quot;  #@param [&#39;select peak direction&#39;,&#39;up&#39;, &#39;down&#39;]</span>
+
 <span class="c1">#@markdown Finally, run this cell to set these values and plot a histogram of peak amplitudes.</span>
 
 
@@ -1162,8 +1164,8 @@ This will provide us with “putative single units” for further analysis.</p>
 <span class="c1">#@markdown Choose the number of clusters you want to split the event-based data into and type that number below. &lt;br&gt;</span>
 <span class="c1">#@markdown &gt;Note: It can sometimes help to &quot;over-split&quot; the events into more clusters </span>
 <span class="c1">#@markdown than you think will be necessary. You can try both strategies and assess the results.</span>
-<span class="n">number_of_clusters</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param {type: &quot;number&quot;}</span>
-<span class="n">number_of_clusters</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">number_of_clusters</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
+<span class="c1"># number_of_clusters = 1</span>
 <span class="c1">#@markdown Then run this cell to run the Kmeans algorithm. </span>
 
 <span class="c1"># No need to edit below this line</span>
@@ -1187,7 +1189,9 @@ This will provide us with “putative single units” for further analysis.</p>
 
 <span class="c1">#@markdown Run this cell to display the mean (and std) waveform for each cluster.</span>
 
+<span class="c1">#@markdown Specify the time before and after each event peak to plot.</span>
 <span class="n">windur</span> <span class="o">=</span> <span class="mf">0.003</span> <span class="c1">#@param</span>
+
 <span class="n">winsamps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">windur</span> <span class="o">*</span> <span class="n">fs</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">windur</span><span class="p">,</span><span class="n">windur</span><span class="p">,</span><span class="n">winsamps</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
 <span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -1312,8 +1316,8 @@ If there are multiple spike clusters you want to merge into a single cell class,
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-processed-data-analysis">
-<h1>Part II. Processed Data Analysis<a class="headerlink" href="#part-ii-processed-data-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-analyze-processed-data">
+<h1>Part II. Analyze Processed Data<a class="headerlink" href="#part-ii-analyze-processed-data" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
 <p>This section provides tools to obtain two metrics of MRO spiking responses: <em><strong>spike rate</strong></em> and <em><strong>spike rate adaptation</strong></em>.</p>
 <p>First, you will plot the inter-spike interval (ISI; the time between spikes) for the event cluster that you want to analyze. You will also obtain a plot of the stimulus signal aligned in time to the spiking data.</p>
@@ -1324,10 +1328,10 @@ If there are multiple spike clusters you want to merge into a single cell class,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
 
-<span class="c1">#@markdown Run this code cell to plot: 1) a scatter of ISI across time for individual clusters</span>
-<span class="c1">#@markdown and 2) the stimulus signal</span>
-
-<span class="c1">#@markdown &lt;br&gt; Once you run this code cell a first time, you will be able to select different clusters from the dropdown menu to change the plot data accordingly.</span>
+<span class="c1">#@markdown Run this code cell to plot:  </span>
+<span class="c1">#@markdown - a scatter of ISI across time for individual clusters  </span>
+<span class="c1">#@markdown - the stimulus signal</span>
+<span class="c1">#@markdown &gt; Once you run this code cell a first time, you will be able to select different clusters from the dropdown menu to change the plot data accordingly.</span>
 
 
 <span class="n">k</span> <span class="o">=</span> <span class="n">df_props</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#seed it to start</span>
@@ -1432,7 +1436,9 @@ If there are multiple spike clusters you want to merge into a single cell class,
 
 <span class="c1">#@markdown Fitting the model on a single trial</span>
 
-<span class="c1">#@markdown Specify a single trial time, the duration of the trial (after trial onset), and estimates for the model parameters.</span>
+<span class="c1">#@markdown Specify a single trial time (t), </span>
+<span class="c1">#@markdown the duration of the trial (trial_dur; after trial onset), </span>
+<span class="c1">#@markdown and initial estimates for the model parameters (parameter_initialize).</span>
 <span class="n">t</span> <span class="o">=</span> <span class="mf">83.063</span> <span class="c1">#@param</span>
 <span class="n">trial_dur</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>
 <span class="n">parameter_initialize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">#@param # start with values near those we expect</span>
@@ -1539,7 +1545,7 @@ If there are multiple spike clusters you want to merge into a single cell class,
 <div class="section" id="generate-model-data">
 <h2>Generate model data<a class="headerlink" href="#generate-model-data" title="Permalink to this headline">¶</a></h2>
 <p>Now, use the mean parameters to plot the model equations.
-For multiple conditions, list multiple values for each parameter.</p>
+For multiple conditions, list multiple values for each parameter. Keep the order of conditions the same in each list.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
