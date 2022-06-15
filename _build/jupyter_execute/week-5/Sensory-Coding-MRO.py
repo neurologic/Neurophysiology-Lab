@@ -330,7 +330,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@title Cluster Detected Events { display-mode: "form" }
+#@title { display-mode: "form" }
 
 #@markdown Choose the number of clusters you want to split the event-based data into and type that number below. <br>
 #@markdown >Note: It can sometimes help to "over-split" the events into more clusters 
@@ -398,7 +398,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@title Merge Clusters { display-mode: "form" }
+#@title { display-mode: "form" }
 
 #@markdown ONLY USE THIS CODE CELL IF YOU WANT TO MERGE CLUSTERS. 
 #@markdown OTHERWISE, MOVE ON. 
@@ -548,7 +548,7 @@ vb
 #@markdown What defines the start of a trial will depend on your question.  
 #@markdown Enter the trial times as a list below.
 
-trials_list = [51.72, 61.65, 71.256, 83.063] #@params
+trials_list = [51.72, 61.65, 71.256, 83.063] #@param
 
 # # different amplitudes
 # trials = [6.345,13.836,21.63,32.635,40.319]
@@ -608,8 +608,7 @@ f.update_layout(height=500, width=800,
 #@markdown Specify a single trial time, the duration of the trial (after trial onset), and estimates for the model parameters.
 t = 83.063 #@param
 trial_dur = 10 #@param
-p0 = (1, 1, 10) #@param # start with values near those we expect
-
+parameter_initialize = (1, 1, 10) #@param # start with values near those we expect
 
 ti = np.argmin(np.abs(spkt-t))
 xs = spkt[(spkt>=spkt[ti]) & (spkt<spkt[ti]+trial_dur)]-spkt[ti]
@@ -617,8 +616,7 @@ ys = 1/np.diff(xs)
 xs = xs[1:]
 
 # perform the fit
-p0 = (1, 1, 10) # start with values near those we expect
-params_, cv = optimize.curve_fit(monoExp, xs, ys, p0)
+params_, cv = optimize.curve_fit(monoExp, xs, ys, parameter_initialize)
 m, t, b = params_
 
 # determine quality of the fit
@@ -653,7 +651,7 @@ f.update_layout(height=500, width=800,
 
 
 
-# There is likely *across trial* variability in the MRO response. You can get a model fit for each trial and then evaluate the distrubution of model parameters. Alternatively, you could take the average response across trials and fit the model to the average. What are the pros and cons of each of these methods in terms of statistical results? In other words, are the two methods equivalent or can you calculate different metrics of statistics depending on the method? 
+# There is likely *across trial* variability in the MRO response. You can get a model fit for each trial and then evaluate the distrubution of model parameters. Alternatively, you could take the average response across trials and fit the model to the average. Here, you will do the former. What are the pros and cons of each of these methods in terms of statistical results? In other words, are the two methods equivalent or can you calculate different metrics of statistics depending on the method? 
 
 # In[ ]:
 
@@ -665,7 +663,7 @@ f.update_layout(height=500, width=800,
 #@markdown Specify a list of trials times, the duration of the trial (after trial onset), and estimates for the model parameters.
 trial_list = [94.692,103.73,111.665,120.871,129.286] #@param 
 trial_dur = 3 #@param
-p0 = (1, 1, 10) #@param # start with values near those we expect
+parameter_initialize = (1, 1, 10) #@param # start with values near those we expect
 
 # plt.figure()
 params = []
@@ -675,7 +673,7 @@ for t in trial_list:
     ys = 1/np.diff(xs)
     xs = xs[1:]
     
-    params_, cv = optimize.curve_fit(monoExp, xs, ys, p0)
+    params_, cv = optimize.curve_fit(monoExp, xs, ys, parameter_initialize)
     m, t, b = params_
     
     squaredDiffs = np.square(ys - monoExp(xs, m, t, b))
