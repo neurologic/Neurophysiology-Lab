@@ -489,6 +489,8 @@ vb
 # 
 # From this plot, you should be able to determine 'trial' times for a trial-based analysis of spike rate and adaptation.
 
+# ## Plot continuous ISI
+
 # In[ ]:
 
 
@@ -535,6 +537,8 @@ vb.layout.align_items = 'center'
 vb
 
 
+# ## Plot trial rate overlaid
+
 # In[ ]:
 
 
@@ -574,6 +578,8 @@ f.update_layout(height=500, width=800,
                   yaxis_title='rate')
 
 
+# ## Fitting an exponential model
+# 
 # You can create a ***model*** of the MRO response. If the model is correct, you should be able to 'explain' the response in terms of the model (it should be able to predict all features of the response).
 # 
 # The following code cells provide a tool to model the response using a single exponential function of the form:
@@ -595,7 +601,9 @@ f.update_layout(height=500, width=800,
 # In[ ]:
 
 
-#@title Fitting the model {display-mode:"form"}
+#@title {display-mode:"form"}
+
+#@markdown Fitting the model on a single trial
 
 #@markdown Specify a single trial time, the duration of the trial (after trial onset), and estimates for the model parameters.
 t = 83.063 #@param
@@ -650,7 +658,9 @@ f.update_layout(height=500, width=800,
 # In[ ]:
 
 
-#@title Fitting the model {display-mode:"form"}
+#@title {display-mode:"form"}
+
+#@markdown Fitting the model across multiple trials
 
 #@markdown Specify a list of trials times, the duration of the trial (after trial onset), and estimates for the model parameters.
 trial_list = [94.692,103.73,111.665,120.871,129.286] #@param 
@@ -700,35 +710,60 @@ print('')
 
 
 
+# ## Generate model data
+# 
 # Now, use the mean parameters to plot the model equations.
 # For multiple conditions, list multiple values for each parameter.
 
 # In[ ]:
 
 
-m = [7.7,7.36,7.05] #@param
-t = [0.6,0.49, 0.48] #@param
-b = [10.54,13.63, 14.88] #@param
-trial_dur = 10
+#@title {display-mode:"form"}
+
+#@markdown Create a list of conditions
+condition = [1,2,3]
+
+#@markdown Create a list of parameters across conditions
+m = [7.7, 7.36, 7.05] #@param
+tau = [0.6, 0.49, 0.48] #@param
+b = [10.54, 13.63, 14.88] #@param
+r_squared = [0.94, 0.96, 0.94]#@param
+
+#@markdown How long do you want the model MRO to be stretched for under each condition?
+trial_dur = 10 #@param
+
+# Run this code cell to plot the model across conditions
+f = go.FigureWidget(make_subplots(rows=1,cols=1))
 
 x_ = np.linspace(0,trial_dur,trial_dur*100)
 
-for m_,t_,b_ in zip(m,t,b):
-    y_ = monoExp(x_, m_,t_,b_)
-    plt.plot(x_,y_)
+for m_,tau_,b_,c_ in zip(m,tau,b,condition):
+    y_ = monoExp(x_, m_,tau_,b_)
+    f.add_trace(go.Scatter(x = x_, y = y_, name = str(c_), mode='lines'),row=1,col=1)
+
+f.update_layout(height=500, width=600,
+                showlegend=True,
+                xaxis_title="time (seconds)",
+                  yaxis_title='rate')
 
 
+# ## Inspect model parameters across conditions
+# 
 # Plot the model parameters as a function of stretch. Is there some predictable relationship between these?
 # Which parameters are a function of specific stretch amplitudes? Which parameters are independent of the specific stretch amplitude? In other words, which properties of the MRO response code for position of the tail and which code for other aspects of the movement?
 
 # In[ ]:
 
 
-stretch = [1,2,3]
+#@title {display-mode:"form"}
 
-plt.plot(stretch,m)
-plt.plot(stretch,t)
-plt.plot(stretch,b)
+#@markdown Run this code cell to plot parameters across conditions. 
+
+hfig,ax = plt.subplots(1,4)
+ax[0].plot(condition,m)
+ax[1].plot(condition,t)
+ax[2].plot(condition,b)
+ax[3].plot(condition,r_squared)
 
 
 # <hr> 
