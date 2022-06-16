@@ -81,12 +81,17 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-filepath = '/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA21/Data/CrayfishNerve3/nerve_Muscle_TelsonStim2021-07-16T14_34_57.bin'
+filepath = '/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/20220609/A4-bilateral-spont2022-06-09T14_39_25.bin'
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
 sampling_rate = None #@param
 number_channels = None #@param
+muscle_channel = None #@param
+nerve_channel = None #@param
+
+sampling_rate = 30000 #@param
+number_channels = 2 #@param
 muscle_channel = None #@param
 nerve_channel = None #@param
 
@@ -117,20 +122,18 @@ if downsample:
     fs = int(np.shape(data)[0]/dur)
 
 time = np.linspace(0,dur,np.shape(data)[0])
-pre = data[:,nerve_channel]
-post = data[:,muscle_channel]
 
 print('Now be a bit patient while it plots.')
 
 f = go.FigureWidget(make_subplots(rows=2, cols=1, shared_xaxes= True)) #,layout=go.Layout(height=500, width=800))
-f.add_trace(go.Scatter(x = time[0:fs], y = pre[0:fs],
-                             name='pre synaptic',opacity=1),row=1,col=1)
-f.add_trace(go.Scatter(x = time[0:fs], y = post[0:fs],
-                             name='post synaptic',opacity=1),row=2,col=1)
+f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,0],
+                             name='channel 0',opacity=1),row=1,col=1)
+f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,1],
+                             name='channel 1',opacity=1),row=2,col=1)
 f.update_layout(height=600, width=800,
                 showlegend=False,
                xaxis2_title="time(seconds)", 
-                  yaxis_title='pre-synaptic voltage', yaxis2_title='post-synaptic voltage')
+                  yaxis_title='channel 0 voltage', yaxis2_title='channel 1 voltage')
 
 slider = widgets.FloatRangeSlider(
     min=0,
@@ -147,9 +150,9 @@ def response(x):
         starti = int(x[0]*fs)
         stopi = int(x[1]*fs)
         f.data[0].x = time[starti:stopi]
-        f.data[0].y = pre[starti:stopi]
+        f.data[0].y = data[starti:stopi,0]
         f.data[1].x = time[starti:stopi]
-        f.data[1].y = post[starti:stopi]
+        f.data[1].y = data[starti:stopi,1]
 
 vb = VBox((f, interactive(response, x=slider)))
 vb.layout.align_items = 'center'
@@ -166,24 +169,29 @@ vb
 
 #@title { display-mode: "form" }
 
+#@markdown Select one channel to analyze at a time.
+channel = 0 #@param
+
 #@markdown Type in the start and stop time (in seconds) 
 #@markdown that specifies the section of your recording you want to focus on for analysis.
-start_time =   None #@param {type: "number"}
-stop_time = None  #@param {type: "number"}
+start_time = 20 #@param {type: "number"}
+stop_time = 60  #@param {type: "number"}
+
 #@markdown Also type in an appropriate threshold amplitude for event detection.
-threshold = None  #@param {type: "number"}
+spike_detection_threshold = 0.01  #@param {type: "number"}
+
 #@markdown Then from the dropdown, select a polarity (whether peaks are up or down)
 peaks = "select peak direction"  #@param ['select peak direction','up', 'down']
-#@markdown Finally, run this cell to set these values and plot a histogram of peak amplitudes.
+peaks = "down" 
 
-spike_detection_threshold = threshold
+#@markdown Finally, run this cell to set these values and plot a histogram of peak amplitudes.
 
 if peaks=='up': polarity = 1
 if peaks=='down': polarity=-1
 
 min_isi = 0.001 #seconds
 
-peaks,props = find_peaks(polarity * pre,height=spike_detection_threshold, 
+peaks,props = find_peaks(polarity * data[:,channel],height=spike_detection_threshold, 
                          prominence = spike_detection_threshold, distance=int(min_isi*fs))
 peaks_t = peaks/fs
 inwin_inds = ((peaks_t>start_time) & (peaks_t<stop_time))
@@ -206,7 +214,7 @@ windur = 0.001
 winsamp = int(windur*fs)
 spkarray = []
 for i in df_props['spikeInd'].values:
-    spkarray.append(pre[i-winsamp : i+winsamp+1])
+    spkarray.append(data[i-winsamp : i+winsamp+1,channel])
 
 df = pd.DataFrame(np.asarray(spkarray).T)
 df_norm =(df - df.mean()) / df.std() # normalize for pca
@@ -246,7 +254,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown Choose the number of clusters you want to split the event-based data into and type that number below. <br>
 #@markdown >Note: It can sometimes help to "over-split" the events into more clusters 
 #@markdown than you think will be necessary. You can try both strategies and assess the results.
-number_of_clusters = None #@param {type: "number"}
+number_of_clusters = 7 #@param {type: "number"}
 #@markdown Then run this cell to run the Kmeans algorithm. 
 
 # No need to edit below this line
@@ -279,9 +287,9 @@ plt.yticks(fontsize=14)
 
 for k in np.unique(df_props['cluster']):
     spkt = df_props.loc[df_props['cluster']==k]['spikeT'].values #['peaks_t'].values
-    spkt = spkt[(spkt>windur) & (spkt<(len((pre)/fs)-windur))]
+    spkt = spkt[(spkt>windur) & (spkt<((np.shape(data)[0]/fs)-windur))]
     print(str(len(spkt)) + " spikes in cluster number " + str(k))
-    spkwav = np.asarray([pre[(int(t*fs)-winsamps):(int(t*fs)+winsamps)] for t in spkt])
+    spkwav = np.asarray([data[(int(t*fs)-winsamps):(int(t*fs)+winsamps),channel] for t in spkt])
     wav_u = np.mean(spkwav,0)
     wav_std = np.std(spkwav,0)
     ax.plot(x,wav_u,linewidth = 3,label='cluster '+ str(k),color=pal[k])
@@ -309,7 +317,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown OTHERWISE, MOVE ON. 
 #@markdown <br> Below, create your list (of sublists) of clusters to merge.
 #@markdown >Just leave out from the list any clusters that you want unmerged.
-merge_cluster_list = [[0,3,4],[1,2]] #@param
+merge_cluster_list = [[4,7]] #@param
 #@markdown Then, run this cell to merge clusters as specified.
 
 for k_group in merge_cluster_list:
@@ -334,8 +342,7 @@ print('Tasks completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown Run this cell to overlay spike times by cluster identity on the raw signal
 
 f = go.FigureWidget()
-f.add_trace(go.Scatter(x = time[0:fs], y = pre[0:fs],
-                             name='pre synaptic',opacity=1,line_color='black'))
+f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,channel],opacity=1,line_color='black'))
 for k in np.unique(df_props['cluster']):
     start = 0 
     stop = 1
@@ -366,7 +373,7 @@ def response(x):
         starti = int(x[0]*fs)
         stopi = int(x[1]*fs)
         f.data[0].x = time[starti:stopi]
-        f.data[0].y = pre[starti:stopi]
+        f.data[0].y = data[starti:stopi,channel]
         for i,k in enumerate(np.unique(df_props['cluster'])):
             inwin_inds = np.asarray([(df_props['spikeT'].values>x[0]) & (df_props['spikeT'].values<x[1])]).T
             df_ = df_props[inwin_inds]

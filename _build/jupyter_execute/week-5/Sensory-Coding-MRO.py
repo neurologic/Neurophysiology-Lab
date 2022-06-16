@@ -8,9 +8,7 @@
 # 
 # There are two MROs innervating the deep flexor muscles, which can be distinguished based on spike height and shape. 
 # 
-# What are the dynamic properties of sensory responses (tonic, phasic, tonic/phasic)?
-# How are sensory responses effected by anaesthetics (why would this be useful)?
-# 
+# What are the dynamic properties of MRO sensory responses? In this notebook, you will process, analyze, and model MRO sensory responses.
 
 # <a id="toc"></a>
 # # Table of Contents
