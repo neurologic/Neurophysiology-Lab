@@ -36,6 +36,11 @@ parts:
         - file: week-4/Lab-Manual
         - file: week-4/Sensory-Coding
         - file: week-4/Sensory-Coding_Responses
+    - file: ERG/ERG
+      sections:
+        - file: ERG/Lab-Manual
+        - file: ERG/Sensory-Coding-ERG
+        - file: ERG/Sensory-Coding-ERG_Responses
     - file: week-5/week-5
       sections:
         - file: week-5/Lab-Manual
