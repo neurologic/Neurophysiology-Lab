@@ -41,6 +41,11 @@ parts:
         - file: ERG/Lab-Manual
         - file: ERG/Sensory-Coding-ERG
         - file: ERG/Sensory-Coding-ERG_Responses
+    - file: Giant-Fiber/Giant-Fiber
+      sections:
+        - file: Giant-Fiber/Lab-Manual
+        - file: Giant-Fiber/Giant-Fiber_Data
+        - file: Giant-Fiber/Giant-Fiber_Responses
     - file: week-5/week-5
       sections:
         - file: week-5/Lab-Manual

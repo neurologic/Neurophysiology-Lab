@@ -599,6 +599,8 @@ f.update_layout(height=500, width=800,
 # Where $R_{t}$ is the firing rate at time $t$, $R_{\infty}$ is the calculated firing rate if this degree of stretch were maintained infinitely, $R_{\infty}$ + $R_{0}$ is the calculated “initial” peak firing rate at time 0, and $\tau$ is the adaptation rate. The adaptation rate is the time it takes the spike rate to fall by a factor of $1/e$.
 # 
 # To model the MRO response in this form, you will *fit* your data to the model. 
+# 
+# In biology / electrophysiology *bi*exponential functions are often used to separate fast and slow components of exponential decay which may be caused by different mechanisms and occur at different rates. In this example we will only fit the data to a method with a exponential component (a *mono*exponential function), but the idea is the same.
 
 # In[ ]:
 
