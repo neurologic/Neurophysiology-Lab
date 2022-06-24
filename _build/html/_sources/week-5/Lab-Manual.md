@@ -1,5 +1,12 @@
 # Lab Manual
 
+[REceptor Potentials](https://michaeldmann.net/mann4.html)
+[Adaptation in stretch receptor. Shigehiro Nakajima (1964)](https://www-jstor-org.ezproxy.wesleyan.edu/stable/pdf/1713939.pdf?refreqid=excelsior%3A65cca9fbb3864632b6d88815a65ca9d0&ab_segments=&origin=&acceptTC=1)
+[On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study](https://pubmed.ncbi.nlm.nih.gov/6316733/)
+[Structure and Function Relationship in
+the Abdominal Stretch Receptor Organs
+of the Crayfish](https://onlinelibrary-wiley-com.ezproxy.wesleyan.edu/doi/pdfdirect/10.1002/cne.20590)
+
 Muscle receptor organs (MROs) contain sensory neurons that depolarize in response to muscle stretch. In crayfish, 
 the superficial extensor muscle on each side of each abdominal segment (and in the two most posterior thoracic segments) are innervated by stretch-sensitive receptors. The superficial extensor muscles span adjacent segments, running from the middle of one tergite to the back edge of the next most anterior tergite. When these muscles contract, they pull the tergites together, causing the abdomen to straighten and extend (thus the name). Conversely, when the abdomen is curled ventrally, the tergites rotate around their joints and the extensor muscles are stretched, along with their associated MROs. MRO neurons receive inhibitory synaptic innervation from the central ganglion (this does not occur in vertebrate proprioceptors). These inhibitory inputs depress the receptor activity.
 
@@ -23,7 +30,7 @@ For this lab, you will be removing the tail from a crayfish. A major benefit of 
 	<li>Cut along the ventral edge of the carapace as close to the ventral side as possible.</li>
 	<li>Use your finger or the handle of a pair of blunt forcepts to push the fast flexor muscle away from the dorsal surface. Take care not to push down too hard against the tissue left on the dorsal surface. Use scissors if necessary to cut the nerves away instead of pulling at them.</li>
 	<li>Pin the anterior segment of the tail down on the dish (dorsal side down) using two pins. Take care not to crack the carapace apart.</li>
-	<li>Thread a thread through the anus of the tail. Tie it gently but firmly. Trim the thread so that it does not interfere with the electrode</li>
+	<li>Thread a thread through the anus of the tail. Tie it gently but firmly. Trim the thread so that it )does not interfere with the electrode</li>
 </ol>
 
 ## Physiology Setup
