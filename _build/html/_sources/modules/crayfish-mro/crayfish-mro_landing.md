@@ -11,8 +11,8 @@ extensor muscles.
 
 
 ## Pages:
-- [](../modules/crayfish-mro/Lab-Manual_crayfish-mro.md)
-- [](../modules/crayfish-mro/Data-Explorer_crayfish-mro.ipynb)
-- [](../modules/crayfish-mro/Responses_crayfish-mro.ipynb)
+- [](../crayfish-mro/Lab-Manual_crayfish-mro.md)
+- [](../crayfish-mro/Data-Explorer_crayfish-mro.ipynb)
+- [](../crayfish-mro/Responses_crayfish-mro.ipynb)
 
 

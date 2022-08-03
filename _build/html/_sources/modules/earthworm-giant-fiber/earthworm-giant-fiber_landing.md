@@ -5,8 +5,8 @@ Earthworm
 
 
 ## Pages:
-- [](../modules/earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber.md)
-- [](../modules/earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb)
-- [](../modules/earthworm-giant-fiber/Responses_earthworm-giant-fiber.ipynb)
+- [](../earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber.md)
+- [](../earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb)
+- [](../earthworm-giant-fiber/Responses_earthworm-giant-fiber.ipynb)
 
 

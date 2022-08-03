@@ -1,4 +1,4 @@
-# Week 7. Neural Circuits OR PHARMACOLOGY (or shift schedule to fit in pharma)
+# Week 11. Neural Circuits
 
 "The swimmerets of crayfish serve a function in posture control and beat rhythmically when the animals swim forward, ventilate their burrows or females aerate their eggs 5, 6. The swimmerets of the signal crayfish, Pacifastacus leniusculus, occur in pairs from the second to the fifth abdominal segment, with one limb on each side of the abdomen 7. The central nervous system produces on its own the rhythmic motor pattern, which drives the swimmeret movement in the intact animal as well as in the isolated nerve cord preparation. When there is no sensory feedback or descending input present the rhythmic motor pattern produced is called fictive locomotion 1, 2. In the swimmeret system this motor pattern
 does not differ in any parameter from the activity of the swimmerets measured in the intact animal.
@@ -12,7 +12,7 @@ Circuit Modelling Supplement?
 Cell Types physiology Supplement?
 
 ## Pages
-- [](../week-7/Lab-Manual.md)
-- [](../week-7/Neural-Circuits.ipynb)
-- [](../week-7/Neural-Circuits_Responses.ipynb)
+- [](../crayfish-cpg/Lab-Manual_crayfish-cpg.md)
+- [](../crayfish-cpg/Data-Explorer_crayfish-cpg.ipynb)
+- [](../crayfish-cpg/Responses_crayfish-cpg.ipynb)
 

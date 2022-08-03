@@ -28,8 +28,8 @@ parts:
         - file: modules/eod/Responses_eod
     - file: modules/eod-stim/eod-stim_landing
       sections:
+        - file: modules/eod-stim/Lab-Manual_eod-stim
         - file: modules/eod-stim/Data-Explorer_eod-stim
-        - file: modules/eod-stim/Experimental-Design-for-Analysis
         - file: modules/eod-stim/Experimental-Design-for-Analysis_Responses
     - file: modules/earthworm-giant-fiber/earthworm-giant-fiber_landing
       sections:

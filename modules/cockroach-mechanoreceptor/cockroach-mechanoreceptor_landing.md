@@ -1,4 +1,4 @@
-# Week 4. Sensory Coding
+# Week 5. Mechanoreceptors
 
 Before starting this lab, you should be familiar with:
 <ul>
@@ -17,7 +17,7 @@ You will use extracellular recording techniques to explore the response properti
 
 
 ## Pages:
-- [](../week-4/Lab-Manual.md)
-- [](../week-4/Sensory-Coding.ipynb)
-- [](../week-4/Sensory-Coding_Responses.ipynb)
+- [](../cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor.md)
+- [](../cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor.ipynb)
+- [](../cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.ipynb)
 

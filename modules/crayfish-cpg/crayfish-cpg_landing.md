@@ -12,7 +12,7 @@ Circuit Modelling Supplement?
 Cell Types physiology Supplement?
 
 ## Pages
-- [](../modules/crayfish-cpg/Lab-Manual_crayfish-cpg.md)
-- [](../modules/crayfish-cpg/Data-Explorer_crayfish-cpg.ipynb)
-- [](../modules/crayfish-cpg/Responses_crayfish-cpg.ipynb)
+- [](../crayfish-cpg/Lab-Manual_crayfish-cpg.md)
+- [](../crayfish-cpg/Data-Explorer_crayfish-cpg.ipynb)
+- [](../crayfish-cpg/Responses_crayfish-cpg.ipynb)
 

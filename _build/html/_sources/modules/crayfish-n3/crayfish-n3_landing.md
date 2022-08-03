@@ -11,7 +11,7 @@ differences between different ganglia
 
 
 ## Pages
-- [](../modules/crayfish-n3/Lab-Manual_crayfish-n3.md)
-- [](../modules/crayfish-n3/Data-Explorer_crayfish-n3.ipynb)
-- [](../modules/crayfish-n3/Responses_crayfish-n3.ipynb)
+- [](../crayfish-n3/Lab-Manual_crayfish-n3.md)
+- [](../crayfish-n3/Data-Explorer_crayfish-n3.ipynb)
+- [](../crayfish-n3/Responses_crayfish-n3.ipynb)
 

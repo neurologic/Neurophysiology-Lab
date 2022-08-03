@@ -5,8 +5,8 @@ computer models of action potential (simple current-based) and of simple synapti
 
 
 ## Pages:
-- [](../modules/computer-model/Lab-Manual_computer-model.md)
-- [](../modules/computer-model/Data-Explorer_computer-model.ipynb)
-- [](../modules/computer-model/Responses_computer-model.ipynb)
+- [](../computer-model/Lab-Manual_computer-model.md)
+- [](../computer-model/Data-Explorer_computer-model.ipynb)
+- [](../computer-model/Responses_computer-model.ipynb)
 
 
