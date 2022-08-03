@@ -30,7 +30,7 @@ parts:
       sections:
         - file: modules/eod-stim/Lab-Manual_eod-stim
         - file: modules/eod-stim/Data-Explorer_eod-stim
-        - file: modules/eod-stim/Experimental-Design-for-Analysis_Responses
+        - file: modules/eod-stim/Responses_eod-stim
     - file: modules/earthworm-giant-fiber/earthworm-giant-fiber_landing
       sections:
         - file: modules/earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber

@@ -11,13 +11,16 @@
 
 # (<a href="../Template.ipynb#one" target="_blank" rel="noopener noreferrer">Link to Template: Part I (non-colab link)</a>)
 
-# ...
+# What explains/causes each feature of the EOD waveform shape: 
+# - polarity
+# - amplitude
 # 
-# After answering the questions above, insert your figure by replacing the "id" in the link below with your google drive share link id
-# <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
+# Use plots of 3 different EOD waveforms (from different parts of the recording) and put them together in a cohesive figure to describe. 
+# 
+# Along with your written explanation, paste your figure below following the template provided in the markdown cell (insert your figure by replacing the "id" in the link below with your google drive share link id). 
 
-# <font color = "green">A major cause of the early adaptive fall of the receptor potential seems to be an outward K+ current activated by the stretch-induced depolarization. Swerup, C (1983) [On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study.](https://pubmed-ncbi-nlm-nih-gov.ezproxy.wesleyan.edu/6316733/) Acta physiologica Scandinavica, Vol.520, p.1-43</font>
-# 
+# ...
+# <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
 # In[ ]:
 

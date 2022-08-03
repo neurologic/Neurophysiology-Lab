@@ -51,8 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Responses" href="Responses_passive-membrane-models.html" />
+    <link rel="prev" title="Week 1. Introduction to Passive Physiology Principles" href="passive-membrane-models_landing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -155,17 +159,27 @@ const thebe_selector_output = ".output, .cell_output"
   Weekly Chapters
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="passive-membrane-models_landing.html">
    Week 1. Introduction to Passive Physiology Principles
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Passive Membrane Properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Responses_passive-membrane-models.html">
+     Responses
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -663,19 +677,36 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-i-intracellular-recording-of-membrane-potential">
-   Part I. Intracellular Recording of Membrane Potential
+  <a class="reference internal nav-link" href="#part-i-membrane-voltage">
+   Part I. Membrane Voltage
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-extracellular-recording-of-membrane-potential">
-   Part II. Extracellular Recording of Membrane Potential
+  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-membrane-potential">
+   Part II. Intracellular Recording of Membrane Potential
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-iii-intracellular-recording-of-membrane-potential-with-capacitance">
-   Part III. Intracellular Recording of Membrane Potential (with capacitance)
+  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-membrane-potential">
+   Part III. Extracellular Recording of Membrane Potential
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-intracellular-recording-of-membrane-potential-with-capacitance">
+   Part IV. Intracellular Recording of Membrane Potential (with capacitance)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-resources">
+   Additional Resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resistor-decoder">
+     Resistor Decoder
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -713,19 +744,36 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-i-intracellular-recording-of-membrane-potential">
-   Part I. Intracellular Recording of Membrane Potential
+  <a class="reference internal nav-link" href="#part-i-membrane-voltage">
+   Part I. Membrane Voltage
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-extracellular-recording-of-membrane-potential">
-   Part II. Extracellular Recording of Membrane Potential
+  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-membrane-potential">
+   Part II. Intracellular Recording of Membrane Potential
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-iii-intracellular-recording-of-membrane-potential-with-capacitance">
-   Part III. Intracellular Recording of Membrane Potential (with capacitance)
+  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-membrane-potential">
+   Part III. Extracellular Recording of Membrane Potential
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-intracellular-recording-of-membrane-potential-with-capacitance">
+   Part IV. Intracellular Recording of Membrane Potential (with capacitance)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-resources">
+   Additional Resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resistor-decoder">
+     Resistor Decoder
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -752,27 +800,34 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Electrical_Components.png?raw=True' width="300" alt='electrical components'/>
-<p>Resistors are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: I = V/R, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, V = IR determines the voltage in response to a current across a resistor.</p>
-<p>In an electrical circuit, a capacitor possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.</p>
-<p>The first model membrane circuit you will be working with contains 3 different resistances for each patch of “membrane”. These are arranged both in serial and parallel across the “membrane”.</p>
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Passive-Membrane-Resistance-Circuit.png?raw=True' width="500" alt='model membrane'/>
+<p><a class="reference external" href="#resistor-decoder"><strong>Resistors</strong></a> are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: I = V/R, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, V = IR determines the voltage in response to a current across a resistor.</p>
+<p>In an electrical circuit, a <strong>capacitor</strong> possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.</p>
+<p>Current flows across the membrane capacitance only when voltage across the membrane changes. When one side of a membrane becomes more positive (for example when an excitatory synaptic input is “activated”), positive ions are repelled from and negative ions are attracted to the other side of the membrane. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value (for example, when synaptic ion channels close), charges separated by the membrane flow again, discharging the membrane capacitance.</p>
+<p>Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series can be equivalent for some purposes).</p>
+<p>Some <strong>active</strong> properties of a neuron membrane can be modelled with the following circuit.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
+<p>For example, in this model, <span class="math notranslate nohighlight">\(R_K\)</span> is the resistance through potassium channels, <span class="math notranslate nohighlight">\(R_Na\)</span> is the resistance through sodium channels, and <span class="math notranslate nohighlight">\(C\)</span> is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron’s membrane with respect to the outside (“<em>ground</em>”).</p>
+<p>Some <strong>passive</strong> properties of a neuron membrane can be modelled with the following two circuits.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
+<p>This is a great model of a long compartment of a neuron, such as an axon. In this lab, the circuit you will use for this model has the following <span class="math notranslate nohighlight">\(R\)</span> values:</p>
 <ul class="simple">
 <li><p>Rinside = 1 kOhm</p></li>
 <li><p>Routside = 100 Ohm</p></li>
 <li><p>Rmembrane = 10 kOhm</p></li>
 </ul>
-<p>The second model membrane circuit you will be working with is a complete model of one small patch of cell membrane. Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series would be equivalent for this lab).</p>
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Passive-Membrane-Resistance-Capacitance-Circuit.png?raw=True' width="400" alt='model membrane RC'/>
-<p>Current flows across the membrane capacitance only when voltage across the membrane changes. Wen one side of a membrane becomes more positive (for example when an excitatory synaptic input is “activated”), positive ions are repelled from and negative ions are attracted to the other side of the membrane. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value (for example, when synaptic ion channels close), charges separated by the membrane flow again, discharging the membrane capacitance.</p>
+<p>Note that resistances in parallel sum according to <span class="math notranslate nohighlight">\(R_total = {R*n}/n\)</span> while resistances in series sum according to <span class="math notranslate nohighlight">\(R_total = R*n\)</span>.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
+<p>This is a great model for summarizing the entire membrane of the neuron in a single <em>compartment</em>. In this lab, <span class="math notranslate nohighlight">\(R=10KOhm\)</span> and <span class="math notranslate nohighlight">\(C=1uF\)</span> in the circuit you will use for this model.</p>
 <p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
 <h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="#intro">Introduction</a></p></li>
-<li><p><a class="reference external" href="#one">Part I. Intracellular Recording of Membrane Potential</a></p></li>
-<li><p><a class="reference external" href="#two">Part II. Extracellular Recording of Membrane Potential</a></p></li>
-<li><p><a class="reference external" href="#three">Part III. Intracellular Recording of Membrane Potential (with capacitance)</a></p></li>
+<li><p><a class="reference external" href="#one">Part II. Membrane voltage</a></p></li>
+<li><p><a class="reference external" href="#two">Part II. Intracellular Recording of Membrane Potential</a></p></li>
+<li><p><a class="reference external" href="#three">Part III. Extracellular Recording of Membrane Potential</a></p></li>
+<li><p><a class="reference external" href="#four">Part IV. Intracellular Recording of Membrane Potential (with capacitance)</a></p></li>
 </ul>
 <p><a id="initialize"></a></p>
 </div>
@@ -792,13 +847,33 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><a id="one"></a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="part-i-intracellular-recording-of-membrane-potential">
-<h1>Part I. Intracellular Recording of Membrane Potential<a class="headerlink" href="#part-i-intracellular-recording-of-membrane-potential" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-i-membrane-voltage">
+<h1>Part I. Membrane Voltage<a class="headerlink" href="#part-i-membrane-voltage" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
-<p>Use the model cell resistance-based axon and a voltmeter to complete the following:</p>
+<p>You will create the following circuit (ignoring capacitance) on a <em>breadboard</em> and use a voltmeter to complete your first experiment.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
+<p><strong>Setup</strong>:</p>
+<ul class="simple">
+<li><p>Use a battery for <span class="math notranslate nohighlight">\(E_K\)</span> and <span class="math notranslate nohighlight">\(E_Na\)</span></p></li>
+<li><p>Start with equal <a class="reference external" href="#resistor-decoder">resistors</a> for <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_Na\)</span>.</p></li>
+<li><p>Place one electrode of the voltmeter on the ‘inside’ of the membrane and one on the ‘outside’.</p></li>
+</ul>
+<p><strong>Experiment</strong>:</p>
+<ul class="simple">
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> constant, change <span class="math notranslate nohighlight">\(R_Na\)</span> and record the measured voltage across the ‘cell membrane’.</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_Na\)</span> constant, change <span class="math notranslate nohighlight">\(R_K\)</span> and record the measured voltage across the ‘cell membrane’.</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_Na\)</span> constant, change the polarity of the batteries and record what happens with each change in polarity configuration.</p></li>
+</ul>
+<p><a id="two"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-intracellular-recording-of-membrane-potential">
+<h1>Part II. Intracellular Recording of Membrane Potential<a class="headerlink" href="#part-ii-intracellular-recording-of-membrane-potential" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">TOC</a></p>
+<p>Use the passive axon model and a voltmeter to complete the following:</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
 <ul class="simple">
 <li><p>At the middle of the axon (node 5), place one electrode on the ‘inside’ of the membrane and one on the ‘outside’.</p></li>
-<li><p>Set up a voltage across the membrane by attaching the voltage source across the cell membrane at the end of the axon (node 0).</p></li>
+<li><p>Attach a voltage source (9V battery) across the cell membrane at the end of the axon (node 0).</p></li>
 <li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
 </ul>
 <blockquote>
@@ -840,15 +915,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><a id="two"></a></p>
+<p><a id="three"></a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-extracellular-recording-of-membrane-potential">
-<h1>Part II. Extracellular Recording of Membrane Potential<a class="headerlink" href="#part-ii-extracellular-recording-of-membrane-potential" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iii-extracellular-recording-of-membrane-potential">
+<h1>Part III. Extracellular Recording of Membrane Potential<a class="headerlink" href="#part-iii-extracellular-recording-of-membrane-potential" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
-<p>Use the model cell resistance-based axon and a voltmeter to complete the following:</p>
+<p>Use the same passive axon model that you used in <a class="reference external" href="#two">Part II</a> and a voltmeter to complete the following:</p>
 <ul class="simple">
 <li><p>At the middle of the axon, place <em>both</em> electrodes on the ‘outside’ of the membrane, with one empty node between them (one electrode at node 4 and one at node 6).</p></li>
-<li><p>Set up a voltage across the membrane by attaching the voltage source across the cell membrane at the end of the axon (node 0).</p></li>
+<li><p>Attach the voltage source (9V battery) across the cell membrane at the end of the axon (node 0).</p></li>
 <li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
 </ul>
 <blockquote>
@@ -890,36 +965,61 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><a id="three"></a></p>
+<p><a id="four"></a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="part-iii-intracellular-recording-of-membrane-potential-with-capacitance">
-<h1>Part III. Intracellular Recording of Membrane Potential (with capacitance)<a class="headerlink" href="#part-iii-intracellular-recording-of-membrane-potential-with-capacitance" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iv-intracellular-recording-of-membrane-potential-with-capacitance">
+<h1>Part IV. Intracellular Recording of Membrane Potential (with capacitance)<a class="headerlink" href="#part-iv-intracellular-recording-of-membrane-potential-with-capacitance" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
-<p>“Stimulus Isolating Units” are used to inject current into a circuit (for example, across a neuron’s membrane). You can control the amplitude, duration, and frequency of the stimulus pulses. In this case, you will be using a “square wave” current (an instantaneous increase in current that is constant for some duration before instantaneously decreasing to 0).</p>
-<p>Use the model cell RC circuit and a voltmeter to complete the following:</p>
+<p>For this exercise, you will use the passive resistor-capacitor model membrane circuit.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
+<p>You will be using the <em><strong>Getting Intracellular Amplifier</strong></em> to both deliver current and measure voltage (yes… it is unassuming and fancy).<br />
+You will also use an analog to digital converter (the <em><strong>NiUSB-6211</strong></em> from <em>National Instruments</em>) to send the measurements to the computer for recording the raw (digitized) data.<br />
+You will also be using the <em><strong>Grass Stimulus Isolating Unit</strong></em> to deliver square-wave pulses of voltage to the Getting, which will be converted to current and delivered to the model membrane circuit. A “square wave” stimulus is one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
+<p><strong>Setup</strong>:</p>
 <ul class="simple">
-<li><p>Instead of recording measured voltages by hand, you will use the analog to digital converter to send the measurements to the computer for recording.</p></li>
+<li><p>Place the recording/measureing electrode on the ‘inside’ of the membrane</p></li>
+<li><p>Place the <em>ground</em> electrode on the ‘outside’</p></li>
 </ul>
 <blockquote>
-<div><p>The electrodes are connected to a device called a NiUSB-6211 (National Instruments) and it has “analog to digital” (ADC) conversion circuitry inside.</p>
+<div><p>If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can “inject” current into the model membrane (one stimulating electrode on the outside and one on the inside).</p>
 </div></blockquote>
 <ul class="simple">
-<li><p>Place one recording/measureing electrode on the ‘inside’ of the membrane and one recording/measureing electrode on the ‘outside’.</p></li>
-<li><p>Set up the stimulus electrodes so that you can “inject” current into the model membrane (one stimulating electrode on the outside and one on the inside).</p></li>
+<li><p>Open the script in Desktop/BIOL247_FA22/Week1/Data called “Nidaq_2Channel.bonsai”</p></li>
 </ul>
 <blockquote>
 <div><p>Note that a copy of the stimulus command is also being sent to the NiUSB ADC</p>
 </div></blockquote>
 <ul class="simple">
-<li><p>Open the script in Desktop/BIOL247_FA22/Week1/Data called “Nidaq_2Channel.bonsai”</p></li>
 <li><p>“Disable” the “Matrix Writer” node.</p></li>
-<li><p>Hit play and double click on the “Analog Input” and “Stimulus” nodes. Make sure that you see a signal. You can apply a voltage across the recording electrodes with the battery to check that you are seeing what you think you should.</p></li>
+<li><p>Hit play and double click on the “Analog Input” and “Stimulus” nodes. Make sure that you see a signal. You can apply a voltage across the model membrane with a small (&lt;1.5V) battery to check that you are seeing what you think you should.</p></li>
 <li><p>Turn on the stimulus and see what you notice.</p></li>
-<li><p>“Enable” the “Matrix Writer” node to collect the data.</p></li>
-<li><p>Upload the data file to the Colab session with the file manager and follow the rest of the steps below.</p></li>
+<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
 </ul>
+<p><strong>Experiment</strong>:</p>
+<ul class="simple">
+<li><p>“Enable” the “Matrix Writer” node and hit play again to collect data.</p></li>
+<li><p>What happens when you change the voltage?</p></li>
+<li><p>What happens when you change the resistance of the model cell?</p></li>
+</ul>
+<p>Upload your data file to the Colab kernel by dragging it into the file manager panel. Then follow the rest of the steps below to measure and analyze your data more quantitatively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Script to visualize the raw data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="additional-resources">
+<h1>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h1>
+<p><a id='resistor-decoder'></a></p>
+<div class="section" id="resistor-decoder">
+<h2>Resistor Decoder<a class="headerlink" href="#resistor-decoder" title="Permalink to this headline">¶</a></h2>
+<p>From <a class="reference external" href="http://worrydream.com/#%21/ResistorDecoder">worrydream</a>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/resistors-decoder_bret-victor.png?raw=True' width="700" alt='model membrane'/></p>
 <hr> 
-Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
+Written by Dr. Krista Perks for courses taught at Wesleyan University. Materials based off of William Kristan's graduate student bootcamp at UCSD and the Membrane Properties Lab in the Crawdad Lab Manual by Robert A. Wyttenbach, Bruce R. Johnson, and Ronald R. Hoy</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -945,7 +1045,21 @@ Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="passive-membrane-models_landing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 1. Introduction to Passive Physiology Principles</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Responses_passive-membrane-models.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Responses</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
