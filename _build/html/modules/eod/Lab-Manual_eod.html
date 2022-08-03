@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Manual &#8212; Neurophysiology Lab</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Electric Organ Discharge" href="Data-Explorer_eod.html" />
+    <link rel="prev" title="Week 2. Electric Organ Discharge" href="eod_landing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/NeuronImage_CourseHeader.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neurophysiology Lab</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Neurophysiology Lab
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  General
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../standards.html">
+   Standards
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../howto/howto.html">
+   How To Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Python-Introduction-Coding-Light.html">
+     Introduction to Python Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Executable-Notebooks.html">
+     Executable Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Response-Notebooks.html">
+     Response Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../materials.html">
+   Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weekly Chapters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../passive-membrane-models/passive-membrane-models_landing.html">
+   Week 1. Introduction to Passive Physiology Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="eod_landing.html">
+   Week 2. Electric Organ Discharge
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data-Explorer_eod.html">
+     Electric Organ Discharge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Responses_eod.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eod-stim/eod-stim_landing.html">
+   Week 3. Experimental Design for Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod-stim/Data-Explorer_eod-stim.html">
+     Experimental Design for Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber/earthworm-giant-fiber_landing.html">
+   Week 4. Giant Fiber
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.html">
+     Giant Fiber
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber/Responses_earthworm-giant-fiber.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computer-model/computer-model_landing.html">
+   Week 5. Computer Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computer-model/Lab-Manual_computer-model.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computer-model/Data-Explorer_computer-model.html">
+     Giant Fiber
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computer-model/Responses_computer-model.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing.html">
+   Week 4. Sensory Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor.html">
+     Sensory Coding: Cockroach mechanoreceptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-mro/crayfish-mro_landing.html">
+   Week 6. Muscle Receptor Organ
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-mro/Lab-Manual_crayfish-mro.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-mro/Data-Explorer_crayfish-mro.html">
+     Sensory Coding - MROs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-mro/Responses_crayfish-mro.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-erg/crayfish-erg_landing.html">
+   Week 7. ElectroRetinoGram
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Lab-Manual_crayfish-erg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Data-Explorer_crayfish-erg.html">
+     Sensory Coding - ERG
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Responses_crayfish-erg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-n3/crayfish-n3_landing.html">
+   Week 8. Crayfish Motor Nerve 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-n3/Lab-Manual_crayfish-n3.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-n3/Data-Explorer_crayfish-n3.html">
+     Motor Neuron Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-n3/Responses_crayfish-n3.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-superficial-flexor/crayfish-superficial-flexor_landing.html">
+   Week 9. Crayfish Superficial Flexor
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-superficial-flexor/Lab-Manual_crayfish-superficial-flexor.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-superficial-flexor/Data-Explorer_crayfish-superficial-flexor.html">
+     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-superficial-flexor/Responses_crayfish-superficial-flexor.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing.html">
+   Week 10. Synaptic Connectivity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
+     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-cpg/crayfish-cpg_landing.html">
+   Week 7. Neural Circuits OR PHARMACOLOGY (or shift schedule to fit in pharma)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Lab-Manual_crayfish-cpg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Data-Explorer_crayfish-cpg.html">
+     Neural Circuits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Responses_crayfish-cpg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../human-emg/human-emg_landing.html">
+   Week 11. Human Motor Neuron Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-emg/Lab-Manual_human-emg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-emg/Data-Explorer_human-emg.html">
+     Human Motor Neuron Coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-emg/Responses_human-emg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../human-emg-video-big-data/human-emg-video-big-data_landing.html">
+   Week 12. Motor Coordination and Big Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-emg-video-big-data/Lab-Manual_human-emg-video-big-data.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-emg-video-big-data/Data-Explorer_human-emg-video-big-data.html">
+     Motor Coordination and Big Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-emg-video-big-data/Responses_human-emg-video-big-data.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wrapping Up
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../closure/closure.html">
+   Closure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Extensions of this Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../extensions/extensions.html">
+   Extensions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/eod/Lab-Manual_eod.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fmodules/eod/Lab-Manual_eod.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-setup">
+   Software Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-experiment">
+   Core Experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
+   Copy data to your Google Drive for analysis
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Manual</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-setup">
+   Software Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#core-experiment">
+   Core Experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
+   Copy data to your Google Drive for analysis
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
+<h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
+<p>Today you will be using weakly electric fish and recording voltage in their tank using two sets of differential electrodes.</p>
+<div class="section" id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
+<p>The bonsai script for today has only one datastream pathway.</p>
+<p>The Analog Input node contains a collection of two channels receiving input from the two sets of perpindicularly-oriented differential tank electrodes. The input is first digitized by the Nidaq ADC before being streamed by Bonsai. By clicking on this node, you can set the parameters of the ADC (sampling rate, type of electrode configuration, etc) and parameters of the display in Bonsai (buffer). The sampling rate controls the ADC conversion and the buffer controls the size of chunks from the datastream that you can visualize at once in Bonsai.</p>
+<p>The Matrix Writer node contains specifications for the file name and location where the file will be stored. Make sure the filename ends in <code class="docutils literal notranslate"><span class="pre">.bin</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'>DISABLE</font> the recording node.</p>
+</div>
+</div>
+<div class="section" id="core-experiment">
+<h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li>Hook up the tank electrodes from a weakly electric fish tank to your ADC input (channels 0 and 1). </li>
+<li>Run the bonsai protocol (with the  <b>Analog Input </b> node <font color = 'green'>ENABLED</font> but the <b>Matrix Writer</b> node <font color = 'red'>DISABLED</font>. Double click the Analog Input node to visualize the measurement if it does not pop up upon start.</li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can set the y axis range explicitly by clicking on it so that the visualization does not jump around the screen and so that you can get a clear sense of the voltage picked up by each electrode.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>How could you determine which signal corresponded to each channel in the Bonsai visualization?</p>
+</div>
+<li>Make sure that you can see EOD events in the signal (aka. make sure there is <i>signal above the noise</i>).</li>
+<li>Stop the bonsai protocol and <font color = 'green'>ENABLE</font> the write node. </li>
+<li>When you are ready to collect data, start the bonsai protocol and time the recording for about 1 minute. </li>
+</ol>
+</div>
+<div class="section" id="copy-data-to-your-google-drive-for-analysis">
+<h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Use the <span class="xref myst">Electric Organ Discharge</span> notebook to analyse your data and answer the questions in the <span class="xref myst">Responses</span> notebook.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/eod"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="eod_landing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 2. Electric Organ Discharge</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Data-Explorer_eod.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Electric Organ Discharge</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. Krista Perks<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

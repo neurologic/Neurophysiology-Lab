@@ -17,78 +17,75 @@ parts:
     - file: materials
   - caption: Weekly Chapters
     chapters:
-    - file: week-1/week-1
+    - file: modules/passive-membrane-models/passive-membrane-models_landing
       sections:
-        - file: week-1/Passive-Membrane-Properties
-        - file: week-1/Passive-Membrane-Properties_Responses
-    - file: week-2/week-2
+        - file: modules/passive-membrane-models/Passive-Membrane-Properties
+        - file: modules/passive-membrane-models/Passive-Membrane-Properties_Responses
+    - file: modules/eod/eod_landing
       sections:
-        - file: week-2/Lab-Manual
-        - file: week-2/Electric-Organ-Discharge
-        - file: week-2/Electric-Organ-Discharge_Responses
-    - file: week-3/week-3
+        - file: modules/eod/Lab-Manual_eod
+        - file: modules/eod/Data-Explorer_eod
+        - file: modules/eod/Responses_eod
+    - file: modules/eod-stim/eod-stim_landing
       sections:
-        - file: week-3/Lab-Manual
-        - file: week-3/Experimental-Design-for-Analysis
-        - file: week-3/Experimental-Design-for-Analysis_Responses
-    - file: week-4/week-4
+        - file: modules/eod-stim/Data-Explorer_eod-stim
+        - file: modules/eod-stim/Experimental-Design-for-Analysis
+        - file: modules/eod-stim/Experimental-Design-for-Analysis_Responses
+    - file: modules/earthworm-giant-fiber/earthworm-giant-fiber_landing
       sections:
-        - file: week-4/Lab-Manual
-        - file: week-4/Sensory-Coding
-        - file: week-4/Sensory-Coding_Responses
-    - file: ERG/ERG
+        - file: modules/earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber
+        - file: modules/earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber
+        - file: modules/earthworm-giant-fiber/Responses_earthworm-giant-fiber
+    - file: modules/computer-model/computer-model_landing
       sections:
-        - file: ERG/Lab-Manual
-        - file: ERG/Sensory-Coding-ERG
-        - file: ERG/Sensory-Coding-ERG_Responses
-    - file: Giant-Fiber/Giant-Fiber
+        - file: modules/computer-model/Lab-Manual_computer-model
+        - file: modules/computer-model/Data-Explorer_computer-model
+        - file: modules/computer-model/Responses_computer-model
+    - file: modules/cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing
       sections:
-        - file: Giant-Fiber/Lab-Manual
-        - file: Giant-Fiber/Giant-Fiber_Data
-        - file: Giant-Fiber/Giant-Fiber_Responses
-    - file: week-5/week-5
+        - file: modules/cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor
+        - file: modules/cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor
+        - file: modules/cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor
+    - file: modules/crayfish-mro/crayfish-mro_landing
       sections:
-        - file: week-5/Lab-Manual
-        - file: week-5/Sensory-Coding-MRO
-        - file: week-5/Sensory-Coding-MRO_Responses
-    - file: week-6/week-6
+        - file: modules/crayfish-mro/Lab-Manual_crayfish-mro
+        - file: modules/crayfish-mro/Data-Explorer_crayfish-mro
+        - file: modules/crayfish-mro/Responses_crayfish-mro
+    - file: modules/crayfish-erg/crayfish-erg_landing
       sections:
-        - file: week-6/Lab-Manual
-        - file: week-6/Motor-Neuron-Coding
-        - file: week-6/Motor-Neuron-Coding_Responses
-    - file: week-7/week-7
+        - file: modules/crayfish-erg/Lab-Manual_crayfish-erg
+        - file: modules/crayfish-erg/Data-Explorer_crayfish-erg
+        - file: modules/crayfish-erg/Responses_crayfish-erg
+    - file: modules/crayfish-n3/crayfish-n3_landing
       sections:
-        - file: week-7/Lab-Manual
-        - file: week-7/Neural-Circuits
-        - file: week-7/Neural-Circuits_Responses
-    - file: week-8/week-8
+        - file: modules/crayfish-n3/Lab-Manual_crayfish-n3
+        - file: modules/crayfish-n3/Data-Explorer_crayfish-n3
+        - file: modules/crayfish-n3/Responses_crayfish-n3
+    - file: modules/crayfish-superficial-flexor/crayfish-superficial-flexor_landing
       sections:
-        - file: week-8/Lab-Manual
-    - file: week-9/week-9
+        - file: modules/crayfish-superficial-flexor/Lab-Manual_crayfish-superficial-flexor
+        - file: modules/crayfish-superficial-flexor/Data-Explorer_crayfish-superficial-flexor
+        - file: modules/crayfish-superficial-flexor/Responses_crayfish-superficial-flexor
+    - file: modules/crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing
       sections:
-        - file: week-9/Synaptic-Connectivity
-        - file: week-9/Synaptic-Connectivity_Responses
-    - file: week-10/week-10
+        - file: modules/crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity
+        - file: modules/crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity
+        - file: modules/crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity
+    - file: modules/crayfish-cpg/crayfish-cpg_landing
       sections:
-        - file: week-10/Lab-Manual
-        - file: week-10/Synaptic-Plasticity
-    - file: week-11/week-11
+        - file: modules/crayfish-cpg/Lab-Manual_crayfish-cpg
+        - file: modules/crayfish-cpg/Data-Explorer_crayfish-cpg
+        - file: modules/crayfish-cpg/Responses_crayfish-cpg
+    - file: modules/human-emg/human-emg_landing
       sections:
-        - file: week-11/Lab-Manual
-        - file: week-11/Human-Motor-Neuron-Coding
-        - file: week-11/Human-Motor-Neuron-Coding_Responses
-    - file: week-12/week-12
+        - file: modules/human-emg/Lab-Manual_human-emg
+        - file: modules/human-emg/Data-Explorer_human-emg
+        - file: modules/human-emg/Responses_human-emg
+    - file: modules/human-emg-video-big-data/human-emg-video-big-data_landing
       sections:
-        - file: week-12/Lab-Manual
-        - file: week-12/Tutorial-Geometric-View-Of-Data
-        - file: week-12/Tutorial-Dimensionality-Reduction
-        - file: week-12/Motor-Coordination-and-Big-Data
-        - file: week-12/Motor-Coordination-and-Big-Data_Responses
-    - file: week-13/week-13
-      sections:
-        - file: week-13/Tutorial-Basis-Set
-        - file: week-13/BCI-Ghost-Music
-        - file: week-13/BCI-Ghost-Music_Responses
+        - file: modules/human-emg-video-big-data/Lab-Manual_human-emg-video-big-data
+        - file: modules/human-emg-video-big-data/Data-Explorer_human-emg-video-big-data
+        - file: modules/human-emg-video-big-data/Responses_human-emg-video-big-data
   - caption: Wrapping Up
     chapters:
     - file: closure/closure
