@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-2/Electric-Organ-Discharge.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="intro"></a>
 # # Electric Organ Discharge
@@ -109,11 +109,18 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
+filepath = '/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/large_chamber_0fish_4channel2022-03-25T16_11_25.8516352-04_00'
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
-sampling_rate = None #@param
-number_channels = None #@param
+# sampling_rate = None #@param
+# number_channels = None #@param
+
+# downsample = False #@param
+# newfs = 10000 #@param
+
+sampling_rate = 50000 #@param
+number_channels = 4 #@param
 
 downsample = False #@param
 newfs = 10000 #@param
@@ -127,7 +134,7 @@ filepath = Path(filepath)
 #################################
 data = np.fromfile(Path(filepath), dtype = np.float64)
 data = data.reshape(-1,number_channels)
-dur = np.shape(data)[0]/sampling_rate
+data_dur = np.shape(data)[0]/sampling_rate
 print('duration of recording was %0.2f seconds' %dur)
 
 fs = sampling_rate
@@ -135,9 +142,9 @@ if downsample:
     # newfs = 10000 #downsample emg data
     chunksize = int(sampling_rate/newfs)
     data = data[0::chunksize,:]
-    fs = int(np.shape(data)[0]/dur)
+    fs = int(np.shape(data)[0]/data_dur)
 
-time = np.linspace(0,dur,np.shape(data)[0])
+time = np.linspace(0,data_dur,np.shape(data)[0])
 
 print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
@@ -158,7 +165,7 @@ for i,chan in enumerate(range(number_channels)):
 
 slider = widgets.FloatRangeSlider(
     min=0,
-    max=dur,
+    max=data_dur,
     value=(0,1),
     step= 1,
     readout=False,
@@ -204,7 +211,7 @@ f.add_trace(go.Scatter(x = time[0:fs], y = y[0:fs],
 
 slider = widgets.FloatRangeSlider(
     min=0,
-    max=dur,
+    max=data_dur,
     value=(0,1),
     step= 1,
     readout=False,
@@ -233,7 +240,7 @@ vb
 #@markdown Fill in this form with the detection threshold. 
 
 detection_threshold = None #@param
-
+detection_threshold = 0.05 #@param
 #@markdown Then run the code cell to detect peaks (events)
 
 y = data - np.median(data)
@@ -264,7 +271,7 @@ f.add_trace(go.Scatter(x = eod_times[(eod_times>0) & (eod_times<1)],
     
 slider = widgets.FloatRangeSlider(
     min=0,
-    max=dur,
+    max=data_dur,
     value=(0,1),
     step= 1,
     readout=False,
@@ -297,43 +304,59 @@ vb
 
 #@title {display-mode: "form"}
 
-#@markdown Select a channel to plot event waveforms from. 
+#@markdown Select a pre and post event duration (dur; in milliseconds) to plot for each EOD.
+dur = 0.3 #@param
 
-chan = None #@param
+#@markdown Set the y-axis range based on your raw data.
+ymin = -0.3
+ymax = 0.1
 
-#@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events on that channel.
-win = int(0.0003*fs)
+#@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events and channels.
+win = int(dur/1000*fs)
+
+# Create plotly widget plot
+f = go.FigureWidget(layout=go.Layout(height=600, width=600), layout_yaxis_range=[ymin,ymax])
+
+eodi = 0
+chan = 0
+
 events = np.asarray([data[(int(fs*t)-win):(int(fs*t)+win),chan] for t in eod_times 
           if (((int(fs*t)-win)>0) & ((int(fs*t)+win)<np.shape(data)[0]))]).T
 
 etime = np.linspace(-0.0003,0.0003,np.shape(events)[0])
-
-
-# Create plotly widget plot
-f = go.FigureWidget(layout=go.Layout(height=600, width=600), layout_yaxis_range=[np.min(events),np.max(events)])
-
-i = 0
-f.add_trace(go.Scatter(x = etime, y = events[:,i],
+f.add_trace(go.Scatter(x = etime, y = events[:,eodi],
                          name='EOD #' + str(i),opacity=1))
     
-slider = widgets.IntSlider(
+slider_eod = widgets.IntSlider(
     min=0,
     max=np.shape(events)[1],
     value=0,
     step= 1,
     description='EOD number')
-slider.layout.width = '800px'
+slider_eod.layout.width = '800px'
+
+slider_chan = widgets.IntSlider(
+    min=0,
+    max=number_channels-1,
+    value=0,
+    step= 1,
+    description='channel')
+slider_chan.layout.width = '400px'
 
 # our function that will modify the xaxis range
-def response(i):
-    f.data[0].y = events[:,i]
+def response(eodi,chan):
+    events = np.asarray([data[(int(fs*t)-win):(int(fs*t)+win),chan] for t in eod_times 
+          if (((int(fs*t)-win)>0) & ((int(fs*t)+win)<np.shape(data)[0]))]).T
+    f.data[0].y = events[:,eodi]
 
-vb = VBox((f, interactive(response, i=slider)))
+vb = VBox((f, interactive(response, eodi=slider_eod, chan=slider_chan)))
 vb.layout.align_items = 'center'
 vb
 
 
-# There are a fundamental set of processing techniques we use to quantify event time series (such as spike from a neuron or EODs from a fish): rate, isi, filtered/smoothed. In Part II - Part IV, you will work with each of these analyses.
+# Take some time to explore and observe the variation in EOD waveforms. 
+# 
+# There are a fundamental set of processing techniques we use to quantify event time series (such as spikes from a neuron or EODs from a fish): rate, isi, filtered/smoothed. In Part II - Part IV, you will work with each of these analyses.
 
 # <a id="two"></a>
 # # Part II. Rate
@@ -472,23 +495,22 @@ plt.yticks(fontsize=14);
 # In[ ]:
 
 
-#@title {display_mode: "form"}
+#@title {display-mode: "form"}
 
-#@markdown Choose a smoothing filter width ```sigma``` (the standard deviation of the *gaussian kernel*). <br>
+#@markdown Choose a smoothing filter width ```sigma``` (the standard deviation of the *gaussian kernel* in seconds). <br>
 #@markdown Then run this code cell to plot the smoothed signal from discrete EOD times. 
 
-sigma = 10 #@param
+sigma = 0.1 #@param
 
-filtered_fs = 100
+filtered_fs = 1000
+
+sigma = sigma*filtered_fs
 
 eod_samps = [int(t*filtered_fs) for t in eod_times]
 
-filtered_time = np.linspace(0,dur,int(dur*filtered_fs)+1)
-
+filtered_time = np.linspace(0,data_dur,int(data_dur*filtered_fs))
 filtered_y = unit_impulse(len(filtered_time),eod_samps)
 filtered_y = ndimage.gaussian_filter1d(filtered_y,sigma)*filtered_fs
-
-
 
 # Create plotly widget plot
 f = go.FigureWidget(layout=go.Layout(height=500, width=800), layout_yaxis_range=[np.min(filtered_y),np.max(filtered_y)])
@@ -499,7 +521,7 @@ f.add_trace(go.Scatter(x = filtered_time, y = filtered_y,
     
 slider = widgets.FloatRangeSlider(
     min=0,
-    max=dur,
+    max=data_dur,
     value=(0,1),
     step= 1,
     readout=False,

@@ -19,8 +19,8 @@ parts:
     chapters:
     - file: modules/passive-membrane-models/passive-membrane-models_landing
       sections:
-        - file: modules/passive-membrane-models/Passive-Membrane-Properties
-        - file: modules/passive-membrane-models/Passive-Membrane-Properties_Responses
+        - file: modules/passive-membrane-models/Lab-Manual_passive-membrane-models
+        - file: modules/passive-membrane-models/Responses_passive-membrane-models
     - file: modules/eod/eod_landing
       sections:
         - file: modules/eod/Lab-Manual_eod

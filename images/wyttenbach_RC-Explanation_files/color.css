@@ -1,0 +1,126 @@
+﻿/* BROWN */
+
+/* Only color designations are here; other attributes of these classes are defined in manual.css */
+
+/* color for the area outside content and navigation boxes */
+body { background-color:#faf8f6; } 
+body#figbody { background-color:#f8f8f8; }
+
+
+/* default for all text */
+body, div.fn, a.fn:before, a.fn:after, .ans.shown, aside, footer { color:#31290e; } 
+/* default for all links */
+a, a:visited, .link, .doi, .pdf { color:#820; }
+a, a:visited, .link, .doi, .pdf { color:#a00; }
+a, a:visited, .link, .doi, .pdf { color:#b00; }
+
+/* quiz box and answer inside it */
+.quiz { background-color:#faf8f6; border-color:#ccc8c0; }
+.ans { background-color:#fff; border-color:#ccc; }
+
+/* content area of the document */
+section, aside, div.warning { background-color:#fff; }
+footer { background-color:#fafafa; }
+section, footer, aside { border-color:#ccc; }
+/* revealed div in the content */
+.revealed { border-top-color:#caa; }
+
+/* to highlight table cell or other text */
+.hilite { background-color:#ffd; } 
+table.fill td.hilite { background-color:#ffa; } 
+
+/* footnote popup */
+div.fn { 
+	background-color:#ffd;
+	opacity:.95;
+	border-color:#ccc;
+}
+
+.quiz.set { background-color:#fcfcfc; border-color:#aaa; }
+.quiz.set .ans { background-color:#fcfcfc; }
+
+
+@media print {
+	body { background-color:#fff; } 
+	body#figbody { background-color:#fff; }
+	section, aside, div.warning, footer { background-color:#fff; }
+	.quiz, .ans, .quiz.set, .quiz.set .ans { background-color:#fff; }
+	a, a:visited, .link, .doi, .pdf { color:#000; }
+}
+
+/*******************************/
+
+/* GRAY 
+
+
+body { background-color:#efefef; } 
+
+body, div.fn, a.fn:before, a.fn:after { color:#222; }
+a, a:visited, .link { color:#028; }
+
+.quiz { background-color:#f6f6f6; border-color:#bbb; }
+.ans { background-color:#fff; border-color:#ccc; }
+
+section, footer { background-color:#fff; }
+section, footer { border-color:#ccc; }
+.revealed { border-top-color:#ccc; } 
+
+.hilite { background-color:#ffd; }
+
+div.fn { 
+	background-color:#ffd;
+	opacity:.95;
+	border-color:#ccc;
+}*/
+
+
+/* GREEN 
+
+
+body { background-color:#fffcfc; } 
+
+body, div.fn, a.fn:before, a.fn:after { color:#0e3129; }
+a, a:visited, .link { color:#063; } 
+
+.quiz { background-color:#f6faf6; border-color:#bcb; }
+.ans { background-color:#fff; border-color:#ccc; }
+
+
+section, footer { background-color:#fff; }
+section, footer { border-color:#ccc; }
+.revealed { border-top-color:#aca; } 
+
+.hilite { background-color:#ffd; } 
+
+div.fn { 
+	background-color:#ffd;
+	opacity:.95;
+	border-color:#ccc;
+}*/
+
+
+/* BLUE 
+
+
+
+body { background-color:#fffffa; } 
+body#figbody { background-color:#f8f8f8; }
+
+body, div.fn, a.fn:before, a.fn:after { color:#0e2931; } 
+a, a:visited, .link { color:#028; }  
+
+.quiz { background-color:#f3f9fa; border-color:#bbd; }
+.ans { background-color:#fff; border-color:#ccc; }
+
+
+section, footer { background-color:#fff; }
+section, footer { border-color:#ccc; }
+.revealed { border-top-color:#aac; } 
+
+.hilite { background-color:#ffd; } 
+
+div.fn { 
+	background-color:#ffd;
+	opacity:.95;
+	border-color:#ccc;
+}*/

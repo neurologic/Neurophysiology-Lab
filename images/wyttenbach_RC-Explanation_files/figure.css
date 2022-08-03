@@ -1,0 +1,76 @@
+﻿html { height:auto; overflow:hidden; }
+
+
+
+/*#figbody { margin:8px; margin-bottom:0px; overflow:hidden; }*/
+
+p.caption { 
+	line-height:17px; 
+	margin-bottom:0px;
+	clear:none; 
+	padding:0px; 
+	margin-top:6px; 
+}
+
+#svginstruct { font-family:Helvetica, Arial, Tahoma, sans-serif; font-size:12px; }
+
+
+/************************ figures and svg in windows ***********************/
+
+#fig {
+	border:none; 
+	cursor:default; /* or else we get the i-beam on svg text */
+}
+svg { overflow:hidden; } /* or ie9 will let it overflow when zoomed (although only at the bottom, oddly enough) */
+svg * { cursor:default; }
+/*svg#fig, img#fig*/
+ /* width -- lets figures resize themselves when the window resizes; replaces some complex code */
+ /* height -- without this, the figure box increases in width but the figure does not grow inside it, nor is height adjusted */
+#figbody:not(.svgheightbug) svg#fig, #figbody:not(.svgheightbug) img#fig {
+	width:100%; 
+	height:auto;
+	max-height:90vh;
+	object-fit:contain;
+}
+/* MSIE and Windows Safari messed up (in different ways) with height:100%, so this is for them; set in AdjustForWindows() */
+#figbody.svgheightbug svg#fig, #figbody.svgheightbug img#fig {
+	width:100%;  
+}
+table#fig {
+	margin-left:auto;
+	margin-right:auto;
+}
+/* when opened in a tab, use the border and background; omit it in a small window */
+@media screen and (min-width:600px) {
+	table#fig {
+		border: 1px solid gray;
+		padding: 0px 6px;
+		border-radius: 4px;
+		background:white;
+	}
+}
+
+/* a pair of svg figures side-by-side in a div; would also need two copies of #svgcontrol and #svginstruct */
+#fig.pair { display:block; overflow:hidden; margin-bottom:8px; } /* keep them side-by-side while the window resizes; mostly OK but sometimes stacks them during resizing */
+#fig.pair svg~svg { margin:0px; float:right; /*margin-left:8px;*//* margin-bottom:8px;*/ } /* second one of a pair */
+#fig.pair svg { margin:0px; float:left; /*margin-bottom:8px;*/ } /* first one of a pair */
+/* <div id='fig' 'class='pair' width='508px'>
+	<svg width='300' height='200'>...</svg><svg width='200' height='200'>...</svg>
+</div>*/
+
+
+/************************* controls in video and figure captions *************************/
+
+#svgcontrol { position:fixed; top:1px; left:1px; z-index:99; display:none; background-color:#eee; padding:0px; opacity:0.5; }
+#svginstruct { position:fixed; top:1px; left:17px; z-index:99; display:none; background-color:#f8f8f8; padding:0px; opacity:1.0; height:16px; padding:1px; }
+#fig.svg~#svgcontrol, svg#fig~#svgcontrol { display:block; }
+#svginstruct.show { display:block; }
+@media print {
+	#fig.svg~#svgcontrol, svg#fig~#svgcontrol { display:none; }
+}
+
+
+@media screen and (max-device-width:768px) and (orientation:portrait), (max-device-height:768px) and (orientation:landscape) { /* PHONE (tested with iPhone) WAS max-device-width:480px */
+	svg#fig, img#fig, embed#fig { width:100%; height:100%; } /* fill the screen */
+/*	#fig.svg~#svgcontrol, svg#fig~#svgcontrol { display:none; } /* or it goes to 100% too! */
+}
