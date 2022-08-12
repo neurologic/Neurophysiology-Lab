@@ -25,7 +25,7 @@
 
 # Import and define functions
 
-# In[ ]:
+# In[1]:
 
 
 #@title {display-mode: "form"}
@@ -48,6 +48,19 @@ def monoExp(x, m, t, b):
     return m * np.exp(-x / t) + b
 
 print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
+
+
+# In[2]:
+
+
+from brian2 import *
+
+
+# In[ ]:
+
+
+from neuron import h
+from neuron.units import ms, mV, µm
 
 
 # <a id="one"></a>
@@ -285,6 +298,163 @@ vb
 # # Spiking
 # 
 # [toc](#toc)
+
+# In[ ]:
+
+
+soma = h.Section(name="soma")
+
+
+# In[ ]:
+
+
+soma.psection()
+
+
+# In[ ]:
+
+
+soma.L = 20
+soma.diam = 20
+
+
+# In[ ]:
+
+
+soma.insert('hh')
+
+
+# In[ ]:
+
+
+iclamp = h.IClamp(soma(0.5))
+
+
+# In[ ]:
+
+
+print([item for item in dir(iclamp) if not item.startswith("__")])
+
+
+# In[ ]:
+
+
+iclamp.delay = 2
+iclamp.dur = 0.2
+iclamp.amp = 0.9
+
+
+# In[ ]:
+
+
+soma.psection()
+
+
+# In[ ]:
+
+
+v = h.Vector().record(soma(0.5)._ref_v)  # Membrane potential vector
+t = h.Vector().record(h._ref_t)  # Time stamp vector
+
+
+# In[ ]:
+
+
+h.load_file("stdrun.hoc")
+
+
+# In[ ]:
+
+
+h.finitialize(-65 * mV)
+
+
+# In[ ]:
+
+
+h.continuerun(40 * ms)
+
+
+# In[ ]:
+
+
+f = go.Figure()
+f.add_trace(go.Scatter(x = t, y = v,
+                             name='simulation results',opacity=1,line_color='black'))
+f.update_layout(height=600, width=800,
+               xaxis_title="time(seconds)", 
+                  yaxis_title='amplitude (volts)')
+
+
+
+# In[ ]:
+
+
+class BallAndStick:
+    def __init__(self, gid):
+        self._gid = gid
+        self._setup_morphology()
+        self._setup_biophysics()
+
+    def _setup_morphology(self):
+        self.soma = h.Section(name="soma", cell=self)
+        self.dend = h.Section(name="dend", cell=self)
+        self.dend.connect(self.soma)
+        self.all = self.soma.wholetree()
+        self.soma.L = self.soma.diam = 12.6157 * µm
+        self.dend.L = 200 * µm
+        self.dend.diam = 1 * µm
+
+    def _setup_biophysics(self):
+        for sec in self.all:
+            sec.Ra = 100  # Axial resistance in Ohm * cm
+            sec.cm = 1  # Membrane capacitance in micro Farads / cm^2
+        self.soma.insert("hh")
+        for seg in self.soma:
+            seg.hh.gnabar = 0.12  # Sodium conductance in S/cm2
+            seg.hh.gkbar = 0.036  # Potassium conductance in S/cm2
+            seg.hh.gl = 0.0003  # Leak conductance in S/cm2
+            seg.hh.el = -54.3 * mV  # Reversal potential
+        # Insert passive current in the dendrite                       # <-- NEW
+        self.dend.insert("pas")  # <-- NEW
+        for seg in self.dend:  # <-- NEW
+            seg.pas.g = 0.001  # Passive conductance in S/cm2        # <-- NEW
+            seg.pas.e = -65 * mV  # Leak reversal potential             # <-- NEW
+
+    def __repr__(self):
+        return "BallAndStick[{}]".format(self._gid)
+
+
+# In[ ]:
+
+
+my_cell = BallAndStick(0)
+
+
+# In[ ]:
+
+
+for sec in h.allsec():
+    print("%s: %s" % (sec, ", ".join(sec.psection()["density_mechs"].keys())))
+
+
+# In[ ]:
+
+
+h.topology()
+
+
+# In[ ]:
+
+
+my_cell.soma.wholetree()
+
+
+# In[ ]:
+
+
+h.PlotShape(False).plot(plt)
+
 
 # <hr> 
 # Written by Dr. Krista Perks for courses taught at Wesleyan University.

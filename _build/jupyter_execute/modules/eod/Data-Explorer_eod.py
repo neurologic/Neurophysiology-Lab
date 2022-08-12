@@ -3,6 +3,20 @@
 
 # <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
+# # Data Explorer
+
+# <a id="toc"></a>
+# # Table of Contents
+# 
+# - [Introduction](#intro)
+# - [Setup](#setup)
+# - [Part I. Event detection](#one)
+# - Time series analyses:
+#     - [Part II. Rate](#two)
+#     - [Part III. ISI](#three)
+#     - [Part IV. Filtered](#four)
+# - [Part V. Sampling Rate](#five)
+
 # <a id="intro"></a>
 # # Electric Organ Discharge
 # 
@@ -32,18 +46,6 @@
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/weakly-electric-fish-Efields-locate-communicate.jpeg?raw=True' width="600" alt='eod e-field'/>
 # </figure>
 # </div>
-
-# <a id="toc"></a>
-# # Table of Contents
-# 
-# - [Introduction](#intro)
-# - [Setup](#setup)
-# - [Part I. Event detection](#one)
-# - Time series analyses:
-#     - [Part II. Rate](#two)
-#     - [Part III. ISI](#three)
-#     - [Part IV. Filtered](#four)
-# - [Part V. Sampling Rate](#five)
 
 # <a id="setup"></a>
 # # Setup

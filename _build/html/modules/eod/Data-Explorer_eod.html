@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Electric Organ Discharge &#8212; Neurophysiology Lab</title>
+    <title>Data Explorer &#8212; Neurophysiology Lab</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Responses" href="Responses_eod.html" />
@@ -197,7 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Electric Organ Discharge
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -225,6 +227,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../eod-stim/Data-Explorer_eod-stim.html">
      Experimental Design for Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod-stim/Responses_eod-stim.html">
+     Responses
     </a>
    </li>
   </ul>
@@ -273,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../computer-model/Data-Explorer_computer-model.html">
-     Giant Fiber
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -661,12 +668,17 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Electric Organ Discharge
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-contents">
    Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electric-organ-discharge">
+   Electric Organ Discharge
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -725,7 +737,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Electric Organ Discharge</h1>
+                <h1>Data Explorer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -737,12 +749,17 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Electric Organ Discharge
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-contents">
    Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electric-organ-discharge">
+   Electric Organ Discharge
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -801,7 +818,27 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
+<h1>Data Explorer<a class="headerlink" href="#data-explorer" title="Permalink to this headline">¶</a></h1>
+<p><a id="toc"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#intro">Introduction</a></p></li>
+<li><p><a class="reference external" href="#setup">Setup</a></p></li>
+<li><p><a class="reference external" href="#one">Part I. Event detection</a></p></li>
+<li><p>Time series analyses:</p>
+<ul>
+<li><p><a class="reference external" href="#two">Part II. Rate</a></p></li>
+<li><p><a class="reference external" href="#three">Part III. ISI</a></p></li>
+<li><p><a class="reference external" href="#four">Part IV. Filtered</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#five">Part V. Sampling Rate</a></p></li>
+</ul>
 <p><a id="intro"></a></p>
+</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="electric-organ-discharge">
 <h1>Electric Organ Discharge<a class="headerlink" href="#electric-organ-discharge" title="Permalink to this headline">¶</a></h1>
 <p>Weakly electric fish essentially have a battery in their tail. It is made of modified muscle fibers, which means that it is innervated by motor neurons. Acetylcholine is released at this neuro-electric junction and, in response, the modified muscle fibers become polarized in parallel to produce a dipole-like electric field source.</p>
@@ -823,24 +860,7 @@ const thebe_selector_output = ".output, .cell_output"
 <figure>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/weakly-electric-fish-Efields-locate-communicate.jpeg?raw=True' width="600" alt='eod e-field'/>
 </figure>
-</div><p><a id="toc"></a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
-<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference external" href="#intro">Introduction</a></p></li>
-<li><p><a class="reference external" href="#setup">Setup</a></p></li>
-<li><p><a class="reference external" href="#one">Part I. Event detection</a></p></li>
-<li><p>Time series analyses:</p>
-<ul>
-<li><p><a class="reference external" href="#two">Part II. Rate</a></p></li>
-<li><p><a class="reference external" href="#three">Part III. ISI</a></p></li>
-<li><p><a class="reference external" href="#four">Part IV. Filtered</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#five">Part V. Sampling Rate</a></p></li>
-</ul>
-<p><a id="setup"></a></p>
+</div><p><a id="setup"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
