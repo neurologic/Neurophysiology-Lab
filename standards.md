@@ -16,6 +16,8 @@ ____ / ____ **Concepts** (Demonstrated through Response notebooks)
 - Processed data
 - Quantification of neural responses: rates, amplitudes, times
 - Ionic basis of the membrane potential
+- Electrical circuit modeling
+- Computational modeling
 - Geometric view of big data
 
 _____ **Experimental Skills** (Demonstrated during lab)
@@ -42,33 +44,28 @@ _____ **Data Visualization / Presentation** (Demonstrated through Response noteb
 - Legends are concise yet thoroughly provide information needed to interpret figure.
 - A logical selection of potential options has been curated to make a point
 
-_____ **Execution and Communication of Data Processing and Analysis** (Demonstrated through Response notebooks and Capstone)
-- Clear descriptions of any data processing and analysis steps
-- Correct use of experimental and neurophysiology vocabulary
-- Uses analysis tools appropriately 
-- Describes analytic results correctly
-
-_____ **Execution and Communication of Data Interpretation and Connections to Course Concepts** (Demonstrated through Response notebooks and Capstone)
-- Correct use of experimental and neurophysiology vocabulary
-- Writing is clear (requires first clear thinking) using effective sentence structure (no run-ons, active voice).
-- Demonstrates logical reasoning
-- Shows attention to what is being asked
-- Demonstrates critical thinking
-- Makes connections between data and core concepts
-
-_____ **Execution and Communication of Experimental Context and Observations** (Demonstrated through Response notebooks and Capstone)
+_____ **Execution and Communication of Data Processing, Analysis, and Interpretation** (Demonstrated through Response notebooks and Capstone)
 - Using clear non-jargon language to describe what you observe
 - Correct use of experimental and neurophysiology vocabulary
-- Demonstrates attention to detail
-- Applying core concepts appropriately to frame work
+- Clear descriptions of any data processing steps
+- Clear descriptions of any analysis steps/tools
+- Uses analysis tools appropriately 
+- Describes analysis results correctly
+- Writing (speaking) is clear (requires first clear thinking) using effective sentence structure (no run-ons, active voice).
+- Demonstrates logical reasoning
+- Demonstrates critical thinking
+- Shows attention to what is being asked
+- Makes connections between data and neuroscience concepts
+- Demonstrates attention to detail beyond what is asked
 - Poses relevant hypotheses to frame work when applicable
 
 _____ **Foundational Computing Skills** (Demonstrated during lab and in ability to complete assignments)
 - Keeping track of files
 - Maintaining logical file structure
 - Saving data
+- Keeping track of metadata
 - Not saving loads of not data
-- Basic level of Python coding to explore and analyze data
+- Basic level of Python coding to explore and analyze data when prompted (and beyond if desired)
 - File transfers across computers 
 
 _____ **Personal Goals For Yourself in the Course** (How will you demonstrate your achievement in these?)
