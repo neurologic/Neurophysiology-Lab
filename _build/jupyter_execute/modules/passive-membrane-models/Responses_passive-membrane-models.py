@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Responses_passive-membrane-models.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
-
 # # Responses
+# 
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Responses_passive-membrane-models.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 # 
 # Markdown cells awaiting your responses to the following questions contain ```...```
 # 
@@ -13,64 +13,62 @@
 
 # ***NAME***: ...
 
-# **Prompt 1:** What is the biological equivalent of the resistors in the active neuron membrane model?
+# ***Prompt 1:** What is the biological equivalent of the resistors in the active neuron membrane model?*
 
 # ...
 
-# **Prompt 2:** What is the biological equivalent of the resistors in the passive axon model?
+# ***Prompt 2:** What is the biological equivalent of each set of resistors in the passive axon model (Rinside, Routside, Rmembrane)?*
 
 # ...
 
-# **Prompt 3:** What is the biological equivalent of the battery in the passive axon model?
+# ***Prompt 3:** What is the biological equivalent of the battery (the voltage applied across the membrane) in the passive axon model?*
 
 # ...
 
-# **Prompt 4:** When a set of ion channels (selective for Potassium, for example) opens, what happens to the *resistance* of the membrane?
+# ***Prompt 4:** When a set of ion channels (selective for Potassium, for example) opens, what happens to the resistance of the membrane?*
 
 # ...
 
-# **Prompt 5:** When a set of ion channels (selective for Potassium, for example) opens, what happens to the *conductance* of the membrane?
+# ***Prompt 5:** In neurophysiology we often talk about ion channel conductance ($g$) rather than resistance ($R$), where $R = 1/g$. How does the balance between potassium and sodium *conductance* effect the voltage across the cell membrane?*
 
 # ...
 
-# **Prompt 6:** How does the balance between potassium and sodium *conductance* effect the voltage across the cell membrane?
+# ***Prompt 6:** What part of the action potential were you simulating in **Part II and III** of the lab (modeling intracellular versus extracellular recordings). And which active ion conductance did this most closely simulate?*
 
 # ...
 
-# **Prompt 7:** What part of the action potential were you simulating in **Part II and III** of the lab (modeling intracellular versus extracellular recordings). And which active ion conductance did this most closely simulate?
+# ***Prompt 7:** In **Part II and III**, what was the scaling factor between the measured peak amplitude in intracellular versus extracellular recording configuration (extracellular amplitude divided by intracellular amplitude)?*
 
 # ...
 
-# **Prompt 8:** In **Part II and III**, what was the scaling factor for the measured peak amplitude between the intracellular and extracellular configuration (extracellular amplitude divided by intracellular amplitude)?
+# ***Prompt 8:** The *space constant* is the distance it takes for voltage to change by 63% from its original value. Approximate the space constant (in arbitrary "node" units) of the model membrane using the intracellular measurements of membrane potential as the battery source travelled down the "axon".  
+# Calculate the space constant first by starting at Node \#5 (the middle node) and then calculate it again by starting at Node \#7.*
 
 # ...
 
-# **Prompt 9:** The *space constant* is the distance it takes for voltage to decrease to 63% of its original value. Approximate the space constant of the model membrane using the intracellular measurements of trans-"membrane" voltage as the battery source travelled down the "axon".
-# Calculate it first by starting at Node \#5 (the middle node) and then calculate it again by starting at Node \#7.
-
-# ...
-
-# **Prompt 10:** The space constant can also be calculated using the following equation:
+# ***Prompt 9:** The space constant can also be calculated using the following equation:*
 # 
 # $$
 # \lambda = \sqrt{\frac{ R_{m} }{ R_{i} + R_{o} }}
 # $$
 # 
-# What value do you get from calculating this way? 
-# > Note that $R_{o}$ is usually so small compared to the other resistances that it can be ignored. (Why do you think it is so much smaller? In other words, what makes $R_{i}$ larger? And $R_{m}$?)
-# 
+# *What value do you get from calculating this way?*
 
 # ...
 
-# **Prompt 11:** What caused the change in polarity in your recording of the membrane potential in **Part III** (and why did the polarity not change in **Part II**)? If you did not observe a polarity change or if you observed a polarity change in both configurations, make note of that. 
+# ***Prompt 10:** Note that $R_{o}$ is usually so small compared to the other resistances that it can be ignored when estimating neuron space constants. Why do you think it is so much smaller? In other words, what makes $R_{i}$ large compared to $R_{o}$? And what makes $R_{m}$ large compared to $R_{o}$?)*
 
 # ...
 
-# **Prompt 12:** Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape: 
-# - baseline (resting) voltage
-# - polarity
-# - change in polarity
-# - amplitude 
+# ***Prompt 11:** What caused the change in polarity in your membrane potential measurement in **Part III** (and why did the polarity not change in **Part II**)? If you did not observe a polarity change or if you observed a polarity change in both configurations, make note of that.*
+
+# ...
+
+# ***Prompt 12:** Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:*
+# - *baseline (resting) voltage*
+# - *polarity*
+# - *change in polarity*
+# - *amplitude* 
 #     
 # ```{hint} 
 # Insert an image from your google drive in a markdown cell by doing the following... 
@@ -81,7 +79,7 @@
 # 
 # Enter editing mode on the Markdown cell below.
 # 
-# In the template URL provided, replace *1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae* with the ID from the link you see in your google drive's "share link" screen for your image.
+# In the template URL provided, replace "1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae" with the ID from the link you see in your google drive's "share link" screen for your image.
 # 
 # Then "run" the markdown cell (or double click it). Your image will replace the one provided.
 # 
@@ -91,19 +89,19 @@
 # 
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
-# **Prompt 13:** Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?
+# ***Prompt 13:** Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?*
 
 # ...
 
-# **Prompt 14:** One of the most useful equations in neuroscience is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. How could you calculate the membrane resistance of a neurons with known sizes to test your prediction? What experiment would you need to do?
+# ***Prompt 14:** One of the most used equations in neurophysiology is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. Use your experiences from this lab to describe a key experiment that would enable you to test your prediction in Prompt 13 by calculating the membrane resistance of a neurons with known sizes.*
 
 # ...
 
-# **Prompt 15:** Would you expect small neurons to have higher or lower capacitance than large neurons? Why?
+# ***Prompt 15:** Would you expect small neurons to have higher or lower capacitance than large neurons? Why?*
 
 # ...
 
-# **Prompt 16:** If you knew that $\tau=RC$, where $R$ is resistance and $C$ is capacitance, how could you calculate the membrane capacitance of a neurons with known sizes to test your prediction? What experiment would you need to do?
+# ***Prompt 16:** Another well-loved neurophysiology equation is $\tau=RC$, where $R$ is resistance and $C$ is capacitance, and $\tau$ is the time constant of the membrane. Analagous to the *space constant*, the *time constant* is the time it takes for the membrane potential to change by 63% of its original value in response to an applied current across the membrane. Use the tools you learned in this lab to describe a key experiment that would enable you to test your prediction in Prompt 15 by calculating the membrane capacitance of neurons with known sizes.*
 
 # ...
 

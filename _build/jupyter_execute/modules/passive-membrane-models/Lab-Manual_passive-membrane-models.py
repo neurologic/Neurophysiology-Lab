@@ -325,8 +325,9 @@ vb.layout.align_items = 'center'
 vb
 
 
-# 
-# **Experiment extensions**: 
+# Stop here for a class discussion about what you notice from this final experiment.
+
+# **Experiment extensions** (time permitting): 
 # - What happens when you change the stimulus amplitude?
 # - What happens when you change the stimulus duration?
 # - What happens when you change the resistance of the model cell?
