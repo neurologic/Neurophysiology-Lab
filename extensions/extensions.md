@@ -1,4 +1,4 @@
-# Extensions
+# Extended materials
 
 Additional material for digging deeper into neurophysiology
 

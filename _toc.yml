@@ -81,14 +81,10 @@ parts:
         - file: modules/human-emg/Lab-Manual_human-emg
         - file: modules/human-emg/Data-Explorer_human-emg
         - file: modules/human-emg/Responses_human-emg
-    - file: modules/human-emg-video-big-data/human-emg-video-big-data_landing
+    - file: capstone_landing
       sections:
-        - file: modules/human-emg-video-big-data/Lab-Manual_human-emg-video-big-data
-        - file: modules/human-emg-video-big-data/Data-Explorer_human-emg-video-big-data
-        - file: modules/human-emg-video-big-data/Responses_human-emg-video-big-data
-  - caption: Wrapping Up
-    chapters:
-    - file: closure/closure
-  - caption: Extensions of this Material
+        - file: capstone_assignment-guidelines
+        - file: howto/Data-Explorer_general
+  - caption: Future Directions
     chapters:
     - file: extensions/extensions
