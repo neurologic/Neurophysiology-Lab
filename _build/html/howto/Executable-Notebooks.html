@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Executable Notebooks &#8212; Neurophysiology Lab</title>
+    <title>Executable Notebooks (Data Explorers) &#8212; Neurophysiology Lab</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Response Notebooks" href="Response-Notebooks.html" />
@@ -133,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Executable Notebooks
+     Executable Notebooks (Data Explorers)
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Passive Membrane Properties
+     Lab Manual and Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/eod-stim/Data-Explorer_eod-stim.html">
-     Experimental Design for Analysis
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -668,7 +666,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Executable Notebooks
+   Executable Notebooks (Data Explorers)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -711,7 +709,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Executable Notebooks</h1>
+                <h1>Executable Notebooks (Data Explorers)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -723,7 +721,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Executable Notebooks
+   Executable Notebooks (Data Explorers)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -765,12 +763,13 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Executable-Notebooks.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p><a id="intro"></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="executable-notebooks">
-<h1>Executable Notebooks<a class="headerlink" href="#executable-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the IPython notebook! We will be using the IPython notebook for our lab class in neurophysiology. The IPython notebook is a very convenient way to interact with data using python.</p>
-<p><em>Executable</em> notebooks are ones that contain python scripts and functions that enable you to interact with and process the data you collect in lab. Some executable notebooks are independent of data collection and instead serve as tutorials for core concepts used in neurophysiology.</p>
+  <p><a id="intro"></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="executable-notebooks-data-explorers">
+<h1>Executable Notebooks (Data Explorers)<a class="headerlink" href="#executable-notebooks-data-explorers" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the executable IPython notebook environment! We will be using the IPython notebooks for our lab class in neurophysiology. The IPython notebook is a very convenient way to interact with data using python.</p>
+<p><em>Executable</em> notebooks are ones that contain python scripts and functions that enable you to interact with and process the data you collect in lab. Some executable notebooks in this course (like this one) are tutorials that do not depend on collected data.</p>
+<p>You will be interacting with these notebooks using Google’s Colaboratory server. Use the <strong>Open in Colab</strong> buttons to open the notebook in Colab.</p>
+<p>Click this <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Executable-Notebooks.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a> button to open this notebook on Colab.</p>
 <p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
@@ -801,18 +800,19 @@ For example, the following code cell asks for your name. However, the form field
 After filling in the form fields, running the code cell assigns each entries as a value to each variable (In this case, your name would be stored in the variable called <em>name</em>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown This is a form field. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown This is a form field. </span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;insert your name between the quotation marks&quot;</span> <span class="c1">#@param</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Often, form fields will be hidden in the html version of the notebook on the course website. <br>
-For example, on the course website, you can only see the contents of the following form field if you click the “<em>click to show</em>” button.<br>
-However, in Colab, the form fields will look the same whether or not they were hidden in the course website.</p>
+For example, on the course website, you can only see the contents of the following form field if you click the “<em>click to show</em>” button.<br></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown This is a form field. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown This is a form field. </span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;insert your name between the quotation marks&quot;</span> <span class="c1">#@param</span>
 </pre></div>
 </div>
@@ -829,7 +829,9 @@ However, in Colab, the form fields will look the same whether or not they were h
 <p>For example, when you open this notebook in Colab, you would be able to run the following code cell, and it would print out the result of <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span></code>. In the html version of the notebook, you can see the contents of the following code cell by clicking the “<em>click to show</em>” button.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Run this code cell to calculate the result of 2 * 3. { display-mode: &quot;form&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this code cell to calculate the result of 2 * 3. </span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -842,13 +844,28 @@ However, in Colab, the form fields will look the same whether or not they were h
 <div class="tex2jax_ignore mathjax_ignore section" id="code-cell-tasks">
 <h1>Code Cell Tasks<a class="headerlink" href="#code-cell-tasks" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<p>As described in <a class="reference external" href="#two">Hidden Executable Scripts</a>, some code cells contain scripts that are used to process your data and calculate analytic results. You don’t need to look at the actual python scripts (but can if you want to by double clicking on the code cell). Instead, you are given tasks that say “run this code cell” or “enter information in this form field”. Follow these instructions and run the code cells as required.</p>
+<p>As described in <a class="reference external" href="#two">Hidden Executable Scripts</a>, some code cells contain scripts that are used to process your data and make calculations for results. You don’t need to look at the actual python scripts (but can if you want to by double clicking on the code cell). Instead, you are given tasks that say “run this code cell” or “enter information in this form field”. Follow these instructions and run the code cells as required.</p>
 <p><a id="four"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="interactive-plots">
 <h1>Interactive Plots<a class="headerlink" href="#interactive-plots" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<p>Visually examining your data is a critical step in interpreting it. The executable notebooks in this course use <a class="reference external" href="https://plotly.com/python/">plotly</a> to produce plots with “zoom, pan, and save” buttons as well as pop-up information when the mouse hovers over the data.</p>
+<p>Visually examining your data is a critical step in interpreting it. The executable notebooks in this course use <a class="reference external" href="https://plotly.com/python/">plotly</a> to produce plots with “zoom, pan, and save” buttons as well as pop-up information when the mouse hovers over the data. If you have this notebook open in Colab, you can execute the code cell below to try it out.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title { display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this code cell to generate an example interactive plot.</span>
+
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iris</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span>
+                 <span class="n">size</span><span class="o">=</span><span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;petal_width&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 <hr> 
 Written by Dr. Krista Perks for courses taught at Wesleyan University.</div>
 

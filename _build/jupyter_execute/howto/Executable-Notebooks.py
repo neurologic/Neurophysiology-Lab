@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Executable-Notebooks.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
-
 # <a id="intro"></a>
-# # Executable Notebooks 
+# # Executable Notebooks (Data Explorers)
 # 
-# Welcome to the IPython notebook! We will be using the IPython notebook for our lab class in neurophysiology. The IPython notebook is a very convenient way to interact with data using python. 
+# Welcome to the executable IPython notebook environment! We will be using the IPython notebooks for our lab class in neurophysiology. The IPython notebook is a very convenient way to interact with data using python. 
 # 
-# *Executable* notebooks are ones that contain python scripts and functions that enable you to interact with and process the data you collect in lab. Some executable notebooks are independent of data collection and instead serve as tutorials for core concepts used in neurophysiology.
+# *Executable* notebooks are ones that contain python scripts and functions that enable you to interact with and process the data you collect in lab. Some executable notebooks in this course (like this one) are tutorials that do not depend on collected data.
+# 
+# You will be interacting with these notebooks using Google's Colaboratory server. Use the **Open in Colab** buttons to open the notebook in Colab.
+# 
+# Click this <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Executable-Notebooks.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a> button to open this notebook on Colab. 
+#   
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -42,18 +45,19 @@
 # In[ ]:
 
 
-#@markdown This is a form field. { display-mode: "form" }
+#@markdown This is a form field. 
 name = "insert your name between the quotation marks" #@param
 
 
 # Often, form fields will be hidden in the html version of the notebook on the course website. <br>
 # For example, on the course website, you can only see the contents of the following form field if you click the "*click to show*" button.<br>
-# However, in Colab, the form fields will look the same whether or not they were hidden in the course website. 
 
 # In[ ]:
 
 
-#@markdown This is a form field. { display-mode: "form" }
+#@title { display-mode: "form" }
+
+#@markdown This is a form field. 
 name = "insert your name between the quotation marks" #@param
 
 
@@ -72,7 +76,9 @@ name = "insert your name between the quotation marks" #@param
 # In[ ]:
 
 
-#@markdown Run this code cell to calculate the result of 2 * 3. { display-mode: "form" }
+#@title { display-mode: "form" }
+
+#@markdown Run this code cell to calculate the result of 2 * 3. 
 
 result = 2*3
 print(result)
@@ -82,13 +88,27 @@ print(result)
 # # Code Cell Tasks
 # [toc](#toc)
 # 
-# As described in [Hidden Executable Scripts](#two), some code cells contain scripts that are used to process your data and calculate analytic results. You don't need to look at the actual python scripts (but can if you want to by double clicking on the code cell). Instead, you are given tasks that say "run this code cell" or "enter information in this form field". Follow these instructions and run the code cells as required. 
+# As described in [Hidden Executable Scripts](#two), some code cells contain scripts that are used to process your data and make calculations for results. You don't need to look at the actual python scripts (but can if you want to by double clicking on the code cell). Instead, you are given tasks that say "run this code cell" or "enter information in this form field". Follow these instructions and run the code cells as required. 
 
 # <a id="four"></a>
 # # Interactive Plots
 # [toc](#toc)
 # 
-# Visually examining your data is a critical step in interpreting it. The executable notebooks in this course use [plotly](https://plotly.com/python/) to produce plots with "zoom, pan, and save" buttons as well as pop-up information when the mouse hovers over the data. 
+# Visually examining your data is a critical step in interpreting it. The executable notebooks in this course use [plotly](https://plotly.com/python/) to produce plots with "zoom, pan, and save" buttons as well as pop-up information when the mouse hovers over the data. If you have this notebook open in Colab, you can execute the code cell below to try it out.
+
+# In[ ]:
+
+
+#@title { display-mode: "form" }
+
+#@markdown Run this code cell to generate an example interactive plot.
+
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species",
+                 size='petal_length', hover_data=['petal_width'])
+fig.show()
+
 
 # <hr> 
 # Written by Dr. Krista Perks for courses taught at Wesleyan University.

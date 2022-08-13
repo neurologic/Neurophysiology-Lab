@@ -1,6 +1,6 @@
 # Week 3. Experimental Design for Analysis
 
-Now that you know more about what it takes to measure and interpret electrical signals, you will focus on your experimental design skills in electrophysiology.  
+Now that you know more about what it takes to measure and interpret electrical signals, you will learn more about a common *trial-based* experimenal design.  
 
 ## Pages:
 - [](../eod-stim/Lab-Manual_eod-stim.md)

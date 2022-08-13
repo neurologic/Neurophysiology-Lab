@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
-
 # # Data Explorer
+# 
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -431,6 +431,20 @@ plt.yticks(fontsize=14);
 # If you increase/decrease the duration of the subsampled data, does the variance of the estimated rate increase/decrease?
 # 
 # If you decrease/increase N, does the distribution of the estimate change? How?
+
+# ## Variability in EOD rate
+# 
+# Variance, Standard Deviation
+# Histogram
+
+# In[ ]:
+
+
+variability_std = np.std(np.diff(eod_times))
+print(f"Standard Deviation of rate (1/time between each pair of pulses) = {variability_std}")
+
+# plot histogram
+
 
 # <a id="three"></a>
 # # Part III. ISI

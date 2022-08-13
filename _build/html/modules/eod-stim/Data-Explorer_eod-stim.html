@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experimental Design for Analysis &#8212; Neurophysiology Lab</title>
+    <title>Data Explorer &#8212; Neurophysiology Lab</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Responses" href="Responses_eod-stim.html" />
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Passive Membrane Properties
+     Lab Manual and Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Experimental Design for Analysis
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -668,12 +666,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Experimental Design for Analysis
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -682,7 +675,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#introduction-experimental-design-for-analysis">
+   Introduction: Experimental Design for Analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
  </li>
@@ -720,7 +718,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Experimental Design for Analysis</h1>
+                <h1>Data Explorer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -732,12 +730,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Experimental Design for Analysis
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -746,7 +739,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#introduction-experimental-design-for-analysis">
+   Introduction: Experimental Design for Analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
  </li>
@@ -783,15 +781,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-2/Experimental-Design-for-Analysis.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p><a id="intro"></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="experimental-design-for-analysis">
-<h1>Experimental Design for Analysis<a class="headerlink" href="#experimental-design-for-analysis" title="Permalink to this headline">¶</a></h1>
-<p>As you found in week 2 (<a href='https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-2/Electric-Organ-Discharge.ipynb' target="_blank" rel="noopener noreferrer">Dynamic Electrical Signals</a>), weakly electric fish vary their EOD rate over time. Is this variation random or is there non-random structure in it? If there is non-random structure, do the fish change their EOD rate in response to something in the environment or just spontaneously? How can you determine if a stimulus evokes a response? This notebook provides a tutorial on ways to approach this kind of analysis. We will not inclusively cover all possible approaches, but rather focus on basic principles of trial-based experimental design and the estimation of results under <i>null</i> hypotheses. After you complete your work, think about other questions that you are interested in and what kinds of experimental design considerations you would need to implement to analyze the data.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="#toc">toc</a></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
+<h1>Data Explorer<a class="headerlink" href="#data-explorer" title="Permalink to this headline">¶</a></h1>
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod-stim/Data-Explorer_eod-stim.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
@@ -805,10 +797,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="#four">Part IV. Can you hear me now?</a></p></li>
 <li><p><a class="reference external" href="#five">Part V. </a></p></li>
 </ul>
+<p><a id="intro"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="introduction-experimental-design-for-analysis">
+<h1>Introduction: Experimental Design for Analysis<a class="headerlink" href="#introduction-experimental-design-for-analysis" title="Permalink to this headline">¶</a></h1>
+<p>As you found last week (<a href='https://neurologic.github.io/Neurophysiology-Lab/modules/eod/eod_landing.html' target="_blank" rel="noopener noreferrer">Electric Organ Discharge</a>), weakly electric fish vary their EOD rate over time. Is this variation random or is there non-random structure in it? If there is non-random structure, do the fish change their EOD rate in response to something in the environment or just spontaneously? How can you determine if a stimulus evokes a response? This notebook provides a tutorial on ways to approach this kind of analysis and how it depends on experimental design. We will not inclusively cover all possible approaches, but rather focus on basic principles of trial-based experimental design and the estimation of results under <i>null</i> hypotheses. After you complete your work, think about other questions that you are interested in and what kinds of experimental design considerations you would need to implement to analyze the data.</p>
 <p><a id="setup"></a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>Setup<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
 <p>Import and define functions</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -901,7 +899,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tex2jax_ignore mathjax_ignore section" id="part-i-random-or-non-random">
 <h1>Part I. Random or Non-Random?<a class="headerlink" href="#part-i-random-or-non-random" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<p>We know that the EOD rate is variable (you measured this variability in week 2 <span class="xref myst">Dynamic Electrical Signals</span>). Variability can be random or non-random. Are events distributed randomly in time or is there some <i>structure</i> to how events are generated?</p>
+<p>We know that the EOD rate is variable (you measured this variability last week (<a href='https://neurologic.github.io/Neurophysiology-Lab/modules/eod/eod_landing.html' target="_blank" rel="noopener noreferrer">Electric Organ Discharge</a>). Variability can be random or non-random. Are events distributed randomly in time or is there some <i>structure</i> to how events are generated?</p>
+<p>Let’s compare the time series of EOD pulses with a random <em><strong>Poisson model</strong></em> with the same average rate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>

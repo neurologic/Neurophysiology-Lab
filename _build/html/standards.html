@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How To Guides" href="howto/howto.html" />
@@ -133,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="howto/Executable-Notebooks.html">
-     Executable Notebooks
+     Executable Notebooks (Data Explorers)
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="modules/passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Passive Membrane Properties
+     Lab Manual and Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="modules/eod-stim/Data-Explorer_eod-stim.html">
-     Experimental Design for Analysis
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -660,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="standards">
 <h1>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h1>
 <p>This course uses a continuous “standards-based” grading format. For each of the following sections, you will be assessed throughout the course. Your grade (0-5) will increase as you achieve and master more skills in each section. This standards-based assessment will be averaged across sections at the end of the course and count toward 80% of your final grade.</p>
-<p>____ / ____ Concepts <font color = green>(Demonstrated through Response notebooks)</font></p>
+<p>____ / ____ <strong>Concepts</strong> (Demonstrated through Response notebooks)</p>
 <ul class="simple">
 <li><p>V = IR</p></li>
 <li><p>T = RC</p></li>
@@ -677,7 +675,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Ionic basis of the membrane potential</p></li>
 <li><p>Geometric view of big data</p></li>
 </ul>
-<p>_____ Experimental Execution <font color = green>(Demonstrated during lab)</font></p>
+<p>_____ <strong>Experimental Skills</strong> (Demonstrated during lab)</p>
 <ul class="simple">
 <li><p>Patience (what tools can you find to increase this skill)</p></li>
 <li><p>Persistence</p></li>
@@ -689,10 +687,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Maintaining tissue health (surgical delicacy, maintaining fresh solutions when needed)</p></li>
 <li><p>Not breaking the glass electrodes</p></li>
 <li><p>Independent research exploration</p></li>
+<li><p>Helpful to peers and to instructor during class</p></li>
+<li><p>Verbally engages in inquiry and discourse</p></li>
 </ul>
-<p>_____ Data Visualization / Presentation <font color = green>(Demonstrated through Response notebooks)</font></p>
+<p>_____ <strong>Data Visualization / Presentation</strong> (Demonstrated through Response notebooks)</p>
 <ul class="simple">
-<li><p>Turned in as good quality PDFs</p></li>
+<li><p>Turned in as good quality graphics (readability)</p></li>
 <li><p>Figures are clear (font size, axis zoom, resolution, etc)</p></li>
 <li><p>Figures are relevant to the point being made</p></li>
 <li><p>Figures do not include extraneous information</p></li>
@@ -701,15 +701,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Legends are concise yet thoroughly provide information needed to interpret figure.</p></li>
 <li><p>A logical selection of potential options has been curated to make a point</p></li>
 </ul>
-<p>_____ Execution and Communication of <em>Data Processing and Analysis</em> <font color = green>(Demonstrated through Analysis and Response notebooks)</font></p>
+<p>_____ <strong>Execution and Communication of Data Processing and Analysis</strong> (Demonstrated through Response notebooks and Capstone)</p>
 <ul class="simple">
 <li><p>Clear descriptions of any data processing and analysis steps</p></li>
 <li><p>Correct use of experimental and neurophysiology vocabulary</p></li>
-<li><p>Poses relevant hypotheses to frame the work</p></li>
 <li><p>Uses analysis tools appropriately</p></li>
 <li><p>Describes analytic results correctly</p></li>
 </ul>
-<p>_____ Execution and Communication of <em>Data Interpretation and Connections to Course Concepts</em> <font color = green>(Demonstrated through Response notebooks)</font></p>
+<p>_____ <strong>Execution and Communication of Data Interpretation and Connections to Course Concepts</strong> (Demonstrated through Response notebooks and Capstone)</p>
 <ul class="simple">
 <li><p>Correct use of experimental and neurophysiology vocabulary</p></li>
 <li><p>Writing is clear (requires first clear thinking) using effective sentence structure (no run-ons, active voice).</p></li>
@@ -718,14 +717,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Demonstrates critical thinking</p></li>
 <li><p>Makes connections between data and core concepts</p></li>
 </ul>
-<p>_____ Execution and Communication of <em>Experimental Context and Observations</em> <font color = green>(Demonstrated through Lab Writeups)</font></p>
+<p>_____ <strong>Execution and Communication of Experimental Context and Observations</strong> (Demonstrated through Response notebooks and Capstone)</p>
 <ul class="simple">
 <li><p>Using clear non-jargon language to describe what you observe</p></li>
 <li><p>Correct use of experimental and neurophysiology vocabulary</p></li>
 <li><p>Demonstrates attention to detail</p></li>
 <li><p>Applying core concepts appropriately to frame work</p></li>
+<li><p>Poses relevant hypotheses to frame work when applicable</p></li>
 </ul>
-<p>_____ Foundational Computing Skills <font color = green>(Demonstrated during lab and in ability to complete assignments)</font></p>
+<p>_____ <strong>Foundational Computing Skills</strong> (Demonstrated during lab and in ability to complete assignments)</p>
 <ul class="simple">
 <li><p>Keeping track of files</p></li>
 <li><p>Maintaining logical file structure</p></li>
@@ -734,7 +734,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Basic level of Python coding to explore and analyze data</p></li>
 <li><p>File transfers across computers</p></li>
 </ul>
-<p>_____ Personal Goals For Yourself in the Course <font color = green>(How will you demonstrate your achievement in these?)</font></p>
+<p>_____ <strong>Personal Goals For Yourself in the Course</strong> (How will you demonstrate your achievement in these?)</p>
 <blockquote>
 <div><p>Please consider goals that you have for yourself (why are you here?) that you can work to achieve.</p>
 </div></blockquote>

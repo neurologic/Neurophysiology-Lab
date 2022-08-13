@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Responses" href="Responses_eod.html" />
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Passive Membrane Properties
+     Lab Manual and Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../eod-stim/Data-Explorer_eod-stim.html">
-     Experimental Design for Analysis
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -710,6 +708,11 @@ const thebe_selector_output = ".output, .cell_output"
      ) the average rate
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variability-in-eod-rate">
+     Variability in EOD rate
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -791,6 +794,11 @@ const thebe_selector_output = ".output, .cell_output"
      ) the average rate
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variability-in-eod-rate">
+     Variability in EOD rate
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -817,9 +825,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
 <h1>Data Explorer<a class="headerlink" href="#data-explorer" title="Permalink to this headline">¶</a></h1>
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
@@ -1245,6 +1253,21 @@ The script (hidden) in the code cell below randomly selects samples of the speci
 </div>
 <p>If you increase/decrease the duration of the subsampled data, does the variance of the estimated rate increase/decrease?</p>
 <p>If you decrease/increase N, does the distribution of the estimate change? How?</p>
+</div>
+<div class="section" id="variability-in-eod-rate">
+<h2>Variability in EOD rate<a class="headerlink" href="#variability-in-eod-rate" title="Permalink to this headline">¶</a></h2>
+<p>Variance, Standard Deviation
+Histogram</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variability_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">eod_times</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standard Deviation of rate (1/time between each pair of pulses) = </span><span class="si">{</span><span class="n">variability_std</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot histogram</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p><a id="three"></a></p>
 </div>
 </div>

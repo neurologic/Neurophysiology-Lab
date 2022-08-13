@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giant Fiber &#8212; Neurophysiology Lab</title>
+    <title>Data Explorer &#8212; Neurophysiology Lab</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Responses" href="Responses_earthworm-giant-fiber.html" />
@@ -133,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../howto/Executable-Notebooks.html">
-     Executable Notebooks
+     Executable Notebooks (Data Explorers)
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Passive Membrane Properties
+     Lab Manual and Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../eod-stim/Data-Explorer_eod-stim.html">
-     Experimental Design for Analysis
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -253,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Giant Fiber
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -668,12 +666,17 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Giant Fiber
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-contents">
    Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#giant-fiber">
+   Giant Fiber
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -696,7 +699,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Giant Fiber</h1>
+                <h1>Data Explorer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -708,12 +711,17 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Giant Fiber
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-contents">
    Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#giant-fiber">
+   Giant Fiber
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -735,11 +743,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/ERG/Sensory-Coding-ERG.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p><a id="intro"></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="giant-fiber">
-<h1>Giant Fiber<a class="headerlink" href="#giant-fiber" title="Permalink to this headline">¶</a></h1>
-<p>Action Potential</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
+<h1>Data Explorer<a class="headerlink" href="#data-explorer" title="Permalink to this headline">¶</a></h1>
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
@@ -749,6 +755,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="#setup">Setup</a></p></li>
 <li><p><a class="reference external" href="#one">Import Data</a></p></li>
 </ul>
+<p><a id="intro"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="giant-fiber">
+<h1>Giant Fiber<a class="headerlink" href="#giant-fiber" title="Permalink to this headline">¶</a></h1>
+<p>Action Potential</p>
 <p><a id="setup"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">

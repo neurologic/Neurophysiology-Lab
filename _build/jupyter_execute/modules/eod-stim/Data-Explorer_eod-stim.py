@@ -1,16 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-2/Experimental-Design-for-Analysis.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
-
-# <a id="intro"></a>
-# # Experimental Design for Analysis
+# # Data Explorer 
 # 
-# As you found in week 2 (<a href='https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-2/Electric-Organ-Discharge.ipynb' target="_blank" rel="noopener noreferrer">Dynamic Electrical Signals</a>), weakly electric fish vary their EOD rate over time. Is this variation random or is there non-random structure in it? If there is non-random structure, do the fish change their EOD rate in response to something in the environment or just spontaneously? How can you determine if a stimulus evokes a response? This notebook provides a tutorial on ways to approach this kind of analysis. We will not inclusively cover all possible approaches, but rather focus on basic principles of trial-based experimental design and the estimation of results under <i>null</i> hypotheses. After you complete your work, think about other questions that you are interested in and what kinds of experimental design considerations you would need to implement to analyze the data. 
-
-# # Setup
-# [toc](#toc)
-# 
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod-stim/Data-Explorer_eod-stim.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -23,8 +16,14 @@
 # - [Part IV. Can you hear me now?](#four)
 # - [Part V. ](#five)
 
+# <a id="intro"></a>
+# # Introduction: Experimental Design for Analysis
+# 
+# As you found last week (<a href='https://neurologic.github.io/Neurophysiology-Lab/modules/eod/eod_landing.html' target="_blank" rel="noopener noreferrer">Electric Organ Discharge</a>), weakly electric fish vary their EOD rate over time. Is this variation random or is there non-random structure in it? If there is non-random structure, do the fish change their EOD rate in response to something in the environment or just spontaneously? How can you determine if a stimulus evokes a response? This notebook provides a tutorial on ways to approach this kind of analysis and how it depends on experimental design. We will not inclusively cover all possible approaches, but rather focus on basic principles of trial-based experimental design and the estimation of results under <i>null</i> hypotheses. After you complete your work, think about other questions that you are interested in and what kinds of experimental design considerations you would need to implement to analyze the data. 
+
 # <a id="setup"></a>
 # # Setup
+# [toc](#toc)
 
 # Import and define functions
 
@@ -118,7 +117,9 @@ fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800
 # 
 # [toc](#toc)
 # 
-# We know that the EOD rate is variable (you measured this variability in week 2 [Dynamic Electrical Signals](../week-2/Electric-Organ-Discharge.ipynb)). Variability can be random or non-random. Are events distributed randomly in time or is there some <i>structure</i> to how events are generated?
+# We know that the EOD rate is variable (you measured this variability last week (<a href='https://neurologic.github.io/Neurophysiology-Lab/modules/eod/eod_landing.html' target="_blank" rel="noopener noreferrer">Electric Organ Discharge</a>). Variability can be random or non-random. Are events distributed randomly in time or is there some <i>structure</i> to how events are generated?
+# 
+# Let's compare the time series of EOD pulses with a random ***Poisson model*** with the same average rate. 
 
 # In[ ]:
 

@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/ERG/Sensory-Coding-ERG.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
-
-# <a id="intro"></a>
-# # Giant Fiber
+# # Data Explorer
 # 
-# Action Potential
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -15,6 +12,11 @@
 # - [Setup](#setup)
 # - [Import Data](#one)
 # 
+
+# <a id="intro"></a>
+# # Giant Fiber
+# 
+# Action Potential
 
 # <a id="setup"></a>
 # # Setup
