@@ -11,44 +11,46 @@
 # 
 # ---
 
-# What is the biological equivalent of the resistors in the active neuron membrane model?
+# ***NAME***: ...
+
+# **Prompt 1:** What is the biological equivalent of the resistors in the active neuron membrane model?
 
 # ...
 
-# What is the biological equivalent of the resistors in the passive axon model?
+# **Prompt 2:** What is the biological equivalent of the resistors in the passive axon model?
 
 # ...
 
-# What is the biological equivalent of the battery in the passive axon model?
+# **Prompt 3:** What is the biological equivalent of the battery in the passive axon model?
 
 # ...
 
-# When a set of ion channels (selective for Potassium, for example) opens, what happens to the *resistance* of the membrane?
+# **Prompt 4:** When a set of ion channels (selective for Potassium, for example) opens, what happens to the *resistance* of the membrane?
 
 # ...
 
-# When a set of ion channels (selective for Potassium, for example) opens, what happens to the *conductance* of the membrane?
+# **Prompt 5:** When a set of ion channels (selective for Potassium, for example) opens, what happens to the *conductance* of the membrane?
 
 # ...
 
-# How does the balance between potassium and sodium *conductance* effect the voltage across the cell membrane?
+# **Prompt 6:** How does the balance between potassium and sodium *conductance* effect the voltage across the cell membrane?
 
 # ...
 
-# What part of the action potential were you simulating in **Part II and III** of the lab (modeling intracellular versus extracellular recordings). And which active ion conductance did this most closely simulate?
+# **Prompt 7:** What part of the action potential were you simulating in **Part II and III** of the lab (modeling intracellular versus extracellular recordings). And which active ion conductance did this most closely simulate?
 
 # ...
 
-# In **Part II and III**, what was the scaling factor for the measured peak amplitude between the intracellular and extracellular configuration (extracellular amplitude divided by intracellular amplitude)?
+# **Prompt 8:** In **Part II and III**, what was the scaling factor for the measured peak amplitude between the intracellular and extracellular configuration (extracellular amplitude divided by intracellular amplitude)?
 
 # ...
 
-# The *space constant* is the distance it takes for voltage to decrease to 63% of its original value. Approximate the space constant of the model membrane using the intracellular measurements of trans-"membrane" voltage as the battery source travelled down the "axon".
+# **Prompt 9:** The *space constant* is the distance it takes for voltage to decrease to 63% of its original value. Approximate the space constant of the model membrane using the intracellular measurements of trans-"membrane" voltage as the battery source travelled down the "axon".
 # Calculate it first by starting at Node \#5 (the middle node) and then calculate it again by starting at Node \#7.
 
 # ...
 
-# The space constant can also be calculated using the following equation:
+# **Prompt 10:** The space constant can also be calculated using the following equation:
 # 
 # $$
 # \lambda = \sqrt{\frac{ R_{m} }{ R_{i} + R_{o} }}
@@ -60,11 +62,11 @@
 
 # ...
 
-# What caused the change in polarity in your recording of the membrane potential in **Part III** (and why did the polarity not change in **Part II**)? If you did not observe a polarity change or if you observed a polarity change in both configurations, make note of that. 
+# **Prompt 11:** What caused the change in polarity in your recording of the membrane potential in **Part III** (and why did the polarity not change in **Part II**)? If you did not observe a polarity change or if you observed a polarity change in both configurations, make note of that. 
 
 # ...
 
-# Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape: 
+# **Prompt 12:** Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape: 
 # - baseline (resting) voltage
 # - polarity
 # - change in polarity
@@ -89,19 +91,19 @@
 # 
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
-# Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?
+# **Prompt 13:** Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?
 
 # ...
 
-# One of the most useful equations in neuroscience is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. How could you calculate the membrane resistance of a neurons with known sizes to test your prediction? What experiment would you need to do?
+# **Prompt 14:** One of the most useful equations in neuroscience is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. How could you calculate the membrane resistance of a neurons with known sizes to test your prediction? What experiment would you need to do?
 
 # ...
 
-# Would you expect small neurons to have higher or lower capacitance than large neurons? Why?
+# **Prompt 15:** Would you expect small neurons to have higher or lower capacitance than large neurons? Why?
 
 # ...
 
-# If you knew that $\tau=RC$, where $R$ is resistance and $C$ is capacitance, how could you calculate the membrane capacitance of a neurons with known sizes to test your prediction? What experiment would you need to do?
+# **Prompt 16:** If you knew that $\tau=RC$, where $R$ is resistance and $C$ is capacitance, how could you calculate the membrane capacitance of a neurons with known sizes to test your prediction? What experiment would you need to do?
 
 # ...
 
