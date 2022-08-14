@@ -41,11 +41,6 @@ parts:
         - file: modules/computer-model/Lab-Manual_computer-model
         - file: modules/computer-model/Data-Explorer_computer-model
         - file: modules/computer-model/Responses_computer-model
-    - file: modules/cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing
-      sections:
-        - file: modules/cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor
-        - file: modules/cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor
-        - file: modules/cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor
     - file: modules/crayfish-mro/crayfish-mro_landing
       sections:
         - file: modules/crayfish-mro/Lab-Manual_crayfish-mro

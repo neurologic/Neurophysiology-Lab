@@ -1,6 +1,6 @@
-# Week 5. Computer Models
+# Week 5. Computational Models
 
-computer models of action potential (simple current-based) and of simple synaptic connectivity (brian simulator?)
+Computational models of basic electrophysiological properties of neuron membranes. Computational models that you will build in today's module are based on the electrical circuit models of neuron membranes that you used in the first course module ([Introduction to Passive Physiology Principles](../modules/passive-membrane-models/passive-membrane-models_landing.md))).
 
 
 
