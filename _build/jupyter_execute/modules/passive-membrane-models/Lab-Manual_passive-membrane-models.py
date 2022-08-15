@@ -75,29 +75,44 @@
 
 #@title Run this cell to initialize packages and functions 
 
+from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from ipywidgets import interactive, HBox, VBox, widgets, interact
 
+
+# You will be using the [***Getting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to measure the 
+# 'membrane potential" in your model circuits. An analog to digital converter (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.  
 
 # <a id="one"></a>
 # # Part I. Membrane Potential
 # 
 # [TOC](#toc)
 # 
-# You will create the following circuit (ignoring capacitance) on a *breadboard* and use a voltmeter to measure membrane potential.
+# You will create the following circuit (ignoring capacitance) on a *breadboard*.
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
 # 
 # **Setup**:
 # - Use one battery for $E_K$ and one battery for $E_{Na}$  
 # - Start with equal [resistors](#resistor-decoder) for $R_K$ and $R_{Na}$.
+# - Place the recording/measureing electrode on the ‘inside’ of the membrane 
+# - Place the *ground* electrode on the ‘outside’
+# - Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called "passive-membrane-models.bonsai"
+# - Make sure that the sampling rate is set to 5000.
+# - <font color="red"> Disable</font> the "Matrix Writer" node. 
 # 
 # **Experiment**:
-# - Record the measered 'membrane' potential of the model cell.
-# > Note that *membrane potential* is measured inside the cell relative to outside. 
-# - Keeping $R_K$ constant, change $R_{Na}$ and record the measered 'membrane' potential.
-# - Keeping $R_{Na}$ constant, change $R_K$ and record the measered 'membrane' potential.
-# - Keeping $R_K$ and $R_{Na}$ constant, change the polarity of the batteries and record what happens to the measered 'membrane' potential with each change in polarity configuration. 
+# - Hit play in Bonsai. Double click on the "Membrane Potential" node if the window is not already present. Close the "Stimulus" window if it is open.
+# - Right mouse click on the bottom of the membrane potential window to change the y axis range of the graph.
+# - Hover over the signal trace with your mouse to see the voltage. Record the measured 'membrane' potential of the model cell.
+# > Note that *membrane potential* is measured inside the cell relative to outside and the Getting amplifier *has a gain of 10*. 
+# - Keeping $R_K$ constant, change $R_{Na}$ and record the measured 'membrane' potential.
+# - Keeping $R_{Na}$ constant, change $R_K$ and record the measured 'membrane' potential.
+# - Keeping $R_K$ and $R_{Na}$ constant, change the polarity of the batteries and record what happens to the measured 'membrane' potential with each change in polarity configuration. 
+# - Stop the data acquisition by hitting the *stop* button in Bonsai.
 # 
 
 # <a id="two"></a>
@@ -105,15 +120,22 @@ import matplotlib.pyplot as plt
 # 
 # [TOC](#toc)
 # 
-# You will use the following passive axon model and a voltmeter to complete this experiment.
+# You will use the following passive axon model (pre-made) to complete this experiment.
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
 # 
-# **Experiment:**
+# **Setup**:
 # - At the middle of the axon (node 5), place one electrode on the ‘inside’ of the membrane and one on the ‘outside’.
+# > Note that *membrane potential* is measured inside the cell relative to outside. 
+# - Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called "passive-membrane-models.bonsai"
+# - Make sure that the sampling rate is set to 5000.
+# - <font color="red"> Disable</font> the "Matrix Writer" node. 
+# 
+# **Experiment:**
 # - Attach a voltage source (9V battery) across the cell membrane at the end of the axon (node 0). 
 # - Move the voltage source along the axon one node at a time until you reach node 10. 
-#   - At each node, record the voltage in the dictionary below by replacing the ```...``` with the measured value.
+#  - At each node, record the voltage in the dictionary below by replacing the ```...``` with the measured value.
+#  > Note that the Getting amplifier *has a gain of 10*. 
 # 
 
 # In[ ]:
@@ -159,8 +181,13 @@ plt.plot(nodes,voltage)
 # 
 # Use the same passive axon model that you used in [Part II](#two) and a voltmeter to complete this experiment.
 # 
-# **Experiment:**
+# **Setup**:
 # - At the middle of the axon, place *both* electrodes on the ‘outside’ of the membrane, with one empty node between them (one electrode at node 4 and one at node 6).
+# - Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called "passive-membrane-models.bonsai"
+# - Make sure that the sampling rate is set to 5000.
+# - <font color="red"> Disable</font> the "Matrix Writer" node. 
+# 
+# **Experiment:**
 # - Attach the voltage source (9V battery) across the cell membrane at the end of the axon (node 0). 
 # - Move the voltage source along the axon one node at a time until you reach node 10. 
 #   - At each node, record the voltage in the dictionary below by replacing the ```...``` with the measured value.
@@ -211,29 +238,34 @@ plt.plot(nodes,voltage)
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
 # 
-# You will be using the [***Ghetting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to both deliver current and measure voltage (yes... it is unassuming, but fancy).  
-# You will also use an analog to digital converter (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) to send the measurements to the computer for recording the raw (digitized) data.  
-# You will also be using a ***Stimulus Isolating Unit*** to deliver square-wave pulses of voltage to the Ghetting, which will be converted to current and delivered to the model membrane circuit. A "square wave" stimulus is one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.
+# You will be using the [***Getting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to both deliver current and measure voltage The Getting provides a *current stimulation*, feature that applies a "square wave" stimulus across the measurement electrodes. A square wave stimulus one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.
 # 
 # **Setup**: 
 # - Place the recording/measureing electrode on the ‘inside’ of the membrane 
 # - Place the *ground* electrode on the ‘outside’
 # > If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can "apply" current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim. 
 # - Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called "passive-membrane-models.bonsai"
-# > Note that a copy of the stimulus command is also being sent to the NiUSB ADC
-# - Make sure that the sampling rate is set to 10000.
+# > Note that a copy of the stimulus (*current monitor*) is also being sent to the NiUSB ADC. The coversion factor is ________.
+# - Make sure that the sampling rate is set to 5000.
 # - <font color="red"> Disable</font> the "Matrix Writer" node. 
 # - Hit play. Double click on the "Membrane Potential" and "Stimulus" nodes if the windows are not already present. Make sure that you see a signal. 
-# - Apply a voltage across the model membrane with a small (<1.5V) battery to check that you are seeing what you think you should. 
+# - Set the current amplitude to about 5nA and switch it on for approximately 2 seconds to see that you get a response.  
 # - Stop the data acquisition by hitting the *stop* button in Bonsai.
 # 
 # **Experiment**:
-# - <font color="green"> Enable</font> the "Matrix Writer" node. 
-# - Hit play to collect data. Double click on the "Membrane Potential" and "Stimulus" nodes if the windows are not already present. Make sure that you see a signal. 
-# - Apply a stimulus pulse.
-# - Stop the data acquisition by hitting the *stop* button in Bonsai.
+# 1. With only a resistor across the membrane
+#     - <font color="green"> Enable</font> the "Matrix Writer" node. 
+#     - Hit play to collect data. Double click on the "Membrane Potential" and "Stimulus" nodes if the windows are not already present. Make sure that you see a signal. 
+#     - Apply a stimulus pulse of 2 seconds. 
+#     - Stop the data acquisition by hitting the *stop* button in Bonsai.
+# 2. With both the capacitor and resistor across the membrane
+#     - Hit play to collect data. Double click on the "Membrane Potential" and "Stimulus" nodes if the windows are not already present. Make sure that you see a signal. 
+#     - Apply a stimulus pulse of 2 seconds.
+#     - Stop the data acquisition by hitting the *stop* button in Bonsai. 
 # 
-# Upload your data to your Google Drive to access it.
+# 
+# Upload your data files to the Colab kernel by dragging it into the file manager panel. **OR** Upload your data to your Google Drive. Then follow the rest of the steps below to measure and analyze your data.
+# 
 
 # In[ ]:
 
@@ -261,7 +293,7 @@ filepath = "full filepath goes here"  #@param
 #@markdown Specify the sampling rate recorded.
 
 # sampling_rate = None #@param
-sampling_rate = 10000 #@param
+sampling_rate = 5000 #@param
 
 number_channels = 2 # one is the stimulus and one is the membrane potential
 membrane_channel = 0 #@param 
@@ -277,7 +309,7 @@ filepath = Path(filepath)
 data = np.fromfile(Path(filepath), dtype = np.float64)
 data = data.reshape(-1,number_channels)
 data_dur = np.shape(data)[0]/sampling_rate
-print('duration of recording was %0.2f seconds' %dur)
+print('duration of recording was %0.2f seconds' %data_dur)
 
 fs = sampling_rate
 if downsample:
@@ -287,16 +319,15 @@ if downsample:
 
 time = np.linspace(0,data_dur,np.shape(data)[0])
 
-print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
+# print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 f = go.FigureWidget(make_subplots(rows=2,cols=1,
-                                  shared_xaxes=True,
-                                  layout=go.Layout(height=500, width=800)))
+                                  shared_xaxes=True),layout=go.Layout(height=500, width=800))
 f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,membrane_channel],
-                         name=str(chan),opacity=1),
+                         name='membrane',opacity=1),
              row=1,col=1)
 f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,stimulus_channel],
-                         name=str(chan),opacity=1),
+                         name='stimulus',opacity=1),
              row=2,col=1)
 
 slider = widgets.FloatRangeSlider(
@@ -331,8 +362,9 @@ vb
 # - What happens when you change the stimulus amplitude?
 # - What happens when you change the stimulus duration?
 # - What happens when you change the resistance of the model cell?
+# - What happens when you change the capacitance of the model cell?
 # 
-# Upload your data file to the Colab kernel by dragging it into the file manager panel. Then follow the rest of the steps below to measure and analyze your data more quantitatively.
+# 
 
 # # Additional Resources
 # 

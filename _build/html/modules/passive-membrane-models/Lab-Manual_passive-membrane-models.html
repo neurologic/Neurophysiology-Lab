@@ -265,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../computer-model/computer-model_landing.html">
-   Week 5. Computer Models
+   Week 5. Computational Models
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -817,53 +817,78 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1">#@title Run this cell to initialize packages and functions </span>
 
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to measure the
+‘membrane potential” in your model circuits. An analog to digital converter (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.</p>
 <p><a id="one"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-i-membrane-potential">
 <h1>Part I. Membrane Potential<a class="headerlink" href="#part-i-membrane-potential" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
-<p>You will create the following circuit (ignoring capacitance) on a <em>breadboard</em> and use a voltmeter to measure membrane potential.</p>
+<p>You will create the following circuit (ignoring capacitance) on a <em>breadboard</em>.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
 <p><strong>Setup</strong>:</p>
 <ul class="simple">
 <li><p>Use one battery for <span class="math notranslate nohighlight">\(E_K\)</span> and one battery for <span class="math notranslate nohighlight">\(E_{Na}\)</span></p></li>
 <li><p>Start with equal <a class="reference external" href="#resistor-decoder">resistors</a> for <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span>.</p></li>
+<li><p>Place the recording/measureing electrode on the ‘inside’ of the membrane</p></li>
+<li><p>Place the <em>ground</em> electrode on the ‘outside’</p></li>
+<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
+<li><p>Make sure that the sampling rate is set to 5000.</p></li>
+<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
 </ul>
 <p><strong>Experiment</strong>:</p>
 <ul class="simple">
-<li><p>Record the measered ‘membrane’ potential of the model cell.</p></li>
+<li><p>Hit play in Bonsai. Double click on the “Membrane Potential” node if the window is not already present. Close the “Stimulus” window if it is open.</p></li>
+<li><p>Right mouse click on the bottom of the membrane potential window to change the y axis range of the graph.</p></li>
+<li><p>Hover over the signal trace with your mouse to see the voltage. Record the measured ‘membrane’ potential of the model cell.</p></li>
 </ul>
 <blockquote>
-<div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside.</p>
+<div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside and the Getting amplifier <em>has a gain of 10</em>.</p>
 </div></blockquote>
 <ul class="simple">
-<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> constant, change <span class="math notranslate nohighlight">\(R_{Na}\)</span> and record the measered ‘membrane’ potential.</p></li>
-<li><p>Keeping <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change <span class="math notranslate nohighlight">\(R_K\)</span> and record the measered ‘membrane’ potential.</p></li>
-<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change the polarity of the batteries and record what happens to the measered ‘membrane’ potential with each change in polarity configuration.</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> constant, change <span class="math notranslate nohighlight">\(R_{Na}\)</span> and record the measured ‘membrane’ potential.</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change <span class="math notranslate nohighlight">\(R_K\)</span> and record the measured ‘membrane’ potential.</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change the polarity of the batteries and record what happens to the measured ‘membrane’ potential with each change in polarity configuration.</p></li>
+<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
 </ul>
 <p><a id="two"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-ii-intracellular-recording-of-applied-current">
 <h1>Part II. Intracellular Recording of Applied Current<a class="headerlink" href="#part-ii-intracellular-recording-of-applied-current" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
-<p>You will use the following passive axon model and a voltmeter to complete this experiment.</p>
+<p>You will use the following passive axon model (pre-made) to complete this experiment.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
-<p><strong>Experiment:</strong></p>
+<p><strong>Setup</strong>:</p>
 <ul class="simple">
 <li><p>At the middle of the axon (node 5), place one electrode on the ‘inside’ of the membrane and one on the ‘outside’.</p></li>
+</ul>
+<blockquote>
+<div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
+<li><p>Make sure that the sampling rate is set to 5000.</p></li>
+<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+</ul>
+<p><strong>Experiment:</strong></p>
+<ul class="simple">
 <li><p>Attach a voltage source (9V battery) across the cell membrane at the end of the axon (node 0).</p></li>
-<li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p>
-<ul>
+<li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
 <li><p>At each node, record the voltage in the dictionary below by replacing the <code class="docutils literal notranslate"><span class="pre">...</span></code> with the measured value.</p></li>
 </ul>
-</li>
-</ul>
+<blockquote>
+<div><p>Note that the Getting amplifier <em>has a gain of 10</em>.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voltage_intracellular</span> <span class="o">=</span> <span class="p">{</span>
@@ -906,9 +931,15 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Part III. Extracellular Recording of Applied Current<a class="headerlink" href="#part-iii-extracellular-recording-of-applied-current" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
 <p>Use the same passive axon model that you used in <a class="reference external" href="#two">Part II</a> and a voltmeter to complete this experiment.</p>
-<p><strong>Experiment:</strong></p>
+<p><strong>Setup</strong>:</p>
 <ul class="simple">
 <li><p>At the middle of the axon, place <em>both</em> electrodes on the ‘outside’ of the membrane, with one empty node between them (one electrode at node 4 and one at node 6).</p></li>
+<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
+<li><p>Make sure that the sampling rate is set to 5000.</p></li>
+<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+</ul>
+<p><strong>Experiment:</strong></p>
+<ul class="simple">
 <li><p>Attach the voltage source (9V battery) across the cell membrane at the end of the axon (node 0).</p></li>
 <li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p>
 <ul>
@@ -959,9 +990,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><a class="reference external" href="#toc">TOC</a></p>
 <p>For this exercise, you will use the following passive resistor-capacitor circuit model membrane.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
-<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Ghetting Intracellular Amplifier</strong></em></a> to both deliver current and measure voltage (yes… it is unassuming, but fancy).<br />
-You will also use an analog to digital converter (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) to send the measurements to the computer for recording the raw (digitized) data.<br />
-You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to deliver square-wave pulses of voltage to the Ghetting, which will be converted to current and delivered to the model membrane circuit. A “square wave” stimulus is one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
+<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to both deliver current and measure voltage The Getting provides a <em>current stimulation</em>, feature that applies a “square wave” stimulus across the measurement electrodes. A square wave stimulus one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
 <p><strong>Setup</strong>:</p>
 <ul class="simple">
 <li><p>Place the recording/measureing electrode on the ‘inside’ of the membrane</p></li>
@@ -974,23 +1003,34 @@ You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to de
 <li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
 </ul>
 <blockquote>
-<div><p>Note that a copy of the stimulus command is also being sent to the NiUSB ADC</p>
+<div><p>Note that a copy of the stimulus (<em>current monitor</em>) is also being sent to the NiUSB ADC. The coversion factor is ________.</p>
 </div></blockquote>
 <ul class="simple">
-<li><p>Make sure that the sampling rate is set to 10000.</p></li>
+<li><p>Make sure that the sampling rate is set to 5000.</p></li>
 <li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
 <li><p>Hit play. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
-<li><p>Apply a voltage across the model membrane with a small (&lt;1.5V) battery to check that you are seeing what you think you should.</p></li>
+<li><p>Set the current amplitude to about 5nA and switch it on for approximately 2 seconds to see that you get a response.</p></li>
 <li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
 </ul>
 <p><strong>Experiment</strong>:</p>
+<ol class="simple">
+<li><p>With only a resistor across the membrane</p>
 <ul class="simple">
 <li><p><font color="green"> Enable</font> the “Matrix Writer” node.</p></li>
 <li><p>Hit play to collect data. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
-<li><p>Apply a stimulus pulse.</p></li>
+<li><p>Apply a stimulus pulse of 2 seconds.</p></li>
 <li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
 </ul>
-<p>Upload your data to your Google Drive to access it.</p>
+</li>
+<li><p>With both the capacitor and resistor across the membrane</p>
+<ul class="simple">
+<li><p>Hit play to collect data. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
+<li><p>Apply a stimulus pulse of 2 seconds.</p></li>
+<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
+</ul>
+</li>
+</ol>
+<p>Upload your data files to the Colab kernel by dragging it into the file manager panel. <strong>OR</strong> Upload your data to your Google Drive. Then follow the rest of the steps below to measure and analyze your data.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
@@ -1005,7 +1045,7 @@ You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to de
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
 
@@ -1017,7 +1057,7 @@ You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to de
 <span class="c1">#@markdown Specify the sampling rate recorded.</span>
 
 <span class="c1"># sampling_rate = None #@param</span>
-<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">#@param</span>
+<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">5000</span> <span class="c1">#@param</span>
 
 <span class="n">number_channels</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># one is the stimulus and one is the membrane potential</span>
 <span class="n">membrane_channel</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param </span>
@@ -1033,7 +1073,7 @@ You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to de
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">number_channels</span><span class="p">)</span>
 <span class="n">data_dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">dur</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">data_dur</span>)
 
 <span class="n">fs</span> <span class="o">=</span> <span class="n">sampling_rate</span>
 <span class="k">if</span> <span class="n">downsample</span><span class="p">:</span>
@@ -1043,16 +1083,15 @@ You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to de
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">data_dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data upload completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+<span class="c1"># print(&#39;Data upload completed at &#39; + str(datetime.now(timezone(-timedelta(hours=5)))))</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                                  <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                                  <span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)))</span>
+                                  <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">))</span>
 <span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">membrane_channel</span><span class="p">],</span>
-                         <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;membrane&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
              <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">stimulus_channel</span><span class="p">],</span>
-                         <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">chan</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;stimulus&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
              <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
@@ -1089,8 +1128,8 @@ You will also be using a <em><strong>Stimulus Isolating Unit</strong></em> to de
 <li><p>What happens when you change the stimulus amplitude?</p></li>
 <li><p>What happens when you change the stimulus duration?</p></li>
 <li><p>What happens when you change the resistance of the model cell?</p></li>
+<li><p>What happens when you change the capacitance of the model cell?</p></li>
 </ul>
-<p>Upload your data file to the Colab kernel by dragging it into the file manager panel. Then follow the rest of the steps below to measure and analyze your data more quantitatively.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="additional-resources">
 <h1>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h1>

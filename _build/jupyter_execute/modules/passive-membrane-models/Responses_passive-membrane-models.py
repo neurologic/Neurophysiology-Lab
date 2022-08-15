@@ -13,15 +13,15 @@
 
 # ***NAME***: ...
 
-# ***Prompt 1:** What is the biological equivalent of the resistors in the active neuron membrane model?*
+# ***Prompt 1:** What is the biological equivalent of the resistors in the neuron membrane model from **Part I**?*
 
 # ...
 
-# ***Prompt 2:** What is the biological equivalent of each set of resistors in the passive axon model (Rinside, Routside, Rmembrane)?*
+# ***Prompt 2:** What is the biological equivalent of each set of resistors (Rinside, Routside, Rmembrane) in the neuron membrane model from **Part II and III**?*
 
 # ...
 
-# ***Prompt 3:** What is the biological equivalent of the battery (the voltage applied across the membrane) in the passive axon model?*
+# ***Prompt 3:** What is the biological equivalent of the battery (the voltage applied across the membrane) in the neuron membrane model from **Part II and III**?*
 
 # ...
 
@@ -29,7 +29,7 @@
 
 # ...
 
-# ***Prompt 5:** In neurophysiology we often talk about ion channel conductance ($g$) rather than resistance ($R$), where $R = 1/g$. How does the balance between potassium and sodium *conductance* effect the voltage across the cell membrane?*
+# ***Prompt 5:** In neurophysiology we often talk about ion channel conductance ($g$) rather than resistance ($R$), where $R = 1/g$. How did the balance between the two conductances in the neuron membrane model from **Part I** effect the voltage across the cell membrane?*
 
 # ...
 
@@ -41,8 +41,9 @@
 
 # ...
 
-# ***Prompt 8:** The *space constant* is the distance it takes for voltage to change by 63% from its original value. Approximate the space constant (in arbitrary "node" units) of the model membrane using the intracellular measurements of membrane potential as the battery source travelled down the "axon".  
-# Calculate the space constant first by starting at Node \#5 (the middle node) and then calculate it again by starting at Node \#7.*
+# ***Prompt 8:** The *space constant* is the distance it takes for voltage to change by 63% from its original value. Approximate the space constant (in arbitrary "node" units) of the model membrane using the intracellular measurements of membrane potential (**Part I**) as the battery source travelled down the "axon".  
+# First, calculate the space constant first by starting at Node \#5 (the middle node).  
+# Then, calculate it by starting at Node \#7.*
 
 # ...
 
@@ -89,19 +90,23 @@
 # 
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
-# ***Prompt 13:** Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?*
+# ***Prompt 13:** What was different between the membrane potential response to (the same) applied current **with** verusus **without** a capacitor in the circuit? What was the same between the membrane potential response to (the same) applied current **with** verusus **without** a capacitor in the circuit?
 
 # ...
 
-# ***Prompt 14:** One of the most used equations in neurophysiology is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. Use your experiences from this lab to describe a key experiment that would enable you to test your prediction in Prompt 13 by calculating the membrane resistance of a neurons with known sizes.*
+# ***Prompt 14:** Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?*
 
 # ...
 
-# ***Prompt 15:** Would you expect small neurons to have higher or lower capacitance than large neurons? Why?*
+# ***Prompt 15:** One of the most used equations in neurophysiology is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. Use your experiences from this lab to describe a key experiment that would enable you to test your prediction in Prompt 13 by calculating the membrane resistance of a neurons with known sizes.*
 
 # ...
 
-# ***Prompt 16:** Another well-loved neurophysiology equation is $\tau=RC$, where $R$ is resistance and $C$ is capacitance, and $\tau$ is the time constant of the membrane. Analagous to the *space constant*, the *time constant* is the time it takes for the membrane potential to change by 63% of its original value in response to an applied current across the membrane. Use the tools you learned in this lab to describe a key experiment that would enable you to test your prediction in Prompt 15 by calculating the membrane capacitance of neurons with known sizes.*
+# ***Prompt 16:** Would you expect small neurons to have higher or lower capacitance than large neurons? Why?*
+
+# ...
+
+# ***Prompt 17:** Another well-loved neurophysiology equation is $\tau=RC$, where $R$ is resistance and $C$ is capacitance, and $\tau$ is the time constant of the membrane. Analagous to the *space constant*, the *time constant* is the time it takes for the membrane potential to change by 63% of its original value in response to an applied current across the membrane. Use the tools you learned in this lab to describe a key experiment that would enable you to test your prediction in Prompt 15 by calculating the membrane capacitance of neurons with known sizes.*
 
 # ...
 
