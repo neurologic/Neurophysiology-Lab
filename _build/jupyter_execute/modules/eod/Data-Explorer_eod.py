@@ -373,7 +373,11 @@ w = interact(update_plot, eodi=slider_eod, chan=slider_chan, xrange=slider_xrang
 # <!--     class="alert-info"> -->
 #     <p> This is a good time to introduce "indexing" lists in python, because eod_times is a list (with the earliest eod time in the first position of the list and the latest eod time in the last position of the list).</p>
 #     <p> The following table shows, by example, how you would get the value at each position in a list (<b>L</b>) by indexing the list. In this examples, the values in the list are <b>t0, t1, t2</b>.</p>
-#     <pre class="result notranslate">L = [t0, t1, t2]</pre>
+# </div>
+# 
+# Consider the list where ```L=[t0, t1, t2]```
+# 
+# <div>
 # <table class="table table-bordered" style="text-align:center;">
 # <tbody><tr>
 # <th style="text-align:center;width:33%">If you type: </th>
@@ -413,7 +417,7 @@ w = interact(update_plot, eodi=slider_eod, chan=slider_chan, xrange=slider_xrang
 
 #@title {display-mode:"form"}
 
-#@markdown Run this code cell to print the result of your average rate calculation. 
+#@markdown Run this code cell to print the average rate calculated using your equation. 
 print(f'The average EOD rate is {average_rate}')
 
 
@@ -506,7 +510,7 @@ isi = ...
 
 #@title {display-mode: "form"}
 
-#@markdown Run this code cell to calculate the average isi and plot the isi over time. 
+#@markdown Run this code cell to use your equation to calculate the average isi and plot the isi over time. 
 
 print(f'Average isi is {np.mean(isi):0.2f}.')
 

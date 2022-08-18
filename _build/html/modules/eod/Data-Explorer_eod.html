@@ -1160,7 +1160,9 @@ const thebe_selector_output = ".output, .cell_output"
 <!--     class="alert-info"> -->
     <p> This is a good time to introduce "indexing" lists in python, because eod_times is a list (with the earliest eod time in the first position of the list and the latest eod time in the last position of the list).</p>
     <p> The following table shows, by example, how you would get the value at each position in a list (<b>L</b>) by indexing the list. In this examples, the values in the list are <b>t0, t1, t2</b>.</p>
-    <pre class="result notranslate">L = [t0, t1, t2]</pre>
+</div>
+<p>Consider the list where <code class="docutils literal notranslate"><span class="pre">L=[t0,</span> <span class="pre">t1,</span> <span class="pre">t2]</span></code></p>
+<div>
 <table class="table table-bordered" style="text-align:center;">
 <tbody><tr>
 <th style="text-align:center;width:33%">If you type: </th>
@@ -1197,7 +1199,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
 
-<span class="c1">#@markdown Run this code cell to print the result of your average rate calculation. </span>
+<span class="c1">#@markdown Run this code cell to print the average rate calculated using your equation. </span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The average EOD rate is </span><span class="si">{</span><span class="n">average_rate</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1285,7 +1287,7 @@ Store the result as a variable called <code class="docutils literal notranslate"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
 
-<span class="c1">#@markdown Run this code cell to calculate the average isi and plot the isi over time. </span>
+<span class="c1">#@markdown Run this code cell to use your equation to calculate the average isi and plot the isi over time. </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Average isi is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 
