@@ -601,6 +601,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-app">
+   Get the app
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -613,6 +631,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-app">
+   Get the app
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -622,7 +658,62 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="dash-data-explorer">
 <h1>Dash Data Explorer<a class="headerlink" href="#dash-data-explorer" title="Permalink to this headline">¶</a></h1>
 <p>An application written in python that uses the dash modules from plotly to create a (relatively) fast, interactive graph of raw binary data (.Net.Mat) collected in Bonsai-rx.</p>
-<p><em><strong>usage</strong></em>: DataExplorer [-h] -filepath FILEPATH -fs FS -n NUMBER_CHANNELS -p NUMBER_SUBPLOTS -c
+<div class="section" id="get-the-app">
+<h2>Get the app<a class="headerlink" href="#get-the-app" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Download the application file. Click on <a class="reference external" href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Data-Explorer.py">the link to the application file</a>. Then <em>right mouse click</em> in the raw file window and select ‘Save As…’ to save the file to your computer (using the default file name ‘<strong>Data-Explorer</strong>’ with file extension ‘<strong>py</strong>’). Save the file somewhere easy to access, like your documents folder.</p></li>
+</ol>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Make sure you have installed <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Individual Edition</a> by downloading and executing the appropriate installer for your operating system.</p></li>
+<li><p>Launch the Anaconda Navigator</p></li>
+<li><p>Open the PowerShell prompt application</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Creating an environment with dash<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">If you have not already done so, you will need to create an environment to run the application in. The environment must have dash installed.<br />
+Execute the following commands at the command line.<br />
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">neurolab</span> <span class="pre">--clone</span> <span class="pre">base</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">dash</span></code></p>
+</div>
+</details></li>
+<li><p>Activate your anaconda environment (created in step 1) using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neurolab</span></code>.</p></li>
+<li><p>Navigate the command line to the folder that contains the application file that you downloaded/saved.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Navigating the command line on MacOS<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">commands to get to the folder on a mac</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Navigating the command line on WindowsOS<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">commands to get to the folder on WindowsOS</p>
+</div>
+</details></li>
+<li><p>Follow the command line syntax below to provide the application with all the necessary information about your file and how you want it plotted in the Data Explorer when it launches.</p>
+<div class="admonition-filepath-tip admonition">
+<p class="admonition-title">filepath TIP</p>
+<p>copy the full filepath from the file browswer.</p>
+<ul class="simple">
+<li><p>on a mac right mouse click the filename, then press the <em>option</em> key, then select “Copy as Pathname”</p></li>
+<li><p>on a Windows hold down the <em>Shift</em> key while right-clicking the file name. then select “Copy Full Path”</p></li>
+</ul>
+</div>
+<p><em><strong>command line syntax</strong></em>: DataExplorer [-h] -filepath FILEPATH -fs FS -n NUMBER_CHANNELS -p NUMBER_SUBPLOTS -c
 CHANNELS_PER_SUBPLOT [CHANNELS_PER_SUBPLOT …]</p>
 <p><em><strong>optional arguments</strong></em>:</p>
 <ul class="simple">
@@ -635,6 +726,25 @@ CHANNELS_PER_SUBPLOT [CHANNELS_PER_SUBPLOT …]</p>
 list of channels to plot on each subplot (listed in order of
 appearance)</p></li>
 </ul>
+</li>
+<li><p>Open a browser window (Chrome recommended) and go to your local server](<a class="reference external" href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a>)</p>
+<blockquote>
+<div><p>Note that this link will only work if you have already run the Data Explorer application from the terminal</p>
+</div></blockquote>
+</li>
+<li><p><strong>Shut down the application appropriately</strong> by holding down the <em>Control</em> key while you press the <em>C</em> key.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+If you get an error next time you try to run the applicaiton<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">If you can an error that the application is already running on the server, then it did not get shut down appropriately the last time. In the terminal, use the command <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lsof</span> <span class="pre">-1:8050</span></code> to shut down the server and free it up for the application again.</p>
+</div>
+</details></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

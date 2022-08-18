@@ -98,7 +98,7 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 # Import data digitized with *Nidaq USB6211* and recorded using *Bonsai-rx* as a *.bin* file
 # 
-# If you would like sample this Data Explorer, but do not have data, you can download an example from [here]('https://drive.google.com/u/0/uc?id=10cxBdfnEwRv77-dwcReqHyjYv-uLODe4&export=download') and then upload your file to Google Colab (or access the file through Drive after uploading it to your Drive). 
+# If you would like sample this Data Explorer, but do not have data, you can download an example from [here](https://drive.google.com/file/d/10cxBdfnEwRv77-dwcReqHyjYv-uLODe4/view?usp=sharing) and then upload the file to Google Colab (or access the file through Drive after uploading it to your Drive). If you are using this example file, the samplerate was 50000 on two channels (each channel was a set of bipolar electrodes perpendicular to each other with a fisn in the middle). 
 
 # In[ ]:
 
@@ -171,7 +171,7 @@ def update_plot(x):
 w = interact(update_plot, x=slider);
 
 
-# For a more extensive ***RAW*** Data Explorer than the one provided in the above figure, use the [DataExplorer.py](https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Data-Explorer.py) application found in the [howto section] of the course website.
+# For a more extensive ***RAW*** Data Explorer than the one provided in the above figure, use the [DataExplorer.py](https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py) application found in the [howto section](https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html) of the course website.
 
 # <a id="one"></a>
 # # Part I. Event Detection

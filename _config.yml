@@ -4,6 +4,8 @@
 title: Neurophysiology Lab
 author: Dr. Krista Perks
 logo: images/NeuronImage_CourseHeader.jpeg
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
