@@ -267,7 +267,7 @@ w = interact(update_plot, x=slider);
 # 
 # > Note: If you do not think you are detecting enough of the events or if you think you are detecting too much noise, modify your detection threshold and go through the detection steps in Part I again.
 
-# In[86]:
+# In[ ]:
 
 
 #@title {display-mode: "form"}
@@ -407,7 +407,7 @@ print(f'The average EOD rate is {average_rate}')
 # 
 # Once you specify the bootstrapping parameters in the form below, run the code cell. You will see a plot of the average rate of each subsample (each black point in the scatterplot), and the distribution (quantiles) of the set of subsamples in [boxplot](https://en.wikipedia.org/wiki/Box_plot) format.
 
-# In[81]:
+# In[ ]:
 
 
 #@title {display-mode: "form"}
