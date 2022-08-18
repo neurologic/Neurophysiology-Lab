@@ -1,10 +1,6 @@
 
 import argparse
 
-import os
-import sys
-
-
 from pathlib import Path
 import dash
 from dash import html, dcc
@@ -12,13 +8,9 @@ from dash.dependencies import Output, Input
 from dash import no_update
 
 import numpy as np
-import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from scipy.signal import hilbert,medfilt,resample, find_peaks, unit_impulse
-import seaborn as sns
 from datetime import datetime,timezone,timedelta
-import random
 
 
 # Create the parser
@@ -145,7 +137,7 @@ def main(args):
       
     # Step 6. Add the server clause
     if __name__ == "__main__":
-        app.run_server(debug=True)
+        app.run_server(debug=False)
 
     # app.run_server(mode='inline', port=8030)
     

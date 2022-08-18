@@ -150,13 +150,14 @@ print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5
 
 #@markdown Run this code cell to plot imported data. <br> 
 #@markdown Use the range slider to scroll through the data in time.
+#@markdown Be patient with the range refresh... the more data you are plotting the slower it will be. 
 
 slider = widgets.FloatRangeSlider(
     min=0,
     max=data_dur,
     value=(0,1),
     step= 1,
-    readout=False,
+    readout=True,
     continuous_update=False,
     description='Time Range (s)')
 slider.layout.width = '600px'
@@ -238,7 +239,6 @@ eod_times = r[0]/fs
 
 #@markdown Run this code cell to plot the signal on each trial 
 #@markdown overlaid with a scatter of EOD times detected using your threshold. 
-#@markdown > NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork
     
 slider = widgets.FloatRangeSlider(
     min=0,
@@ -267,22 +267,37 @@ w = interact(update_plot, x=slider);
 # 
 # > Note: If you do not think you are detecting enough of the events or if you think you are detecting too much noise, modify your detection threshold and go through the detection steps in Part I again.
 
-# In[ ]:
+# In[93]:
+
+
+len(eod_times)
+
+
+# In[97]:
 
 
 #@title {display-mode: "form"}
 
-#@markdown Select a pre and post event duration (dur; in milliseconds) to plot for each EOD.
-eod_range = 0.3 #@param
+# #@markdown Select a pre and post event duration (dur; in milliseconds) to plot for each EOD.
+# eod_range = 0.3 #@param
 
 # #@markdown Set the y-axis range based on your raw data.
 # ymin = -0.05 #@param
 # ymax = 0.1 #@param
 
 #@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events and channels.
-win_ = int(eod_range/1000*fs)
 
-etime = np.linspace(-eod_range,eod_range,win_*2)
+
+slider_xrange = widgets.FloatSlider(
+    min=0.05,
+    max=2,
+    value=0.6,
+    step=0.05,
+    continuous_update=False,
+    readout=True,
+    description='xrange (ms)'
+)
+slider_xrange.layout.width = '600px'
 
 slider_yrange = widgets.FloatRangeSlider(
     min=np.min(np.min(data)),
@@ -297,7 +312,7 @@ slider_yrange.layout.width = '600px'
 
 slider_eod = widgets.IntSlider(
     min=0,
-    max=np.shape(events)[1],
+    max=len(eod_times),
     value=0,
     step= 1,
     continuous_update=False,
@@ -314,14 +329,20 @@ slider_chan = widgets.IntSlider(
 slider_chan.layout.width = '300px'
 
 # a function that will modify the xaxis range
-def update_plot(eodi,chan,yrange):
+def update_plot(eodi,chan,xrange,yrange):
     fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    
+    eod_range = xrange/2
+    win_ = int(eod_range/1000*fs)
+
     events = np.asarray([data[(int(fs*t)-win_):(int(fs*t)+win_),chan] for t in eod_times 
           if (((int(fs*t)-win_)>0) & ((int(fs*t)+win_)<np.shape(data)[0]))]).T
+    etime = np.linspace(-eod_range,eod_range,win_*2)
+
     ax.plot(etime,events[:,eodi],color='black',linewidth=3)
     ax.set_ylim(yrange[0],yrange[1]);
 
-w = interact(update_plot, eodi=slider_eod, chan=slider_chan,yrange=slider_yrange);
+w = interact(update_plot, eodi=slider_eod, chan=slider_chan, xrange=slider_xrange, yrange=slider_yrange);
 
 
 # Take some time to explore and observe the variation in EOD waveforms. 
