@@ -267,13 +267,7 @@ w = interact(update_plot, x=slider);
 # 
 # > Note: If you do not think you are detecting enough of the events or if you think you are detecting too much noise, modify your detection threshold and go through the detection steps in Part I again.
 
-# In[93]:
-
-
-len(eod_times)
-
-
-# In[97]:
+# In[ ]:
 
 
 #@title {display-mode: "form"}
