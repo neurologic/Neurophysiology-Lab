@@ -25,7 +25,7 @@
 
 # Import and define functions
 
-# In[1]:
+# In[ ]:
 
 
 #@title {display-mode: "form"}
@@ -43,24 +43,21 @@ pal = sns.color_palette(n_colors=15)
 pal = pal.as_hex()
 
 from ipywidgets import interactive, HBox, VBox, widgets, interact
+import ipywidgets as widgets # interactive display
+
+import matplotlib.pyplot as plt
+from IPython.display import display
+from datetime import datetime,timezone,timedelta
+get_ipython().run_line_magic('config', "InlineBackend.figure_format = 'retina'")
+# use NMA plot style
+plt.style.use("https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle")
+my_layout = widgets.Layout()
+
 
 def monoExp(x, m, t, b):
     return m * np.exp(-x / t) + b
 
 print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
-
-
-# In[2]:
-
-
-from brian2 import *
-
-
-# In[ ]:
-
-
-from neuron import h
-from neuron.units import ms, mV, µm
 
 
 # <a id="one"></a>
@@ -84,17 +81,18 @@ def get_V(Rk,Rna,Ek,Ena):
     return V
 
 
+# Plug in the values that you used in your circuit membrane model (<a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb" target="_blank" rel="noopener noreferrer">Part I</a>). Do your computational model results match your electric circuit model results?
+
 # In[ ]:
 
 
-V = get_V(100,100,-90,130)
+Rk = 100
+Rna = 100
+Ek = -90
+Ena = 130
+
+V = get_V(Rk,Rna,Ek,Ena)
 print(V)
-
-
-# In[ ]:
-
-
-import ipywidgets as widgets
 
 
 # <a id="two"></a>
@@ -181,12 +179,6 @@ V_record = simulate_V(V,R,C)
 plt.plot(time,V_record/1000);
 plt.ylabel='millivolt'
 plt.xlabel='seconds'
-
-
-# In[ ]:
-
-
-C
 
 
 # In[ ]:
@@ -302,158 +294,181 @@ vb
 # In[ ]:
 
 
-soma = h.Section(name="soma")
-
-
-# In[ ]:
-
-
-soma.psection()
-
-
-# In[ ]:
-
-
-soma.L = 20
-soma.diam = 20
-
-
-# In[ ]:
-
-
-soma.insert('hh')
-
-
-# In[ ]:
-
-
-iclamp = h.IClamp(soma(0.5))
-
-
-# In[ ]:
-
-
-print([item for item in dir(iclamp) if not item.startswith("__")])
-
-
-# In[ ]:
-
-
-iclamp.delay = 2
-iclamp.dur = 0.2
-iclamp.amp = 0.9
-
-
-# In[ ]:
-
-
-soma.psection()
-
-
-# In[ ]:
-
-
-v = h.Vector().record(soma(0.5)._ref_v)  # Membrane potential vector
-t = h.Vector().record(h._ref_t)  # Time stamp vector
-
-
-# In[ ]:
-
-
-h.load_file("stdrun.hoc")
-
-
-# In[ ]:
-
-
-h.finitialize(-65 * mV)
-
-
-# In[ ]:
-
-
-h.continuerun(40 * ms)
-
-
-# In[ ]:
-
-
-f = go.Figure()
-f.add_trace(go.Scatter(x = t, y = v,
-                             name='simulation results',opacity=1,line_color='black'))
-f.update_layout(height=600, width=800,
-               xaxis_title="time(seconds)", 
-                  yaxis_title='amplitude (volts)')
-
-
-
-# In[ ]:
-
-
-class BallAndStick:
-    def __init__(self, gid):
-        self._gid = gid
-        self._setup_morphology()
-        self._setup_biophysics()
-
-    def _setup_morphology(self):
-        self.soma = h.Section(name="soma", cell=self)
-        self.dend = h.Section(name="dend", cell=self)
-        self.dend.connect(self.soma)
-        self.all = self.soma.wholetree()
-        self.soma.L = self.soma.diam = 12.6157 * µm
-        self.dend.L = 200 * µm
-        self.dend.diam = 1 * µm
-
-    def _setup_biophysics(self):
-        for sec in self.all:
-            sec.Ra = 100  # Axial resistance in Ohm * cm
-            sec.cm = 1  # Membrane capacitance in micro Farads / cm^2
-        self.soma.insert("hh")
-        for seg in self.soma:
-            seg.hh.gnabar = 0.12  # Sodium conductance in S/cm2
-            seg.hh.gkbar = 0.036  # Potassium conductance in S/cm2
-            seg.hh.gl = 0.0003  # Leak conductance in S/cm2
-            seg.hh.el = -54.3 * mV  # Reversal potential
-        # Insert passive current in the dendrite                       # <-- NEW
-        self.dend.insert("pas")  # <-- NEW
-        for seg in self.dend:  # <-- NEW
-            seg.pas.g = 0.001  # Passive conductance in S/cm2        # <-- NEW
-            seg.pas.e = -65 * mV  # Leak reversal potential             # <-- NEW
-
-    def __repr__(self):
-        return "BallAndStick[{}]".format(self._gid)
-
-
-# In[ ]:
-
-
-my_cell = BallAndStick(0)
-
-
-# In[ ]:
-
-
-for sec in h.allsec():
-    print("%s: %s" % (sec, ", ".join(sec.psection()["density_mechs"].keys())))
-
-
-# In[ ]:
-
-
-h.topology()
-
-
-# In[ ]:
-
-
-my_cell.soma.wholetree()
-
-
-# In[ ]:
-
-
-h.PlotShape(False).plot(plt)
+#@title {display-mode: "form"}
+
+#@markdown **TASK:** Run this cell to enable the interactive plot
+#@markdown that helps you explore the effect of intrinsic physiology on neuron behavior. 
+
+def default_pars(**kwargs):
+    pars = {}
+
+    # typical neuron parameters#
+    pars['V_th'] = -55.     # spike threshold [mV]
+    pars['V_reset'] = -75.  # reset potential [mV]
+    pars['tau_m'] = 10.     # membrane time constant [ms]
+    pars['g_L'] = 10.       # leak conductance [nS]
+    pars['V_init'] = -75.   # initial potential [mV]
+    pars['E_L'] = -75.      # leak reversal potential [mV]
+    pars['tref'] = 2.       # refractory time (ms)
+
+    # simulation parameters #
+    pars['T'] = 400.  # Total duration of simulation [ms]
+    pars['dt'] = .1   # Simulation time step [ms]
+
+    # external parameters if any #
+    for k in kwargs:
+        pars[k] = kwargs[k]
+
+    pars['range_t'] = np.arange(0, pars['T'], pars['dt'])  # Vector of discretized time points [ms]
+
+    return pars
+
+def plot_volt_trace(pars, v, sp):
+    """
+    Plot trajetory of membrane potential for a single neuron
+
+    Expects:
+    pars   : parameter dictionary
+    v      : volt trajetory
+    sp     : spike train
+
+    Returns:
+    figure of the membrane potential trajetory for a single neuron
+    """
+
+    V_th = pars['V_th']
+    dt, range_t = pars['dt'], pars['range_t']
+    if sp.size:
+        sp_num = (sp / dt).astype(int) - 1
+        v[sp_num] += 40  # draw nicer spikes
+    plt.clf()
+    plt.plot(pars['range_t'], v, 'b')
+    plt.axhline(V_th, 0, 1, color='k', ls='--')
+    plt.xlabel('Time (ms)',fontsize=14)
+    plt.ylabel('V (mV)',fontsize=14)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(['Membrane\npotential', r'Threshold V$_{\mathrm{th}}$'],
+             loc=[1.05, 0.75])
+    plt.ylim([-90, -20])
+    plt.show()
+    
+def run_LIF(pars, Iinj, stop=False, durstep=100):
+    """
+    Simulate the LIF dynamics with external input current
+    Args:
+    pars       : parameter dictionary
+    Iinj       : input current [pA]. The injected current here can be a value
+                 or an array
+    stop       : boolean. If True, use a current pulse
+    Returns:
+    rec_v      : membrane potential
+    rec_sp     : spike times
+    """
+
+    # Set parameters
+    V_th, V_reset = pars['V_th'], pars['V_reset']
+    tau_m, g_L = pars['tau_m'], pars['g_L']
+    V_init, E_L = pars['V_init'], pars['E_L']
+    dt, range_t = pars['dt'], pars['range_t']
+    fs = 1/dt
+    Lt = range_t.size
+    tref = pars['tref']
+
+    # Initialize voltage
+    v = np.zeros(Lt)
+    v[0] = V_init
+
+    # Set current time course
+    Iinj = Iinj * np.ones(Lt)
+    durstep = int((durstep*fs)/2)
+    # If current pulse, set beginning and end to 0
+    if stop:
+        # Iinj[:int(len(Iinj) / 2) - (int(durstep/pars['dt'])/2)] = 0
+        # Iinj[int(len(Iinj) / 2) + (int(durstep/pars['dt'])/2):] = 0
+
+        Iinj[:int(len(Iinj) / 2) - durstep] = 0
+        Iinj[int(len(Iinj) / 2) + durstep:] = 0
+
+    # Loop over time
+    rec_spikes = []  # record spike times
+    tr = 0.  # the count for refractory duration
+
+    for it in range(Lt - 1):
+
+        if tr > 0:  # check if in refractory period
+            v[it] = V_reset  # set voltage to reset
+            tr = tr - 1 # reduce running counter of refractory period
+
+        elif v[it] >= V_th:  # if voltage over threshold
+            rec_spikes.append(it)  # record spike event
+            v[it] = V_reset  # reset voltage
+            tr = tref / dt  # set refractory time
+
+        # Calculate the increment of the membrane potential
+        dv = (-(v[it] - E_L) + Iinj[it] / g_L) * (dt / tau_m)
+
+        # Update the membrane potential
+        v[it + 1] = v[it] + dv
+
+    # Get spike times in ms
+    rec_spikes = np.array(rec_spikes) * dt
+
+    return v, rec_spikes
+
+
+
+
+my_layout.width = '700px'
+# my_layout.description_width = 'initial'
+style = {'description_width': 'initial'}
+@widgets.interact(
+    current_injection=widgets.FloatSlider(50., min=0., max=1000., step=2.,
+                               layout=my_layout,style=style),
+    Simulation_Duration=widgets.FloatSlider(400., min=0., max=1000., step=10.,
+                               layout=my_layout,style=style),
+    Injection_Step=widgets.Checkbox(value=True,
+                               description='current step (vs continuous)',
+                               layout=my_layout,style=style),
+    Current_Step_Duration=widgets.FloatSlider(100., min=10, max=200., step=2.,
+                               layout=my_layout,style=style),
+    Leak_Reversal=widgets.FloatSlider(-75., min=-90, max=-30., step=2.,
+                               layout=my_layout,style=style),
+    Leak_Conductance=widgets.FloatSlider(10., min=1, max=50., step=2.,
+                               layout=my_layout,style=style),
+    AHP_Voltage=widgets.FloatSlider(-80., min=-90., max=-30.,step=2.,
+                               layout=my_layout,style=style),
+    Spike_Threshold=widgets.FloatSlider(-55., min=-100., max=-30., step=2.,
+                               layout=my_layout,style=style),
+    Membrane_Tau=widgets.FloatSlider(5., min=1., max=15., step=1.,
+                               layout=my_layout,style=style)
+)
+
+
+def diff_DC(current_injection,
+            Simulation_Duration,
+            Injection_Step,
+            Current_Step_Duration,
+            Leak_Reversal,
+            Leak_Conductance,
+            AHP_Voltage,
+            Spike_Threshold,
+            Membrane_Tau): #I_dc=200., tau_m=10.):
+    # pars = default_pars(T=100.)
+    # pars['tau_m'] = tau_m
+    pars = default_pars(
+      E_L = Leak_Reversal,
+      g_L = Leak_Conductance,
+      V_init = Leak_Reversal,
+      V_reset = AHP_Voltage,
+      V_th = Spike_Threshold,
+      tau_m = Membrane_Tau,
+      T=Simulation_Duration)
+    # pars=default_pars()
+    v, sp = run_LIF(pars, Iinj=current_injection,stop=Injection_Step,durstep=Current_Step_Duration)
+    plot_volt_trace(pars, v, sp)
+
+print('Interactive demo initiated at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 
 # <hr> 

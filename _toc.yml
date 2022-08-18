@@ -13,6 +13,7 @@ parts:
         - file: howto/Python-Introduction-Coding-Light
         - file: howto/Executable-Notebooks
         - file: howto/Response-Notebooks
+        - file: howto/Dash-Data-Explorer
         - file: howto/NiUSB-6211
     - file: materials
   - caption: Weekly Chapters

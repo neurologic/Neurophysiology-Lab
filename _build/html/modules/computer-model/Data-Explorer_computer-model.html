@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -139,6 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../howto/Response-Notebooks.html">
      Response Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Dash-Data-Explorer.html">
+     Dash Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -764,41 +771,21 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">pal</span> <span class="o">=</span> <span class="n">pal</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
 
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span> <span class="c1"># interactive display</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="c1"># use NMA plot style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle&quot;</span><span class="p">)</span>
+<span class="n">my_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">()</span>
+
 
 <span class="k">def</span> <span class="nf">monoExp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">/</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Task completed at 2022-08-12 09:23:59.758273-05:00
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;brian2&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuron</span> <span class="kn">import</span> <span class="n">h</span>
-<span class="kn">from</span> <span class="nn">neuron.units</span> <span class="kn">import</span> <span class="n">ms</span><span class="p">,</span> <span class="n">mV</span><span class="p">,</span> <span class="n">µm</span>
 </pre></div>
 </div>
 </div>
@@ -825,17 +812,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Plug in the values that you used in your circuit membrane model (<a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb" target="_blank" rel="noopener noreferrer">Part I</a>). Do your computational model results match your electric circuit model results?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">get_V</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">130</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Rk</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">Rna</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">Ek</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span>
+<span class="n">Ena</span> <span class="o">=</span> <span class="mi">130</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">get_V</span><span class="p">(</span><span class="n">Rk</span><span class="p">,</span><span class="n">Rna</span><span class="p">,</span><span class="n">Ek</span><span class="p">,</span><span class="n">Ena</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 </pre></div>
 </div>
 </div>
@@ -924,13 +910,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">V_record</span><span class="o">/</span><span class="mi">1000</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;millivolt&#39;</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>
 </pre></div>
 </div>
 </div>
@@ -1046,177 +1025,183 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tex2jax_ignore mathjax_ignore section" id="spiking">
 <h1>Spiking<a class="headerlink" href="#spiking" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">toc</a></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">Section</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;soma&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span><span class="o">.</span><span class="n">psection</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">soma</span><span class="o">.</span><span class="n">diam</span> <span class="o">=</span> <span class="mi">20</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;hh&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iclamp</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">IClamp</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">iclamp</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iclamp</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">iclamp</span><span class="o">.</span><span class="n">dur</span> <span class="o">=</span> <span class="mf">0.2</span>
-<span class="n">iclamp</span><span class="o">.</span><span class="n">amp</span> <span class="o">=</span> <span class="mf">0.9</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span><span class="o">.</span><span class="n">psection</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">Vector</span><span class="p">()</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">_ref_v</span><span class="p">)</span>  <span class="c1"># Membrane potential vector</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">Vector</span><span class="p">()</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">_ref_t</span><span class="p">)</span>  <span class="c1"># Time stamp vector</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;stdrun.hoc&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">finitialize</span><span class="p">(</span><span class="o">-</span><span class="mi">65</span> <span class="o">*</span> <span class="n">mV</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">continuerun</span><span class="p">(</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ms</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="p">,</span>
-                             <span class="n">name</span><span class="o">=</span><span class="s1">&#39;simulation results&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
-               <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;time(seconds)&quot;</span><span class="p">,</span> 
-                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;amplitude (volts)&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BallAndStick</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gid</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_gid</span> <span class="o">=</span> <span class="n">gid</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_setup_morphology</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_setup_biophysics</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
 
-    <span class="k">def</span> <span class="nf">_setup_morphology</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">soma</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">Section</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;soma&quot;</span><span class="p">,</span> <span class="n">cell</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dend</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">Section</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;dend&quot;</span><span class="p">,</span> <span class="n">cell</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dend</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">soma</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">soma</span><span class="o">.</span><span class="n">wholetree</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">soma</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">soma</span><span class="o">.</span><span class="n">diam</span> <span class="o">=</span> <span class="mf">12.6157</span> <span class="o">*</span> <span class="n">µm</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dend</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">µm</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dend</span><span class="o">.</span><span class="n">diam</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">µm</span>
+<span class="c1">#@markdown **TASK:** Run this cell to enable the interactive plot</span>
+<span class="c1">#@markdown that helps you explore the effect of intrinsic physiology on neuron behavior. </span>
 
-    <span class="k">def</span> <span class="nf">_setup_biophysics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all</span><span class="p">:</span>
-            <span class="n">sec</span><span class="o">.</span><span class="n">Ra</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Axial resistance in Ohm * cm</span>
-            <span class="n">sec</span><span class="o">.</span><span class="n">cm</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Membrane capacitance in micro Farads / cm^2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">soma</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;hh&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">soma</span><span class="p">:</span>
-            <span class="n">seg</span><span class="o">.</span><span class="n">hh</span><span class="o">.</span><span class="n">gnabar</span> <span class="o">=</span> <span class="mf">0.12</span>  <span class="c1"># Sodium conductance in S/cm2</span>
-            <span class="n">seg</span><span class="o">.</span><span class="n">hh</span><span class="o">.</span><span class="n">gkbar</span> <span class="o">=</span> <span class="mf">0.036</span>  <span class="c1"># Potassium conductance in S/cm2</span>
-            <span class="n">seg</span><span class="o">.</span><span class="n">hh</span><span class="o">.</span><span class="n">gl</span> <span class="o">=</span> <span class="mf">0.0003</span>  <span class="c1"># Leak conductance in S/cm2</span>
-            <span class="n">seg</span><span class="o">.</span><span class="n">hh</span><span class="o">.</span><span class="n">el</span> <span class="o">=</span> <span class="o">-</span><span class="mf">54.3</span> <span class="o">*</span> <span class="n">mV</span>  <span class="c1"># Reversal potential</span>
-        <span class="c1"># Insert passive current in the dendrite                       # &lt;-- NEW</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dend</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;pas&quot;</span><span class="p">)</span>  <span class="c1"># &lt;-- NEW</span>
-        <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dend</span><span class="p">:</span>  <span class="c1"># &lt;-- NEW</span>
-            <span class="n">seg</span><span class="o">.</span><span class="n">pas</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Passive conductance in S/cm2        # &lt;-- NEW</span>
-            <span class="n">seg</span><span class="o">.</span><span class="n">pas</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="o">-</span><span class="mi">65</span> <span class="o">*</span> <span class="n">mV</span>  <span class="c1"># Leak reversal potential             # &lt;-- NEW</span>
+<span class="k">def</span> <span class="nf">default_pars</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">pars</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;BallAndStick[</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gid</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_cell</span> <span class="o">=</span> <span class="n">BallAndStick</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="n">h</span><span class="o">.</span><span class="n">allsec</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sec</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sec</span><span class="o">.</span><span class="n">psection</span><span class="p">()[</span><span class="s2">&quot;density_mechs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">topology</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_cell</span><span class="o">.</span><span class="n">soma</span><span class="o">.</span><span class="n">wholetree</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">PlotShape</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plt</span><span class="p">)</span>
+    <span class="c1"># typical neuron parameters#</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_th&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">55.</span>     <span class="c1"># spike threshold [mV]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_reset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">75.</span>  <span class="c1"># reset potential [mV]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tau_m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># membrane time constant [ms]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;g_L&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.</span>       <span class="c1"># leak conductance [nS]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_init&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">75.</span>   <span class="c1"># initial potential [mV]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;E_L&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">75.</span>      <span class="c1"># leak reversal potential [mV]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tref&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.</span>       <span class="c1"># refractory time (ms)</span>
+
+    <span class="c1"># simulation parameters #</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">400.</span>  <span class="c1"># Total duration of simulation [ms]</span>
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.1</span>   <span class="c1"># Simulation time step [ms]</span>
+
+    <span class="c1"># external parameters if any #</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">pars</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;range_t&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">],</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>  <span class="c1"># Vector of discretized time points [ms]</span>
+
+    <span class="k">return</span> <span class="n">pars</span>
+
+<span class="k">def</span> <span class="nf">plot_volt_trace</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">sp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot trajetory of membrane potential for a single neuron</span>
+
+<span class="sd">    Expects:</span>
+<span class="sd">    pars   : parameter dictionary</span>
+<span class="sd">    v      : volt trajetory</span>
+<span class="sd">    sp     : spike train</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    figure of the membrane potential trajetory for a single neuron</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">V_th</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_th&#39;</span><span class="p">]</span>
+    <span class="n">dt</span><span class="p">,</span> <span class="n">range_t</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">],</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;range_t&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">sp_num</span> <span class="o">=</span> <span class="p">(</span><span class="n">sp</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">sp_num</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">40</span>  <span class="c1"># draw nicer spikes</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pars</span><span class="p">[</span><span class="s1">&#39;range_t&#39;</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">V_th</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;V (mV)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Membrane</span><span class="se">\n</span><span class="s1">potential&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;Threshold V$_{\mathrm</span><span class="si">{th}</span><span class="s1">}$&#39;</span><span class="p">],</span>
+             <span class="n">loc</span><span class="o">=</span><span class="p">[</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="k">def</span> <span class="nf">run_LIF</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">Iinj</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">durstep</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate the LIF dynamics with external input current</span>
+<span class="sd">    Args:</span>
+<span class="sd">    pars       : parameter dictionary</span>
+<span class="sd">    Iinj       : input current [pA]. The injected current here can be a value</span>
+<span class="sd">                 or an array</span>
+<span class="sd">    stop       : boolean. If True, use a current pulse</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    rec_v      : membrane potential</span>
+<span class="sd">    rec_sp     : spike times</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Set parameters</span>
+    <span class="n">V_th</span><span class="p">,</span> <span class="n">V_reset</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_th&#39;</span><span class="p">],</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_reset&#39;</span><span class="p">]</span>
+    <span class="n">tau_m</span><span class="p">,</span> <span class="n">g_L</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tau_m&#39;</span><span class="p">],</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;g_L&#39;</span><span class="p">]</span>
+    <span class="n">V_init</span><span class="p">,</span> <span class="n">E_L</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;V_init&#39;</span><span class="p">],</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;E_L&#39;</span><span class="p">]</span>
+    <span class="n">dt</span><span class="p">,</span> <span class="n">range_t</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">],</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;range_t&#39;</span><span class="p">]</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">dt</span>
+    <span class="n">Lt</span> <span class="o">=</span> <span class="n">range_t</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">tref</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tref&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Initialize voltage</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Lt</span><span class="p">)</span>
+    <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">V_init</span>
+
+    <span class="c1"># Set current time course</span>
+    <span class="n">Iinj</span> <span class="o">=</span> <span class="n">Iinj</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Lt</span><span class="p">)</span>
+    <span class="n">durstep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">durstep</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># If current pulse, set beginning and end to 0</span>
+    <span class="k">if</span> <span class="n">stop</span><span class="p">:</span>
+        <span class="c1"># Iinj[:int(len(Iinj) / 2) - (int(durstep/pars[&#39;dt&#39;])/2)] = 0</span>
+        <span class="c1"># Iinj[int(len(Iinj) / 2) + (int(durstep/pars[&#39;dt&#39;])/2):] = 0</span>
+
+        <span class="n">Iinj</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Iinj</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">durstep</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">Iinj</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Iinj</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">durstep</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Loop over time</span>
+    <span class="n">rec_spikes</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># record spike times</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="mf">0.</span>  <span class="c1"># the count for refractory duration</span>
+
+    <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Lt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">tr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># check if in refractory period</span>
+            <span class="n">v</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">V_reset</span>  <span class="c1"># set voltage to reset</span>
+            <span class="n">tr</span> <span class="o">=</span> <span class="n">tr</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># reduce running counter of refractory period</span>
+
+        <span class="k">elif</span> <span class="n">v</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">V_th</span><span class="p">:</span>  <span class="c1"># if voltage over threshold</span>
+            <span class="n">rec_spikes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>  <span class="c1"># record spike event</span>
+            <span class="n">v</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">V_reset</span>  <span class="c1"># reset voltage</span>
+            <span class="n">tr</span> <span class="o">=</span> <span class="n">tref</span> <span class="o">/</span> <span class="n">dt</span>  <span class="c1"># set refractory time</span>
+
+        <span class="c1"># Calculate the increment of the membrane potential</span>
+        <span class="n">dv</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_L</span><span class="p">)</span> <span class="o">+</span> <span class="n">Iinj</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">/</span> <span class="n">g_L</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">dt</span> <span class="o">/</span> <span class="n">tau_m</span><span class="p">)</span>
+
+        <span class="c1"># Update the membrane potential</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">it</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">+</span> <span class="n">dv</span>
+
+    <span class="c1"># Get spike times in ms</span>
+    <span class="n">rec_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rec_spikes</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+
+    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">rec_spikes</span>
+
+
+
+
+<span class="n">my_layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;700px&#39;</span>
+<span class="c1"># my_layout.description_width = &#39;initial&#39;</span>
+<span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}</span>
+<span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span>
+    <span class="n">current_injection</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="mf">50.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Simulation_Duration</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="mf">400.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Injection_Step</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                               <span class="n">description</span><span class="o">=</span><span class="s1">&#39;current step (vs continuous)&#39;</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Current_Step_Duration</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="mf">100.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">200.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Leak_Reversal</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="o">-</span><span class="mf">75.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="nb">max</span><span class="o">=-</span><span class="mf">30.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Leak_Conductance</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">AHP_Voltage</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="o">-</span><span class="mf">80.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mf">90.</span><span class="p">,</span> <span class="nb">max</span><span class="o">=-</span><span class="mf">30.</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Spike_Threshold</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="o">-</span><span class="mf">55.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mf">100.</span><span class="p">,</span> <span class="nb">max</span><span class="o">=-</span><span class="mf">30.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+    <span class="n">Membrane_Tau</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="mf">5.</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">15.</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+                               <span class="n">layout</span><span class="o">=</span><span class="n">my_layout</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">diff_DC</span><span class="p">(</span><span class="n">current_injection</span><span class="p">,</span>
+            <span class="n">Simulation_Duration</span><span class="p">,</span>
+            <span class="n">Injection_Step</span><span class="p">,</span>
+            <span class="n">Current_Step_Duration</span><span class="p">,</span>
+            <span class="n">Leak_Reversal</span><span class="p">,</span>
+            <span class="n">Leak_Conductance</span><span class="p">,</span>
+            <span class="n">AHP_Voltage</span><span class="p">,</span>
+            <span class="n">Spike_Threshold</span><span class="p">,</span>
+            <span class="n">Membrane_Tau</span><span class="p">):</span> <span class="c1">#I_dc=200., tau_m=10.):</span>
+    <span class="c1"># pars = default_pars(T=100.)</span>
+    <span class="c1"># pars[&#39;tau_m&#39;] = tau_m</span>
+    <span class="n">pars</span> <span class="o">=</span> <span class="n">default_pars</span><span class="p">(</span>
+      <span class="n">E_L</span> <span class="o">=</span> <span class="n">Leak_Reversal</span><span class="p">,</span>
+      <span class="n">g_L</span> <span class="o">=</span> <span class="n">Leak_Conductance</span><span class="p">,</span>
+      <span class="n">V_init</span> <span class="o">=</span> <span class="n">Leak_Reversal</span><span class="p">,</span>
+      <span class="n">V_reset</span> <span class="o">=</span> <span class="n">AHP_Voltage</span><span class="p">,</span>
+      <span class="n">V_th</span> <span class="o">=</span> <span class="n">Spike_Threshold</span><span class="p">,</span>
+      <span class="n">tau_m</span> <span class="o">=</span> <span class="n">Membrane_Tau</span><span class="p">,</span>
+      <span class="n">T</span><span class="o">=</span><span class="n">Simulation_Duration</span><span class="p">)</span>
+    <span class="c1"># pars=default_pars()</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">sp</span> <span class="o">=</span> <span class="n">run_LIF</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">Iinj</span><span class="o">=</span><span class="n">current_injection</span><span class="p">,</span><span class="n">stop</span><span class="o">=</span><span class="n">Injection_Step</span><span class="p">,</span><span class="n">durstep</span><span class="o">=</span><span class="n">Current_Step_Duration</span><span class="p">)</span>
+    <span class="n">plot_volt_trace</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">sp</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interactive demo initiated at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
 </pre></div>
 </div>
 </div>

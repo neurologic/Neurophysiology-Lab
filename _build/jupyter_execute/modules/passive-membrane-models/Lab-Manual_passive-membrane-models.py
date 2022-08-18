@@ -96,8 +96,8 @@ from ipywidgets import interactive, HBox, VBox, widgets, interact
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
 # 
 # **Setup**:
-# - Use one battery for $E_K$ and one battery for $E_{Na}$  
-# - Start with equal [resistors](#resistor-decoder) for $R_K$ and $R_{Na}$.
+# - Use one battery for $E_K$ and one battery for $E_{Na}$ (make sure to measure and record the voltage of each battery... you will also use this info in future labs)
+# - Start with equal [resistors](#resistor-decoder) for $R_K$ and $R_{Na}$ (make sure to measure and record the value of each resistor... you will also use this info in future labs).
 # - Place the recording/measureing electrode on the ‘inside’ of the membrane 
 # - Place the *ground* electrode on the ‘outside’
 # - Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called "passive-membrane-models.bonsai"
@@ -109,8 +109,8 @@ from ipywidgets import interactive, HBox, VBox, widgets, interact
 # - Right mouse click on the bottom of the membrane potential window to change the y axis range of the graph.
 # - Hover over the signal trace with your mouse to see the voltage. Record the measured 'membrane' potential of the model cell.
 # > Note that *membrane potential* is measured inside the cell relative to outside and the Getting amplifier *has a gain of 10*. 
-# - Keeping $R_K$ constant, change $R_{Na}$ and record the measured 'membrane' potential.
-# - Keeping $R_{Na}$ constant, change $R_K$ and record the measured 'membrane' potential.
+# - Keeping $R_K$ constant, change $R_{Na}$ and record the measured 'membrane' potential. (make sure to measure and record the value of each resistor... you will also use this info in future labs)
+# - Keeping $R_{Na}$ constant, change $R_K$ and record the measured 'membrane' potential. (make sure to measure and record the value of each resistor... you will also use this info in future labs)
 # - Keeping $R_K$ and $R_{Na}$ constant, change the polarity of the batteries and record what happens to the measured 'membrane' potential with each change in polarity configuration. 
 # - Stop the data acquisition by hitting the *stop* button in Bonsai.
 # 

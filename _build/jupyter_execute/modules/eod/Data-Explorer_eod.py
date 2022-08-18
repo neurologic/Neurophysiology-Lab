@@ -50,12 +50,6 @@
 # <a id="setup"></a>
 # # Setup
 
-# In[ ]:
-
-
-#@title {display-mode: "form" }
-
-
 # Import and define functions
 
 # In[ ]:
@@ -80,7 +74,9 @@ import random
 
 from pathlib import Path
 
-from ipywidgets import interactive, HBox, VBox, widgets, interact
+from ipywidgets import widgets, interact
+get_ipython().run_line_magic('config', "InlineBackend.figure_format = 'retina'")
+plt.style.use("https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle")
 
 print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
@@ -101,6 +97,8 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 
 # Import data digitized with *Nidaq USB6211* and recorded using *Bonsai-rx* as a *.bin* file
+# 
+# If you would like sample this Data Explorer, but do not have data, you can download an example from [here]('https://drive.google.com/u/0/uc?id=10cxBdfnEwRv77-dwcReqHyjYv-uLODe4&export=download') and then upload your file to Google Colab (or access the file through Drive after uploading it to your Drive). 
 
 # In[ ]:
 
@@ -111,18 +109,12 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-filepath = '/Users/kperks/mnt/OneDrive - wesleyan.edu/Teaching/Neurophysiology_FA22/data/large_chamber_0fish_4channel2022-03-25T16_11_25.8516352-04_00'
+# filepath = '/Users/kperks/Downloads/eod-50k-stim2022-08-17T14_50_39.bin'
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
-# sampling_rate = None #@param
-# number_channels = None #@param
-
-# downsample = False #@param
-# newfs = 10000 #@param
-
 sampling_rate = 50000 #@param
-number_channels = 4 #@param
+number_channels = 2 #@param
 
 downsample = False #@param
 newfs = 10000 #@param
@@ -137,7 +129,7 @@ filepath = Path(filepath)
 data = np.fromfile(Path(filepath), dtype = np.float64)
 data = data.reshape(-1,number_channels)
 data_dur = np.shape(data)[0]/sampling_rate
-print('duration of recording was %0.2f seconds' %dur)
+print('duration of recording was %0.2f seconds' %data_dur)
 
 fs = sampling_rate
 if downsample:
@@ -157,13 +149,7 @@ print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5
 #@title {display-mode: "form"}
 
 #@markdown Run this code cell to plot imported data. <br> 
-#@markdown Use the range slider under the plot to scroll through the data in time.
-#@markdown > NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork
-
-f = go.FigureWidget(layout=go.Layout(height=500, width=800))
-for i,chan in enumerate(range(number_channels)):
-  f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,chan],
-                         name=str(chan),opacity=1))
+#@markdown Use the range slider to scroll through the data in time.
 
 slider = widgets.FloatRangeSlider(
     min=0,
@@ -171,23 +157,21 @@ slider = widgets.FloatRangeSlider(
     value=(0,1),
     step= 1,
     readout=False,
-    description='Time')
-slider.layout.width = '800px'
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
 
-# our function that will modify the xaxis range
-def response(x):
-    with f.batch_update():
-        starti = int(x[0]*fs)
-        stopi = int(x[1]*fs)
+# a function that will modify the xaxis range
+def update_plot(x):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*fs)
+    stopi = int(x[1]*fs)
+    ax.plot(time[starti:stopi], data[starti:stopi,:])
 
-        for i in range(number_channels):
-            f.data[i].x = time[starti:stopi]
-            f.data[i].y = data[starti:stopi,i]
+w = interact(update_plot, x=slider);
 
-vb = VBox((f, interactive(response, x=slider)))
-vb.layout.align_items = 'center'
-vb
 
+# For a more extensive ***RAW*** Data Explorer than the one provided in the above figure, use the [DataExplorer.py](https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Data-Explorer.py) application found in the [howto section] of the course website.
 
 # <a id="one"></a>
 # # Part I. Event Detection
@@ -207,31 +191,24 @@ vb
 y = data - np.median(data)
 y = np.sum(np.abs(y),1)
 
-f = go.FigureWidget(layout=go.Layout(height=500, width=800))
-f.add_trace(go.Scatter(x = time[0:fs], y = y[0:fs],
-                         name='summed signal',opacity=1))
-
 slider = widgets.FloatRangeSlider(
     min=0,
     max=data_dur,
     value=(0,1),
     step= 1,
     readout=False,
-    description='Time')
-slider.layout.width = '800px'
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
 
-# our function that will modify the xaxis range
-def response(x):
-    with f.batch_update():
-        starti = int(x[0]*fs)
-        stopi = int(x[1]*fs)
+# a function that will modify the xaxis range
+def update_plot(x):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*fs)
+    stopi = int(x[1]*fs)
+    ax.plot(time[starti:stopi], y[starti:stopi])
 
-        f.data[0].x = time[starti:stopi]
-        f.data[0].y = y[starti:stopi]
-
-vb = VBox((f, interactive(response, x=slider)))
-vb.layout.align_items = 'center'
-vb
+w = interact(update_plot, x=slider);
 
 
 # In[ ]:
@@ -242,7 +219,7 @@ vb
 #@markdown Fill in this form with the detection threshold. 
 
 detection_threshold = None #@param
-detection_threshold = 0.05 #@param
+# detection_threshold = 0.02 #@param
 #@markdown Then run the code cell to detect peaks (events)
 
 y = data - np.median(data)
@@ -262,14 +239,6 @@ eod_times = r[0]/fs
 #@markdown Run this code cell to plot the signal on each trial 
 #@markdown overlaid with a scatter of EOD times detected using your threshold. 
 #@markdown > NOTE: Do not plot too large of a time window at once... it will slow down the plot and/or bork
-
-f = go.FigureWidget()
-
-for i,chan in enumerate(range(number_channels)):
-    f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,chan],
-                         name=str(chan),opacity=1))
-f.add_trace(go.Scatter(x = eod_times[(eod_times>0) & (eod_times<1)],
-                       mode = "markers", marker=dict( color='black')))
     
 slider = widgets.FloatRangeSlider(
     min=0,
@@ -277,88 +246,92 @@ slider = widgets.FloatRangeSlider(
     value=(0,1),
     step= 1,
     readout=False,
-    description='Time')
-slider.layout.width = '800px'
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
 
-# our function that will modify the xaxis range
-def response(x):
-    with f.batch_update():
-        starti = int(x[0]*fs)
-        stopi = int(x[1]*fs)
+# a function that will modify the xaxis range
+def update_plot(x):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*fs)
+    stopi = int(x[1]*fs)
+    ax.plot(time[starti:stopi], data[starti:stopi,:])
+    ax.scatter(eod_times[(eod_times>x[0]) & (eod_times<x[1])],
+               [np.median(data)] * len(eod_times[(eod_times>x[0]) & (eod_times<x[1])]),
+              zorder=3,color='black',s=50)
 
-        for i in range(number_channels):
-            f.data[i].x = time[starti:stopi]
-            f.data[i].y = data[starti:stopi,i]
-        f.data[number_channels].x = eod_times[(eod_times>x[0]) & (eod_times<x[1])]
-        f.data[number_channels].y = [np.median(data)] * len(eod_times[(eod_times>x[0]) & (eod_times<x[1])])
-
-vb = VBox((f, interactive(response, x=slider)))
-vb.layout.align_items = 'center'
-vb
+w = interact(update_plot, x=slider);
 
 
 # Once you know the times of each peak (each event), we can look at the waveforms of those events. To do this, we plot the peak of the signal at the event time and some duration before and after that peak. 
 # 
 # > Note: If you do not think you are detecting enough of the events or if you think you are detecting too much noise, modify your detection threshold and go through the detection steps in Part I again.
 
-# In[ ]:
+# In[86]:
 
 
 #@title {display-mode: "form"}
 
 #@markdown Select a pre and post event duration (dur; in milliseconds) to plot for each EOD.
-dur = 0.3 #@param
+eod_range = 0.3 #@param
 
-#@markdown Set the y-axis range based on your raw data.
-ymin = -0.3
-ymax = 0.1
+# #@markdown Set the y-axis range based on your raw data.
+# ymin = -0.05 #@param
+# ymax = 0.1 #@param
 
 #@markdown Then run this cell to create an interactive plot with a slider to scroll through EOD events and channels.
-win = int(dur/1000*fs)
+win_ = int(eod_range/1000*fs)
 
-# Create plotly widget plot
-f = go.FigureWidget(layout=go.Layout(height=600, width=600), layout_yaxis_range=[ymin,ymax])
+etime = np.linspace(-eod_range,eod_range,win_*2)
 
-eodi = 0
-chan = 0
+slider_yrange = widgets.FloatRangeSlider(
+    min=np.min(np.min(data)),
+    max=np.max(np.max(data)),
+    value=[np.min(np.min(data)),np.max(np.max(data))],
+    step=0.01,
+    continuous_update=False,
+    readout=False,
+    description='yrange'
+)
+slider_yrange.layout.width = '600px'
 
-events = np.asarray([data[(int(fs*t)-win):(int(fs*t)+win),chan] for t in eod_times 
-          if (((int(fs*t)-win)>0) & ((int(fs*t)+win)<np.shape(data)[0]))]).T
-
-etime = np.linspace(-0.0003,0.0003,np.shape(events)[0])
-f.add_trace(go.Scatter(x = etime, y = events[:,eodi],
-                         name='EOD #' + str(i),opacity=1))
-    
 slider_eod = widgets.IntSlider(
     min=0,
     max=np.shape(events)[1],
     value=0,
     step= 1,
+    continuous_update=False,
     description='EOD number')
-slider_eod.layout.width = '800px'
+slider_eod.layout.width = '600px'
 
 slider_chan = widgets.IntSlider(
     min=0,
     max=number_channels-1,
     value=0,
     step= 1,
+    continuous_update=False,
     description='channel')
-slider_chan.layout.width = '400px'
+slider_chan.layout.width = '300px'
 
-# our function that will modify the xaxis range
-def response(eodi,chan):
-    events = np.asarray([data[(int(fs*t)-win):(int(fs*t)+win),chan] for t in eod_times 
-          if (((int(fs*t)-win)>0) & ((int(fs*t)+win)<np.shape(data)[0]))]).T
-    f.data[0].y = events[:,eodi]
+# a function that will modify the xaxis range
+def update_plot(eodi,chan,yrange):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    events = np.asarray([data[(int(fs*t)-win_):(int(fs*t)+win_),chan] for t in eod_times 
+          if (((int(fs*t)-win_)>0) & ((int(fs*t)+win_)<np.shape(data)[0]))]).T
+    ax.plot(etime,events[:,eodi],color='black',linewidth=3)
+    ax.set_ylim(yrange[0],yrange[1]);
 
-vb = VBox((f, interactive(response, eodi=slider_eod, chan=slider_chan)))
-vb.layout.align_items = 'center'
-vb
+w = interact(update_plot, eodi=slider_eod, chan=slider_chan,yrange=slider_yrange);
 
 
 # Take some time to explore and observe the variation in EOD waveforms. 
 # 
-# There are a fundamental set of processing techniques we use to quantify event time series (such as spikes from a neuron or EODs from a fish): rate, isi, filtered/smoothed. In Part II - Part IV, you will work with each of these analyses.
+# There are a fundamental set of processing techniques we use to quantify event time series (such as spikes from a neuron or EODs from a fish): 
+# - rate
+# - isi
+# - filtered/smoothed amplitude
+# 
+# In **Part II - Part IV**, you will work with each of these analyses.
 
 # <a id="two"></a>
 # # Part II. Rate
@@ -370,10 +343,41 @@ vb
 # <div class="alert-info">
 # <b>Tip:</b>
 #     <li> <b>len(variable)</b> : len() is a function used to get the number of elements in an array called *variable*</li>
-#     <li> the time of the first and last event are simply the event times</li>
 #     <li> <code class="lang-python">+ - * / </code> are the symbols for addition, subtraction, multiplication, and division</li>
 #     <li><b>eod_times</b> is a variable that contains the list of EOD times</li>
 # </div>
+# 
+# 
+# <div>
+# <!--     class="alert-info"> -->
+#     <p> This is a good time to introduce "indexing" lists in python, because eod_times is a list (with the earliest eod time in the first position of the list and the latest eod time in the last position of the list).</p>
+#     <p> The following table shows, by example, how you would get the value at each position in a list (<b>L</b>) by indexing the list. In this examples, the values in the list are <b>t0, t1, t2</b>.</p>
+#     <pre class="result notranslate">L = [t0, t1, t2]</pre>
+# <table class="table table-bordered" style="text-align:center;">
+# <tbody><tr>
+# <th style="text-align:center;width:33%">If you type: </th>
+# <th style="text-align:center;width:33%">Then you will get: </th>
+# <th style="text-align:center;width:33%">Because... </th>
+# </tr>
+# <tr>
+# <td>L[2]</td>
+# <td>t3</td>
+# <td>you are asking for an offset of 2 positions (start at zero)</td>
+# </tr>
+# <tr>
+# <td class="ts">L[-2]</td>
+# <td class="ts">t1</td>
+# <td>negative offsets count from the right</td>
+# </tr>
+# <tr>
+# <td>L[1:]</td>
+# <td>[t1, t2]</td>
+# <td>a colon "slices" a list, which means it returns a section of the list (in this case, from position 1 until the end)</td>
+# </tr>
+# </tbody></table>
+#     </div>
+#     
+# Finally, if you want to print the entire contents of a list to the output of a code cell, use the command ```print(list)``` where "list" can be the name of any list (in this case *eod_times*)
 # 
 # In the code cell below, write code that would calculate the average EOD rate in your recording. Store the result as a variable called ```average_rate```. 
 
@@ -401,50 +405,57 @@ print(f'The average EOD rate is {average_rate}')
 # You can control the number of subsampled sets and the duration of each set. 
 # The script (hidden) in the code cell below randomly selects samples of the specified duration from throughout the total recording. It repeats this random selection process ***N*** times. 
 # 
-# Once you specify the bootstrapping parameters in the form below, run the code cell. You will see a plot of the average rate of each subsample (each black point in the scatterplot), and the distribution (quantiles) of the set of subsamples in boxplot format.
+# Once you specify the bootstrapping parameters in the form below, run the code cell. You will see a plot of the average rate of each subsample (each black point in the scatterplot), and the distribution (quantiles) of the set of subsamples in [boxplot](https://en.wikipedia.org/wiki/Box_plot) format.
 
-# In[ ]:
+# In[81]:
 
 
 #@title {display-mode: "form"}
 
-#@markdown Specify a duration time to subsample and a number of times to sample. 
-#@markdown The duration should be at least half the duration of your recording. 
-#@markdown See what changing these parameters does to your result.
-#@markdown > NOTE: duration is in seconds
+#@markdown Run this code cell to enable the interactive analysis.
+#@markdown Specify a duration time (seconds) for each subsample of the data 
+#@markdown and a number of times to subsample the data.  
+#@markdown Explore what changing these parameters does to your result.
 
-duration = None #@param
-N = None #@param
+slider_duration = widgets.FloatSlider(
+    min=0,
+    max=np.min([15,data_dur/2]),
+    value=1,
+    step= 0.001,
+    readout=True,
+    continuous_update=False,
+    description='sample duration')
+slider_duration.layout.width = '600px'
 
-rate_ = []
-for i in range(N):
-    t = random.uniform(np.min(eod_times)+duration,np.max(eod_times)-duration)
-    rate_.append(sum((eod_times>t) & (eod_times<t+duration))/duration)
+slider_N = widgets.IntSlider(
+    min=0,
+    max=100,
+    value=10,
+    step= 1,
+    readout=True,
+    continuous_update=False,
+    description='number of reps')
+slider_N.layout.width = '600px'
 
-plt.figure(figsize=(3,5));
-sns.boxplot(y=rate_, color = 'grey');
-sns.stripplot(y = rate_, color = 'black',size=10);
-plt.ylabel('rate',fontsize=14);
-plt.yticks(fontsize=14);
+# a function that will modify the xaxis range
+def update_plot(duration,N):
+    
+    rate_ = []
+    for i in range(N):
+        t = random.uniform(np.min(eod_times)+duration,np.max(eod_times)-duration)
+        rate_.append(sum((eod_times>t) & (eod_times<t+duration))/duration)
+
+    fig,ax = plt.subplots(figsize=(3,5),num=1);
+    sns.boxplot(y=rate_, color = 'grey',ax = ax);
+    sns.stripplot(y = rate_, color = 'black',size=10,ax = ax);
+    ax.set_ylabel('rate (eod/sec)')#,fontsize=14);
+
+w = interact(update_plot, duration=slider_duration, N=slider_N);
 
 
-# If you increase/decrease the duration of the subsampled data, does the variance of the estimated rate increase/decrease?
+# If you increase/decrease the ***duration*** of the subsampled data, does the *variance* of the estimated rate increase/decrease? Is there an '*asymptote*' to the change in variance? How does that asymptote influence your choice of the *duration* parameter in analyzing your data?
 # 
-# If you decrease/increase N, does the distribution of the estimate change? How?
-
-# ## Variability in EOD rate
-# 
-# Variance, Standard Deviation
-# Histogram
-
-# In[ ]:
-
-
-variability_std = np.std(np.diff(eod_times))
-print(f"Standard Deviation of rate (1/time between each pair of pulses) = {variability_std}")
-
-# plot histogram
-
+# If you decrease/increase ***N***, does the distribution of the estimate change? How?
 
 # <a id="three"></a>
 # # Part III. ISI
@@ -487,7 +498,11 @@ fig.show()
 
 # What should the titles of the x and y axes be?
 # 
-# How does the isi relate to the rate? How would you calculate *instantaneous* rate (as opposed to the average rate across some window of time)?
+# How does the isi relate to the rate? Think about how would you calculate *instantaneous* rate (as opposed to the average rate across some window of time)?
+# 
+# Would you consider the isi relatively *variable* or *constant*? Why?
+# 
+# We can quantify how variable/constant something is by looking at the **distribution** of its values.
 
 # In[ ]:
 
@@ -507,6 +522,10 @@ plt.yticks(fontsize=14);
 # # Part IV. Filtered
 # 
 # By *convolving* a waveform with a time series, each event is transformed into a waveform. When all of these event waveforms are added together, you get a continuous signal instead of a discrete time series. This transformation is sometimes called "smoothing" and is required before some calculations can be made (such as correlation analysis). 
+# 
+# In this instance, we are using a ***Gaussian filter***. Therefore, the smoothness of the signal is controlled by a parameter called ***sigma*** that you can interactively control with a slider after running the code cell below. 
+# 
+# Details of the function used to accomplish this processing step can be found [at scipy.ndimage.gaussian_filter](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html). For more general information on what a Gaussian is, you can consult the [wikipedia page on the Gaussian distribution](https://en.wikipedia.org/wiki/Normal_distribution). In this case, the *sigma* parameter of the Gaussian filter is equivalent to the *standard deviation* of a Gaussian distribution.
 
 # In[ ]:
 
@@ -516,59 +535,46 @@ plt.yticks(fontsize=14);
 #@markdown Choose a smoothing filter width ```sigma``` (the standard deviation of the *gaussian kernel* in seconds). <br>
 #@markdown Then run this code cell to plot the smoothed signal from discrete EOD times. 
 
-sigma = 0.1 #@param
+slider_sigma = widgets.FloatSlider(
+    min=0,
+    max=1,
+    value=(0.1),
+    step= 0.01,
+    readout=True,
+    continuous_update=False,
+    description='sigma')
+slider_sigma.layout.width = '600px'
 
-filtered_fs = 1000
-
-sigma = sigma*filtered_fs
-
-eod_samps = [int(t*filtered_fs) for t in eod_times]
-
-filtered_time = np.linspace(0,data_dur,int(data_dur*filtered_fs))
-filtered_y = unit_impulse(len(filtered_time),eod_samps)
-filtered_y = ndimage.gaussian_filter1d(filtered_y,sigma)*filtered_fs
-
-# Create plotly widget plot
-f = go.FigureWidget(layout=go.Layout(height=500, width=800), layout_yaxis_range=[np.min(filtered_y),np.max(filtered_y)])
-
-i = 0
-f.add_trace(go.Scatter(x = filtered_time, y = filtered_y,
-                         name='smoothed EOD times',opacity=1,line_color='black',mode='lines'))
-    
 slider = widgets.FloatRangeSlider(
     min=0,
     max=data_dur,
     value=(0,1),
     step= 1,
     readout=False,
-    description='Time')
-slider.layout.width = '800px'
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
 
-# our function that will modify the xaxis range
-def response(x):
-    with f.batch_update():
-        starti = int(x[0]*filtered_fs)
-        stopi = int(x[1]*filtered_fs)
+# a function that will modify the xaxis range
+def update_plot(x,sigma):
+    
+    filtered_fs = 1000
+    sigma = sigma*filtered_fs
 
-        f.data[0].x = filtered_time[starti:stopi]
-        f.data[0].y = filtered_y[starti:stopi]
-            
-vb = VBox((f, interactive(response, x=slider)))
-vb.layout.align_items = 'center'
-vb
+    eod_samps = [int(t*filtered_fs) for t in eod_times]
 
-## simple plot
-# plt.figure()
-# plt.plot(filtered_time,ndimage.gaussian_filter1d(filtered_y,10,axis=0)*filtered_fs)
-# plt.xlim(0,4)
-# plt.scatter(eod_times[1:],1/np.diff(eod_times))
+    filtered_time = np.linspace(0,data_dur,int(data_dur*filtered_fs))
+    filtered_y = unit_impulse(len(filtered_time),eod_samps)
+    filtered_y = ndimage.gaussian_filter1d(filtered_y,sigma=sigma,mode='wrap')*filtered_fs
 
-## simple plotly
-# plot the isi at each EOD time.
-# f = go.Figure(layout=go.Layout(height=500, width=800))
-# f.add_trace(go.Scatter(x=filtered_time, y=filtered_y, mode='lines',name='filtered EOD times',line_color='black'))
-# f
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*filtered_fs)
+    stopi = int(x[1]*filtered_fs)
+    ax.plot(filtered_time[starti:stopi], filtered_y[starti:stopi])
+    ax.set_xlabel('msec')
+    ax.set_ylabel('a.u.')
 
+w = interact(update_plot, x=slider, sigma=slider_sigma);
 
 
 # <a id="five"></a>
