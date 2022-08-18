@@ -28,13 +28,11 @@ Cartoon of the proteins involved in the transduction of light energy into electr
 
 Changing the brightness of the light will change the number of rhodopsin molecules that are activated, and thus the amount of second messenger that is produced. This is analogous to varying the amount of transmitter at a metabotropic synapse.
 
-
-
-
-
 ## Pages:
 - [](../crayfish-erg/Lab-Manual_crayfish-erg.md)
 - [](../crayfish-erg/Data-Explorer_crayfish-erg.ipynb)
 - [](../crayfish-erg/Responses_crayfish-erg.ipynb)
 
+## Additional Resources: 
 
+- [Circadian clock function in isolated eyestalk tissue of crayfish.](https://doi.org/10.1098%2Frspb.1998.0507)
