@@ -1,0 +1,5 @@
+- filepath '/Users/kperks/Downloads/eod-50k-stim2022-08-17T14_50_39.bin'
+- fs 50000
+- n 2
+- 1
+- [0,1]
