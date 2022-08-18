@@ -380,7 +380,7 @@ w = interact(update_plot, eodi=slider_eod, chan=slider_chan, xrange=slider_xrang
 # </tr>
 # <tr>
 # <td>L[2]</td>
-# <td>t3</td>
+# <td>t2</td>
 # <td>you are asking for an offset of 2 positions (start at zero)</td>
 # </tr>
 # <tr>
