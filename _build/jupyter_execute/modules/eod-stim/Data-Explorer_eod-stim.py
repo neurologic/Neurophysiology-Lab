@@ -27,10 +27,10 @@
 
 # Import and define functions
 
-# In[ ]:
+# In[2]:
 
 
-#@title { display-mode: "form" }
+#@title {display-mode: "form" }
 
 #@markdown Run this code cell to import packages and define functions 
 import numpy as np
@@ -39,11 +39,19 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from scipy import ndimage
-from scipy.signal import hilbert,medfilt,resample, find_peaks
+from scipy.signal import hilbert,medfilt,resample, find_peaks, unit_impulse
 import seaborn as sns
 from datetime import datetime,timezone,timedelta
 pal = sns.color_palette(n_colors=15)
 pal = pal.as_hex()
+import matplotlib.pyplot as plt
+import random
+
+from pathlib import Path
+
+from ipywidgets import widgets, interact
+get_ipython().run_line_magic('config', "InlineBackend.figure_format = 'retina'")
+plt.style.use("https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle")
 
 print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
@@ -53,9 +61,9 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 # In[ ]:
 
 
-#@title { display-mode: "form" }
+#@title {display-mode: "form" }
 
-#@markdown Run this cell to mount your Google Drive. 
+#@markdown Run this cell to mount your Google Drive.
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -64,23 +72,27 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
 
 # Import data digitized with *Nidaq USB6211* and recorded using *Bonsai-rx* as a *.bin* file
+# 
+# If you would like sample this Data Explorer, but do not have data, you can download an example from [here](https://drive.google.com/file/d/10cxBdfnEwRv77-dwcReqHyjYv-uLODe4/view?usp=sharing) and then upload the file to Google Colab (or access the file through Drive after uploading it to your Drive). If you are using this example file, the samplerate was 50000 on two channels (each channel was a set of bipolar electrodes perpendicular to each other with a fisn in the middle). 
 
-# In[ ]:
+# In[3]:
 
 
-#@title { display-mode: "form" }
+#@title {display-mode: "form" }
 
 #@markdown Specify the file path 
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
-filepath = "full filepath goes here"  #@param 
+# filepath = "full filepath goes here"  #@param 
+filepath = '/Users/kperks/Downloads/eod-50k2022-08-17T14_32_36.bin'
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
-sampling_rate = NaN #@param
-number_channels = NaN #@param
+sampling_rate = 50000 #@param
+number_channels = 2 #@param
 
 downsample = False #@param
+newfs = 10000 #@param
 
 #@markdown After you have filled out all form fields, 
 #@markdown run this code cell to load the data. 
@@ -91,25 +103,157 @@ filepath = Path(filepath)
 #################################
 data = np.fromfile(Path(filepath), dtype = np.float64)
 data = data.reshape(-1,number_channels)
-dur = np.shape(data)[0]/sampling_rate
-print('duration of recording was %0.2f seconds' %dur)
+data_dur = np.shape(data)[0]/sampling_rate
+print('duration of recording was %0.2f seconds' %data_dur)
 
-fs = 1/sampling_rate
+fs = sampling_rate
 if downsample:
-    newfs = 2500 #downsample emg data
+    # newfs = 10000 #downsample emg data
     chunksize = int(sampling_rate/newfs)
     data = data[0::chunksize,:]
-    fs = np.shape(data)[0]/dur
+    fs = int(np.shape(data)[0]/data_dur)
 
-time = np.linspace(0,np.shape(data)[0]/newfs,np.shape(data)[0])
-
+time = np.linspace(0,data_dur,np.shape(data)[0])
 
 print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 
-print('Now be a bit patient while it plots.')
-fig = go.Figure()
-fig.add_trace(go.Scatter(x = time, y = data,line_color='black',name='emg0'))
-fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800, height=500)
+
+# In[4]:
+
+
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to plot imported data. <br> 
+#@markdown Use the range slider to scroll through the data in time.
+#@markdown Be patient with the range refresh... the more data you are plotting the slower it will be. 
+
+slider = widgets.FloatRangeSlider(
+    min=0,
+    max=data_dur,
+    value=(0,1),
+    step= 1,
+    readout=True,
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
+
+# a function that will modify the xaxis range
+def update_plot(x):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*fs)
+    stopi = int(x[1]*fs)
+    ax.plot(time[starti:stopi], data[starti:stopi,:])
+
+w = interact(update_plot, x=slider);
+
+
+# For a more extensive ***RAW*** Data Explorer than the one provided in the above figure, use the [DataExplorer.py](https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py) application found in the [howto section](https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html) of the course website.
+
+# <a id="one"></a>
+# # Part I. Event Detection
+# 
+# We will use "peak detection" for detecting both the stimulu pulses and the eods.
+# 
+# Python has built-in algorithms for detecting "peaks" in a signal. However, it will detect *all* peaks. Therefore, the function takes in arguments that specify parameters for minimum height that can count as a peak and a minimum acceptible interval between independent peaks. 
+# 
+# ## EOD times
+# First, we will subtract the median of the signal, take the absolute value of the signal, and sum across all channels (if you recorded more than one). With this single combined signal, we will detect peaks. 
+
+# In[5]:
+
+
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to plot the combined signal for peak detection. 
+#@markdown Use the plot to determine an appropriate detection threshold.
+
+y = data - np.median(data)
+y = np.sum(np.abs(y),1)
+
+slider = widgets.FloatRangeSlider(
+    min=0,
+    max=data_dur,
+    value=(0,1),
+    step= 1,
+    readout=False,
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
+
+# a function that will modify the xaxis range
+def update_plot(x):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*fs)
+    stopi = int(x[1]*fs)
+    ax.plot(time[starti:stopi], y[starti:stopi])
+
+w = interact(update_plot, x=slider);
+
+
+# In[6]:
+
+
+#@title {display-mode: "form"}
+
+#@markdown Fill in this form with the detection threshold. 
+
+detection_threshold = None #@param
+detection_threshold = 0.02 #@param
+#@markdown Then run the code cell to detect peaks (events)
+
+y = data - np.median(data)
+y = np.sum(np.abs(y),1)
+
+d = 0.0003*fs #minimum time allowed between distinct events
+r = find_peaks(y,height=detection_threshold,distance=d)
+
+eod_times = r[0]/fs
+
+
+# In[7]:
+
+
+#@title {display-mode: "form"}
+
+#@markdown Run this code cell to plot the signal on each trial 
+#@markdown overlaid with a scatter of EOD times detected using your threshold. 
+    
+slider = widgets.FloatRangeSlider(
+    min=0,
+    max=data_dur,
+    value=(0,1),
+    step= 1,
+    readout=False,
+    continuous_update=False,
+    description='Time Range (s)')
+slider.layout.width = '600px'
+
+# a function that will modify the xaxis range
+def update_plot(x):
+    fig, ax = plt.subplots(figsize=(10,5),num=1); #specify figure number so that it does not keep creating new ones
+    starti = int(x[0]*fs)
+    stopi = int(x[1]*fs)
+    ax.plot(time[starti:stopi], data[starti:stopi,:])
+    ax.scatter(eod_times[(eod_times>x[0]) & (eod_times<x[1])],
+               [np.median(data)] * len(eod_times[(eod_times>x[0]) & (eod_times<x[1])]),
+              zorder=3,color='black',s=50)
+
+w = interact(update_plot, x=slider);
+
+
+# Once you know the times of each peak (each event), we can look at the waveforms of those events. To do this, we plot the peak of the signal at the event time and some duration before and after that peak. 
+# 
+# > Note: If you do not think you are detecting enough of the events or if you think you are detecting too much noise, modify your detection threshold and go through the detection steps in Part I again.
+
+# ## Stimulus Times
+
+# In[ ]:
+
+
+# first, detect peaks on stimulus channel
+
+# then, take dirivative of stimulus channel in the 500ms(?) before the peak and the argmax index will be the stimulus onset time.
+
 
 
 # <a id="one"></a>
@@ -117,14 +261,48 @@ fig.update_layout(xaxis_title="time(seconds)", yaxis_title='amplitude',width=800
 # 
 # [toc](#toc)
 # 
-# We know that the EOD rate is variable (you measured this variability last week (<a href='https://neurologic.github.io/Neurophysiology-Lab/modules/eod/eod_landing.html' target="_blank" rel="noopener noreferrer">Electric Organ Discharge</a>). Variability can be random or non-random. Are events distributed randomly in time or is there some <i>structure</i> to how events are generated?
+# We know that the EOD rate is variable (you measured this variability last week (<a href='https://neurologic.github.io/Neurophysiology-Lab/modules/eod/Data-Explorer_eod.html' target="_blank" rel="noopener noreferrer">Electric Organ Discharge</a>). Variability can be random or non-random. Are events distributed randomly in time or is there some <i>structure</i> to how events are generated?
 # 
-# Let's compare the time series of EOD pulses with a random ***Poisson model*** with the same average rate. 
+# Let's compare the time series of EOD pulses to a ***Poisson model*** with the same average rate. A Poisson Process is a model for a series of discrete events where the average time between events is known, but the exact timing of events is random. 
 
-# In[ ]:
+# In[1]:
 
 
-...
+from scipy.stats import poisson
+
+
+# In[8]:
+
+
+# get average eod rate 
+average_rate = len(eod_times)/((eod_times[-1]-eod_times[0]))
+
+
+# In[9]:
+
+
+average_rate
+
+
+# In[10]:
+
+
+# use average to get poisson based on average
+r = poisson.rvs(average_rate, size=len(eod_times))
+
+
+# In[31]:
+
+
+1/poisson.rvs(average_rate, size=1)
+
+
+# In[11]:
+
+
+sim = [0]
+for t in eod_times:
+    sim.append(sim[-1]+poisson.rvs(average_rate, size=1))
 
 
 # <a id="two"></a>

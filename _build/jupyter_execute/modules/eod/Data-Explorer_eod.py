@@ -14,7 +14,7 @@
 # - Time series analyses:
 #     - [Part II. Rate](#two)
 #     - [Part III. ISI](#three)
-#     - [Part IV. Filtered](#four)
+#     - [Part IV. Convolution](#four)
 # - [Part V. Sampling Rate](#five)
 
 # <a id="intro"></a>
@@ -538,7 +538,7 @@ plt.yticks(fontsize=14);
 
 
 # <a id="four"></a>
-# # Part IV. Filtered
+# # Part IV. Convolution
 # 
 # By *convolving* a waveform with a time series, each event is transformed into a waveform. When all of these event waveforms are added together, you get a continuous signal instead of a discrete time series. This transformation is sometimes called "smoothing" and is required before some calculations can be made (such as correlation analysis). 
 # 
