@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.6.3"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:mx="clr-namespace:Bonsai.DAQmx;assembly=Bonsai.DAQmx"
+                 xmlns:dsp="clr-namespace:Bonsai.Dsp;assembly=Bonsai.Dsp"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="mx:AnalogInput">
+          <mx:SignalSource />
+          <mx:SampleRate>50000</mx:SampleRate>
+          <mx:ActiveEdge>Rising</mx:ActiveEdge>
+          <mx:SampleMode>ContinuousSamples</mx:SampleMode>
+          <mx:BufferSize>25000</mx:BufferSize>
+          <mx:SamplesPerRead>-1</mx:SamplesPerRead>
+          <mx:Channels>
+            <mx:AnalogInputChannelConfiguration>
+              <mx:ChannelName />
+              <mx:MinimumValue>-1</mx:MinimumValue>
+              <mx:MaximumValue>1</mx:MaximumValue>
+              <mx:PhysicalChannel>Dev2/ai0</mx:PhysicalChannel>
+              <mx:TerminalConfiguration>Differential</mx:TerminalConfiguration>
+              <mx:VoltageUnits>Volts</mx:VoltageUnits>
+            </mx:AnalogInputChannelConfiguration>
+            <mx:AnalogInputChannelConfiguration>
+              <mx:ChannelName />
+              <mx:MinimumValue>-1</mx:MinimumValue>
+              <mx:MaximumValue>1</mx:MaximumValue>
+              <mx:PhysicalChannel>Dev2/ai1</mx:PhysicalChannel>
+              <mx:TerminalConfiguration>Differential</mx:TerminalConfiguration>
+              <mx:VoltageUnits>Volts</mx:VoltageUnits>
+            </mx:AnalogInputChannelConfiguration>
+          </mx:Channels>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:SelectChannels">
+          <dsp:Channels>
+            <dsp:int>1</dsp:int>
+          </dsp:Channels>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:SelectChannels">
+          <dsp:Channels>
+            <dsp:int>0</dsp:int>
+          </dsp:Channels>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="dsp:MatrixWriter">
+            <dsp:Path>eod-stim-test-gp.bin</dsp:Path>
+            <dsp:Suffix>FileCount</dsp:Suffix>
+            <dsp:Overwrite>false</dsp:Overwrite>
+            <dsp:Layout>ColumnMajor</dsp:Layout>
+          </Combinator>
+        </Builder>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="0" To="2" Label="Source1" />
+      <Edge From="0" To="3" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>

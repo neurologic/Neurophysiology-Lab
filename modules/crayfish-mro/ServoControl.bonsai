@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.6.3"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:ard="clr-namespace:Bonsai.Arduino;assembly=Bonsai.Arduino"
+                 xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
+                 xmlns:dsp="clr-namespace:Bonsai.Dsp;assembly=Bonsai.Dsp"
+                 xmlns:mx="clr-namespace:Bonsai.DAQmx;assembly=Bonsai.DAQmx"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="ard:CreateArduino">
+            <ard:PortName>COM4</ard:PortName>
+            <ard:BaudRate>57600</ard:BaudRate>
+            <ard:SamplingInterval>1</ard:SamplingInterval>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="wie:MouseMove" />
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="MemberSelector">
+          <Selector>X</Selector>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="dsp:Rescale">
+            <dsp:Min>0</dsp:Min>
+            <dsp:Max>2500</dsp:Max>
+            <dsp:RangeMin>10</dsp:RangeMin>
+            <dsp:RangeMax>170</dsp:RangeMax>
+            <dsp:RescaleType>Linear</dsp:RescaleType>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="ard:ServoOutput">
+            <ard:Pin>9</ard:Pin>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="mx:AnalogInput">
+          <mx:SignalSource />
+          <mx:SampleRate>5000</mx:SampleRate>
+          <mx:ActiveEdge>Rising</mx:ActiveEdge>
+          <mx:SampleMode>ContinuousSamples</mx:SampleMode>
+          <mx:BufferSize>1000</mx:BufferSize>
+          <mx:SamplesPerRead>-1</mx:SamplesPerRead>
+          <mx:Channels>
+            <mx:AnalogInputChannelConfiguration>
+              <mx:ChannelName />
+              <mx:MinimumValue>-5</mx:MinimumValue>
+              <mx:MaximumValue>5</mx:MaximumValue>
+              <mx:PhysicalChannel>Dev2/ai2</mx:PhysicalChannel>
+              <mx:TerminalConfiguration>Nrse</mx:TerminalConfiguration>
+              <mx:VoltageUnits>Volts</mx:VoltageUnits>
+            </mx:AnalogInputChannelConfiguration>
+          </mx:Channels>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:MatrixWriter">
+          <dsp:Suffix>None</dsp:Suffix>
+          <dsp:Overwrite>false</dsp:Overwrite>
+          <dsp:Layout>ColumnMajor</dsp:Layout>
+        </Combinator>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="3" To="4" Label="Source1" />
+      <Edge From="5" To="6" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>
