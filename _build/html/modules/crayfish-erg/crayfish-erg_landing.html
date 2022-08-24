@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lab Manual" href="Lab-Manual_crayfish-erg.html" />
@@ -147,6 +149,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../howto/NiUSB-6211.html">
      Nidaq USB 6211
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
     </a>
    </li>
   </ul>
@@ -661,12 +668,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The <em>electroretinogram</em> (ERG) is a measurement of the summed (net) potential of many photoreceptors (recorded extracellularly). The waveform of the ERG is a good representation of intracellular events in the photoreceptors, as demonstrated by <em>simultaneous</em> intra- and extra-cellular measurement of photoreceptor potentials<a class="footnote-reference brackets" href="#stieve-1978" id="id1">1</a>. As in other extracellular recordings, depolarization of the cells appears as a negative potential to the electrode outside the cells.</p>
 <div class="figure align-default" id="stieve-1978-intravextra">
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/Stieve_1978_intraVextra.png"><img alt="fishy" class="bg-primary mb-1" src="../../_images/Stieve_1978_intraVextra.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><em>Simultaneous</em> intracellular (left) and extracellular (right; plotted <em>negative</em> potential upwards) record of photoreceptor potentials in <em>Astacus</em> retina in response to a brief pulse of light (time base 1s total).<a class="footnote-reference brackets" href="#stieve-1978" id="id2">1</a></span><a class="headerlink" href="#stieve-1978-intravextra" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text"><em>Simultaneous</em> intracellular (left) and extracellular (right; plotted <em>negative</em> potential upwards) record of photoreceptor potentials in <em>Astacus</em> retina in response to a brief pulse of light (time base 1s total).<a class="footnote-reference brackets" href="#stieve-1978" id="id2">1</a></span><a class="headerlink" href="#stieve-1978-intravextra" title="Permalink to this image">¶</a></p>
 </div>
 <p>Photoreceptors transform light energy into electrical energy via <em>second messengers</em>. Photoreceptor transduction has mostly been studied in <em>Drosophila</em> (another species in the Phylum <em>Arthropoda</em>)<a class="footnote-reference brackets" href="#hardie-2001" id="id3">2</a>. Transient receptor protein (TRP) channels are the ultimate target of the molecular cascade initiated by rhodopsin-detected photons. You will notice a lag between the time in which the second messenger system is activated by rhodopsin and the opening of TRP channels.</p>
 <div class="figure align-default" id="phototransduction-molecules">
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/phototransduction-molecules.png"><img alt="fishy" class="bg-primary mb-1" src="../../_images/phototransduction-molecules.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Cartoon of the proteins involved in the transduction of light energy into electrical energy. The Gq α-subunit acts as a diffusible shuttle between activated rhodopsin and the complex.<a class="footnote-reference brackets" href="#hardie-2001" id="id4">2</a></span><a class="headerlink" href="#phototransduction-molecules" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Cartoon of the proteins involved in the transduction of light energy into electrical energy. The Gq α-subunit acts as a diffusible shuttle between activated rhodopsin and the complex.<a class="footnote-reference brackets" href="#hardie-2001" id="id4">2</a></span><a class="headerlink" href="#phototransduction-molecules" title="Permalink to this image">¶</a></p>
 </div>
 <p>Changing the brightness of the light will change the number of rhodopsin molecules that are activated, and thus the amount of second messenger that is produced. This is analogous to varying the amount of transmitter at a metabotropic synapse.</p>
 <div class="section" id="pages">
@@ -744,7 +751,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By Dr. Krista Perks<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

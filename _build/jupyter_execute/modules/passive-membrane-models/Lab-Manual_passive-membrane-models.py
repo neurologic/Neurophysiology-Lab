@@ -243,9 +243,9 @@ plt.plot(nodes,voltage)
 # **Setup**: 
 # - Place the recording/measureing electrode on the ‘inside’ of the membrane 
 # - Place the *ground* electrode on the ‘outside’
-# > If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can "apply" current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim. 
+#   > If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can "apply" current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim. 
 # - Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called "passive-membrane-models.bonsai"
-# > Note that a copy of the stimulus (*current monitor*) is also being sent to the NiUSB ADC. The coversion factor is ________.
+#   > Note that a copy of the stimulus (*current monitor*) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.
 # - Make sure that the sampling rate is set to 5000.
 # - <font color="red"> Disable</font> the "Matrix Writer" node. 
 # - Hit play. Double click on the "Membrane Potential" and "Stimulus" nodes if the windows are not already present. Make sure that you see a signal. 
@@ -264,100 +264,12 @@ plt.plot(nodes,voltage)
 #     - Stop the data acquisition by hitting the *stop* button in Bonsai. 
 # 
 # 
-# Upload your data files to the Colab kernel by dragging it into the file manager panel. **OR** Upload your data to your Google Drive. Then follow the rest of the steps below to measure and analyze your data.
+# Upload your data files to an external drive **OR** to your Google Drive.  
 # 
-
-# In[ ]:
-
-
-#@title {display-mode: "form" }
-
-#@markdown Run this cell to mount your Google Drive.
-
-from google.colab import drive
-drive.mount('/content/drive')
-
-print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
-
-
-# In[ ]:
-
-
-#@title {display-mode: "form"}
-
-#@markdown Specify the file path 
-#@markdown to your recorded data (copy the filepath from the colab file manager by clicking the :).
-
-filepath = "full filepath goes here"  #@param 
-
-#@markdown Specify the sampling rate recorded.
-
-# sampling_rate = None #@param
-sampling_rate = 5000 #@param
-
-number_channels = 2 # one is the stimulus and one is the membrane potential
-membrane_channel = 0 #@param 
-stimulus_channal = 1 #@param
-downsample = False 
-newfs = 10000 
-
-#@markdown After you have filled out all form fields, 
-#@markdown run this code cell to load and plot the data. 
-#@markdown Use the range slider under the plot to scroll through the data in time.
-
-filepath = Path(filepath)
-data = np.fromfile(Path(filepath), dtype = np.float64)
-data = data.reshape(-1,number_channels)
-data_dur = np.shape(data)[0]/sampling_rate
-print('duration of recording was %0.2f seconds' %data_dur)
-
-fs = sampling_rate
-if downsample:
-    chunksize = int(sampling_rate/newfs)
-    data = data[0::chunksize,:]
-    fs = int(np.shape(data)[0]/data_dur)
-
-time = np.linspace(0,data_dur,np.shape(data)[0])
-
-# print('Data upload completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
-
-f = go.FigureWidget(make_subplots(rows=2,cols=1,
-                                  shared_xaxes=True),layout=go.Layout(height=500, width=800))
-f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,membrane_channel],
-                         name='membrane',opacity=1),
-             row=1,col=1)
-f.add_trace(go.Scatter(x = time[0:fs], y = data[0:fs,stimulus_channel],
-                         name='stimulus',opacity=1),
-             row=2,col=1)
-
-slider = widgets.FloatRangeSlider(
-    min=0,
-    max=data_dur,
-    value=(0,1),
-    step= 1,
-    readout=False,
-    description='Time')
-slider.layout.width = '800px'
-
-# our function that will modify the xaxis range
-def response(x):
-    with f.batch_update():
-        starti = int(x[0]*fs)
-        stopi = int(x[1]*fs)
-
-        f.data[0].x = time[starti:stopi]
-        f.data[0].y = data[starti:stopi,membrane_channel]
-        
-        f.data[1].x = time[starti:stopi]
-        f.data[1].y = data[starti:stopi,stimulus_channel]
-
-vb = VBox((f, interactive(response, x=slider)))
-vb.layout.align_items = 'center'
-vb
-
-
-# Stop here for a class discussion about what you notice from this final experiment.
-
+# **Use the [DataExplorer.py](https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py) application found in the [howto section](https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html) of the course website to explore and analyze your data.**
+# 
+# Stop here for a class discussion about what you notice from this final experiment and a tutorial on the **DataExplorer.py** application.
+# 
 # **Experiment extensions** (time permitting): 
 # - What happens when you change the stimulus amplitude?
 # - What happens when you change the stimulus duration?

@@ -151,6 +151,11 @@ const thebe_selector_output = ".output, .cell_output"
      Nidaq USB 6211
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -609,8 +614,8 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-setup">
-   Software Setup
+  <a class="reference internal nav-link" href="#hardware-and-software-setup">
+   Hardware and Software Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -627,6 +632,40 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#core-experiment">
    Core Experiment
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-analog-inputs">
+     Visualize Analog Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#record-analog-inputs">
+     Record Analog Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mechanical-stimulation">
+     Mechanical stimulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-stimulation">
+     Electrical Stimulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#single-pulse">
+       Single Pulse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paired-pulse">
+       Paired Pulse
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#experimental-exploration">
@@ -634,8 +673,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
-   Copy data to your Google Drive for analysis
+  <a class="reference internal nav-link" href="#copy-data-to-an-external-drive-or-your-google-drive-for-later-analysis">
+   Copy data to an external drive or your Google Drive for later analysis
   </a>
  </li>
 </ul>
@@ -659,8 +698,8 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-setup">
-   Software Setup
+  <a class="reference internal nav-link" href="#hardware-and-software-setup">
+   Hardware and Software Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -677,6 +716,40 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#core-experiment">
    Core Experiment
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-analog-inputs">
+     Visualize Analog Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#record-analog-inputs">
+     Record Analog Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mechanical-stimulation">
+     Mechanical stimulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-stimulation">
+     Electrical Stimulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#single-pulse">
+       Single Pulse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paired-pulse">
+       Paired Pulse
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#experimental-exploration">
@@ -684,8 +757,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
-   Copy data to your Google Drive for analysis
+  <a class="reference internal nav-link" href="#copy-data-to-an-external-drive-or-your-google-drive-for-later-analysis">
+   Copy data to an external drive or your Google Drive for later analysis
   </a>
  </li>
 </ul>
@@ -699,40 +772,116 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
 <h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html">Smith Lab Manual</a></p>
-<div class="section" id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
-<p>The bonsai script for today has two measurement nodes. <strong>Channel 0</strong> receives amplified and digitized input from the measurement electrode (referenced to a “ground”). <strong>Channel 1</strong> receives input from a voltage source (the “stimulator”).The parameters of the analog input node can be adjusted to specify the NiUSB sampling rate, voltage range, and buffering rate (for visualization). Use a sampling rate of 30kHz. Adjust the voltage range as needed to maximize the signal resolution if needed once you start measuring voltage signals from the nerve chord (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering rate according to your visualization preferences.</p>
+<div class="section" id="hardware-and-software-setup">
+<h2>Hardware and Software Setup<a class="headerlink" href="#hardware-and-software-setup" title="Permalink to this headline">¶</a></h2>
+<p>The bonsai script for today has two measurement nodes. <strong>Channel 0</strong><a class="footnote-reference brackets" href="#chan0-setup" id="id1">1</a> receives amplified and digitized input from the measurement electrode (referenced to a “ground”). <strong>Channel 1</strong><a class="footnote-reference brackets" href="#chan1-setup" id="id2">2</a> receives input from a floating voltage source (the “stimulator” electrodes).Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences.</p>
 </div>
 <div class="section" id="surgery">
 <h2>Surgery<a class="headerlink" href="#surgery" title="Permalink to this headline">¶</a></h2>
-<p>Anesthesia. Obtain an earthworm and place it in the 10% ethanol solution to anesthetize it. Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to dissect, while concentrated alcohol “pickles” the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate; it is really for you, not for the worm (which is too simple to care).</p>
-<p>After suitable anesthesia, rinse the alcohol off the worm with tap water and allow the excess water to drain off. Pin out the worm dorsal side up on a flat dissecting dish placed on the stage of your microscope (check that the worm is in the field of view). Place pins only in the region of the worm where you intend to open an incision; for suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode.</p>
-<p>With forceps and scissors (not a scalpel), open an incision and extend it an inch or two, as shown above. Use the pins to keep the incision open, and flush out the body cavity from time to time with saline. The drawings below will help you identify the nerve cord and other internal structures. Keep the exposed nerve cord moist by tilting the dissecting dish so that saline pools at the incision. Use small blocks of tackiwax to support the dish in a tilted position.</p>
+<p>Anesthesia : Place the earthworm in the 10% ethanol ringer solution<a class="footnote-reference brackets" href="#anaesthesia-alts" id="id3">3</a>. Leave it in the anaethesia until you can pick it up without it wriggling away. Hallmarks of anesthetic effectiveness are a lack of worm movement and a cessation of the escape withdrawal reflex. The escape withdrawal reflex can be observed by tapping the tail and head with a plastic probe. An alert worm will exhibit a shortening muscle contraction in response to this stimulus, but an anesthetized worm will not have this reflex. The typical time for sufficient anesthesia is ∼5 min. Leaving the worm in anaesthesia too long will lead to an unresponsive nervous system (and eventually death). Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to dissect, while concentrated alcohol “pickles” the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate. The worm will not get to the point where it is 100% unresponsive to touch, but it should not struggle strongly when pinned out.</p>
+<p>After suitable anesthesia, briefly rinse the alcohol off the worm with tap water and allow the excess water to drain off. An annelid worm’s nerve cord is near the ventral surface of the worm. Pin out the worm dorsal side up on a flat dissecting dish. Place one pin at the head and one pin at the tail. Then place two pins in the region of the worm where you intend to open an incision. For suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. With forceps and scissors (not a scalpel), open an incision. Extend the incision about 1-2cm straight down the dorsal midline. Fillet the body wall open and pin it flat with a pin in each corner. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode. Flush out the body cavity from time to time with saline to clear blood and dirt.</p>
+<p>Cut the nerve cord near the end of the incision farthest from the head, and free about a centimeter of the cord from its lateral and ventral connections until it is no longer attached to the body wall. Use the rod for probing or lifting the nerve cord. Do not pinch the cord with forceps. If you must use forceps, try to only touch the very tip of the already cut end and cut off the crushed tip after freeing the cord.</p>
 </div>
 <div class="section" id="physiology-setup">
 <h2>Physiology Setup<a class="headerlink" href="#physiology-setup" title="Permalink to this headline">¶</a></h2>
-<p>Cut the nerve cord near the end of the incision farthest from the head, and free about a centimeter of the cord from its lateral and ventral connections until it is no longer attached to the body wall.</p>
-<p>Place the recording electrode. Start by grounding the preparation: clip one end of an alligator clip lead to one of the dissecting pins (pick one that is out of the way). Clip the other alligator clip to the white (ground) binding post of the amplifier’s input block. Then clamp a suction electrode in a micromanipulator (firmly!), attach its connections to the amplifier’s input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode’s internal wire (a few cm). The electrode’s external wire also needs to be in the saline pool. Position the tip of the electrode against the cut end of the nerve cord, and gently draw the nerve cord into the electrode. Turn on your preamp and audio monitor, and you should hear and see some spontaneous activity in (non-giant) axons.</p>
+<p>Tilt the dissecting dish on clay so that saline pools at the incision and keeps the nerve cord wet, while keeping the head of the worm try.</p>
+<p>Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator (firmly!), attach its connections to the amplifier’s input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode’s internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode’s external wire also needs to be in the saline pool around the incision.</p>
+<div class="figure align-default" id="id5">
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/earthworm-gf-suctiontrode.jpg"><img alt="fishy" class="bg-primary mb-1" src="../../_images/earthworm-gf-suctiontrode.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Suction electrode on exposed and cut nerve cord.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Grounding the preparation: Clip one aligator clip lead to one of the dissecting pins (pick one that is out of the way). Clip the other end to the ground post of the amplifier input block.</p>
+<p>Place the stimulating electrode. Connect two straight-pin electrodes to the output (red-anode and black-cathode terminals) of a stimulator. At the anterior end, place the anode and cathode stimulation electrode pins through the worm and into the dish below. Place them close together, but not touching, and on either side of the nerve cord. The body surface and the dissecting dish must be dry near the stimulating electrodes, or the saline will “short out” the stimulus and reduce its effectiveness. Use an absorbant tissue to dry the dish and the worm around the stimulating electrodes. Use a roll of absorbant tissue placed under the worm to help keep the anterior end dry.</p>
+<div class="figure align-default" id="id6">
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/earthworm-gf-stimtrodes-placement.jpg"><img alt="fishy" class="bg-primary mb-1" src="../../_images/earthworm-gf-stimtrodes-placement.jpg" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Stimulation electrode placement. Dry as much moisture as possible from around the worm and between the electrodes and dish.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id7">
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/earthworm-gf-whole.jpg"><img alt="fishy" class="bg-primary mb-1" src="../../_images/earthworm-gf-whole.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Absorbant wipes help keep the stimulation site dry.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
 <p><a id="experiment"></a></p>
 </div>
 <div class="section" id="core-experiment">
 <h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</p></li>
-</ol>
-<p>Stimulation Protocol:</p>
-<ol class="simple">
-<li><p>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</p></li>
-</ol>
+<div class="section" id="visualize-analog-inputs">
+<h3>Visualize Analog Inputs<a class="headerlink" href="#visualize-analog-inputs" title="Permalink to this headline">¶</a></h3>
+<p>Run the bonsai protocol with the <em>write node</em> <font color = 'red'>disabled</font> and the <em>analog input</em> and <em>channel select</em> nodes <font color = 'green'>enabled</font>. Double click the channel select nodes to visualize the electrode and stimulus measurements if it does not pop up upon start.</p>
+</div>
+<div class="section" id="record-analog-inputs">
+<h3>Record Analog Inputs<a class="headerlink" href="#record-analog-inputs" title="Permalink to this headline">¶</a></h3>
+<p>Run the bonsai protocol with the <em>write node</em> <font color = 'green'>enabled</font> (and the <em>analog input</em> and/or <em>channel select</em> nodes <font color = 'green'>enabled</font>). Change the filename as needed.</p>
+</div>
+<div class="section" id="mechanical-stimulation">
+<h3>Mechanical stimulation<a class="headerlink" href="#mechanical-stimulation" title="Permalink to this headline">¶</a></h3>
+<p>Lightly touch the worm with a glass or plastic rod (no metal). Note the location of the touch for interpreting observations and analysis of neural activity.</p>
+</div>
+<div class="section" id="electrical-stimulation">
+<h3>Electrical Stimulation<a class="headerlink" href="#electrical-stimulation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="single-pulse">
+<h4>Single Pulse<a class="headerlink" href="#single-pulse" title="Permalink to this headline">¶</a></h4>
+<p>Basic Stimulation Parameters<a class="footnote-reference brackets" href="#sd9-stimulator-controls" id="id4">4</a></p>
+<ul>
+<li><p>Switch the <em>stimulus mode</em> to <strong>regular</strong></p></li>
+<li><p>Low frequency (1-2 Hz)</p></li>
+<li><p>Low amplitude (start with 0.1 gain and the lowest voltage setting)</p>
+<blockquote>
+<div><p>If changing output gain, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain</p>
+</div></blockquote>
+</li>
+<li><p>Brief duration (200microseconds)</p></li>
+</ul>
+<p>Slowly increase the stimulus amplitude and monitor the signal from the neural recording electrode.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not exceed 2-5V on the stimulus output voltage. If you are still not generating action potentials with a 2V stimulus amplitude, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation.</p>
+</div>
+<p>Measure (and record) the distance between the stimulating electrodes and the recording electrode.</p>
+</div>
+<div class="section" id="paired-pulse">
+<h4>Paired Pulse<a class="headerlink" href="#paired-pulse" title="Permalink to this headline">¶</a></h4>
+<p>On the SD9 stimulator, the delay is the time between the prepulse sync pulse (which occurs at the trigger point for the sweep) and the actual stimulus pulse (which appears later, as the stimulus artifact). In <em>paired pulse</em> mode, there is an additional pulse at the time of the prepulse sync.</p>
+<ul class="simple">
+<li><p>Switch the <em>stimulus mode</em> to <strong>paired pulse</strong></p></li>
+<li><p>Long delay (20ms)</p></li>
+<li><p>Amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)</p></li>
+</ul>
+<div class="admonition-caution admonition">
+<p class="admonition-title">Caution</p>
+<p>Do not have the values of <em>Delay</em> plus <em>Duration</em> exceed 50% of the time between pulses. The time between pulses is determined by the <em>Frequency</em> control. For example, at a frequency of 20 pulses per second, there are 50 msec between pulses. The pulse duration plus delay should not exceed 50% of this period, or 25 msec. If the duration were 1 msec, the delay should not be more than 24 msec.</p>
+</div>
+<p>Turn the stimulus on <em>repeat</em>. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.<br />
+Gradually decrease the delay between the two stimulus pulses, and observe the action potentials.</p>
+</div>
+</div>
 </div>
 <div class="section" id="experimental-exploration">
 <h2>Experimental Exploration<a class="headerlink" href="#experimental-exploration" title="Permalink to this headline">¶</a></h2>
-<p>Effects of:</p>
+<ol class="simple">
+<li><p>What happens when you touch the worm (at the head? in the middle? just in front of the recording site?)</p></li>
+<li><p>What is the stimulus threshold for the medial giant axon?</p></li>
+<li><p>What is the stimulus threshold for the lateral giant axon?</p></li>
+<li><p>What is the refractory period of the action potential? Can you overcome the refractory period with a stronger stimulus (do not exceed 5V).</p></li>
+</ol>
 </div>
-<div class="section" id="copy-data-to-your-google-drive-for-analysis">
-<h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Use the <span class="xref myst">Sensory Coding</span> notebook to analyse your data and answer the questions in the <span class="xref myst">Responses</span> notebook.</p>
+<div class="section" id="copy-data-to-an-external-drive-or-your-google-drive-for-later-analysis">
+<h2>Copy data to an external drive or your Google Drive for later analysis<a class="headerlink" href="#copy-data-to-an-external-drive-or-your-google-drive-for-later-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference internal" href="Data-Explorer_earthworm-giant-fiber.html"><span class="doc std std-doc">Data Explorer</span></a> notebook to analyse your data and answer the questions in the <a class="reference internal" href="Responses_earthworm-giant-fiber.html"><span class="doc std std-doc">Responses</span></a> notebook.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="chan0-setup"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>RSE, ±5 V; electrode inside suction tip goes to an analog input; electrode outside suction tip (in bath) goes to; hot amplifier output goes to an analog input; cold amplifier output (gnd) goes to the AIGND (analog input ground reference) (try having this go to AISN and NRSE).</p>
+</dd>
+<dt class="label" id="chan1-setup"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>NRSE, ±5 V; hot stimulus output goes to an analog input; cold stimulus output (‘gnd’) goes to the AISN (analog input sensor reference) (try having this go to RSE with AIGND).</p>
+</dd>
+<dt class="label" id="anaesthesia-alts"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>The 10% ethanol solution can also be prepared by mixing 30 ml of tap water with 10 ml of 80 proof (40% ethanol) vodka. Carbonated water can also be used as an anesthetic if ethanol is not available. Carbonated water (60%) can be prepared by mixing 30 ml of sugar-free seltzer water (also called “club soda” or “sparkling water” at grocery stores) with 20 ml of tap water.</p>
+</dd>
+<dt class="label" id="sd9-stimulator-controls"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>The Grass Instruments <strong>SD9</strong> has four controls on the top section of the stimulator’s front panel that control the <em>Frequency</em> of the stimuli (how often stimulus pulses are produced), the <em>Delay</em> between the trigger pulse and the stimulus pulse, the <em>Duration</em> (width) of the stimulus pulse, and the <em>Volts</em> (amplitude) of the pulse. Each control has a black knob and a metal multiplier switch under it. The setting depends on both of these knobs. The stimulus is controlled by the <em>Regular/Twin Pulses</em> slide switch and the <em>Repeat/Off/Single</em> switch. <em>Polarity</em> allows reversing which stimulating connection is positive (start with Normal, where red is positive). Use a <em>Mono</em> (monophasic) output pulse. The stimulus itself is produced at the red and black binding posts at the right.</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -784,7 +933,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By Dr. Krista Perks<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

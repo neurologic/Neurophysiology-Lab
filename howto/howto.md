@@ -9,3 +9,4 @@ This section contains tutorials for all the little logistical bits surrounding t
 - [](../howto/Response-Notebooks.ipynb)
 - [](../howto/Dash-Data-Explorer.md)
 - [](../howto/NiUSB-6211.md)
+- [](../howto/getting-preamp.md)

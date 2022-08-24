@@ -153,6 +153,11 @@ const thebe_selector_output = ".output, .cell_output"
      Nidaq USB 6211
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -999,20 +1004,18 @@ const thebe_selector_output = ".output, .cell_output"
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
 <p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to both deliver current and measure voltage The Getting provides a <em>current stimulation</em>, feature that applies a “square wave” stimulus across the measurement electrodes. A square wave stimulus one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
 <p><strong>Setup</strong>:</p>
-<ul class="simple">
+<ul>
 <li><p>Place the recording/measureing electrode on the ‘inside’ of the membrane</p></li>
-<li><p>Place the <em>ground</em> electrode on the ‘outside’</p></li>
-</ul>
+<li><p>Place the <em>ground</em> electrode on the ‘outside’</p>
 <blockquote>
 <div><p>If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can “apply” current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
-</ul>
+</li>
+<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p>
 <blockquote>
-<div><p>Note that a copy of the stimulus (<em>current monitor</em>) is also being sent to the NiUSB ADC. The coversion factor is ________.</p>
+<div><p>Note that a copy of the stimulus (<em>current monitor</em>) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.</p>
 </div></blockquote>
-<ul class="simple">
+</li>
 <li><p>Make sure that the sampling rate is set to 5000.</p></li>
 <li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
 <li><p>Hit play. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
@@ -1037,99 +1040,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ol>
-<p>Upload your data files to the Colab kernel by dragging it into the file manager panel. <strong>OR</strong> Upload your data to your Google Drive. Then follow the rest of the steps below to measure and analyze your data.</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
-
-<span class="c1">#@markdown Run this cell to mount your Google Drive.</span>
-
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
-
-<span class="c1">#@markdown Specify the file path </span>
-<span class="c1">#@markdown to your recorded data (copy the filepath from the colab file manager by clicking the :).</span>
-
-<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
-
-<span class="c1">#@markdown Specify the sampling rate recorded.</span>
-
-<span class="c1"># sampling_rate = None #@param</span>
-<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">5000</span> <span class="c1">#@param</span>
-
-<span class="n">number_channels</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># one is the stimulus and one is the membrane potential</span>
-<span class="n">membrane_channel</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param </span>
-<span class="n">stimulus_channal</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#@param</span>
-<span class="n">downsample</span> <span class="o">=</span> <span class="kc">False</span> 
-<span class="n">newfs</span> <span class="o">=</span> <span class="mi">10000</span> 
-
-<span class="c1">#@markdown After you have filled out all form fields, </span>
-<span class="c1">#@markdown run this code cell to load and plot the data. </span>
-<span class="c1">#@markdown Use the range slider under the plot to scroll through the data in time.</span>
-
-<span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">number_channels</span><span class="p">)</span>
-<span class="n">data_dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">data_dur</span>)
-
-<span class="n">fs</span> <span class="o">=</span> <span class="n">sampling_rate</span>
-<span class="k">if</span> <span class="n">downsample</span><span class="p">:</span>
-    <span class="n">chunksize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sampling_rate</span><span class="o">/</span><span class="n">newfs</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="n">chunksize</span><span class="p">,:]</span>
-    <span class="n">fs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">data_dur</span><span class="p">)</span>
-
-<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">data_dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># print(&#39;Data upload completed at &#39; + str(datetime.now(timezone(-timedelta(hours=5)))))</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                                  <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span><span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">membrane_channel</span><span class="p">],</span>
-                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;membrane&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-             <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">fs</span><span class="p">,</span><span class="n">stimulus_channel</span><span class="p">],</span>
-                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;stimulus&#39;</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-             <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
-    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="nb">max</span><span class="o">=</span><span class="n">data_dur</span><span class="p">,</span>
-    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">readout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-<span class="n">slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;800px&#39;</span>
-
-<span class="c1"># our function that will modify the xaxis range</span>
-<span class="k">def</span> <span class="nf">response</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
-        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
-        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
-
-        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">,</span><span class="n">membrane_channel</span><span class="p">]</span>
-        
-        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">]</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">,</span><span class="n">stimulus_channel</span><span class="p">]</span>
-
-<span class="n">vb</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">interactive</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider</span><span class="p">)))</span>
-<span class="n">vb</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">align_items</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span>
-<span class="n">vb</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Stop here for a class discussion about what you notice from this final experiment.</p>
+<p>Upload your data files to an external drive <strong>OR</strong> to your Google Drive.</p>
+<p><strong>Use the <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">DataExplorer.py</a> application found in the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">howto section</a> of the course website to explore and analyze your data.</strong></p>
+<p>Stop here for a class discussion about what you notice from this final experiment and a tutorial on the <strong><a class="reference external" href="http://DataExplorer.py">DataExplorer.py</a></strong> application.</p>
 <p><strong>Experiment extensions</strong> (time permitting):</p>
 <ul class="simple">
 <li><p>What happens when you change the stimulus amplitude?</p></li>
@@ -1197,7 +1110,7 @@ Written by Dr. Krista Perks for courses taught at Wesleyan University. Materials
     
       By Dr. Krista Perks<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

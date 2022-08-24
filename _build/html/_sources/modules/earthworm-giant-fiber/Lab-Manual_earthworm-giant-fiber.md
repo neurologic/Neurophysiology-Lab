@@ -1,37 +1,115 @@
 # Lab Manual
 
-[Smith Lab Manual](https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html)
+## Hardware and Software Setup
+The bonsai script for today has two measurement nodes. **Channel 0**[^chan0-setup] receives amplified and digitized input from the measurement electrode (referenced to a "ground"). **Channel 1**[^chan1-setup] receives input from a floating voltage source (the "stimulator" electrodes).Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences. 
 
-## Software Setup
-The bonsai script for today has two measurement nodes. **Channel 0** receives amplified and digitized input from the measurement electrode (referenced to a "ground"). **Channel 1** receives input from a voltage source (the "stimulator").The parameters of the analog input node can be adjusted to specify the NiUSB sampling rate, voltage range, and buffering rate (for visualization). Use a sampling rate of 30kHz. Adjust the voltage range as needed to maximize the signal resolution if needed once you start measuring voltage signals from the nerve chord (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering rate according to your visualization preferences. 
+[^chan0-setup]: RSE, ±5 V; electrode inside suction tip goes to an analog input; electrode outside suction tip (in bath) goes to; hot amplifier output goes to an analog input; cold amplifier output (gnd) goes to the AIGND (analog input ground reference) (try having this go to AISN and NRSE). 
+
+[^chan1-setup]:NRSE, ±5 V; hot stimulus output goes to an analog input; cold stimulus output ('gnd') goes to the AISN (analog input sensor reference) (try having this go to RSE with AIGND). 
 
 ## Surgery
-Anesthesia. Obtain an earthworm and place it in the 10% ethanol solution to anesthetize it. Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to dissect, while concentrated alcohol "pickles" the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate; it is really for you, not for the worm (which is too simple to care).
+Anesthesia : Place the earthworm in the 10% ethanol ringer solution[^anaesthesia-alts]. Leave it in the anaethesia until you can pick it up without it wriggling away. Hallmarks of anesthetic effectiveness are a lack of worm movement and a cessation of the escape withdrawal reflex. The escape withdrawal reflex can be observed by tapping the tail and head with a plastic probe. An alert worm will exhibit a shortening muscle contraction in response to this stimulus, but an anesthetized worm will not have this reflex. The typical time for sufficient anesthesia is ∼5 min. Leaving the worm in anaesthesia too long will lead to an unresponsive nervous system (and eventually death). Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to dissect, while concentrated alcohol "pickles" the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate. The worm will not get to the point where it is 100% unresponsive to touch, but it should not struggle strongly when pinned out.
 
-After suitable anesthesia, rinse the alcohol off the worm with tap water and allow the excess water to drain off. Pin out the worm dorsal side up on a flat dissecting dish placed on the stage of your microscope (check that the worm is in the field of view). Place pins only in the region of the worm where you intend to open an incision; for suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode.
+[^anaesthesia-alts]: The 10% ethanol solution can also be prepared by mixing 30 ml of tap water with 10 ml of 80 proof (40% ethanol) vodka. Carbonated water can also be used as an anesthetic if ethanol is not available. Carbonated water (60%) can be prepared by mixing 30 ml of sugar-free seltzer water (also called “club soda” or “sparkling water” at grocery stores) with 20 ml of tap water.
 
-With forceps and scissors (not a scalpel), open an incision and extend it an inch or two, as shown above. Use the pins to keep the incision open, and flush out the body cavity from time to time with saline. The drawings below will help you identify the nerve cord and other internal structures. Keep the exposed nerve cord moist by tilting the dissecting dish so that saline pools at the incision. Use small blocks of tackiwax to support the dish in a tilted position.
+After suitable anesthesia, briefly rinse the alcohol off the worm with tap water and allow the excess water to drain off. An annelid worm's nerve cord is near the ventral surface of the worm. Pin out the worm dorsal side up on a flat dissecting dish. Place one pin at the head and one pin at the tail. Then place two pins in the region of the worm where you intend to open an incision. For suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. With forceps and scissors (not a scalpel), open an incision. Extend the incision about 1-2cm straight down the dorsal midline. Fillet the body wall open and pin it flat with a pin in each corner. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode. Flush out the body cavity from time to time with saline to clear blood and dirt.
+
+Cut the nerve cord near the end of the incision farthest from the head, and free about a centimeter of the cord from its lateral and ventral connections until it is no longer attached to the body wall. Use the rod for probing or lifting the nerve cord. Do not pinch the cord with forceps. If you must use forceps, try to only touch the very tip of the already cut end and cut off the crushed tip after freeing the cord.
 
 ## Physiology Setup
 
-Cut the nerve cord near the end of the incision farthest from the head, and free about a centimeter of the cord from its lateral and ventral connections until it is no longer attached to the body wall.
+Tilt the dissecting dish on clay so that saline pools at the incision and keeps the nerve cord wet, while keeping the head of the worm try.
 
-Place the recording electrode. Start by grounding the preparation: clip one end of an alligator clip lead to one of the dissecting pins (pick one that is out of the way). Clip the other alligator clip to the white (ground) binding post of the amplifier's input block. Then clamp a suction electrode in a micromanipulator (firmly!), attach its connections to the amplifier's input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). The electrode's external wire also needs to be in the saline pool. Position the tip of the electrode against the cut end of the nerve cord, and gently draw the nerve cord into the electrode. Turn on your preamp and audio monitor, and you should hear and see some spontaneous activity in (non-giant) axons.
+Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator (firmly!), attach its connections to the amplifier's input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode's external wire also needs to be in the saline pool around the incision. 
+
+:::{figure-md}
+:class: figure
+
+<img src="/images/earthworm-gf-suctiontrode.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Suction electrode on exposed and cut nerve cord. 
+:::
+
+
+Grounding the preparation: Clip one aligator clip lead to one of the dissecting pins (pick one that is out of the way). Clip the other end to the ground post of the amplifier input block. 
+
+Place the stimulating electrode. Connect two straight-pin electrodes to the output (red-anode and black-cathode terminals) of a stimulator. At the anterior end, place the anode and cathode stimulation electrode pins through the worm and into the dish below. Place them close together, but not touching, and on either side of the nerve cord. The body surface and the dissecting dish must be dry near the stimulating electrodes, or the saline will "short out" the stimulus and reduce its effectiveness. Use an absorbant tissue to dry the dish and the worm around the stimulating electrodes. Use a roll of absorbant tissue placed under the worm to help keep the anterior end dry. 
+
+:::{figure-md}
+:class: figure
+
+<img src="/images/earthworm-gf-stimtrodes-placement.jpg" alt="fishy" class="bg-primary mb-1" width="300px">
+
+Stimulation electrode placement. Dry as much moisture as possible from around the worm and between the electrodes and dish. 
+:::
+
+:::{figure-md}
+:class: figure
+
+<img src="/images/earthworm-gf-whole.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Absorbant wipes help keep the stimulation site dry. 
+:::
 
 
 <a id="experiment"></a>
 ## Core Experiment
 
-1. Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.
+### Visualize Analog Inputs
+Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font> and the *analog input* and *channel select* nodes <font color = 'green'>enabled</font>. Double click the channel select nodes to visualize the electrode and stimulus measurements if it does not pop up upon start.
 
-Stimulation Protocol: 
-1. Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.
+### Record Analog Inputs
+Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
 
+
+### Mechanical stimulation
+Lightly touch the worm with a glass or plastic rod (no metal). Note the location of the touch for interpreting observations and analysis of neural activity. 
+
+### Electrical Stimulation
+
+#### Single Pulse
+
+Basic Stimulation Parameters[^SD9-stimulator-controls]
+- Switch the *stimulus mode* to **regular**
+- Low frequency (1-2 Hz)
+- Low amplitude (start with 0.1 gain and the lowest voltage setting)
+  > If changing output gain, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain
+- Brief duration (200microseconds)
+
+[^SD9-stimulator-controls]: The Grass Instruments **SD9** has four controls on the top section of the stimulator's front panel that control the *Frequency* of the stimuli (how often stimulus pulses are produced), the *Delay* between the trigger pulse and the stimulus pulse, the *Duration* (width) of the stimulus pulse, and the *Volts* (amplitude) of the pulse. Each control has a black knob and a metal multiplier switch under it. The setting depends on both of these knobs. The stimulus is controlled by the *Regular/Twin Pulses* slide switch and the *Repeat/Off/Single* switch. *Polarity* allows reversing which stimulating connection is positive (start with Normal, where red is positive). Use a *Mono* (monophasic) output pulse. The stimulus itself is produced at the red and black binding posts at the right.
+
+
+Slowly increase the stimulus amplitude and monitor the signal from the neural recording electrode.  
+
+:::{warning}
+Do not exceed 2-5V on the stimulus output voltage. If you are still not generating action potentials with a 2V stimulus amplitude, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+:::
+
+Measure (and record) the distance between the stimulating electrodes and the recording electrode.
+
+#### Paired Pulse
+
+On the SD9 stimulator, the delay is the time between the prepulse sync pulse (which occurs at the trigger point for the sweep) and the actual stimulus pulse (which appears later, as the stimulus artifact). In *paired pulse* mode, there is an additional pulse at the time of the prepulse sync.  
+
+- Switch the *stimulus mode* to **paired pulse**
+- Long delay (20ms)
+- Amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
+
+:::{admonition} Caution
+Do not have the values of *Delay* plus *Duration* exceed 50% of the time between pulses. The time between pulses is determined by the *Frequency* control. For example, at a frequency of 20 pulses per second, there are 50 msec between pulses. The pulse duration plus delay should not exceed 50% of this period, or 25 msec. If the duration were 1 msec, the delay should not be more than 24 msec.
+:::
+
+Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
+Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
 
 ## Experimental Exploration
-Effects of:
 
+0. What happens when you touch the worm (at the head? in the middle? just in front of the recording site?)
+1. What is the stimulus threshold for the medial giant axon? 
+2. What is the stimulus threshold for the lateral giant axon?
+3. What is the refractory period of the action potential? Can you overcome the refractory period with a stronger stimulus (do not exceed 5V). 
 
-## Copy data to your Google Drive for analysis
-Use the [Sensory Coding](../week-5/Sensory-Coding-MRO.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-5/Sensory-Coding-MRO_Responses.ipynb) notebook.
+## Copy data to an external drive or your Google Drive for later analysis
+Use the [Data Explorer](../earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb) notebook to analyse your data and answer the questions in the [Responses](../earthworm-giant-fiber/Responses_earthworm-giant-fiber.ipynb) notebook.
+
 

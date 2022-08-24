@@ -15,6 +15,7 @@ parts:
         - file: howto/Response-Notebooks
         - file: howto/Dash-Data-Explorer
         - file: howto/NiUSB-6211
+        - file: howto/getting-preamp
     - file: materials
   - caption: Weekly Chapters
     chapters:

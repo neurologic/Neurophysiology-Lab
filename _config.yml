@@ -6,6 +6,7 @@ author: Dr. Krista Perks
 logo: images/NeuronImage_CourseHeader.jpeg
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 only_build_toc_files: true
+copyright: "2022"  # Copyright year to be placed in the footer
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

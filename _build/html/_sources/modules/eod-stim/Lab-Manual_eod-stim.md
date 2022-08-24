@@ -1,5 +1,13 @@
 # Lab Manual
 
+## TO DO
+
+solder coated silver-chlorided wires to stimulating electrodes and tank recording electrodes.  
+chloride tips  
+liquid electrical tape up to tips
+
+## Introduction
+
 Today you will again be using weakly electric fish and recording voltage in their tank using two sets of differential electrodes. You will also be presenting an electrical stimulus to the fish via a pair of electrodes controlled by a "stimulus isolation unit" (SIU). The SIU controls the voltage across the two output leads (which in this experiment provides a dipole source). 
 
 ## Software Setup

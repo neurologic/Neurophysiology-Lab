@@ -14,22 +14,28 @@ Whenever you want to visualize the electrode measurements without accumulating s
 ```
 
 ## Core Experiment
-<ol>
-<li>Hook up the tank electrodes from a weakly electric fish tank to your ADC input (channels 0 and 1). </li>
-<li>Run the bonsai protocol (with the  <b>Analog Input </b> node <font color = 'green'>ENABLED</font> but the <b>Matrix Writer</b> node <font color = 'red'>DISABLED</font>. Double click the Analog Input node to visualize the measurement if it does not pop up upon start.</li>
 
-```{note}
-You can set the y axis range explicitly by clicking on it so that the visualization does not jump around the screen and so that you can get a clear sense of the voltage picked up by each electrode.
-```
+1. Hook up the tank electrodes from a weakly electric fish tank to your ADC input (channels 0 and 1).
+2. Run the bonsai protocol (with the  **Analog Input** node <font color = 'green'>ENABLED</font> but the **Matrix Writer** node <font color = 'red'>DISABLED</font>. Double click the Analog Input node to visualize the measurement if it does not pop up upon start.
 
-```{tip}
-How could you determine which signal corresponded to each channel in the Bonsai visualization?
-```
-<li>Make sure that you can see EOD events in the signal (aka. make sure there is <i>signal above the noise</i>).</li>
-<li>Stop the bonsai protocol and <font color = 'green'>ENABLE</font> the write node. </li>
-<li>When you are ready to collect data, start the bonsai protocol and time the recording for about 1 minute. </li>
-</ol>
+	:::{tip}
+	You can set the y axis range explicitly by clicking on it so that the visualization does not jump around the screen and so that you can get a clear sense of the voltage picked up by each electrode.
+	:::
 
-## Copy data to your Google Drive for analysis
-Use the [Electric Organ Discharge](../week-2/Electric-Organ-Discharge.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-2/Electric-Organ-Discharge_Responses.ipynb) notebook.
+	:::{tip}
+	How could you determine which signal corresponded to each channel in the Bonsai visualization?
+	:::
+3. Make sure that you can see EOD events in the signal (aka. make sure there is *signal above the noise*).
+4. Stop the bonsai protocol and <font color = 'green'>ENABLE</font> the write node. 
+5. When you are ready to collect data, start the bonsai protocol and time the recording for about 1 minute using a sampling rate of 100kHz.
+6. Repeat with different sample rates (10kHz and 50kHz)
+7. Repeat for different species of fish (with 100kHz sample rate)
+
+## Housekeeping
+
+Clean up your area.  
+
+Copy data to an external drive or your Google Drive for later.  
+
+Use the [DataExplorer.py application](../../howto/Dash-Data-Explorer.md) to explore your raw data in detail. Use the [Data Explorer](../eod/Data-Explorer_eod.ipynb) notebook to process and analyse your raw data. Answer the questions in the [Responses](../eod/Responses_eod.ipynb) notebook.  
 

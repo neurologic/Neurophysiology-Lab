@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Data Explorer" href="Data-Explorer_eod.html" />
@@ -149,6 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../howto/NiUSB-6211.html">
      Nidaq USB 6211
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
     </a>
    </li>
   </ul>
@@ -619,8 +622,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
-   Copy data to your Google Drive for analysis
+  <a class="reference internal nav-link" href="#housekeeping">
+   Housekeeping
   </a>
  </li>
 </ul>
@@ -654,8 +657,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
-   Copy data to your Google Drive for analysis
+  <a class="reference internal nav-link" href="#housekeeping">
+   Housekeeping
   </a>
  </li>
 </ul>
@@ -683,24 +686,29 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="core-experiment">
 <h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
 <ol>
-<li>Hook up the tank electrodes from a weakly electric fish tank to your ADC input (channels 0 and 1). </li>
-<li>Run the bonsai protocol (with the  <b>Analog Input </b> node <font color = 'green'>ENABLED</font> but the <b>Matrix Writer</b> node <font color = 'red'>DISABLED</font>. Double click the Analog Input node to visualize the measurement if it does not pop up upon start.</li>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<li><p>Hook up the tank electrodes from a weakly electric fish tank to your ADC input (channels 0 and 1).</p></li>
+<li><p>Run the bonsai protocol (with the  <strong>Analog Input</strong> node <font color = 'green'>ENABLED</font> but the <strong>Matrix Writer</strong> node <font color = 'red'>DISABLED</font>. Double click the Analog Input node to visualize the measurement if it does not pop up upon start.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>You can set the y axis range explicitly by clicking on it so that the visualization does not jump around the screen and so that you can get a clear sense of the voltage picked up by each electrode.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>How could you determine which signal corresponded to each channel in the Bonsai visualization?</p>
 </div>
-<li>Make sure that you can see EOD events in the signal (aka. make sure there is <i>signal above the noise</i>).</li>
-<li>Stop the bonsai protocol and <font color = 'green'>ENABLE</font> the write node. </li>
-<li>When you are ready to collect data, start the bonsai protocol and time the recording for about 1 minute. </li>
+</li>
+<li><p>Make sure that you can see EOD events in the signal (aka. make sure there is <em>signal above the noise</em>).</p></li>
+<li><p>Stop the bonsai protocol and <font color = 'green'>ENABLE</font> the write node.</p></li>
+<li><p>When you are ready to collect data, start the bonsai protocol and time the recording for about 1 minute using a sampling rate of 100kHz.</p></li>
+<li><p>Repeat with different sample rates (10kHz and 50kHz)</p></li>
+<li><p>Repeat for different species of fish (with 100kHz sample rate)</p></li>
 </ol>
 </div>
-<div class="section" id="copy-data-to-your-google-drive-for-analysis">
-<h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Use the <span class="xref myst">Electric Organ Discharge</span> notebook to analyse your data and answer the questions in the <span class="xref myst">Responses</span> notebook.</p>
+<div class="section" id="housekeeping">
+<h2>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this headline">¶</a></h2>
+<p>Clean up your area.</p>
+<p>Copy data to an external drive or your Google Drive for later.</p>
+<p>Use the <a class="reference internal" href="../../howto/Dash-Data-Explorer.html"><span class="doc std std-doc">DataExplorer.py application</span></a> to explore your raw data in detail. Use the <a class="reference internal" href="Data-Explorer_eod.html"><span class="doc std std-doc">Data Explorer</span></a> notebook to process and analyse your raw data. Answer the questions in the <a class="reference internal" href="Responses_eod.html"><span class="doc std std-doc">Responses</span></a> notebook.</p>
 </div>
 </div>
 
@@ -752,7 +760,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By Dr. Krista Perks<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
