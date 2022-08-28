@@ -1,4 +1,4 @@
-# Week 10. Synaptic Connectivity 
+# Week 9. Synaptic Connectivity 
 
 ## Pages
 - [](../crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing.md)

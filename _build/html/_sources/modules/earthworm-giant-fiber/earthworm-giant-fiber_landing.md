@@ -1,4 +1,4 @@
-# Week 4. Giant Fiber
+# Week 3. Giant Fiber
 
 Common earthworms (Lumbricus spp.) have a *giant fiber system* consisting of a single median giant fiber and two lateral giant fibers. Each giant axon is formed from many individual neurons whose axons fuse into a single functional unit, but whose cell bodies remain separate. The two lateral fibers have numerous reciprocal electrical synapses and therefore normally fire together. 
 

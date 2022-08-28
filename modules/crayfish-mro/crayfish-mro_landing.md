@@ -1,4 +1,4 @@
-# Week 6. Muscle Receptor Organ
+# Week 5. Muscle Receptor Organ
 
 Crayfish stretch receptor. Information theory. Tuning curves. Rate Coding.
 

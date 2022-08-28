@@ -1,11 +1,6 @@
 # Lab Manual
 
-[REceptor Potentials](https://michaeldmann.net/mann4.html)
-[Adaptation in stretch receptor. Shigehiro Nakajima (1964)](https://www-jstor-org.ezproxy.wesleyan.edu/stable/pdf/1713939.pdf?refreqid=excelsior%3A65cca9fbb3864632b6d88815a65ca9d0&ab_segments=&origin=&acceptTC=1)
-[On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study](https://pubmed.ncbi.nlm.nih.gov/6316733/)
-[Structure and Function Relationship in
-the Abdominal Stretch Receptor Organs
-of the Crayfish](https://onlinelibrary-wiley-com.ezproxy.wesleyan.edu/doi/pdfdirect/10.1002/cne.20590)
+
 
 Muscle receptor organs (MROs) contain sensory neurons that depolarize in response to muscle stretch. In crayfish, 
 the superficial extensor muscle on each side of each abdominal segment (and in the two most posterior thoracic segments) are innervated by stretch-sensitive receptors. The superficial extensor muscles span adjacent segments, running from the middle of one tergite to the back edge of the next most anterior tergite. When these muscles contract, they pull the tergites together, causing the abdomen to straighten and extend (thus the name). Conversely, when the abdomen is curled ventrally, the tergites rotate around their joints and the extensor muscles are stretched, along with their associated MROs. MRO neurons receive inhibitory synaptic innervation from the central ganglion (this does not occur in vertebrate proprioceptors). These inhibitory inputs depress the receptor activity.
@@ -30,24 +25,34 @@ For this lab, you will be removing the tail from a crayfish. A major benefit of 
 	<li>Cut along the ventral edge of the carapace as close to the ventral side as possible.</li>
 	<li>Use your finger or the handle of a pair of blunt forcepts to push the fast flexor muscle away from the dorsal surface. Take care not to push down too hard against the tissue left on the dorsal surface. Use scissors if necessary to cut the nerves away instead of pulling at them.</li>
 	<li>Pin the anterior segment of the tail down on the dish (dorsal side down) using two pins. Take care not to crack the carapace apart.</li>
-	<li>Thread a thread through the anus of the tail. Tie it gently but firmly. Trim the thread so that it )does not interfere with the electrode</li>
+	<li>Thread a thread through the telson fins. Tie it gently but firmly. Trim the thread so that it )does not interfere with the electrode</li>
 </ol>
 
 ## Physiology Setup
 
-
+Attach the free end of the thread to the servo motor horn.
 
 <a id="experiment"></a>
 ## Core Experiment
 
-:::{note}
-Try using a potentiometer as the tail pull device... then read in a voltage that is modulated by the potentiometer into the Nidaq!
-:::
+### Visualize Analog Inputs
+Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font> and the *analog input* and *channel select* nodes <font color = 'green'>enabled</font>. Double click the channel select nodes to visualize the electrode and stimulus measurements if it does not pop up upon start.
 
-<ol>
-	<li>Find the MRO nerve. Aim for one in the anterior segments. Use the suction electrode to suction up the nerve.</li>
-	<li>Pull the thread to bend the tail. Make sure you are getting a response from the MRO nerve. Make sure that the nerve is not falling out of the suction electrode when the tail is curled.</li>
-	<li>Attach the free end of the thread to the potentiometer horn.</li>
+### Record Analog Inputs
+Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
+
+### Stimulation
+You will use a servo motor to pull the thread attached to the tip of the tail. The goal is to bend the tail to varying degrees and examine how the MRO encodes stretch. By controlling the position command to the servo motor with the movement of your computer mouse, you will be able to deliver a relatively quantifiable and controlled stimulus that can be synced with the recording of MRO neural activity. 
+
+Practice the stimulation protocol before trying for the MRO nerve recording. 
+
+1. <font color = 'green'>Enable</font>) the **ServoOutput** node. (Disable all MatrixWriter nodes and you can close any Analog Input visualization nodes). 
+
+### MRO physiology
+
+1. Find the MRO nerve. Aim for one in the anterior segments. Use the suction electrode to suction up the nerve.</li>
+2. Make sure you are getting a response from the MRO nerve. Make sure that the nerve is not falling out of the suction electrode when the tail is curled.
+	
 	<li>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</li>
 	<li></li>
 	<li></li>
@@ -74,6 +79,11 @@ Effects of:
 Compare resutls from the core experiment under different aneasthetic conditions (none, MS222, and ice).
 Try to bring the response back to baseline after each manipulation.
 
-## Copy data to your Google Drive for analysis
-Use the [Sensory Coding](../week-5/Sensory-Coding-MRO.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-5/Sensory-Coding-MRO_Responses.ipynb) notebook.
+## Copy data to an external drive or your Google Drive for later analysis
+Use the [Data Explorer](../crayfish-mro/Data-Explorer_crayfish-mro.ipynb) notebook to analyse your data and answer the questions in the [Responses](../crayfish-mro/Responses_crayfish-mro.ipynb) notebook.
 
+## Additional Resources
+- [Receptor Potentials](https://michaeldmann.net/mann4.html)
+- [Adaptation in stretch receptor. Shigehiro Nakajima (1964)](https://www-jstor-org.ezproxy.wesleyan.edu/stable/pdf/1713939.pdf?refreqid=excelsior%3A65cca9fbb3864632b6d88815a65ca9d0&ab_segments=&origin=&acceptTC=1)
+- [On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study](https://pubmed.ncbi.nlm.nih.gov/6316733/)
+- [Structure and Function Relationship in the Abdominal Stretch Receptor Organs of the Crayfish](https://onlinelibrary-wiley-com.ezproxy.wesleyan.edu/doi/pdfdirect/10.1002/cne.20590)

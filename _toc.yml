@@ -28,21 +28,16 @@ parts:
         - file: modules/eod/Lab-Manual_eod
         - file: modules/eod/Data-Explorer_eod
         - file: modules/eod/Responses_eod
-    - file: modules/eod-stim/eod-stim_landing
-      sections:
-        - file: modules/eod-stim/Lab-Manual_eod-stim
-        - file: modules/eod-stim/Data-Explorer_eod-stim
-        - file: modules/eod-stim/Responses_eod-stim
     - file: modules/earthworm-giant-fiber/earthworm-giant-fiber_landing
       sections:
         - file: modules/earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber
         - file: modules/earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber
         - file: modules/earthworm-giant-fiber/Responses_earthworm-giant-fiber
-    - file: modules/computer-model/computer-model_landing
+    - file: modules/computational-model/computational-model_landing
       sections:
-        - file: modules/computer-model/Lab-Manual_computer-model
-        - file: modules/computer-model/Data-Explorer_computer-model
-        - file: modules/computer-model/Responses_computer-model
+        - file: modules/computational-model/Lab-Manual_computational-model
+        - file: modules/computational-model/Data-Explorer_computational-model
+        - file: modules/computational-model/Responses_computational-model
     - file: modules/crayfish-mro/crayfish-mro_landing
       sections:
         - file: modules/crayfish-mro/Lab-Manual_crayfish-mro
@@ -68,6 +63,11 @@ parts:
         - file: modules/crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity
         - file: modules/crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity
         - file: modules/crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity
+    - file: modules/crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing
+      sections:
+        - file: modules/crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity
+        - file: modules/crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity
+        - file: modules/crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity
     - file: modules/crayfish-cpg/crayfish-cpg_landing
       sections:
         - file: modules/crayfish-cpg/Lab-Manual_crayfish-cpg
