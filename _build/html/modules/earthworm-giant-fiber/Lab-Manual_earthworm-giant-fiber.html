@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Data Explorer" href="Data-Explorer_earthworm-giant-fiber.html" />
@@ -774,7 +772,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="hardware-and-software-setup">
 <h2>Hardware and Software Setup<a class="headerlink" href="#hardware-and-software-setup" title="Permalink to this headline">¶</a></h2>
-<p>The bonsai script for today has two measurement nodes. <strong>Channel 0</strong><a class="footnote-reference brackets" href="#chan0-setup" id="id1">1</a> receives amplified and digitized input from the measurement electrode (referenced to a “ground”). <strong>Channel 1</strong><a class="footnote-reference brackets" href="#chan1-setup" id="id2">2</a> receives input from a floating voltage source (the “stimulator” electrodes).Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences.</p>
+<p>The bonsai script for today has two measurement nodes. <strong>Channel 0</strong><a class="footnote-reference brackets" href="#chan0-setup" id="id1">1</a> receives amplified and digitized input from the measurement electrode (referenced to a “ground”). <strong>Channel 1</strong><a class="footnote-reference brackets" href="#chan1-setup" id="id2">2</a> receives input from a floating voltage source (the “stimulator” electrodes). Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences.</p>
 </div>
 <div class="section" id="surgery">
 <h2>Surgery<a class="headerlink" href="#surgery" title="Permalink to this headline">¶</a></h2>
@@ -785,7 +783,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="physiology-setup">
 <h2>Physiology Setup<a class="headerlink" href="#physiology-setup" title="Permalink to this headline">¶</a></h2>
 <p>Tilt the dissecting dish on clay so that saline pools at the incision and keeps the nerve cord wet, while keeping the head of the worm try.</p>
-<p>Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator (firmly!), attach its connections to the amplifier’s input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode’s internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode’s external wire also needs to be in the saline pool around the incision.</p>
+<p>Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator, attach its connections to the amplifier’s input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode’s internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode’s external wire also needs to be in the saline pool around the incision.</p>
 <div class="figure align-default" id="id5">
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/earthworm-gf-suctiontrode.jpg"><img alt="fishy" class="bg-primary mb-1" src="../../_images/earthworm-gf-suctiontrode.jpg" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Suction electrode on exposed and cut nerve cord.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>

@@ -1,7 +1,7 @@
 # Lab Manual
 
 ## Hardware and Software Setup
-The bonsai script for today has two measurement nodes. **Channel 0**[^chan0-setup] receives amplified and digitized input from the measurement electrode (referenced to a "ground"). **Channel 1**[^chan1-setup] receives input from a floating voltage source (the "stimulator" electrodes).Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences. 
+The bonsai script for today has two measurement nodes. **Channel 0**[^chan0-setup] receives amplified and digitized input from the measurement electrode (referenced to a "ground"). **Channel 1**[^chan1-setup] receives input from a floating voltage source (the "stimulator" electrodes). Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences. 
 
 [^chan0-setup]: RSE, ±5 V; electrode inside suction tip goes to an analog input; electrode outside suction tip (in bath) goes to; hot amplifier output goes to an analog input; cold amplifier output (gnd) goes to the AIGND (analog input ground reference) (try having this go to AISN and NRSE). 
 
@@ -20,7 +20,7 @@ Cut the nerve cord near the end of the incision farthest from the head, and free
 
 Tilt the dissecting dish on clay so that saline pools at the incision and keeps the nerve cord wet, while keeping the head of the worm try.
 
-Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator (firmly!), attach its connections to the amplifier's input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode's external wire also needs to be in the saline pool around the incision. 
+Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator, attach its connections to the amplifier's input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode's external wire also needs to be in the saline pool around the incision. 
 
 :::{figure-md}
 :class: figure
