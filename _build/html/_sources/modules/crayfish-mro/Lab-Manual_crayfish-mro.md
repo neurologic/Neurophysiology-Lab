@@ -1,38 +1,82 @@
 # Lab Manual
 
+You will record extracellularly from nerve 2 while curling the tail to stimulate MRO proprioceptors. This recording will allow you to determine the stimulus-response tuning curve (sensory coding) of the MROs and various dynamic properties of the MRO neural code. 
 
+If there is time, you can also use this preparation to better understand how common anaesthetics work (for example [MS222](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7438171/) or ice).
 
-Muscle receptor organs (MROs) contain sensory neurons that depolarize in response to muscle stretch. In crayfish, 
-the superficial extensor muscle on each side of each abdominal segment (and in the two most posterior thoracic segments) are innervated by stretch-sensitive receptors. The superficial extensor muscles span adjacent segments, running from the middle of one tergite to the back edge of the next most anterior tergite. When these muscles contract, they pull the tergites together, causing the abdomen to straighten and extend (thus the name). Conversely, when the abdomen is curled ventrally, the tergites rotate around their joints and the extensor muscles are stretched, along with their associated MROs. MRO neurons receive inhibitory synaptic innervation from the central ganglion (this does not occur in vertebrate proprioceptors). These inhibitory inputs depress the receptor activity.
+## Hardware Setup
 
-Importantly, there are only two MRO cell types innervating each segmental superficial extensor muscle in crustaceans. The axons of the two MROs travel together from their dorsal muscles, laterally around the large abdominal muscles, to the ventral nerve cord to enter the abdominal ganglia as part of the second ganglionic nerve (nerve 2).
+:::{figure-md}
+:class: figure
 
-You will record extracellularly from nerve 2 while curling the tail to stimulate these receptors. This recording will allow you to determine the stimulus-response tuning curve (sensory coding) of the MROs (including their adequate stimulus), and measure the adaptation rate of the MROs. 
+<img src="/images/servo-circuit.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
 
-You will also use this preparation to better understand how anaesthetics work.
-- MS222 is a common anaesthetic used for aquatic animals <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7438171/">MS222 protocol</a>
-- Ice is another common anaesthetic.
-
+Servo motor control and stimulus monitor circuit. The 6V battery pack (upper right) powers the servo motor. The battery ground (negative lead) must be tied to the Arduino ground (GND) and the NIdaq AISN. Arduino Pin9 (PWM digital output) provides the signal to the servo motor and is also sent to the NIdaq AI1.
+:::
 
 ## Software Setup
-The bonsai script for today has one measurement node. <b>Channel 0</b> receives amplified and digitized input from the differential measurement electrodes (referenced to a "ground"). The parameters of the analog input node can be adjusted to specify the NiUSB sampling rate, voltage range, and buffering rate (for visualization). Use a sampling rate of 30kHz. Adjust the voltage range as needed to maximize the signal resolution if needed once you start measuring voltage signals from the leg (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering rate according to your visualization preferences. 
+The bonsai script for today has one measurement node. **Channel 0**[^chan0-setup] receives amplified and digitized input from the measurement electrode relative to the *ground* electrode. **Channel 1**[^chan1-setup] receives input from a floating voltage source (the "stimulator" electrodes). Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences. Make sure that the Ardiuno COM port is correct in the **CreateArduino** and **ServoOutput** nodes.
+
+[^chan0-setup]: RSE, ±1 V; hot amplifier output goes to an analog input; cold amplifier output (gnd) goes to the AIGND (analog input ground reference). 
+
+[^chan1-setup]:NRSE, ±10 V; hot stimulus output goes to an analog input; cold stimulus output ('gnd') goes to the AISN (analog input sensor reference). 
+
 
 ## Surgery
 For this lab, you will be removing the tail from a crayfish. A major benefit of targetting the MRO for measurement is that crude surgical techniques work better than fine surgincal techniques. 
 
-<ol>
-	<li>From an anaesthetized crayfish, cut the tail from the abdomen (as close to the abdomen as possible).</li>
-	<li>Cut along the ventral edge of the carapace as close to the ventral side as possible.</li>
-	<li>Use your finger or the handle of a pair of blunt forcepts to push the fast flexor muscle away from the dorsal surface. Take care not to push down too hard against the tissue left on the dorsal surface. Use scissors if necessary to cut the nerves away instead of pulling at them.</li>
-	<li>Pin the anterior segment of the tail down on the dish (dorsal side down) using two pins. Take care not to crack the carapace apart.</li>
-	<li>Thread a thread through the telson fins. Tie it gently but firmly. Trim the thread so that it )does not interfere with the electrode</li>
-</ol>
+1. From an anaesthetized crayfish, cut the tail from the abdomen (as close to the abdomen as possible).
+2. Cut along the ventral edge of the carapace as close to the ventral side as possible.
+3. Use your finger or the handle of a pair of blunt forcepts to push the fast flexor muscle away from the dorsal surface. Take care not to push down too hard against the tissue left on the dorsal surface. Use scissors if necessary to cut the nerves away instead of pulling at them.
+4. Pin the anterior segment of the tail down on the dish (dorsal side down) using two pins. Take care not to crack the carapace apart.
+	:::{figure-md}
+	:class: figure
+
+	<img src="/images/crayfish-tail-mro-prep.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+	Crayfish tail (cleared of overlying fast flexor muscle) pinned to the dish. 
+	:::
+5. Thread a thread through the middle telson fin. Tie it gently but firmly. Trim the thread so that it does not interfere with the electrode. Attach the free end of the thread to the servo motor horn.
+
+
+:::{figure-md}
+:class: figure
+
+<img src="/images/crayfish-tail-servo.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Suction electrode placed near an N2 root. Thread attaching telson fan to the servo motor horn. 
+:::
 
 ## Physiology Setup
 
-Attach the free end of the thread to the servo motor horn.
+Identify the nerve roots (N2) near the base of the tale. Select or make a suction electrode tip that has an inside diameter approxiamtely the diameter of the nerve. Connect the electrode to the amplifier input block: electrode inside suction tip goes to a differential input of the amplifier; electrode outside suction tip (in bath) goes to the other differential input (which is *tied to* amplifier reference/ground).
 
-<a id="experiment"></a>
+:::{figure-md}
+:class: figure
+
+<img src="/images/crayfish-mroN2-0.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Example N2 visualized through microscope. 
+:::
+
+:::{figure-md}
+:class: figure
+
+<img src="/images/crayfish-mroN2-1.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Example N2 visualized through microscope. 
+:::
+
+:::{figure-md}
+:class: figure
+
+<img src="/images/crayfish-mroN2-2.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Example N2 visualized through microscope. 
+:::
+
+
+(experiment)=
 ## Core Experiment
 
 ### Visualize Analog Inputs
