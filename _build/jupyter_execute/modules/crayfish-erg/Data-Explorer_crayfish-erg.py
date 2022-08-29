@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/ERG/Sensory-Coding-ERG.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-erg/Data-Explorer_crayfish-erg.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
-# <a id="intro"></a>
-# # Sensory Coding - ERG
-# 
-# Local field potential
+# # Data Explorer
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -16,6 +13,11 @@
 # - [Part I. Process Data](#one)
 # - [Part II. Analyze Processed Data](#two)
 # 
+
+# <a id="intro"></a>
+# # ElectroRetinoGram and Sensory Coding
+# 
+# Local field potential
 
 # <a id="setup"></a>
 # # Setup

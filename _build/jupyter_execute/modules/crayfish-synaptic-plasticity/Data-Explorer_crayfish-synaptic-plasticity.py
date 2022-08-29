@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-8/Synaptic-Plasticity.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
-# <a id="intro"></a>
-# # Synaptic Plasticity
-# 
-# How does the timing between spikes effect the post-synaptic potential (PSP)? 
-# 
-# You will be using a lot of the same tools to analyze the data as you used to analyze spontaneous spiking and psp events. 
+# # Data Explorer
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -19,6 +14,13 @@
 # - [Part II. Spike-Triggered Voltage](#two)
 # - [Part III. PSP amplitudes](#three)
 # 
+
+# <a id="intro"></a>
+# # Synaptic Plasticity
+# 
+# How does the timing between spikes effect the post-synaptic potential (PSP)? 
+# 
+# You will be using a lot of the same tools to analyze the data as you used to analyze spontaneous spiking and psp events. 
 
 # <a id="setup"></a>
 # # Setup

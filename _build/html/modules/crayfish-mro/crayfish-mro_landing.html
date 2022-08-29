@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lab Manual" href="Lab-Manual_crayfish-mro.html" />
@@ -315,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-erg/Data-Explorer_crayfish-erg.html">
-     Sensory Coding - ERG
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -342,7 +344,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-n3/Data-Explorer_crayfish-n3.html">
-     Motor Neuron Coding
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -369,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-superficial-flexor/Data-Explorer_crayfish-superficial-flexor.html">
-     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -396,7 +398,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
-     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -423,7 +425,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.html">
-     Synaptic Plasticity
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -450,7 +452,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-cpg/Data-Explorer_crayfish-cpg.html">
-     Neural Circuits
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -461,8 +463,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../human-emg/human-emg_landing.html">
-   Week 12. Human Motor Neurons
+  <a class="reference internal" href="../human-bci-music/human-bci-music_landing.html">
+   Week 12. Human BCI Music
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -471,17 +473,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Lab-Manual_human-emg.html">
-     Lab Manual
+    <a class="reference internal" href="../human-bci-music/Data-Explorer_human-bci-music.html">
+     BCIs and Ghost Music
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Data-Explorer_human-emg.html">
-     Human Motor Neuron Coding
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Responses_human-emg.html">
+    <a class="reference internal" href="../human-bci-music/Responses_human-bci-music.html">
      Responses
     </a>
    </li>
@@ -652,7 +649,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="week-5-muscle-receptor-organ">
 <h1>Week 5. Muscle Receptor Organ<a class="headerlink" href="#week-5-muscle-receptor-organ" title="Permalink to this headline">¶</a></h1>
-<p>Stretch-sensitive receptors are a type of <em>proprioceptor</em> that is embedded in or parallel to muscle fibers. In humans, we call these receptor-muscle pairings <em>muscle spindle organs</em> and in crustaceans we call these <strong>muscle receptor organs (MROs)</strong>. What information do proprioceptors encode? How does spike rate encode that information? What factors explain changes in proprioceptors spiking activity? You will investigate these questions by extracellularly measuring the electrical activity of MRO axons.</p>
+<p>Stretch-sensitive receptors are a type of <em>proprioceptor</em> that is embedded in or parallel to muscle fibers. In humans, we call these receptor-muscle pairings <em>muscle spindle organs</em> and in crustaceans we call these <strong>muscle receptor organs (MROs)</strong>. What information do proprioceptors encode? How does spike rate encode that information? What factors explain changes in proprioceptors spiking activity? You will investigate these questions by extracellularly measuring the electrical activity of MRO receptor neuron axons.</p>
 <p>In crayfish, the superficial extensor muscle on each side of each abdominal segment (and in the two most posterior thoracic segments) are innervated by stretch-sensitive receptors. The superficial extensor muscles span adjacent segments, running from one tergite to the next. When these muscles contract, they pull the tergites together, causing the abdomen to straighten and extend (thus the name). Conversely, when the abdomen is curled ventrally, the tergites rotate around their joints and the extensor muscles are stretched, along with their associated MROs. MRO neurons receive inhibitory synaptic innervation from the central ganglion (this does not occur in vertebrate proprioceptors). These inhibitory inputs depress the receptor activity.</p>
 <p>Importantly, there are only two MRO cell types innervating each segmental superficial extensor muscle in crustaceans. The axons of the two MROs travel together from their dorsal muscles, laterally around the large abdominal muscles, to the ventral nerve cord to enter the abdominal ganglia as part of the second ganglionic nerve (nerve 2).</p>
 <div class="section" id="pages">

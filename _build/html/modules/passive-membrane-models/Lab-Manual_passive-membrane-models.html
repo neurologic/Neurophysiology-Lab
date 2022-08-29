@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -319,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-erg/Data-Explorer_crayfish-erg.html">
-     Sensory Coding - ERG
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -346,7 +344,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-n3/Data-Explorer_crayfish-n3.html">
-     Motor Neuron Coding
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -373,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-superficial-flexor/Data-Explorer_crayfish-superficial-flexor.html">
-     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -400,7 +398,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
-     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -427,7 +425,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.html">
-     Synaptic Plasticity
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -454,7 +452,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-cpg/Data-Explorer_crayfish-cpg.html">
-     Neural Circuits
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -465,8 +463,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../human-emg/human-emg_landing.html">
-   Week 12. Human Motor Neurons
+  <a class="reference internal" href="../human-bci-music/human-bci-music_landing.html">
+   Week 12. Human BCI Music
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -475,17 +473,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Lab-Manual_human-emg.html">
+    <a class="reference internal" href="../human-bci-music/Lab-Manual_human-bci-music.html">
      Lab Manual
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Data-Explorer_human-emg.html">
-     Human Motor Neuron Coding
+    <a class="reference internal" href="../human-bci-music/Data-Explorer_human-bci-music.html">
+     BCIs and Ghost Music
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Responses_human-emg.html">
+    <a class="reference internal" href="../human-bci-music/Responses_human-bci-music.html">
      Responses
     </a>
    </li>
@@ -656,6 +654,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-hardware-setup">
+     Physical Rig Hardware Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-software-setup">
+     Physical Rig Software Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-notebook-setup">
+     Python Notebook Setup
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-i-membrane-potential">
@@ -728,6 +743,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-hardware-setup">
+     Physical Rig Hardware Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-software-setup">
+     Physical Rig Software Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-notebook-setup">
+     Python Notebook Setup
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-i-membrane-potential">
@@ -823,6 +855,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="physical-rig-hardware-setup">
+<h2>Physical Rig Hardware Setup<a class="headerlink" href="#physical-rig-hardware-setup" title="Permalink to this headline">¶</a></h2>
+<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to measure the
+‘membrane potential” in your model circuits. An analog to digital converter (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.</p>
+</div>
+<div class="section" id="physical-rig-software-setup">
+<h2>Physical Rig Software Setup<a class="headerlink" href="#physical-rig-software-setup" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the recording node.</p>
+</div>
+<div class="section" id="python-notebook-setup">
+<h2>Python Notebook Setup<a class="headerlink" href="#python-notebook-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
@@ -839,9 +882,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to measure the
-‘membrane potential” in your model circuits. An analog to digital converter (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.</p>
 <p><a id="one"></a></p>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="part-i-membrane-potential">
 <h1>Part I. Membrane Potential<a class="headerlink" href="#part-i-membrane-potential" title="Permalink to this headline">¶</a></h1>

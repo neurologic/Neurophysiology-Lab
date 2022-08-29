@@ -68,6 +68,18 @@
 # <a id="setup"></a>
 # # Setup
 
+# ## Physical Rig Hardware Setup
+
+# You will be using the [***Getting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to measure the 
+# 'membrane potential" in your model circuits. An analog to digital converter (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.  
+
+# ## Physical Rig Software Setup
+# 
+# Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'>**disable**</font> the recording node.
+# 
+
+# ## Python Notebook Setup
+
 # In[ ]:
 
 
@@ -82,9 +94,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from ipywidgets import interactive, HBox, VBox, widgets, interact
 
-
-# You will be using the [***Getting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to measure the 
-# 'membrane potential" in your model circuits. An analog to digital converter (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.  
 
 # <a id="one"></a>
 # # Part I. Membrane Potential

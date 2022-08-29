@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Data Explorer" href="Data-Explorer_computational-model.html" />
@@ -317,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-erg/Data-Explorer_crayfish-erg.html">
-     Sensory Coding - ERG
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -344,7 +344,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-n3/Data-Explorer_crayfish-n3.html">
-     Motor Neuron Coding
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -371,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-superficial-flexor/Data-Explorer_crayfish-superficial-flexor.html">
-     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -398,7 +398,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
-     Arthropod skeletal muscle compared to vertebrate skeletal muscle:
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -425,7 +425,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.html">
-     Synaptic Plasticity
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -452,7 +452,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../crayfish-cpg/Data-Explorer_crayfish-cpg.html">
-     Neural Circuits
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -463,8 +463,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../human-emg/human-emg_landing.html">
-   Week 12. Human Motor Neurons
+  <a class="reference internal" href="../human-bci-music/human-bci-music_landing.html">
+   Week 12. Human BCI Music
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -473,17 +473,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Lab-Manual_human-emg.html">
+    <a class="reference internal" href="../human-bci-music/Lab-Manual_human-bci-music.html">
      Lab Manual
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Data-Explorer_human-emg.html">
-     Human Motor Neuron Coding
+    <a class="reference internal" href="../human-bci-music/Data-Explorer_human-bci-music.html">
+     BCIs and Ghost Music
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../human-emg/Responses_human-emg.html">
+    <a class="reference internal" href="../human-bci-music/Responses_human-bci-music.html">
      Responses
     </a>
    </li>
@@ -614,33 +614,62 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-setup">
-   Software Setup
+  <a class="reference internal nav-link" href="#circuit-diagrams">
+   Circuit Diagrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#surgery">
-   Surgery
+  <a class="reference internal nav-link" href="#concepts-and-equations-of-electric-circuits">
+   Concepts and Equations of Electric Circuits
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-energy">
+     Conservation of Energy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-charge">
+     Conservation of Charge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voltage-and-current-across-capacitors">
+     Voltage and Current across Capacitors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voltage-and-current-across-resistors">
+     Voltage and Current across Resistors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resistor-capacitor-interactions">
+     Resistor-Capacitor Interactions
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#physiology-setup">
-   Physiology Setup
+  <a class="reference internal nav-link" href="#computational-models">
+   Computational Models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resting-membrane-potential">
+     Resting Membrane Potential
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-membrane-response-to-applied-current">
+     Neural Membrane Response to Applied Current
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-experiment">
-   Core Experiment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#experimental-exploration">
-   Experimental Exploration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
-   Copy data to your Google Drive for analysis
+  <a class="reference internal nav-link" href="#use-your-work-to-implement-computational-models-on-the-computer">
+   Use your work to implement computational models on the computer
   </a>
  </li>
 </ul>
@@ -664,33 +693,62 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-setup">
-   Software Setup
+  <a class="reference internal nav-link" href="#circuit-diagrams">
+   Circuit Diagrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#surgery">
-   Surgery
+  <a class="reference internal nav-link" href="#concepts-and-equations-of-electric-circuits">
+   Concepts and Equations of Electric Circuits
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-energy">
+     Conservation of Energy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-charge">
+     Conservation of Charge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voltage-and-current-across-capacitors">
+     Voltage and Current across Capacitors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voltage-and-current-across-resistors">
+     Voltage and Current across Resistors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resistor-capacitor-interactions">
+     Resistor-Capacitor Interactions
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#physiology-setup">
-   Physiology Setup
+  <a class="reference internal nav-link" href="#computational-models">
+   Computational Models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resting-membrane-potential">
+     Resting Membrane Potential
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-membrane-response-to-applied-current">
+     Neural Membrane Response to Applied Current
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-experiment">
-   Core Experiment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#experimental-exploration">
-   Experimental Exploration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy-data-to-your-google-drive-for-analysis">
-   Copy data to your Google Drive for analysis
+  <a class="reference internal nav-link" href="#use-your-work-to-implement-computational-models-on-the-computer">
+   Use your work to implement computational models on the computer
   </a>
  </li>
 </ul>
@@ -704,40 +762,125 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
 <h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html">Smith Lab Manual</a></p>
-<div class="section" id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
-<p>The bonsai script for today has two measurement nodes. <strong>Channel 0</strong> receives amplified and digitized input from the measurement electrode (referenced to a “ground”). <strong>Channel 1</strong> receives input from a voltage source (the “stimulator”).The parameters of the analog input node can be adjusted to specify the NiUSB sampling rate, voltage range, and buffering rate (for visualization). Use a sampling rate of 30kHz. Adjust the voltage range as needed to maximize the signal resolution if needed once you start measuring voltage signals from the nerve chord (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering rate according to your visualization preferences.</p>
+<p>A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons. Electric circuits are also well-described by basic algebraic and differential equations. Therefore, we often use electrical circuit models of neural membranes to formulate computational models of neural membranes.</p>
+<div class="section" id="circuit-diagrams">
+<h2>Circuit Diagrams<a class="headerlink" href="#circuit-diagrams" title="Permalink to this headline">¶</a></h2>
+<p>A circuit diagram is a graphical representation of an electrical circuit. You have already encountered symbols for three of the basic circuit components that you will be using for your computational models are <em>resistors</em>, <em>capacitors</em>, and <em>voltage source</em>.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/Electrical_Components.png"><img alt="circuit components" class="bg-primary mb-1 align-center" src="../../_images/Electrical_Components.png" style="width: 300px;" /></a>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Draw a circuit diagram of the <em>resting membrane potential</em> model circuit that you used in Week 1. You have a hard copy of this circuit at your rig.</p>
 </div>
-<div class="section" id="surgery">
-<h2>Surgery<a class="headerlink" href="#surgery" title="Permalink to this headline">¶</a></h2>
-<p>Anesthesia. Obtain an earthworm and place it in the 10% ethanol solution to anesthetize it. Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to dissect, while concentrated alcohol “pickles” the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate; it is really for you, not for the worm (which is too simple to care).</p>
-<p>After suitable anesthesia, rinse the alcohol off the worm with tap water and allow the excess water to drain off. Pin out the worm dorsal side up on a flat dissecting dish placed on the stage of your microscope (check that the worm is in the field of view). Place pins only in the region of the worm where you intend to open an incision; for suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode.</p>
-<p>With forceps and scissors (not a scalpel), open an incision and extend it an inch or two, as shown above. Use the pins to keep the incision open, and flush out the body cavity from time to time with saline. The drawings below will help you identify the nerve cord and other internal structures. Keep the exposed nerve cord moist by tilting the dissecting dish so that saline pools at the incision. Use small blocks of tackiwax to support the dish in a tilted position.</p>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Draw a circuit diagram of the <em>RC</em> model circuit that you used in Week 1. You have a hard copy of this circuit at your rig.</p>
 </div>
-<div class="section" id="physiology-setup">
-<h2>Physiology Setup<a class="headerlink" href="#physiology-setup" title="Permalink to this headline">¶</a></h2>
-<p>Cut the nerve cord near the end of the incision farthest from the head, and free about a centimeter of the cord from its lateral and ventral connections until it is no longer attached to the body wall.</p>
-<p>Place the recording electrode. Start by grounding the preparation: clip one end of an alligator clip lead to one of the dissecting pins (pick one that is out of the way). Clip the other alligator clip to the white (ground) binding post of the amplifier’s input block. Then clamp a suction electrode in a micromanipulator (firmly!), attach its connections to the amplifier’s input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode’s internal wire (a few cm). The electrode’s external wire also needs to be in the saline pool. Position the tip of the electrode against the cut end of the nerve cord, and gently draw the nerve cord into the electrode. Turn on your preamp and audio monitor, and you should hear and see some spontaneous activity in (non-giant) axons.</p>
-<p><a id="experiment"></a></p>
-</div>
-<div class="section" id="core-experiment">
-<h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
+<p>Today, you will need to include one more circuit component in your diagrams: a <em>current source</em>.</p>
+<a class="reference internal image-reference" href="../../_images/symbol_current-source.png"><img alt="circuit components" class="align-center" src="../../_images/symbol_current-source.png" style="width: 100px;" /></a>
+<p>Circuit components can either be arranged <em><strong>in series</strong></em> (attached end-to-end) or <em><strong>in parallel</strong></em> (side by side with each set of ends all attached together).</p>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Answer the following questions</p>
 <ol class="simple">
-<li><p>Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.</p></li>
-</ol>
-<p>Stimulation Protocol:</p>
-<ol class="simple">
-<li><p>Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.</p></li>
+<li><p>In the <em>resting membrane potential</em> model circuit, are the Voltage sources in series or in parallel?.</p></li>
+<li><p>In the <em>resting membrane potential</em> model circuit, are the resistors in series or in parallel?.</p></li>
+<li><p>In the <em>resting membrane potential</em> model circuit, are the Voltage source (V1) and resistor (R1) in series or in parallel?.</p></li>
 </ol>
 </div>
-<div class="section" id="experimental-exploration">
-<h2>Experimental Exploration<a class="headerlink" href="#experimental-exploration" title="Permalink to this headline">¶</a></h2>
-<p>Effects of:</p>
 </div>
-<div class="section" id="copy-data-to-your-google-drive-for-analysis">
-<h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Use the <span class="xref myst">Sensory Coding</span> notebook to analyse your data and answer the questions in the <span class="xref myst">Responses</span> notebook.</p>
+<div class="section" id="concepts-and-equations-of-electric-circuits">
+<h2>Concepts and Equations of Electric Circuits<a class="headerlink" href="#concepts-and-equations-of-electric-circuits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conservation-of-energy">
+<h3>Conservation of Energy<a class="footnote-reference brackets" href="#kirchhoff" id="id1">1</a><a class="headerlink" href="#conservation-of-energy" title="Permalink to this headline">¶</a></h3>
+<p>The algebraic directed sum of the potential differences (voltages) around any closed loop is zero.</p>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Calculate the voltage at each labeled <em>n</em> node (relative to the reference <em>REF</em> node) in the following circuit diagrams.</p>
+<a class="reference internal image-reference" href="../../_images/circuit-task_conservation-energy.png"><img alt="circuit diagram" class="align-center" src="../../_images/circuit-task_conservation-energy.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="conservation-of-charge">
+<span id="conservation-charge"></span><h3>Conservation of Charge<a class="footnote-reference brackets" href="#kirchhoff" id="id2">1</a><a class="headerlink" href="#conservation-of-charge" title="Permalink to this headline">¶</a></h3>
+<p>The current entering any junction is equal to the current leaving that junction.</p>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Calculate the current at each labeled <em>n</em> node in the following circuit diagrams.</p>
+<a class="reference internal image-reference" href="../../_images/circuit-task_conservation-charge.png"><img alt="circuit diagram" class="align-center" src="../../_images/circuit-task_conservation-charge.png" style="width: 250px;" /></a>
+</div>
+</div>
+<div class="section" id="voltage-and-current-across-capacitors">
+<h3>Voltage and Current across Capacitors<a class="headerlink" href="#voltage-and-current-across-capacitors" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[I = \partial{Q} / \partial{t}\]</div>
+<div class="math notranslate nohighlight">
+\[Q = C * V\]</div>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Rearrange the given equations to get an equation for the change in voltage across time in terms of the current across a capacitor. Assume that capacitance is a constant (the value does not change across time).<br />
+<em>Only resort to this hint<a class="footnote-reference brackets" href="#hint-dqdt" id="id3">2</a> after discussing your strategy and considering the equations and equation manipulations for at least 5 minutes.</em></p>
+</div>
+</div>
+<div class="section" id="voltage-and-current-across-resistors">
+<h3>Voltage and Current across Resistors<a class="headerlink" href="#voltage-and-current-across-resistors" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[V = I * R\]</div>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<p>Rearrange the given equation to get an equation for the current across a resistor in terms of the voltage across the resistor and its resistance.</p>
+</div>
+</div>
+<div class="section" id="resistor-capacitor-interactions">
+<h3>Resistor-Capacitor Interactions<a class="headerlink" href="#resistor-capacitor-interactions" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\tau = R * C\]</div>
+</div>
+</div>
+<div class="section" id="computational-models">
+<h2>Computational Models<a class="headerlink" href="#computational-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resting-membrane-potential">
+<h3>Resting Membrane Potential<a class="headerlink" href="#resting-membrane-potential" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<ol class="simple">
+<li><p>Draw a square circuit with one voltage source and one resistor in series on one side of the square. Attach a <strong><span class="math notranslate nohighlight">\(V_{in}\)</span></strong> electrode to one side of the square perpendicular to the <span class="math notranslate nohighlight">\(V:R\)</span> series. Attach a <strong><span class="math notranslate nohighlight">\(V_{ref}\)</span></strong> electrode to the other side of the square perpendicular to the <span class="math notranslate nohighlight">\(V:R\)</span> series.</p></li>
+<li><p>Write the equation for the current across the resistor in terms of voltage and current.</p></li>
+<li><p>Indicate which side of the voltage source is equal to <span class="math notranslate nohighlight">\(V_ref\)</span>. Label the voltage value on the other side of the voltage source <span class="math notranslate nohighlight">\(V_1\)</span></p></li>
+<li><p>Write the equation for the voltage change across the resistor (<span class="math notranslate nohighlight">\(V_R\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
+<li><p>Write the equation for the current across the resistor in terms of voltage across the resistor (<span class="math notranslate nohighlight">\(V_R\)</span>) and current across the resistor (<span class="math notranslate nohighlight">\(I\)</span>), substituting your equation from #4 for <span class="math notranslate nohighlight">\(V_R\)</span>.</p></li>
+</ol>
+</div>
+<div class="admonition-task admonition">
+<p class="admonition-title">Task</p>
+<ol>
+<li><p>In the following circuit, use an arrow to indicate the current across <span class="math notranslate nohighlight">\(R_1\)</span> as <span class="math notranslate nohighlight">\(I_1\)</span> and an arrow to indicate the current across <span class="math notranslate nohighlight">\(R_2\)</span> as <span class="math notranslate nohighlight">\(I_2\)</span> (the direction of the current is not important yet).</p>
+<a class="reference internal image-reference" href="../../_images/circuit-task_membrane-potential-current-flow.png"><img alt="circuit diagram" class="align-center" src="../../_images/circuit-task_membrane-potential-current-flow.png" style="width: 300px;" /></a>
+</li>
+<li><p>Given the assumption of <a class="reference internal" href="#conservation-charge"><span class="std std-ref"><em>conservation of charge</em></span></a>, write an equation for <span class="math notranslate nohighlight">\(I_1\)</span> in terms of <span class="math notranslate nohighlight">\(I_2\)</span>.</p></li>
+<li><p>Write the equation for the voltage change across each resistor (<span class="math notranslate nohighlight">\(V_R1\)</span> and <span class="math notranslate nohighlight">\(V_R2\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
+<li><p>Write the equation for current across each resistor (<span class="math notranslate nohighlight">\(I_1\)</span> and <span class="math notranslate nohighlight">\(I_2\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
+<li><p>Solve your equation from #4 in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span> (the voltage <em>inside</em> the model neuron membrane).</p></li>
+</ol>
+<blockquote>
+<div><p>Hint: To combine fractions, the denominators have to be equal. You can multiply fractions by “one” (ie. x/x) to get a needed variable (ie. x) into a fraction (like when denominators of two fractions need to be equal to each other).</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="neural-membrane-response-to-applied-current">
+<h3>Neural Membrane Response to Applied Current<a class="headerlink" href="#neural-membrane-response-to-applied-current" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="use-your-work-to-implement-computational-models-on-the-computer">
+<h2>Use your work to implement computational models on the computer<a class="headerlink" href="#use-your-work-to-implement-computational-models-on-the-computer" title="Permalink to this headline">¶</a></h2>
+<p>We will use the <a class="reference internal" href="Data-Explorer_computational-model.html"><span class="doc std std-doc">Data Explorer</span></a> notebook to work through the implementation together during class. Later, you will answer questions in the <a class="reference internal" href="Responses_computational-model.html"><span class="doc std std-doc">Responses</span></a> notebook.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="kirchhoff"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws">Kirchhoff’s circuit laws</a></p>
+</dd>
+<dt class="label" id="hint-dqdt"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>You can arrange the equation for <span class="math notranslate nohighlight">\(Q\)</span> in terms of <span class="math notranslate nohighlight">\(V\)</span> so that it is an equation for <span class="math notranslate nohighlight">\(V\)</span> in terms of <span class="math notranslate nohighlight">\(Q\)</span>The equation for current through a capacitor is in terms of <span class="math notranslate nohighlight">\(\partial{Q} / \partial{t}\)</span> but the equation for <span class="math notranslate nohighlight">\(V\)</span> would be in terms of <span class="math notranslate nohighlight">\(Q\)</span> not <span class="math notranslate nohighlight">\(\partial{Q} / \partial{t}\)</span>.</p>
+</dd>
+</dl>
 </div>
 </div>
 

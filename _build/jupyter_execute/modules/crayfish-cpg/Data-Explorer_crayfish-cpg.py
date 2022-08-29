@@ -1,15 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-6/Motor-Nerve.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-cpg/Data-Explorer_crayfish-cpg.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
-# <a id="intro"></a>
-# # Neural Circuits
-# 
-# The anterior and posterior roots of N1 control swimmeret movement. How is the motor neuron activity in these two nerves coordinated?
-# 
-# Gaussian-filtered activity (like did for EODs) to plot analyze coordination (correlation) and plot phase-plane plot of output.
-# 
+# # Data Explorer
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -19,6 +13,14 @@
 # - [Part I. Process Data](#one)
 # - [Part II. Motor Neuron Activity](#two)
 # - [Part III. Gaussian-filtered Spikes](#two)
+
+# <a id="intro"></a>
+# # Neural Circuits
+# 
+# The anterior and posterior roots of N1 control swimmeret movement. How is the motor neuron activity in these two nerves coordinated?
+# 
+# Gaussian-filtered activity (like did for EODs) to plot analyze coordination (correlation) and plot phase-plane plot of output.
+# 
 
 # <a id="setup"></a>
 # # Setup
@@ -393,7 +395,7 @@ vb
 # 
 # [toc](#toc)
 # 
-# How do different motor neuron types differ in their activity under different conditions?  
+#   
 
 # In[ ]:
 

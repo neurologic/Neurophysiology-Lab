@@ -73,11 +73,11 @@ parts:
         - file: modules/crayfish-cpg/Lab-Manual_crayfish-cpg
         - file: modules/crayfish-cpg/Data-Explorer_crayfish-cpg
         - file: modules/crayfish-cpg/Responses_crayfish-cpg
-    - file: modules/human-emg/human-emg_landing
+    - file: modules/human-bci-music/human-bci-music_landing
       sections:
-        - file: modules/human-emg/Lab-Manual_human-emg
-        - file: modules/human-emg/Data-Explorer_human-emg
-        - file: modules/human-emg/Responses_human-emg
+        - file: modules/human-bci-music/Lab-Manual_human-bci-music
+        - file: modules/human-bci-music/Data-Explorer_human-bci-music
+        - file: modules/human-bci-music/Responses_human-bci-music
     - file: capstone_landing
       sections:
         - file: capstone_assignment-guidelines

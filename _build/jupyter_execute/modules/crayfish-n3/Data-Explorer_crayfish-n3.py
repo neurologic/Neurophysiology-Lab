@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-6/Motor-Nerve.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-n3/Data-Explorer_crayfishn3.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
-# <a id="intro"></a>
-# # Motor Neuron Coding
-# 
-# The superficial flexor muscle of the crayfish is innervated by a small number of motor neurons. Because each motor neuron has a different axon diameter, you can tell them apart in your recording. 
-# 
+# # Data Explorer
 
 # <a id="toc"></a>
 # # Table of Contents
@@ -16,6 +12,12 @@
 # - [Setup](#setup)
 # - [Part I. Process Data](#one)
 # - [Part II. Motor Neuron Activity](#two)
+# 
+
+# <a id="intro"></a>
+# # Motor Neuron Coding
+# 
+# The superficial flexor muscle of the crayfish is innervated by a small number of motor neurons. Because each motor neuron has a different axon diameter, you can tell them apart in your recording. 
 # 
 
 # <a id="setup"></a>
