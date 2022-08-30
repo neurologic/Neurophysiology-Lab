@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/week-5/Sensory-Coding-MRO.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-mro/Data-Explorer_crayfish-mro.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # # Data Explorer
 
@@ -96,7 +96,7 @@ print('Task completed at ' + str(datetime.now(timezone(-timedelta(hours=5)))))
 #@markdown to your recorded data on Drive (find the filepath in the colab file manager:
 
 filepath = "full filepath goes here"  #@param 
-# filepath = '/Volumes/Untitled 1/BIOL247/data/crayfish-mro/mro_steps_0.bin'  #@param 
+filepath = '/Volumes/Untitled 1/BIOL247/data/crayfish-mro/mro_steps_0.bin'  #@param 
 
 #@markdown Specify the sampling rate and number of channels recorded.
 
@@ -401,7 +401,7 @@ radio_polarity = widgets.RadioButtons(
 # a function that will modify the xaxis range
 def update_plot(trial_,xrange,yrange_mro,yrange_pwm,thresh_low_,thresh_high_,polarity):
     fig, ax = plt.subplots(figsize=(10,6),ncols=1, nrows=2,sharex=True,
-                           gridspec_kw={'height_ratios':[3, 1]}); #specify figure number so that it does not keep creating new ones
+                           gridspec_kw={'height_ratios':[3, 1]},num=1); #specify figure number so that it does not keep creating new ones
     fig.tight_layout()    
     ax_mro = ax[0]
     ax_pwm = ax[1]
@@ -530,7 +530,7 @@ select_trials = widgets.SelectMultiple(
 
 def update_plot(trial_list,xrange,yrange_mro,yrange_pwm):
     fig, ax = plt.subplots(figsize=(10,6),ncols=1, nrows=2,sharex=True,
-                           gridspec_kw={'height_ratios':[3, 1]}); #specify figure number so that it does not keep creating new ones
+                           gridspec_kw={'height_ratios':[3, 1]},num=1); #specify figure number so that it does not keep creating new ones
     fig.tight_layout()
     ax_mro = ax[0]
     ax_pwm = ax[1]
@@ -690,7 +690,7 @@ display(label_fit_s)
 
 def update_plot(trial_list,xrange,yrange_mro,yrange_pwm,do_fit):
     fig, ax = plt.subplots(figsize=(10,5),ncols=1, nrows=2,sharex=True,
-                           gridspec_kw={'height_ratios':[3, 1]}); #specify figure number so that it does not keep creating new ones
+                           gridspec_kw={'height_ratios':[3, 1]},num=1); #specify figure number so that it does not keep creating new ones
     fig.tight_layout()
     ax_mro = ax[0]
     ax_pwm = ax[1]
@@ -834,9 +834,9 @@ plt.legend()
 
 #@markdown Run this code cell to plot parameters across conditions. 
 
-hfig,ax = plt.subplots(1,4)
+hfig,ax = plt.subplots(1,4,figsize=(10,4))
 ax[0].plot(condition,m)
-ax[1].plot(condition,t)
+ax[1].plot(condition,tau)
 ax[2].plot(condition,b)
 ax[3].plot(condition,r_squared)
 

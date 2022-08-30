@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -762,10 +764,10 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
 <h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
-<p>A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons. Electric circuits are also well-described by basic algebraic and differential equations. Therefore, we often use electrical circuit models of neural membranes to formulate computational models of neural membranes.</p>
+<p>A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons. Electric circuits are also well-described by basic algebraic and differential equations. Therefore, we often use electrical circuit models of neural membranes to formulate computational models of neural membranes. Today, you will build/formulate two computational models based on this technique: one of the resting membrane potential, and one of membrane potential changes in response to applied trans-membrane current.</p>
 <div class="section" id="circuit-diagrams">
 <h2>Circuit Diagrams<a class="headerlink" href="#circuit-diagrams" title="Permalink to this headline">¶</a></h2>
-<p>A circuit diagram is a graphical representation of an electrical circuit. You have already encountered symbols for three of the basic circuit components that you will be using for your computational models are <em>resistors</em>, <em>capacitors</em>, and <em>voltage source</em>.</p>
+<p>A circuit diagram is a graphical representation of an electrical circuit. You have already encountered symbols for three of the basic circuit components that you will be using for your computational models today: <em>resistors</em>, <em>capacitors</em>, and <em>voltage source</em>.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/Electrical_Components.png"><img alt="circuit components" class="bg-primary mb-1 align-center" src="../../_images/Electrical_Components.png" style="width: 300px;" /></a>
 <div class="admonition-task admonition">
 <p class="admonition-title">Task</p>
@@ -775,7 +777,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Task</p>
 <p>Draw a circuit diagram of the <em>RC</em> model circuit that you used in Week 1. You have a hard copy of this circuit at your rig.</p>
 </div>
-<p>Today, you will need to include one more circuit component in your diagrams: a <em>current source</em>.</p>
+<p>Today, you will need to include one more circuit component in your diagrams: a <em>current source</em>. A current source applies a current to the circuit.</p>
 <a class="reference internal image-reference" href="../../_images/symbol_current-source.png"><img alt="circuit components" class="align-center" src="../../_images/symbol_current-source.png" style="width: 100px;" /></a>
 <p>Circuit components can either be arranged <em><strong>in series</strong></em> (attached end-to-end) or <em><strong>in parallel</strong></em> (side by side with each set of ends all attached together).</p>
 <div class="admonition-task admonition">
@@ -784,24 +786,33 @@ const thebe_selector_output = ".output, .cell_output"
 <ol class="simple">
 <li><p>In the <em>resting membrane potential</em> model circuit, are the Voltage sources in series or in parallel?.</p></li>
 <li><p>In the <em>resting membrane potential</em> model circuit, are the resistors in series or in parallel?.</p></li>
-<li><p>In the <em>resting membrane potential</em> model circuit, are the Voltage source (V1) and resistor (R1) in series or in parallel?.</p></li>
+<li><p>In the <em>resting membrane potential</em> model circuit, are the Voltage source (<span class="math notranslate nohighlight">\(V_1\)</span>) and resistor (<span class="math notranslate nohighlight">\(R_1\)</span>) in series or in parallel?.</p></li>
 </ol>
 </div>
+<p>Finally, to interpret circuit diagrams it is important to remember the following two principles</p>
+<ul>
+<li><p>voltage is equal at all points along continuous <em>wires</em> (lines uninterrupted by a circuit component such as a resistor, capacitor, or voltage source)</p>
+<blockquote>
+<div><p>with a voltage meter, you can test this for yourself on the physical electrical circuit models at your table.</p>
+</div></blockquote>
+</li>
+<li><p>current is equal at all points along individual wires between nodes of bifurcation or convergence</p></li>
+</ul>
 </div>
 <div class="section" id="concepts-and-equations-of-electric-circuits">
 <h2>Concepts and Equations of Electric Circuits<a class="headerlink" href="#concepts-and-equations-of-electric-circuits" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="conservation-of-energy">
 <h3>Conservation of Energy<a class="footnote-reference brackets" href="#kirchhoff" id="id1">1</a><a class="headerlink" href="#conservation-of-energy" title="Permalink to this headline">¶</a></h3>
-<p>The algebraic directed sum of the potential differences (voltages) around any closed loop is zero.</p>
+<p>By the <em>law</em> of <em>conservation of energy</em>, it follows that the algebraic directed sum of the potential differences (voltages) around any closed loop is zero.</p>
 <div class="admonition-task admonition">
 <p class="admonition-title">Task</p>
-<p>Calculate the voltage at each labeled <em>n</em> node (relative to the reference <em>REF</em> node) in the following circuit diagrams.</p>
+<p>Calculate the voltage at each labeled node <em><strong>n</strong></em> (relative to the reference <em>REF</em> node) in the following circuit diagrams.</p>
 <a class="reference internal image-reference" href="../../_images/circuit-task_conservation-energy.png"><img alt="circuit diagram" class="align-center" src="../../_images/circuit-task_conservation-energy.png" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="conservation-of-charge">
 <span id="conservation-charge"></span><h3>Conservation of Charge<a class="footnote-reference brackets" href="#kirchhoff" id="id2">1</a><a class="headerlink" href="#conservation-of-charge" title="Permalink to this headline">¶</a></h3>
-<p>The current entering any junction is equal to the current leaving that junction.</p>
+<p>By the <em>law</em> of <em>conservation of charge</em>, it follows that the current entering any <em>junction</em> (point of bifurcation or convergencfe) is equal to the current leaving that junction.</p>
 <div class="admonition-task admonition">
 <p class="admonition-title">Task</p>
 <p>Calculate the current at each labeled <em>n</em> node in the following circuit diagrams.</p>
@@ -810,63 +821,82 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="voltage-and-current-across-capacitors">
 <h3>Voltage and Current across Capacitors<a class="headerlink" href="#voltage-and-current-across-capacitors" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[I = \partial{Q} / \partial{t}\]</div>
-<div class="math notranslate nohighlight">
-\[Q = C * V\]</div>
+<p>As you now know, capacitors <em>store</em> charge. The charge across a capacitor sets up an <em>electrical potential</em> (energy) measured in volts. As charge builds up on a capacitor, current effectively flows across the capacitor.</p>
+<div class="math notranslate nohighlight" id="equation-capacitor-current">
+<span class="eqno">(1)<a class="headerlink" href="#equation-capacitor-current" title="Permalink to this equation">¶</a></span>\[
+  I = \partial{Q} / \partial{t}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-capacitor-charge">
+<span class="eqno">(2)<a class="headerlink" href="#equation-capacitor-charge" title="Permalink to this equation">¶</a></span>\[
+  Q = C * V
+\]</div>
 <div class="admonition-task admonition">
 <p class="admonition-title">Task</p>
-<p>Rearrange the given equations to get an equation for the change in voltage across time in terms of the current across a capacitor. Assume that capacitance is a constant (the value does not change across time).<br />
+<p>Rearrange these equations for capacitor current and charge to get an equation for the change in voltage across time (<span class="math notranslate nohighlight">\(\partial{V} / \partial{t}\)</span>) in terms of the current (<span class="math notranslate nohighlight">\(I\)</span>) across a capacitor. Assume that capacitance is a constant (the value does not change across time).<br />
 <em>Only resort to this hint<a class="footnote-reference brackets" href="#hint-dqdt" id="id3">2</a> after discussing your strategy and considering the equations and equation manipulations for at least 5 minutes.</em></p>
 </div>
 </div>
 <div class="section" id="voltage-and-current-across-resistors">
 <h3>Voltage and Current across Resistors<a class="headerlink" href="#voltage-and-current-across-resistors" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[V = I * R\]</div>
+<p>The voltage at one end of a resistor is different from the voltage at the other end of the resistor. This is because voltage <em>drops</em> (or changes) across a resistor. The magnitude of this voltage change is given by <em>Ohm’s Law</em>:</p>
+<div class="math notranslate nohighlight" id="equation-ohms-law">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ohms-law" title="Permalink to this equation">¶</a></span>\[
+  V = I * R
+\]</div>
 <div class="admonition-task admonition">
 <p class="admonition-title">Task</p>
-<p>Rearrange the given equation to get an equation for the current across a resistor in terms of the voltage across the resistor and its resistance.</p>
+<p>Rearrange the given equation for the voltage across a resistor to get an equation for the current across a resistor in terms of the voltage across the resistor and its resistance.</p>
 </div>
 </div>
 <div class="section" id="resistor-capacitor-interactions">
 <h3>Resistor-Capacitor Interactions<a class="headerlink" href="#resistor-capacitor-interactions" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[\tau = R * C\]</div>
+<div class="math notranslate nohighlight" id="equation-rc-tau">
+<span class="eqno">(4)<a class="headerlink" href="#equation-rc-tau" title="Permalink to this equation">¶</a></span>\[
+  \tau = R * C
+\]</div>
+<p>For an <em>RC circuit</em> in which a resistor and capacitor are arranged in parallel, the <em>time constant</em> (<span class="math notranslate nohighlight">\(\tau\)</span>) is the amount of time it takes for the voltage across the RC circuit to reach 63% of its maximum value in response to a current applied across the RC circuit. Remember that you measured this value for <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html"><span class="doc std std-doc">the neuron membrane model you worked with in Part IV of the lab in Week 1</span></a></p>
 </div>
 </div>
 <div class="section" id="computational-models">
 <h2>Computational Models<a class="headerlink" href="#computational-models" title="Permalink to this headline">¶</a></h2>
+<p>With that introduction to drawing and analyzing circuit diagrams, you are ready to learn how to build computational models based on electric circuit models of neuron membranes.</p>
 <div class="section" id="resting-membrane-potential">
 <h3>Resting Membrane Potential<a class="headerlink" href="#resting-membrane-potential" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-task admonition">
-<p class="admonition-title">Task</p>
-<ol class="simple">
-<li><p>Draw a square circuit with one voltage source and one resistor in series on one side of the square. Attach a <strong><span class="math notranslate nohighlight">\(V_{in}\)</span></strong> electrode to one side of the square perpendicular to the <span class="math notranslate nohighlight">\(V:R\)</span> series. Attach a <strong><span class="math notranslate nohighlight">\(V_{ref}\)</span></strong> electrode to the other side of the square perpendicular to the <span class="math notranslate nohighlight">\(V:R\)</span> series.</p></li>
-<li><p>Write the equation for the current across the resistor in terms of voltage and current.</p></li>
-<li><p>Indicate which side of the voltage source is equal to <span class="math notranslate nohighlight">\(V_ref\)</span>. Label the voltage value on the other side of the voltage source <span class="math notranslate nohighlight">\(V_1\)</span></p></li>
-<li><p>Write the equation for the voltage change across the resistor (<span class="math notranslate nohighlight">\(V_R\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
-<li><p>Write the equation for the current across the resistor in terms of voltage across the resistor (<span class="math notranslate nohighlight">\(V_R\)</span>) and current across the resistor (<span class="math notranslate nohighlight">\(I\)</span>), substituting your equation from #4 for <span class="math notranslate nohighlight">\(V_R\)</span>.</p></li>
+<div class="admonition-task-create-a-computational-model-of-resting-membrane-potential admonition">
+<p class="admonition-title">Task: Create a computational model of resting membrane potential</p>
+<p>Consider the following electric circuit model of resting membrane potential that you <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html"><span class="doc std std-doc">worked with in Part I of the lab in Week 1</span></a></p>
+<a class="reference internal image-reference" href="../../_images/circuit-task_membrane-potential-current-flow.png"><img alt="circuit diagram" class="align-center" src="../../_images/circuit-task_membrane-potential-current-flow.png" style="width: 400px;" /></a>
+<p>Remember that each voltage source in the circuit represents a specific ion’s equilibrium potential and each resistor in the circuit represents the conductance of that specific ion.</p>
+<ol>
+<li><p>For each voltage source (<span class="math notranslate nohighlight">\(E\)</span>) in the electrical circuit diagram, indicate which side of each voltage source is equal to <span class="math notranslate nohighlight">\(V_{ref}\)</span>. Label the voltage value on the other side of each voltage source as <span class="math notranslate nohighlight">\(V_1\)</span> or <span class="math notranslate nohighlight">\(V_2\)</span>, respectively.</p></li>
+<li><p>Write the equation for the voltage change across each resistor (<span class="math notranslate nohighlight">\(V_{R1}\)</span> and <span class="math notranslate nohighlight">\(V_{R2}\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
+<li><p>Write the equation for current across a resistor in terms of voltage across the resistor and the value of its resistance.</p></li>
+<li><p>Combine #3 with #2 to write the equation for current across each resistor (<span class="math notranslate nohighlight">\(I_1\)</span> and <span class="math notranslate nohighlight">\(I_2\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
+<li><p>In the circuit diagram, use an arrow to indicate the current across <span class="math notranslate nohighlight">\(R_1\)</span> as <span class="math notranslate nohighlight">\(I_1\)</span> and an arrow to indicate the current across <span class="math notranslate nohighlight">\(R_2\)</span> as <span class="math notranslate nohighlight">\(I_2\)</span> (the direction of the current is not important yet).</p></li>
+<li><p>Given the assumption of <a class="reference internal" href="#conservation-charge"><span class="std std-ref"><em>conservation of charge</em></span></a>, write an equation for the total (<em>net</em>) current in the circuit in terms of <span class="math notranslate nohighlight">\(I_1\)</span> and <span class="math notranslate nohighlight">\(I_2\)</span>.</p></li>
+<li><p>Rearrange #6 to git an equation for <span class="math notranslate nohighlight">\(I_1\)</span> in terms of <span class="math notranslate nohighlight">\(I_2\)</span>.</p>
+<blockquote>
+<div><p>Hint: the <em>resting</em> membrane potential is a <em>steady state</em> condition, meaning that there is no <em>net</em> current flow in the circuit.</p>
+</div></blockquote>
+</li>
+<li><p>Substitute your equations from #4 for <span class="math notranslate nohighlight">\(I_1\)</span> and <span class="math notranslate nohighlight">\(I_2\)</span> into the equation from #7.</p></li>
+<li><p>Rearrange your equation from #8 to make describe <span class="math notranslate nohighlight">\(V_{in}\)</span> (the voltage <em>inside</em> the model neuron membrane) in terms of all the other variables.</p></li>
 </ol>
 </div>
-<div class="admonition-task admonition">
-<p class="admonition-title">Task</p>
-<ol>
-<li><p>In the following circuit, use an arrow to indicate the current across <span class="math notranslate nohighlight">\(R_1\)</span> as <span class="math notranslate nohighlight">\(I_1\)</span> and an arrow to indicate the current across <span class="math notranslate nohighlight">\(R_2\)</span> as <span class="math notranslate nohighlight">\(I_2\)</span> (the direction of the current is not important yet).</p>
-<a class="reference internal image-reference" href="../../_images/circuit-task_membrane-potential-current-flow.png"><img alt="circuit diagram" class="align-center" src="../../_images/circuit-task_membrane-potential-current-flow.png" style="width: 300px;" /></a>
-</li>
-<li><p>Given the assumption of <a class="reference internal" href="#conservation-charge"><span class="std std-ref"><em>conservation of charge</em></span></a>, write an equation for <span class="math notranslate nohighlight">\(I_1\)</span> in terms of <span class="math notranslate nohighlight">\(I_2\)</span>.</p></li>
-<li><p>Write the equation for the voltage change across each resistor (<span class="math notranslate nohighlight">\(V_R1\)</span> and <span class="math notranslate nohighlight">\(V_R2\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
-<li><p>Write the equation for current across each resistor (<span class="math notranslate nohighlight">\(I_1\)</span> and <span class="math notranslate nohighlight">\(I_2\)</span>) in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span>, <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, and/or <span class="math notranslate nohighlight">\(V_{ref}\)</span>.</p></li>
-<li><p>Solve your equation from #4 in terms of <span class="math notranslate nohighlight">\(V_{in}\)</span> (the voltage <em>inside</em> the model neuron membrane).</p></li>
+<p><em>You have just built a computational model for the membrane potential of a neuron. You built the model from first principles of an electric circuit model of neuron membranes. Your model describes the voltage across the membrane in terms of voltage sources (<em>equilibrium potentials</em>) and resistors (<em>ion channel conductance</em>). In the Data Explorer, we will implement your model to test how well it explains resting membrane potentials of neurons.</em></p>
+<div class="admonition-task-analyze-your-model admonition">
+<p class="admonition-title">Task: Analyze your model</p>
+<p>Consider a neuron with two types of ion conductances: sodium (<span class="math notranslate nohighlight">\(Na\)</span>) and potassium (<span class="math notranslate nohighlight">\(K\)</span>). In your model, set <span class="math notranslate nohighlight">\(E_1\)</span> equal to the sodium equilibrium potential and <span class="math notranslate nohighlight">\(R_1\)</span> equal to the resistance across sodium channels. <span class="math notranslate nohighlight">\(E_2\)</span> and <span class="math notranslate nohighlight">\(R_2\)</span> will equal the equilibrium potential and resistance of the potassium conductance.</p>
+<ol class="simple">
+<li><p>Use your model to calculate the predicted resting membrane potential (<span class="math notranslate nohighlight">\(V_{in}\)</span>) for a neuron where the equilibrium potential of sodium is +130mV, the resistance acrooss sodium channels is 5M<span class="math notranslate nohighlight">\(\Omega\)</span>, the equilibrium potential of potassium is -90mV, and the resistance acrooss potassium channels is 95M<span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
+<li><p>Use your model to calculate the predicted resting membrane potential (<span class="math notranslate nohighlight">\(V_{in}\)</span>) of the same neuron as in #1, but with the resistance across sodium channels = 50M<span class="math notranslate nohighlight">\(\Omega\)</span> and the resistance across potassium channels = 50M<span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
 </ol>
-<blockquote>
-<div><p>Hint: To combine fractions, the denominators have to be equal. You can multiply fractions by “one” (ie. x/x) to get a needed variable (ie. x) into a fraction (like when denominators of two fractions need to be equal to each other).</p>
-</div></blockquote>
 </div>
 </div>
 <div class="section" id="neural-membrane-response-to-applied-current">
 <h3>Neural Membrane Response to Applied Current<a class="headerlink" href="#neural-membrane-response-to-applied-current" title="Permalink to this headline">¶</a></h3>
+<p>The goal of this second computational model is to simulate how the resting membrane potential of a neuron changes when current is applied across the membrane. Physiologically, current gets applied across the membrane when synaptic inputs are activated. Experimentally, current can be applied across the membrane when using intracellular electrode configurations. In the first week of lab, you applied a current across an electric circuit model of a neuron membrane. Now, use that circuit to formulate a computational model.</p>
+<p>You can use a simplified circuit in which all voltage sources (equilibrium potentials) are combined into one <em>steady state equilibrium potential</em> (the “resting” potential of the neuron; <span class="math notranslate nohighlight">\(V_{rest}\)</span>) and all resistors (ion channels) are combined into one net <em>membrane resistance</em> of the neuron ($R_{mem}).</p>
 </div>
 </div>
 <div class="section" id="use-your-work-to-implement-computational-models-on-the-computer">
