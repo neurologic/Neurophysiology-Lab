@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BCIs and Ghost Music &#8212; Neurophysiology Lab</title>
+    <title>Data Explorer &#8212; Neurophysiology Lab</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Responses" href="Responses_human-bci-music.html" />
-    <link rel="prev" title="Week 12. Human BCI Music" href="human-bci-music_landing.html" />
+    <link rel="prev" title="Lab Manual" href="Lab-Manual_human-bci-music.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -472,9 +472,14 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -482,10 +487,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../capstone_landing.html">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -495,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../capstone_assignment-guidelines.html">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -632,12 +642,17 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   BCIs and Ghost Music
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-contents">
    Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bcis-and-ghost-music">
+   BCIs and Ghost Music
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -680,7 +695,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>BCIs and Ghost Music</h1>
+                <h1>Data Explorer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -692,12 +707,17 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   BCIs and Ghost Music
+   Data Explorer
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-contents">
    Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bcis-and-ghost-music">
+   BCIs and Ghost Music
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -739,18 +759,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p><a id="intro"></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="bcis-and-ghost-music">
-<h1>BCIs and Ghost Music<a class="headerlink" href="#bcis-and-ghost-music" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://hplgit.github.io/primer.html/doc/pub/diffeq/._diffeq-solarized002.html">http://hplgit.github.io/primer.html/doc/pub/diffeq/._diffeq-solarized002.html</a></p>
-<p>maybe: <a class="reference external" href="https://web.mit.edu/music21/doc/index.html">https://web.mit.edu/music21/doc/index.html</a> ? (see example implementation here <a class="reference external" href="https://www.datacamp.com/tutorial/using-tensorflow-to-compose-music">https://www.datacamp.com/tutorial/using-tensorflow-to-compose-music</a>)</p>
-<!-- <figure align="center">
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/example-eods_Kramer.jpeg?raw=True' width="300" alt='eod e-field' align="center"/>
-<figcaption align = "center"><b>Electric organ discharge waveform</b> and sex, in three snoutfish species of southern Africa. All electric organ discharges represented as voltage over time, recorded in the field immediately after capture. Same time bar for all. (a) Sexual dimorphism in Marcusenius altisambesi with two distinct waveforms. (b) Sex difference of only a statistical nature in Petrocephalus catostoma (Upper Zambezi form) with, in most males, a stronger second positive phase than in females, such as shown here. (c) Petrocephalus wesselsi (Sabie River, South Africa) with no difference between the sexes. P. wesselsi was recognized as distinct from P. catostoma only recently.
-</figcaption>
-</figure> -->
-<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer">Link to Other Notebooks (colab link)</a></p>
+  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/human-bci-music/Data-Explorer_human-bci-music.ipynb<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
+<h1>Data Explorer<a class="headerlink" href="#data-explorer" title="Permalink to this headline">¶</a></h1>
 <p><a id="toc"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
@@ -768,6 +779,18 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><a class="reference external" href="#five">Part V. </a></p></li>
 </ul>
+<p><a id="intro"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="bcis-and-ghost-music">
+<h1>BCIs and Ghost Music<a class="headerlink" href="#bcis-and-ghost-music" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://hplgit.github.io/primer.html/doc/pub/diffeq/._diffeq-solarized002.html">http://hplgit.github.io/primer.html/doc/pub/diffeq/._diffeq-solarized002.html</a></p>
+<p>maybe: <a class="reference external" href="https://web.mit.edu/music21/doc/index.html">https://web.mit.edu/music21/doc/index.html</a> ? (see example implementation here <a class="reference external" href="https://www.datacamp.com/tutorial/using-tensorflow-to-compose-music">https://www.datacamp.com/tutorial/using-tensorflow-to-compose-music</a>)</p>
+<!-- <figure align="center">
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/example-eods_Kramer.jpeg?raw=True' width="300" alt='eod e-field' align="center"/>
+<figcaption align = "center"><b>Electric organ discharge waveform</b> and sex, in three snoutfish species of southern Africa. All electric organ discharges represented as voltage over time, recorded in the field immediately after capture. Same time bar for all. (a) Sexual dimorphism in Marcusenius altisambesi with two distinct waveforms. (b) Sex difference of only a statistical nature in Petrocephalus catostoma (Upper Zambezi form) with, in most males, a stronger second positive phase than in females, such as shown here. (c) Petrocephalus wesselsi (Sabie River, South Africa) with no difference between the sexes. P. wesselsi was recognized as distinct from P. catostoma only recently.
+</figcaption>
+</figure> -->
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer">Link to Other Notebooks (colab link)</a></p>
 <p><a id="setup"></a></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
@@ -1002,7 +1025,7 @@ The frequency of a note that is h half tones up from a base frequency f is given
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fab6998ca90&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/Data-Explorer_human-bci-music_23_1.png" src="../../_images/Data-Explorer_human-bci-music_23_1.png" />
+<img alt="../../_images/Data-Explorer_human-bci-music_24_1.png" src="../../_images/Data-Explorer_human-bci-music_24_1.png" />
 </div>
 </div>
 <p>write(‘test.wav’, sample_rate, data)</p>
@@ -1060,11 +1083,11 @@ Written by Dr. Krista Perks for courses taught at Wesleyan University.<p><a id="
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="human-bci-music_landing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Lab-Manual_human-bci-music.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 12. Human BCI Music</p>
+            <p class="prev-next-title">Lab Manual</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Responses_human-bci-music.html" title="next page">

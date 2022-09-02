@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How To Guides" href="howto/howto.html" />
@@ -473,8 +471,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="modules/human-bci-music/Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="modules/human-bci-music/Data-Explorer_human-bci-music.html">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -482,10 +485,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/human-bci-music/Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="capstone_landing.html">
+  <a class="reference internal" href="capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -495,7 +503,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="capstone_assignment-guidelines.html">
+    <a class="reference internal" href="capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -623,77 +631,102 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="standards">
 <h1>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h1>
-<p>This course uses a continuous “standards-based” grading format. For each of the following sections, you will be assessed throughout the course. Your grade (0-5) will increase as you achieve and master more skills in each section. This standards-based assessment will be averaged across sections at the end of the course and count toward 80% of your final grade.</p>
-<p>____ / ____ <strong>Concepts</strong> (Demonstrated through Response notebooks)</p>
+<p>20% of your grade in this course is determined using a “<em>standards</em>-based”/”<em>mastery</em>-based” grading format. This document contains a list of the <em>standards</em> (learning targets) that you will be assessed on. These standards are categorized into five broad course goals. The assessment occurs throughout the semester and consists of feedback about where you are on the scale of <em>mastering</em> each standard. Your grade (0-5) is continuously updated (not averaged across assignments) to reflect your mastery of each standard. The progress you have made (your final score) will be an average across sections at the end of the course. Throughout the course you should feel empowered to track your progress, identify next steps in understanding each standard, and communicate your progress to me in addition to me communicating my observation of your progress to you.</p>
+<p>____ <strong>Concepts</strong> (Demonstrated through Response notebooks and during class and through Capstone)</p>
 <ul class="simple">
-<li><p>V = IR</p></li>
-<li><p>T = RC</p></li>
-<li><p>Signal versus noise</p></li>
-<li><p>“spike sorting” (the effect of electrode placement on the recorded signal)</p></li>
-<li><p>“spike sorting” (spike differences from neuron differences)</p></li>
-<li><p>Baseline/spontaneous activity</p></li>
-<li><p>Spike coding (rate versus count versus timing)</p></li>
-<li><p>ADC conversion</p></li>
-<li><p>Signal processing</p></li>
-<li><p>Raw data</p></li>
-<li><p>Processed data</p></li>
-<li><p>Quantification of neural responses: rates, amplitudes, times</p></li>
-<li><p>Ionic basis of the membrane potential</p></li>
-<li><p>Electrical circuit modeling</p></li>
-<li><p>Computational modeling</p></li>
-<li><p>Geometric view of big data</p></li>
+<li><p>I can apply the equation V = IR to explain neural activity</p></li>
+<li><p>I can apply the equation T = RC to explain neural activity</p></li>
+<li><p>I can use space constants to explain neural activity</p></li>
+<li><p>I can use time constants to explain neural activity</p>
+<ul>
+<li><p>membrane time constant</p></li>
+<li><p>spiking response time constant</p></li>
+</ul>
+</li>
+<li><p>I can infer the functional consequences of space and time constants for neural processing</p></li>
+<li><p>I can manipulate and measure electrical circuit models of neural membranes</p></li>
+<li><p>I can read and analyze electric circuit diagrams</p></li>
+<li><p>I can interpret the membrane potential based on the properties of ion conductances</p></li>
+<li><p>I can build and implement computational models of neural membranes</p></li>
+<li><p>I can distinguish between <em>signal</em> and <em>noise</em> in raw electrophysiology data</p></li>
+<li><p>I can distinguish between <em>active</em> and <em>passive</em> neural activity</p></li>
+<li><p>I can distinguish between baseline/spontaneous and stimulus-evoked neural activity</p></li>
+<li><p>I can interpret the properties of neural events in terms of underlying physical and physiological processes</p>
+<ul>
+<li><p>(the effect of electrode placement on the recorded signal)</p></li>
+<li><p>spike differences from neuron differences)</p></li>
+<li><p>causal relationships between neuron anatomy and neuron electrophysiology</p></li>
+</ul>
+</li>
+<li><p>I can determine the stimulus-response tuning of receptor neurons</p></li>
+<li><p>I can select ADC conversion parameters that optimize the recorded electrophysiology data</p></li>
+<li><p>I can interpret patterned activity among sets of neurons</p>
+<ul>
+<li><p>synaptic connectivity</p></li>
+<li><p>cpg</p></li>
+<li><p>human erg</p></li>
+</ul>
+</li>
+<li><p>I can identify the difference between and relationship between raw data and processed data</p></li>
+<li><p>I can quantify neural responses based on isi, rate, amplitudes, and time</p></li>
+<li><p>I can identify and interpret synaptically connected pre- and post-synaptic events based on simultaneously measured pre- and post-synaptic activity</p></li>
+<li><p>I can demonstrate synaptic plasticity</p></li>
 </ul>
 <p>_____ <strong>Experimental Skills</strong> (Demonstrated during lab)</p>
 <ul class="simple">
-<li><p>Patience (what tools can you find to increase this skill)</p></li>
-<li><p>Persistence</p></li>
-<li><p>Identifying when something is wrong</p></li>
-<li><p>Brainstorming potential issues and solutions</p></li>
-<li><p>Taking steps to troubleshoot</p></li>
-<li><p>Demonstrating good “noise reducing” practices</p></li>
-<li><p>Recognizing when the “ground” is not in the prep/bath</p></li>
-<li><p>Maintaining tissue health (surgical delicacy, maintaining fresh solutions when needed)</p></li>
-<li><p>Not breaking the glass electrodes</p></li>
-<li><p>Independent research exploration</p></li>
-<li><p>Helpful to peers and to instructor during class</p></li>
-<li><p>Verbally engages in inquiry and discourse</p></li>
+<li><p>I demonstrate patience and persistence</p></li>
+<li><p>I can identify when something is not working correctly and/or as I expected it to</p></li>
+<li><p>In the face of something not working, I pose possible causes based on logical reasoning</p></li>
+<li><p>I take steps to troubleshoot issues</p></li>
+<li><p>I demonstrate good “noise reducing” practices</p></li>
+<li><p>I recognize “grounding” issues by observing the raw signal</p></li>
+<li><p>I maintain good tissue health in my preps</p></li>
+<li><p>I do not break the glass electrode tips</p></li>
+<li><p>I independently explore the preps during lab based on specific curiousities beyond the provided protocol.</p></li>
+<li><p>I am helpful to peers and to the instructor</p></li>
+<li><p>I verbally engage in inquiry and discourse with my peers and the instructor</p></li>
 </ul>
-<p>_____ <strong>Data Visualization / Presentation</strong> (Demonstrated through Response notebooks)</p>
+<p>_____ <strong>Data Visualization / Presentation</strong> (Demonstrated through Response notebooks and Capstone)</p>
 <ul class="simple">
-<li><p>Turned in as good quality graphics (readability)</p></li>
-<li><p>Figures are clear (font size, axis zoom, resolution, etc)</p></li>
-<li><p>Figures are relevant to the point being made</p></li>
-<li><p>Figures do not include extraneous information</p></li>
-<li><p>Figures include all relevant information</p></li>
-<li><p>Labels are all correct</p></li>
-<li><p>Legends are concise yet thoroughly provide information needed to interpret figure.</p></li>
-<li><p>A logical selection of potential options has been curated to make a point</p></li>
+<li><p>I turn in good quality graphics that are readabile (font size, axis zoom, resolution, etc)</p></li>
+<li><p>I make figures that are relevant to the point I am making in any accompanying text</p></li>
+<li><p>My figures do not include extraneous information</p></li>
+<li><p>My figures and their legend include all necessary relevant information for interpretability</p></li>
+<li><p>My labels are correct</p></li>
+<li><p>My figure legends are concise.</p></li>
+<li><p>I can curate a logical selection of resources from a variety of potential options to make a specific point</p></li>
 </ul>
 <p>_____ <strong>Execution and Communication of Data Processing, Analysis, and Interpretation</strong> (Demonstrated through Response notebooks and Capstone)</p>
 <ul class="simple">
-<li><p>Using clear non-jargon language to describe what you observe</p></li>
-<li><p>Correct use of experimental and neurophysiology vocabulary</p></li>
-<li><p>Clear descriptions of any data processing steps</p></li>
-<li><p>Clear descriptions of any analysis steps/tools</p></li>
-<li><p>Uses analysis tools appropriately</p></li>
-<li><p>Describes analysis results correctly</p></li>
-<li><p>Writing (speaking) is clear (requires first clear thinking) using effective sentence structure (no run-ons, active voice).</p></li>
-<li><p>Demonstrates logical reasoning</p></li>
-<li><p>Demonstrates critical thinking</p></li>
-<li><p>Shows attention to what is being asked</p></li>
-<li><p>Makes connections between data and neuroscience concepts</p></li>
-<li><p>Demonstrates attention to detail beyond what is asked</p></li>
-<li><p>Poses relevant hypotheses to frame work when applicable</p></li>
+<li><p>I can correctly implement signal processing tools and interpret what information they provide and leave about the original signal</p></li>
+<li><p>I can effectively utilize trial-based analyses</p></li>
+<li><p>I use clear non-jargon language</p>
+<ul>
+<li><p>describing what I observe in my data</p></li>
+</ul>
+</li>
+<li><p>I correctly use experimental and neurophysiology vocabulary</p>
+<ul>
+<li><p>describe data processing steps</p></li>
+<li><p>describe analysis methods/tools</p></li>
+<li><p>describe analysis results</p></li>
+</ul>
+</li>
+<li><p>I apply analysis tools effectively and appropriately to answer questions</p></li>
+<li><p>I use effective sentence structure (no run-ons, active voice).</p></li>
+<li><p>I demonstrate logical reasoning and critical thinking</p></li>
+<li><p>In my responses, I attend to what is being asked</p></li>
+<li><p>I attend to detail beyond what is directly asked</p></li>
+<li><p>I make connections between the data I collect and general neuroscience concepts I know</p></li>
+<li><p>I pose relevant hypotheses to frame my work when possible</p></li>
 </ul>
 <p>_____ <strong>Foundational Computing Skills</strong> (Demonstrated during lab and in ability to complete assignments)</p>
 <ul class="simple">
-<li><p>Keeping track of files</p></li>
-<li><p>Maintaining logical file structure</p></li>
-<li><p>Saving data</p></li>
-<li><p>Keeping track of metadata</p></li>
-<li><p>Not saving loads of not data</p></li>
-<li><p>Basic level of Python coding to explore and analyze data when prompted (and beyond if desired)</p></li>
-<li><p>File transfers across computers</p></li>
+<li><p>I keep track of my files and metadata associated with file contents</p></li>
+<li><p>I maintain a logical file structure</p></li>
+<li><p>I save data efficiently (ie. not saving loads of not data)</p></li>
+<li><p>I implement a basic level of Python coding to explore and analyze data when prompted (and beyond if desired)</p></li>
+<li><p>I execute file transfers across computers to be able to work remotely</p></li>
 </ul>
 <p>_____ <strong>Personal Goals For Yourself in the Course</strong> (How will you demonstrate your achievement in these?)</p>
 <blockquote>

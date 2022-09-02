@@ -51,9 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="BCIs and Ghost Music" href="Data-Explorer_human-bci-music.html" />
+    <link rel="next" title="Data Explorer" href="Data-Explorer_human-bci-music.html" />
     <link rel="prev" title="Week 12. Human BCI Music" href="human-bci-music_landing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -477,7 +479,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Data-Explorer_human-bci-music.html">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -485,10 +487,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../capstone_landing.html">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -498,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../capstone_assignment-guidelines.html">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -678,15 +685,17 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
 <p>The bonsai script for today has only one datastream pathway.</p>
 <p>The Analog Input node contains one channel receiving input from the output of an extracellular amplifier. The extracellular amplifier takes input from a differential electrode, amplifies it, bandpasses the signal frequency, and transforms it to a monopolar signal (relative to ground). The <a class="reference external" href="https://backyardbrains.com/products/files/EMGSpikerShield.SMD.V2.61.pdf">amplifier</a> has a gain of approximately 2k and cutoff frequencies of 50-2500Hz. These amplifiers also have a built-in circuit that converts the raw EMG into an amplitude envelope of the signal. You will use this setting on the amplifier todya.</p>
-<p>The Matrix Writer node contains specifications for the file name and location where the file will be stored. Make sure the filename ends in <code class="docutils literal notranslate"><span class="pre">.bin</span></code>.</p>
+<p>The Matrix Writer node contains specifications for the file name and location where the file will be stored. Make sure the filename ends in <code class="docutils literal notranslate"><span class="pre">bin</span></code>.</p>
 <p>The amplitude of each function generator is controlled by the amplitude of each analog input channel.</p>
 </div>
 <div class="section" id="core-experiment">
 <h2>Core Experiment<a class="headerlink" href="#core-experiment" title="Permalink to this headline">¶</a></h2>
+<p>Choose a set of muscles to record from
+Switch the Amplifier to “envelope”</p>
 </div>
 <div class="section" id="copy-data-to-your-google-drive-for-analysis">
 <h2>Copy data to your Google Drive for analysis<a class="headerlink" href="#copy-data-to-your-google-drive-for-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Use the <span class="xref myst">Human Motor Neuron Coding</span> notebook to analyse your data and answer the questions in the <span class="xref myst">Responses</span> notebook.</p>
+<p>Use the <a class="reference internal" href="Data-Explorer_human-bci-music.html"><span class="doc std std-doc">DataExplorer</span></a> notebook to analyse your data and answer the questions in the <a class="reference internal" href="Responses_human-bci-music.html"><span class="doc std std-doc">Responses</span></a> notebook.</p>
 </div>
 </div>
 
@@ -725,7 +734,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="Data-Explorer_human-bci-music.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BCIs and Ghost Music</p>
+        <p class="prev-next-title">Data Explorer</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

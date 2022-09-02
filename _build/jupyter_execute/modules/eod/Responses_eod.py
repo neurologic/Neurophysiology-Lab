@@ -11,13 +11,36 @@
 
 # ...
 
-# What explains/causes each feature of the EOD waveform shape: 
+# ***Prompt 12:** Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:*
+# - *baseline (resting) voltage*
+# - *polarity*
+# - *change in polarity*
+# - *amplitude* 
+#     
+# ```{hint} 
+# Insert an image from your google drive in a markdown cell by doing the following... 
+# 
+# Get the "Anyone can view" share link from google drive. 
+# With a  share link in the following format: https://drive.google.com/file/d/ID-of-image-/view?usp=sharing,
+# all you need is the *ID-of-image* from the URL share link. 
+# 
+# Enter editing mode on the Markdown cell below.
+# 
+# In the template URL provided, replace "1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae" with the ID from the link you see in your google drive's "share link" screen for your image.
+# 
+# Then "run" the markdown cell (or double click it). Your image will replace the one provided.
+# 
+# ```
+
+# ...
+# 
+# <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
+
+# ***Prompt** What effects each feature of the EOD waveform shape in your recording?:* 
 # - polarity
 # - amplitude
 # 
-# Use plots of 3 different EOD waveforms (from different parts of the recording) and put them together in a cohesive figure to describe. 
-# 
-# Along with your written explanation, paste your figure below following the template provided in the markdown cell (insert your figure by replacing the "id" in the link below with your google drive share link id). 
+# *Use plots of 3 different EOD waveforms (from different parts of the recording) and put them together in a cohesive figure to describe. Along with your written explanation, paste your figure below following the template provided in the markdown cell (insert your figure by replacing the "id" in the link below with your google drive share link id).*
 
 # ...
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >

@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -475,8 +473,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../human-bci-music/Data-Explorer_human-bci-music.html">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -484,10 +487,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../capstone_landing.html">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -497,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../capstone_assignment-guidelines.html">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -651,7 +659,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Markdown cells awaiting your responses to the following questions contain <code class="docutils literal notranslate"><span class="pre">...</span></code></p>
 <p>Edit these cells by replacing <code class="docutils literal notranslate"><span class="pre">...</span></code> with your responses.</p>
 <hr class="docutils" />
-<p><em><strong>NAME</strong></em>: …</p>
+<p><em><strong>NAME</strong></em>:</p>
+<p>…</p>
 <p><em><strong>Prompt 1:</strong> What is the biological equivalent of the resistors in the neuron membrane model from <strong>Part I</strong>?</em></p>
 <p>…</p>
 <p><em><strong>Prompt 2:</strong> What is the biological equivalent of each set of resistors (Rinside, Routside, Rmembrane) in the neuron membrane model from <strong>Part II and III</strong>?</em></p>
@@ -679,6 +688,8 @@ Then, calculate it by starting at Node #7.</em></p>
 <p>…</p>
 <p><em><strong>Prompt 10:</strong> Note that <span class="math notranslate nohighlight">\(R_{o}\)</span> is usually so small compared to the other resistances that it can be ignored when estimating neuron space constants. Why do you think it is so much smaller? In other words, what makes <span class="math notranslate nohighlight">\(R_{i}\)</span> large compared to <span class="math notranslate nohighlight">\(R_{o}\)</span>? And what makes <span class="math notranslate nohighlight">\(R_{m}\)</span> large compared to <span class="math notranslate nohighlight">\(R_{o}\)</span>?)</em></p>
 <p>…</p>
+<p><em><strong>Prompt 11:</strong> Axons of different types of neurons have different diameters. Why, based on the space constant, would spikes travel faster along axons with a larger cross-section diameter?</em></p>
+<p>…</p>
 <p><em><strong>Prompt 11:</strong> What caused the change in polarity in your membrane potential measurement in <strong>Part III</strong> (and why did the polarity not change in <strong>Part II</strong>)? If you did not observe a polarity change or if you observed a polarity change in both configurations, make note of that.</em></p>
 <p>…</p>
 <p><em><strong>Prompt 12:</strong> Think back to your other neuroscience courses. Draw a typical neuron’s action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:</em></p>
@@ -699,7 +710,9 @@ all you need is the <em>ID-of-image</em> from the URL share link.</p>
 <p>Then “run” the markdown cell (or double click it). Your image will replace the one provided.</p>
 </div>
 <p>…</p>
-<img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" ><p>*<strong>Prompt 13:</strong> What was different between the membrane potential response to (the same) applied current <strong>with</strong> verusus <strong>without</strong> a capacitor in the circuit? What was the same between the membrane potential response to (the same) applied current <strong>with</strong> verusus <strong>without</strong> a capacitor in the circuit?</p>
+<img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" ><p><em><strong>Prompt</strong> Based on what you observed today, what effects each of the following two features of the action potential waveform shape in your measurement/recording of the neuron membrane?: 1. polarity and 2. amplitude</em></p>
+<p>…</p>
+<p>*<strong>Prompt 13:</strong> What was different between the membrane potential response to (the same) applied current <strong>with</strong> verusus <strong>without</strong> a capacitor in the circuit? What was the same between the membrane potential response to (the same) applied current <strong>with</strong> verusus <strong>without</strong> a capacitor in the circuit?</p>
 <p>…</p>
 <p><em><strong>Prompt 14:</strong> Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?</em></p>
 <p>…</p>

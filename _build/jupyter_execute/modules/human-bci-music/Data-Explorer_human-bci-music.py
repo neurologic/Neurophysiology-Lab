@@ -1,7 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/human-bci-music/Data-Explorer_human-bci-music.ipynb<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+
+# # Data Explorer
+
+# <a id="toc"></a>
+# # Table of Contents
+# 
+# - [Introduction](#intro)
+# - [Setup](#setup)
+# - [Part I. ](#one)
+# - Time series analyses:
+#     - [Part II. ](#two)
+#     - [Part III. ](#three)
+#     - [Part IV. ](#four)
+# - [Part V. ](#five)
 
 # <a id="intro"></a>
 # # BCIs and Ghost Music
@@ -22,18 +36,6 @@
 # 
 # <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/<'folder'/'notebookname'>.ipynb" target="_blank" rel="noopener noreferrer">Link to Other Notebooks (colab link)</a>   
 # 
-
-# <a id="toc"></a>
-# # Table of Contents
-# 
-# - [Introduction](#intro)
-# - [Setup](#setup)
-# - [Part I. ](#one)
-# - Time series analyses:
-#     - [Part II. ](#two)
-#     - [Part III. ](#three)
-#     - [Part IV. ](#four)
-# - [Part V. ](#five)
 
 # <a id="setup"></a>
 # # Setup

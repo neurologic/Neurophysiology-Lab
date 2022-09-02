@@ -12,9 +12,9 @@
 # ...
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
-# <div><font color = green>
-# 
-# </font></div>
+# ***Prompt 2: Which stimulating electrode (anode/- or cathode/+) do you think the is the one that evokes an action potential in the LG/MG axon? Why?***
+
+# ...
 
 # ***Prompt 2: Measure the conduction velocity of the Medial and Lateral Giant Axons. The conduction velocity is the distance between the stimulating electrodes and the recording electrode divided by the time it took the action potential to travel that distance.***
 

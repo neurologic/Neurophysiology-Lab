@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab Manual and Data Explorer &#8212; Neurophysiology Lab</title>
+    <title>Lab Manual &#8212; Neurophysiology Lab</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Lab Manual and Data Explorer
+     Lab Manual
     </a>
    </li>
    <li class="toctree-l2">
@@ -479,7 +479,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../human-bci-music/Data-Explorer_human-bci-music.html">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -487,10 +487,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../capstone_landing.html">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -500,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../capstone_assignment-guidelines.html">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -637,7 +642,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Lab Manual and Data Explorer
+   Lab Manual
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -649,6 +654,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#introduction-electrical-circuit-models-of-membrane-properties">
    Introduction: Electrical Circuit Models of Membrane Properties
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-components">
+     Electrical Circuit Components
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-models">
+     Electrical Circuit Models
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
@@ -714,7 +731,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab Manual and Data Explorer</h1>
+                <h1>Lab Manual</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -726,7 +743,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Lab Manual and Data Explorer
+   Lab Manual
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -738,6 +755,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#introduction-electrical-circuit-models-of-membrane-properties">
    Introduction: Electrical Circuit Models of Membrane Properties
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-components">
+     Electrical Circuit Components
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-models">
+     Electrical Circuit Models
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
@@ -802,8 +831,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual-and-data-explorer">
-<h1>Lab Manual and Data Explorer<a class="headerlink" href="#lab-manual-and-data-explorer" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
+<h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
 <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><a id="toc"></a></p>
 </div>
@@ -823,46 +852,57 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Introduction: Electrical Circuit Models of Membrane Properties<a class="headerlink" href="#introduction-electrical-circuit-models-of-membrane-properties" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">Table of Contents</a></p>
 <p>Today you will use electrical circuit models of a passive cell membrane to introduce yourself to some of the basic components of your essential electrophysiology toolkit. You will interrogate some of the passive properties of neural membranes and compare the difference between membrane potential “spikes” recorded intracellularly and membrane potentials recorded extracellularly.</p>
-<p>Upon completion of the materials assigned in this module, you will be able to:</p>
+<p>This module will help you work on:</p>
 <ul class="simple">
-<li><p>Describe passive properties of neural membranes that critically affect neural processing.</p></li>
-<li><p>Use a voltage meter.</p></li>
-<li><p>Understand how basic circuit components relate to fundamental physiological properties of neurons (Resistance, Capacitance, Serial, Parallel, Voltage, Current).</p></li>
-<li><p>Store, manage, and visualize data on the computer.</p></li>
-<li><p>Create figures that summarize your data and analysis - enabling you to discuss your results.</p></li>
+<li><p>Describing passive properties of neural membranes that critically affect neural processing.</p></li>
+<li><p>Using a voltage meter.</p></li>
+<li><p>Relating basic electrical circuit components to fundamental physiological properties of neurons (Resistance, Capacitance, Serial, Parallel, Voltage, Current).</p></li>
+<li><p>Storing, managing, and visualizing data on the computer.</p></li>
+<li><p>Creating figures that summarize your data and analysis - enabling you to discuss your results.</p></li>
 </ul>
+<div class="section" id="electrical-circuit-components">
+<h2>Electrical Circuit Components<a class="headerlink" href="#electrical-circuit-components" title="Permalink to this headline">¶</a></h2>
 <p>A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Electrical_Components.png?raw=True' width="300" alt='electrical components'/>
-<p><a class="reference external" href="#resistor-decoder"><strong>Resistors</strong></a> are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: I = V/R, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, V = IR determines the voltage in response to a current across a resistor.</p>
-<p>In an electrical circuit, a <strong>capacitor</strong> possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.</p>
-<p>Current flows across the membrane capacitance only when voltage across the membrane changes. When one side of a membrane becomes more positive (for example when an excitatory synaptic input is “activated”), positive ions are repelled from and negative ions are attracted to the other side of the membrane. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value (for example, when synaptic ion channels close), charges separated by the membrane flow again, discharging the membrane capacitance.</p>
+<p><a class="reference external" href="#resistor-decoder"><strong>Resistors</strong></a> are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: <span class="math notranslate nohighlight">\(I = V/R\)</span>, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, <span class="math notranslate nohighlight">\(V = IR\)</span> determines the voltage in response to a current across a resistor.</p>
+<p>In an electrical circuit, a <strong>capacitor</strong> possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: <span class="math notranslate nohighlight">\(I = C * \partial{V}/\partial{t}\)</span>, where <span class="math notranslate nohighlight">\(I\)</span> represents the current, <span class="math notranslate nohighlight">\(C\)</span> represents the capacitance, and <span class="math notranslate nohighlight">\(\partial{V}/\partial{t}\)</span> represents the rate of voltage change with time. Current flows across the membrane capacitance only when voltage across the membrane changes.</p>
 <p>Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series can be equivalent for some purposes).</p>
+</div>
+<div class="section" id="electrical-circuit-models">
+<h2>Electrical Circuit Models<a class="headerlink" href="#electrical-circuit-models" title="Permalink to this headline">¶</a></h2>
 <p>Some <strong>active</strong> properties of a neuron membrane can be modelled with the following circuit.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
-<p>For example, in this model, <span class="math notranslate nohighlight">\(R_K\)</span> is the resistance through potassium channels, <span class="math notranslate nohighlight">\(R_Na\)</span> is the resistance through sodium channels, and <span class="math notranslate nohighlight">\(C\)</span> is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron’s membrane with respect to the outside (“<em>ground</em>”).</p>
+<p>For example, in this model, <span class="math notranslate nohighlight">\(R_K\)</span> is the resistance through potassium channels, <span class="math notranslate nohighlight">\(R_{Na}\)</span> is the resistance through sodium channels, and <span class="math notranslate nohighlight">\(C\)</span> is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron’s membrane with respect to the outside (“<em>ground</em>”).</p>
 <p>Some <strong>passive</strong> properties of a neuron membrane can be modelled with the following two circuits.</p>
+<ol class="simple">
+<li><p>This is a great model of a long compartment of a neuron, such as an axon.</p></li>
+</ol>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
-<p>This is a great model of a long compartment of a neuron, such as an axon. In this lab, the circuit you will use for this model has the following <span class="math notranslate nohighlight">\(R\)</span> values:</p>
+<p>In this lab, the circuit you will use for this model has the following <span class="math notranslate nohighlight">\(R\)</span> values:</p>
 <ul class="simple">
 <li><p>Rinside = 1 kOhm</p></li>
 <li><p>Routside = 100 Ohm</p></li>
 <li><p>Rmembrane = 10 kOhm</p></li>
 </ul>
-<p>Note that resistances in parallel sum according to <span class="math notranslate nohighlight">\(R_total = {R*n}/n\)</span> while resistances in series sum according to <span class="math notranslate nohighlight">\(R_total = R*n\)</span>.</p>
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
-<p>This is a great model for summarizing the entire membrane of the neuron in a single <em>compartment</em>. In this lab, <span class="math notranslate nohighlight">\(R=10KOhm\)</span> and <span class="math notranslate nohighlight">\(C=1uF\)</span> in the circuit you will use for this model.</p>
+<p>Note that resistances in parallel sum according to <span class="math notranslate nohighlight">\(R_{total} = {R*n}/n\)</span> while resistances in series sum according to <span class="math notranslate nohighlight">\(R_{total} = R*n\)</span>.</p>
+<ol class="simple">
+<li><p>This is a great model for summarizing the entire membrane of the neuron in a single <em>compartment</em>.
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/></p></li>
+</ol>
+<p>In this lab, you will start with values of <span class="math notranslate nohighlight">\(R=10MOhm\)</span> and <span class="math notranslate nohighlight">\(C=0.001uF\)</span>.</p>
 <p><a id="setup"></a></p>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="physical-rig-hardware-setup">
 <h2>Physical Rig Hardware Setup<a class="headerlink" href="#physical-rig-hardware-setup" title="Permalink to this headline">¶</a></h2>
 <p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to measure the
-‘membrane potential” in your model circuits. An analog to digital converter (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.</p>
+‘membrane potential” in your model circuits. <em>An analog to digital converter</em> (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) will digitize the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.</p>
 </div>
 <div class="section" id="physical-rig-software-setup">
 <h2>Physical Rig Software Setup<a class="headerlink" href="#physical-rig-software-setup" title="Permalink to this headline">¶</a></h2>
-<p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the recording node.</p>
+<p><a class="reference external" href="https://bonsai-rx.org/">Bonsai-rx</a> is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/ folder on the lab PC. Hitting the <em>start</em> button on the workflow will start the digitization of data from the NiUSB. Double-clicking on the <em>Select Channels</em> nodes will enable you to visualize a live stream of the raw data from the electrodes. Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the recording node.</p>
 </div>
 <div class="section" id="python-notebook-setup">
 <h2>Python Notebook Setup<a class="headerlink" href="#python-notebook-setup" title="Permalink to this headline">¶</a></h2>

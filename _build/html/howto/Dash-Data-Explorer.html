@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Nidaq USB 6211" href="NiUSB-6211.html" />
@@ -473,8 +471,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../modules/human-bci-music/Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../modules/human-bci-music/Data-Explorer_human-bci-music.html">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -482,10 +485,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/human-bci-music/Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../capstone_landing.html">
+  <a class="reference internal" href="../capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -495,7 +503,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../capstone_assignment-guidelines.html">
+    <a class="reference internal" href="../capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -663,7 +671,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="get-the-app">
 <h2>Get the app<a class="headerlink" href="#get-the-app" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Download the application file. Click on <a class="reference external" href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/howto/Data-Explorer.py">the link to the application file</a>. Then <em>right mouse click</em> in the raw file window and select ‘Save As…’ to save the file to your computer (using the default file name ‘<strong>Data-Explorer</strong>’ with file extension ‘<strong>py</strong>’). Save the file somewhere easy to access, like your documents folder.</p></li>
+<li><p>Click on <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">this link to the application file</a>. Then hit <em>CONTROL</em>+<em>S</em> and a “Save As” window will pop up (or <em>right mouse click</em> in the window over the text and and select ‘Save As…’). Save the file to your computer (using the default file name ‘<strong>Data-Explorer</strong>’ with file extension ‘<strong>py</strong>’). Save the file somewhere easy to access, like your documents folder.</p></li>
 </ol>
 </div>
 <div class="section" id="usage">
@@ -671,7 +679,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ol>
 <li><p>Make sure you have installed <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Individual Edition</a> by downloading and executing the appropriate installer for your operating system.</p></li>
 <li><p>Launch the Anaconda Navigator</p></li>
-<li><p>Open the PowerShell prompt application</p>
+<li><p>Open the PowerShell Prompt application</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
 Creating an environment with dash<div class="summary-down docutils">
@@ -685,7 +693,7 @@ Execute the following commands at the command line.<br />
 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">dash</span></code></p>
 </div>
 </details></li>
-<li><p>Activate your anaconda environment (created in step 1) using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neurolab</span></code>.</p></li>
+<li><p>Activate your anaconda environment (created in step 3: ‘Creating an environment with Dash’) by typing the text <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neurolab</span></code> into the PowerShell and then hitting the enter key.</p></li>
 <li><p>Navigate the command line to the folder that contains the application file that you downloaded/saved.</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -694,7 +702,8 @@ Navigating the command line on MacOS<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">commands to get to the folder on a mac</p>
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folderpath</span></code><br />
+To get the folder path, right mouse click the filename in Mac’s “Finder”, then press the <em>option</em> key, then select “Copy as Pathname”. You can then <em>CONTROL</em>+<em>P</em> to paste it into the command line.</p>
 </div>
 </details><details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -703,13 +712,14 @@ Navigating the command line on WindowsOS<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">commands to get to the folder on WindowsOS</p>
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folderpath</span></code><br />
+To get the folder path, hold down the <em>Shift</em> key while right-clicking the file name. then select “Copy Full Path”. You can then <em>CONTROL</em>+<em>P</em> to paste it into the command line.</p>
 </div>
 </details></li>
 <li><p>Follow the command line syntax below to provide the application with all the necessary information about your file and how you want it plotted in the Data Explorer when it launches.</p>
 <div class="admonition-filepath-tip admonition">
 <p class="admonition-title">filepath TIP</p>
-<p>copy the full filepath from the file browswer.</p>
+<p>copy the full filepath to your data from the file browswer so that you can paste it into the command line rather than typing it out.</p>
 <ul class="simple">
 <li><p>on a mac right mouse click the filename, then press the <em>option</em> key, then select “Copy as Pathname”</p></li>
 <li><p>on a Windows hold down the <em>Shift</em> key while right-clicking the file name. then select “Copy Full Path”</p></li>
@@ -729,7 +739,7 @@ list of channels to plot on each subplot (listed in order of
 appearance)</p></li>
 </ul>
 </li>
-<li><p>Open a browser window (Chrome recommended) and go to your local server](<a class="reference external" href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a>)</p>
+<li><p>Open a browser window (Chrome recommended) and go to <a class="reference external" href="http://127.0.0.1:8050/">your local server</a></p>
 <blockquote>
 <div><p>Note that this link will only work if you have already run the Data Explorer application from the terminal</p>
 </div></blockquote>

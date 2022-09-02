@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -481,7 +479,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../human-bci-music/Data-Explorer_human-bci-music.html">
-     BCIs and Ghost Music
+     Data Explorer
     </a>
    </li>
    <li class="toctree-l2">
@@ -489,10 +487,15 @@ const thebe_selector_output = ".output, .cell_output"
      Responses
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Tutorial-Basis-Set.html">
+     Basis Set Tutorial
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../capstone_landing.html">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
    Week 13. Capstone
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -502,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../capstone_assignment-guidelines.html">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
      Capstone guidelines
     </a>
    </li>
@@ -667,9 +670,10 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="week-4-computational-models">
 <h1>Week 4. Computational Models<a class="headerlink" href="#week-4-computational-models" title="Permalink to this headline">¶</a></h1>
 <p><em>Computational models</em> of neurons and neural circuits are an integral part of neurobiology research in general. For example, <a class="reference external" href="https://portal.brain-map.org/explore/models">the Allen Institute for Brain Science as a whole division dedicated to computational modeling</a>. Today, we will work on building and interrogating computational models that capture some basic electrophysiological properties of neuron membranes. These will build on the principles <a class="reference internal" href="../passive-membrane-models/passive-membrane-models_landing.html"><span class="doc std std-doc">you learned by utilizing electrical circuit models of neuron membranes</span></a>.</p>
-<p>What does the term <em>computational model</em> make you think?</p>
+<p>What does the term <em>computational model</em> and/or the thought of building one make you think? Is it something that you think you can do or already know how to do? If you are someone that feels overwhelmed by the idea, you might want to <a class="reference external" href="https://medium.com/the-spike/there-is-no-such-thing-as-a-computational-person-cca658b5c8f9">read this</a>.</p>
 <p>What is a <em>computational model</em>?<br />
-Computational models are mathematical algorithms and/or expressions that are able to simulate biological phenomena. Part of the power of models comes from their ability to formulate predictions of hypotheses and test our understanding of specific factors that effect neural computation. In neuroscience, the physiology of neurons and circuits can be described by few high-level basic electrical physics equations (such as <span class="math notranslate nohighlight">\(V=IR\)</span>) or by detailed biophysical equations of biochemical reactions.</p>
+Models represent a scientist’s best informed guess as to the identity and function of important variables and the ways these variables interact with each other.</p>
+<p>Computational models specifically are mathematical algorithms and/or expressions that are able to simulate biological phenomena. Part of the power of models comes from their ability to formulate predictions of hypotheses and test our understanding of specific factors that effect neural computation. In neuroscience, the physiology of neurons and circuits can be described by few high-level basic electrical physics equations (such as <span class="math notranslate nohighlight">\(V=IR\)</span>) or by detailed biophysical equations of biochemical reactions.</p>
 <p>The large number of variables and factors affecting the structure and function of the nervous system makes it almost impossible for them all to be considered in a single model. Therefore, specific computational models mostly consider a smaller number of biological variables. Sometimes computational models can seem like absurd simplifications. Though somewhat constrained in their generalizability and applicability, even heavily abstracted and <em>reduced</em> computational models provide powerful tools for understanding neural systems.</p>
 <p>Computers are particularly useful for implementing simulations of computational models. We will create two computational models and implement them in Python programming language.</p>
 <div class="section" id="pages">

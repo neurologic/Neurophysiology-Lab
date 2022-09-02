@@ -11,7 +11,9 @@
 # 
 # ---
 
-# ***NAME***: ...
+# ***NAME***:
+
+# ...
 
 # ***Prompt 1:** What is the biological equivalent of the resistors in the neuron membrane model from **Part I**?*
 
@@ -61,6 +63,10 @@
 
 # ...
 
+# ***Prompt 11:** Axons of different types of neurons have different diameters. Why, based on the space constant, would spikes travel faster along axons with a larger cross-section diameter?*
+
+# ...
+
 # ***Prompt 11:** What caused the change in polarity in your membrane potential measurement in **Part III** (and why did the polarity not change in **Part II**)? If you did not observe a polarity change or if you observed a polarity change in both configurations, make note of that.*
 
 # ...
@@ -89,6 +95,11 @@
 # ...
 # 
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
+
+# ***Prompt** Based on what you observed today, what effects each of the following two features of the action potential waveform shape in your measurement/recording of the neuron membrane?: 1. polarity and 2. amplitude*
+# 
+
+# ...
 
 # ***Prompt 13:** What was different between the membrane potential response to (the same) applied current **with** verusus **without** a capacitor in the circuit? What was the same between the membrane potential response to (the same) applied current **with** verusus **without** a capacitor in the circuit?
 

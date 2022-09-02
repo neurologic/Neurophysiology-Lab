@@ -9,14 +9,15 @@ The bonsai script for today has only one datastream pathway.
 
 The Analog Input node contains one channel receiving input from the output of an extracellular amplifier. The extracellular amplifier takes input from a differential electrode, amplifies it, bandpasses the signal frequency, and transforms it to a monopolar signal (relative to ground). The [amplifier](https://backyardbrains.com/products/files/EMGSpikerShield.SMD.V2.61.pdf) has a gain of approximately 2k and cutoff frequencies of 50-2500Hz. These amplifiers also have a built-in circuit that converts the raw EMG into an amplitude envelope of the signal. You will use this setting on the amplifier todya. 
 
-The Matrix Writer node contains specifications for the file name and location where the file will be stored. Make sure the filename ends in ```.bin```.
+The Matrix Writer node contains specifications for the file name and location where the file will be stored. Make sure the filename ends in ```bin```.
 
 
 The amplitude of each function generator is controlled by the amplitude of each analog input channel. 
 
 ## Core Experiment
-
+Choose a set of muscles to record from
+Switch the Amplifier to "envelope"
 
 ## Copy data to your Google Drive for analysis
-Use the [Human Motor Neuron Coding](../week-10/Human-Motor-Neuron-Coding.ipynb) notebook to analyse your data and answer the questions in the [Responses](../week-10/Human-Motor-Neuron-Coding_Responses.ipynb) notebook.
+Use the [DataExplorer](../human-bci-music/Data-Explorer_human-bci-music.ipynb) notebook to analyse your data and answer the questions in the [Responses](../human-bci-music/Responses_human-bci-music.ipynb) notebook.
 

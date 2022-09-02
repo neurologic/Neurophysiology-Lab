@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-n3/Data-Explorer_crayfishn3.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
+# <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/modules/crayfish-n3/Data-Explorer_crayfish-n3.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
 # # Data Explorer
 

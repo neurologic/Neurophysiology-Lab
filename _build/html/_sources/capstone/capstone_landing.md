@@ -4,5 +4,5 @@ This is your opportunity to revisit a favorite module from the semester and **sh
 
 
 Pages: 
-- [](../capstone_assignment-guidelines)
+- [](../capstone/capstone_assignment-guidelines)
 - [](../howto/Data-Explorer_general)

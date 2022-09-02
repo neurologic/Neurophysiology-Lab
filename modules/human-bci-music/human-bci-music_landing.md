@@ -8,6 +8,7 @@ You will acquire electromyograms using differential surface electrodes above the
 
 ## Pages:
 
+- [](../human-bci-music/Lab-Manual_human-bci-music.ipynb)
 - [](../human-bci-music/Data-Explorer_human-bci-music.ipynb)
 - [](../human-bci-music/Responses_human-bci-music.ipynb)
 - [](../human-bci-music/Tutorial-Basis-Set.ipynb)

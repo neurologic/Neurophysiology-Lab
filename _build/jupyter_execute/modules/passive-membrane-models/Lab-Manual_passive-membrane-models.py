@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lab Manual and Data Explorer
+# # Lab Manual
 # 
 # <a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   
 
@@ -22,45 +22,50 @@
 # 
 # Today you will use electrical circuit models of a passive cell membrane to introduce yourself to some of the basic components of your essential electrophysiology toolkit. You will interrogate some of the passive properties of neural membranes and compare the difference between membrane potential "spikes" recorded intracellularly and membrane potentials recorded extracellularly. 
 # 
-# Upon completion of the materials assigned in this module, you will be able to:
-# - Describe passive properties of neural membranes that critically affect neural processing. 
-# - Use a voltage meter.
-# - Understand how basic circuit components relate to fundamental physiological properties of neurons (Resistance, Capacitance, Serial, Parallel, Voltage, Current).
-# - Store, manage, and visualize data on the computer.
-# - Create figures that summarize your data and analysis - enabling you to discuss your results.
+# This module will help you work on:
+# - Describing passive properties of neural membranes that critically affect neural processing. 
+# - Using a voltage meter.
+# - Relating basic electrical circuit components to fundamental physiological properties of neurons (Resistance, Capacitance, Serial, Parallel, Voltage, Current).
+# - Storing, managing, and visualizing data on the computer.
+# - Creating figures that summarize your data and analysis - enabling you to discuss your results.
+# 
+# ## Electrical Circuit Components
 # 
 # A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons.
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Electrical_Components.png?raw=True' width="300" alt='electrical components'/>
 # 
-# [**Resistors**](#resistor-decoder) are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: I = V/R, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, V = IR determines the voltage in response to a current across a resistor. 
+# [**Resistors**](#resistor-decoder) are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: $I = V/R$, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, $V = IR$ determines the voltage in response to a current across a resistor. 
 # 
-# In an electrical circuit, a **capacitor** possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: I = C dV/dt, where I represents the current, C represents the capacitance, and dV/dt represents the rate of voltage change with time.
-# 
-# Current flows across the membrane capacitance only when voltage across the membrane changes. When one side of a membrane becomes more positive (for example when an excitatory synaptic input is "activated"), positive ions are repelled from and negative ions are attracted to the other side of the membrane. This redistribution of charges takes time, after which the membrane reaches a steady state and no current flows. When the voltage across the membrane returns to its initial value (for example, when synaptic ion channels close), charges separated by the membrane flow again, discharging the membrane capacitance.
+# In an electrical circuit, a **capacitor** possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: $I = C * \partial{V}/\partial{t}$, where $I$ represents the current, $C$ represents the capacitance, and $\partial{V}/\partial{t}$ represents the rate of voltage change with time. Current flows across the membrane capacitance only when voltage across the membrane changes. 
 # 
 # Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series can be equivalent for some purposes). 
+# 
+# ## Electrical Circuit Models
 # 
 # Some **active** properties of a neuron membrane can be modelled with the following circuit. 
 # 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
 # 
-# For example, in this model, $R_K$ is the resistance through potassium channels, $R_Na$ is the resistance through sodium channels, and $C$ is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron's membrane with respect to the outside ("*ground*").
+# For example, in this model, $R_K$ is the resistance through potassium channels, $R_{Na}$ is the resistance through sodium channels, and $C$ is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron's membrane with respect to the outside ("*ground*").
 # 
 # Some **passive** properties of a neuron membrane can be modelled with the following two circuits. 
 # 
+# 1. This is a great model of a long compartment of a neuron, such as an axon. 
+# 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
 # 
-# This is a great model of a long compartment of a neuron, such as an axon. In this lab, the circuit you will use for this model has the following $R$ values:
+# In this lab, the circuit you will use for this model has the following $R$ values:
 # - Rinside = 1 kOhm
 # - Routside = 100 Ohm
 # - Rmembrane = 10 kOhm
 # 
-# Note that resistances in parallel sum according to $R_total = {R*n}/n$ while resistances in series sum according to $R_total = R*n$.
+# Note that resistances in parallel sum according to $R_{total} = {R*n}/n$ while resistances in series sum according to $R_{total} = R*n$.
 # 
+# 2. This is a great model for summarizing the entire membrane of the neuron in a single *compartment*. 
 # <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
 # 
-# This is a great model for summarizing the entire membrane of the neuron in a single *compartment*. In this lab, $R=10KOhm$ and $C=1uF$ in the circuit you will use for this model. 
+# In this lab, you will start with values of $R=10MOhm$ and $C=0.001uF$. 
 # 
 #  
 # 
@@ -71,11 +76,11 @@
 # ## Physical Rig Hardware Setup
 
 # You will be using the [***Getting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to measure the 
-# 'membrane potential" in your model circuits. An analog to digital converter (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) digitizes the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.  
+# 'membrane potential" in your model circuits. *An analog to digital converter* (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) will digitize the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.  
 
 # ## Physical Rig Software Setup
 # 
-# Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'>**disable**</font> the recording node.
+# [Bonsai-rx](https://bonsai-rx.org/) is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/ folder on the lab PC. Hitting the *start* button on the workflow will start the digitization of data from the NiUSB. Double-clicking on the *Select Channels* nodes will enable you to visualize a live stream of the raw data from the electrodes. Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'>**disable**</font> the recording node.
 # 
 
 # ## Python Notebook Setup
