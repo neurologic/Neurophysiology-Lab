@@ -80,14 +80,13 @@
 
 # ## Physical Rig Hardware Setup
 
-# You will be using the [***Getting Intracellular Amplifier***](http://www.gettinginstruments.com/5A.html) to measure the 
-# 'membrane potential" in your model circuits. *An analog to digital converter* (the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) will digitize the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.  
+# You will be using *An analog to digital converter* (ADC; the [***NiUSB-6211***](https://www.ni.com/en-us/support/model.usb-6211.html) from *National Instruments*) to measure the 'membrane potential" in your model circuits for Parts I-III. An ADC digitizes the analog voltage input and sends it to the computer for visualization and recording of the raw (digitized) data. The electrode wires connect directly into the input of the NiDAQ ADC.
 
 # ## Physical Rig Software Setup
 # 
 # [Bonsai-rx](https://bonsai-rx.org/) is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/passive-membrane-models folder on the lab PC.  
 # 
-# Modify the sampling rate of Analog-to-Digital conversion (ADC rate) by clicking on the *Analog Input* node. Make sure that the sampling rate is set to 10kHz for this lab. 
+# Modify the sampling rate of Analog-to-Digital conversion (ADC rate) by clicking on the *Analog Input* node. Make sure that the sampling rate is set to 10kHz for this lab and the **Analog Input** *range* is -10 to 10 V. 
 # 
 # Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'>**disable**</font> the *Matrix Writer* node. You can specify a filename for your data by clicking on the *Matrix Writer* node and <font color = 'green'>**enable**</font> it to record your data to disk. By default, files are saved in the same folder as the bonsai workflow file. 
 # 
@@ -267,7 +266,8 @@ plt.plot(nodes,voltage)
 #   > If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can "apply" current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim. 
 # - In Bonsai, <font color="red"> Disable </font> the "Matrix Writer" node. 
 # - Hit play. Double click on the "Membrane Potential" and "Stimulus" nodes if the windows are not already present. Make sure that you see a signal on both channels. 
-# > Note that a copy of the stimulus (*current monitor*) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.
+# > Note that a copy of the stimulus (*current monitor*) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.  
+# > Note that the Getting Amplifier has a ***gain*** of 10X on the membrane measurement.
 # 
 # **Experiment**
 # 1. ***Baseline Configuration***

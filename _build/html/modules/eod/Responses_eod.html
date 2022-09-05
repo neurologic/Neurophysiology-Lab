@@ -51,6 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Week 3. Giant Fiber" href="../earthworm-giant-fiber/earthworm-giant-fiber_landing.html" />
@@ -180,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Lab Manual and Data Explorer
+     Lab Manual
     </a>
    </li>
    <li class="toctree-l2">
@@ -633,6 +637,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passive-membrane-models-continued">
+   Passive Membrane Models continued…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electric-fish">
+   Electric Fish
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -645,6 +667,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passive-membrane-models-continued">
+   Passive Membrane Models continued…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electric-fish">
+   Electric Fish
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -653,48 +693,52 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="responses">
 <h1>Responses<a class="headerlink" href="#responses" title="Permalink to this headline">¶</a></h1>
-<p>Your Name:</p>
+<p><em><strong>Your Name:</strong></em></p>
 <p>…</p>
-<p>For each species, what was the approximate duration of the EOD?</p>
+<div class="section" id="passive-membrane-models-continued">
+<h2>Passive Membrane Models continued…<a class="headerlink" href="#passive-membrane-models-continued" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Prompt 1: What is the biological equivalent of the battery (the voltage applied across the membrane) in the neuron membrane model from IV?</strong></em></p>
 <p>…</p>
-<p><em><strong>Prompt 12:</strong> Think back to your other neuroscience courses. Draw a typical neuron’s action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:</em></p>
-<ul class="simple">
-<li><p><em>baseline (resting) voltage</em></p></li>
-<li><p><em>polarity</em></p></li>
-<li><p><em>change in polarity</em></p></li>
-<li><p><em>amplitude</em></p></li>
-</ul>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Insert an image from your google drive in a markdown cell by doing the following…</p>
-<p>Get the “Anyone can view” share link from google drive.
-With a  share link in the following format: <a class="reference external" href="https://drive.google.com/file/d/ID-of-image-/view?usp=sharing">https://drive.google.com/file/d/ID-of-image-/view?usp=sharing</a>,
-all you need is the <em>ID-of-image</em> from the URL share link.</p>
-<p>Enter editing mode on the Markdown cell below.</p>
-<p>In the template URL provided, replace “1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae” with the ID from the link you see in your google drive’s “share link” screen for your image.</p>
-<p>Then “run” the markdown cell (or double click it). Your image will replace the one provided.</p>
+<p><em><strong>Prompt 2: What was different between the membrane potential response to (the same) applied current with verusus without a capacitor in the circuit? What was the same between the membrane potential response to (the same) applied current with verusus without a capacitor in the circuit?</strong></em></p>
+<p>…</p>
+<p><em><strong>Prompt 3: Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?</strong></em></p>
+<p>…</p>
+<p><em><strong>Prompt 4: Would you expect small neurons to have higher or lower capacitance than large neurons? Why?</strong></em></p>
+<p>…</p>
+<p><em><strong>Prompt 5: Analagous to the space constant, the time constant of a neuron membrane is the time it takes for the membrane potential to change by 63% of its original value in response to an applied current across the membrane. Calculate the time constant of the model membrane in Part IV.</strong></em></p>
+<p>…</p>
+<p><em><strong>Prompt 6: One of the most used equations in neurophysiology is <span class="math notranslate nohighlight">\(V=IR\)</span>, where <span class="math notranslate nohighlight">\(V\)</span> is voltage, <span class="math notranslate nohighlight">\(R\)</span> is resistance, and <span class="math notranslate nohighlight">\(I\)</span> is current. Another well-loved neurophysiology equation is <span class="math notranslate nohighlight">\(\tau=RC\)</span>, where <span class="math notranslate nohighlight">\(R\)</span> is resistance and <span class="math notranslate nohighlight">\(C\)</span> is capacitance, and <span class="math notranslate nohighlight">\(\tau\)</span> is the time constant of the membrane. Refer to your results from Part IV to complete the following (show your work):</strong></em></p>
+<ol class="simple">
+<li><p><em><strong>Use the amplitude of the experimentally-applied stimulus current and the corresponding measured change in voltage to calculate the model membrane’s Resistance (compare your result to the value of the resistor tha that you used). NOTE: make sure to account for the amplifier’s amplification factor.</strong></em></p></li>
+<li><p><em><strong>Use the time constant that you measured and the resistance that you calculated from #1 to calculate the capacitance of the model membrane (compare your result to the value of the capacitor that you used).</strong></em></p></li>
+</ol>
+<p>…</p>
 </div>
+<div class="section" id="electric-fish">
+<h2>Electric Fish<a class="headerlink" href="#electric-fish" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Prompt 7: For each species, what was the approximate duration of the EOD?</strong></em></p>
 <p>…</p>
-<img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" ><p><em><strong>Prompt</strong> What effects each feature of the EOD waveform shape in your recording?:</em></p>
+<p><em><strong>Prompt 8: What effects each feature of the EOD waveform shape in your recording?:</strong></em></p>
 <ul class="simple">
-<li><p>polarity</p></li>
-<li><p>amplitude</p></li>
+<li><p><em><strong>polarity</strong></em></p></li>
+<li><p><em><strong>amplitude</strong></em></p></li>
 </ul>
 <p><em>Use plots of 3 different EOD waveforms (from different parts of the recording) and put them together in a cohesive figure to describe. Along with your written explanation, paste your figure below following the template provided in the markdown cell (insert your figure by replacing the “id” in the link below with your google drive share link id).</em></p>
 <p>…
 <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" ></p>
-<p>What (in the raw signal) would you consider “noise” and what would you consider “signal”. Include an annotated representative segment of your raw data to demonstrate.</p>
+<p><em><strong>Prompt 9: What (in the raw signal) would you consider “noise” and what would you consider “signal”. Include an annotated representative segment of your raw data to demonstrate.</strong></em></p>
 <p>…
 <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" ></p>
-<p>Use a figure with a legend to report the results of the bootstrapped average EOD rate analysis, comparing across all species tested. Include the boxplot and scatter overlay of the bootstrap results for each species. Specify the parameters you used for the analysis (and the total duration of data for each species used in the analysis).</p>
+<p><em><strong>Prompt 10: Use a figure with a legend to report the results of the bootstrapped average EOD rate analysis, comparing across all species tested. Include the boxplot and scatter overlay of the bootstrap results for each species. Specify the parameters you used for the analysis (and the total duration of data for each species used in the analysis).</strong></em></p>
 <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 <p>…</p>
-<p>How did the average EOD rate (total average) that you wrote a script to calculate compare to the boostrapped average?</p>
+<p><em><strong>Prompt 11: How did the average EOD rate (total average) that you wrote a script to calculate compare to the boostrapped average?</strong></em></p>
 <p>…</p>
-<p>Compare the <em>smoothed</em> EOD time series (<a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb#four" target="_blank" rel="noopener noreferrer">Electric Organ Discharge: Part IV</a>) to the EOD <em>isi</em> (<a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb#three" target="_blank" rel="noopener noreferrer">Electric Organ Discharge: Part III</a>). How do they relate to each other (visually)? From the smoothed time series, how could you calculate a proxy for the average EOD <em>rate</em>?</p>
+<p><em><strong>Prompt 12: Compare the smoothed EOD time series (<a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb#four" target="_blank" rel="noopener noreferrer">Electric Organ Discharge: Part IV</a>) to the EOD isi (<a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/eod/Data-Explorer_eod.ipynb#three" target="_blank" rel="noopener noreferrer">Electric Organ Discharge: Part III</a>). How do they relate to each other (visually)? From the smoothed time series, how could you calculate a proxy for the average EOD rate?</strong></em></p>
 <p>…</p>
-<p>What analyses discussed throughout these responses would the ADC rate effect? Why/How?</p>
+<p><em><strong>Prompt 13: What analyses discussed throughout these responses would the ADC rate effect? Why/How?</strong></em></p>
 <p>…</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

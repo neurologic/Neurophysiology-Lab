@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -945,13 +947,12 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="physical-rig-hardware-setup">
 <h2>Physical Rig Hardware Setup<a class="headerlink" href="#physical-rig-hardware-setup" title="Permalink to this headline">¶</a></h2>
-<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to measure the
-‘membrane potential” in your model circuits. <em>An analog to digital converter</em> (the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) will digitize the analog voltage and sends it to the computer for visualization and recording of the raw (digitized) data.</p>
+<p>You will be using <em>An analog to digital converter</em> (ADC; the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) to measure the ‘membrane potential” in your model circuits for Parts I-III. An ADC digitizes the analog voltage input and sends it to the computer for visualization and recording of the raw (digitized) data. The electrode wires connect directly into the input of the NiDAQ ADC.</p>
 </div>
 <div class="section" id="physical-rig-software-setup">
 <h2>Physical Rig Software Setup<a class="headerlink" href="#physical-rig-software-setup" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://bonsai-rx.org/">Bonsai-rx</a> is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/passive-membrane-models folder on the lab PC.</p>
-<p>Modify the sampling rate of Analog-to-Digital conversion (ADC rate) by clicking on the <em>Analog Input</em> node. Make sure that the sampling rate is set to 10kHz for this lab.</p>
+<p>Modify the sampling rate of Analog-to-Digital conversion (ADC rate) by clicking on the <em>Analog Input</em> node. Make sure that the sampling rate is set to 10kHz for this lab and the <strong>Analog Input</strong> <em>range</em> is -10 to 10 V.</p>
 <p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the <em>Matrix Writer</em> node. You can specify a filename for your data by clicking on the <em>Matrix Writer</em> node and <font color = 'green'><strong>enable</strong></font> it to record your data to disk. By default, files are saved in the same folder as the bonsai workflow file.</p>
 <p>Hitting the <em>start</em> button on the workflow will start the digitization of data from the NiUSB.</p>
 <p>Double-clicking on the <em>Select Channels</em> nodes will enable you to visualize a live stream of the raw data from the electrodes.</p>
@@ -1143,7 +1144,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Hit play. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal on both channels.</p></li>
 </ul>
 <blockquote>
-<div><p>Note that a copy of the stimulus (<em>current monitor</em>) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.</p>
+<div><p>Note that a copy of the stimulus (<em>current monitor</em>) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.<br />
+Note that the Getting Amplifier has a <em><strong>gain</strong></em> of 10X on the membrane measurement.</p>
 </div></blockquote>
 <p><strong>Experiment</strong></p>
 <ol class="simple">

@@ -17,19 +17,19 @@
 
 # ...
 
-# ***Prompt 1: What is the biological equivalent of the resistors in the neuron membrane model from Part I?***
+# ***Prompt 1: What is the biological equivalent of the resistors in the neuron membrane model from Part I (membrane potential model circuit)?***
 
 # ...
 
-# ***Prompt 2: What is the biological equivalent of each set of resistors (Rinside, Routside, Rmembrane) in the neuron membrane model from Part II and III?***
+# ***Prompt 2: What is the biological equivalent of each set of resistors (Rinside, Routside, Rmembrane) in the neuron membrane model from Part II and III (passive spread model circuit)?***
 
 # ...
 
-# ***Prompt 3: What is the biological equivalent of each battery (the voltage applied across the membrane) in the neuron membrane model from Part I?***
+# ***Prompt 3: What is the biological equivalent of each battery (the voltage applied across the membrane) in the neuron membrane model from Part I (membrane potential model circuit)?***
 
 # ...
 
-# ***Prompt 4: What is the biological equivalent of the battery (the voltage applied across the membrane) in the neuron membrane model from Part II and III?***
+# ***Prompt 4: What is the biological equivalent of the battery (the voltage applied across the membrane) in the neuron membrane model from Part II and III (passive spread model circuit)?***
 
 # ...
 
@@ -37,21 +37,21 @@
 
 # ...
 
-# ***Prompt 6: In neurophysiology we often talk about ion channel conductance ($g$) rather than resistance ($R$), where $R = 1/g$. How did the balance between the two conductances ($g$) in the neuron membrane model from Part I effect the voltage across the cell membrane?***
+# ***Prompt 6: In neurophysiology we often talk about ion channel conductance ($g$) rather than resistance ($R$), where $R = 1/g$. How did the balance between the two conductances ($g$) in the neuron membrane model from Part I (membrane potential model circuit) effect the voltage across the cell membrane?***
 
 # ...
 
-# ***Prompt 7: What part of the action potential were you simulating in Part II and III (when you compared intracellular versus extracellular recordings)?***
+# ***Prompt 7: What part of the action potential were you simulating in Part II and III (the passive spread model circuit) when you compared intracellular versus extracellular recordings (note that it depends on what polarity you actually placed the battery accross the membrane)?***
 
 # ...
 
-# ***Prompt 8: In Part II and III, what was the scaling factor between the measured peak amplitude in intracellular versus extracellular recording configuration (extracellularly measured peak amplitude divided by intracellularly measured peak amplitude)?***
+# ***Prompt 8: In Part II and III (passive spread model circuit), what was the scaling factor between the measured peak amplitude in intracellular versus extracellular recording configuration (extracellularly measured maximum amplitude divided by intracellularly measured maximum amplitude)?***
 
 # ...
 
 # ***Prompt 9: The space constant is the distance in space it takes for voltage to change by 63% from its original value. Approximate the space constant (in arbitrary "node" units) of the model membrane using the intracellular measurements of membrane potential (Part II) as the voltage peak travelled down its length.***  
-# 1. ***calculate the space constant by starting at Node \#5 (the middle node).***
-# 2. ***calculate the space constant by starting at Node \#7.***
+# 1. ***calculate the space constant by starting at the node at which you measured the maximum voltage.***
+# 2. ***calculate the space constant by starting two nodes away from where you measured the maximum voltage.***
 
 # ...
 
@@ -63,7 +63,7 @@
 
 # ...
 
-# ***Prompt 11: $R_{outside}$ is usually so small compared to the other resistances that it can be ignored when estimating the space constant. Why do you think it is so much smaller? In other words, what makes $R_{inside}$ large compared to $R_{outside}$? And what makes $R_{membrane}$ large compared to $R_{outside}$?)***
+# ***Prompt 11: $R_{outside}$ is usually so small compared to the other resistances that it can be ignored when estimating the space constant. Why do you think it is so much smaller? In other words, what makes $R_{inside}$ large compared to $R_{outside}$? And what makes $R_{membrane}$ large compared to $R_{outside}$?). Reason out your best educated guess.***
 
 # ...
 
@@ -72,7 +72,7 @@
 # ...
 
 # ***Prompt 13: Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:***
-# 1. ***depolarization***
+# 1. ***peak depolarization amplitude***
 # 2. ***change in polarity ("after-hypoerpolarization")***
 #     
 # ```{admonition} How To 
@@ -100,33 +100,9 @@
 # 
 # <img src='https://drive.google.com/uc?id=1WoAa-oMOkAj9r9lyls4nLSLyIeuTu4Ae' width="300" >
 
-# ***Prompt 15: Based on what you observed today, what modulates each of the following two features of the action potential waveform shape when measuring the membrane potential of a neuron?*** 
+# ***Prompt 15: Based on what you observed today, what properties of the electrode configuration/placement modulates each of the following two features of the action potential waveform shape when measuring the membrane potential of a neuron?*** 
 # 1. ***polarity*** 
 # 2. ***amplitude***
-# 
-
-# ...
-
-# ***Prompt 16: What was different between the membrane potential response to (the same) applied current with verusus without a capacitor in the circuit? What was the same between the membrane potential response to (the same) applied current with verusus without a capacitor in the circuit?***
-
-# ...
-
-# ***Prompt 17: Would you expect small neurons to have higher or lower membrane resistance than large neurons? Why?***
-
-# ...
-
-# ***Prompt 18: Would you expect small neurons to have higher or lower capacitance than large neurons? Why?***
-
-# ...
-
-# ***Prompt 19: Analagous to the space constant, the time constant of a neuron membrane is the time it takes for the membrane potential to change by 63% of its original value in response to an applied current across the membrane. Calculate the time constant of the model membrane in Part IV.*** 
-
-# ...
-
-# ***Prompt 20: One of the most used equations in neurophysiology is $V=IR$, where $V$ is voltage, $R$ is resistance, and $I$ is current. Another well-loved neurophysiology equation is $\tau=RC$, where $R$ is resistance and $C$ is capacitance, and $\tau$ is the time constant of the membrane. Refer to your results from Part IV to complete the following (show your work):***
-# 1. ***Use the amplitude of the experimentally-applied stimulus current and the corresponding measured change in voltage to calculate the model membrane's Resistance (compare your result to the value of the resistor tha that you used). NOTE: make sure to account for the amplifier's amplification factor.***
-# 2. ***Use the time constant that you measured and the resistance that you calculated from \#1 to calculate the capacitance of the model membrane (compare your result to the value of the capacitor that you used).*** 
-# 
 # 
 
 # ...
