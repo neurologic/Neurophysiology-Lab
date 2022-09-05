@@ -9,7 +9,7 @@
 # 
 # Edit these cells by replacing ```...``` with your responses. 
 # 
-# Many of these questions should be review from your previous neuroscience courses. Do the best you can with reasoning through any problems that we did not end up discussing during class. You can work with others in this course to on review material and discuss the questions. 
+# Many of these questions should be review from your previous neuroscience courses. Do the best you can with reasoning through any problems that we did not end up discussing during class. You can work with others in this course to review material and discuss the questions. 
 # 
 # ---
 

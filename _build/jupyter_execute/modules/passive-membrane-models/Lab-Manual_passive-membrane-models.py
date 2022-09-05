@@ -297,6 +297,14 @@ plt.plot(nodes,voltage)
 # 
 # 
 
+# # Housekeeping
+# 
+# Clean up your area.
+# 
+# Copy data to an external drive or your Google Drive for later.
+# 
+# Use the [DataExplorer.py application](https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html) to explore your raw data in detail. Answer the questions in [the Responses notebook](https://neurologic.github.io/Neurophysiology-Lab/modules/passive-membrane-models/Responses_passive-membrane-models.html).
+
 # # Additional Resources
 # 
 # <a id='resistor-decoder'></a>
