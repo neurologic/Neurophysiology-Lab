@@ -1,84 +1,143 @@
 # Standards
 
-20% of your grade in this course is determined using a "*standards*-based"/"*mastery*-based" grading format. This document contains a list of the *standards* (learning targets) that you will be assessed on. These standards are categorized into five broad course goals. The assessment occurs throughout the semester and consists of feedback about where you are on the scale of *mastering* each standard. Your grade (0-5) is continuously updated (not averaged across assignments) to reflect your mastery of each standard. The progress you have made (your final score) will be an average across sections at the end of the course. Throughout the course you should feel empowered to track your progress, identify next steps in understanding each standard, and communicate your progress to me in addition to me communicating my observation of your progress to you.
+As described in the syllabus, 20% of your final course grade is determined using a *standards-based* (also called *mastery*-based) grading format.  
 
-____ **Concepts** (Demonstrated through Response notebooks and during class and through Capstone)
-- I can apply the equation V = IR to explain neural activity
-- I can apply the equation T = RC to explain neural activity
-- I can use space constants to explain neural activity
-- I can use time constants to explain neural activity
-  - membrane time constant
-  - spiking response time constant
-- I can infer the functional consequences of space and time constants for neural processing
-- I can manipulate and measure electrical circuit models of neural membranes
-- I can read and analyze electric circuit diagrams
-- I can interpret the membrane potential based on the properties of ion conductances
-- I can build and implement computational models of neural membranes
-- I can distinguish between *signal* and *noise* in raw electrophysiology data
-- I can distinguish between *active* and *passive* neural activity
-- I can distinguish between baseline/spontaneous and stimulus-evoked neural activity
-- I can interpret the properties of neural events in terms of underlying physical and physiological processes
-  - (the effect of electrode placement on the recorded signal)
-  - spike differences from neuron differences)
-  - causal relationships between neuron anatomy and neuron electrophysiology
-- I can determine the stimulus-response tuning of receptor neurons
-- I can select ADC conversion parameters that optimize the recorded electrophysiology data 
-- I can interpret patterned activity among sets of neurons
+This document contains a list of the *standards* (*aka* learning targets) for which your mastery be assessed throughout the course. They are organized according to five broad categories.  
+
+*Standards-based* assessment occurs throughout the semester and provides feedback about where you are on the scale of *mastering* each standard. Your score (0-3) for each standard is continuously updated (not averaged across assignments) to reflect your current level of mastery. Feedback about progress is provided throughout the course. You should feel empowered to track your progress, identify next steps in understanding each standard, and communicate your progress to me in addition to me communicating my observation of your progress to you.
+
+At the end of the semester, your mastery scores will be averaged across all sections. 
+
+## Concepts
+(Demonstrated through Response notebooks and during class and through Capstone)
+
+- **I can use electronics theory to understand neural activity**
+  - V = IR
+  - T = RC
+  - voltage sources
+  - capacitive current
+  - series and parallel circuits
+  - manipulate and measure electrical circuit models of neural membranes
+  - read and analyze electric circuit diagrams
+
+- **I can relate membrane biology and morphology to interpret and predict a neuron's physiology**
+  - space constants
+  - axon diameter
+  - spike thresholds
+  - interpret the membrane potential based on the properties of ion conductances
+  - use time constants to explain neural activity
+    - membrane time constant
+    - spike train time constant
+  - infer the functional consequences of space and time constants for neural processing
+
+- **I can build and implement computational models**
+  - spike train models
+  - neuron membrane models
+
+- **I can interpret raw neural signals through the lens of electrophysiology**
+  - distinguish between *signal* and *noise* in raw electrophysiology data
+  - explain the effect of electrode placement/configuration on the recorded signal
+  - distinguish between *active* and *passive* membrane potential activity
+  - distinguish between baseline/spontaneous and stimulus-evoked neural activity
+  - interpret the properties of neural events in terms of underlying physical and physiological processes
+
+- **I can identify common principles of sensory coding**
+  - determine the stimulus-response tuning of receptor neurons
+
+- **I can interpret patterned activity among sets of simultaneously recorded neurons**
   - synaptic connectivity
+  - post-synaptic temporal and spatial summation
   - cpg
-  - human erg 
-- I can identify the difference between and relationship between raw data and processed data
+  - human emg 
 
-- I can quantify neural responses based on isi, rate, amplitudes, and time
+## Experimental Skills
+(Demonstrated during lab)
 
-- I can identify and interpret synaptically connected pre- and post-synaptic events based on simultaneously measured pre- and post-synaptic activity
-- I can demonstrate synaptic plasticity
+- **I demonstrate patience and persistence**
 
-_____ **Experimental Skills** (Demonstrated during lab)
-- I demonstrate patience and persistence
-- I can identify when something is not working correctly and/or as I expected it to
-- In the face of something not working, I pose possible causes based on logical reasoning
-- I take steps to troubleshoot issues
-- I demonstrate good “noise reducing” practices
-- I recognize "grounding" issues by observing the raw signal
-- I maintain good tissue health in my preps
-- I do not break the glass electrode tips
-- I independently explore the preps during lab based on specific curiousities beyond the provided protocol. 
-- I am helpful to peers and to the instructor
-- I verbally engage in inquiry and discourse with my peers and the instructor
+- **I can troubleshoot**
+  - I can identify when something is not working correctly and/or as I expected it to
+  - I pose possible causes based on logical reasoning
+  - I take action to try solutions
 
-_____ **Data Visualization / Presentation** (Demonstrated through Response notebooks and Capstone)
-- I turn in good quality graphics that are readabile (font size, axis zoom, resolution, etc)
-- I make figures that are relevant to the point I am making in any accompanying text
-- My figures do not include extraneous information 
-- My figures and their legend include all necessary relevant information for interpretability
-- My labels are correct
-- My figure legends are concise.
-- I can curate a logical selection of resources from a variety of potential options to make a specific point
+- **I can effectively use electrophysiology equipment to get good raw data**
+  - I demonstrate good “noise reducing” practices
+  - I recognize "grounding" issues by observing the raw signal
+  - I can select ADC conversion parameters that optimize the recorded electrophysiology data 
 
-_____ **Execution and Communication of Data Processing, Analysis, and Interpretation** (Demonstrated through Response notebooks and Capstone)
-- I can correctly implement signal processing tools and interpret what information they provide and leave about the original signal
-- I can effectively utilize trial-based analyses
-- I use clear non-jargon language 
-  - describing what I observe in my data
-- I correctly use experimental and neurophysiology vocabulary
-  - describe data processing steps
-  - describe analysis methods/tools
-  - describe analysis results 
-- I apply analysis tools effectively and appropriately to answer questions 
-- I use effective sentence structure (no run-ons, active voice).
-- I demonstrate logical reasoning and critical thinking
-- In my responses, I attend to what is being asked
-- I attend to detail beyond what is directly asked
-- I make connections between the data I collect and general neuroscience concepts I know
-- I pose relevant hypotheses to frame my work when possible
+- **I demonstrate good coordination, spatial awareness, and manual dexterity**
+  - I do not ram probes and trodes into the tissue
+  - I use the microscope effectively
+  - I keep track of my surgical tools during microscope transitions
+  - I maintain good tissue health in my preps
+  - I do not break the glass electrode tips
 
-_____ **Foundational Computing Skills** (Demonstrated during lab and in ability to complete assignments)
-- I keep track of my files and metadata associated with file contents
-- I maintain a logical file structure
-- I save data efficiently (ie. not saving loads of not data)
-- I implement a basic level of Python coding to explore and analyze data when prompted (and beyond if desired)
-- I execute file transfers across computers to be able to work remotely
+- **I am an active experimenter**
+  - I independently explore the preps based on curiousities beyond the provided protocol. 
+  - I verbally engage in inquiry and discourse with my peers and the instructor
 
-_____ **Personal Goals For Yourself in the Course** (How will you demonstrate your achievement in these?)
-> Please consider goals that you have for yourself (why are you here?) that you can work to achieve. 
+- **I am helpful to peers and to the instructor**
+
+## Execution and Communication of Data Processing, Analysis, and Interpretation
+(Demonstrated through Response notebooks and Capstone)
+
+- **My writing is clear and effective**
+  - I avoid run-ons
+  - I use active voice when possible
+  - I use clear non-jargon language 
+  - I correctly use experimental and neurophysiology vocabulary
+    - describing data processing steps, analysis methods/tools, and analysis results 
+
+- **I apply *Data Explorer* analysis tools effectively and appropriately to answer questions**
+  - I can identify the difference between and relationship between raw data and processed data
+  - I can correctly implement signal processing tools and identify compromises they make regarding the original signal (ie. info lost)
+  - I can effectively use isi, rate, amplitudes, and time to explain neural activity (appropriate quantification for a given statement/inference)
+  - I can effectively utilize trial-based analyses
+
+- **I demonstrate logical reasoning and critical thinking**
+  - I work through what I don't know using what I do know
+  - I infer
+  - I deduce
+
+- **I am an active and thoughtful analyst**
+  - In my responses, I attend to what is being asked
+  - I attend to detail beyond what is directly asked
+  - I make connections between the data I collect and general neuroscience concepts I know
+  - I contextualize my data with relevant background 
+  - I pose hypotheses and make predictions based on my results when possible
+
+## Data Visualization / Presentation
+(Demonstrated through Response notebooks and Capstone)
+
+- **I create good quality graphics**
+  - readabile font size, resolution, etc
+  - relevant axis zoom, etc
+
+- **I make relevant figures**
+  - figures enhance understanding of any accompanying text
+  - I curate a logical selection of resources from *Data Explorer* options to make specific points
+
+- **I create concise yet complete figure and caption content**
+  - excludes extraneous information 
+  - includes all necessary information for interpretability
+  - axis labels are correct
+  - useful legends and annotations
+
+## Foundational Computing Skills
+(Demonstrated during lab and in ability to complete assignments)
+
+- **I demonstrate good data handling practices**
+  - I keep track of my files and metadata associated with file contents
+  - I maintain a logical file structure
+  - I execute file transfers across computers to be able to work remotely
+  - I save data efficiently (ie. not saving loads of not data)
+
+- **I demonstrate basic proficiency with Python code**
+  - I can execute Python notebooks and applications
+  - I can handle common errors in Python code execution 
+  - I can implement basic computer coding in Python
+
+## Personal Goals For Yourself in the Course
+(How will you demonstrate your achievement in these?)
+
+Please consider goals that you have for yourself (why are you here?) that you can work to achieve. These will not count toward your grade, but you will still get feedback and assessment on them. 

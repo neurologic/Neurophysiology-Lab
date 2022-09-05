@@ -664,6 +664,23 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#electrical-circuit-models">
      Electrical Circuit Models
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-potentials">
+       Membrane potentials
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passive-spread">
+       Passive spread
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-response-dynamics">
+       Membrane response dynamics
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -695,13 +712,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-applied-current">
-   Part II. Intracellular Recording of Applied Current
+  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-applied-voltage">
+   Part II. Intracellular Recording of Applied Voltage
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-applied-current">
-   Part III. Extracellular Recording of Applied Current
+  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-applied-voltage">
+   Part III. Extracellular Recording of Applied Voltage
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -765,6 +782,23 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#electrical-circuit-models">
      Electrical Circuit Models
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-potentials">
+       Membrane potentials
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passive-spread">
+       Passive spread
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-response-dynamics">
+       Membrane response dynamics
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -796,13 +830,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-applied-current">
-   Part II. Intracellular Recording of Applied Current
+  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-applied-voltage">
+   Part II. Intracellular Recording of Applied Voltage
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-applied-current">
-   Part III. Extracellular Recording of Applied Current
+  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-applied-voltage">
+   Part III. Extracellular Recording of Applied Voltage
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -870,13 +904,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="electrical-circuit-models">
 <h2>Electrical Circuit Models<a class="headerlink" href="#electrical-circuit-models" title="Permalink to this headline">¶</a></h2>
-<p>Some <strong>active</strong> properties of a neuron membrane can be modelled with the following circuit.</p>
+<div class="section" id="membrane-potentials">
+<h3>Membrane potentials<a class="headerlink" href="#membrane-potentials" title="Permalink to this headline">¶</a></h3>
+<p>This model simulates how the interaction among ionic conductances controls the membrane potential.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
 <p>For example, in this model, <span class="math notranslate nohighlight">\(R_K\)</span> is the resistance through potassium channels, <span class="math notranslate nohighlight">\(R_{Na}\)</span> is the resistance through sodium channels, and <span class="math notranslate nohighlight">\(C\)</span> is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron’s membrane with respect to the outside (“<em>ground</em>”).</p>
-<p>Some <strong>passive</strong> properties of a neuron membrane can be modelled with the following two circuits.</p>
-<ol class="simple">
-<li><p>This is a great model of a long compartment of a neuron, such as an axon.</p></li>
-</ol>
+</div>
+<div class="section" id="passive-spread">
+<h3>Passive spread<a class="headerlink" href="#passive-spread" title="Permalink to this headline">¶</a></h3>
+<p>This model simulates a cylinder-like compartment of a neuron, such as an axon.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
 <p>In this lab, the circuit you will use for this model has the following <span class="math notranslate nohighlight">\(R\)</span> values:</p>
 <ul class="simple">
@@ -884,13 +920,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Routside = 100 Ohm</p></li>
 <li><p>Rmembrane = 10 kOhm</p></li>
 </ul>
-<p>Note that resistances in parallel sum according to <span class="math notranslate nohighlight">\(R_{total} = {R*n}/n\)</span> while resistances in series sum according to <span class="math notranslate nohighlight">\(R_{total} = R*n\)</span>.</p>
-<ol class="simple">
-<li><p>This is a great model for summarizing the entire membrane of the neuron in a single <em>compartment</em>.
-<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/></p></li>
-</ol>
+<p>Note that resistances in parallel sum according to <span class="math notranslate nohighlight">\(R_{total} = 1/R + 1/R + ...n \)</span> while resistances in series sum according to <span class="math notranslate nohighlight">\(R_{total} = R * R * R * ...n\)</span>.</p>
+</div>
+<div class="section" id="membrane-response-dynamics">
+<h3>Membrane response dynamics<a class="headerlink" href="#membrane-response-dynamics" title="Permalink to this headline">¶</a></h3>
+<p>This model summarizes the entire membrane of the neuron into a single compartment/point to examine how resistive and capacitive properties effect how neurons respond to inward/outward current (for example synaptic events).</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
 <p>In this lab, you will start with values of <span class="math notranslate nohighlight">\(R=10MOhm\)</span> and <span class="math notranslate nohighlight">\(C=0.001uF\)</span>.</p>
 <p><a id="setup"></a></p>
+</div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="setup">
@@ -902,7 +940,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="physical-rig-software-setup">
 <h2>Physical Rig Software Setup<a class="headerlink" href="#physical-rig-software-setup" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://bonsai-rx.org/">Bonsai-rx</a> is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/ folder on the lab PC. Hitting the <em>start</em> button on the workflow will start the digitization of data from the NiUSB. Double-clicking on the <em>Select Channels</em> nodes will enable you to visualize a live stream of the raw data from the electrodes. Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the recording node.</p>
+<p><a class="reference external" href="https://bonsai-rx.org/">Bonsai-rx</a> is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/passive-membrane-models folder on the lab PC.</p>
+<p>Modify the sampling rate of Analog-to-Digital conversion (ADC rate) by clicking on the <em>Analog Input</em> node. Make sure that the sampling rate is set to 10kHz for this lab.</p>
+<p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the <em>Matrix Writer</em> node. You can specify a filename for your data by clicking on the <em>Matrix Writer</em> node and <font color = 'green'><strong>enable</strong></font> it to record your data to disk. By default, files are saved in the same folder as the bonsai workflow file.</p>
+<p>Hitting the <em>start</em> button on the workflow will start the digitization of data from the NiUSB.</p>
+<p>Double-clicking on the <em>Select Channels</em> nodes will enable you to visualize a live stream of the raw data from the electrodes.</p>
 </div>
 <div class="section" id="python-notebook-setup">
 <h2>Python Notebook Setup<a class="headerlink" href="#python-notebook-setup" title="Permalink to this headline">¶</a></h2>
@@ -934,33 +976,31 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Use one battery for <span class="math notranslate nohighlight">\(E_K\)</span> and one battery for <span class="math notranslate nohighlight">\(E_{Na}\)</span> (make sure to measure and record the voltage of each battery… you will also use this info in future labs)</p></li>
 <li><p>Start with equal <a class="reference external" href="#resistor-decoder">resistors</a> for <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> (make sure to measure and record the value of each resistor… you will also use this info in future labs).</p></li>
-<li><p>Place the recording/measureing electrode on the ‘inside’ of the membrane</p></li>
+<li><p>Place the recording/measuring electrode on the ‘inside’ of the membrane</p></li>
 <li><p>Place the <em>ground</em> electrode on the ‘outside’</p></li>
-<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
-<li><p>Make sure that the sampling rate is set to 5000.</p></li>
-<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+<li><p>In the Bonsai workflow, <font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
 </ul>
 <p><strong>Experiment</strong>:</p>
 <ul class="simple">
 <li><p>Hit play in Bonsai. Double click on the “Membrane Potential” node if the window is not already present. Close the “Stimulus” window if it is open.</p></li>
-<li><p>Right mouse click on the bottom of the membrane potential window to change the y axis range of the graph.</p></li>
-<li><p>Hover over the signal trace with your mouse to see the voltage. Record the measured ‘membrane’ potential of the model cell.</p></li>
+<li><p>Right mouse click on the bottom of the membrane potential window to change the y axis range of the graph as needed.</p></li>
+<li><p>Hover over the signal trace with your mouse to see the voltage. Record the measured ‘membrane’ potential of the model cell along with the model cell <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(E\)</span> values (and their organization).</p></li>
 </ul>
 <blockquote>
 <div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside and the Getting amplifier <em>has a gain of 10</em>.</p>
 </div></blockquote>
 <ul class="simple">
-<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> constant, change <span class="math notranslate nohighlight">\(R_{Na}\)</span> and record the measured ‘membrane’ potential. (make sure to measure and record the value of each resistor… you will also use this info in future labs)</p></li>
-<li><p>Keeping <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change <span class="math notranslate nohighlight">\(R_K\)</span> and record the measured ‘membrane’ potential. (make sure to measure and record the value of each resistor… you will also use this info in future labs)</p></li>
-<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change the polarity of the batteries and record what happens to the measured ‘membrane’ potential with each change in polarity configuration.</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> constant, change <span class="math notranslate nohighlight">\(R_{Na}\)</span> and record the measured ‘membrane’ potential. (make sure to measure and record the value of each electrical component… you will also use this info in future labs)</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change <span class="math notranslate nohighlight">\(R_K\)</span> and record the measured ‘membrane’ potential. (make sure to measure and record the value of each electrical component… you will also use this info in future labs)</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change the polarity of one or both batteries and record what happens to the measured ‘membrane’ potential with each change in polarity configuration.</p></li>
 <li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
 </ul>
 <p><a id="two"></a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-intracellular-recording-of-applied-current">
-<h1>Part II. Intracellular Recording of Applied Current<a class="headerlink" href="#part-ii-intracellular-recording-of-applied-current" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-intracellular-recording-of-applied-voltage">
+<h1>Part II. Intracellular Recording of Applied Voltage<a class="headerlink" href="#part-ii-intracellular-recording-of-applied-voltage" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
-<p>You will use the following passive axon model (pre-made) to complete this experiment.</p>
+<p>You will use the following passive axon model (pre-made) to complete this experiment. The axon model has 13 total nodes rather than the 3 shown here.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
 <p><strong>Setup</strong>:</p>
 <ul class="simple">
@@ -970,13 +1010,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside.</p>
 </div></blockquote>
 <ul class="simple">
-<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
-<li><p>Make sure that the sampling rate is set to 5000.</p></li>
-<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+<li><p>In Bonsai, <font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
 </ul>
 <p><strong>Experiment:</strong></p>
 <ul class="simple">
-<li><p>Attach a voltage source (9V battery) across the cell membrane at the end of the axon (node 0).</p></li>
+<li><p>Attach a voltage source (battery) across the cell membrane at the end of the axon (node 0). The positive lead of the voltage source should go <em>inside</em> the membrane, and the negative lead should go <em>outside</em>.</p></li>
 <li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
 <li><p>At each node, record the voltage in the dictionary below by replacing the <code class="docutils literal notranslate"><span class="pre">...</span></code> with the measured value.</p></li>
 </ul>
@@ -1021,26 +1059,24 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><a id="three"></a></p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="part-iii-extracellular-recording-of-applied-current">
-<h1>Part III. Extracellular Recording of Applied Current<a class="headerlink" href="#part-iii-extracellular-recording-of-applied-current" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iii-extracellular-recording-of-applied-voltage">
+<h1>Part III. Extracellular Recording of Applied Voltage<a class="headerlink" href="#part-iii-extracellular-recording-of-applied-voltage" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="#toc">TOC</a></p>
 <p>Use the same passive axon model that you used in <a class="reference external" href="#two">Part II</a> and a voltmeter to complete this experiment.</p>
 <p><strong>Setup</strong>:</p>
 <ul class="simple">
 <li><p>At the middle of the axon, place <em>both</em> electrodes on the ‘outside’ of the membrane, with one empty node between them (one electrode at node 4 and one at node 6).</p></li>
-<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p></li>
-<li><p>Make sure that the sampling rate is set to 5000.</p></li>
-<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+<li><p>In Bonsai, <font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
 </ul>
 <p><strong>Experiment:</strong></p>
 <ul class="simple">
-<li><p>Attach the voltage source (9V battery) across the cell membrane at the end of the axon (node 0).</p></li>
-<li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p>
-<ul>
+<li><p>Attach a voltage source (battery) across the cell membrane at the end of the axon (node 0). The positive lead of the voltage source should go <em>inside</em> the membrane, and the negative lead should go <em>outside</em>.</p></li>
+<li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
 <li><p>At each node, record the voltage in the dictionary below by replacing the <code class="docutils literal notranslate"><span class="pre">...</span></code> with the measured value.</p></li>
 </ul>
-</li>
-</ul>
+<blockquote>
+<div><p>Note that the Getting amplifier <em>has a gain of 10</em>.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voltage_extracellular</span> <span class="o">=</span> <span class="p">{</span>
@@ -1084,46 +1120,39 @@ const thebe_selector_output = ".output, .cell_output"
 <p><a class="reference external" href="#toc">TOC</a></p>
 <p>For this exercise, you will use the following passive resistor-capacitor circuit model membrane.</p>
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
-<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to both deliver current and measure voltage The Getting provides a <em>current stimulation</em>, feature that applies a “square wave” stimulus across the measurement electrodes. A square wave stimulus one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
+<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to both deliver current and measure voltage. The Getting provides a <em>current stimulation</em>, feature that applies a “square wave” stimulus across the measurement electrodes. A square wave stimulus one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
 <p><strong>Setup</strong>:</p>
 <ul>
-<li><p>Place the recording/measureing electrode on the ‘inside’ of the membrane</p></li>
+<li><p>Place the recording/measuring electrode on the ‘inside’ of the membrane</p></li>
 <li><p>Place the <em>ground</em> electrode on the ‘outside’</p>
 <blockquote>
 <div><p>If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can “apply” current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim.</p>
 </div></blockquote>
 </li>
-<li><p>Open the script in Desktop/BIOL247_FA22/passive-membrane-models/Data called “passive-membrane-models.bonsai”</p>
+<li><p>In Bonsai, <font color="red"> Disable </font> the “Matrix Writer” node.</p></li>
+<li><p>Hit play. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal on both channels.</p></li>
+</ul>
 <blockquote>
 <div><p>Note that a copy of the stimulus (<em>current monitor</em>) is also being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.</p>
 </div></blockquote>
-</li>
-<li><p>Make sure that the sampling rate is set to 5000.</p></li>
-<li><p><font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
-<li><p>Hit play. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
-<li><p>Set the current amplitude to about 5nA and switch it on for approximately 2 seconds to see that you get a response.</p></li>
-<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
-</ul>
-<p><strong>Experiment</strong>:</p>
+<p><strong>Experiment</strong></p>
 <ol class="simple">
-<li><p>With only a resistor across the membrane</p>
+<li><p><em><strong>Baseline Configuration</strong></em></p>
 <ul class="simple">
+<li><p>Set the SIU to 500ms duration at 0.2Hz and 200microVolts.</p></li>
 <li><p><font color="green"> Enable</font> the “Matrix Writer” node.</p></li>
 <li><p>Hit play to collect data. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
-<li><p>Apply a stimulus pulse of 2 seconds.</p></li>
+<li><p>Turn the SIU to repeat until 3 stimulus pulses have completed.</p></li>
 <li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
 </ul>
 </li>
-<li><p>With both the capacitor and resistor across the membrane</p>
-<ul class="simple">
-<li><p>Hit play to collect data. Double click on the “Membrane Potential” and “Stimulus” nodes if the windows are not already present. Make sure that you see a signal.</p></li>
-<li><p>Apply a stimulus pulse of 2 seconds.</p></li>
-<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
-</ul>
-</li>
+<li><p><em><strong>Decrease Resistance</strong></em>
+Record and repeat Stimulation protocol</p></li>
+<li><p><em><strong>Increase Capacitance</strong></em>
+Record and repeat Stimulation protocol</p></li>
 </ol>
 <p>Upload your data files to an external drive <strong>OR</strong> to your Google Drive.</p>
-<p><strong>Use the <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">DataExplorer.py</a> application found in the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">howto section</a> of the course website to explore and analyze your data.</strong></p>
+<p><strong>Use the <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">DataExplorer.py</a> application found in the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">How To section</a> of the course website to explore and analyze your data.</strong></p>
 <p>Stop here for a class discussion about what you notice from this final experiment and a tutorial on the <strong><a class="reference external" href="http://DataExplorer.py">DataExplorer.py</a></strong> application.</p>
 <p><strong>Experiment extensions</strong> (time permitting):</p>
 <ul class="simple">

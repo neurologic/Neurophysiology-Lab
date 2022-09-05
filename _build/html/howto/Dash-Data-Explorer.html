@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/passive-membrane-models/Lab-Manual_passive-membrane-models.html">
-     Lab Manual and Data Explorer
+     Lab Manual
     </a>
    </li>
    <li class="toctree-l2">
@@ -626,6 +626,28 @@ const thebe_selector_output = ".output, .cell_output"
    Usage
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#help-screen-recordings">
+   HELP: Screen Recordings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-the-data-explorer-application">
+     Downloading the Data-Explorer application
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-anaconda-with-python-environment">
+     Setting up Anaconda with Python Environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-data-explorer-application">
+     Running the Data-Explorer application
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -656,6 +678,28 @@ const thebe_selector_output = ".output, .cell_output"
    Usage
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#help-screen-recordings">
+   HELP: Screen Recordings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-the-data-explorer-application">
+     Downloading the Data-Explorer application
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-anaconda-with-python-environment">
+     Setting up Anaconda with Python Environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-data-explorer-application">
+     Running the Data-Explorer application
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -672,6 +716,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Get the app<a class="headerlink" href="#get-the-app" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Click on <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">this link to the application file</a>. Then hit <em>CONTROL</em>+<em>S</em> and a “Save As” window will pop up (or <em>right mouse click</em> in the window over the text and and select ‘Save As…’). Save the file to your computer (using the default file name ‘<strong>Data-Explorer</strong>’ with file extension ‘<strong>py</strong>’). Save the file somewhere easy to access, like your documents folder.</p></li>
+<li><p><em><strong>If you are on WindowsOS</strong></em>, the OS often automatically appends ‘<strong>txt</strong>’ to the end when you <em>Save As</em>. This will prevent the application from running. Use <a class="reference external" href="https://www.sublimetext.com/"><strong>Sublime Text Editor</strong></a> to open the file. In the <em>Sublime</em> text editor, select <code class="docutils literal notranslate"><span class="pre">File&gt;SaveAs</span></code> and select the <code class="docutils literal notranslate"><span class="pre">Python</span></code> file type option. Delete the <em>txt</em> file.</p></li>
 </ol>
 </div>
 <div class="section" id="usage">
@@ -682,19 +727,24 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Open the PowerShell Prompt application</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
-Creating an environment with dash<div class="summary-down docutils">
+Create an environment with dash if you have not yet done so<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
 <p class="card-text">If you have not already done so, you will need to create an environment to run the application in. The environment must have dash installed.<br />
-Execute the following commands at the command line.<br />
-<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">neurolab</span> <span class="pre">--clone</span> <span class="pre">base</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">dash</span></code></p>
+Execute the following commands at the PowerShell Prompt command line and follow given instructions along the way.</p>
+<ol class="simple">
+<li><p class="card-text"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">neurolab</span> <span class="pre">--clone</span> <span class="pre">base</span></code></p></li>
+<li><p class="card-text">After the environment has been created, you must activate it before proceeding with:<br />
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neurolab</span></code></p></li>
+<li><p class="card-text"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">dash</span></code>
+Type <em>Y</em> followed by the <em>Enter/Return</em> key when prompted.</p></li>
+</ol>
 </div>
 </details></li>
-<li><p>Activate your anaconda environment (created in step 3: ‘Creating an environment with Dash’) by typing the text <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neurolab</span></code> into the PowerShell and then hitting the enter key.</p></li>
-<li><p>Navigate the command line to the folder that contains the application file that you downloaded/saved.</p>
+<li><p>Activate the <em>neurolab</em> anaconda environment (created in step 3: ‘Creating an environment with dash’) by typing the text <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neurolab</span></code> into the PowerShell Prompt command line and then hitting the <em>Enter</em> key.</p></li>
+<li><p>Navigate the command line to the folder that contains the <em><a class="reference external" href="http://Data-Explorer.py">Data-Explorer.py</a></em> application file that you downloaded/saved.</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
 Navigating the command line on MacOS<div class="summary-down docutils">
@@ -703,7 +753,7 @@ Navigating the command line on MacOS<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
 <p class="card-text"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folderpath</span></code><br />
-To get the folder path, right mouse click the filename in Mac’s “Finder”, then press the <em>option</em> key, then select “Copy as Pathname”. You can then <em>CONTROL</em>+<em>P</em> to paste it into the command line.</p>
+To get the folder path, right mouse click the folder in the “Finder”, then press the <em>option</em> key, then select “Copy as Pathname”. You can then <em>CONTROL</em>+<em>P</em> to paste it into the command line. Note that Mac does not include the quotation marks around the filepath when you paste it, so you must do so manually.</p>
 </div>
 </details><details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -712,8 +762,8 @@ Navigating the command line on WindowsOS<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folderpath</span></code><br />
-To get the folder path, hold down the <em>Shift</em> key while right-clicking the file name. then select “Copy Full Path”. You can then <em>CONTROL</em>+<em>P</em> to paste it into the command line.</p>
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folderpath</span></code>  will work most of the time. If you are changing drives (C drive to E drive, for example) you may need to do <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/D</span> <span class="pre">folderpath(including</span> <span class="pre">prepended</span> <span class="pre">drive</span> <span class="pre">letter)</span></code>
+To get the folder path, hold down the <em>Shift</em> key while right-clicking the folder name. then select “Copy Full Path”. You can then <em>CONTROL</em>+<em>P</em> to paste it into the command line.</p>
 </div>
 </details></li>
 <li><p>Follow the command line syntax below to provide the application with all the necessary information about your file and how you want it plotted in the Data Explorer when it launches.</p>
@@ -721,30 +771,35 @@ To get the folder path, hold down the <em>Shift</em> key while right-clicking th
 <p class="admonition-title">filepath TIP</p>
 <p>copy the full filepath to your data from the file browswer so that you can paste it into the command line rather than typing it out.</p>
 <ul class="simple">
-<li><p>on a mac right mouse click the filename, then press the <em>option</em> key, then select “Copy as Pathname”</p></li>
+<li><p>on a Mac right mouse click the filename, then press the <em>option</em> key, then select “Copy as Pathname”</p></li>
 <li><p>on a Windows hold down the <em>Shift</em> key while right-clicking the file name. then select “Copy Full Path”</p></li>
 </ul>
 </div>
-<p><em><strong>command line syntax</strong></em>: DataExplorer [-h] -filepath FILEPATH -fs FS -n NUMBER_CHANNELS -p NUMBER_SUBPLOTS -c
-CHANNELS_PER_SUBPLOT [CHANNELS_PER_SUBPLOT …]</p>
+<p><em><strong>command line syntax</strong></em>: python <a class="reference external" href="http://Data-Explorer.py">Data-Explorer.py</a> [-h] -filepath FILEPATH -fs FS -n NUMBER_CHANNELS -p NUMBER_SUBPLOTS -c
+CHANNELS_PER_SUBPLOT [provide additional -c flags for additional subplots &gt;1]</p>
 <p><em><strong>optional arguments</strong></em>:</p>
 <ul class="simple">
-<li><p>-h, –help            show this help message and exit</p></li>
+<li><p>-h, –help            show this help message and exit
+<em><strong>required arguments</strong></em>:</p></li>
 <li><p>-filepath FILEPATH    full path to the file location on your local computer</p></li>
 <li><p>-fs FS                sampling rate of the data in file</p></li>
 <li><p>-n NUMBER_CHANNELS    number of channels data in file</p></li>
-<li><p>-p NUMBER_SUBPLOTS    number of subplots</p></li>
+<li><p>-p NUMBER_SUBPLOTS    number of subplots to create</p></li>
 <li><p>-c CHANNELS_PER_SUBPLOT [CHANNELS_PER_SUBPLOT …]
 list of channels to plot on each subplot (listed in order of
 appearance)</p></li>
 </ul>
 </li>
-<li><p>Open a browser window (Chrome recommended) and go to <a class="reference external" href="http://127.0.0.1:8050/">your local server</a></p>
+<li><p>Open a browser window (Chrome recommended) and go to <a class="reference external" href="http://127.0.0.1:8050/">your local server</a> (127.0.0.1:8050)</p>
 <blockquote>
 <div><p>Note that this link will only work if you have already run the Data Explorer application from the terminal</p>
 </div></blockquote>
 </li>
-<li><p><strong>Shut down the application appropriately</strong> by holding down the <em>Control</em> key while you press the <em>C</em> key.</p>
+<li><p><strong>Shut down the application appropriately</strong></p>
+<ul class="simple">
+<li><p>Mac: hold down the <em>Control</em> key while you press the <em>C</em> key.</p></li>
+<li><p>Windows: hold down the <em>Control</em> key while you press the <em>Pause/Break</em> key.</p></li>
+</ul>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
 If you get an error next time you try to run the applicaiton<div class="summary-down docutils">
@@ -756,6 +811,27 @@ If you get an error next time you try to run the applicaiton<div class="summary-
 </div>
 </details></li>
 </ol>
+</div>
+<div class="section" id="help-screen-recordings">
+<h2>HELP: Screen Recordings<a class="headerlink" href="#help-screen-recordings" title="Permalink to this headline">¶</a></h2>
+<p>Sign in to your Wesleyan Gmail account to see the videos shared via <em>Microsoft Stream</em>.<br />
+Links to the videos shared via Google Drive are below each header.</p>
+<div class="section" id="downloading-the-data-explorer-application">
+<h3>Downloading the Data-Explorer application<a class="headerlink" href="#downloading-the-data-explorer-application" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://drive.google.com/file/d/19TQhdG2ghHtebo5ydBwdubMtQs7N-fEB/view?usp=sharing">Google Drive share link</a></p>
+<div style='max-width: 640px'><div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'><iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a5a745ea-8532-4b5d-a2a4-51b7593abe9f?autoplay=false&showinfo=true" allowfullscreen style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
+</div>
+<div class="section" id="setting-up-anaconda-with-python-environment">
+<h3>Setting up Anaconda with Python Environment<a class="headerlink" href="#setting-up-anaconda-with-python-environment" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://drive.google.com/file/d/1I1TQeN5JVk0kIw2RvcyqMLCiazTQoCIt/view?usp=sharing">Google Drive share link</a></p>
+<div style='max-width: 640px'><div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'><iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a11ed7de-e722-444e-8306-6e7cf440b2c2?autoplay=false&showinfo=true" allowfullscreen style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
+</div>
+<div class="section" id="running-the-data-explorer-application">
+<h3>Running the Data-Explorer application<a class="headerlink" href="#running-the-data-explorer-application" title="Permalink to this headline">¶</a></h3>
+<p>This screen recording of the process includes some troubleshooting as well.</p>
+<p><a class="reference external" href="https://drive.google.com/file/d/17FdCjo2DAc4HyP6eCvRD2-_BEh1ZihJq/view?usp=sharing">Google Drive share link</a></p>
+<div style='max-width: 640px'><div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'><iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1e19f822-6f38-4850-abf1-635a88390661?autoplay=false&showinfo=true" allowfullscreen style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
+</div>
 </div>
 </div>
 
