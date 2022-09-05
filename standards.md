@@ -12,6 +12,7 @@ At the end of the semester, your mastery scores will be averaged across all sect
 (Demonstrated through Response notebooks and during class and through Capstone)
 
 - **I can use electronics theory to understand neural activity**
+  - electronics components
   - V = IR
   - T = RC
   - voltage sources
@@ -24,7 +25,7 @@ At the end of the semester, your mastery scores will be averaged across all sect
   - space constants
   - axon diameter
   - spike thresholds
-  - interpret the membrane potential based on the properties of ion conductances
+  - interpret the membrane potential based on ion conductance properties
   - use time constants to explain neural activity
     - membrane time constant
     - spike train time constant
