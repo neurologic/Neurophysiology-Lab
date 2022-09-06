@@ -1,3 +1,0 @@
-# Capstone guidelines
-
-A "*Presentation* of Learning” in which you pair up with a partner and prepare materials to *demo* your favorite lab from the semester (whether you will be doing the actual live demos of the experiments will depend on availability of resources, etc). You will prepare individual write-ups of the materials in addition to presenting them in pairs in person. Details will be provided on the course website in the "Wrapping Up" section.  
