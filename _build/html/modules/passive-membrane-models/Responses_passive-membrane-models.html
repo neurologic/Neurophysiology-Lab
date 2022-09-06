@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -686,17 +684,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><em><strong>calculate the space constant by starting two nodes away from where you measured the maximum voltage.</strong></em></p></li>
 </ol>
 <p>…</p>
-<p><em><strong>Prompt 10: The space constant can also be calculated using the following equation:</strong></em>
-$<span class="math notranslate nohighlight">\(
-    \lambda = \sqrt{\frac{ R_{membrane} }{ R_{inside} + R_{outside} }}
-    \)</span>$
+<p><em><strong>Prompt 10: The space constant can also be calculated using the following equation:</strong></em><br />
+<span class="math notranslate nohighlight">\(\lambda = \sqrt{\frac{ R_{membrane} }{ R_{inside} + R_{outside} }}\)</span><br />
 <em><strong>What value do you get from calculating this way?</strong></em></p>
 <p>…</p>
 <p><em><strong>Prompt 11: <span class="math notranslate nohighlight">\(R_{outside}\)</span> is usually so small compared to the other resistances that it can be ignored when estimating the space constant. Why do you think it is so much smaller? In other words, what makes <span class="math notranslate nohighlight">\(R_{inside}\)</span> large compared to <span class="math notranslate nohighlight">\(R_{outside}\)</span>? And what makes <span class="math notranslate nohighlight">\(R_{membrane}\)</span> large compared to <span class="math notranslate nohighlight">\(R_{outside}\)</span>?). Reason out your best educated guess.</strong></em></p>
 <p>…</p>
-<p><em><strong>Prompt 12: Axons of different types of neurons have different diameters. Why, based on the space constant, would action potentials travel faster along axons with a larger cross-section diameter?</strong></em></p>
+<p><em><strong>Prompt 12: Axons of different types of neurons have different diameters. Why, based on the space constant, would action potentials travel faster along axons with a larger cross-section diameter? Reason out your best educated guess based on your answer to Prompt 11</strong></em></p>
 <p>…</p>
-<p><em><strong>Prompt 13: Think back to your other neuroscience courses. Draw a typical neuron’s action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:</strong></em></p>
+<p><em><strong>Prompt 13: Think back to your other neuroscience courses. Draw a typical neuron’s action potential and annotate and describe what physiological events across the cell membrane cause the following components of the waveform shape:</strong></em></p>
 <ol class="simple">
 <li><p><em><strong>peak depolarization amplitude</strong></em></p></li>
 <li><p><em><strong>change in polarity (“after-hypoerpolarization”)</strong></em></p></li>

@@ -55,10 +55,8 @@
 
 # ...
 
-# ***Prompt 10: The space constant can also be calculated using the following equation:***
-#     $$
-#     \lambda = \sqrt{\frac{ R_{membrane} }{ R_{inside} + R_{outside} }}
-#     $$
+# ***Prompt 10: The space constant can also be calculated using the following equation:***  
+# $\lambda = \sqrt{\frac{ R_{membrane} }{ R_{inside} + R_{outside} }}$  
 # ***What value do you get from calculating this way?***
 
 # ...
@@ -67,11 +65,11 @@
 
 # ...
 
-# ***Prompt 12: Axons of different types of neurons have different diameters. Why, based on the space constant, would action potentials travel faster along axons with a larger cross-section diameter?*** 
+# ***Prompt 12: Axons of different types of neurons have different diameters. Why, based on the space constant, would action potentials travel faster along axons with a larger cross-section diameter? Reason out your best educated guess based on your answer to Prompt 11*** 
 
 # ...
 
-# ***Prompt 13: Think back to your other neuroscience courses. Draw a typical neuron's action potential and describe what physiological events across the cell membrane cause the following components of the waveform shape:***
+# ***Prompt 13: Think back to your other neuroscience courses. Draw a typical neuron's action potential and annotate and describe what physiological events across the cell membrane cause the following components of the waveform shape:***
 # 1. ***peak depolarization amplitude***
 # 2. ***change in polarity ("after-hypoerpolarization")***
 #     
