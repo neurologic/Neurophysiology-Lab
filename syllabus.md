@@ -74,7 +74,7 @@ In preparation for class, read the *landing page* for each week (the title link)
 :::
 
 **<font color="green">Weekly Responses</font>** *60%*  
-Each week, there is an associated "Response" document containing prompts that you need to respond to. These assignments will involve using custom scripts in the "Data Explorer" pages to explore, process, and analyze data collected during lab. You may conspire with others to tackle these weekly assignments. However, all work handed in must ultimately be your own. 
+Due each Sunday by midnight. Each week, there is an associated "Response" document containing prompts that you need to respond to. These assignments will involve using custom scripts in the "Data Explorer" pages to explore, process, and analyze data collected during lab. You may conspire with others to tackle these weekly assignments. However, all work handed in must ultimately be your own. 
 
 **<font color="orange">Capstone</font>** *20%*  
 A "*Presentation* of Learning” in which you pair up with a partner and prepare materials to *demo* your favorite lab from the semester (whether you will be doing the actual live demos of the experiments will depend on availability of resources, etc). You will prepare individual write-ups of the materials in addition to presenting them in pairs in person. Details will be provided on the course website in the "Wrapping Up" section.  
