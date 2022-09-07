@@ -14,6 +14,16 @@ Left: micrograph cross-section of Lumbriculus variegatus. The region in the red 
 
 [^smith-college-image]: Micrographs of Lumbriculus variegatus by Alanna Morris, from a project in Bio 337, Fine Structure, at Smith College. [Image from Bio 330 Website](https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html).
 
+:::{figure-md}
+:class: figure
+
+<img src="/images/earthworm-giant-fiber-sensory-circuit.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
+
+Components of the flight reflex, mediated by the MGF pathway. Mechanical stimulation of the worm front end leads to activity in skin sensory cells. This activates sensory interneurons that are connected to the median giant fiber. The MGF is connected to segmental giant motorneurons that elicit contraction of longitudinal muscles in the body wall. A positive feedback loop, via a single interneuron, can enhance the flight reflex by eliciting a second, or even several more, action potentials of the MGF.[^kladt-2010]
+:::
+
+[^kladt-2010]: [Kladt, N., Hanslik, U., & Heinzel, H. G. (2010). Teaching basic neurophysiology using intact earthworms. Journal of undergraduate neuroscience education : JUNE : a publication of FUN, Faculty for Undergraduate Neuroscience, 9(1)](http://www.ncbi.nlm.nih.gov/pmc/articles/pmc3597421/)
+
 In this lab, we’ll determine the threshold, rheobase &amp; chronaxie, refractory period, and
 conduction velocity for the earthworm giant fiber system. 
 The threshold is defined as the minimum stimulus voltage that elicits an action potential 50% of
@@ -54,6 +64,7 @@ identify it as the period where the amplitude of the second CAP is 30-90% of the
 
 ## Additional Resources
 
+- [McGill University Compound Action Potential (virtual lab website)](http://www.medicine.mcgill.ca/physio/vlab/CAP/vlabmenuCAP.htm)
 - [Smith College, Bio 330 Lab Manual](https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html)
 - [Theodore Holmes Bullock (1945) FUNCTIONAL ORGANIZATION OF THE GIANT FIBER SYSTEM OF LUMBRICUS. Journal of Neurophysiology; 8(1).](https://doi.org/10.1152/jn.1945.8.1.55)
 - [B Mulloney (1970) Structure of the giant fibers of earthworms. Science; 168(3934).](https://doi-org.ezproxy.wesleyan.edu/10.1126/science.168.3934.994)
