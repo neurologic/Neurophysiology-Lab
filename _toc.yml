@@ -18,6 +18,7 @@ parts:
         - file: howto/getting-preamp
         - file: howto/ground
         - file: howto/exponential-decay
+    - file: fifth-hour
     - file: materials
   - caption: Weekly Chapters
     chapters:

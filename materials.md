@@ -47,6 +47,8 @@ The modules in this course do not yet implement any of the Arduino Control optio
 
 [^footnote6]: Google Drive was used for file storage and access when competing the executable notebooks. Wesleyan has GSuite with unlimited Drive storage. There are other ways to achieve this goal, but this has been a simple solution that was especially attractive because of Google Collaboratories "Mount Google Drive" module.  
 
+- I am not using this for the current iteration of the course, but this [Python script written by Stanislav Mircic to read, parse and display data from BackyardBrains' serial devices](https://raw.githubusercontent.com/BackyardBrains/SpikeTools/master/spikerecorder.py) might be integrated in the future... I wonder if this would work (modified or as is?) as a Python Script node in Bonsai-rx to stream the SpikerBox pro as an observable. 
+
 ## Animals
 - Weakly electric fish (could be replaced with a function generator). I happen to study weakly electric fish anyway and love them so I have them around.
 - Cockroaches
