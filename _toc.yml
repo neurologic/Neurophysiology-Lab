@@ -17,6 +17,7 @@ parts:
         - file: howto/NiUSB-6211
         - file: howto/getting-preamp
         - file: howto/ground
+        - file: howto/exponential-decay
     - file: materials
   - caption: Weekly Chapters
     chapters:
