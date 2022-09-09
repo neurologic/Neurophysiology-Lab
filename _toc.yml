@@ -92,7 +92,7 @@ parts:
   - caption: Back Burner
     chapters:
     - file: modules/cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing
-    sections:
+      sections:
         - file: modules/cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor
         - file: modules/cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor
         - file: modules/cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor
