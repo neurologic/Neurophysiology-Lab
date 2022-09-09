@@ -1,4 +1,4 @@
-# Week 5. Mechanoreceptors
+# Mechanoreceptors
 
 Before starting this lab, you should be familiar with:
 <ul>
@@ -15,9 +15,9 @@ Often, a neurophysiologist does not need to know the actual changes in a neuron'
 
 You will use extracellular recording techniques to explore the response properties of spine mechanoreceptors in the cockroach leg.
 
-
+<!-- 
 ## Pages:
 - [](../cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor.md)
 - [](../cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor.ipynb)
-- [](../cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.ipynb)
+- [](../cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.ipynb) -->
 

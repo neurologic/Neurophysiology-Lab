@@ -31,11 +31,16 @@ parts:
         - file: modules/eod/Lab-Manual_eod
         - file: modules/eod/Data-Explorer_eod
         - file: modules/eod/Responses_eod
-    - file: modules/earthworm-giant-fiber/earthworm-giant-fiber_landing
+    - file: modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing
       sections:
-        - file: modules/earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber
-        - file: modules/earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber
-        - file: modules/earthworm-giant-fiber/Responses_earthworm-giant-fiber
+        - file: modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap
+    - file: modules/earthworm-giant-fiber-cap/earthworm-giant-fiber-cap_landing
+      sections:
+        - file: modules/earthworm-giant-fiber-cap/Lab-Manual_earthworm-giant-fiber-cap
+        - file: modules/earthworm-giant-fiber-cap/Data-Explorer_earthworm-giant-fiber-cap
+        - file: modules/earthworm-giant-fiber-cap/Responses_earthworm-giant-fiber-cap
     - file: modules/computational-model/computational-model_landing
       sections:
         - file: modules/computational-model/Lab-Manual_computational-model
@@ -71,11 +76,6 @@ parts:
         - file: modules/crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity
         - file: modules/crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity
         - file: modules/crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity
-    - file: modules/crayfish-cpg/crayfish-cpg_landing
-      sections:
-        - file: modules/crayfish-cpg/Lab-Manual_crayfish-cpg
-        - file: modules/crayfish-cpg/Data-Explorer_crayfish-cpg
-        - file: modules/crayfish-cpg/Responses_crayfish-cpg
     - file: modules/human-bci-music/human-bci-music_landing
       sections:
         - file: modules/human-bci-music/Lab-Manual_human-bci-music
@@ -89,3 +89,15 @@ parts:
   - caption: Future Directions
     chapters:
     - file: extensions/extensions
+  - caption: Back Burner
+    chapters:
+    - file: modules/cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing
+    sections:
+        - file: modules/cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor
+        - file: modules/cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor
+        - file: modules/cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor
+    - file: modules/crayfish-cpg/crayfish-cpg_landing
+      sections:
+        - file: modules/crayfish-cpg/Lab-Manual_crayfish-cpg
+        - file: modules/crayfish-cpg/Data-Explorer_crayfish-cpg
+        - file: modules/crayfish-cpg/Responses_crayfish-cpg

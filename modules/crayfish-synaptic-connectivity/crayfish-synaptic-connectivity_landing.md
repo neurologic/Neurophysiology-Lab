@@ -1,4 +1,4 @@
-# Week 9. Synaptic Connectivity 
+# Week 10. Synaptic Connectivity 
 
 Arthropod muscle innervation is different from vertebrate muscle innervation in several interesting ways:
 - Arthropod muscles are innervated by relatively few excitatory motor neurons (sometimes only one).

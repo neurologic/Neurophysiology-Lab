@@ -1,4 +1,4 @@
-# Week 8. Crayfish Superficial Flexor
+# Week 9. Crayfish Superficial Flexor
 
 Intracellular Recording Techniques
 
