@@ -7,107 +7,139 @@ The bonsai script for today has two measurement nodes. **Channel 0**[^chan0-setu
 
 [^chan1-setup]:NRSE, ±5 V; hot stimulus output goes to an analog input; cold stimulus output ('gnd') goes to the AISN (analog input sensor reference) (try having this go to RSE with AIGND). 
 
-## Surgery
-Anesthesia : Place the earthworm in the 10% ethanol ringer solution[^anaesthesia-alts]. Leave it in the anaethesia until you can pick it up without it wriggling away. Hallmarks of anesthetic effectiveness are a lack of worm movement and a cessation of the escape withdrawal reflex. The escape withdrawal reflex can be observed by tapping the tail and head with a plastic probe. An alert worm will exhibit a shortening muscle contraction in response to this stimulus, but an anesthetized worm will not have this reflex. The typical time for sufficient anesthesia is ∼5 min. Leaving the worm in anaesthesia too long will lead to an unresponsive nervous system (and eventually death). Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to dissect, while concentrated alcohol "pickles" the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate. The worm will not get to the point where it is 100% unresponsive to touch, but it should not struggle strongly when pinned out.
-
-[^anaesthesia-alts]: The 10% ethanol solution can also be prepared by mixing 30 ml of tap water with 10 ml of 80 proof (40% ethanol) vodka. Carbonated water can also be used as an anesthetic if ethanol is not available. Carbonated water (60%) can be prepared by mixing 30 ml of sugar-free seltzer water (also called “club soda” or “sparkling water” at grocery stores) with 20 ml of tap water.
-
-After suitable anesthesia, briefly rinse the alcohol off the worm with tap water and allow the excess water to drain off. An annelid worm's nerve cord is near the ventral surface of the worm. Pin out the worm dorsal side up on a flat dissecting dish. Place one pin at the head and one pin at the tail. Then place two pins in the region of the worm where you intend to open an incision. For suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. With forceps and scissors (not a scalpel), open an incision. Extend the incision about 1-2cm straight down the dorsal midline. Fillet the body wall open and pin it flat with a pin in each corner. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode. Flush out the body cavity from time to time with saline to clear blood and dirt.
-
-Cut the nerve cord near the end of the incision farthest from the head, and free about a centimeter of the cord from its lateral and ventral connections until it is no longer attached to the body wall. Use the rod for probing or lifting the nerve cord. Do not pinch the cord with forceps. If you must use forceps, try to only touch the very tip of the already cut end and cut off the crushed tip after freeing the cord.
-
-## Physiology Setup
-
-Tilt the dissecting dish on clay so that saline pools at the incision and keeps the nerve cord wet, while keeping the head of the worm try.
-
-Place the recording electrode. Clamp a suction electrode firmly in a micromanipulator, attach its connections to the amplifier's input block, and lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode's external wire also needs to be in the saline pool around the incision. 
-
-:::{figure-md}
-:class: figure
-
-<img src="/images/earthworm-gf-suctiontrode.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
-
-Suction electrode on exposed and cut nerve cord. 
-:::
 
 
-Grounding the preparation: Clip one aligator clip lead to one of the dissecting pins (pick one that is out of the way). Clip the other end to the ground post of the amplifier input block. 
-
-Place the stimulating electrode. Connect two straight-pin electrodes to the output (red-anode and black-cathode terminals) of a stimulator. At the anterior end, place the anode and cathode stimulation electrode pins through the worm and into the dish below. Place them close together, but not touching, and on either side of the nerve cord. The body surface and the dissecting dish must be dry near the stimulating electrodes, or the saline will "short out" the stimulus and reduce its effectiveness. Use an absorbant tissue to dry the dish and the worm around the stimulating electrodes. Use a roll of absorbant tissue placed under the worm to help keep the anterior end dry. 
-
-:::{figure-md}
-:class: figure
-
-<img src="/images/earthworm-gf-stimtrodes-placement.jpg" alt="fishy" class="bg-primary mb-1" width="300px">
-
-Stimulation electrode placement. Dry as much moisture as possible from around the worm and between the electrodes and dish. 
-:::
-
-:::{figure-md}
-:class: figure
-
-<img src="/images/earthworm-gf-whole.jpg" alt="fishy" class="bg-primary mb-1" width="500px">
-
-Absorbant wipes help keep the stimulation site dry. 
-:::
 
 
-<a id="experiment"></a>
-## Core Experiment
+## Part I. Fiber Arts Nervous System
 
-### Visualize Analog Inputs
-Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font> and the *analog input* and *channel select* nodes <font color = 'green'>enabled</font>. Double click the channel select nodes to visualize the electrode and stimulus measurements if it does not pop up upon start.
+### Physiology Setup
 
-### Record Analog Inputs
-Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
+1. Moisten a long (15cm) towel, string, yarn, fabric, etc with tap water 
+2. Lay the wet (not dripping) fiber across the earthworm "bed of pins"
+3. Clip the two stimulation leads (does not matter which lead goes on which pin yet)
+4. Clip the two differential measurement electrodes from one amplifier to two measurement leads (around the middle of the array).
 
+### Stimulation 
 
-### Mechanical stimulation
-Lightly touch the worm with a glass or plastic rod (no metal). Note the location of the touch for interpreting observations and analysis of neural activity. 
-
-### Electrical Stimulation
-
-#### Single Pulse
-
-Basic Stimulation Parameters[^SD9-stimulator-controls]
-- Switch the *stimulus mode* to **regular**
-- Low frequency (1-2 Hz)
-- Low amplitude (start with 0.1 gain and the lowest voltage setting)
-  > If changing output gain, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain
-- Brief duration (200microseconds)
+Experiment 1:
+Grounding the preparation: Clip the ground (black) aligator clip lead from the differential amplifier to one of the pins (pick one that is out of the way). 
+1. Set the *stimulus isolation unit* to deliver 0.2 msec, 0.5V pulses at 2Hz.[^SD9-stimulator-controls] 
+2. <font color="green"> Enable </font> the Matrix writer node and specify a filename for the experiment. 
+3. Start the bonsai workflow and visualize both the stimulation and measurement windows.
+4. Turn the stimulus on repeat for about 5 pulses.
+5. Stop the bonsai workflow. 
 
 [^SD9-stimulator-controls]: The Grass Instruments **SD9** has four controls on the top section of the stimulator's front panel that control the *Frequency* of the stimuli (how often stimulus pulses are produced), the *Delay* between the trigger pulse and the stimulus pulse, the *Duration* (width) of the stimulus pulse, and the *Volts* (amplitude) of the pulse. Each control has a black knob and a metal multiplier switch under it. The setting depends on both of these knobs. The stimulus is controlled by the *Regular/Twin Pulses* slide switch and the *Repeat/Off/Single* switch. *Polarity* allows reversing which stimulating connection is positive (start with Normal, where red is positive). Use a *Mono* (monophasic) output pulse. The stimulus itself is produced at the red and black binding posts at the right.
 
+Even with a low stimulus amplitude, you will likely see a brief, biphasic deflection in the differential measurement electrodes near the time of the stimulation pulse. This is the stimulus artifact, which results from virtually instantaneous, passive current spread from stimulating electrodes to measurement electrodes.
 
-Slowly increase the stimulus amplitude and monitor the signal from the neural recording electrode.  
+Experiment 2: 
+1. Take the fiber off of the bed of pins
+2. Place a strip of foil across the canal between the stimulation pins and measurement pins.
+3. Connect the foil to *earth ground* with a wire clip. 
+4. Place the wet fiber back on the bed of pins and make sure that it is firmly seated and touching all pins and the foil strip. 
+  :::{note}
+  You may now need to unclip the ground (black) aligator clip lead from the differential amplifier. It sometimes sets up a ground loop(?) and causes more noise when both grounds are plugged in. If there was no noise increase - no problem - leave them both plugged in.  
+  :::
+5. Specify a filename for the experiment in bonsai. 
+6. Start the bonsai workflow and visualize both the stimulation and measurement windows.
+7. Turn the stimulus on repeat for about 5 pulses.
+8. Stop the bonsai workflow.
 
-:::{warning}
-Do not exceed 2-5V on the stimulus output voltage. If you are still not generating action potentials with a 2V stimulus amplitude, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+The stimulus artifact should be significantly diminished by the grounded foil (If it is not, let's troubleshoot before moving on). Why do you think this is?
+
+Clean up the earthworm bed of pins and make room for the earthworm.
+
+## Part II. Earthworm Giant Fiber System
+
+### Physiology Setup
+
+Read through each experiment in this section before getting and setting up the worm for the experiment. You will likely need a separate worm for each experiment. You may need to go through more than one worm for each experiment. Once the worm is under anesthesia, the time window to perform the experiment is limited and/or finicky. 
+
+Anesthetize the worm by placing it in 10% alcohol ringer solution[^anaesthesia-alts]. Leave it in the anaethesia until you can pick it up without it wriggling away. The typical time for sufficient anesthesia is ∼5 min. Leaving the worm in anaesthesia too long will lead to an unresponsive nervous system (and eventually death). Hallmarks of anesthetic effectiveness are a lack of worm movement and a cessation of the escape withdrawal reflex. The escape withdrawal reflex can be observed by tapping the tail and head with a plastic probe. An alert worm will exhibit a shortening muscle contraction in response to this stimulus, but an anesthetized worm will not have this reflex. Earthworm anesthesia is a problem: dilute alcohol acts very slowly, and often leaves a squiggling worm that is difficult to keep in the recording apparatus (and later, to dissect), while concentrated alcohol "pickles" the outside of the worm, knocking out the responses of touch receptors and threatening the response of the giant fibers. Use the minimum anesthesia you can tolerate. After suitable anesthesia, briefly rinse the alcohol off the worm by dunking it in tap water and allow the excess water to drain off. 
+
+[^anaesthesia-alts]: The 10% ethanol solution can also be prepared by mixing 30 ml of tap water with 10 ml of 80 proof (40% ethanol) vodka. Carbonated water can also be used as an anesthetic if ethanol is not available. Carbonated water (60%) can be prepared by mixing 30 ml of sugar-free seltzer water (also called “club soda” or “sparkling water” at grocery stores) with 20 ml of tap water.
+
+Place a strip of foil between the stimulation and measurement pin arrays. 
+
+An annelid worm's nerve cord is near the ventral surface of the worm. Lay out the worm dorsal side up on the bed of pins in the recording chamber. Place the cover on top. 
+
+The worm should not be too wet, but if it gets too dry during the experiments, lift the cover to moisten it with a dropper (of either anaesthesia or water depending on current anaesthetic depth and desired depth). Note that the anaesthetic will tend to dry out the skin. 
+
+### Experiment 1: effect of electrode geometry on cap
+
+Stimulation Preparation
+1. Clip the two stimulation electrodes to two pins 1cm apart near the anterior end of the worm.
+:::{Note}
+Which of the two stimulation leads do you think should be closer to the differential measurement electrodes? Why?
 :::
+2. Clip the two measurement electrodes to two pins closest to the stimulation electrodes (does not matter which of the two is the closest). 
+3. <font color="red"> Disable </font> the Matrix Writer node. 
+4. Start the bonsai workflow and visualize both the stimulation and measurement windows. Visualize the **Detect Spikes** node directly from the Analog Input node (conveying two channels). 
+5. Set the stimulus isolation unit to deliver 0.2 msec pulses at 0.1V and 0.5 Hz
+6. Turn the stimulus isolation unit on repeat. With a low initial stimulus amplitude, likely no CAP will be visible
+7. Slowly increase the stimulus amplitude until you see a physiological signal from the earthworm at around the time of the stimulus. Hover around the lowest stimulus amplitude that evokes a reliable response (cap)
+  :::{warning}
+  Do not exceed 6V on the stimulus output voltage. If you are still not generating action potentials with a 6V stimulus amplitude, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or get a new worm. 
+  :::
+8. Turn off the stimulus and stop the bonsai workflow
+9. Measure the distance between the stimulus electrodes and the measurement electrodes. 
 
-Measure (and record) the distance between the stimulating electrodes and the recording electrode.
+Experiment Protocol
+1. <font color="green"> Enable </font> the Matrix writer node and specify a filename for the experiment. 
+2. Start the bonsai workflow. 
+3. Turn the stimulus on repeat for just 5 pulses (at the amplitude you determined during stimulus preparation for reliably evoking a cap). 
+4. Move the measurement electrode furthest away from the stimuluation away one pin (1 cm)
+5. Turn the stimulus on repeat for just 5 pulses.
+6. Repeat \#4 and \#5, moving the second measurement electrode further away by one pin on each bout. 
+7. When the second measurement electrode has gotten near the end of the worm (make sure you are still measuring a CAP), move the first measurement electrode down one pin away from it and do one last stimulation bout. 
+8. Stop the bonsai workflow. 
 
-#### Paired Pulse
+Clean up your worm by dipping it in tap water and return it to the soil.  
+Set up for Experiment 2 before getting another worm. 
 
-On the SD9 stimulator, the delay is the time between the prepulse sync pulse (which occurs at the trigger point for the sweep) and the actual stimulus pulse (which appears later, as the stimulus artifact). In *paired pulse* mode, there is an additional pulse at the time of the prepulse sync.  
+### Experiment 2: cap conduction velocity
 
-- Switch the *stimulus mode* to **paired pulse**
-- Long delay (20ms)
-- Amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
-
-:::{admonition} Caution
-Do not have the values of *Delay* plus *Duration* exceed 50% of the time between pulses. The time between pulses is determined by the *Frequency* control. For example, at a frequency of 20 pulses per second, there are 50 msec between pulses. The pulse duration plus delay should not exceed 50% of this period, or 25 msec. If the duration were 1 msec, the delay should not be more than 24 msec.
+Stimulation Preparation (this needs to be repeated for a different worm or if the first worm was re-positioned)
+1. Clip the two stimulation electrodes to two pins 1cm apart near the anterior end of the worm.
+:::{Note}
+Which of the two stimulation leads do you think should be closer to the differential measurement electrodes? Why?
 :::
+2. Clip the two measurement electrodes to two pins closest to the stimulation electrodes (does not matter which of the two is the closest). 
+3. <font color="red"> Disable </font> the Matrix Writer node. 
+4. Start the bonsai workflow and visualize both the stimulation and measurement windows. Visualize the **Detect Spikes** node directly from the Analog Input node (conveying two channels). 
+5. Set the stimulus isolation unit to deliver 0.2 msec pulses at 0.1V and 0.5 Hz
+6. Turn the stimulus isolation unit on repeat. With a low initial stimulus amplitude, likely no CAP will be visible
+7. Slowly increase the stimulus amplitude until you see a physiological signal from the earthworm at around the time of the stimulus. Hover around the lowest stimulus amplitude that evokes a reliable response (cap)
+8. Turn off the stimulus and stop the bonsai workflow
+9. Measure the distance between the stimulus electrodes and the measurement electrodes. 
 
-Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
-Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
+Experiment Protocol
+1. <font color="green"> Enable </font> the Matrix writer node and specify a filename for the experiment. 
+2. Start the bonsai workflow. 
+3. Turn the stimulus on repeat for just 5 pulses (at the amplitude you determined during stimulus preparation for reliably evoking a cap). 
+4. Move both measurement electrodes caudally by 2-4cm (depending on the length of the worm)... try to fit 4 different evenly spaced electrode placements along the worm).
+5. Turn the stimulus on repeat for just 5 pulses 
+6. Repeat \#4 and \#5 until you get to the end of the worm. 
+7. Stop the bonsai workflow. 
 
-## Experimental Exploration
+Clean up your worm by dipping it in tap water and return it to the soil.  
+Set up for Experiment 3 (time permitting) before getting another worm. 
 
-0. What happens when you touch the worm (at the head? in the middle? just in front of the recording site?)
-1. What is the stimulus threshold for the medial giant axon? 
-2. What is the stimulus threshold for the lateral giant axon?
-3. What is the refractory period of the action potential? Can you overcome the refractory period with a stronger stimulus (do not exceed 5V). 
+How do the absolute (time and distance from stimulating electrodes) and difference methods (time and distance between measurement channels) for calculating velocity compare?  What errors are involved in determining velocity with the frog sciatic nerve preparation?
+
+### Experiment 3: Mechanical stimulation (time permitting)
+
+Compare conduction velocity for the anterior-stimulated and posterior-stimulated cap
+Connect two differential electrodes at least 4cm apart. 
+
+1. Intermittently (pausing at least 5sec between), lightly touch the worm with a glass or plastic rod (no metal) on the anterior tip.
+:::{note}
+If using two single-ended electrodes (with common reference), you must rotate the worm 180 degrees before stimulating the posterior tip. Can you think of why?
+:::
+2. Intermittently (pausing at least 5sec between), lightly touch the worm with a glass or plastic rod (no metal) on the posterior tip. 
+
 
 ## Copy data to an external drive or your Google Drive for later analysis
 Use the [Data Explorer](../earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb) notebook to analyse your data and answer the questions in the [Responses](../earthworm-giant-fiber/Responses_earthworm-giant-fiber.ipynb) notebook.
