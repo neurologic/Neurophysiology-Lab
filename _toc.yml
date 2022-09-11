@@ -16,7 +16,7 @@ parts:
         - file: howto/Dash-Data-Explorer
         - file: howto/NiUSB-6211
         - file: howto/getting-preamp
-        - file: howto/stimulation-isolation-unit
+        - file: howto/stimulus-isolation-unit
         - file: howto/ground
         - file: howto/exponential-decay
     - file: fifth-hour
