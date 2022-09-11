@@ -1,46 +1,18 @@
 # Week 4. Giant Fiber - AP
 
-Action potentials are evoked by a depolarization inside relative to outside on a patch of membrane. The relationship between action potential threshold and axon morphology is a fundamental feature of neurons
+In this lab, we’ll determine the threshold, rheobase, chronaxie and refractory period for  earthworm giant fiber action potentials. Action potentials are evoked by a depolarization inside relative to outside on a patch of membrane. The relationship between action potential generation and axon morphology is a fundamental feature of neurons the electrophysiologists assess. This is ultimately a feature of *recruitability* of a neuron and is one factor that effects how neural circuits function.
 
+The **threshold** is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action potential are called subthreshold, stimulus voltages that do elicit an action potential are called suprathreshold. In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. THe **chronaxie** is defined as the stimulus duration at 2x the rheobase amplitude. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. We can plot this data in a strength-duration curve.
 
+The refractory period is the amount of time needed for a neuron to fire a
+second action potential. This is caused in part by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. This period is called the absolute refractory period. After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K+ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the relative refractory period. 
 
-In this lab, we’ll determine the threshold, rheobase &amp; chronaxie, refractory period, and
-conduction velocity for the earthworm giant fiber system. 
-The threshold is defined as the minimum stimulus voltage that elicits an action potential 50% of
-the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action
-potential are called subthreshold, stimulus voltages that do elicit an action potential are called
-suprathreshold.
-In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus
-length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an
-action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus
-durations. The rheobase is defined as the minimum stimulus voltage that can elicit an action
-potential with very long durations of the stimulus. The stimulus duration at 2x the rheobase is
-called the chronaxie. Chronaxie is a useful measure of the excitability of a nerve — the most
-excitable nerves have the smallest chronaxie. We can plot this data in a strength-duration curve:
-
-(A) Sample strength-duration curve for an earthworm, with the rheobase (r) and chronaxie (c) marked
-(B &amp; C) histograms showing the number of observations for rheobase &amp; chronaxie, respectively.
-The absolute refractory period is the minimum amount of time needed for a neuron to fire a
-second action potential. This is caused by the inactivation of sodium channels after an action
-potential — it takes time for them to close, to then be reopened by a depolarizing stimulus.
-Since we’re recording from many axons, your measured refractory period will be more variable
-than for a single axon. We’ll define the absolute refractory period as the time when the
-amplitude of the second CAP is 30% of the first.
-
-Earthworm Experiments
-BIPN 145
-
-Page 4
-
-After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness
-of K+ channels closing. So, there is a period of time where the neuron requires more voltage to
-fire an action potential. This period is called the relative refractory period. In this lab, we’ll
-identify it as the period where the amplitude of the second CAP is 30-90% of the first.
+Because we need to more precisely and reliably measure action potential from the giant fibers, we will use a more invasive measurement technique. The measurements will still be extracellular, but a *single-ended* rather than a *differential* amplifier can be used. See the lab manual for more detail on the electrode and stimulation configuration. 
 
 ## Pages:
-- [](../earthworm-giant-fiber/Lab-Manual_earthworm-giant-fiber.md)
-- [](../earthworm-giant-fiber/Data-Explorer_earthworm-giant-fiber.ipynb)
-- [](../earthworm-giant-fiber/Responses_earthworm-giant-fiber.ipynb)
+- [](../earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap.md)
+- [](../earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.ipynb)
+- [](../earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.ipynb)
 
 ## Additional Resources
 
