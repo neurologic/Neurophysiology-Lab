@@ -16,6 +16,7 @@ parts:
         - file: howto/Dash-Data-Explorer
         - file: howto/NiUSB-6211
         - file: howto/getting-preamp
+        - file: howto/stimulus-isolation-unit
         - file: howto/ground
         - file: howto/exponential-decay
     - file: fifth-hour
@@ -31,16 +32,16 @@ parts:
         - file: modules/eod/Lab-Manual_eod
         - file: modules/eod/Data-Explorer_eod
         - file: modules/eod/Responses_eod
-    - file: modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing
-      sections:
-        - file: modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap
-        - file: modules/earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap
-        - file: modules/earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap
     - file: modules/earthworm-giant-fiber-cap/earthworm-giant-fiber-cap_landing
       sections:
         - file: modules/earthworm-giant-fiber-cap/Lab-Manual_earthworm-giant-fiber-cap
         - file: modules/earthworm-giant-fiber-cap/Data-Explorer_earthworm-giant-fiber-cap
         - file: modules/earthworm-giant-fiber-cap/Responses_earthworm-giant-fiber-cap
+    - file: modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing
+      sections:
+        - file: modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap
     - file: modules/computational-model/computational-model_landing
       sections:
         - file: modules/computational-model/Lab-Manual_computational-model
