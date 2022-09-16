@@ -90,7 +90,7 @@ For this experiment, you will only need one differential amplifier.
 
 #### Stimulation Preparation
 1. Clip the stimulation electrodes to two pins 1 cm apart near the anterior end of the worm.
-    :::{Think about it}
+    :::{admonition} Think about it
     The stimulation electrodes will be used to evoke an action potential in the Giant Fibers at the anterior end of the worm, which will be measured at the posterior half of the worm. Which of the two stimulation leads (+ or -) do you think should be closer to the differential measurement electrodes? Why?
     :::
 2. Clip the measurement electrodes of one differential amplifier to two pins 1 cm apart from each other at around the middle of the worm (does not matter which of the two is closest to the stimulation). 
