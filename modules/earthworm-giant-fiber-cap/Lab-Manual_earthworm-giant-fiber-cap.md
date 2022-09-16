@@ -62,12 +62,14 @@ An annelid worm's nerve cord is near the ventral surface of the worm. Lay out th
 
 The worm should not be too wet, but if it gets too dry during the experiments, lift the cover to moisten it with a dropper (of either anaesthesia or water depending on current anaesthetic depth and desired depth). Note that the anaesthetic will tend to dry out the skin. 
 
-### Experiment 1: effect of electrode geometry on cap
+### Experiment 1: Presenting... the CAP itself
+
+In this experiment, you will examine the CAP itself as well as the effect of electrode separation on the CAP. With this data you can infer a variety of information about the anatomical and physiological features of the giant fiber system. 
 
 #### Stimulation Preparation
 1. Clip the two stimulation electrodes to two pins 1cm apart near the anterior end of the worm.
     :::{Note}
-    Which of the two stimulation leads do you think should be closer to the differential measurement electrodes? Why?
+    The stimulation electrodes will be used to evoke an action potential in the Giant Fibers at the anterior end of the worm, which will be measured at the posterior half of the worm. Which of the two stimulation leads (+ or -) do you think should be closer to the differential measurement electrodes? Why?
     :::
 2. Clip the two measurement electrodes to two pins closest to the stimulation electrodes (does not matter which of the two is the closest). 
 3. <font color="red"> Disable </font> the Matrix Writer node. 
@@ -98,13 +100,13 @@ Set up for Experiment 2 before getting another worm.
 
 #### Preparation 
 
-:::{note}
+:::{Attention}
 this needs to be repeated for a different worm or if the first worm was re-positioned
 :::
 
 1. Clip the two stimulation electrodes to two pins 1cm apart near the anterior end of the worm.
     :::{Note}
-    Which of the two stimulation leads do you think should be closer to the differential measurement electrodes? Why?
+    The stimulation electrodes will be used to evoke an action potential in the Giant Fibers at the anterior end of the worm, which will be measured at the posterior half of the worm. Which of the two stimulation leads (+ or -) do you think should be closer to the differential measurement electrodes? Why?
     :::
 2. Clip the two measurement electrodes to two pins closest to the stimulation electrodes (does not matter which of the two is the closest). 
 3. <font color="red"> Disable </font> the Matrix Writer node. 
@@ -129,7 +131,31 @@ Set up for Experiment 3 (time permitting) before getting another worm.
 
 How do the absolute (time and distance from stimulating electrodes) and difference methods (time and distance between measurement channels) for calculating velocity compare?  What errors are involved in determining velocity with the frog sciatic nerve preparation?
 
-### Experiment 3: conduction velocity potentiation
+
+## Additional Exploration (time permitting)
+
+### Experiment 3: Mechanical stimulation 
+
+This is one of the most complicated experiments, as it requires a defined level of anesthetization. While the worm should not be moving anymore, the giant fibers
+have to be responding to mechanical stimuli. You may need to test several worms with varying exposure to the anesthetics (3-7 min) before you get a suitable worm. As soon as the
+responses of the giant fibers can be seen in a worm, the experiment should be conducted quickly to minimize the chance of the worm changing its depth of anaesthesia. 
+
+1. Setup two differential measurement electrode pairs 3-5cm apart from each other (depending on the length of the worm) on the second half of the worm. 
+2. anaesthetize your worm and lay it out in the bed of pins so that is positioned well relative to the measurement electrodes that you set up
+3. Intermittently (pausing 10-30 sec between), lightly touch the worm with a glass or plastic rod (no metal) on the anterior tip. Explore the stimulus strength to see if you can evoke more than one action potential without evoking muscle action potentials
+    :::{tip}
+    It can help to 'ground' yourself by touching the metal table with a moist hand
+    :::
+4. Intermittently (pausing at least 5sec between), lightly touch the worm with a glass or plastic rod (no metal) on the posterior tip. 
+    :::{note}
+    If using two single-ended electrodes (with common reference), you must rotate the worm 180 degrees before stimulating the posterior tip. Can you think of why?
+    :::
+
+Compare cap and conduction velocity for the anterior-stimulated and posterior-stimulated cap
+
+If can distinguish multiple GF spikes, compare cv for each subsequent spike. 
+
+### Experiment 4: conduction velocity potentiation
 
 #### Preparation 
 
@@ -160,27 +186,6 @@ this needs to be repeated for a different worm or if the first worm was re-posit
 2. Start the bonsai workflow. 
 3. Turn the stimulus on repeat for 5-10 trains of 3-5 pulses or paired pulses (at the amplitude you determined during stimulus preparation for reliably evoking a single spike). 
 7. Stop the bonsai workflow. 
-
-### Experiment 4: Mechanical stimulation (time permitting)
-
-This is one of the most complicated experiments, as it requires a defined level of anesthetization. While the worm should not be moving anymore, the giant fibers
-have to be responding to mechanical stimuli. You may need to test several worms with varying exposure to the anesthetics (3-7 min) before you get a suitable worm. As soon as the
-responses of the giant fibers can be seen in a worm, the experiment should be conducted quickly to minimize the chance of the worm changing its depth of anaesthesia. 
-
-1. Setup two differential measurement electrode pairs 3-5cm apart from each other (depending on the length of the worm) on the second half of the worm. 
-2. anaesthetize your worm and lay it out in the bed of pins so that is positioned well relative to the measurement electrodes that you set up
-3. Intermittently (pausing 10-30 sec between), lightly touch the worm with a glass or plastic rod (no metal) on the anterior tip. Explore the stimulus strength to see if you can evoke more than one action potential without evoking muscle action potentials
-    :::{tip}
-    It can help to 'ground' yourself by touching the metal table with a moist hand
-    :::
-4. Intermittently (pausing at least 5sec between), lightly touch the worm with a glass or plastic rod (no metal) on the posterior tip. 
-    :::{note}
-    If using two single-ended electrodes (with common reference), you must rotate the worm 180 degrees before stimulating the posterior tip. Can you think of why?
-    :::
-
-Compare cap and conduction velocity for the anterior-stimulated and posterior-stimulated cap
-
-If can distinguish multiple GF spikes, compare cv for each subsequent spike. 
 
 
 ## Housekeeping

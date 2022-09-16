@@ -55,9 +55,11 @@ The setup for recording giant fiber activity in intact earthworms is illustrated
 There are many aspects of the giant fiber system that can be studied using non-invasive extracellular recording techniques in an intact animal. With these techniques, you will often measure a ***complex action potential*** (CAP) rather than an individual action potential. This compound action potential (CAP) is the algebraic summation of all the action potentials produced by all the fibres that were fired by that stimulus. Additionally, the shape of the extracellularly-measured action potential from in individual fiber will depend on electrode geometry relative to each other and to the nerve.
   
 Remember, from your work investigating the *electric circuit model of the passive membrane,* that both the classic intracellular action potential and the compound action potential are biphasic. In other words, they have both positive and negative deflections, but for different reasons. The negative phase of the intracellular action potential is attributed to the ionic conductance mechanism of after-hyperpolarization. The negative phase of the CAP is due to the manner in which it is recorded. In this lab you will be able to manipulate the configuration of the differential electrodes and test its effect on the shape of the measured CAP (and what you can infer about the nervous system anatomy based on the effects). Specifically, you can expect that the shape of the CAP will depend on the:
+
 1. relationship between the inter-electrode distance
 2. length of the axon segments depolarized by the action potentials
 3. conduction velocities of the active axons  
+
 Why do you think you would expect each of those dependencies? What are your predictions about how each will change the cap? Review your results and analysis from all week 1 passive membrane models to prepare. 
 
 
