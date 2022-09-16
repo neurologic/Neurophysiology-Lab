@@ -1,14 +1,24 @@
 # Lab Manual
 
 ## Hardware and Software Setup
-The bonsai script for today has two measurement nodes. **Channel 0**[^chan0-setup] receives amplified and digitized input from the measurement electrode (referenced to a "ground"). **Channel 1**[^chan1-setup] receives input from a floating voltage source (the "stimulator" electrodes). Use a sampling rate of 30kHz. Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). Adjust the buffering samples according to your visualization preferences. 
 
-[^chan0-setup]: RSE, ±5 V; electrode inside suction tip goes to an analog input; electrode outside suction tip (in bath) goes to; hot amplifier output goes to an analog input; cold amplifier output (gnd) goes to the AIGND (analog input ground reference) (try having this go to AISN and NRSE). 
+__Inputs__
+There are three inputs to the ADC available today. **Channel 0**[^chan0-setup] (AI0) and **Channel 1** (AI1) each receive input from a separate differential amplifier. For some experiments, you will only need one of these channels, for others you will need both. For any experiments in which you only need one differential measurement, make sure that there is only AI0 and no AI1 in the AnalogInput node of the bonsai workflow. **Channel 2**[^chan1-setup] (AI3) receives input from a floating voltage source (a copy of the voltage sent to the "stimulation" electrodes). The stimulation electrodes will be used to evoke action potentials in the Giant Fiber(s). 
 
-[^chan1-setup]:NRSE, ±5 V; hot stimulus output goes to an analog input; cold stimulus output ('gnd') goes to the AISN (analog input sensor reference) (try having this go to RSE with AIGND). 
+__Input Range__
+Adjust the voltage range for each channel in the AnalogInput parameters if needed to maximize the signal resolution if needed based on your nerve cord recordings (options include: ±0.2 V, ±1 V, ±5 V, ±10 V). I would recommend starting with ±1 V for the input from each amplifier and ±10 V for the stimulus monitor. 
+
+__Sampling Rate__
+Today you should use a sampling rate of 30kHz. Adjust the buffer samples according to your visualization preferences (I personally like a refresh interval of about 500msec). 
+
+[^chan0-setup]: RSE, ±1 V (could get away with ±0.2 V for some preps); The differential amplifiers transform the signal into a single-ended output. The hot amplifier output goes to an analog input; cold amplifier output (gnd) goes to the AIGND (analog input ground reference). 
+
+[^chan1-setup]:NRSE, ±10 V; hot stimulus output goes to an analog input; cold stimulus output ('gnd') goes to the AISN (analog input sensor reference). 
 
 
 ## Part I. Fiber Arts Nervous System
+
+For these experiments, you will only need one differential amplifier. 
 
 ### Physiology Setup
 
