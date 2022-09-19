@@ -1,4 +1,4 @@
-# Week 5. Computational Models
+# Week 6. Computational Models
 
 *Computational models* of neurons and neural circuits are an integral part of neurobiology research in general. For example, [the Allen Institute for Brain Science as a whole division dedicated to computational modeling](https://portal.brain-map.org/explore/models). Today, we will work on building and interrogating computational models that capture some basic electrophysiological properties of neuron membranes. These will build on the principles [you learned by utilizing electrical circuit models of neuron membranes](../passive-membrane-models/passive-membrane-models_landing.md).
 

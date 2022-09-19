@@ -16,3 +16,8 @@ Our time, outside of lab and with a shared computer scrreen, to go over tools an
 
 ## Week 3 on Wed, Sept 21 at 2:30-3:30
 
+:::{image} /images/Kladt_earthworm-CAP-geometry.png
+:width: 700
+:::
+
+[current flow (copywrite Bob Wyttenbach)](https://drive.google.com/file/d/10DTmijCyiAT_aMKha1qxfjJJ-GezH740/view?usp=sharing)

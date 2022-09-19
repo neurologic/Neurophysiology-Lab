@@ -1,4 +1,4 @@
-# Week 8. Crayfish Motor Nerve 3
+# Week 9. Crayfish Motor Nerve 3
 
 In crayfish, the ventral branch of the third nerve (N3v) in each abdominal ganglia innervates the superficial flexor muscle in the corresponding segment of the tail. The superficial muscle seems to maintain the posture of the animal. Motor neurons of the N3v are tonically active while the animal is at rest or performing terrestrial walking (Moore and Larimer, 1988). Motor neurons that innervate deep muscles instead generate brief bursts of action potentials associated with the powerful tail-flip. 
 

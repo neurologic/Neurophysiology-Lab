@@ -1,4 +1,4 @@
-# Week 11 Synaptic Plasticity
+# Crayfish Synaptic Plasticity
 
 ## Pages
 - [](../crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing.md)

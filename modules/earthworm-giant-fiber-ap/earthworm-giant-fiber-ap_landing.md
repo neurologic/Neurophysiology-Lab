@@ -1,4 +1,4 @@
-# Week 4. Giant Fiber - AP
+# Week 5. Giant Fiber - AP
 
 In this lab, we’ll determine the threshold, rheobase, chronaxie and refractory period for  earthworm giant fiber action potentials. Action potentials are evoked by a depolarization inside relative to outside on a patch of membrane. The relationship between action potential generation and axon morphology is a fundamental feature of neurons the electrophysiologists assess. This is ultimately a feature of *recruitability* of a neuron and is one factor that effects how neural circuits function.
 

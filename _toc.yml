@@ -37,6 +37,11 @@ parts:
         - file: modules/earthworm-giant-fiber-cap/Lab-Manual_earthworm-giant-fiber-cap
         - file: modules/earthworm-giant-fiber-cap/Data-Explorer_earthworm-giant-fiber-cap
         - file: modules/earthworm-giant-fiber-cap/Responses_earthworm-giant-fiber-cap
+    - file: modules/earthworm-giant-fiber-cv/earthworm-giant-fiber-cv_landing
+      sections:
+        - file: modules/earthworm-giant-fiber-cv/Lab-Manual_earthworm-giant-fiber-cv
+        - file: modules/earthworm-giant-fiber-cv/Data-Explorer_earthworm-giant-fiber-cv
+        - file: modules/earthworm-giant-fiber-cv/Responses_earthworm-giant-fiber-cv
     - file: modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing
       sections:
         - file: modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap
@@ -72,11 +77,6 @@ parts:
         - file: modules/crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity
         - file: modules/crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity
         - file: modules/crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity
-    - file: modules/crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing
-      sections:
-        - file: modules/crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity
-        - file: modules/crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity
-        - file: modules/crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity
     - file: modules/human-bci-music/human-bci-music_landing
       sections:
         - file: modules/human-bci-music/Lab-Manual_human-bci-music
@@ -102,3 +102,8 @@ parts:
         - file: modules/crayfish-cpg/Lab-Manual_crayfish-cpg
         - file: modules/crayfish-cpg/Data-Explorer_crayfish-cpg
         - file: modules/crayfish-cpg/Responses_crayfish-cpg
+    - file: modules/crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing
+      sections:
+        - file: modules/crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity
+        - file: modules/crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity
+        - file: modules/crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity
