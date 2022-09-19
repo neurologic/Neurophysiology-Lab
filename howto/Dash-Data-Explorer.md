@@ -9,9 +9,15 @@ An application written in python that uses the dash modules from plotly to creat
 
 ##  Usage
 
+### Install Anaconda
 1. Make sure you have installed [Anaconda Individual Edition](https://www.anaconda.com/products/distribution) by downloading and executing the appropriate installer for your operating system.
-2. Launch the Anaconda Navigator
-3. Open the PowerShell Prompt application
+
+### Launch Command Line
+Launch a Command Line prompt to run Anaconda programs (slightly different for Mac and PC)
+
+PC: 
+1. Launch the Anaconda Navigator
+2. Open the PowerShell Prompt application
 	:::{dropdown} Create an environment with dash if you have not yet done so
 	If you have not already done so, you will need to create an environment to run the application in. The environment must have dash installed.  
 	Execute the following commands at the PowerShell Prompt command line and follow given instructions along the way.  
@@ -21,8 +27,25 @@ An application written in python that uses the dash modules from plotly to creat
 	3. ```conda install -c conda-forge dash``` 
 	Type *Y* followed by the *Enter/Return* key when prompted.
 	:::
-4. Activate the *neurolab* anaconda environment (created in step 3: 'Creating an environment with dash') by typing the text ```conda activate neurolab``` into the PowerShell Prompt command line and then hitting the *Enter* key. 
-5. Navigate the command line to the folder that contains the *Data-Explorer.py* application file that you downloaded/saved.
+
+MAC: 
+1. Open ***Terminal*** (comes with Mac computers)
+	:::{dropdown} Create an environment with dash if you have not yet done so
+	If you have not already done so, you will need to create an environment to run the application in. The environment must have dash installed.  
+	Execute the following commands at the PowerShell Prompt command line and follow given instructions along the way.  
+	1. ```conda create --name neurolab --clone base```  
+	2. After the environment has been created, you must activate it before proceeding with:  
+	```conda activate neurolab``` 
+	3. ```conda install -c conda-forge dash``` 
+	Type *Y* followed by the *Enter/Return* key when prompted.
+	:::
+
+### Run the ***Dash*** Data Explorer
+
+Running the Dash Data Explorer once Anaconda and the neurolab environment are set up on your computer:
+
+1. Activate the *neurolab* anaconda environment (created in step 3: 'Creating an environment with dash') by typing the text ```conda activate neurolab``` into the PowerShell Prompt command line and then hitting the *Enter* key. 
+2. Navigate the command line to the folder that contains the *Data-Explorer.py* application file that you downloaded/saved.
 
 	:::{dropdown} Navigating the command line on MacOS
 	```cd folderpath```  
@@ -34,7 +57,7 @@ An application written in python that uses the dash modules from plotly to creat
 	To get the folder path, hold down the *Shift* key while right-clicking the folder name. then select "Copy Full Path". You can then *CONTROL*+*P* to paste it into the command line.
 	:::
 
-6. Follow the command line syntax below to provide the application with all the necessary information about your file and how you want it plotted in the Data Explorer when it launches. 
+3. Follow the command line syntax below to provide the application with all the necessary information about your file and how you want it plotted in the Data Explorer when it launches. 
 
 	:::{admonition} filepath TIP
 	copy the full filepath to your data from the file browswer so that you can paste it into the command line rather than typing it out.
@@ -56,9 +79,9 @@ An application written in python that uses the dash modules from plotly to creat
 	                        list of channels to plot on each subplot (listed in order of
 	                        appearance)
 
-7. Open a browser window (Chrome recommended) and go to [your local server](http://127.0.0.1:8050/) (127.0.0.1:8050)
+4. Open a browser window (Chrome recommended) and go to [your local server](http://127.0.0.1:8050/) (127.0.0.1:8050)
 	  > Note that this link will only work if you have already run the Data Explorer application from the terminal
-8. **Shut down the application appropriately** 
+5. **Shut down the application appropriately** 
 	- Mac: hold down the *Control* key while you press the *C* key. 
 	- Windows: hold down the *Control* key while you press the *Pause/Break* key. 
 
