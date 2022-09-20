@@ -24,18 +24,23 @@ Agenda:
 
 ### CAP geometry concepts
 
+:::{image} /images/measurement-polarity-explanation.jpg
+:width: 800
+:::
+**Figure 1** Effects of electrode orientation on polarity of action potential in measurement.
+
 :::{image} /images/Bahring_Fig4btop.png
 :width: 600
 :::
-**Figure 1** From [Robert Bähring, and Christiane K. Bauer](https://doi.org/10.1152/advan.00137.2013)
+**Figure 2** From [Robert Bähring, and Christiane K. Bauer](https://doi.org/10.1152/advan.00137.2013)
 
 :::{image} /images/Kladt_earthworm-CAP-geometry.png
 :width: 800
 :::
-**Figure 2** From [Kladt et al]()
+**Figure 3** From [Kladt et al]()
 
 :::{image} /images/wyttenbach_current-flow-membrane.png
 :width: 700
 :::
 
-**Figure 3** Diagram of current flow ([copywrite Bob Wyttenbach](https://drive.google.com/file/d/10DTmijCyiAT_aMKha1qxfjJJ-GezH740/view?usp=sharing))
+**Figure 4** Diagram of current flow ([copywrite Bob Wyttenbach](https://drive.google.com/file/d/10DTmijCyiAT_aMKha1qxfjJJ-GezH740/view?usp=sharing))
