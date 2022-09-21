@@ -17,3 +17,14 @@
 :::
 
 **Figure 3** Diagram of current flow ([copywrite Bob Wyttenbach](https://drive.google.com/file/d/10DTmijCyiAT_aMKha1qxfjJJ-GezH740/view?usp=sharing))
+
+
+## Review of Passive membrane properties
+
+Relevant review for why there is a voltage gradient to measure.
+
+:::{image} /images/wyttenbach_current-flow-membrane.png
+:width: 700
+:::
+
+**Figure 4** Diagram of current flow ([copywrite Bob Wyttenbach](https://drive.google.com/file/d/10DTmijCyiAT_aMKha1qxfjJJ-GezH740/view?usp=sharing))

@@ -17,30 +17,9 @@ Our time, outside of lab and with a shared computer scrreen, to go over tools an
 ## Week 3 on Wed, Sept 21 at 2:30-3:30
 
 Agenda:
-- Figure quality tips
 - V=IR and T=RC experiment design and analysis review
 - CAP examples and more visualization of the concept
 - What data from Part II. Experiment 1 would you compare in a single panel?
+- Figure quality tips
 
-### CAP geometry concepts
 
-:::{image} /images/Electrode-Geometry.png
-:width: 800
-:::
-**Figure 1** Effects of electrode orientation on polarity of action potential in measurement.
-
-:::{image} /images/Bahring_Fig4btop.png
-:width: 600
-:::
-**Figure 2** From [Robert Bähring, and Christiane K. Bauer](https://doi.org/10.1152/advan.00137.2013)
-
-:::{image} /images/Kladt_earthworm-CAP-geometry.png
-:width: 800
-:::
-**Figure 3** From [Kladt et al]()
-
-:::{image} /images/wyttenbach_current-flow-membrane.png
-:width: 700
-:::
-
-**Figure 4** Diagram of current flow ([copywrite Bob Wyttenbach](https://drive.google.com/file/d/10DTmijCyiAT_aMKha1qxfjJJ-GezH740/view?usp=sharing))
