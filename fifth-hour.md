@@ -24,7 +24,7 @@ Agenda:
 
 ### CAP geometry concepts
 
-:::{image} /images/measurement-polarity-explanation.jpg
+:::{image} /images/Electrode-Geometry.png
 :width: 800
 :::
 **Figure 1** Effects of electrode orientation on polarity of action potential in measurement.
