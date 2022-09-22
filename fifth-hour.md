@@ -24,6 +24,6 @@ Agenda:
 
 [Share link to the recording](https://wesleyan.zoom.us/rec/share/TMpziBmsYh698KxyHSvs5YE_tbu7BB9dG3l0K48PuqBrEsZf1Laqmmcxrb7zsTXo.Oj1a98ZoN36fdbaN)
 
-[Bonus video showing a demo of the analysis notebook for this week]()
+[Bonus video showing a demo of the analysis notebook for this week](https://wesleyan.zoom.us/rec/share/dKZEJ-1Eo3AIPMdCUKHjgkrfJBp-J8fMRocqZZzzjIUXKJM5GryK45wrhGKZKb72.NWSJlwv7c7bjqZOL?startTime=1663872529000)
 
 I made this [Electrode Geometry](howto/electrode-geometry) document (found in the "howto" section of the website) that reviews some of the utility and impact of electrode geometry in examining neural activity. This phenomena depends on a combination of a neuron's space constant and action potential duration.
