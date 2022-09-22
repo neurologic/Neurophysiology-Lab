@@ -22,4 +22,8 @@ Agenda:
 - What data from Part II. Experiment 1 would you compare in a single panel?
 - Figure quality tips
 
+[Share link to the recording](https://wesleyan.zoom.us/rec/share/TMpziBmsYh698KxyHSvs5YE_tbu7BB9dG3l0K48PuqBrEsZf1Laqmmcxrb7zsTXo.Oj1a98ZoN36fdbaN)
 
+[Bonus video showing a demo of the analysis notebook for this week]
+
+[Here is a document (found in the "howto" section of the website) reviewing the utility and impact of Electrode Geometry](howto/electrode-geometry).
