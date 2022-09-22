@@ -70,7 +70,7 @@ Why do you think you would expect each of those dependencies? What are your pred
 
 ## Additional Resources
 
-- [The McGill Physiology Virtual Lab](http://www.medicine.mcgill.ca/physio/vlab/CAP/)recording.htm
+- [The McGill Physiology Virtual Lab](http://www.medicine.mcgill.ca/physio/vlab/CAP/recording.htm)
 - [McGill University Compound Action Potential (virtual lab website)](http://www.medicine.mcgill.ca/physio/vlab/CAP/vlabmenuCAP.htm)
 - [Smith College, Bio 330 Lab Manual](https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html)
 - [Theodore Holmes Bullock (1945) FUNCTIONAL ORGANIZATION OF THE GIANT FIBER SYSTEM OF LUMBRICUS. Journal of Neurophysiology; 8(1).](https://doi.org/10.1152/jn.1945.8.1.55)

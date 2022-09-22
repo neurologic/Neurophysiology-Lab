@@ -25,6 +25,8 @@ the visible result of the negative potential wave fitting in between the two ele
 This experiment is a powerful and simple demonstration that experimental design has to be thoughtful and that the
 results have to be questioned thoroughly. Even the worm action potentials are big in terms of spatial wave lengths (1-1.5 cm). In humans, these can even be bigger, e.g., 10cm for fibers with 100 m/s conduction velocity and APs of 1ms duration.
 
+[This virtual lab website from McGill has another graphic showing this effect](http://www.medicine.mcgill.ca/physio/vlab/CAP/recording.htm)
+
 
 ## Review of Passive membrane properties
 

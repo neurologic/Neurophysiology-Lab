@@ -76,7 +76,7 @@ Voltage propagation along a neuron membrane has a finite travel *distance*. **Ac
 
 :::{figure-md}
 
-<img src = '../images/byb_low-length-constant_z_web.gif' width=500>
+<img src = '../images/byb_cv_low-length-constant_z_web.gif' width=500>
 
 Imagine a line of doors (ion channels) with people (gates) ready to open them when they hear the full phrase "open." And, when the vigilant finishes opening their own door, they then repeat the command "Open" which the next person hears. gif from ByB[^byb-ref-myelin]
 :::
@@ -85,7 +85,7 @@ A space constant can be thought of as a measure of how loud the voice of the vig
 
 :::{figure-md}
 
-<img src = '../images/high-length-constant_z_web.gif' width=500>
+<img src = '../images/byb_cv_high-length-constant_z_web.gif' width=500>
 
 Larger space constant means "faster" active propagation/conduction. gif from ByB[^byb-ref-myelin]
 :::

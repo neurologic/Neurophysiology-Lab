@@ -6,6 +6,42 @@ Refer back to Week 3 (earthworm giant fiber CAP) for an overview of the giant fi
 
 ## Conduction Velocity
 
+To measure speed (velocity), you need to measure both time (when a spike occurred) and distance (how far a spike has traveled down a nerve).
+
+Today, you will measure conduction velocity of neurons in the annelid Giant Fiber system. 
+
+Have you ever wondered, when you stub your toe, how you manage to feel the impact almost instantaneously, but the throbbing pain takes about 1-2 seconds to reach your consciousness? This is because these two signals (touch vs. damage/pain) travel via two different fiber systems that have very different speeds. The following cartoon from [Backyard Brains](https://backyardbrains.com/) offers a teaser as to why.
+
+:::{image} /images/Zombie_Speed.jpeg
+:width: 600
+:::
+
+There are two main factors that effect the conduction velocity of a neuron's action potential: space constant and time constant. Already this semester, you have experimented with and contemplated both of these concepts in detail. Still, these are difficult concepts to gain intuition for and to integrate together. 
+
+Why, when length constant is reduced, does a time delay result? When the length constant is reduced, more and more ion channels have to open in sequence to propagate an action potential along the neural membrane. 
+
+I like the following analogy described and animated by our friends at [Backyard Brains](https://backyardbrains.com/). 
+
+Imagine a line of doors (ion channels) with people (gates) ready to open them when they hear the full phrase "open." And, when the people finishes opening their own door, they then repeat the command "Open" which the next person hears, as we illustrate below:
+
+:::{image} /images/byb_cv_low-length-constant_z_web.gif
+:width: 800
+:::
+
+A length constant can be thought of as a measure of how loud the voice of the people decreeing "open" is. If the "Open" is very loud, many people can hear the open command at once, thus allowing many doors to open at the same time. This is equivalent to a high length constant.
+
+:::{image} /images/byb_cv_high-length-constant_z_web.gif
+:width: 800
+:::
+
+The time constant is a measure of how fast the "Open" command is said. If "Open" is said very slowly, there will be a delay in the transmission of the "open" command, no matter how loud it is uttered. This is equivalente to a high time constant.
+
+:::{image} /images/byb_cv_low-time-constant_z_web.gif
+:width: 800
+:::
+
+
+
 ## Pages:
 - [](../earthworm-giant-fiber-cv/Lab-Manual_earthworm-giant-fiber-cv.md)
 - [](../earthworm-giant-fiber-cv/Data-Explorer_earthworm-giant-fiber-cv.ipynb)
