@@ -81,7 +81,7 @@ This needs to be repeated for a different worm, or if the first worm was re-posi
 2. Clip the measurement electrodes of the second differential amplifier to two pins 1 cm apart from each other and 2-5cm from the first electrodes (depending on the length of your worm). Note the distance between them.
 3. <font color="red"> Disable </font> the Matrix Writer node. 
 4. Start the bonsai workflow and visualize both the stimulation and measurement windows. 
-5. Set the stimulus isolation unit to deliver 0.2 msec pulses at 0.1V and 0.5 Hz
+5. Set the stimulus isolation unit to deliver 0.2 msec pulses at 0.5V and 1 Hz
 6. Turn the stimulus isolation unit on repeat. With a low initial stimulus amplitude, likely no CAP will be visible. If it is, decrease the stimulus amplitude until you do not see it anymore. 
 7. Slowly increase the stimulus amplitude until you see a CAP at around the time of the stimulus. Hover around the lowest stimulus amplitude that reliably evokes a CAP. 
     :::{note}
@@ -93,7 +93,7 @@ This needs to be repeated for a different worm, or if the first worm was re-posi
 #### Experiment Protocol
 1. <font color="green"> Enable </font> the Matrix writer node and specify a filename for the experiment. 
 2. Start the bonsai workflow. 
-3. Turn the stimulus on repeat for 10 pulses (at the amplitude you determined during stimulus preparation for reliably evoking a CAP). 
+3. Turn the stimulus on repeat for 20 pulses (at the amplitude you determined during stimulus preparation for reliably evoking a CAP). 
     :::{admonition} Note
     You may need to manually trigger each stimulus pulse instead of on automatic repeat. If the worm is too active or there is too much noise from muscle potentials, you will need to time your stimulus pulses for when the worm (signal) is calm.
     :::
@@ -120,7 +120,7 @@ This is one of the most complicated experiments, as it requires a defined level 
     :::
 4. <font color="green"> Enable </font> the Matrix writer node and specify a filename for the experiment. 
 5. Stimulate the worm by touching the ***anterior*** tip (remember to wait between touches so that the escape sysetm is not habituated to your touch). Explore the stimulus strength to see if you can evoke more than one CAP in a row.
-6. Stop the bonsai workflow once you stop getting reliable clean responses. (Or after you have enough data)
+6. Stop the bonsai workflow once you stop getting reliable clean responses. (Or after you have enough data... try for at least 5-10 good stimulation events that evoke a train of CAPs)
 7. Repeat steps 3-6 but stimulating the ***posterior*** tip of the worm. It is better to record the anterior and posterior stimulation conditions in separate files because they can be difficult to distinguish from each other within the same file. 
     :::{note}
     If using two single-ended electrodes (with common reference), you must rotate the worm 180 degrees before stimulating the posterior tip. Can you think of why?
