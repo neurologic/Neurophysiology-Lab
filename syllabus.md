@@ -5,7 +5,9 @@
 **Instructor**  
 *Name* : Krista Perks, PhD (they/she)  
 *Email* : kperks@wesleyan.edu  
-*Office Hours*: TBD  
+*Office*: Shanklin 409
+*Office Hours*: Alternating between Tues 1:30-2:30 and Wed 2:30-3:30 in Hall-Atwater room 290
+*Fifth Hours*: Alternating between Tues 1:30-2:30 and Wed 2:30-3:30 in Hall-Atwater room 290
 
 
 **Classroom Sessions**  
