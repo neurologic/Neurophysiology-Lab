@@ -13,10 +13,10 @@ Today, you will measure conduction velocity of neurons in the annelid Giant Fibe
 Have you ever wondered, when you stub your toe, how you manage to feel the impact almost instantaneously, but the throbbing pain takes about 1-2 seconds to reach your consciousness? This is because these two signals (touch vs. damage/pain) travel via two different fiber systems that have very different speeds. The following cartoon from [Backyard Brains](https://backyardbrains.com/) offers a teaser as to why.
 
 :::{image} /images/Zombie_Speed.jpeg
-:width: 600
+:width: 800
 :::
 
-There are two main factors that effect the conduction velocity of a neuron's action potential: space constant and time constant. Already this semester, you have experimented with and contemplated both of these concepts in detail. Still, these are difficult concepts to gain intuition for and to integrate together. 
+There are two main factors that effect the conduction velocity of a neuron's action potential: its ***space constant*** and its ***time constant***. Already this semester, you have experimented with and contemplated both of these concepts in detail. Still, these are difficult concepts to gain intuition for and to integrate together. 
 
 Why, when length constant is reduced, does a time delay result? When the length constant is reduced, more and more ion channels have to open in sequence to propagate an action potential along the neural membrane. 
 
