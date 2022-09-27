@@ -27,3 +27,19 @@ Agenda:
 [Bonus video showing a demo of the analysis notebook for this week](https://wesleyan.zoom.us/rec/share/dKZEJ-1Eo3AIPMdCUKHjgkrfJBp-J8fMRocqZZzzjIUXKJM5GryK45wrhGKZKb72.NWSJlwv7c7bjqZOL?startTime=1663872529000)
 
 I made this [Electrode Geometry](howto/electrode-geometry) document (found in the "howto" section of the website) that reviews some of the utility and impact of electrode geometry in examining neural activity. This phenomena depends on a combination of a neuron's space constant and action potential duration.
+
+## Week 4 on Tues, Sept 27 at 1:30-2:30
+
+Agenda:
+- isi, rate, smoothed time series (week 2 analysis)
+- conduction velocity of instantaneously conducted electrical events
+- polarity of voltage measurement
+- CAP interpretation
+- isolation of an action potential on each and between both measurement electrodes
+- experimental versus control data... ie. what is the experiment testing, and what other variables changed across experimental bouts that would interfere with ability to interpret experimental results if not controlled for.
+
+[Share link to the recording](https://wesleyan.zoom.us/rec/play/pN_rECodX5W05HX_bQ_wq2keggd3oQvaqXC16V_2H6yl-toEaN9mHHHdEvfSyW_r0N4ZaUaqsVrQ5Hw-.6nb9KQc-_kj6Z6S7)
+
+
+## Week 5 on Wed, Oct 4 at 2:30-3:30
+
