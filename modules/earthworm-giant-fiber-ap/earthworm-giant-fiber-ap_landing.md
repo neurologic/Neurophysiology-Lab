@@ -1,12 +1,26 @@
 # Week 5. Giant Fiber - AP
 
-In this lab, we’ll determine the rheobase, chronaxie and refractory period for earthworm giant fiber action potentials. Action potentials are evoked by a depolarization inside relative to outside on a patch of membrane. The relationship between action potential generation and axon morphology is a fundamental feature of neurons that electrophysiologists assess. This is ultimately a feature of *recruitability* of a neuron and is one factor that effects how neural circuits function.
+In this lab, we’ll determine the rheobase, chronaxie and refractory period for earthworm giant fiber action potentials. Action potentials are evoked by a depolarization inside relative to outside on a patch of membrane. The relationship between action potential generation ("*excitability*") and axon/membrane anatomy is a fundamental feature of neurons. This is ultimately a feature of *recruitability* and it effects how neural circuits function.
 
 Comprehensive knowledge of the basic principles of cellular excitability is also fundamental to the education of medical students, because the measurement of neuronal excitability and signal conduction represents an essential part of electrodiagnostic testing in clinical practice. In addition, it is important to understand the principles of electrical excitability in nerve and muscle cells for the appropriate use of stimulation devices like *deep brain electrodes*, *cardiac pace-makers*, and *defibrillators*.
 
-Stimulus voltages that don’t elicit an action potential are called subthreshold, stimulus voltages that do elicit an action potential are called suprathreshold. But **threshold** itself is not all-or-none. In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. THe **chronaxie** is defined as the stimulus duration at 2x the rheobase amplitude. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. We can obtain these measurements of excitability by obtaining a strength-duration curve for action potential stimulation.
+## Strength-Duration Relationships
+
+Stimulus voltages that don’t elicit an action potential are called *subthreshold*, stimulus voltages that do elicit an action potential are called *suprathreshold*. But **threshold** itself is not all-or-none. In some neurons, we can elicit an action potential with a lower stimulus amplitude if the stimulus duration is longer. A longer stimulus duration enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. 
+
+The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. 
+
+The **chronaxie** is defined as the stimulus duration at 2x the rheobase amplitude. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. 
+
+We can obtain both of these measurements of excitability (rheobase and chronaxie) by obtaining a strength-duration curve for action potential stimulation.
+
+## Refractory Period
 
 The **refractory period** is the amount of time needed before a neuron can fire a second action potential. This is caused in part by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. This period is called the *absolute* refractory period. After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K+ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the *relative* refractory period. 
+
+We can obtain an estimate of the refractory periods of a neuron by delivering pairs of stimulus pulses ("*paired pulses*") with different inter-pulse intervals.
+
+## Experimental Requirements
 
 In these experiments, we need to more precisely and reliably measure action potential events from the giant fibers. Therefore, we will use a more invasive measurement technique. The measurements will still be extracellular, but a *single-ended* rather than a *differential* amplifier can be used. See the lab manual for more detail on the electrode and stimulation configuration. 
 
@@ -17,6 +31,7 @@ In these experiments, we need to more precisely and reliably measure action pote
 
 ## Additional Resources
 
+- [Irnich W. (2010). The terms "chronaxie" and "rheobase" are 100 years old. Pacing and clinical electrophysiology : PACE, 33(4), 491–496.](https://doi.org/10.1111/j.1540-8159.2009.02666.x)
 - [Robert Bähring, and Christiane K. Bauer. (2014) Easy method to examine single nerve fiber excitability and conduction parameters using intact nonanesthetized earthworms. Advances in Physiology Education.](https://doi.org/10.1152/advan.00137.2013)
 - [McGill University Compound Action Potential (virtual lab website)](http://www.medicine.mcgill.ca/physio/vlab/CAP/vlabmenuCAP.htm)
 - [Smith College, Bio 330 Lab Manual](https://www.science.smith.edu/departments/neurosci/courses/bio330/labs/L4giants.html)
