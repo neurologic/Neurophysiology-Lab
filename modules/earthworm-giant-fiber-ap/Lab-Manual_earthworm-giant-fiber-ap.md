@@ -20,17 +20,8 @@ Use a glass or plastic rod for probing or lifting the nerve cord. Gently cut the
 
 ## Physiology Setup
 
-Tilt the dissecting dish on clay so that saline pools at the incision and keeps the nerve cord wet, while keeping the head of the worm try.
-
-### Grounding the worm
-
-Slide a strip of foil under the worm about halfway between the anterior tip of the worm and your incision. Clip an earth ground to the foil.
-:::{note}
-Once you hook up your measurement electrode reference, you may find that connecting the foil to different grounding points has different effects on the noise. Try what works best.   
-:::
-
 ### Place the measurement electrode 
-Clamp a suction electrode firmly in a micromanipulator, attach its electrode connections to the amplifier's input block. Select a suction electrode tip (and/or make a fresh one) with a tip diameter approximately the diameter of the nerve cord. Getting a tight fit will drastically improve your measurement quality of neural activity. Lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). Remove any excess saline to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically. The electrode's external wire needs to be in contact with the saline pool around the nerve cord. 
+Clamp a suction electrode firmly in a micromanipulator, attach its electrode connections to the amplifier's input. Reference (tie) one of the measurement electrodes to amplifier ground. Select a suction electrode tip (and/or make a fresh one) with a tip diameter approximately the diameter of the nerve cord. Getting a tight fit will drastically improve your measurement quality of neural activity. Lower the manipulator so that the tip of the electrode is in the saline near the nerve cord. Gently draw some saline into the electrode; you need to have a continuous column of saline (no bubbles!) that is long enough to reach the electrode's internal wire (a few cm). Remove any excess saline fron around the measurement well to keep the body of the worm as dry as possible. Wet the exposed nerve cord with saline periodically as needed. The electrode's external wire needs to be in contact with the saline pool around the nerve cord. 
 
 :::{figure-md}
 :class: figure
@@ -41,11 +32,8 @@ Suction electrode on exposed and cut nerve cord.
 :::
 
 ### Place the stimulating electrode. 
-Connect two straight-pin electrodes to the output (red-anode and black-cathode terminals) of a stimulator. At the anterior end, place the anode and cathode stimulation electrode pins through the worm and into the dish below. Place them close together, but not touching, and on either side of the nerve cord. The body surface and the dissecting dish must be dry near the stimulating electrodes, or the saline will "short out" the stimulus and reduce its effectiveness. Use an absorbant tissue to dry the dish and the worm around the stimulating electrodes. Use a roll of absorbant tissue placed under the worm to help keep the anterior end dry. 
 
-:::{note}
-You can also try placing two pin electrodes under the ventral surface of the body (like you did for the CAP experiments last week). This may require stronger stimulus amplitudes, but could lower the risk of damaging the nerve cord. 
-:::
+Connect two straight-pin electrodes to the output (red-anode and black-cathode terminals) of a stimulator. At the anterior end, place the anode and cathode stimulation electrode pins through the worm and into the dish below. Place them about 1cm apart and make sure they are not touching. Aim for just lateral of the midline to avoid puncturing the nerve (this is more important for the anode than the cathode). The body surface and the dissecting dish must be dry near the stimulating electrodes, or the saline will "short out" the stimulus and reduce its effectiveness. Use an absorbant tissue to dry the dish and the worm around the stimulating electrodes. Use a roll of absorbant tissue placed under the worm to help keep the anterior end dry if needed. Keeping the worm dry between the stimulating electrodes and the measurement electrodes will reduce the stimulus artifact. In this preparation, I have found that using the earth-grounded foil increases the electrical noise in the recording and does not work as well as it does using the non-invasive measurement techniques.
 
 :::{figure-md}
 :class: figure
@@ -63,62 +51,74 @@ Stimulation electrode placement. Dry as much moisture as possible from around th
 Absorbant wipes help keep the stimulation site dry. 
 :::
 
+### Grounding the prep
+
+If there is a lot of environmental electrical noise, you can try: grounding the prep to earth ground; placing a faraday cage around the prep; using true differential recording mode instead of referencing one of the measurement electrodes to amplifier ground.
 
 <a id="experiment"></a>
-## Core Experiment
+## Experiments
 
-### Visualize Analog Inputs
-Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font> and the *analog input* and *channel select* nodes <font color = 'green'>enabled</font>. Double click the channel select nodes to visualize the electrode and stimulus measurements if it does not pop up upon start.
+### Strength-Duration Threshold
 
-### Record Analog Inputs
-Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
+:::{warning}
+The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 9V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 2V pulse amplitude at 2msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+:::
+
+You do not need to record all of the raw neuron voltage measurement signals for this experiment. But, after you complete your amplitude:duration data collection, you should record responses to the following example amplitude:duration settings for making figures later:  
+- at threshold amplitude for 2 msec duration stimulus pulse (rheobase)
+- at threshold amplitude for the minimum stimulus duration
+- at threshold duration near 2 times the rheobase amplitude.
+
+Stimulus Amplitude-Duration Data collection protocol:  
+Start with a long stimulus duration and low amplitude. Then increase the amplitude until the median giant fiber (MGF) is above spike threshold. Note the threshold amplitude at that duration. 
+
+:::{caution}
+If changing the gain on the pulse amplitude, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain. Then increase the voltage knob to where you need it before turning the stimulus back on. 
+:::
+
+Then decrease the duration until the stimulus is below spike threshold again and increase the amplitude at that duration until the MGF is again above spike threshold. Note the threshold amplitude at this new duration. Continue decreasing stimulus duration and increasing stimulus amplitude in this way until you can no longer evoke a MGF action potential with less than 9V stimulus amplitude. **DO NOT EXCEED 9V stimulus amplitude**.
+
+Repeat for the Lateral Giant Fiber (LGF). 
+
+After you have completed all experiments for today, you can go back and enter your data into a spreadsheet program and save it as a .csv file. 
 
 
-### Mechanical stimulation
-Lightly touch the anterior end of the worm with a glass or plastic rod (no metal). It can help to ground yourself while doing this to avoid electrical artifacts in the measured signal.
+### Refractory Period
 
-### Electrical Stimulation
+1. Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font>. Double click the channel select nodes to visualize the neuron and stimulus measurements if it does not pop up upon start. Find the stimulus amplitude needed to reliably evoke a MGF action potential with 200 microsecond (0.0002 seconds) duration. 
+    :::{warning}
+    The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 5V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 5V pulse amplitude at 0.2 msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+    :::
+2. Stop the bonsai workflow and set up your paired pulse stimulation protocol. 
+3. Set up the paired pulse stimulation protocol. In *paired pulse* (or *train*) mode for your stimulator, set the initial parameters to:
+    - Pulse duration 200 microseconds
+    - Delay between pulses 20ms
+    - Pulse amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
 
-#### Single Pulse
+    :::{dropdown} SD9 stimulator[^SD9-stimulator-controls]
+    Use **Paired Pulse** mode. In this mode, the ***delay*** is the time between the first pulse (which occurs at the trigger point for the sweep) and the second pulse (which appears later, as the stimulus artifact). ***Duration*** is the duration of each individual pulse. The time between sets of paired pulses (each trial in this experiment) is determined by the ***frequency*** control. Do not have the values of *Delay* plus *Duration* exceed 50% of the time between pulses. For example, at a frequency of 20 Hz, there are 50 msec between trials. The pulse duration plus delay should not exceed 50% of this period, or 25 msec. If the duration were 1 msec, the delay should not be more than 24 msec.
+    Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
+    :::
 
-Basic Stimulation Parameters[^SD9-stimulator-controls]
-- Switch the *stimulus mode* to **regular**
-- Low frequency (1-2 Hz)
-- Low amplitude (start with 0.1 gain and the lowest voltage setting)
-  > If changing output gain, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain
-- Brief duration (200 microseconds)
+    :::{dropdown} WPI anapulse stimulator
+    Use **Paired Pulse** mode. Set the ***pulse duration*** with . Set the  
+    Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
+    :::
+
+    :::{dropdown} AM Systems stimulator
+    Use **Paired Pulse** mode. Set the ***pulse duration*** with . Set the  
+    Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
+    :::
+
+4. Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
+5. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
+
 
 [^SD9-stimulator-controls]: The Grass Instruments **SD9** has four controls on the top section of the stimulator's front panel that control the *Frequency* of the stimuli (how often stimulus pulses are produced), the *Delay* between the trigger pulse and the stimulus pulse, the *Duration* (width) of the stimulus pulse, and the *Volts* (amplitude) of the pulse. Each control has a black knob and a metal multiplier switch under it. The setting depends on both of these knobs. The stimulus is controlled by the *Regular/Twin Pulses* slide switch and the *Repeat/Off/Single* switch. *Polarity* allows reversing which stimulating connection is positive (start with Normal, where red is positive). Use a *Mono* (monophasic) output pulse. The stimulus itself is produced at the red and black binding posts at the right.
 
-Slowly increase the stimulus amplitude and monitor the signal from the neural recording electrode.  
 
-:::{warning}
-Do not exceed 2-5V on the stimulus output voltage. If you are still not generating action potentials with a 2V stimulus amplitude (or 6V with non-invasive stimulation electrode setup), adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
-:::
+Measure (and record) the distance between the stimulating anode and the suction electrode (along the length of the worm's body).
 
-Measure (and record) the distance between the stimulating electrodes and the recording electrode.
-
-#### Paired Pulse
-
-On the SD9 stimulator, the delay is the time between the prepulse sync pulse (which occurs at the trigger point for the sweep) and the actual stimulus pulse (which appears later, as the stimulus artifact). In *paired pulse* mode, there is an additional pulse at the time of the prepulse sync.  
-
-- Switch the *stimulus mode* to **paired pulse**
-- Long delay (20ms)
-- Amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
-
-:::{admonition} Caution
-Do not have the values of *Delay* plus *Duration* exceed 50% of the time between pulses. The time between pulses is determined by the *Frequency* control. For example, at a frequency of 20 pulses per second, there are 50 msec between pulses. The pulse duration plus delay should not exceed 50% of this period, or 25 msec. If the duration were 1 msec, the delay should not be more than 24 msec.
-:::
-
-Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
-Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
-
-## Experimental Exploration
-
-0. What happens when you touch the worm (at the head? in the middle? just in front of the recording site?)
-1. What is the stimulus threshold for the medial giant axon? 
-2. What is the stimulus threshold for the lateral giant axon?
-3. What is the refractory period of the action potential? Can you overcome the refractory period with a stronger stimulus (do not exceed 5V). 
 
 ## Housekeeping
 
@@ -126,5 +126,5 @@ Clean up your area.
 
 Copy data to an external drive or your Google Drive for later.  
 
-Use the [DataExplorer.py application](../../howto/Dash-Data-Explorer.md) to explore your raw data in detail. Use the [Data Explorer](../earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.ipynb)notebook to process and analyse your raw data. Answer the questions in the [Responses](../earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.ipynb) notebook.  
+Use the [DataExplorer.py application](../../howto/Dash-Data-Explorer.md) to explore your raw data in detail. Use the [Data Explorer](../earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.ipynb) notebook to process and analyse your raw data. Answer the questions in the [Responses](../earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.ipynb) notebook.  
 
