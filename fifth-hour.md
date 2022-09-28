@@ -40,6 +40,10 @@ Agenda:
 
 [Share link to the recording](https://wesleyan.zoom.us/rec/play/pN_rECodX5W05HX_bQ_wq2keggd3oQvaqXC16V_2H6yl-toEaN9mHHHdEvfSyW_r0N4ZaUaqsVrQ5Hw-.6nb9KQc-_kj6Z6S7)
 
+[Video talking through the expectations for Prompt Responses this week](https://wesleyan.zoom.us/rec/play/nNVka4BBHi8pe7I6DiuXvVHiJNjsNCrhrSjU354FyOuspoueokBJB3_gQEmWA4VBtJ-JGgLxQ2o2EzE.cORPEoc6-3EKSllo)
+
+[Video showing a demo of the analysis tools for this week that will make it faster for you to measure time between events on each trial](https://wesleyan.zoom.us/rec/play/7kqj29yrf-eTF7St0_P2NrO7PIuebTsrg09lgVA872pB1FpOLfsmsnsYZKw3C7bQA0q4sLTUzjwoLvst.4kY60VbInw9l-sd8)
+
 
 ## Week 5 on Wed, Oct 4 at 2:30-3:30
 
