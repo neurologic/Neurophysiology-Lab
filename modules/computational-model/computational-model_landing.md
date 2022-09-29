@@ -7,7 +7,13 @@ What does the term *computational model* and/or the thought of building one make
 What is a *computational model*?  
 Models represent a scientist’s best informed guess as to the identity and function of important variables and the ways these variables interact with each other.
 
-Computational models specifically are mathematical algorithms and/or expressions that are able to simulate biological phenomena. Part of the power of models comes from their ability to formulate predictions of hypotheses and test our understanding of specific factors that effect neural computation. In neuroscience, the physiology of neurons and circuits can be described by few high-level basic electrical physics equations (such as $V=IR$) or by detailed biophysical equations of biochemical reactions.  
+Computational models of neuroscience specifically are mathematical algorithms and/or expressions that are able to simulate neural cell and circuit phenomena. Part of the power of models comes from their ability to formulate predictions of hypotheses and test our understanding of specific factors that effect neural computation. In neuroscience, the physiology of neurons and circuits can be described by few high-level basic electrical physics equations (such as $V=IR$) or by detailed biophysical equations of biochemical reactions such as the following for a voltage-gated ion channel:
+$
+\frac{dx}{dt}=f(x,V);  
+f(x,V)=α(V)(1−x)−β(V)x;  
+α(V)=A_{α} \times exp(B_{α}V); 
+β(V)=A_{β} \times exp(B_{β}V)  
+$
 
 The large number of variables and factors affecting the structure and function of the nervous system makes it almost impossible for them all to be considered in a single model. Therefore, specific computational models mostly consider a smaller number of biological variables. Sometimes computational models can seem like absurd simplifications. Though somewhat constrained in their generalizability and applicability, even heavily abstracted and *reduced* computational models provide powerful tools for understanding neural systems.  
 
@@ -22,5 +28,7 @@ Computers are particularly useful for implementing simulations of computational 
 ## Additional Resources
 
 -[Allen Brain Atlas: Generalized LIF Models](http://alleninstitute.github.io/AllenSDK/glif_models.html)
+-[Scientifica: Understanding the cell as an electrical circuit](https://www.scientifica.uk.com/learning-zone/understanding-the-cell-as-an-electrical-circuit)
+-[Molecular Devices' Axon Guide](https://www.moleculardevices.com/en/assets/user-guide/dd/cns/axon-guide-to-electrophysiology-and-biophysics-laboratory-techniques#gref)
 
 

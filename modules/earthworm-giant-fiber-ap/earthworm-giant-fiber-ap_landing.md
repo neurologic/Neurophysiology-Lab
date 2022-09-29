@@ -8,7 +8,7 @@ Comprehensive knowledge of the basic principles of cellular excitability is also
 
 Stimulus voltages that don’t elicit an action potential are called *subthreshold*, stimulus voltages that do elicit an action potential are called *suprathreshold*. But **threshold** itself is not all-or-none. In some neurons, we can elicit an action potential with a lower stimulus amplitude if the stimulus duration is longer. A longer stimulus duration enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. 
 
-The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. 
+The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. This metric is one of the foundational parameters recorded in [the Allen Institute's Cell Types database](https://celltypes.brain-map.org/data). You can explore [example data](https://celltypes.brain-map.org/experiment/electrophysiology/474626527) in this database to see how it relates to other anatomical and electrophysiological properties. 
 
 The **chronaxie** is defined as the stimulus duration at 2x the rheobase amplitude. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. 
 
@@ -18,7 +18,7 @@ We can obtain both of these measurements of excitability (rheobase and chronaxie
 
 The **refractory period** is the amount of time needed before a neuron can fire a second action potential. This is caused in part by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. This period is called the *absolute* refractory period. After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K+ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the *relative* refractory period. 
 
-We can obtain an estimate of the refractory periods of a neuron by delivering pairs of stimulus pulses ("*paired pulses*") with different inter-pulse intervals.
+We can obtain an estimate of the refractory periods of a neuron by delivering pairs of stimulus pulses ("*paired pulses*") with different inter-pulse intervals. In this dataset, the relative refractory period is defined by the range of inter-pulse-intervals for which the action potential amplitude is reduced by more than 10%. The absolute refractory period is defined by the range of inter-pulse-intervals for which the second pulse fails to elicit an action potential at all. 
 
 ## Experimental Requirements
 
@@ -31,6 +31,7 @@ In these experiments, we need to more precisely and reliably measure action pote
 
 ## Additional Resources
 
+- [Allen Brain Institute: Cell Types Electrophysiology](https://celltypes.brain-map.org/data)
 - [Irnich W. (2010). The terms "chronaxie" and "rheobase" are 100 years old. Pacing and clinical electrophysiology : PACE, 33(4), 491–496.](https://doi.org/10.1111/j.1540-8159.2009.02666.x)
 - [Robert Bähring, and Christiane K. Bauer. (2014) Easy method to examine single nerve fiber excitability and conduction parameters using intact nonanesthetized earthworms. Advances in Physiology Education.](https://doi.org/10.1152/advan.00137.2013)
 - [McGill University Compound Action Potential (virtual lab website)](http://www.medicine.mcgill.ca/physio/vlab/CAP/vlabmenuCAP.htm)

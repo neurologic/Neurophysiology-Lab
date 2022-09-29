@@ -6,3 +6,4 @@ You can navigate the course website using the menu bar to the left. The table of
 
 ```{tableofcontents}
 ```
+[Are electrophysiologists superstitious?](https://www.scientifica.uk.com/neurowire/electrophysiologists-are-we-superstitious)
