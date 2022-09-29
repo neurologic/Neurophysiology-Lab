@@ -12,7 +12,16 @@ Anesthesia : Place the earthworm in the 10% ethanol ringer solution[^anaesthesia
 
 [^anaesthesia-alts]: The 10% ethanol solution can also be prepared by mixing 30 ml of tap water with 10 ml of 80 proof (40% ethanol) vodka. Carbonated water can also be used as an anesthetic if ethanol is not available. Carbonated water (60%) can be prepared by mixing 30 ml of sugar-free seltzer water (also called “club soda” or “sparkling water” at grocery stores) with 20 ml of tap water.
 
-After suitable anesthesia, pin out the worm dorsal side up on a flat dissecting dish. Place one pin at the anterior end and one pin at the posterior end. Lay the worm so that the part of the body where you intend to open an incision is within the well on the dissection dish. For suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. An annelid worm's nerve cord is near the ventral surface of the worm. With forceps and scissors (not a scalpel), open an incision on the dorsal skin surface. Extend the incision about 2cm straight down the dorsal midline. Fillet the body wall open and pin it flat with a pin in each corner. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode. Flush out the body cavity from time to time with saline to clear blood and dirt. 
+After suitable anesthesia, pin out the worm dorsal side up on a flat dissecting dish. Place one pin at the anterior end and one pin at the posterior end. Lay the worm so that the part of the body where you intend to open an incision is within the well on the dissection dish. 
+
+
+:::{figure} /images/earthworm-giant-fiber-ap-incision.JPG
+:width: 500
+
+Incision along dorsal body wall, pinned out within a well. 
+:::
+
+For suction electrodes, an incision about two-thirds of the distance from the head to the tail works well. An annelid worm's nerve cord is near the ventral surface of the worm. With forceps and scissors (not a scalpel), open an incision on the dorsal skin surface. Extend the incision about 2cm straight down the dorsal midline. Fillet the body wall open and pin it flat with a pin in each corner. Insert the pins at very shallow angles so that they do not get in the way of your dissecting tools or (later) the electrode. Flush out the body cavity from time to time with saline to clear blood and dirt. 
 
 Cut the gut away from the body wall and remove the segment of gut that lays within the body wall opening. 
 

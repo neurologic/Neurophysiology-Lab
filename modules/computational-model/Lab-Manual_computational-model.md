@@ -213,6 +213,11 @@ Ultimately, you could combine both computational models to create a more compreh
 :align: center
 :::
 
+:::{image} /images/circuit-models-combined-ionic-current.png
+:alt: circuit diagram
+:width: 800px
+:align: center
+:::
 
 ## Scripted implementation of computational models (SIMULATION)
 
