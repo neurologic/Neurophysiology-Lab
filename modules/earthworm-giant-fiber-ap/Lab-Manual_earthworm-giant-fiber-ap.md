@@ -73,58 +73,52 @@ If there is a lot of environmental electrical noise, you can try: grounding the 
 The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 9V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 2V pulse amplitude at 2msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
 :::
 
-You do not need to record all of the raw neuron voltage measurement signals for this experiment. But, after you complete your amplitude:duration data collection, you should record responses to the following example amplitude:duration settings for making figures later:  
+I recommend using the A-M systems stimulators for this experiment because they have the most precise readout of stimulus duration and amplitude on their front panel. If you do not have this stimulator at your rig, do the Paired Pulse experiment first, then come back to this one after another group is done. 
+
+:::{image} /images/strength-duration-stim-amsystems.png
+:width: 800
+:::
+
+You do not need to record raw voltage signals for this experiment (run the bonsai protocol with the *write node* <font color = 'red'>disabled</font>). But, after you complete your amplitude:duration data collection, you should <font color = 'green'>enable</font>) the *write node* to record responses to the following example amplitude:duration settings for making figures later:  
 - at threshold amplitude for 2 msec duration stimulus pulse (rheobase)
 - at threshold amplitude for the minimum stimulus duration
 - at threshold duration near 2 times the rheobase amplitude.
 
-Stimulus Amplitude-Duration Data collection protocol:  
-Start with a long stimulus duration and low amplitude. Then increase the amplitude until the median giant fiber (MGF) is above spike threshold. Note the threshold amplitude at that duration. 
-
-:::{caution}
-If changing the gain on the pulse amplitude, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain. Then increase the voltage knob to where you need it before turning the stimulus back on. 
-:::
-
-Then decrease the duration until the stimulus is below spike threshold again and increase the amplitude at that duration until the MGF is again above spike threshold. Note the threshold amplitude at this new duration. Continue decreasing stimulus duration and increasing stimulus amplitude in this way until you can no longer evoke a MGF action potential with less than 9V stimulus amplitude. **DO NOT EXCEED 9V stimulus amplitude**.
-
-Repeat for the Lateral Giant Fiber (LGF). 
-
-After you have completed all experiments for today, you can go back and enter your data into a spreadsheet program and save it as a .csv file. 
-
-
-### Refractory Period
-
-1. Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font>. Double click the channel select nodes to visualize the neuron and stimulus measurements if it does not pop up upon start. Find the stimulus amplitude needed to reliably evoke a MGF action potential with 200 microsecond (0.0002 seconds) duration. 
-    :::{warning}
-    The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 5V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 5V pulse amplitude at 0.2 msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+**Stimulus Amplitude-Duration Data collection protocol**:  
+1. Start with a long stimulus duration (3 msec) and low amplitude (0 V).  
+2. Increase the amplitude until the median giant fiber (MGF) is above spike threshold. Note the threshold amplitude at that duration. 
+    :::{caution}
+    If changing the gain on the pulse amplitude, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain. Then increase the voltage knob to where you need it before turning the stimulus back on. 
     :::
-2. Stop the bonsai workflow and set up your paired pulse stimulation protocol. 
-3. Set up the paired pulse stimulation protocol. In *paired pulse* (or *train*) mode for your stimulator, set the initial parameters to:
+3. Decrease the duration until the stimulus is below spike threshold again and increase the amplitude at that duration until the MGF is again above spike threshold. Note the threshold amplitude at this new duration. 
+4. Continue decreasing stimulus duration and increasing stimulus amplitude in this way (step \#3) until you can no longer evoke a MGF action potential with less than 9V stimulus amplitude. **DO NOT EXCEED 9V stimulus amplitude**.
+5. Repeat \#1-4 for the Lateral Giant Fiber (LGF). 
+
+***Immediately*** move on to the paired pulse experiment. After you have completed all experiments for today, you can then go back and enter your strength-duration data into a spreadsheet program and save it as a .csv file. 
+
+
+### Paired Pulse
+
+1. Run the bonsai protocol with the *write node* <font color = 'red'>disabled</font>. Double click the channel select nodes to visualize the neuron and stimulus measurements if it does not pop up upon start. **In single pulse mode**, find the stimulus amplitude needed to reliably evoke a MGF action potential with 200 microsecond (0.0002 seconds) duration. 
+    :::{warning}
+    The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 5V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 2-5V pulse amplitude at 0.2 msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+    :::
+2. Stop the bonsai workflow and set up your paired pulse stimulation protocol. You can use any of the stimulators for this experiment. In *paired pulse* (or *train*) mode for your stimulator, set the initial parameters to:
     - Pulse duration 200 microseconds
     - Delay between pulses 20ms
     - Pulse amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
 
-    :::{dropdown} SD9 stimulator[^SD9-stimulator-controls]
-    Use **Paired Pulse** mode. In this mode, the ***delay*** is the time between the first pulse (which occurs at the trigger point for the sweep) and the second pulse (which appears later, as the stimulus artifact). ***Duration*** is the duration of each individual pulse. The time between sets of paired pulses (each trial in this experiment) is determined by the ***frequency*** control. Do not have the values of *Delay* plus *Duration* exceed 50% of the time between pulses. For example, at a frequency of 20 Hz, there are 50 msec between trials. The pulse duration plus delay should not exceed 50% of this period, or 25 msec. If the duration were 1 msec, the delay should not be more than 24 msec.
-    Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
+    :::{image} ../../images/paired-pulse-AMsystems.png
+    :width: 700
     :::
 
-    :::{dropdown} WPI anapulse stimulator
-    Use **Paired Pulse** mode. Set the ***pulse duration*** with . Set the  
-    Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
+    :::{image} ../../images/paired-pulse-GrassSD9.png
+    :width: 600
     :::
 
-    :::{dropdown} AM Systems stimulator
-    Use **Paired Pulse** mode. Set the ***pulse duration*** with . Set the  
-    Turn the stimulus on *repeat*. There should be a spike following each stimulus pulse - if not, increase the stimulus amplitude slightly.  
-    :::
-
-4. Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
-5. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
-
-
-[^SD9-stimulator-controls]: The Grass Instruments **SD9** has four controls on the top section of the stimulator's front panel that control the *Frequency* of the stimuli (how often stimulus pulses are produced), the *Delay* between the trigger pulse and the stimulus pulse, the *Duration* (width) of the stimulus pulse, and the *Volts* (amplitude) of the pulse. Each control has a black knob and a metal multiplier switch under it. The setting depends on both of these knobs. The stimulus is controlled by the *Regular/Twin Pulses* slide switch and the *Repeat/Off/Single* switch. *Polarity* allows reversing which stimulating connection is positive (start with Normal, where red is positive). Use a *Mono* (monophasic) output pulse. The stimulus itself is produced at the red and black binding posts at the right.
-
+3. Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
+4. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
+    > You do not need to write down the IPI on each trial because you will be able to recover that information *offline* from the raw data recorded in Bonsai-rx. DO note the stimulus amplitude and duration you used and any other information about how you triggered and the general order of IPI that you tested so that you can remember roughly how the raw data is organized later. 
 
 Measure (and record) the distance between the stimulating anode and the suction electrode (along the length of the worm's body).
 
