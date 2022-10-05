@@ -1,4 +1,4 @@
-# Week 8. ElectroRetinoGram
+# Week 9. ElectroRetinoGram
 
 Receptor cells typically respond to stimuli with prolonged, graded potentials. Some receptor cells also have spike-generating mechanisms. Photoreceptor cells in the eyes of arthropods like the crayfish generally cannot produce spikes.
 

@@ -44,16 +44,21 @@ parts:
         - file: modules/earthworm-giant-fiber-cv/Lab-Manual_earthworm-giant-fiber-cv
         - file: modules/earthworm-giant-fiber-cv/Data-Explorer_earthworm-giant-fiber-cv
         - file: modules/earthworm-giant-fiber-cv/Responses_earthworm-giant-fiber-cv
-    - file: modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing
+    - file: modules/earthworm-giant-fiber-surgery/earthworm-giant-fiber-surgery_landing
       sections:
-        - file: modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap
-        - file: modules/earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap
-        - file: modules/earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-surgery/Lab-Manual_earthworm-giant-fiber-surgery
+        - file: modules/earthworm-giant-fiber-surgery/Data-Explorer_earthworm-giant-fiber-surgery
+        - file: modules/earthworm-giant-fiber-surgery/Responses_earthworm-giant-fiber-surgery
     - file: modules/computational-model/computational-model_landing
       sections:
         - file: modules/computational-model/Lab-Manual_computational-model
         - file: modules/computational-model/Data-Explorer_computational-model
         - file: modules/computational-model/Responses_computational-model
+    - file: modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing
+      sections:
+        - file: modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap
+        - file: modules/earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap
     - file: modules/crayfish-mro/crayfish-mro_landing
       sections:
         - file: modules/crayfish-mro/Lab-Manual_crayfish-mro

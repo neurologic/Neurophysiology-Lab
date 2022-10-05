@@ -1,8 +1,12 @@
-# Week 7. Giant Fiber - AP
+# Week 5. Giant Fiber - AP - Surgery
 
-Last week, you worked mostly on learning the surgery to access the ventral nerve cord for high resolution measurements of action potential activity using suction electrodes. 
+## Experimental Requirements
 
-In this lab, you will perform the surgery and do experiments to determine the rheobase, chronaxie and refractory period for earthworm giant fiber action potentials. In these experiments, we need to more precisely and reliably measure action potential events from the giant fibers. This is why you are learning a more invasive measurement technique. The measurements will still be extracellular, but a *single-ended* rather than a *differential* amplifier can be used. See the lab manual for more detail on the electrode and stimulation configuration. 
+In these experiments, we need to more precisely and reliably measure action potential events from the giant fibers. Therefore, we will use a more invasive measurement technique. The measurements will still be extracellular, but a *single-ended* rather than a *differential* amplifier can be used. See the lab manual for more detail on the electrode and stimulation configuration. 
+
+In this lab, you will learn the surgery to access the ventral nerve cord for suction electrode recording. With this preparation, you will perform experiments to determine the rheobase, chronaxie and refractory period for earthworm giant fiber action potentials. Depending on how the surgery goes, you may get to some or none, or all of the experiments this week. Any that are not complete this week will be completed next week. 
+
+## Excitability 
 
 Action potentials are evoked by a depolarization inside relative to outside on a patch of membrane. The relationship between action potential generation ("*excitability*") and axon/membrane anatomy is a fundamental feature of neurons. This is ultimately a feature of *recruitability* and it effects how neural circuits function.
 
@@ -26,11 +30,10 @@ We can obtain an estimate of the refractory periods of a neuron by delivering pa
 
 
 
-
 ## Pages:
-- [](../earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap.md)
-- [](../earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.ipynb)
-- [](../earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.ipynb)
+- [](../earthworm-giant-fiber-surgery/Lab-Manual_earthworm-giant-fiber-surgery.md)
+- [](../earthworm-giant-fiber-surgery/Data-Explorer_earthworm-giant-fiber-surgery.ipynb)
+- [](../earthworm-giant-fiber-surgery/Responses_earthworm-giant-fiber-surgery.ipynb)
 
 ## Additional Resources
 

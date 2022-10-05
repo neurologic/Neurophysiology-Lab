@@ -1,4 +1,4 @@
-# Week 7. Muscle Receptor Organ
+# Week 8. Muscle Receptor Organ
 
 Stretch-sensitive receptors are a type of *proprioceptor* that is embedded in or parallel to muscle fibers. In humans, we call these receptor-muscle pairings *muscle spindle organs* and in crustaceans we call these **muscle receptor organs (MROs)**. What information do proprioceptors encode? How does spike rate encode that information? What factors explain changes in proprioceptors spiking activity? You will investigate these questions by extracellularly measuring the electrical activity of MRO receptor neuron axons.
 

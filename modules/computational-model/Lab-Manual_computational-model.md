@@ -38,9 +38,9 @@ $$
 Q = C * V
 $$
 
-A change in voltage ($\partial{V}$) would lead to a change in charge ($\partial{Q}$). We can assume that capacitance is a constant (the value does not change).
+A change in electrical potential (voltage; $\partial{V}$) would lead to a change in charge ($\partial{Q}$); and vice versa. In this case, we would be assuming that capacitance is a constant (the value does not change).
 
-Conversely, a charge across a capacitor sets up an *electrical potential* (energy) measured in volts. As charge builds up on a capacitor due to an applied voltage, current effectively flows across the capacitor. 
+If charge builds up on a capacitor (ie. due to an applied voltage across it), current effectively flows across the capacitor. 
 
 $$
 I = \partial{Q} / \partial{t}
@@ -48,13 +48,6 @@ $$
 
 Without a change in charge, there is no current. Similarly, if a current is applied accross a capacitor, then charge builds up on it ($\partial{Q}$)... and the voltage changes ($\partial{V}$).  
 
-:::{admonition} Task 1
-Rearrange these equations for capacitor current and capacitor charge to get an equation for the change in voltage across time ($\partial{V} / \partial{t}$) in terms of the capacitor current ($I$). 
-
-*Only resort to this hint[^hint_dqdt] after discussing your strategy and considering the equations and equation manipulations for at least 5 minutes.* 
-:::
-
-[^hint_dqdt]: You can arrange the equation for $Q$ in terms of $V$ so that it is an equation for $V$ in terms of $Q$. The equation for current through a capacitor is in terms of $\partial{Q} / \partial{t}$ but the equation for $V$ would be in terms of $Q$ not $\partial{Q} / \partial{t}$. 
 
 ### Voltage and Current across Resistors
 
@@ -64,16 +57,25 @@ $$
   V = I * R
 $$
 
+When ionic conductances behave according to this equation (ie. linearly), they are considered *Ohmic*. 
+
+In this case, current can only flow through a resistor when there is a voltage across the resistor; and vice versa. If $V = 0$, then $I = 0$. In response to an applied current (or voltage) across a resistor, the change in volgate (or current) is practically instantaneous. Because $V$ and $I$ do not depend on $t$, they are *constants* (ie. the derivative of the equation is equal to the original equation).
 
 ## Concepts and Equations of Electric Circuits
 
-### Conservation of Energy[^kirchhoff]
+### Conservation of Energy
 
 [^kirchhoff]: [Kirchhoff's circuit laws](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws)
 
-By the *law* of [*conservation of energy*](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law), it follows that the algebraic directed sum of the potential differences (voltages) around any closed loop is zero.
+By the *law* of [*conservation of energy*](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law)[^kirchhoff], it follows that the algebraic directed sum of the potential differences (voltages) around any closed loop is zero.
 
-::::{admonition} Task 2
+$$ 
+0 = V_1 + V_2 + ... + V_n 
+$$ 
+
+where $n$ is the total number of voltage sources (batteries, resistors, capacitors, etc) in the circuit. 
+
+::::{admonition} Task 1
 Calculate the voltage at each labeled node ***n*** (relative to the reference *REF* node) in the following circuit diagrams.
 :::{image} ../../images/circuit-task_conservation-energy.png
 :alt: circuit diagram
@@ -83,11 +85,17 @@ Calculate the voltage at each labeled node ***n*** (relative to the reference *R
 ::::
 
 (conservation-charge)=
-### Conservation of Charge[^kirchhoff]  
+### Conservation of Charge 
 
-By the *law* of [*conservation of charge*](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_current_law), it follows that the current entering any *junction* (point of bifurcation or convergence) is equal to the current leaving that junction.
+By the *law* of [*conservation of charge*](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_current_law)[^kirchhoff], it follows that the current entering any *junction* (point of divergence or convergence) is equal to the current leaving that junction.
 
-::::{admonition} Task 3
+$$ 
+I = I_1 + I_2 + ... + I_n 
+$$ 
+
+where $n$ is the total number of wires diverging from a single wire. 
+
+::::{admonition} Task 2
 Calculate the current at each labeled *n* node in the following circuit diagrams.
 :::{image} ../../images/circuit-task_conservation-charge.png
 :alt: circuit diagram
@@ -184,6 +192,14 @@ We know that neuron membranes act as capacitors in addition to acting as a resis
 :width: 400px
 :align: center
 :::
+
+:::{admonition} Task 1
+Rearrange the two equations for capacitor current and capacitor charge to get an equation for the change in voltage across time ($\partial{V} / \partial{t}$) in terms of the capacitor current ($I$). 
+
+*You can check out this hint[^hint_dqdt] after discussing your strategy and considering the equations and equation manipulations for at least 5 minutes.* 
+:::
+
+[^hint_dqdt]: You can take the derivative of an equation by thinking about the difference between the equation values at two different moments in time (a change in time = $\partial{t}$). Remember that constants do not change over time. You can combine both equations once they are in the same derivative format. 
 
 :::{admonition} Task 8
 1. Assuming a [conservation of charge](conservation-charge), write the equation for the applied current in terms of the current across $R$ and the current across $C$.

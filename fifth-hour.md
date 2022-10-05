@@ -47,3 +47,16 @@ Agenda:
 
 ## Week 5 on Wed, Oct 4 at 2:30-3:30
 
+Agenda:
+- intro to electronics theory for next lab
+- CV from stimulus vs ch to ch
+- Figure and caption formatting and references to figures
+
+[Share link to the recording](https://wesleyan.zoom.us/rec/play/oFqVBYqIgoirswypDMPS4ZDItzllgOQ6MROe4wawVeTCe9FL2PmtBEoSb_APswxvBsh3UwxkpLIJ0tFe.hpbJnT8ei_jC8kp7)
+
+:::{figure} /images/figure-anatomy.png
+:width: 500
+
+A summary of some of the edits we talked about today to bring the presentation and communication of your results to the next level.
+:::
+

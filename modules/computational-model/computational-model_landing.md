@@ -27,8 +27,8 @@ Computers are particularly useful for implementing simulations of computational 
 
 ## Additional Resources
 
--[Allen Brain Atlas: Generalized LIF Models](http://alleninstitute.github.io/AllenSDK/glif_models.html)
--[Scientifica: Understanding the cell as an electrical circuit](https://www.scientifica.uk.com/learning-zone/understanding-the-cell-as-an-electrical-circuit)
--[Molecular Devices' Axon Guide](https://www.moleculardevices.com/en/assets/user-guide/dd/cns/axon-guide-to-electrophysiology-and-biophysics-laboratory-techniques#gref)
+- [Allen Brain Atlas: Generalized LIF Models](http://alleninstitute.github.io/AllenSDK/glif_models.html)
+- [Scientifica: Understanding the cell as an electrical circuit](https://www.scientifica.uk.com/learning-zone/understanding-the-cell-as-an-electrical-circuit)
+- [Molecular Devices' Axon Guide](https://www.moleculardevices.com/en/assets/user-guide/dd/cns/axon-guide-to-electrophysiology-and-biophysics-laboratory-techniques#gref)
 
 
