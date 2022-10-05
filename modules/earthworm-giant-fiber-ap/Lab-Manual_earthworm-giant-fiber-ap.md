@@ -92,7 +92,8 @@ You do not need to record raw voltage signals for this experiment (run the bonsa
     :::
 3. Decrease the duration until the stimulus is below spike threshold again and increase the amplitude at that duration until the MGF is again above spike threshold. Note the threshold amplitude at this new duration. 
 4. Continue decreasing stimulus duration and increasing stimulus amplitude in this way (step \#3) until you can no longer evoke a MGF action potential with less than 9V stimulus amplitude. **DO NOT EXCEED 9V stimulus amplitude**.
-5. Repeat \#1-4 for the Lateral Giant Fiber (LGF). 
+5. At the end of the experiment, you can get immediately some **control** data. For example: as soon as you find the stimulus threshold at minimum stimulus duration, go back to the maximum stimulus duration and re-find the threshold (***remember to decrease the amplitude WAY down before re-testing at long stimulus duration***).
+6. Repeat \#1-5 for the Lateral Giant Fiber (LGF). 
 
 ***Immediately*** move on to the paired pulse experiment. After you have completed all experiments for today, you can then go back and enter your strength-duration data into a spreadsheet program and save it as a .csv file. 
 
@@ -103,7 +104,7 @@ You do not need to record raw voltage signals for this experiment (run the bonsa
     :::{warning}
     The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 5V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 2-5V pulse amplitude at 0.2 msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
     :::
-2. Stop the bonsai workflow and set up your paired pulse stimulation protocol. You can use any of the stimulators for this experiment. In *paired pulse* (or *train*) mode for your stimulator, set the initial parameters to:
+2. Turn off the single pulse stimulation and set up the paired pulse stimulation protocol. You can use any of the stimulators for this experiment. In *paired pulse* (or *train*) mode for your stimulator, set the initial parameters to:
     - Pulse duration 200 microseconds
     - Delay between pulses 20ms
     - Pulse amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
@@ -115,9 +116,9 @@ You do not need to record raw voltage signals for this experiment (run the bonsa
     :::{image} ../../images/paired-pulse-GrassSD9.png
     :width: 600
     :::
-
-3. Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
-4. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. 
+3. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. What do you notice? Note the general IPI duration ranges that you notice changes in the signal. After a bit of observation so that you know what you are looking for, return the IPI to 20msec (or longer if you need it).
+4. Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
+4. Gradually decrease the delay between the two stimulus pulses. Get ***2 data points for each IPI***. In the IPI range where there are no changes to the signal, you can step in increments of 5-10msec. Throughout the IPI range in which the signal changes, try to get data for approximately 10 different IPI points.  
     > You do not need to write down the IPI on each trial because you will be able to recover that information *offline* from the raw data recorded in Bonsai-rx. DO note the stimulus amplitude and duration you used and any other information about how you triggered and the general order of IPI that you tested so that you can remember roughly how the raw data is organized later. 
 
 Measure (and record) the distance between the stimulating anode and the suction electrode (along the length of the worm's body).
