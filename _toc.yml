@@ -21,6 +21,7 @@ parts:
         - file: howto/exponential-decay
         - file: howto/electrode-geometry
         - file: howto/cap
+        - file: howto/electrical-circuit-analysis
     - file: fifth-hour
     - file: materials
   - caption: Weekly Chapters
