@@ -60,3 +60,9 @@ Agenda:
 A summary of some of the edits we talked about today to bring the presentation and communication of your results to the next level.
 :::
 
+## Week 6 on Tues, Oct 11 at 1:30-2:30
+
+Agenda:
+- Wrap up computational model formulation
+- implement the computational model in computer script
+- run simulations of the computational models
