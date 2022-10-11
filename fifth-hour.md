@@ -66,3 +66,5 @@ Agenda:
 - Wrap up computational model formulation
 - implement the computational model in computer script
 - run simulations of the computational models
+
+[Share link to the recording](https://wesleyan.zoom.us/rec/share/dBuCwcUbAid3tpWZKfk8s_MvdcLw7X8T60Mt4wvYAFGQYM9dGMEZ82aqjQJZiS6O.64gPhH8v8QY0HPbt?startTime=1665509422000)
