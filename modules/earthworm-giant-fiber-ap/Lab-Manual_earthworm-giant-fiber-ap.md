@@ -70,7 +70,7 @@ If there is a lot of environmental electrical noise, you can try: grounding the 
 ### Strength-Duration Threshold
 
 :::{warning}
-The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 9V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 2V pulse amplitude at 2msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
+The stimulus output must be in ***voltage*** mode *not current* mode. **Do not exceed 9V** on the stimulus pulse amplitude voltage. If you are still not generating action potentials with a 2V pulse amplitude at 3msec pulse duration, adjust the stimulus electrodes, dry off the stimulated region of the body, and/or dissect a new preparation. 
 :::
 
 I recommend using the A-M systems stimulators for this experiment because they have the most precise readout of stimulus duration and amplitude on their front panel. If you do not have this stimulator at your rig, do the Paired Pulse experiment first, then come back to this one after another group is done. 
@@ -80,20 +80,26 @@ I recommend using the A-M systems stimulators for this experiment because they h
 :::
 
 You do not need to record raw voltage signals for this experiment (run the bonsai protocol with the *write node* <font color = 'red'>disabled</font>). But, after you complete your amplitude:duration data collection, you should <font color = 'green'>enable</font>) the *write node* to record responses to the following example amplitude:duration settings for making figures later:  
-- at threshold amplitude for 2 msec duration stimulus pulse (rheobase)
+- at threshold amplitude for 3 msec duration stimulus pulse (rheobase)
 - at threshold amplitude for the minimum stimulus duration
 - at threshold duration near 2 times the rheobase amplitude.
 
+Collect your data in the following format:
+| duration | amplitude |
+| :---: | :---: |
+| ms | V |
+
 **Stimulus Amplitude-Duration Data collection protocol**:  
 1. Start with a long stimulus duration (3 msec) and low amplitude (0 V).  
-2. Increase the amplitude until the median giant fiber (MGF) is above spike threshold. Note the threshold amplitude at that duration. 
+2. Increase the amplitude until the median giant fiber (MGF) is above spike threshold. Note the threshold amplitude at that duration in your table. 
     :::{caution}
     If changing the gain on the pulse amplitude, first turn off the stimulus, then turn the voltage knob all the way back to 0, then switch the voltage output gain. Then increase the voltage knob to where you need it before turning the stimulus back on. 
     :::
-3. Decrease the duration until the stimulus is below spike threshold again and increase the amplitude at that duration until the MGF is again above spike threshold. Note the threshold amplitude at this new duration. 
-4. Continue decreasing stimulus duration and increasing stimulus amplitude in this way (step \#3) until you can no longer evoke a MGF action potential with less than 9V stimulus amplitude. **DO NOT EXCEED 9V stimulus amplitude**.
-5. At the end of the experiment, you can get immediately some **control** data. For example: as soon as you find the stimulus threshold at minimum stimulus duration, go back to the maximum stimulus duration and re-find the threshold (***remember to decrease the amplitude WAY down before re-testing at long stimulus duration***).
-6. Repeat \#1-5 for the Lateral Giant Fiber (LGF). 
+3. Decrease the duration until the stimulus is below AP threshold again and note that new duration in your table.
+4. Increase the amplitude at that duration until it is again above spike threshold. Note the threshold amplitude at this new duration in your table. 
+5. Continue decreasing stimulus duration and increasing stimulus amplitude in this way (steps \#3 and \#4) until you can no longer evoke an AP with less than 9V stimulus amplitude. **DO NOT EXCEED 9V stimulus amplitude**.
+6. At the end of the experiment, immediately get some **control** data. Turn the stimulus amplitude back down to 0. Go back to the maximum stimulus duration and re-find the threshold (***remember to decrease the amplitude to 0 before re-testing at long stimulus duration***).
+7. Repeat \#1-6 for the Lateral Giant Fiber (LGF). 
 
 ***Immediately*** move on to the paired pulse experiment. After you have completed all experiments for today, you can then go back and enter your strength-duration data into a spreadsheet program and save it as a .csv file. 
 
@@ -106,7 +112,7 @@ You do not need to record raw voltage signals for this experiment (run the bonsa
     :::
 2. Turn off the single pulse stimulation and set up the paired pulse stimulation protocol. You can use any of the stimulators for this experiment. In *paired pulse* (or *train*) mode for your stimulator, set the initial parameters to:
     - Pulse duration 200 microseconds
-    - Delay between pulses 20ms
+    - Delay between pulses 40ms
     - Pulse amplitude just above spike threshold (the point at which an action potential is generated with each stimulus pulse)
 
     :::{image} ../../images/paired-pulse-AMsystems.png
@@ -116,10 +122,14 @@ You do not need to record raw voltage signals for this experiment (run the bonsa
     :::{image} ../../images/paired-pulse-GrassSD9.png
     :width: 600
     :::
-3. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. What do you notice? Note the general IPI duration ranges that you notice changes in the signal. After a bit of observation so that you know what you are looking for, return the IPI to 20msec (or longer if you need it).
+3. Gradually decrease the delay between the two stimulus pulses, and observe the action potentials. What do you notice? Note the general IPI duration ranges that you notice changes in the signal. After a bit of observation so that you know what you are looking for, return the IPI to 40msec.
 4. Run the bonsai protocol with the *write node* <font color = 'green'>enabled</font> (and the *analog input* and/or *channel select* nodes <font color = 'green'>enabled</font>). Change the filename as needed.
-4. Gradually decrease the delay between the two stimulus pulses. Get ***2 data points for each IPI***. In the IPI range where there are no changes to the signal, you can step in increments of 5-10msec. Throughout the IPI range in which the signal changes, try to get data for approximately 10 different IPI points.  
-    > You do not need to write down the IPI on each trial because you will be able to recover that information *offline* from the raw data recorded in Bonsai-rx. DO note the stimulus amplitude and duration you used and any other information about how you triggered and the general order of IPI that you tested so that you can remember roughly how the raw data is organized later. 
+4. Gradually decrease the delay between the two stimulus pulses. Get ***2 data points for each IPI***.  
+    - In the IPI range 40-20, you can step in increments of 10msec
+    - In the IPI range 20msec to the relative refractory period, you can step in increments of 2msec.
+    - Throughout the IPI range in which the signal changes, step in increments of 1msec.  
+    - Around the absolute refractory period, step in increments of 0.5msec
+    > You do not need to write down the IPI on each trial because you will be able to recover that information *offline* from the raw data recorded in Bonsai-rx. **DO note the stimulus amplitude and duration you used** and any other information about how you triggered and the general order of IPI that you tested so that you can remember roughly how the raw data is organized later. 
 
 Measure (and record) the distance between the stimulating anode and the suction electrode (along the length of the worm's body).
 
