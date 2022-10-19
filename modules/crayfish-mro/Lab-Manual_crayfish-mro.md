@@ -105,63 +105,77 @@ Practice the stimulation before trying for the MRO nerve recording. You will nee
 
 *Before you start testing your stimulus*, make sure that the tail thread is **not** attached to the servo motor.
 
-1. <font color = 'red'>Disable</font>) all nodes except for the **MouseMove**, **X**, and **Rescale** nodes. 
+#### Mouse control
+1. <font color = 'red'>Disable</font> all nodes except for the **MouseMove**, **X**, and **Rescale** nodes. 
 2. Run the Bonsai workflow and visualize the **X**, and **Rescale** nodes. 
 3. Move your computer mouse horizontally across the full range of the monitor. Note the min and max values of **X** for the mouse (depends on the monitor). 
-4. Check that the *min* and *max* properties of the **Rescale** node match your computer mouse's min and max **X** range. 
+4. For now, the *min* and *max* properties of the **Rescale** node should match your computer mouse's min and max **X** range. You can adjust this range to get finer control over the relevant servo motor rotation range once you have MRO responses.
 5. Stop the Bonsai workflow.
-5. <font color = 'green'>Enable</font>) the **ServoOutput** node and move the Bonsai editor window on the screen so that the **Start** button is all the way to the left of your screen.
-6. Run the Bonsai workflow **and keep the computer mouse hovered over the start button after you press it**.
-7. Move your computer mouse slowly across your screen to the right. The servo motor should be rotating. 
-8. Move your computer mouse back across the screen to the left until the servo motor horn is in a good position to start the tail pull. Note the **X** position. 
-9. Stop the Bonsai workflow.
-10. Change the *Range min* of the **Rescale** node to match the *X* position from *step 8*. 
-11. Run the Bonsai workflow **and keep the computer mouse hovered over the start button after you press it**. The servo motor horn should move to the desired initial position that you specified as the rescaled *range min*.
-12. Attach the free end of the thread to the servo motor horn. 
-13. Move your computer mouse slowly across your screen to the right until the tail is maximally bent *but not more than that*. Note the **X** position of the mouse.
-14. Move the computer mouse back to the left of the screen and stop the Bonsai workflow. 
-15. Change the *Range max* of the **Rescale** node to match the *X* position from *step 13*. 
-16. Start the Bonsai workflow and check that the full range of tail motion is captured well by the full range of the mouse movement in the X direction. 
-17. Stop the Bonsai workflow and go on to [set up your MRO nerve recording](mro-recording). 
 
-(mro-recording)=
+#### Servo command
+1. <font color = 'green'>Enable</font> all other nodes except the **Matrix Writer** and move the Bonsai editor window on the screen so that the **Start** button is all the way to the left of your screen.
+2. Run the Bonsai workflow.
+3. Visualize the **stimulus monitor** channel (ch 1) and the **Detect Spikes** node for that channel. Get familiar with what this signal looks like. Notice how the width of the square pulses change as you move your mouse left <-> right on the computer screen.
+4. Stop the Bonsai workflow.
+
+
+### Tune the stimulus range based on MRO activity
+1. Tie the free end of the thread through the tail fins. 
+2. Run the Bonsai workflow **and keep the computer mouse hovered over the start button after you press it**.
+3. Move your computer mouse slowly across your screen to the right. The servo motor should be rotating. Continue moving it until the servo motor horn is in a good position to start the tail pull. Note the **X** position. 
+4. Stop the Bonsai workflow.
+5. Change the ***Range min*** of the **Rescale** node to match the *X* position from *step 2*. 
+6. Run the Bonsai workflow **and keep the computer mouse hovered over the start button after you press it**. 
+  > The servo motor horn should move to the desired initial position that you specified as the rescaled *range min*.
+7. Move your computer mouse slowly across your screen to the right until the tail is maximally bent *but not more than that*. Note the **X** position of the mouse.
+8. Move the computer mouse back to the left of the screen and stop the Bonsai workflow. 
+9. Change the ***Range max*** of the **Rescale** node to match the *X* position from *step 8*. 
+10. Start the Bonsai workflow and check that the full range of tail motion is captured well by the full range of the mouse movement in the X direction. 
+11. Stop the Bonsai workflow and go on to set up the MRO nerve measurement. 
+
+:::{warning} 
+Do not move the location of the bonsai workflow window. The start button position needs to be in the same place each time you start the workflow so that the servo motor starts in the same position. 
+:::
+
 ### MRO nerve measurement
-
 1. Find the MRO nerve. Aim for one in the anterior segments. The nerve is white, and can be seen by using the pipette to spray saline around the nerve or by lightly blowing on the preparation. This causes the nerve to move around and makes it easier to identify.
-2. place the suction electrode from the micromanipulator directly over the nerve.
+2. Place the suction electrode from the micromanipulator directly over the nerve.
 3. Gently pull on the syringe to draw the nerve into the electrode (look through the microscope while you do this to see the nerve being sucked into the electrode).
-4. <font color = 'green'>Enable</font>) the **AnalogInput** and **SelectChannel (0)** node.
 5. Start the Bonsai workflow **and keep the computer mouse hovered over the start button after you press it**.
 6. Make sure that the baseline electrical noise levels are low. If not, we will need to work on de-noising (grounding, laptops and cell phones away, metal wire mesh coverings, etc). 
 7. Move your computer mouse slowly across your screen to the right until the tergite of your targetted MRO nerve rotates around its joint (the joint bends... and the MRO muscle stretches). You should be able to see (and hear) spikes from the MRO nerve. If not, check the suction electrode placement, nerve identity, and nerve fit in the electrode, etc. You may need to straighten the tail again to fix or optimize the MRO nerve recording. 
 8. Once you have MRO spikes, **SLOWLY** continue rotating the servo motor further to bend the tail more. Make sure that the suction electrode is not jamming into the tail or the nerve or that the nerve is not falling out of the suction electrode when the tail bends. You should observe an increase in MRO nerve spike rate as the tail bends more. Be gentle with the tail and nerve and keep the stimulus within a reasonable physiological range. 
+9. Move your mouse slowly back to the starting position and stop the Bonsai workflow.
 
-(progressive-step_mro)=
-### Progressive Step Experiment
+***You are now ready to do the main experiment.***
+
+### Main Experiment: Progressive Steps 
 
 1. Run the bonsai protocol (with the **MatrixWriter** node <font color = 'red'>disabled</font> and the **AnalogInput** node <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.
 2. Set up a '*progressive step*' stimulation protocol in which you will bend the tail different amounts from the same position.
-  - Rotate the servo motor (using horizontal mouse movement) until the MRO nerve starts spiking. Mark this mouse position with washi tape on the computer monitor. 
-  - Rotate the servo motor until the maximum bend that you feel comfortable with. Mark this mouse position with washi tape on the computer monitor.
-  - Return the servo motor position to the start. 
-  - Make *three* evenly spaced washi tape markers between the tail start and stop position on the monitor. 
+    - Rotate the servo motor (using horizontal mouse movement) until the MRO nerve starts spiking. Mark this mouse position with washi tape on the computer monitor. 
+    - Rotate the servo motor until the maximum bend that you feel comfortable with. Mark this mouse position with washi tape on the computer monitor.
+    - Return the servo motor position to the start. 
+    - Make *three* evenly spaced washi tape markers between the tail start and stop position on the monitor. 
 3. Stop the Bonsai protocol.
-4. <font color = 'green'>Enable</font>) the **MatrixWriter** node. Speficy a filename that will make sense to you later (make sure the filename ends in '**.bin**').
+4. <font color = 'green'>Enable</font> the **MatrixWriter** node. Speficy a filename that will make sense to you later (make sure the filename ends in '**.bin**').
 5. Start the Bonsay workflow.
-6. Execute the '*progressive step*' stimulation protocol.
-  - Start with the computer mouse at the *start* position that you marked. 
-  - Move the mouse to the second marked position and hold it there for 10 seconds. 
-  - Return the mouse back to the start position and hold it there for 10 seconds. 
-  - Repeat the movement to the first marked position 3 times. 
-  - From the start position, move the mouse to the *third* marked position and hold for 10 seconds... return to start... etc... for all four *tail bend* positions marked on your monitor. 
+6. :::{admonition} Execute the '*progressive step*' stimulation protocol. 
+    When moving the mouse to different locations, try to ***be consistent about the speed*** of your movement. ***Move swiftly but with control***.
+    1. Start with the computer mouse at the *start* position that you marked. 
+    2. Move the mouse to the second marked position and hold it there for 10 seconds. 
+    3. Return the mouse back to the start position and hold it there for 10 seconds. 
+    4. Repeat the movement to the first marked position 3 times. 
+    5. From the start position, move the mouse to the *third* marked position and hold for 10 seconds... return to start... etc... for all four *tail bend* positions marked on your monitor. 
+    :::
 7. Stop the Bonsai protocol and make sure that the file saved where you think it did (and is not empty). 
 
 
 ## Experimental Exploration
 Effects of:
 - slow versus fast stretch?
-- same change in stretch, but starting from different positions?
-- analytic results as a function of duration stretch is held
+- same change in stretch, but starting from different initial positions?
+- effect of the duration stretch is held
 - effect of duration of stretch on offset dynamics when tail is relaxed.
 - is the onset and offset spiking dynamics the same? (Need to start from a stretch that drives a non-zero baseline spike rate)
 
@@ -169,11 +183,12 @@ Effects of:
 If there is time, you can try [the progressive step experiment](progressive-step_mro) under different aneasthetic conditions (none, MS222, and ice).
 Try to bring the response back to baseline after each manipulation.
 
-## Copy data to an external drive or your Google Drive for later analysis
-Use the [Data Explorer](../crayfish-mro/Data-Explorer_crayfish-mro.ipynb) notebook to analyse your data and answer the questions in the [Responses](../crayfish-mro/Responses_crayfish-mro.ipynb) notebook.
 
-## Additional Resources
-- [Receptor Potentials](https://michaeldmann.net/mann4.html)
-- [Adaptation in stretch receptor. Shigehiro Nakajima (1964)](https://www-jstor-org.ezproxy.wesleyan.edu/stable/pdf/1713939.pdf?refreqid=excelsior%3A65cca9fbb3864632b6d88815a65ca9d0&ab_segments=&origin=&acceptTC=1)
-- [On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study](https://pubmed.ncbi.nlm.nih.gov/6316733/)
-- [Structure and Function Relationship in the Abdominal Stretch Receptor Organs of the Crayfish](https://onlinelibrary-wiley-com.ezproxy.wesleyan.edu/doi/pdfdirect/10.1002/cne.20590)
+## Housekeeping
+
+Clean up your area.  
+
+Copy data to an external drive or your Google Drive for later.  
+
+Use the [Data Explorer](../crayfish-mro/Data-Explorer_crayfish-mro.ipynb) notebook to process and analyse your raw data. Answer the questions in the [Responses](../crayfish-mro/Responses_crayfish-mro.ipynb) notebook. The [Dash DataExplorer.py application](../../howto/Dash-Data-Explorer.md) is available to explore your raw data in detail. 
+
