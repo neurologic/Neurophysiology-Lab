@@ -70,3 +70,14 @@ Agenda:
 [Share link to the recording](https://wesleyan.zoom.us/rec/share/dBuCwcUbAid3tpWZKfk8s_MvdcLw7X8T60Mt4wvYAFGQYM9dGMEZ82aqjQJZiS6O.64gPhH8v8QY0HPbt?startTime=1665509422000)
 
 ## Week 7 on Wed, Oct 18 at 2:30-3:30
+
+[Share link to the recording](https://wesleyan.zoom.us/rec/play/kWbEQy0YrvdKNDDws6azhus2umV3ystLVaBIZmiofTnrEJAskyOUvwai8p-r0KiwKmSMhbHeQjw3alfK.Y7uvrTJQ-jd_H1ag)
+
+---
+
+Tues, Oct 25 NO MEETING FALL BREAK
+
+---
+
+## Week 8 on Wed, Nov 2 at 2:30-3:30
+
