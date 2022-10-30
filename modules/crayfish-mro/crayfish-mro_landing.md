@@ -56,7 +56,7 @@ Importantly, there are only two MRO cell types innervating each segmental superf
 
 ## Additional Resources
 - [Receptor Potentials](https://michaeldmann.net/mann4.html)
-- [C H Page, P G Sokolove (1972) Crayfish muscle receptor organ: role in regulation of postural flexion. Science; 175(4022):647-50](10.1126/science.175.4022.647)
+- [C H Page, P G Sokolove (1972) Crayfish muscle receptor organ: role in regulation of postural flexion. Science; 175(4022):647-50](https://doi.org/10.1126/science.175.4022.647)
 - [Adaptation in stretch receptor. Shigehiro Nakajima (1964)](https://www-jstor-org.ezproxy.wesleyan.edu/stable/pdf/1713939.pdf?refreqid=excelsior%3A65cca9fbb3864632b6d88815a65ca9d0&ab_segments=&origin=&acceptTC=1)
 - [On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study](https://pubmed.ncbi.nlm.nih.gov/6316733/)
 - [Structure and Function Relationship in the Abdominal Stretch Receptor Organs of the Crayfish](https://onlinelibrary-wiley-com.ezproxy.wesleyan.edu/doi/pdfdirect/10.1002/cne.20590)

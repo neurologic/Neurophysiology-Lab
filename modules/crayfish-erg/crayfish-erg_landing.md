@@ -1,20 +1,11 @@
 # Week 9. ElectroRetinoGram
 
+## Photoreceptor cells
+
 Receptor cells typically respond to stimuli with prolonged, graded potentials. Some receptor cells also have spike-generating mechanisms. Photoreceptor cells in the eyes of arthropods like the crayfish generally cannot produce spikes.
 
-The *electroretinogram* (ERG) is a measurement of the summed (net) potential of many photoreceptors (recorded extracellularly). The waveform of the ERG is a good representation of intracellular events in the photoreceptors, as demonstrated by *simultaneous* intra- and extra-cellular measurement of photoreceptor potentials[^Stieve_1978]. As in other extracellular recordings, depolarization of the cells appears as a negative potential to the electrode outside the cells.
 
-[^Stieve_1978]: [Stieve H, Bruns M, Gaube H. Simultaneous recording by extra- and intracellular electrodes of light responses in the crayfish retina. Vision Res. 1978;18(6):621-8.](https://10.1016/0042-6989(78)90141-4)
-
-:::{figure-md} Stieve_1978_intraVextra
-:class: figure
-
-<img src="/images/Stieve_1978_intraVextra.png" alt="fishy" class="bg-primary mb-1" width="600px">
-
-*Simultaneous* intracellular (left) and extracellular (right; plotted *negative* potential upwards) record of photoreceptor potentials in *Astacus* retina in response to a brief pulse of light (time base 1s total).[^Stieve_1978]
-:::
-
-Photoreceptors transform light energy into electrical energy via *second messengers*. Photoreceptor transduction has mostly been studied in *Drosophila* (another species in the Phylum *Arthropoda*)[^Hardie_2001]. Transient receptor protein (TRP) channels are the ultimate target of the molecular cascade initiated by rhodopsin-detected photons. You will notice a lag between the time in which the second messenger system is activated by rhodopsin and the opening of TRP channels. 
+Photoreceptors transform light energy into electrical energy via *second messengers*. Photoreceptor transduction has mostly been studied in *Drosophila* (another species in the Phylum *Arthropoda*)[^Hardie_2001]. Transient receptor protein (TRP) channels are the ultimate target of the molecular cascade initiated by rhodopsin-detected photons. There is a lag between the time in which the second messenger system is activated by rhodopsin and the opening of TRP channels. *You will be able to measure the time it takes for this metabotropic transformation!*
 
 [^Hardie_2001]: [Hardie, R., Raghu, P. Visual transduction in Drosophila. Nature 413, 186–193 (2001)](https://doi.org/10.1038/35093002)
 
@@ -28,6 +19,41 @@ Cartoon of the proteins involved in the transduction of light energy into electr
 
 Changing the brightness of the light will change the number of rhodopsin molecules that are activated, and thus the amount of second messenger that is produced. This is analogous to varying the amount of transmitter at a metabotropic synapse.
 
+## Electroretinogram (ERG)
+
+The *electroretinogram* (ERG) is a measurement of the summed (net) potential of many photoreceptors (recorded extracellularly). The waveform of the ERG is a good representation of intracellular events in the photoreceptors, as demonstrated by *simultaneous* intra- and extra-cellular measurement of photoreceptor potentials[^Stieve_1978]. As in other extracellular recordings, depolarization of the cells appears as a negative potential to the electrode outside the cells.
+
+[^Stieve_1978]: [Stieve H, Bruns M, Gaube H. Simultaneous recording by extra- and intracellular electrodes of light responses in the crayfish retina. Vision Res. 1978;18(6):621-8.](https://10.1016/0042-6989(78)90141-4)
+
+:::{figure-md} Stieve_1978_intraVextra
+:class: figure
+
+<img src="/images/Stieve_1978_intraVextra.png" alt="fishy" class="bg-primary mb-1" width="600px">
+
+*Simultaneous* intracellular (left) and extracellular (right; plotted *negative* potential upwards) record of photoreceptor potentials in *Astacus* retina in response to a brief pulse of light (time base 1s total).[^Stieve_1978]
+:::
+
+
+## Crayfish neuroanatomy
+
+:::{figure} ../../images/Diagram-of-crayfish-brain_eyestalk.png
+:width: 700
+
+Dorsal view diagram of the brain within the head carapace and the neural structures within the optic cups. MT: terminal medulla (lateral protocerebrum: LP), MI: internal medulla, ME: external medulla, L: lamina, R: retina.  (From DeForest Mellon Jr[^crayfish-brain-mellon])
+:::
+
+[^crayfish-brain-mellon]: [DeForest Mellon Jr (2016) Electrophysiological Evidence for Intrinsic Pacemaker Currents in Crayfish Parasol Cells](https://doi.org/10.1371/journal.pone.0146091)
+
+:::{figure} ../../images/Diagram-of-crayfish-brain_all.png
+:width: 700
+
+Dorsal view diagram of the brain and visual ganglia of the crayfish and the neural structures within the optic cups. Theprojections  of  the  olfactory  lobe  and  accessory  lobe  to  the  lateralprotocerebrum (LP)  are  indicated  in  green  and  red  tracks,  respectively.The bilobed hemiellipsoid body (HEB) is dorsal to the terminal me-dulla.  (From DeForest Mellon Jr[^crayfish-brain-mellon])
+:::
+
+## Crayfish retina anatomy
+
+Compound eye
+
 ## Pages:
 - [](../crayfish-erg/Lab-Manual_crayfish-erg.md)
 - [](../crayfish-erg/Data-Explorer_crayfish-erg.ipynb)
@@ -36,3 +62,6 @@ Changing the brightness of the light will change the number of rhodopsin molecul
 ## Additional Resources: 
 
 - [Circadian clock function in isolated eyestalk tissue of crayfish.](https://doi.org/10.1098%2Frspb.1998.0507)
+- [Gaus, Gabriele and Stieve, Hennig. "The Effect of Neuropeptides on the ERG of the Crayfish Orconectes limosus" Zeitschrift für Naturforschung C, vol. 47, no. 3-4, 1992, pp. 300-303.](https://doi.org/10.1515/znc-1992-3-421)
+- [DeForest Mellon Jr (2016) Electrophysiological Evidence for Intrinsic Pacemaker Currents in Crayfish Parasol Cells](https://doi.org/10.1371/journal.pone.0146091)
+- [Héctor Solís-Chagoyán, Leonor Mendoza-Vargas, Beatriz Fuentes-Pardo (2008) Melatonin modulates the ERG circadian rhythm in crayfish](https://doi.org/10.1016/j.cbpa.2008.01.040)
