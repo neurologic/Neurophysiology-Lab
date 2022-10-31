@@ -163,28 +163,29 @@ Do not move the location of the bonsai workflow window. The start button positio
     - Rotate the servo motor (using horizontal mouse movement) until the MRO nerve starts spiking. Mark this mouse position with washi tape on the computer monitor. 
     - Rotate the servo motor until the maximum bend that you feel comfortable with. Mark this mouse position with washi tape on the computer monitor.
     - Return the servo motor position to the start. 
-    - Make *three* evenly spaced washi tape markers between the tail start and stop position on the monitor. 
+    - Make *three* evenly spaced washi tape markers between the tail start and stop position on the monitor. You should now have one tape marker for the start position and a tape marker for each of ***four evenly spaced target positions***.
 3. Stop the Bonsai protocol.
 4. <font color = 'green'>Enable</font> the **MatrixWriter** node. Specify a filename that will make sense to you later (make sure the filename ends in '**.bin**').
 5. Start the Bonsai workflow.
 6. :::{admonition} Execute the '*progressive step*' stimulation protocol. 
     When moving the mouse to different locations, try to ***be consistent about the speed*** of your movement. ***Move swiftly but with control***.
-    1. Start with the computer mouse at the *start* position that you marked. 
-    2. Move the mouse to the second marked position and hold it there for 10 seconds. 
+    1. Start with the computer mouse at the *start* tape position that you marked. 
+    2. Move the mouse to the first target tape position and hold it there for 10 seconds. 
     3. Return the mouse back to the start position and hold it there for 10 seconds. 
-    4. Repeat the movement to the first marked position 3 times. 
-    5. From the start position, move the mouse to the *third* marked position and hold for 10 seconds... return to start... repeat for 3 total trials... 
-    6. From the start position, move the mouse to the *fourth* marked position and hold for 10 seconds... return to start... repeat for 3 total trials... 
+    4. Repeat the movement to the first target position and back to the start a total of 3 times. 
+    5. Repeat steps 2-4 for all target positions. 
     :::
 7. Stop the Bonsai protocol and make sure that the file saved where you think it did (and is not empty). 
 
+***You should now have raw data that will let you ask questions about MRO spike rate encoding of stretch amplitude across 4 different stretch conditions.***
 
 ## Experimental Exploration
 Choose one of the following (or an idea of your own) to test:
-- slow versus fast stretch?
-- same change in stretch, but starting from different initial positions?
-- effect of the duration stretch is held
-- effect of duration of stretch on offset dynamics when tail is relaxed.
+- slow versus fast stretch
+- same change in stretch, but starting from different initial positions
+
+The following would need some modification to the Data Explorer analysis already provided, so let me know if you want to do one of these and I will make that modification.
+- effect of duration of stretch on offset dynamics when tail is relaxed. 
 - is the onset and offset spiking dynamics the same? (Need to start from a stretch that drives a non-zero baseline spike rate)
 
 <!-- ## Anaesthetic effects
