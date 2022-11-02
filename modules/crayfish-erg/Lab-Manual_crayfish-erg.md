@@ -8,39 +8,40 @@ The bonsai script for today has one measurement node. <b>Channel 0</b> receives 
 ## Surgery
 For this lab, you will be removing the eye from a crayfish after anaesthetizing it on ice. 
 
-<ol>
-	<li>From an anaesthetized crayfish, cut the head carapce from eye to eye (the pointed rostrum that partially shields the eyes).</li>
-	<li>Cut off the eye at the base of the eye stalk.</li>
-	<li>Place the eye stalk, nerve-side down, in the saline well of the dish and fill with saline.</li>
-</ol>
+1. From an anaesthetized crayfish, cut the head carapace from eye to eye (the pointed rostrum that partially shields the eyes).
+2. Cut off the eye at the base of the eye stalk.
+3. Wedge the eye stalk, nerve-side down, into the saline well of the dish and fill with saline.
+
 
 ## Physiology Setup
-Reference and ground electrodes are in the bath. Advance the recording electrode toward the cornea using a micromanipulator. Pierce the cornea with the electrode, but keep it close to the surface. Alternatively, we will be using *wick* electrodes to touch the surface of the cornea.
+Reference electrode is in the well on the optic nerve side of the eya. Advance the recording electrode toward the eye surface using a micromanipulator. Pierce the cornea with the electrode, but keep it close to the surface. Alternatively, we will be using *wick* electrodes to touch the surface of the eye.
 
-Adjust the amplifier's high-frequency filter setting to filter out noise. Adjust the amplifier's low-frequency filter to eliminate baseline drift without unduly reducing the amplitude of the ERG.
+Adjust the amplifier's high-frequency filter setting to filter out noise. Adjust the amplifier's low-frequency filter to eliminate baseline drift without unduly reducing the amplitude of the ERG (As low as possibly, which on the P15 amplifiers is 0.1Hz).
 
 
 <a id="experiment"></a>
 ## Core Experiment
 
-:::{note}
-Try to drive a LED precicely with a constant voltage device - and/or - measure light with a photodiode or LED in reverse.
+:::{admonition} Stimulation Control
+You will be driving an LED precicely with a constant voltage stimulator (the Grass SD9 or the AM-systems). The LED is driven by a 9V battery and triggered by a 1V pulse from the stimulator. The 1V stimulator pulse is sent to the ADC AI channel 3 in NRSE mode to monitor the state of the light simultaneously with measurement of the ERG. 
 :::
 
-1. Run the bonsai protocol (with the <b>write node</b> <font color = 'red'>disabled</font> and the <b>analog input node</b> <font color = 'green'>enabled</font>). Double click the analog input node to visualize the measurement if it does not pop up upon start.
+Record measured data in Bonsai for each of the following experiments. Wait 1 minute between each of the experiments.
 
-Stimulation Protocol: 
-1. Restart the Bonsai protocol with the <b>write node</b> <font color = 'green'>enabled</font>. Change the filename as needed.
-2. Rotate the knob to its retracted position and leave for 5 seconds before protracting. Leave the knob protracted for 5 seconds before repeating.
-3. Repeat the stimulation 5 times, with care to rotate the knob the same amount each time.
+1. 5 seconds baseline. 1 second pulse. 5 seconds post-pulse. 
+	> If you do not obtain a clean recording of this first pulse, you will need to wait 10 min before trying again.
+2. 10 msec pulse at 1 Hz. Repeat until a steady-state amplitude is reached.
+	> Use the ***Detect Spikes*** node with a threshold just above baseline noise. Set the "History" to 10 traces. You will be able to tell when a steady-state amplitude is reached when the traces do not change much. 
+3. 10 msec pulse at 10 Hz. Repeat until a steady-state amplitude is reached.
+4. 10 msec pulse at 50 Hz. Repeat until a steady-state amplitude is reached.
+5. 0.2 Hz pulses with 3 trials at each of the following pulse durations (in msec): 1000, 500, 100, ..., ..., ..., 1.
+6. "Paired" 10 msec duration pulses at 0.2 Hz with 3 trials at each of the following IPIs (in msec): 100, ..., ..., ..., ..., 12.
 
-## Experimental Exploration
-Effects of:
-- Light duration
-- Light frequency (time between)
-- Onset ramp (rather than step)
-- Wavelength of light
+## Housekeeping
 
-## Copy data to your Google Drive for analysis
-Use the [Data Explorer](../modules/crayfish-erg/Data-Explorer_crayfish-erg.ipynb) notebook to analyse your data and answer the questions in the [Responses](../modules/crayfish-erg/Responses_crayfish-erg.ipynb) notebook.
+Clean up your area.  
+
+Copy data to an external drive or your Google Drive for later.  
+
+Use the [Data Explorer](../modules/crayfish-erg/Data-Explorer_crayfish-erg.ipynb) notebook to process and analyse your raw data. Answer the questions in the [Responses](../modules/crayfish-erg/Responses_crayfish-erg.ipynb) notebook. The [Dash DataExplorer.py application](../../howto/Dash-Data-Explorer.md) is available to explore your raw data in detail. 
 
