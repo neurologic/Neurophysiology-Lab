@@ -61,5 +61,6 @@ Importantly, there are only two MRO cell types innervating each segmental superf
 - [On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study](https://pubmed.ncbi.nlm.nih.gov/6316733/)
 - [Structure and Function Relationship in the Abdominal Stretch Receptor Organs of the Crayfish](https://onlinelibrary-wiley-com.ezproxy.wesleyan.edu/doi/pdfdirect/10.1002/cne.20590)
 - [Insights for Robotic Design From Studies of the Control of Abdominal Position in Crayfish](https://www.journals.uchicago.edu/doi/abs/10.2307/1543316?journalCode=bbl)
+- A major cause of the early adaptive fall of the receptor potential seems to be an outward K+ current activated by the stretch-induced depolarization. Swerup, C (1983) [On the ionic mechanisms of adaptation in an isolated mechanoreceptor --an electrophysiological study.](https://pubmed-ncbi-nlm-nih-gov.ezproxy.wesleyan.edu/6316733/) Acta physiologica Scandinavica, Vol.520, p.1-43
 
 
