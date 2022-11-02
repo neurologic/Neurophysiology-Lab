@@ -27,9 +27,9 @@ Any photon that is absorbed by rhodopsin will induce the same kind of response. 
 ## Vertebrate versus Invertebrate
 
 The following video provides a brief overview of differences in phototransduction between drosophila and humans:
-(You should be able to view this video signed in with your Wesleyan gmail, but please do not share this video with others, it was shared with me personally from Ilya, not publicly.)
+(You should be able to view this video signed in with your Wesleyan gmail, but please do not share this video with others, it was shared with me personally from Ilya, not publicly. Let me know if you cannot see the video and I will share it another way). 
 
-**VIDEO**
+<iframe src="https://drive.google.com/file/d/1THs3oebrjEZCRdhP_yWBXgeOp2jN3LHk/preview" width="640" height="480" allow="autoplay"></iframe>
 
 Two main differences between vertebrate and invertebrate physiology is the sign of signal transmission. Invertebrate photoreceptors depolarize in response to light, and (at least in the fly) release an inhibitory neurotransmitter (histamine). Histamine opens chloride-permeable ionotropic Histamine receptors. Vertebrate photoreceptors hyperpolarize in response to light, and release an excitatory neurotransmitter (glutamate). 
 

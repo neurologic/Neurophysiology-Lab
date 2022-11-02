@@ -1,5 +1,8 @@
 # Week 10-11. Synaptic Connectivity 
 
+This lab requires simultaneous measurement of voltage activity in Motor Nerve 3 and a Superficial Flexor Muscle Cell of the crayfish.
+
+
 Arthropod muscle innervation is different from vertebrate muscle innervation in several interesting ways:
 - Arthropod muscles are innervated by relatively few excitatory motor neurons (sometimes only one).
 - Arthropod motor neurons innervate each muscle fiber at multiple points (multiterminal innervation).
@@ -13,6 +16,8 @@ Therefore, arthropod skeletal muscle integration (innervation and summation) is 
 
 <img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/fig.A.4-Comparison_with_Brain_Synapses.png?raw=True' width="600" alt='arthoropod versus vertebrate muscle innervation' align="center"/>
 
+
+In crayfish, the ventral branch of the third nerve (N3v) in each abdominal ganglia innervates the superficial flexor muscle in the corresponding segment of the tail. The superficial muscle seems to maintain the posture of the animal. Motor neurons of the N3v are tonically active while the animal is at rest or performing terrestrial walking (Moore and Larimer, 1988). Motor neurons that innervate deep muscles instead generate brief bursts of action potentials associated with the powerful tail-flip. 
 
 ## Pages
 - [](../crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing.md)

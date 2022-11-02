@@ -71,16 +71,6 @@ parts:
         - file: modules/crayfish-erg/Lab-Manual_crayfish-erg
         - file: modules/crayfish-erg/Data-Explorer_crayfish-erg
         - file: modules/crayfish-erg/Responses_crayfish-erg
-    - file: modules/crayfish-n3/crayfish-n3_landing
-      sections:
-        - file: modules/crayfish-n3/Lab-Manual_crayfish-n3
-        - file: modules/crayfish-n3/Data-Explorer_crayfish-n3
-        - file: modules/crayfish-n3/Responses_crayfish-n3
-    - file: modules/crayfish-superficial-flexor/crayfish-superficial-flexor_landing
-      sections:
-        - file: modules/crayfish-superficial-flexor/Lab-Manual_crayfish-superficial-flexor
-        - file: modules/crayfish-superficial-flexor/Data-Explorer_crayfish-superficial-flexor
-        - file: modules/crayfish-superficial-flexor/Responses_crayfish-superficial-flexor
     - file: modules/crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing
       sections:
         - file: modules/crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity

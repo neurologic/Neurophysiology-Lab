@@ -43,5 +43,5 @@ Clean up your area.
 
 Copy data to an external drive or your Google Drive for later.  
 
-Use the [Data Explorer](../modules/crayfish-erg/Data-Explorer_crayfish-erg.ipynb) notebook to process and analyse your raw data. Answer the questions in the [Responses](../modules/crayfish-erg/Responses_crayfish-erg.ipynb) notebook. The [Dash DataExplorer.py application](../../howto/Dash-Data-Explorer.md) is available to explore your raw data in detail. 
+Use the [Data Explorer](Data-Explorer_crayfish-erg.ipynb) notebook to process and analyse your raw data. Answer the questions in the [Responses](Responses_crayfish-erg.ipynb) notebook. The [Dash DataExplorer.py application](../../howto/Dash-Data-Explorer.md) is available to explore your raw data in detail. 
 
