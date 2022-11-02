@@ -81,3 +81,16 @@ Tues, Oct 25 NO MEETING FALL BREAK
 
 ## Week 8 on Wed, Nov 2 at 2:30-3:30
 
+I went to upload the link to the recording from the meeting today and found that it did not record. Oof.
+
+I will make a new video orienting you to the data for this week and post it. The most important thing to know before you get started is to read the prompts for this week before diving into the Colab Data Explorer for the week. There are lots of instructions in the Data Explorer that lead you through ***way more*** steps than you actually need to do for this week (it was written for the other universe in which you all collected your own rad data). The Prompts specify in what way you should be utilizing specific tools in the Data Explorer and to what extent for the example data provided. The processing and analysis this week is minimal. Most of the response prompt content is qualitative. 
+
+We reviewed concepts of Conduction Velocity today, so get in touch with me if you want to go over that. 
+
+And finally, I gave some background to prep you for concepts scaffolding Monday's experiment. Most of what I talked about is in the landing page. I did not get into specific protocol overview because we ran out of time. We will also go over the most relevant bits of this background info on Monday in lab.
+
+## Week 9 on Tuesday, Nov 8 at 1:30-2:30
+
+## Week 10 on Wednesday, Nov 16 at 2:30-3:30
+
+## Week 11 TBD... may not need this meeting.

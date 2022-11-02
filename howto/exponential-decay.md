@@ -15,7 +15,7 @@ where $N(t)$ is the quantity at time $t$, $N0 = N(0)$ is the initial quantity, t
 -- [wikipedia](https://en.wikipedia.org/wiki/Exponential_decay) 
 ::::
 
-A neuron (or any cell) is a membrane-enclosed sphere/cylinder. A voltage applied across the membrane at one location decays along the length of the membrane. The strength of this decay is determined by two things, the **time constant** and **space constant**. We can understand this phenomena with some math and electronics.
+A neuron (or any cell) is a membrane-enclosed sphere/cylinder. A voltage applied across the membrane at one location decays along the length of the membrane. The extent of this decay is determined by the **space constant**. A current applied across the membrane at one location will take some time to generate a change in membrane voltage at that location. The time course of the change in voltage is determined by the **time constant**. We can understand these phenomena with some math and electronics.
 
 ## Space Constant
 
@@ -69,7 +69,7 @@ where $R_m$ is the resistance across the membrane and $C_m$ is the capacitance o
 
 "Cable Theory", was originally developed in the 1800's when engineers were trying to understand signal transmission across long distance telegraph lines. Neuroscientists then applied this theory to neurons in the early 20th century.
 
-Imagine a neuron with an infinitely high length constant and an infinitely low time constant. A voltage change anywhere in the neuron would instantly change the voltage everywhere else in the neuron. No such neuron exists.
+Imagine a neuron with an infinitely high length constant. A voltage change anywhere in the neuron would instantly change the voltage everywhere else in the neuron. No such neuron exists.
 
 Voltage propagation along a neuron membrane has a finite travel *distance*. **Active** (voltage-sensitive) ion conductances *fight* this decay by regenerating a trans-membrane voltage wherever they are activated (ie. an *action potential*). However, action potential propogation has a finite *speed*. Each time an ion channel needs to open to recharge the action potential, this delays the propagation of the action potential by approximately 1 ms. And the time constant of the membrane effects how quickly any patch of membrane will *charge*. Additionally, the smaller your length constant is, the more you have to regenerate the action potential by having ion channels open along the length of the axon. 
 
