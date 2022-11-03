@@ -30,12 +30,12 @@ Record measured data in Bonsai for each of the following experiments. Wait 1 min
 
 1. 5 seconds baseline. 1 second pulse. 5 seconds post-pulse. 
 	> If you do not obtain a clean recording of this first pulse, you will need to wait 10 min before trying again.
-2. 10 msec pulse at 1 Hz. Repeat until a steady-state amplitude is reached.
+2. 10 msec pulse at 0.5 Hz. Repeat until \~100 pulses have occured (note that you can calculate how long that will take).
 	> Use the ***Detect Spikes*** node with a threshold just above baseline noise. Set the "History" to 10 traces. You will be able to tell when a steady-state amplitude is reached when the traces do not change much. 
-3. 10 msec pulse at 10 Hz. Repeat until a steady-state amplitude is reached.
-4. 10 msec pulse at 50 Hz. Repeat until a steady-state amplitude is reached.
-5. 0.2 Hz pulses with 3 trials at each of the following pulse durations (in msec): 1000, 500, 100, ..., ..., ..., 1.
-6. "Paired" 10 msec duration pulses at 0.2 Hz with 3 trials at each of the following IPIs (in msec): 100, ..., ..., ..., ..., 12.
+3. 10 msec pulse at 1 Hz. Repeat until \~100 pulses have occured.
+4. 10 msec pulse at 2 Hz. Repeat until \~100 pulses have occured.
+5. 0.2 Hz pulses with 2 trials at each of the following pulse durations (in msec): 1000, 800, 600, 400, 200, 100, 75, 50, 10, 5, 1, 0.2.
+6. "Paired" 10 msec duration pulses at 0.2 Hz with 12 trials at each of the following IPIs (in msec): 200, 100, 50.
 
 ## Housekeeping
 
