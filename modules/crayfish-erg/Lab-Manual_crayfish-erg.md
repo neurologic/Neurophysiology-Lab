@@ -37,7 +37,7 @@ Record measured data in Bonsai for each of the following experiments. Wait 5 min
 3. 10 msec pulse at 4 Hz. Repeat until \~100 pulses have occured.
 4. 10 msec pulse at 6 Hz. Repeat until \~100 pulses have occured.
 5. At 0.2 Hz: 5 pulses of 400 msec duration followed by 2 pulses at each of the following pulse durations (in msec): 400 (yes, do this one again), 200, 100, 75, 50, 25, 10, 5, 1.
-6. At 0.2 Hz: 10 single pulses of 10 msec duration followed "Paired" 10 msec duration pulses with 12 trials at each of the following IPIs (in msec): 200, 100, 50.
+6. At 0.2 Hz: 10 single pulses of 10 msec duration followed "Paired" 10 msec duration pulses with 2 trials at each of the following IPIs (in msec): 200, 100, 50, 30.
 
 ## Housekeeping
 
