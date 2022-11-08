@@ -28,16 +28,18 @@ The gain of the amplifier should be at 1000x.
 You will be driving an LED precicely with a constant voltage stimulator (the Grass SD9 or the AM-systems). The LED is driven by a 9V battery and released by a transistor voltage provided by the voltage stimulator. A maximum intensity is achieved with a 1-2 V pulse from the stimulator. The stimulator pulse is sent to the ADC AI channel 3 in NRSE mode to monitor the state of the light simultaneously with measurement of the ERG. 
 :::
 
-Record measured data in Bonsai for each of the following experiments. Wait 5 minutes between each of the experiments. At the beginning of the experiments, the eye should be light-adapted for \~10 min.
+Record measured data in Bonsai for each of the following experiments.  
+At the beginning of step #1, the eye should be light-adapted for \~10 min.  
+***Wait 5*** minutes between protocol steps #1-4, then ***1 minute*** between 4-6. 
 
 1. 5 seconds baseline - One 2 second pulse - 5 seconds post-pulse. 
 	> If you do not obtain a clean recording of this first pulse, you will need to wait 10 min before trying again.
-2. 10 msec pulse at 2 Hz. Repeat until \~100 pulses have occured (note that you can calculate how long that will take).
-	> Use the ***Detect Spikes*** node with a threshold just above baseline noise. Set the "History" to 10 traces. You will be able to tell when a steady-state amplitude is reached when the traces do not change much. 
-3. 10 msec pulse at 4 Hz. Repeat until \~100 pulses have occured.
-4. 10 msec pulse at 6 Hz. Repeat until \~100 pulses have occured.
-5. At 0.2 Hz: 5 pulses of 400 msec duration followed by 2 pulses at each of the following pulse durations (in msec): 400 (yes, do this one again), 200, 100, 75, 50, 25, 10, 5, 1.
-6. At 0.2 Hz: 10 single pulses of 10 msec duration followed "Paired" 10 msec duration pulses with 2 trials at each of the following IPIs (in msec): 200, 100, 50, 30.
+2. single 10 msec pulse at 2 Hz. Repeat until \~100 pulses have occured (note that you can calculate how long that will take).
+	> Use the ***Detect Spikes*** node with a threshold just above baseline noise. Set the "History" to 10 traces. You will be able to observe when a steady-state amplitude is reached when the traces do not change much. 
+3. single 10 msec pulse at 4 Hz. Repeat until \~100 pulses have occured.
+4. single 10 msec pulse at 6 Hz. Repeat until \~100 pulses have occured.
+5. At 0.2 Hz: 5 pulses of 1000 msec duration followed by 2 pulses at each of the following pulse durations (in msec): 400, 200, 100, 75, 50, 25, 10, 5, 1.
+6. At 0.2 Hz: 10 single pulses of 10 msec duration followed by **paired** 10 msec duration pulses at each of the following IPIs (in msec): 200, 100, 50, 30 (for **two trials** each ISI).
 
 ## Housekeeping
 

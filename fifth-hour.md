@@ -91,6 +91,8 @@ And finally, I gave some background to prep you for concepts scaffolding Monday'
 
 ## Week 9 on Tuesday, Nov 8 at 1:30-2:30
 
+[Share link to the recording](https://wesleyan.zoom.us/rec/play/azFQxmoZHcXQ4iOGaFgs98plkpTeDRvXr6LY9zsC_cppOJjAu8SB21gbHeo5zjwOHJKRKWVanuolQnJt.PxFtHEgoiYN5mcmP)
+
 ## Week 10 on Wednesday, Nov 16 at 2:30-3:30
 
 ## Week 11 TBD... may not need this meeting.
