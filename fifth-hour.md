@@ -83,7 +83,7 @@ Tues, Oct 25 NO MEETING FALL BREAK
 
 I went to upload the link to the recording from the meeting today and found that it did not record. Oof.
 
-I will make a new video orienting you to the data for this week and post it. The most important thing to know before you get started is to read the prompts for this week before diving into the Colab Data Explorer for the week. There are lots of instructions in the Data Explorer that lead you through ***way more*** steps than you actually need to do for this week (it was written for the other universe in which you all collected your own rad data). The Prompts specify in what way you should be utilizing specific tools in the Data Explorer and to what extent for the example data provided. The processing and analysis this week is minimal. Most of the response prompt content is qualitative. 
+[Here is a re-recorded video of an orientation to the MRO analysis](https://wesleyan.zoom.us/rec/share/OD3uhfr_r2aJtfhVRKPgQWsRIrOZf88qSi07XreinWZf6wbwpC2tClUGERMoBai0.wwwWowWv8ZdQbE2w). The most important thing to know before you get started is to read the prompts for this week before diving into the Colab Data Explorer for the week. There are lots of instructions in the Data Explorer that lead you through ***way more*** steps than you actually need to do for this week (it was written for the other universe in which you all collected your own rad data). The Prompts specify in what way you should be utilizing specific tools in the Data Explorer and to what extent for the example data provided. The processing and analysis this week is minimal. Most of the response prompt content is qualitative. 
 
 We reviewed concepts of Conduction Velocity today, so get in touch with me if you want to go over that. 
 
