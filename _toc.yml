@@ -79,9 +79,9 @@ parts:
     - file: modules/human-bci-music/human-bci-music_landing
       sections:
         - file: modules/human-bci-music/Lab-Manual_human-bci-music
-        - file: modules/human-bci-music/Data-Explorer_human-bci-music
-        - file: modules/human-bci-music/Responses_human-bci-music
-        - file: modules/human-bci-music/Tutorial-Basis-Set
+        - file: modules/human-bci-music/Data-Explorer_EMG-basics
+        # - file: modules/human-bci-music/Responses_human-bci-music
+        # - file: modules/human-bci-music/Tutorial-Basis-Set
     - file: capstone/capstone_landing
       sections:
         - file: capstone/capstone_assignment-guidelines
