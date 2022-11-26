@@ -57,7 +57,7 @@ Record your EMG during this task.
 
 Find a recording with a bout of regular activity in the single motor unit. 
 
-Observe the amplitude (height) and firing rate (number of impulses) in the EMG across this bout. 
+Use the Colab Data Explorer (Part I. Motor Unit Coding and Recruitment) to observe the amplitude (height) and firing rate (number of impulses) in the EMG across this bout. 
 
 1. Was the amplitude (height) consistent throughout the bout?
 
@@ -68,7 +68,7 @@ Observe the amplitude (height) and firing rate (number of impulses) in the EMG a
 :::
 
 
-## Fatigue
+## III. Fatigue
 
 1. Hook up your EMG patch electrodes to your bicep. 
 2. Stand with your back to a wall to control your posture and arm position. 
@@ -79,7 +79,7 @@ Observe the amplitude (height) and firing rate (number of impulses) in the EMG a
 Record your EMG during this task.
 
 ::::{admonition} Root Mean Square (RMS)
-  RMS provides a measure of general ***signal strength*** (as opposed *peak* signal strength). RMS is calculated by squaring the signal, taking an average of the sum of squares, and then taking the square root. Seems mathematically excessive and unnecessary, so why do this?
+  RMS provides a measure of *general* ***signal strength*** (as opposed *peak* signal strength). RMS is calculated by squaring the signal, taking an average of the sum of squares, and then taking the square root. Seems mathematically excessive and unnecessary, so why do this?
 
   First, it's important to remember that our signal has positive and negative values (A). So if we were to try to take an average of this signal, we wouldn't end up with much (B). However, we can get rid of the negative values by squaring the signal (C). 
 
@@ -98,20 +98,20 @@ Record your EMG during this task.
 Use the ***moving RMS*** calculation in the Colab Data Explorer (Part II. Fatigue).
 
 For each partner: 
-1. Estimate the initial RMS value 
-2. Estimate the asymptotic RMS value (or the minimum value if an asymptote was not reached).
-3. Estimate the time between the initial RMS and the asymptotic (or minimum) RMS. 
-4. Calculate the rate of fatigue (ie estimate the slope, $m$, of the equation $y = mx + b$ for the initial linear part of your moving RMS signal) 
+1. Estimate and report the initial RMS value 
+2. Estimate and report the asymptotic RMS value (or the minimum value if an asymptote was not reached).
+3. Estimate and report the time between the initial RMS and the asymptotic (or minimum) RMS. 
+4. Calculate and report the rate of fatigue (ie estimate the slope, $m$, of the equation $y = mx + b$ for the part of your moving RMS signal for which you observe increasing fatigue) 
+  > Note how linear your data is in the range of increasing fatigue.
+5. Save a copy of an example processed data signal, with the markers highlighting the initial RMS value.
 
+Report these results in the form of a table. 
 
-
-Estimate the ***linear*** fatigue function from your data (ie, the slope of a line fit to your data). 
-
-$$
-y = m*x + b
-$$
-
-What are the y-value units? What are the x-value units? What variable in the function would you use as your estimate for **rate of fatigue**?
+| Person | initial RMS | fatigued RMS | time to fatigue |
+| :---: | :---: | :---: | :---: |
+| name | value (microV) | value (microV) | value (s) |
 
 ***If you have time, compare the rate of fatigue for different muscles.***
+
+:::
 
