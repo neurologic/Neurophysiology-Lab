@@ -27,5 +27,6 @@ Additionally, muscle contraction strength (amount) depends on the rate of muscle
 
 - [](../human-bci-music/Lab-Manual_human-bci-music.ipynb)
 - [](../human-bci-music/Data-Explorer_EMG-basics.ipynb)
+- [](../human-bci-music/Responses_EMG-basics.ipynb)
 <!-- - [](../human-bci-music/Responses_human-bci-music.ipynb) -->
 <!-- - [](../human-bci-music/Tutorial-Basis-Set.ipynb) -->

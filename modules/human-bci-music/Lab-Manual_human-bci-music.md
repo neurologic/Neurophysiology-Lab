@@ -1,5 +1,7 @@
 # Lab Manual
 
+You will complete all of the Analysis and Responses for today with your partner during class as you work through the experiments. 
+
 ## Software Setup
 
 The output of the differential amplifiers are being sampled and digitized by the Nidaq ADC. Bonsai is set up to observe the Nidaq ADC output so that you can visualize and record these signals. The sampling rate is 30000 and the number of channels will depend on which experiment you are doing. 
@@ -70,11 +72,11 @@ Use the Colab Data Explorer (Part I. Motor Unit Coding and Recruitment) to obser
 
 ## III. Fatigue
 
-1. Hook up your EMG patch electrodes to your bicep. 
+1. Hook up two EMG measurement electrodes to your bicep. Use the EMG reference electrode on the back of your palm from Parts I and II.
 2. Stand with your back to a wall to control your posture and arm position. 
 3. Place a weight in your hand and hold it for as long as you can, with your elbow at a 90 degree angle (If your wrist gets fatigued before your bicept, you can hang the weight from your forearm). 
-> This is called an "isometric" contraction since your muscles are working, but your joints are not moving.   
-> Choose a weight load that you are comfortable maintaining between 15-120 seconds before load fatigue is too high. Keep the muscle active for as long as you can, even as you feel yourselves getting "weaker."
+	> This is called an "isometric" contraction since your muscles are working, but your joints are not moving.   
+	> Choose a weight load that you are comfortable maintaining between 15-120 seconds before load fatigue is too high. Keep the muscle active for as long as you can, even as you feel yourselves getting "weaker."
 
 Record your EMG during this task.
 
@@ -102,14 +104,15 @@ For each partner:
 2. Estimate and report the asymptotic RMS value (or the minimum value if an asymptote was not reached).
 3. Estimate and report the time between the initial RMS and the asymptotic (or minimum) RMS. 
 4. Calculate and report the rate of fatigue (ie estimate the slope, $m$, of the equation $y = mx + b$ for the part of your moving RMS signal for which you observe increasing fatigue) 
-  > Note how linear your data is in the range of increasing fatigue.
+	> Note how linear your data is (or is not) in the range of increasing fatigue.
 5. Save a copy of an example processed data signal, with the markers highlighting the initial RMS value.
 
-Report these results in the form of a table. 
+Report these results in the form of a table (a template for the table is provided in the Responses Notebook). 
 
-| Person | initial RMS | fatigued RMS | time to fatigue |
-| :---: | :---: | :---: | :---: |
-| name | value (microV) | value (microV) | value (s) |
+| Person | Muscle    | initial RMS    | fatigued RMS   | time to fatigue | rate of fatigue  |
+| :----: | :-------: | :------------: | :------------: | :-------------: | :--------------: |
+| name 1 | muscle id | value (microV) | value (microV) | value (s)       | value (microV/s) |
+| name 2 | muscle id | value (microV) | value (microV) | value (s)       | value (microV/s) |
 
 ***If you have time, compare the rate of fatigue for different muscles.***
 
