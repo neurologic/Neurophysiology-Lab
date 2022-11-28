@@ -1,12 +1,14 @@
 # Lab Manual
 
-You will complete all of the Analysis and Responses for today with your partner during class as you work through the experiments. 
+You will complete all of the Analysis (in Colab Data Explorer) and Responses for today with your partner during class as you work through the two sections below. 
 
 ## Software Setup
 
 The output of the differential amplifiers are being sampled and digitized by the Nidaq ADC. Bonsai is set up to observe the Nidaq ADC output so that you can visualize and record these signals. The sampling rate is 30000 and the number of channels will depend on which experiment you are doing. 
 
 ## I. Movement Coding
+
+To move your body, motor units join together in a systematic way to supply the force required to achieve strength. This teamwork among motor units is called "Orderly Recruitment". In general, motor units with the smallest number of muscle fibers are recruited first. As more force is needed, motor units with larger number of fibers are recruited. 
 
 In this exploration, you will measure EMG signals from the first dorsal interossei muscle. Contraction of ***the first dorsal interosseous muscle*** causes lateral movement of the index finger toward the thumb. As you move this finger note the bulge beneath the skin where the main muscle contraction is ocurring. This bulge is the *belly* of the muscle. 
 
@@ -21,14 +23,14 @@ Place the ***reference electrode*** on the back of your hand.
 Place the two ***differential measurement electrodes*** on the belly of the muscle. You can use the manual electrodes to optimize electrode placement. 
 
 Test the motor neuron activity under different movement force (weight lifting):
-1. Rest the forearm comfortably in a "handshake" position at the edge of a table with your thumb up
-2. Tie a string to an object and loop the string over the index finger
-3. Lift the object with your index finger. Repeat for a total of 3 trials.
-4. Try objects of different weights (for a total of \~3 different conditions)
+1. Rest the forearm comfortably in a "handshake" position at the edge of a table with your thumb relaxed and your fingers stacked.
+2. Tie a string to an object and loop the string over the index finger (or put objects in a bag and loop the handles over your finger).
+3. Lift the object with your index finger. Repeat for a total of 5 trials.
+4. Repeat for a total of 3 different conditions with different lifted weight.
 
-Think about what differences in motor unit rate and/or amplitude you predict across conditions and why.
+Think about what differences in motor unit (and/or population) amplitude you predict across conditions and why. Think about what differences in motor unit (and/or population) amplitude you predict across conditions and why.
 
-To compare across conditions, make sure to use the same electrode placement and the same time and voltage ranges when exploring the signal offline. 
+To compare across conditions, record all of the conditions in the same raw data file. 
 
 :::{admonition} Analysis and Results
 
@@ -43,34 +45,7 @@ Use the Colab Data Explorer (Part I. Motor Unit Coding and Recruitment) to analy
 :::
 
 
-## II. Recruitment
-
-To move your body, motor units join together in a systematic way to supply the force required to achieve strength. This teamwork among motor units is called "Orderly Recruitment". In general, motor units with the smallest number of muscle fibers begin contracting first during a movement, followed by the motor units with the largest number of fibers afterward, to allow for a smooth, strong muscle contraction.
-
-Use the same electrode placement as in the first experiment to try to isolate the action potential of a single motor unit.
-
-1. Rest the forearm comfortably in a "handshake" position at the edge of a table with your thumb up
-2. Slowly lift your finger to try to isolate consistent spiking activity of a single motor unit
-	> You may need to think about moving the finger rather than actually moving it.
-
-Record your EMG during this task.
-
-:::{admonition} Analysis and Results
-
-Find a recording with a bout of regular activity in the single motor unit. 
-
-Use the Colab Data Explorer (Part I. Motor Unit Coding and Recruitment) to observe the amplitude (height) and firing rate (number of impulses) in the EMG across this bout. 
-
-1. Was the amplitude (height) consistent throughout the bout?
-
-2. What was the approximate spike rate? 
-
-3. Use the Dash Data Explorer or the Colab Data Explorer to save a copy of a Figure showing reliable isolation of single motor unit activity. 
-
-:::
-
-
-## III. Fatigue
+## II. Fatigue
 
 1. Hook up two EMG measurement electrodes to your bicep. Use the EMG reference electrode on the back of your palm from Parts I and II.
 2. Stand with your back to a wall to control your posture and arm position. 
@@ -78,7 +53,7 @@ Use the Colab Data Explorer (Part I. Motor Unit Coding and Recruitment) to obser
 	> This is called an "isometric" contraction since your muscles are working, but your joints are not moving.   
 	> Choose a weight load that you are comfortable maintaining between 15-120 seconds before load fatigue is too high. Keep the muscle active for as long as you can, even as you feel yourselves getting "weaker."
 
-Record your EMG during this task.
+Record your EMG during this task. Repeat the task with your partner (or have your partner repeat the task with a different muscle).
 
 ::::{admonition} Root Mean Square (RMS)
   RMS provides a measure of *general* ***signal strength*** (as opposed *peak* signal strength). RMS is calculated by squaring the signal, taking an average of the sum of squares, and then taking the square root. Seems mathematically excessive and unnecessary, so why do this?
@@ -99,7 +74,7 @@ Record your EMG during this task.
 
 Use the ***moving RMS*** calculation in the Colab Data Explorer (Part II. Fatigue).
 
-For each partner: 
+For each raw data file (ie. for each condition/person):
 1. Estimate and report the initial RMS value 
 2. Estimate and report the asymptotic RMS value (or the minimum value if an asymptote was not reached).
 3. Estimate and report the time between the initial RMS and the asymptotic (or minimum) RMS. 
@@ -114,7 +89,32 @@ Report these results in the form of a table (a template for the table is provide
 | name 1 | muscle id | value (microV) | value (microV) | value (s)       | value (microV/s) |
 | name 2 | muscle id | value (microV) | value (microV) | value (s)       | value (microV/s) |
 
-***If you have time, compare the rate of fatigue for different muscles.***
+***If you have time, compare the rate of fatigue for different muscles for one or both partners.***
 
 :::
+<!-- 
+## III. Recruitment
+
+To move your body, motor units join together in a systematic way to supply the force required to achieve strength. This teamwork among motor units is called "Orderly Recruitment". In general, motor units with the smallest number of muscle fibers begin contracting first during a movement, followed by the motor units with the largest number of fibers afterward, to allow for a smooth, strong muscle contraction.
+
+Use the same electrode placement as in the first experiment to try to isolate the action potential of a single motor unit.
+
+1. Rest the forearm comfortably in a "handshake" position at the edge of a table with your thumb up
+2. Slowly lift your finger to try to isolate consistent spiking activity of a single motor unit
+  > You may need to think about moving the finger rather than actually moving it.
+
+Record your EMG during this task.
+
+:::{admonition} Analysis and Results
+
+Find a recording with a bout of regular activity in the single motor unit. 
+
+Use the Colab Data Explorer (Part I. Motor Unit Coding and Recruitment) to observe the amplitude (height) and firing rate (number of impulses) in the EMG across this bout. 
+
+1. What was the approximate spike rate? 
+
+2. Use the Dash Data Explorer or the Colab Data Explorer to save a copy of a Figure showing reliable isolation of single motor unit activity. 
+
+:::
+ -->
 
