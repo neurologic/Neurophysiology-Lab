@@ -4,16 +4,18 @@ A "*Presentation* of Learning” in which you either go solo or pair up with a p
 
 Components:
 
-- Live Demo
-- 5 min Data Blitz
-- Write-up
+- [Live Demo](live-demo)
+- [Write-up](write-up)
+- [5 min Data Blitz](data-blitz)
 
+(live-demo)=
 ## Live Demo
 
 ***On Monday Dec 5 during the normal class time*** 
 
 An in-lab practical in which you will set up the equipment (and animals as needed) and run your experiment. Show off your skills. This event will be open to anyone that wants to come visit lab that day and take a tour of what you have been hard at work doing. You will record data that day, but you will not have to analyze the results quantitatively. The focus is more on demonstration of your learning and sharing your experimental ideas and interests. You can have any draft Figures or other materials from your write-up printed out to help you explain what you expect to accomplish in your experiment. 
 
+(write-up)=
 ## Write-up
 
 ***Due Dec 9***
@@ -22,11 +24,13 @@ The write-up is in the format of a well-rounded scientific communication includi
 
 ### Introduction
 
-Background information. For example: concepts and anatomy that is needed to interpret the results. If you are presenting an experimental exploration beyond what was explicitly done in class (*highly encouraged*), then include the results from the first experiment that led you to follow up and extend the experiment in your proposed way. 
+Background information. For example: concepts and anatomy that is needed to interpret the results. Any results from the first in-class experiment that led you to follow up with your proposed experiment. Your predictions for the results of your proposed experiment and the logic/reasoning behind those predictions (including explanation of any relevant concepts that a reader would need to know in order to follow your logic). 
 
 ### Materials and Methods
 
-What kind of recording method? Electrode placement and reasoning for it. 
+For example, what kind of recording method, what electrode placement. Reasoning for the methods choices. 
+
+The methods section can be broken up into sub-sections for clarity.
 
 ### Results
 
@@ -40,6 +44,7 @@ What your results mean in the context of more general neuroscience or biomedical
 
 APA style.
 
+(data-blitz)=
 ## Data Blitz
 
 ***Due Dec 9***
