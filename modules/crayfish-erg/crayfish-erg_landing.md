@@ -112,3 +112,4 @@ Crayfish, like other invertebrates, have ***compound eyes***
 - [Héctor Solís-Chagoyán, Leonor Mendoza-Vargas, Beatriz Fuentes-Pardo (2008) Melatonin modulates the ERG circadian rhythm in crayfish](https://doi.org/10.1016/j.cbpa.2008.01.040)
 - [Vertebrate Retina](https://openbooks.lib.msu.edu/neuroscience/chapter/vision-the-retina/)
 - [THE ELECTRORETINOGRAM: ERG BY IDO PERLMAN](https://webvision.med.utah.edu/book/electrophysiology/the-electroretinogram-erg/)
+- [Belusic, G. (2011). ERG in Drosophila. In (Ed.), Electroretinograms. IntechOpen.](https://doi.org/10.5772/21747)
