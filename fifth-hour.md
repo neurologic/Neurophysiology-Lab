@@ -100,3 +100,4 @@ And finally, I gave some background to prep you for concepts scaffolding Monday'
 ## Week 11 No Meeting
 
 ## Week 12 on Wednesday, Nov 30 at 2:30-3:30.
+[Share link to the recording](https://wesleyan.zoom.us/rec/play/4UB714qTQWa-hqKU8tMkR4dw2nvPO9dhAHWgxGuwfqEz-hbQ-ZIwVEkh1JPjUnE8noWeJQHGuiDkKsic.zmXnYPAlxCVdRc1I)
