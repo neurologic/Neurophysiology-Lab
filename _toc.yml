@@ -86,7 +86,8 @@ parts:
     - file: capstone/capstone_landing
       sections:
         - file: capstone/capstone_assignment-guidelines
-        - file: howto/Data-Explorer_general
+        # - file: howto/Data-Explorer_general
+        - file: capstone/Data-Explorer_ExcitabilityModel
   - caption: Future Directions
     chapters:
     - file: extensions/extensions
