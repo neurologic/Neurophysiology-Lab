@@ -88,6 +88,7 @@ parts:
         - file: capstone/capstone_assignment-guidelines
         # - file: howto/Data-Explorer_general
         - file: capstone/Data-Explorer_ExcitabilityModel
+        - file: capstone/Data-Explorer_crayfish-superficial-flexor_pharmacology
   - caption: Future Directions
     chapters:
     - file: extensions/extensions
