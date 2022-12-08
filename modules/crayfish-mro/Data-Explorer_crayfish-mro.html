@@ -1,0 +1,2078 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Explorer &#8212; Neurophysiology Lab</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Responses" href="Responses_crayfish-mro.html" />
+    <link rel="prev" title="Lab Manual" href="Lab-Manual_crayfish-mro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/NeuronImage_CourseHeader.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neurophysiology Lab</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Neurophysiology Lab
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  General
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../standards.html">
+   Standards
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../howto/howto.html">
+   How To Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Python-Introduction-Coding-Light.html">
+     Introduction to Python Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Executable-Notebooks.html">
+     Executable Notebooks (Data Explorers)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Response-Notebooks.html">
+     Response Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Dash-Data-Explorer.html">
+     Dash Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/stimulus-isolation-unit.html">
+     Stimulus Isolation Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/ground.html">
+     Ground
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/exponential-decay.html">
+     Exponential Decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/electrode-geometry.html">
+     Electrode Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/cap.html">
+     Complex Action Potentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/electrical-circuit-analysis.html">
+     Electrical Circuit Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/crayfish-anatomy.html">
+     Crayfish Anatomy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../fifth-hour.html">
+   Fifth Hour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../materials.html">
+   Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weekly Chapters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../passive-membrane-models/passive-membrane-models_landing.html">
+   Week 1. Introduction to Passive Physiology Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../passive-membrane-models/Lab-Manual_passive-membrane-models.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../passive-membrane-models/Responses_passive-membrane-models.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eod/eod_landing.html">
+   Week 2. Electric Organ Discharge
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod/Lab-Manual_eod.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod/Data-Explorer_eod.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod/Responses_eod.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-cap/earthworm-giant-fiber-cap_landing.html">
+   Week 3. Giant Fiber - CAP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cap/Lab-Manual_earthworm-giant-fiber-cap.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cap/Data-Explorer_earthworm-giant-fiber-cap.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cap/Responses_earthworm-giant-fiber-cap.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-cv/earthworm-giant-fiber-cv_landing.html">
+   Week 4. Giant Fiber - Conduction Velocity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cv/Lab-Manual_earthworm-giant-fiber-cv.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cv/Data-Explorer_earthworm-giant-fiber-cv.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cv/Responses_earthworm-giant-fiber-cv.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-surgery/earthworm-giant-fiber-surgery_landing.html">
+   Week 5. Giant Fiber - AP - Surgery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-surgery/Lab-Manual_earthworm-giant-fiber-surgery.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-surgery/Data-Explorer_earthworm-giant-fiber-surgery.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-surgery/Responses_earthworm-giant-fiber-surgery.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computational-model/computational-model_landing.html">
+   Week 6. Computational Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computational-model/Lab-Manual_computational-model.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computational-model/Data-Explorer_computational-model.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computational-model/Responses_computational-model.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing.html">
+   Week 7. Giant Fiber - AP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="crayfish-mro_landing.html">
+   Week 8. Muscle Receptor Organ
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lab-Manual_crayfish-mro.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Responses_crayfish-mro.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-erg/crayfish-erg_landing.html">
+   Week 9. ElectroRetinoGram
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Lab-Manual_crayfish-erg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Data-Explorer_crayfish-erg.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Responses_crayfish-erg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing.html">
+   Week 10-11. Synaptic Connectivity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../human-bci-music/human-bci-music_landing.html">
+   Week 12. Human Motor Neuron Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Data-Explorer_EMG-basics.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Responses_EMG-basics.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
+   Week 13. Capstone
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
+     Capstone guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/Data-Explorer_ExcitabilityModel.html">
+     Charlotte - Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/Data-Explorer_crayfish-superficial-flexor_pharmacology.html">
+     Duncan - Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/Data-Explorer_human-emg-tens.html">
+     Alexis - Data Explorer
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Future Directions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../extensions/extensions.html">
+   Extended materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Burner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing.html">
+   Mechanoreceptors
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor.html">
+     Sensory Coding: Cockroach mechanoreceptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-cpg/crayfish-cpg_landing.html">
+   Neural Circuits CPG
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Lab-Manual_crayfish-cpg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Data-Explorer_crayfish-cpg.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Responses_crayfish-cpg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing.html">
+   Crayfish Synaptic Plasticity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/crayfish-mro/Data-Explorer_crayfish-mro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fmodules/crayfish-mro/Data-Explorer_crayfish-mro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/neurologic/Neurophysiology-Lab/main?urlpath=tree/modules/crayfish-mro/Data-Explorer_crayfish-mro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-mro/Data-Explorer_crayfish-mro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Data Explorer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensory-coding-mros">
+   Sensory Coding - MROs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-data">
+     Import data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-data">
+     Visualize Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-data-processing">
+   Part I. Data Processing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trial-times">
+     Trial Times
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure-plotting-tool-1-mro-spike-detection">
+     Figure plotting tool 1: MRO Spike Detection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-trial-based-exploration">
+   Part II. Trial-Based Exploration
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling-the-mro-response">
+     Modeling the MRO response
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-tool-1-fitting-an-exponential-model">
+     Analysis tool 1: Fitting an exponential model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-model-data">
+     Generate model data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-analysis-of-processed-data">
+   Part IV. Analysis of Processed Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-plotting-tool-1-plot-processed-data-from-csv">
+     Analysis plotting tool 1: Plot processed data from csv
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-plotting-tool-2-relationships-among-average-model-parameters">
+     Analysis plotting tool 2: Relationships among average model parameters
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Explorer</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Data Explorer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensory-coding-mros">
+   Sensory Coding - MROs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-data">
+     Import data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-data">
+     Visualize Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-data-processing">
+   Part I. Data Processing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trial-times">
+     Trial Times
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure-plotting-tool-1-mro-spike-detection">
+     Figure plotting tool 1: MRO Spike Detection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-trial-based-exploration">
+   Part II. Trial-Based Exploration
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling-the-mro-response">
+     Modeling the MRO response
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-tool-1-fitting-an-exponential-model">
+     Analysis tool 1: Fitting an exponential model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-model-data">
+     Generate model data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-analysis-of-processed-data">
+   Part IV. Analysis of Processed Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-plotting-tool-1-plot-processed-data-from-csv">
+     Analysis plotting tool 1: Plot processed data from csv
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-plotting-tool-2-relationships-among-average-model-parameters">
+     Analysis plotting tool 2: Relationships among average model parameters
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/crayfish-mro/Data-Explorer_crayfish-mro.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-explorer">
+<h1>Data Explorer<a class="headerlink" href="#data-explorer" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://wesleyan.zoom.us/rec/share/OD3uhfr_r2aJtfhVRKPgQWsRIrOZf88qSi07XreinWZf6wbwpC2tClUGERMoBai0.wwwWowWv8ZdQbE2w">A video recording orienting you to the basics of this analysis</a></p>
+<p><a id="toc"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#intro">Introduction</a></p></li>
+<li><p><a class="reference external" href="#setup">Setup</a></p></li>
+<li><p><a class="reference external" href="#one">Part I. Stimulus Processing</a></p></li>
+<li><p><a class="reference external" href="#two">Part II. Trial-Based Exploration</a></p></li>
+<li><p><a class="reference external" href="#three">Part III. Modeling the MRO Response</a></p></li>
+</ul>
+<p><a id="intro"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="sensory-coding-mros">
+<h1>Sensory Coding - MROs<a class="headerlink" href="#sensory-coding-mros" title="Permalink to this headline">¶</a></h1>
+<p>There are two MROs innervating the deep flexor muscles, which can be distinguished based on spike height and shape.</p>
+<p>What are the dynamic properties of MRO sensory responses? In this notebook, you will process, analyze, and model MRO sensory responses.</p>
+<p><a id="setup"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<p>Import and define functions</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this code cell to import packages and define functions </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">hilbert</span><span class="p">,</span><span class="n">medfilt</span><span class="p">,</span><span class="n">resample</span><span class="p">,</span> <span class="n">find_peaks</span><span class="p">,</span> <span class="n">unit_impulse</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="n">pal</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">,</span> <span class="n">MultipleLocator</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+
+<span class="c1"># define any functions</span>
+<span class="k">def</span> <span class="nf">monoExp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">biExp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="c1"># def RC_filter(R, C, Vpwm, Rpwm, dt):</span>
+
+<span class="c1">#     V_out = [Vpwm[0]] # initialize an array of membrane potential across time with the initial membrane potential</span>
+    
+<span class="c1">#     &#39;&#39;&#39; then, we will iterate through time using a &quot;for loop&quot; &#39;&#39;&#39;</span>
+<span class="c1">#     for v_ in Vpwm: # for each time step, iterate through the simulation</span>
+<span class="c1">#         V = V_out[-1] # what is the current membrane potential?</span>
+<span class="c1">#         Iapp = v_ / Rpwm</span>
+<span class="c1">#         dV = (Iapp - (1/R)*V)*(dt/C) # how much does the voltage change by on this time step?</span>
+<span class="c1">#         V = (V+dV) # add the change in voltage to the current voltage</span>
+<span class="c1">#         V_out.append(V) # append the new voltage to the array of membrane voltage across time. </span>
+<span class="c1">#     V_out = np.asarray(V_out)</span>
+<span class="c1">#     return V_out # make the array &quot;V_record&quot; available as an output of the scripted function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mount Google Drive</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this cell to mount your Google Drive.</span>
+
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="import-data">
+<h2>Import data<a class="headerlink" href="#import-data" title="Permalink to this headline">¶</a></h2>
+<p>Import data digitized with <em>Nidaq USB6211</em> and recorded using <em>Bonsai-rx</em> as a <em>.bin</em> file</p>
+<p>If you would like sample this Data Explorer, but do not have data, you can download <a class="reference external" href="https://drive.google.com/file/d/1mB2hO60z0HTRsh-IsMOvaCz8YvHGPWoO/view?usp=sharing">an example of the progressive step protocol</a>. Two additional example experimental explorations are provided in <a class="reference external" href="https://drive.google.com/file/d/1B1AdQyUyn-Tu5UAnpxYy9_qodpJzmgPj/view?usp=sharing">an example of a variable baseline stepping protocol</a> and <a class="reference external" href="https://drive.google.com/file/d/10ZVqZvj8SNA7WEhWmf-yVgn86TqTSJbq/view?usp=sharing">an example of a continuous bend protocol</a>. After downloading, you can upload the file directly to Google Colab (or access the file through Drive after uploading it to your Drive). If you are using this example file, the sample rate was 30000 on two channels (channel 0 was the MRO signal and channel 1 was the stimulus monitor). The stimulus is a PWM signal to a servo motor to bend the tail. The recording was taken with the photographed preparation in the lab manual.</p>
+<p>The following videos were taken after the example data was recorded. They will give you more intuition for what you would have experienced during lab. Watch these videos before analyzing the example data.</p>
+<ul class="simple">
+<li><p>Visualization of the tail curl with accompanying audio signal from the simulataneously measured Nerve 2 voltage.</p>
+<ul>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1C_r8oqC3bg1D4GtCpM_-_4kLVz2wiRFN/view?usp=share_link">View from above</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1qLIFPVwEeLE0TjvC-zzlBzs2EuJe0EYl/view?usp=share_link">View from the side</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1m000d2LM9ScgvhHKjuKEEZ2_Y11sCIRH/view?usp=sharing">Visualization of the raw signal from Nerve 2 with accompanying audio signal from the Nerve 2 voltage.</a> The movement of the mouse across the computer screen is controlling the servo motor horn position (and therefore the amount of tail curl / MRO stretch).</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Specify the file path </span>
+<span class="c1">#@markdown to your recorded data on Drive (find the filepath in the colab file manager:</span>
+
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
+<span class="c1"># filepath = &#39;/Volumes/NO NAME/BIOL247_FA22/data/crayfish-mro/KP_20220826/mro_steps_0.bin&#39;  #@param </span>
+
+<span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
+
+<span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">30000</span> <span class="c1">#@param</span>
+<span class="n">number_channels</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#@param</span>
+
+<span class="c1"># downsample = False #@param</span>
+<span class="c1"># newfs = 10000 #@param</span>
+
+<span class="c1">#@markdown After you have filled out all form fields, </span>
+<span class="c1">#@markdown run this code cell to load the data. </span>
+
+<span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+<span class="c1"># No need to edit below this line</span>
+<span class="c1">#################################</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">number_channels</span><span class="p">)</span>
+<span class="n">data_dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">data_dur</span>)
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">sampling_rate</span>
+<span class="c1"># if downsample:</span>
+   <span class="c1">## newfs = 10000 #downsample emg data</span>
+    <span class="c1"># chunksize = int(sampling_rate/newfs)</span>
+    <span class="c1"># data = data[0::chunksize,:]</span>
+    <span class="c1"># fs = int(np.shape(data)[0]/data_dur)</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">data_dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data upload completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-data">
+<h2>Visualize Data<a class="headerlink" href="#visualize-data" title="Permalink to this headline">¶</a></h2>
+<p>Use this visualization tool if desired to get a sanity check that the data you thought you imported is actually the data that got imported.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to plot imported data. &lt;br&gt; </span>
+<span class="c1">#@markdown Use the range slider to scroll through the data in time.</span>
+<span class="c1">#@markdown Use the channel slider to choose which channel to plot</span>
+<span class="c1">#@markdown Be patient with the range refresh... the more data you are plotting the slower it will be. </span>
+
+<span class="n">slider_xrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">data_dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time Range (s)&#39;</span><span class="p">)</span>
+<span class="n">slider_xrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_chan</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">number_channels</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;channel&#39;</span><span class="p">)</span>
+<span class="n">slider_chan</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;300px&#39;</span>
+
+<span class="c1"># a function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">chan</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span> <span class="c1">#specify figure number so that it does not keep creating new ones</span>
+    <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">,</span><span class="n">chan</span><span class="p">])</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">slider_xrange</span><span class="p">,</span> <span class="n">chan</span><span class="o">=</span><span class="n">slider_chan</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a more extensive <em><strong>RAW</strong></em> Data Explorer than the one provided in the above figure, use the <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">DataExplorer.py</a> application found in the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">howto section</a> of the course website.</p>
+<p><a id="one"></a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-i-data-processing">
+<h1>Part I. Data Processing<a class="headerlink" href="#part-i-data-processing" title="Permalink to this headline">¶</a></h1>
+<p>A servo motor is controlled by a <a class="reference external" href="https://learn.sparkfun.com/tutorials/pulse-width-modulation/all"><em>pulse width modulated</em></a> (<em><strong>PWM</strong></em>) signal. To get a continuous readout of the position command to the servo motor, we need to process the stimulus monitor signal into an estimate of the average voltage command.</p>
+<div class="section" id="trial-times">
+<h2>Trial Times<a class="headerlink" href="#trial-times" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Indicate which channel has the PWM signal for the stepper motor.</span>
+
+<span class="n">stim_channel</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Then, run the code cell to get an estimate  </span>
+<span class="c1">#@markdown of the average voltage command to the stepper motor across time. &lt;br&gt;</span>
+
+<span class="c1">#@markdown Running this code cell will generate an interactive plot with a slider to scroll </span>
+<span class="c1">#@markdown through the stimulus signal and adjust the event detectionthreshold. &lt;br&gt;</span>
+
+<span class="c1">#@markdown NOTE: This processing step takes some time for the computer to accomplish (&gt;10sec). </span>
+<span class="c1">#@markdown It also relies on the stimulus monitor having a 5V PWM signal.</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"># Old way of doing it with gaussian filter</span>
+
+<span class="sd">newfs = 10000 #downsample pwm data; 5K should still be enough to get resolution on the smoothed amplitude</span>
+<span class="sd">signal = data[:,stim_channel]</span>
+
+<span class="sd">chunksize = int(sampling_rate/newfs)</span>
+<span class="sd">signal = signal[0::chunksize]</span>
+<span class="sd">newfs = int(np.shape(signal)[0]/data_dur)</span>
+<span class="sd">pwm_time = np.linspace(0,data_dur,np.shape(signal)[0])</span>
+
+<span class="sd">w = int(0.25 * newfs)</span>
+<span class="sd"># pwm = np.convolve(tmp, np.ones(w)/w, mode=&#39;full&#39;)</span>
+<span class="sd">pwm = ndimage.gaussian_filter1d(signal,w,axis=0,mode=&#39;nearest&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">thresh_</span><span class="o">=</span><span class="mi">3</span>
+
+<span class="n">rawstim</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="n">stim_channel</span><span class="p">]</span>
+
+<span class="c1"># find all places where the signal goes from one side of the threshold to the other</span>
+<span class="n">threshold_crossings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rawstim</span> <span class="o">&gt;</span> <span class="n">thresh_</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+
+<span class="c1"># get indices where threshold crossings are true</span>
+<span class="n">tcross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">threshold_crossings</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># get a mask for only positive level crossings</span>
+<span class="n">mask_on</span> <span class="o">=</span> <span class="p">[</span><span class="n">rawstim</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">rawstim</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tcross</span><span class="p">]</span>
+
+<span class="c1"># get a mask for only negative level crossings</span>
+<span class="n">mask_off</span> <span class="o">=</span> <span class="p">[</span><span class="n">rawstim</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">rawstim</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tcross</span><span class="p">]</span>
+
+<span class="c1"># trial times are positive level crossings</span>
+<span class="n">onsets</span> <span class="o">=</span> <span class="n">tcross</span><span class="p">[</span><span class="n">mask_on</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">offsets</span> <span class="o">=</span> <span class="n">tcross</span><span class="p">[</span><span class="n">mask_off</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+
+<span class="n">v_</span> <span class="o">=</span> <span class="n">medfilt</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="p">((</span><span class="n">offsets</span><span class="o">-</span><span class="n">onsets</span><span class="p">)</span><span class="o">/</span><span class="mf">0.002</span><span class="p">),</span><span class="mi">21</span><span class="p">)</span>
+
+<span class="n">vc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rawstim</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">onsets</span><span class="p">):</span> <span class="c1"># for each onset</span>
+    
+<span class="c1">#     j_val = np.min(offsets[offsets&gt;i_val]) # find the next offset</span>
+    
+<span class="c1">#     v_ = (5*((j_val-i_val)/0.002))</span>
+    <span class="c1"># from this onset until the next onset, set the voltage command value to v_</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">onsets</span><span class="p">):</span>
+        <span class="c1"># print(int(i_val*fs),int(onsets[i+1]*fs))</span>
+        <span class="n">vc</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">onsets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">onsets</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)]</span><span class="o">=</span><span class="n">v_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">onsets</span><span class="p">):</span>
+        <span class="n">vc</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">onsets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">):</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">v_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">pwm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vc</span><span class="p">)</span>
+<span class="c1"># vc = medfilt(vc,41)</span>
+<span class="c1"># plt.plot(time,medfilt(vc,41))</span>
+    
+
+
+
+<span class="n">slider_xrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">data_dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">data_dur</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time Range (s)&#39;</span><span class="p">)</span>
+<span class="n">slider_xrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_yrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">)</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">)</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">)],</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;yrange&#39;</span><span class="p">)</span>
+<span class="n">slider_yrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_threshold</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">)</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">)</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.3f&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;threshold&#39;</span><span class="p">)</span>
+<span class="n">slider_threshold</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+
+<span class="c1"># a function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">thresh_</span><span class="p">,</span><span class="n">xrange</span><span class="p">,</span><span class="n">yrange</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span> <span class="c1">#specify figure number so that it does not keep creating new ones</span>
+
+    <span class="c1"># get the changes in bool value for a bool of signal greater than threshold</span>
+    <span class="n">threshold_crossings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pwm</span> <span class="o">&gt;</span> <span class="n">thresh_</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># get indices where threshold crossings are true</span>
+    <span class="n">tcross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">threshold_crossings</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># get a mask for only positive level crossings</span>
+    <span class="n">mask_</span> <span class="o">=</span> <span class="p">[</span><span class="n">pwm</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">pwm</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tcross</span><span class="p">]</span>
+    
+    <span class="c1"># trial times are positive level crossings</span>
+    <span class="n">trial_times</span> <span class="o">=</span> <span class="n">tcross</span><span class="p">[</span><span class="n">mask_</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+
+    <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">],</span> <span class="n">pwm</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># ax.plot(tmp,color=&#39;black&#39;)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">thresh_</span><span class="p">,</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="n">stopi</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">trial_times</span><span class="p">,[</span><span class="n">thresh_</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">trial_times</span><span class="p">),</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">yrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="c1">#     # Change major ticks to show every 20.</span>
+<span class="c1">#     ax.xaxis.set_major_locator(MultipleLocator(5))</span>
+<span class="c1">#     # ax.yaxis.set_major_locator(MultipleLocator(20))</span>
+
+<span class="c1">#     # Change minor ticks to show every 5. (20/4 = 5)</span>
+<span class="c1">#     ax.xaxis.set_minor_locator(AutoMinorLocator(10))</span>
+<span class="c1">#     ax.yaxis.set_minor_locator(AutoMinorLocator(2))</span>
+
+<span class="c1">#     # Turn grid on for both major and minor ticks and style minor slightly</span>
+<span class="c1">#     # differently.</span>
+<span class="c1">#     ax.grid(which=&#39;major&#39;, color=&#39;gray&#39;, linestyle=&#39;-&#39;)</span>
+<span class="c1">#     ax.grid(which=&#39;minor&#39;, color=&#39;gray&#39;, linestyle=&#39;:&#39;)</span>
+           
+    <span class="k">return</span> <span class="n">trial_times</span>
+
+<span class="n">w_trials_</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">thresh_</span><span class="o">=</span><span class="n">slider_threshold</span><span class="p">,</span> <span class="n">xrange</span><span class="o">=</span><span class="n">slider_xrange</span><span class="p">,</span> <span class="n">yrange</span><span class="o">=</span><span class="n">slider_yrange</span><span class="p">);</span>
+<span class="n">display</span><span class="p">(</span><span class="n">w_trials_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this cell to finalize the list of trial times after settling on a threshold in the interactive plot. &lt;br&gt; </span>
+<span class="c1">#@markdown You will then be able to scroll through individual trials to investigate how MRO activity relates to stretch (tail bend).</span>
+<span class="n">trial_times</span> <span class="o">=</span> <span class="n">w_trials_</span><span class="o">.</span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="figure-plotting-tool-1-mro-spike-detection">
+<h2>Figure plotting tool 1: MRO Spike Detection<a class="headerlink" href="#figure-plotting-tool-1-mro-spike-detection" title="Permalink to this headline">¶</a></h2>
+<p>Python has built-in algorithms for detecting “peaks” in a signal. However, it will detect <em>all</em> peaks. Therefore, the function takes in arguments that specify parameters for minimum height that can count as a peak and a minimum acceptible interval between independent peaks.</p>
+<p>First, we will detect all the peaks on the MRO nerve channel. This will give the time of each peak whose amplitude falls between the two given thresholds (putative MRO spikes).</p>
+<p><em><strong>Use the Dash Data Explorer to visualize the MRO receptor neuron spike waveform shape. This will enable you to determine which “polarity” to use for peak detection.</strong></em></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Indicate which channel has the MRO signal.</span>
+
+<span class="n">mro_channel</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Then, run the code cell to create an interactive plot with a slider to scroll </span>
+<span class="c1">#@markdown through the raw data and set an upper and lower peak detection threshold.</span>
+<span class="c1">#@markdown You can set the polarity of the peak detection: upward (1) or downward (-1) peaks. </span>
+<span class="c1">#@markdown Peak times (according to your threshold) will be plotted using red markers.</span>
+
+<span class="n">slider_xrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;xrange (s)&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_xrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_yrange_mro</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">])</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">])</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">])</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">])</span><span class="o">+</span><span class="mf">0.1</span><span class="p">],</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;yrange_mro&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_yrange_mro</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_yrange_pwm</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">)],</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;yrange_pwm&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_yrange_pwm</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_trial</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">trial_times</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;trial&#39;</span><span class="p">)</span>
+<span class="n">slider_trial</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_threshold_low</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]))])</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;lower threshold&#39;</span><span class="p">)</span>
+<span class="n">slider_threshold_low</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_threshold_high</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]))])</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]))])</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;upper threshold&#39;</span><span class="p">)</span>
+<span class="n">slider_threshold_high</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">radio_polarity</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;peaks polarity&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="c1"># a function that will modify the xaxis range</span>
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">trial_</span><span class="p">,</span><span class="n">xrange</span><span class="p">,</span><span class="n">yrange_mro</span><span class="p">,</span><span class="n">yrange_pwm</span><span class="p">,</span><span class="n">thresh_low_</span><span class="p">,</span><span class="n">thresh_high_</span><span class="p">,</span><span class="n">polarity</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;height_ratios&#39;</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span> <span class="c1">#specify figure number so that it does not keep creating new ones</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>    
+    <span class="n">ax_mro</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ax_pwm</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">win_0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">win_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+
+    <span class="n">t_</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[</span><span class="n">trial_</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">))</span><span class="o">&lt;</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">sweep</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">),</span><span class="n">mro_channel</span><span class="p">]</span> 
+        <span class="n">pwm_sweep</span> <span class="o">=</span> <span class="n">pwm</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">))]</span>
+    
+    <span class="n">xtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],(</span><span class="n">win_1</span> <span class="o">-</span> <span class="n">win_0</span><span class="p">))</span>
+
+    <span class="n">ax_mro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtime</span><span class="p">,</span><span class="n">sweep</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax_mro</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">yrange_mro</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange_mro</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    
+    <span class="n">ax_mro</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">thresh_low_</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span> <span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="n">ax_mro</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">thresh_high_</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span> <span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+    
+    
+    <span class="c1"># calculate spike times based on threshold</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mf">0.0003</span><span class="o">*</span><span class="n">fs</span> <span class="c1">#minimum time allowed between distinct events</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">]</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">thresh_low_</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="n">spike_times</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+    <span class="n">mask_spikes</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;peak_heights&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="n">thresh_high_</span>
+    <span class="n">spike_times</span> <span class="o">=</span> <span class="n">spike_times</span><span class="p">[</span><span class="n">mask_spikes</span><span class="p">]</span>
+
+    <span class="n">inwin_spikes</span> <span class="o">=</span> <span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span><span class="o">-</span><span class="n">t_</span>
+    <span class="n">ax_mro</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">inwin_spikes</span><span class="p">,[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="n">mro_channel</span><span class="p">])]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">inwin_spikes</span><span class="p">),</span>
+          <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="n">ax_pwm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtime</span><span class="p">,</span><span class="n">pwm_sweep</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax_pwm</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">spike_times</span>
+    
+<span class="c1">#     # Change major ticks to show every 20.</span>
+<span class="c1">#     ax.xaxis.set_major_locator(MultipleLocator(5))</span>
+<span class="c1">#     # ax.yaxis.set_major_locator(MultipleLocator(20))</span>
+
+<span class="c1">#     # Change minor ticks to show every 5. (20/4 = 5)</span>
+<span class="c1">#     ax.xaxis.set_minor_locator(AutoMinorLocator(10))</span>
+<span class="c1">#     ax.yaxis.set_minor_locator(AutoMinorLocator(2))</span>
+
+<span class="c1">#     # Turn grid on for both major and minor ticks and style minor slightly</span>
+<span class="c1">#     # differently.</span>
+<span class="c1">#     ax.grid(which=&#39;major&#39;, color=&#39;gray&#39;, linestyle=&#39;-&#39;)</span>
+<span class="c1">#     ax.grid(which=&#39;minor&#39;, color=&#39;gray&#39;, linestyle=&#39;:&#39;)</span>
+
+<span class="c1">#     # print(f&#39;stimulus monitor peak = {event_amp[trial_]}&#39;)</span>
+<span class="c1">#     label_eventamp.value = &#39;peak amplitude = &#39; + str(np.round(event_amp[trial_],4)) + &#39; Volts&#39;</span>
+
+<span class="n">w_spikes_</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">trial_</span><span class="o">=</span><span class="n">slider_trial</span><span class="p">,</span> <span class="n">xrange</span><span class="o">=</span><span class="n">slider_xrange</span><span class="p">,</span> 
+             <span class="n">yrange_mro</span><span class="o">=</span><span class="n">slider_yrange_mro</span><span class="p">,</span><span class="n">yrange_pwm</span><span class="o">=</span><span class="n">slider_yrange_pwm</span><span class="p">,</span>
+             <span class="n">thresh_low_</span><span class="o">=</span><span class="n">slider_threshold_low</span><span class="p">,</span><span class="n">thresh_high_</span><span class="o">=</span><span class="n">slider_threshold_high</span><span class="p">,</span><span class="n">polarity</span><span class="o">=</span><span class="n">radio_polarity</span><span class="p">);</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">w_spikes_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this cell to finalize the list of spike times after settling on a threshold in the interactive plot. &lt;br&gt; </span>
+<span class="c1">#@markdown You will then be able to scroll through individual trials to investigate how MRO activity relates to stretch (tail bend).</span>
+<span class="n">spike_times</span> <span class="o">=</span> <span class="n">w_spikes_</span><span class="o">.</span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="two"></a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-trial-based-exploration">
+<h1>Part II. Trial-Based Exploration<a class="headerlink" href="#part-ii-trial-based-exploration" title="Permalink to this headline">¶</a></h1>
+<p>First you will look at the raw MRO signal aligned to the onset of each trial. You will use an interactive plot to determine a spike threshold detecting putative MRO spikes.</p>
+<blockquote>
+<div><p>Note that to get more control over visualizing (and/or reproducing) the raw data, I would encourage you to use the <a class="reference external" href="http://DataExplorer.py">DataExplorer.py</a> app instead of the figures of raw data generated here.</p>
+</div></blockquote>
+<p><a id="three"></a></p>
+<div class="section" id="modeling-the-mro-response">
+<h2>Modeling the MRO response<a class="headerlink" href="#modeling-the-mro-response" title="Permalink to this headline">¶</a></h2>
+<p>You can create a <em><strong>model</strong></em> of the MRO response. If the model is correct, you should be able to ‘explain’ the response in terms of the model (it should be able to predict all features of the response).</p>
+<p>The following code cells provide a tool to model the response using a single exponential function of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\Large y = c + m*e^{-x/\tau}
+\]</div>
+<p>For spiking adaptation, the following equation variables are more intuitive:</p>
+<div class="math notranslate nohighlight">
+\[
+\Large R_{t} = R_{\infty} + R_{0}e^{−t/\tau}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(R_{t}\)</span> is the firing rate at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(R_{\infty}\)</span> is the calculated firing rate if this degree of stretch were maintained infinitely, <span class="math notranslate nohighlight">\(R_{\infty}\)</span> + <span class="math notranslate nohighlight">\(R_{0}\)</span> is the calculated “initial” peak firing rate at time 0, and <span class="math notranslate nohighlight">\(\tau\)</span> is the adaptation rate. The adaptation rate is the time it takes the spike rate to fall by a factor of <span class="math notranslate nohighlight">\(1/e\)</span>.</p>
+<p>To model the MRO response in this form, you will <em>fit</em> your data to the model.</p>
+<p>In biology / electrophysiology <em>bi</em>exponential functions are often used to separate fast and slow components of exponential decay which may be caused by different mechanisms and occur at different rates.</p>
+<div class="math notranslate nohighlight">
+\[
+\Large y = c + m1*e^{-x/\tau1} + m2*e^{-x/\tau2}
+\]</div>
+<p>So functionally, what is a bi-exponential? How does each exponential contribute to the overall response?</p>
+<p>The following figure shows trial 12 from the example “progressive step” data.</p>
+<img src='https://drive.google.com/uc?id=19sSAo63aj8b5Aoc97c0dVuqQP2xF7Nka' width="800" >
+<p>The bi-exponential model for this trial was:</p>
+<div class="math notranslate nohighlight">
+\[
+\Large y = 45.64 + 18.21*e^{-x/0.51} + 16.92*e^{-x/4.25}
+\]</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;} </span>
+
+<span class="c1">#@markdown You do not need to run this cell.</span>
+
+<span class="c1">#@markdown The code used to generate the figure in the previous markdown cell.</span>
+
+<span class="c1"># This example data is from the progressive step experiment provided: Trial 12 </span>
+<span class="c1"># Median stimulus signal within this window = 4.833</span>
+<span class="c1"># Baseline spike rate (from -2 : -0.5s) = 7.19</span>
+<span class="c1"># m1 = 18.21, tau1 = 0.51, m2 = 16.92, tau2 = 4.25, c = 45.64, Rsquared = 0.99</span>
+
+<span class="n">m1_</span> <span class="o">=</span> <span class="mf">18.21</span>
+<span class="n">tau1_</span><span class="o">=</span><span class="mf">0.51</span>
+<span class="n">m2_</span><span class="o">=</span><span class="mf">16.92</span>
+<span class="n">tau2_</span><span class="o">=</span><span class="mf">4.257</span>
+<span class="n">c_</span><span class="o">=</span><span class="mf">45.64</span>
+
+<span class="n">trial_dur</span><span class="o">=</span><span class="mi">10</span>
+
+<span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">trial_dur</span><span class="p">,</span><span class="n">trial_dur</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">t_</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+<span class="n">spk_rate</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span><span class="n">prepend</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="mf">0.65</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">trial_dur</span><span class="p">))]</span><span class="o">-</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="mf">0.65</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">spk_rate</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="mf">0.65</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">trial_dur</span><span class="p">))]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">y_</span> <span class="o">=</span> <span class="n">biExp</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">m1_</span><span class="p">,</span><span class="n">tau1_</span><span class="p">,</span><span class="n">m2_</span><span class="p">,</span><span class="n">tau2_</span><span class="p">,</span><span class="n">c_</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;bi&#39;</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">y_2</span> <span class="o">=</span> <span class="n">monoExp</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">m2_</span><span class="p">,</span><span class="n">tau2_</span><span class="p">,</span><span class="n">c_</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;mono2&#39;</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">y_1</span> <span class="o">=</span> <span class="n">monoExp</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">m1_</span><span class="p">,</span><span class="n">tau1_</span><span class="p">,</span><span class="n">c_</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y_2</span><span class="o">-</span><span class="n">c_</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;mono1&#39;</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># ax.plot(x_,(y_1-c_)+(y_2-c_)+c_,label=&#39;fit&#39;,linestyle=&#39;--&#39;)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Hz&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analysis-tool-1-fitting-an-exponential-model">
+<h2>Analysis tool 1: Fitting an exponential model<a class="headerlink" href="#analysis-tool-1-fitting-an-exponential-model" title="Permalink to this headline">¶</a></h2>
+<p>There is likely <em>across trial</em> variability in the MRO response. Get a model fit for each trial and record the model parameters in a csv file. Later, you will load that processed data from the csv file and examine the results.</p>
+<blockquote>
+<div><p>The data has to be pretty clean and precise for a good bi-exponential fit. If the fitting tool does not work to fit your data, then you can manually estimate the peak response, steady state response, and time constant for a “mono-exponential” fit.</p>
+</div></blockquote>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to create an interactive plot with a slider to  </span>
+<span class="c1">#@markdown examine the MRO spike rate on individual trials. </span>
+<span class="c1">#@markdown You can select multiple trials to overlay them by pressing the control/command key while selecting</span>
+<span class="c1">#@markdown The processed stimulus signal will be plotted for each trial as well. </span>
+<span class="c1">#@markdown Use the checkbox to toggle on/off a bi-exponential fit.</span>
+<span class="c1">#@markdown Before fitting the data, make sure the time range starts at the peak of the spike rate </span>
+<span class="c1">#@markdown and ends at the end of the steady state response.</span>
+<span class="c1">#@markdown When you fit the data, the model parameters for the selected trial will be printed.</span>
+
+<span class="n">slider_xrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;xrange (s)&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_xrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_yrange_mro</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="c1"># max spike rate</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;yrange_mro&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_yrange_mro</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_yrange_pwm</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">)</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pwm</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pwm</span><span class="p">)</span><span class="o">+</span><span class="mf">0.1</span><span class="p">],</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;yrange_stim&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_yrange_pwm</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">select_trials</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trial_times</span><span class="p">)),</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="c1">#rows=10,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Trials&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+
+<span class="n">check_do_fit</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Do Exponential Fit&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="c1"># radio_fit_type = widgets.RadioButtons(</span>
+<span class="c1">#     options=[&#39;mono&#39;, &#39;bi&#39;],</span>
+<span class="c1">#     value=&#39;bi&#39;,</span>
+<span class="c1">#     description=&#39;fit type&#39;,</span>
+<span class="c1">#     disabled=False</span>
+<span class="c1"># )</span>
+
+<span class="n">label_stimamp</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Median stimulus signal within this window = (need to select trials)&#39;</span>
+<span class="p">)</span>
+<span class="n">label_stimamp</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">label_stimamp</span><span class="p">)</span>
+
+<span class="n">label_baseline</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Baseline spike rate (from -2 : -0.5s) = (need to select trials)&#39;</span>
+<span class="p">)</span>
+<span class="n">label_baseline</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">label_baseline</span><span class="p">)</span>
+
+<span class="n">label_fit_u</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Exponential Fit = (need to fit trials)&#39;</span>
+<span class="p">)</span>
+<span class="n">label_fit_u</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">label_fit_u</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">trial_list</span><span class="p">,</span><span class="n">xrange</span><span class="p">,</span><span class="n">yrange_mro</span><span class="p">,</span><span class="n">yrange_pwm</span><span class="p">,</span><span class="n">do_fit</span><span class="p">):</span>
+    
+    <span class="n">fit_type</span><span class="o">=</span><span class="s1">&#39;bi&#39;</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;height_ratios&#39;</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span> <span class="c1">#specify figure number so that it does not keep creating new ones</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">ax_mro</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ax_pwm</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">win_0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">win_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    
+    <span class="n">spk_rate</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span><span class="n">prepend</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">trial_</span> <span class="ow">in</span> <span class="n">trial_list</span><span class="p">:</span>
+        <span class="n">t_</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[</span><span class="n">trial_</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">))</span><span class="o">&lt;</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+            
+            <span class="c1"># sweep = data[(int(fs*t_)+win_0):(int(fs*t_)+win_1),mro_channel] </span>
+            <span class="n">pwm_sweep</span> <span class="o">=</span> <span class="n">pwm</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">)]</span>
+            <span class="n">xtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="nb">len</span><span class="p">(</span><span class="n">pwm_sweep</span><span class="p">))</span>
+            <span class="n">pwm_amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">pwm_sweep</span><span class="p">)</span>
+            <span class="n">label_stimamp</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Median stimulus signal within this window = </span><span class="si">{</span><span class="n">pwm_amp</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span>
+            
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtime</span><span class="p">,</span><span class="n">pwm_sweep</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+
+            <span class="n">xs</span> <span class="o">=</span> <span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span><span class="o">-</span><span class="n">t_</span>
+            <span class="n">ys</span> <span class="o">=</span> <span class="n">spk_rate</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+
+            <span class="n">base_</span> <span class="o">=</span> <span class="n">spk_rate</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">base_</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">baserate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">base_</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">base_</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">baserate</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">label_baseline</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Baseline spike rate (from -2 : -0.5s) = </span><span class="si">{</span><span class="n">baserate</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+        
+            <span class="n">y_fit</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">u_fit</span> <span class="o">=</span> <span class="n">std_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">t</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+            <span class="k">if</span> <span class="n">do_fit</span><span class="p">:</span>
+                <span class="c1"># perform the fit</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">trial_list</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">u_fit</span> <span class="o">=</span> <span class="n">std_fit</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+                    <span class="n">label_fit_u</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mean m = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, tau = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Rsquared = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="c1"># label_fit_s.value = f&quot;std m = {std_fit[0]:.2f}, tau = {std_fit[1]:.2f}, b = {std_fit[2]:.2f}, Rsquared = {std_fit[3]:.2f}&quot;</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">trial_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">trial_</span> <span class="ow">in</span> <span class="n">trial_list</span><span class="p">:</span>
+                        <span class="n">t_</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[</span><span class="n">trial_</span><span class="p">]</span>
+
+                        <span class="n">xs</span> <span class="o">=</span> <span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span><span class="o">-</span><span class="n">t_</span>
+                        <span class="n">ys</span> <span class="o">=</span> <span class="n">spk_rate</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
+
+                        <span class="n">offset</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+                        <span class="n">xs</span> <span class="o">=</span> <span class="n">xs</span><span class="o">-</span><span class="n">offset</span> <span class="c1"># offset so that x starts at 0 for fit</span>
+
+                        <span class="k">if</span> <span class="n">fit_type</span><span class="o">==</span><span class="s1">&#39;bi&#39;</span><span class="p">:</span><span class="c1">#bi fit</span>
+                            <span class="n">p0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ys</span><span class="p">)]</span> <span class="c1"># start with values near those we expect</span>
+                            <span class="n">param_bounds</span><span class="o">=</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">200</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+                            <span class="n">params_</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">biExp</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span><span class="n">p0</span><span class="p">,</span><span class="n">bounds</span><span class="o">=</span><span class="n">param_bounds</span><span class="p">,</span><span class="n">maxfev</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span> <span class="c1">#(x, a, k1, b, k2, c)</span>
+                            <span class="n">a</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">params_</span>
+                            <span class="n">y_fit</span> <span class="o">=</span> <span class="n">biExp</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="c1">#+np.min(ys)</span>
+
+                        <span class="k">if</span> <span class="n">fit_type</span><span class="o">==</span><span class="s1">&#39;mono&#39;</span><span class="p">:</span> <span class="c1">#mono fit</span>
+                            <span class="n">p0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ys</span><span class="p">)]</span> <span class="c1"># start with values near those we expect</span>
+                            <span class="n">params_</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">monoExp</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span><span class="n">p0</span><span class="p">,</span><span class="n">maxfev</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span> <span class="c1">#monoexponential</span>
+                            <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">params_</span>
+                            <span class="n">y_fit</span> <span class="o">=</span> <span class="n">monoExp</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="c1">#+np.min(ys)</span>
+
+
+
+                        <span class="n">squaredDiffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">ys</span> <span class="o">-</span> <span class="n">y_fit</span><span class="p">)</span>
+                        <span class="n">squaredDiffsFromMean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">ys</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ys</span><span class="p">))</span>
+                        <span class="n">rSquared</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">squaredDiffs</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">squaredDiffsFromMean</span><span class="p">)</span>
+
+                        <span class="n">params_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">params_</span><span class="p">,</span> <span class="p">[</span><span class="n">rSquared</span><span class="p">]])</span>
+                        <span class="n">params</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">params_</span><span class="p">)</span>
+
+                        <span class="n">xs</span> <span class="o">=</span> <span class="n">xs</span><span class="o">+</span><span class="n">offset</span> <span class="c1"># reset x positions for scatter now that fit</span>
+
+                        <span class="n">ax_mro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">y_fit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">fit_type</span><span class="o">==</span><span class="s1">&#39;mono&#39;</span><span class="p">:</span>
+                        <span class="n">fit_parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+                        <span class="n">u_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">fit_parameters</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                        <span class="n">std_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">fit_parameters</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+                        <span class="n">label_fit_u</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;m = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, tau = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Rsquared = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="c1"># label_fit_s.value = f&quot;std m = {std_fit[0]:.2f}, tau = {std_fit[1]:.2f}, c = {std_fit[2]:.2f}, Rsquared = {std_fit[3]:.2f}&quot;</span>
+
+                    <span class="k">if</span> <span class="n">fit_type</span><span class="o">==</span><span class="s1">&#39;bi&#39;</span><span class="p">:</span> <span class="c1">#a, k1, b, k2, c</span>
+                        <span class="n">fit_parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+                        <span class="n">u_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">fit_parameters</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                        <span class="n">std_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">fit_parameters</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+                        <span class="n">label_fit_u</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;m1 = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, tau1 = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, m2 = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, tau2 = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Rsquared = </span><span class="si">{</span><span class="n">u_fit</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="c1"># label_fit_s.value = f&quot;std m = {std_fit[0]:.2f}, tau = {std_fit[1]:.2f}, b = {std_fit[2]:.2f}, Rsquared = {std_fit[3]:.2f}&quot;</span>
+        
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">yrange_mro</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange_mro</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Hz&#39;</span><span class="p">)</span>
+
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">yrange_pwm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange_pwm</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+        <span class="c1">#     # Change major ticks to show every 20.</span>
+            <span class="c1"># ax_pwm.xaxis.set_major_locator(MultipleLocator(5))</span>
+            <span class="c1"># ax_pwm.yaxis.set_major_locator(MultipleLocator(5))</span>
+
+            <span class="c1"># Change minor ticks to show every 5. (20/4 = 5)</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+        <span class="c1">#     # Turn grid on for both major and minor ticks and style minor slightly</span>
+        <span class="c1">#     # differently.</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+            <span class="n">ax_mro</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+            <span class="n">ax_pwm</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">trial_list</span><span class="o">=</span><span class="n">select_trials</span><span class="p">,</span> <span class="n">xrange</span><span class="o">=</span><span class="n">slider_xrange</span><span class="p">,</span> 
+             <span class="n">yrange_mro</span><span class="o">=</span><span class="n">slider_yrange_mro</span><span class="p">,</span><span class="n">yrange_pwm</span><span class="o">=</span><span class="n">slider_yrange_pwm</span><span class="p">,</span> <span class="n">do_fit</span><span class="o">=</span><span class="n">check_do_fit</span><span class="p">);</span>
+<span class="c1"># display(w)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-model-data">
+<h2>Generate model data<a class="headerlink" href="#generate-model-data" title="Permalink to this headline">¶</a></h2>
+<p>Now, use the mean parameters under each condition to generate model data of your results.
+For each conditions, list the value for each parameter. If you are plotting more than one condition, keep the order of conditions the same across lists.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;} </span>
+
+<span class="c1">#@markdown Bi-Exponential Fit &lt;br&gt; </span>
+
+<span class="c1">#@markdown Create a list of conditions (the stimulus amplitude during the stretch)</span>
+<span class="n">condition</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Create a list of fit model parameters across conditions.</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">tau1</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">tau2</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="c1"># r_squared = [0.99,0.99,0.89,0.58]#@param</span>
+
+<span class="c1"># m1 = [13.8,12.6,11.1,7.4] #@param</span>
+<span class="c1"># tau1 = [0.8,0.2,0.3,0.3] #@param</span>
+<span class="c1"># m2 = [19.9,14.6,6.1,2.1] #@param</span>
+<span class="c1"># tau2 = [3.1,2.4,4.6,10] #@param</span>
+<span class="c1"># c = [45.8,34.8,18.1,4.6] #@param</span>
+<span class="c1"># r_squared = [0.99,0.99,0.89,0.58]#@param</span>
+
+<span class="c1">#@markdown How long do you want the model MRO to be stretched for under each condition?</span>
+<span class="n">trial_dur</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>
+
+<span class="c1"># Run this code cell to plot the model across conditions</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">trial_dur</span><span class="p">,</span><span class="n">trial_dur</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m1_</span><span class="p">,</span><span class="n">tau1_</span><span class="p">,</span><span class="n">m2_</span><span class="p">,</span><span class="n">tau2_</span><span class="p">,</span><span class="n">c_</span><span class="p">,</span><span class="n">l_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">tau1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">tau2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">condition</span><span class="p">):</span>
+    <span class="n">y_</span> <span class="o">=</span> <span class="n">biExp</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">m1_</span><span class="p">,</span><span class="n">tau1_</span><span class="p">,</span><span class="n">m2_</span><span class="p">,</span><span class="n">tau2_</span><span class="p">,</span><span class="n">c_</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">l_</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;spike rate&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;} </span>
+
+<span class="c1">#@markdown Mono-Exponential Fit &lt;br&gt; </span>
+
+<span class="c1">#@markdown Use this option if you had to manually estimate mono-exponential fit parameters.</span>
+
+<span class="c1">#@markdown Create a list of conditions (the stimulus amplitude during the stretch)</span>
+<span class="n">condition</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Create a list of fit model parameters across conditions.</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">NaN</span><span class="p">,</span><span class="n">NaN</span><span class="p">]</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown How long do you want the model MRO to be stretched for under each condition?</span>
+<span class="n">trial_dur</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#@param</span>
+
+<span class="c1"># Run this code cell to plot the model across conditions</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">trial_dur</span><span class="p">,</span><span class="n">trial_dur</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m_</span><span class="p">,</span><span class="n">tau_</span><span class="p">,</span><span class="n">c_</span><span class="p">,</span><span class="n">l_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">condition</span><span class="p">):</span>
+    <span class="n">y_</span> <span class="o">=</span> <span class="n">monoExp</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">m_</span><span class="p">,</span><span class="n">tau_</span><span class="p">,</span><span class="n">c_</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">l_</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;spike rate&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iv-analysis-of-processed-data">
+<h1>Part IV. Analysis of Processed Data<a class="headerlink" href="#part-iv-analysis-of-processed-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="analysis-plotting-tool-1-plot-processed-data-from-csv">
+<h2>Analysis plotting tool 1: Plot processed data from csv<a class="headerlink" href="#analysis-plotting-tool-1-plot-processed-data-from-csv" title="Permalink to this headline">¶</a></h2>
+<p>Make a “point plot” for each of the following model parameters as a function of stretch. Is there some predictable relationship between any of these?</p>
+<p>Plots to make (for each, overlay the listed parameters on the same “point plot”):</p>
+<ol class="simple">
+<li><p>‘peak’ spike rate and ‘steady state’ spike rate</p></li>
+<li><p>‘tau1’ and ‘tau2’</p></li>
+</ol>
+<p>Which parameters are a function of specific stretch amplitudes? Which parameters are independent of the specific stretch amplitude? In other words, which properties of the MRO response code for position of the tail and which have some other function?</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Specify the filepath to a csv file</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;filepath to csv&#39;</span> <span class="c1">#@param</span>
+<span class="c1"># filepath = &#39;/Users/kperks/Documents/Teaching/Neurophysiology-Lab/modules/crayfish-mro/progressive-step-results.csv&#39;</span>
+
+<span class="c1">#@markdown Specify the single header name of the column you want for the x-axis data. </span>
+<span class="n">x_column</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;column header for x axis&#39;</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="c1"># x_column = [&#39;condition&#39;]</span>
+
+<span class="c1"># #@markdown Specify categorical bins using np.arange(start,stop,step) if the x_column is a continuous variable. </span>
+<span class="c1"># #@markdown Use empty brackets if not needed.</span>
+<span class="c1"># categorical_bins = np.arange(0,25,0.5) #@param</span>
+
+<span class="c1">#@markdown Specify the header name(s) of the column(s)s you want for your y points. </span>
+<span class="c1">#@markdown If more than one header is specified (separated by commas), each will be plotted overlaid in a different color for a scatter plot</span>
+<span class="n">y_column</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;column header(s) for y axis&#39;</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="c1"># y_column = [&#39;steady state&#39;,&#39;peak&#39;]</span>
+<span class="c1"># y_column = [&#39;m1&#39;,&#39;m2&#39;]</span>
+<span class="c1"># y_column = [&#39;tau1&#39;,&#39;tau2&#39;]</span>
+
+<span class="c1"># #@markdown Specify the plot type (&#39;scatter&#39; or &#39;violin&#39;). Note that for a &#39;violin&#39; plot, only the &#39;x_column&#39; data would be used.</span>
+<span class="c1"># plot_type = &#39;plot type&#39; #@param</span>
+
+<span class="c1"># @markdown Specify the plot type (&#39;scatter&#39; or &#39;point&#39;). </span>
+<span class="c1"># @markdown Note that for a &#39;point&#39; plot, the x-axis is categorical and the y-axis data has error bars.</span>
+<span class="c1"># plot_type = &#39;point&#39;</span>
+<span class="n">plot_type</span> <span class="o">=</span> <span class="s1">&#39;scatter&#39;</span> 
+
+<span class="c1">#@markdown Indicate True or False to add a &quot;unity line&quot; to the plot</span>
+<span class="n">add_unity</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
+
+<span class="c1"># #@markdown Specify the x-axis range for the plot</span>
+<span class="c1"># x_lim = [0,10] #@param</span>
+
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+<span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;scatter&#39;</span><span class="p">:</span>
+    <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">y_column</span><span class="o">+</span><span class="n">x_column</span><span class="p">]</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">x_column</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;headers&#39;</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_melted</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="n">add_unity</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">minunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()]</span><span class="o">+</span><span class="p">[</span><span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()])</span>
+        <span class="n">maxunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()]</span><span class="o">+</span><span class="p">[</span><span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">minunity</span><span class="p">,</span><span class="n">maxunity</span><span class="p">],[</span><span class="n">minunity</span><span class="p">,</span><span class="n">maxunity</span><span class="p">],</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+            
+<span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;point&#39;</span><span class="p">:</span>
+    <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">y_column</span><span class="o">+</span><span class="n">x_column</span><span class="p">]</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">x_column</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;headers&#39;</span><span class="p">)</span>
+    
+<span class="c1">#     if len(categorical_bins)&gt;0:</span>
+<span class="c1">#         df_melted[x_column[0]] = pd.cut(df_melted[x_column[0]],bins=categorical_bins,labels=categorical_bins[1:])</span>
+        
+    <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_melted</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">);</span>
+
+        
+<span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;violin&#39;</span><span class="p">:</span>
+  <span class="c1"># sns.stripplot(y=y_column,data=df,color=&#39;black&#39;,size=10);</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_column</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_column</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">x_column</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;headers&#39;</span><span class="p">)</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df_melted</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s2">&quot;stick&quot;</span><span class="p">)</span>
+        
+<span class="n">g</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1"># ax.set_xlim(x_lim[0],x_lim[1])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analysis-plotting-tool-2-relationships-among-average-model-parameters">
+<h2>Analysis plotting tool 2: Relationships among average model parameters<a class="headerlink" href="#analysis-plotting-tool-2-relationships-among-average-model-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The contents of the figures in this section are automatically generated from the lists of mean model parameters you generated in</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to plot scatterplots of model parameter relationships.</span>
+
+<span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;m1&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;m2&#39;</span><span class="p">)</span>
+<span class="n">minunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()]</span><span class="o">+</span><span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()])</span>
+<span class="n">maxunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()]</span><span class="o">+</span><span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">minunity</span><span class="p">,</span><span class="n">maxunity</span><span class="p">],[</span><span class="n">minunity</span><span class="p">,</span><span class="n">maxunity</span><span class="p">],</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">c</span><span class="p">,[</span><span class="nb">sum</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">)],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">minunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()]</span><span class="o">+</span><span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()])</span>
+<span class="n">maxunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()]</span><span class="o">+</span><span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">minunity</span><span class="p">,</span><span class="n">maxunity</span><span class="p">],[</span><span class="n">minunity</span><span class="p">,</span><span class="n">maxunity</span><span class="p">],</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;m1 + m2&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">condition</span><span class="p">,[</span><span class="nb">sum</span><span class="p">(</span><span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">c</span><span class="p">)],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;condition&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;(m1+m2)/c&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr> 
+Written by Dr. Krista Perks for courses taught at Wesleyan University.<p><a id="setup"></a></p>
+<p><a id="one"></a></p>
+<p><a id="two"></a></p>
+<p><a id="three"></a></p>
+<p><a id="four"></a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/crayfish-mro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Lab-Manual_crayfish-mro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab Manual</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Responses_crayfish-mro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Responses</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. Krista Perks<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

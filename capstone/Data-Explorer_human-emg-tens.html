@@ -1,0 +1,1797 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexis - Data Explorer &#8212; Neurophysiology Lab</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extended materials" href="../extensions/extensions.html" />
+    <link rel="prev" title="Duncan - Data Explorer" href="Data-Explorer_crayfish-superficial-flexor_pharmacology.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/NeuronImage_CourseHeader.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neurophysiology Lab</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Neurophysiology Lab
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  General
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../standards.html">
+   Standards
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../howto/howto.html">
+   How To Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Python-Introduction-Coding-Light.html">
+     Introduction to Python Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Executable-Notebooks.html">
+     Executable Notebooks (Data Explorers)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Response-Notebooks.html">
+     Response Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/Dash-Data-Explorer.html">
+     Dash Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/stimulus-isolation-unit.html">
+     Stimulus Isolation Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/ground.html">
+     Ground
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/exponential-decay.html">
+     Exponential Decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/electrode-geometry.html">
+     Electrode Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/cap.html">
+     Complex Action Potentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/electrical-circuit-analysis.html">
+     Electrical Circuit Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/crayfish-anatomy.html">
+     Crayfish Anatomy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fifth-hour.html">
+   Fifth Hour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials.html">
+   Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weekly Chapters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/passive-membrane-models/passive-membrane-models_landing.html">
+   Week 1. Introduction to Passive Physiology Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/passive-membrane-models/Lab-Manual_passive-membrane-models.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/passive-membrane-models/Responses_passive-membrane-models.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/eod/eod_landing.html">
+   Week 2. Electric Organ Discharge
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/eod/Lab-Manual_eod.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/eod/Data-Explorer_eod.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/eod/Responses_eod.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/earthworm-giant-fiber-cap/earthworm-giant-fiber-cap_landing.html">
+   Week 3. Giant Fiber - CAP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-cap/Lab-Manual_earthworm-giant-fiber-cap.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-cap/Data-Explorer_earthworm-giant-fiber-cap.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-cap/Responses_earthworm-giant-fiber-cap.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/earthworm-giant-fiber-cv/earthworm-giant-fiber-cv_landing.html">
+   Week 4. Giant Fiber - Conduction Velocity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-cv/Lab-Manual_earthworm-giant-fiber-cv.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-cv/Data-Explorer_earthworm-giant-fiber-cv.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-cv/Responses_earthworm-giant-fiber-cv.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/earthworm-giant-fiber-surgery/earthworm-giant-fiber-surgery_landing.html">
+   Week 5. Giant Fiber - AP - Surgery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-surgery/Lab-Manual_earthworm-giant-fiber-surgery.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-surgery/Data-Explorer_earthworm-giant-fiber-surgery.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-surgery/Responses_earthworm-giant-fiber-surgery.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/computational-model/computational-model_landing.html">
+   Week 6. Computational Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/computational-model/Lab-Manual_computational-model.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/computational-model/Data-Explorer_computational-model.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/computational-model/Responses_computational-model.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing.html">
+   Week 7. Giant Fiber - AP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/crayfish-mro/crayfish-mro_landing.html">
+   Week 8. Muscle Receptor Organ
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-mro/Lab-Manual_crayfish-mro.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-mro/Data-Explorer_crayfish-mro.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-mro/Responses_crayfish-mro.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/crayfish-erg/crayfish-erg_landing.html">
+   Week 9. ElectroRetinoGram
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-erg/Lab-Manual_crayfish-erg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-erg/Data-Explorer_crayfish-erg.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-erg/Responses_crayfish-erg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing.html">
+   Week 10-11. Synaptic Connectivity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/human-bci-music/human-bci-music_landing.html">
+   Week 12. Human Motor Neuron Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/human-bci-music/Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/human-bci-music/Data-Explorer_EMG-basics.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/human-bci-music/Responses_EMG-basics.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="capstone_landing.html">
+   Week 13. Capstone
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="capstone_assignment-guidelines.html">
+     Capstone guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data-Explorer_ExcitabilityModel.html">
+     Charlotte - Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data-Explorer_crayfish-superficial-flexor_pharmacology.html">
+     Duncan - Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Alexis - Data Explorer
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Future Directions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../extensions/extensions.html">
+   Extended materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Burner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing.html">
+   Mechanoreceptors
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor.html">
+     Sensory Coding: Cockroach mechanoreceptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/crayfish-cpg/crayfish-cpg_landing.html">
+   Neural Circuits CPG
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-cpg/Lab-Manual_crayfish-cpg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-cpg/Data-Explorer_crayfish-cpg.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-cpg/Responses_crayfish-cpg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing.html">
+   Crayfish Synaptic Plasticity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/capstone/Data-Explorer_human-emg-tens.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fcapstone/Data-Explorer_human-emg-tens.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/neurologic/Neurophysiology-Lab/main?urlpath=tree/capstone/Data-Explorer_human-emg-tens.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/capstone/Data-Explorer_human-emg-tens.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Alexis - Data Explorer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motor-unit-population-stimulation">
+   Motor Unit Population Stimulation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-and-define-functions">
+     Import and define functions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mount-google-drive">
+     Mount Google Drive
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing">
+   Data Processing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-data">
+     Import data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-bout-and-stimulus-times">
+     Define bout and stimulus times
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-stimulus-times">
+       Define stimulus times
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-bouts">
+       Define Bouts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyze-data">
+     Analyze Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measure-the-raw-data">
+       Measure the raw data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-the-processed-data">
+     Visualize the processed data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-processed-data-from-one-condition">
+       Plot the processed data from one condition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#compare-data-across-conditions">
+       Compare data across conditions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Alexis - Data Explorer</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Alexis - Data Explorer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motor-unit-population-stimulation">
+   Motor Unit Population Stimulation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-and-define-functions">
+     Import and define functions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mount-google-drive">
+     Mount Google Drive
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing">
+   Data Processing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-data">
+     Import data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-bout-and-stimulus-times">
+     Define bout and stimulus times
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-stimulus-times">
+       Define stimulus times
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-bouts">
+       Define Bouts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyze-data">
+     Analyze Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measure-the-raw-data">
+       Measure the raw data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-the-processed-data">
+     Visualize the processed data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-processed-data-from-one-condition">
+       Plot the processed data from one condition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#compare-data-across-conditions">
+       Compare data across conditions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="alexis-data-explorer">
+<h1>Alexis - Data Explorer<a class="headerlink" href="#alexis-data-explorer" title="Permalink to this headline">¶</a></h1>
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/capstone/Data-Explorer_human-emg-tens.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><a id="intro"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="motor-unit-population-stimulation">
+<h1>Motor Unit Population Stimulation<a class="headerlink" href="#motor-unit-population-stimulation" title="Permalink to this headline">¶</a></h1>
+<p>Comparing electrically stimulated motor unit activity to voluntary motor unit activity. And comparing electrically stimulated motor unit activity across conditions (for example temperature).</p>
+<p><a id="setup"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">toc</a></p>
+<div class="section" id="import-and-define-functions">
+<h2>Import and define functions<a class="headerlink" href="#import-and-define-functions" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this code cell to import packages and define functions </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">hilbert</span><span class="p">,</span><span class="n">medfilt</span><span class="p">,</span><span class="n">resample</span><span class="p">,</span> <span class="n">find_peaks</span><span class="p">,</span> <span class="n">unit_impulse</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span><span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="n">pal</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">NaN</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">,</span> <span class="n">MultipleLocator</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span><span class="n">interactive_output</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">hyper_fit</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="o">+</span> <span class="p">((</span><span class="n">r</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">t</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mount-google-drive">
+<h2>Mount Google Drive<a class="headerlink" href="#mount-google-drive" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Run this cell to mount your Google Drive.</span>
+
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="two"></a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-processing">
+<h1>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">¶</a></h1>
+<p>In this section, you will load the raw data aquired and saved using Bonsai-rx as a .bin file. A single trial consists of a stimulus pulse (from the TENS). Each bout consists of a set of trials at a given frequency.</p>
+<p><a id="two_import"></a></p>
+<div class="section" id="import-data">
+<h2>Import data<a class="headerlink" href="#import-data" title="Permalink to this headline">¶</a></h2>
+<p>Import data digitized with <em>Nidaq USB6211</em> and recorded using <em>Bonsai-rx</em> as a <em>.bin</em> file</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot; }</span>
+
+<span class="c1">#@markdown Specify the file path </span>
+<span class="c1">#@markdown to your recorded data in the colab runtime (find the filepath in the colab file manager):</span>
+
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;full filepath goes here&quot;</span>  <span class="c1">#@param </span>
+<span class="c1"># filepath = &#39;/Users/kperks/Downloads/Alexis Capstone/hot_temp_0.bin&#39;  #@param </span>
+
+<span class="c1">#@markdown Specify the sampling rate and number of channels recorded.</span>
+
+<span class="n">sampling_rate</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
+<span class="n">number_channels</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#@param</span>
+
+<span class="c1"># sampling_rate = 40000 #@param</span>
+<span class="c1"># number_channels = 1 #@param</span>
+
+<span class="c1"># downsample = False #@param</span>
+<span class="c1"># newfs = 10000 #@param</span>
+
+<span class="c1">#@markdown After you have filled out all form fields, </span>
+<span class="c1">#@markdown run this code cell to load the data. </span>
+
+<span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+<span class="c1"># No need to edit below this line</span>
+<span class="c1">#################################</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">number_channels</span><span class="p">)</span>
+<span class="n">data_dur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">sampling_rate</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;duration of recording was </span><span class="si">%0.2f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span><span class="k">data_dur</span>)
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">sampling_rate</span>
+<span class="c1"># if downsample:</span>
+<span class="c1">#     # newfs = 10000 #downsample emg data</span>
+<span class="c1">#     chunksize = int(sampling_rate/newfs)</span>
+<span class="c1">#     data = data[0::chunksize,:]</span>
+<span class="c1">#     fs = int(np.shape(data)[0]/data_dur)</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">data_dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data upload completed at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="o">-</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a more extensive <em><strong>RAW</strong></em> Data Explorer than the one provided in the above figure, use the <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">DataExplorer.py</a> application found in the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">howto section</a> of the course website.</p>
+<p><a id="two_one"></a></p>
+</div>
+<div class="section" id="define-bout-and-stimulus-times">
+<h2>Define bout and stimulus times<a class="headerlink" href="#define-bout-and-stimulus-times" title="Permalink to this headline">¶</a></h2>
+<p>The time between stimulus onset and action potential, and the time between two stimulus pulses are critical parameters of the data on each trial.</p>
+<p>Our first task in processing and analyzing data from this experiment is to figure out the stimulus onset times. You can then segment the data in to separate bouts if the raw recording was not one continuous successful protocol.</p>
+<div class="section" id="define-stimulus-times">
+<h3>Define stimulus times<a class="headerlink" href="#define-stimulus-times" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this cell to create an interactive plot with a slider to scroll </span>
+<span class="c1">#@markdown through the signal</span>
+<span class="c1">#@markdown and set an appropriate event detection threshold  </span>
+<span class="c1">#@markdown (you can do so based on level crossing or peaks). </span>
+
+<span class="n">slider_xrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">data_dur</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time Range (s)&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">})</span>
+<span class="n">slider_xrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="c1"># slider_yrange = widgets.FloatRangeSlider(</span>
+<span class="c1">#     min=np.min(stim)-0.5,</span>
+<span class="c1">#     max=np.max(stim)+0.5,</span>
+<span class="c1">#     value=[np.min(stim),np.max(stim)],</span>
+<span class="c1">#     step=0.05,</span>
+<span class="c1">#     continuous_update=False,</span>
+<span class="c1">#     readout=True,</span>
+<span class="c1">#     description=&#39;yrange&#39;,</span>
+<span class="c1">#     style = {&#39;description_width&#39;: &#39;200px&#39;})</span>
+<span class="c1"># slider_yrange.layout.width = &#39;600px&#39;</span>
+
+<span class="n">select_channel</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span> <span class="c1"># start with a single trial on a single bout... it will update when runs ; old: np.arange(len(trial_times)),</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="c1">#rows=10,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Channel used to detect events&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">},</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">slider_threshold</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.3f&#39;</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;event detection threshold&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">})</span>
+<span class="n">slider_threshold</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">detect_type_radio</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;peak&#39;</span><span class="p">,</span> <span class="s1">&#39;level crossing&#39;</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;peak&#39;</span><span class="p">,</span> <span class="c1"># Defaults to &#39;level crossing&#39;</span>
+    <span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="s1">&#39;max-content&#39;</span><span class="p">},</span> <span class="c1"># If the items&#39; names are long</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Type of event detection&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">},</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">radio_polarity</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;peaks polarity&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">iei_text</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;0.005&#39;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;0.005&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;min IEI (seconds)&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">},</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">chan_</span><span class="p">,</span><span class="n">xrange</span><span class="p">,</span><span class="n">thresh_</span><span class="p">,</span><span class="n">detect_type</span><span class="p">,</span><span class="n">polarity</span><span class="p">,</span><span class="n">iei</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span> <span class="c1">#specify figure number so that it does not keep creating new ones</span>
+    
+    <span class="n">signal</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="n">chan_</span><span class="p">]</span>
+    <span class="n">signal</span> <span class="o">=</span> <span class="n">signal</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+    
+    <span class="n">iei</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">iei</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">iei</span><span class="o">&gt;</span><span class="mf">0.001</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">iei</span><span class="o">*</span><span class="n">fs</span> <span class="c1">#minimum time allowed between distinct events</span>
+        
+        <span class="k">if</span> <span class="n">detect_type</span> <span class="o">==</span> <span class="s1">&#39;peak&#39;</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">signal</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">thresh_</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+            <span class="n">trial_times</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+            <span class="c1"># print(r[1])</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">trial_times</span><span class="p">,[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;peak_heights&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">polarity</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="n">detect_type</span> <span class="o">==</span> <span class="s1">&#39;level crossing&#39;</span><span class="p">:</span>
+            <span class="c1"># get the changes in bool value for a bool of signal greater than threshold</span>
+            <span class="c1"># if polarity == 1:</span>
+            <span class="n">threshold_crossings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">signal</span><span class="o">*</span><span class="n">polarity</span> <span class="o">&gt;</span> <span class="n">thresh_</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="c1"># get indices where threshold crossings are true</span>
+            <span class="n">tcross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">threshold_crossings</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1"># get a mask for only positive level crossings</span>
+            <span class="n">mask_</span> <span class="o">=</span> <span class="p">[</span><span class="n">signal</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">signal</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tcross</span><span class="p">]</span>
+            <span class="c1"># if polarity == -1:</span>
+            <span class="c1">#     threshold_crossings = np.diff(signal*polarity &lt; thresh_*polarity, prepend=False)</span>
+            <span class="c1">#     # get indices where threshold crossings are true</span>
+            <span class="c1">#     tcross = np.argwhere(threshold_crossings)[:,0]</span>
+            <span class="c1">#     # get a mask for only positive level crossings</span>
+            <span class="c1">#     mask_ = [signal[t]-signal[t-1] &gt; 0 for t in tcross]</span>
+                
+            <span class="c1"># trial times are positive level crossings</span>
+            <span class="n">trial_times</span> <span class="o">=</span> <span class="n">tcross</span><span class="p">[</span><span class="n">mask_</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">trial_times</span><span class="p">,[</span><span class="n">thresh_</span><span class="o">*</span><span class="n">polarity</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">trial_times</span><span class="p">),</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">starti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">stopi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">],</span> <span class="n">signal</span><span class="p">[</span><span class="n">starti</span><span class="p">:</span><span class="n">stopi</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># ax.plot(tmp,color=&#39;black&#39;)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">thresh_</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span> <span class="n">time</span><span class="p">[</span><span class="n">starti</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="n">stopi</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># ax.set_ylim(yrange[0],yrange[1])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+              
+        <span class="k">return</span> <span class="n">trial_times</span>
+
+<span class="n">w_trials_</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">chan_</span><span class="o">=</span><span class="n">select_channel</span><span class="p">,</span> 
+                        <span class="n">xrange</span><span class="o">=</span><span class="n">slider_xrange</span><span class="p">,</span> 
+                        <span class="n">thresh_</span><span class="o">=</span><span class="n">slider_threshold</span><span class="p">,</span> <span class="n">detect_type</span> <span class="o">=</span> <span class="n">detect_type_radio</span><span class="p">,</span> 
+                        <span class="n">polarity</span><span class="o">=</span><span class="n">radio_polarity</span><span class="p">,</span> <span class="n">iei</span> <span class="o">=</span> <span class="n">iei_text</span><span class="p">);</span>
+<span class="n">display</span><span class="p">(</span><span class="n">w_trials_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this cell to finalize the list of event times </span>
+<span class="c1">#@markdown after settling on a channel and threshold in the interactive plot. &lt;br&gt; </span>
+<span class="c1">#@markdown This stores the event times in an array called &#39;event_times&#39;. &lt;br&gt;</span>
+
+<span class="n">trial_times</span> <span class="o">=</span> <span class="n">w_trials_</span><span class="o">.</span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-bouts">
+<h3>Define Bouts<a class="headerlink" href="#define-bouts" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown For this experiment, the entire file should be one long bout, </span>
+<span class="c1">#@markdown but if there were regions that something got messed up or that you want to exclude, you can specify bouts with good data.</span>
+<span class="c1">#@markdown Specify the list of bout ranges as follows: [[start of bout 0, end of bout 0],[start 1, end 1],...]] &lt;br&gt;</span>
+
+<span class="n">bouts_list</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">]]</span> <span class="c1">#@param</span>
+
+<span class="c1"># bouts_list = [[5,10],[10,15],[15,20],[20,27],[27,35]] #@param #control condition</span>
+<span class="c1"># bouts_list = [[12,17],[17,23],[23,30],[30,35],[35,42],[42,47]] # cold condition</span>
+<span class="c1"># bouts_list = [[20,25],[25,30],[30,35],[35,40]] # hot condition</span>
+
+<span class="c1">#@markdown Then run this code cell to programatically define the list of bouts as &#39;bouts_list&#39;.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="two_two"></a></p>
+</div>
+</div>
+<div class="section" id="analyze-data">
+<h2>Analyze Data<a class="headerlink" href="#analyze-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="measure-the-raw-data">
+<h3>Measure the raw data<a class="headerlink" href="#measure-the-raw-data" title="Permalink to this headline">¶</a></h3>
+<p>Obtain necessary information from the raw signal time-locked to each trial start time (stimulus time).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to create an interactive plot to  </span>
+<span class="c1">#@markdown examine the raw signal time-locked to individual events (event_times).</span>
+<span class="c1">#@markdown You can overlay multple channels by selecting more than one.</span>
+<span class="c1">#@markdown You can overlay multiple event times by selecting more than one. </span>
+<span class="c1">#@markdown (To select more than one item from an option menu, press the control/command key </span>
+<span class="c1">#@markdown while mouse clicking or shift while using up/down arrows)</span>
+
+<span class="n">slider_xrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.03</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.3f&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;xrange (s)&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_xrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">slider_yrange</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="c1"># normal range for earthworm experiments</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;yrange&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_yrange</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">ui_range</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">slider_xrange</span><span class="p">,</span> <span class="n">slider_yrange</span><span class="p">])</span>
+
+<span class="c1"># trials in bout 0 to start...</span>
+<span class="n">trials_t</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[(</span><span class="n">trial_times</span><span class="o">&gt;</span><span class="n">bouts_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trial_times</span><span class="o">&lt;</span><span class="n">bouts_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])]</span>
+
+<span class="n">select_channels</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span> <span class="c1"># start with a single trial on a single bout... it will update when runs ,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="c1">#rows=10,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Channels&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">select_bouts</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bouts_list</span><span class="p">)),</span> <span class="c1"># start with a single trial on a single bout... it will update when runs ; old: np.arange(len(trial_times)),</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="c1">#rows=10,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Bouts&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">select_trials</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trials_t</span><span class="p">)),</span> <span class="c1"># start with a single trial on a single bout... it will update when runs ,</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="c1">#rows=10,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Events&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">ui_trials</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">select_channels</span><span class="p">,</span> <span class="n">select_trials</span><span class="p">,</span> <span class="n">select_bouts</span><span class="p">])</span>
+
+<span class="n">slider_threshold</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.3f&#39;</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;peak detection threshold&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;250px&#39;</span><span class="p">})</span>
+<span class="n">slider_threshold</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">detect_chan_radio</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;none&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">])],</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="c1"># Defaults to &#39;none&#39;</span>
+    <span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="s1">&#39;max-content&#39;</span><span class="p">},</span> <span class="c1"># If the items&#39; names are long</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;detect delay to peaks on channel: &#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;250px&#39;</span><span class="p">},</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">slider_inwindow</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatRangeSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> 
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mf">0.004</span><span class="p">,</span><span class="mf">0.015</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;window to detect peaks within&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;250px&#39;</span><span class="p">},</span>
+    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.4f&#39;</span>
+<span class="p">)</span>
+<span class="n">slider_inwindow</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">radio_polarity</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;peaks polarity&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">iei_text</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;0.001&#39;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;0.001&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;minimum interval (s)&#39;</span><span class="p">,</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;200px&#39;</span><span class="p">},</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">ui_peaks</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">detect_chan_radio</span><span class="p">,</span><span class="n">slider_inwindow</span><span class="p">,</span> <span class="n">radio_polarity</span><span class="p">,</span> <span class="n">slider_threshold</span><span class="p">,</span> <span class="n">iei_text</span><span class="p">])</span>
+
+
+<span class="n">trial_abs_readout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time of this event is (sec): </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+<span class="n">trial_abs_readout</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">trial_readout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time since last event is: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+<span class="n">trial_readout</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">lagging_time_readout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;lagging peak times are: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+<span class="n">lagging_time_readout</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="n">lagging_amp_readout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;lagging peak amplitudes are: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+<span class="n">lagging_amp_readout</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;600px&#39;</span>
+
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">chan_list</span><span class="p">,</span><span class="n">trial_list</span><span class="p">,</span><span class="n">bout_</span><span class="p">,</span><span class="n">yrange</span><span class="p">,</span><span class="n">xrange</span><span class="p">,</span><span class="n">lagging_chan_</span><span class="p">,</span><span class="n">detect_inwin</span><span class="p">,</span><span class="n">thresh_</span><span class="p">,</span><span class="n">iei</span><span class="p">,</span><span class="n">polarity</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="c1"># ,ncols=1, nrows=1); #specify figure number so that it does not keep creating new ones</span>
+ 
+    <span class="n">iei</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">iei</span><span class="p">)</span>
+    
+    <span class="n">win_0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">win_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">xtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],(</span><span class="n">win_1</span> <span class="o">-</span> <span class="n">win_0</span><span class="p">))</span>
+    
+    <span class="n">trials_t</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[(</span><span class="n">trial_times</span><span class="o">&gt;</span><span class="n">bouts_list</span><span class="p">[</span><span class="n">bout_</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trial_times</span><span class="o">&lt;</span><span class="n">bouts_list</span><span class="p">[</span><span class="n">bout_</span><span class="p">][</span><span class="mi">1</span><span class="p">])]</span>
+    <span class="n">trials_init_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trials_t</span><span class="p">))</span>
+               
+    <span class="n">select_trials</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">trials_init_</span>
+
+    <span class="n">trial_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">t_try</span> <span class="k">for</span> <span class="n">t_try</span> <span class="ow">in</span> <span class="n">trial_list</span> <span class="k">if</span> <span class="n">t_try</span> <span class="ow">in</span> <span class="n">trials_init_</span><span class="p">]</span>
+    <span class="n">select_trials</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">trial_list</span>
+
+    <span class="n">lagging_time_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;lagging peak times are: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">lagging_amp_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;lagging peak amplitudes are: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">trial_abs_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time of this event is: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">trial_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time since last event is: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="n">channel_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">chan_</span> <span class="ow">in</span> <span class="n">chan_list</span><span class="p">:</span>
+        <span class="n">this_chan</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="n">chan_</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">trial_</span> <span class="ow">in</span> <span class="n">trial_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">trial_</span> <span class="ow">in</span> <span class="n">trials_init_</span><span class="p">:</span>
+                <span class="n">t_</span> <span class="o">=</span> <span class="n">trials_t</span><span class="p">[</span><span class="n">trial_</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">))</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">this_chan</span><span class="p">):</span>
+                    <span class="n">data_sweep</span> <span class="o">=</span> <span class="n">this_chan</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">)]</span>
+
+                    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtime</span><span class="p">,</span><span class="n">data_sweep</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">channel_colors</span><span class="p">[</span><span class="n">chan_</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">iei</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">iei</span><span class="o">*</span><span class="n">fs</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lagging_chan_</span> <span class="o">!=</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trial_list</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">thresh_</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span> <span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">detect_inwin</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">detect_inwin</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">yrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+            <span class="n">lagging_chan_</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">lagging_chan_</span><span class="p">)</span>
+            <span class="n">lagging_signal</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_0</span><span class="p">):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">t_</span><span class="p">)</span><span class="o">+</span><span class="n">win_1</span><span class="p">),</span><span class="n">lagging_chan_</span><span class="p">]</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">lagging_signal</span><span class="o">*</span><span class="n">polarity</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">thresh_</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+            
+            <span class="n">mask</span> <span class="o">=</span> <span class="p">(((</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span><span class="o">&gt;</span><span class="n">detect_inwin</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span><span class="o">&lt;</span><span class="n">detect_inwin</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="c1"># lagging_peak_times = [np.round(lt/fs,5) for lt in r[0][mask]]#r[0]/fs</span>
+            <span class="n">lagging_peak_times</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span> <span class="o">+</span> <span class="n">xrange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            
+            <span class="n">lagging_peak_amp</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;peak_heights&#39;</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span><span class="o">*</span><span class="n">polarity</span>
+            <span class="n">lagging_peak_amp</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">lagging_peak_amp</span><span class="p">]</span>
+
+            
+            <span class="n">lagging_time_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;lagging peak times are (ms): </span><span class="si">{</span><span class="p">[</span><span class="n">t</span><span class="o">*</span><span class="mi">1000</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">lagging_peak_times</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="n">lagging_amp_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;lagging peak amplitudes are (V): </span><span class="si">{</span><span class="n">lagging_peak_amp</span><span class="si">}</span><span class="s1">&#39;</span>
+
+            <span class="k">if</span> <span class="n">trial_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">trial_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time since last event is: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="n">trial_abs_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time of this event is: </span><span class="si">{</span><span class="n">NaN</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="k">if</span> <span class="n">trial_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">iti</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">trials_t</span><span class="p">[</span><span class="n">trial_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">-</span> <span class="n">trials_t</span><span class="p">[</span><span class="n">trial_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">trial_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time since last event is (msec): </span><span class="si">{</span><span class="n">iti</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="n">trial_abs_readout</span><span class="o">.</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;time of this event is (sec): </span><span class="si">{</span><span class="n">trials_t</span><span class="p">[</span><span class="n">trial_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1">&#39;</span>
+
+            <span class="k">for</span> <span class="n">lt_</span> <span class="ow">in</span> <span class="n">lagging_peak_times</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lagging_peak_times</span><span class="p">,</span><span class="n">lagging_peak_amp</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">yrange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yrange</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#     # Turn grid on for both major and minor ticks and style minor slightly</span>
+<span class="c1"># #     # differently.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+
+
+
+<span class="c1"># def on_button_export_data(b):</span>
+<span class="c1">#     if len(chan_list)==1:</span>
+<span class="c1">#         df = pd.DataFrame()</span>
+<span class="c1">#         for b_, bout_ in enumerate(bouts_list):</span>
+<span class="c1">#             trials_t = trial_times[(trial_times&gt;bouts_list[bout_][0]) &amp; (trial_times&lt;bouts_list[bout_][1])]</span>
+<span class="c1">#             with output:</span>
+<span class="c1">#                 print(&quot;Button clicked.&quot;)</span>
+<span class="c1">#             lagging_chan_ = int(lagging_chan_)</span>
+<span class="c1">#             lagging_signal = data[(int(fs*t_)+win_0):(int(fs*t_)+win_1),lagging_chan_]</span>
+<span class="c1">#             r = find_peaks(lagging_signal*polarity,height=thresh_,distance=d)</span>
+            
+<span class="c1">#             mask = (((r[0]/fs)&gt;detect_inwin[0]) &amp; ((r[0]/fs)&lt;detect_inwin[1]))</span>
+<span class="c1">#             # lagging_peak_times = [np.round(lt/fs,5) for lt in r[0][mask]]#r[0]/fs</span>
+<span class="c1">#             lagging_peak_times = (r[0][mask]/fs) + xrange[0]</span>
+            
+<span class="c1">#             lagging_peak_amp = r[1][&#39;peak_heights&#39;][mask]*polarity</span>
+<span class="c1">#             lagging_peak_amp = [np.round(a,2) for a in lagging_peak_amp]</span>
+            
+<span class="c1">#             df_ = pd.DataFrame({&#39;amp&#39;:amp,&#39;time&#39;:time,&#39;bout&#39;,b_})</span>
+<span class="c1">#             df.append(df_)</span>
+            
+        
+
+<span class="c1"># display(w)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">interactive_output</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;chan_list&#39;</span><span class="p">:</span><span class="n">select_channels</span><span class="p">,</span>
+                                     <span class="s1">&#39;trial_list&#39;</span><span class="p">:</span><span class="n">select_trials</span><span class="p">,</span> 
+                                     <span class="s1">&#39;bout_&#39;</span><span class="p">:</span><span class="n">select_bouts</span><span class="p">,</span>
+                                     <span class="s1">&#39;yrange&#39;</span><span class="p">:</span><span class="n">slider_yrange</span><span class="p">,</span> 
+                                     <span class="s1">&#39;xrange&#39;</span><span class="p">:</span><span class="n">slider_xrange</span><span class="p">,</span>
+                                     <span class="s1">&#39;lagging_chan_&#39;</span><span class="p">:</span><span class="n">detect_chan_radio</span><span class="p">,</span>
+                                     <span class="s1">&#39;detect_inwin&#39;</span><span class="p">:</span><span class="n">slider_inwindow</span><span class="p">,</span>
+                                     <span class="s1">&#39;thresh_&#39;</span><span class="p">:</span><span class="n">slider_threshold</span><span class="p">,</span>
+                                     <span class="s1">&#39;iei&#39;</span><span class="p">:</span><span class="n">iei_text</span><span class="p">,</span>
+                                     <span class="s1">&#39;polarity&#39;</span><span class="p">:</span><span class="n">radio_polarity</span><span class="p">});</span>
+<span class="n">display</span><span class="p">(</span><span class="n">trial_abs_readout</span><span class="p">,</span><span class="n">trial_readout</span><span class="p">,</span><span class="n">lagging_time_readout</span><span class="p">,</span><span class="n">lagging_amp_readout</span><span class="p">,</span><span class="n">ui_trials</span><span class="p">,</span><span class="n">ui_peaks</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">ui_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Use the parameters you optimized using the interactive plot to automatically measure peaks</span>
+<span class="c1">#@markdown across all trials and bouts. The results will be saved as a .csv file. </span>
+<span class="c1">#@markdown All trials in all bouts are included in the analysis - remove bouts from bouts_list if you do not want them.</span>
+
+<span class="n">condition</span> <span class="o">=</span> <span class="s1">&#39;hot&#39;</span> <span class="c1">#@param</span>
+<span class="n">channel_use</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#@param</span>
+<span class="n">polarity_use</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#@param</span>
+<span class="n">threshold_use</span> <span class="o">=</span> <span class="mf">0.04</span> <span class="c1">#@param</span>
+<span class="n">inwindow_use</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0050</span><span class="p">,</span><span class="mf">0.0130</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="n">iei_use</span> <span class="o">=</span> <span class="mf">0.005</span> <span class="c1">#@param</span>
+
+<span class="n">onset_samps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="n">synwav</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">b_</span><span class="p">,</span> <span class="n">bout_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bouts_list</span><span class="p">):</span>
+    <span class="n">trials_t</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[(</span><span class="n">trial_times</span><span class="o">&gt;</span><span class="n">bout_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trial_times</span><span class="o">&lt;</span><span class="n">bout_</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    
+    <span class="n">peak_amp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">peak_time</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t_</span> <span class="ow">in</span> <span class="n">trials_t</span><span class="p">:</span>
+        
+        <span class="n">lagging_signal</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">]))):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">1</span><span class="p">]))),</span><span class="n">channel_use</span><span class="p">]</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">lagging_signal</span><span class="o">*</span><span class="n">polarity_use</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">threshold_use</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">iei_use</span><span class="o">*</span><span class="n">fs</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">peak_time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+            <span class="n">peak_amp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            
+            <span class="n">this_i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">peak_time</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">peak_amp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;peak_heights&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">polarity_use</span><span class="p">)</span>
+            
+            <span class="n">synwav</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">this_i</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.005</span><span class="o">*</span><span class="n">fs</span><span class="p">):</span><span class="n">this_i</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.005</span><span class="o">*</span><span class="n">fs</span><span class="p">),</span><span class="n">channel_use</span><span class="p">])</span>
+
+    <span class="n">df_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;amp&#39;</span><span class="p">:</span><span class="n">peak_amp</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">peak_time</span><span class="p">,</span><span class="s1">&#39;bout&#39;</span><span class="p">:</span><span class="n">b_</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">peak_amp</span><span class="p">)),</span><span class="s1">&#39;condition&#39;</span><span class="p">:</span><span class="n">condition</span><span class="p">})</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span><span class="n">df_</span><span class="p">])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;evoked-emg_&#39;</span> <span class="o">+</span> <span class="n">condition</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run this code cell to get a plot of the average EMG waveform (centered at the peak of each event). </span>
+<span class="c1">#@markdown The variable values from the last code cell will automatically be used and the plot will include 5msec before and after the peak.</span>
+<span class="c1">#@markdown &lt;br&gt; You can change the y-axis limits so that the y-scale is the same across conditions.</span>
+
+<span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.15</span><span class="p">]</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Finally, specify whether you want to save the resulting figure or not to the workspace.</span>
+<span class="n">save_fig</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
+
+<span class="n">pre_post_dur</span> <span class="o">=</span> <span class="mf">0.005</span>
+
+<span class="n">synwav</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">b_</span><span class="p">,</span> <span class="n">bout_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bouts_list</span><span class="p">):</span>
+    <span class="n">trials_t</span> <span class="o">=</span> <span class="n">trial_times</span><span class="p">[(</span><span class="n">trial_times</span><span class="o">&gt;</span><span class="n">bout_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">trial_times</span><span class="o">&lt;</span><span class="n">bout_</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    
+    <span class="n">peak_amp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">peak_time</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t_</span> <span class="ow">in</span> <span class="n">trials_t</span><span class="p">:</span>
+        
+        <span class="n">lagging_signal</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">]))):(</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">1</span><span class="p">]))),</span><span class="n">channel_use</span><span class="p">]</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">lagging_signal</span><span class="o">*</span><span class="n">polarity_use</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="n">threshold_use</span><span class="p">,</span><span class="n">distance</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">iei_use</span><span class="o">*</span><span class="n">fs</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">peak_time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+            <span class="n">peak_amp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            
+            <span class="n">this_i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">t_</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">peak_time</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="n">inwindow_use</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">peak_amp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;peak_heights&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">polarity_use</span><span class="p">)</span>
+            
+            <span class="n">synwav</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">this_i</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.005</span><span class="o">*</span><span class="n">fs</span><span class="p">):</span><span class="n">this_i</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.005</span><span class="o">*</span><span class="n">fs</span><span class="p">),</span><span class="n">channel_use</span><span class="p">])</span>
+
+            
+<span class="n">synwav</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">synwav</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">wav_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">synwav</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">wav_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">synwav</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pre_post_dur</span><span class="p">,</span><span class="n">pre_post_dur</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">wav_u</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">wav_u</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">wav_u</span><span class="o">-</span><span class="n">wav_std</span><span class="p">,</span> <span class="n">wav_u</span><span class="o">+</span><span class="n">wav_std</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;purple&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ylim</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Volts (recorded)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;time (seconds)&#39;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="n">save_fig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">condition</span> <span class="o">+</span> <span class="s1">&#39;_avg.png&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-the-processed-data">
+<h2>Visualize the processed data<a class="headerlink" href="#visualize-the-processed-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plot-the-processed-data-from-one-condition">
+<h3>Plot the processed data from one condition<a class="headerlink" href="#plot-the-processed-data-from-one-condition" title="Permalink to this headline">¶</a></h3>
+<p>Draw a scatter plot to show the relationship between x and y for different subsets of the data using the hue parameter to identify different bouts (or other subset groupings of the data if you want to change it). It is possible to show up to three dimensions independently by using all three semantic types, but this style of plot can be hard to interpret and is often ineffective. Using redundant semantics (i.e. both hue and style for the same variable) can be helpful for making graphics more accessible.</p>
+<p>See the tutorial for more information.</p>
+<p>The default treatment of the hue (and to a lesser extent, size) semantic, if present, depends on whether the variable is inferred to represent “numeric” or “categorical” data. In particular, numeric variables are represented with a sequential colormap by default, and the legend entries show regular “ticks” with values that may or may not exist in the data. This behavior can be controlled through various parameters, as described and illustrated below.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Specify the filepath to a csv file</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;evoked-emg_hot.csv&#39;</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Specify the header name of the column you want for your x points. </span>
+<span class="c1">#@markdown If more than one header is specified (separated by commas), each will be plotted overlaid in a different color for a violin plot.</span>
+<span class="n">x_column</span> <span class="o">=</span> <span class="s1">&#39;column header for x axis&#39;</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Specify the header name of the column you want for your y points. </span>
+<span class="c1">#@markdown If more than one header is specified (separated by commas), each will be plotted overlaid in a different color for a scatter plot</span>
+<span class="n">y_column</span> <span class="o">=</span> <span class="s1">&#39;column header for y axis&#39;</span> <span class="c1">#@param</span>
+
+<span class="n">hue_column</span> <span class="o">=</span> <span class="s1">&#39;bout&#39;</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Specify the plot type (&#39;scatter&#39;, &#39;box&#39; or &#39;point&#39;).</span>
+<span class="n">plot_type</span> <span class="o">=</span> <span class="s1">&#39;scatter&#39;</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Finally, specify whether you want to save the resulting figure or not to the workspace.</span>
+<span class="n">save_fig</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+<span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;scatter&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">hue_column</span> <span class="o">==</span> <span class="s1">&#39;none&#39;</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_column</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">);</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_column</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="n">hue_column</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">hue_column</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;point&#39;</span><span class="p">:</span>     
+    
+    <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_column</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;box&#39;</span><span class="p">:</span>     
+    <span class="k">if</span> <span class="n">hue_column</span> <span class="o">==</span> <span class="s1">&#39;none&#39;</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_column</span><span class="p">);</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x_column</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_column</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="n">hue_column</span><span class="p">);</span>
+
+        
+<span class="n">g</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1"># ax.set_xlim(x_lim[0],x_lim[1])</span>
+
+<span class="k">if</span> <span class="n">save_fig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">condition</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">y_column</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-data-across-conditions">
+<h3>Compare data across conditions<a class="headerlink" href="#compare-data-across-conditions" title="Permalink to this headline">¶</a></h3>
+<p>Show point estimates and errors using dot marks.</p>
+<p>A point plot represents an estimate of central tendency for a numeric variable by the position of the dot and provides some indication of the uncertainty around that estimate using error bars.</p>
+<p>Point plots can be more useful than bar plots for focusing comparisons between different levels of one or more categorical variables. They are particularly adept at showing interactions: how the relationship between levels of one categorical variable changes across levels of a second categorical variable. The lines that join each point from the same hue level allow interactions to be judged by differences in slope, which is easier for the eyes than comparing the heights of several groups of points or bars.</p>
+<p>It is important to keep in mind that a point plot shows only the mean (or other estimator) value, but in many cases it may be more informative to show the distribution of values at each level of the categorical variables. In that case, other approaches such as a box or violin plot may be more appropriate.</p>
+<p>In the following code cell, you can plot any column from the csv files against the stimulus number within each bout. The “hue value” will be condition (so that each point in the plot shows the average across bouts for each stimulus number within a condition).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode: &quot;form&quot;}</span>
+
+<span class="c1">#@markdown List the full path to each csv file created using the &quot;adaptation analysis tool.&quot;</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;evoked-emg_control.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;evoked-emg_cold.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;evoked-emg_hot.csv&#39;</span><span class="p">]</span> <span class="c1">#@param</span>
+<span class="c1"># file_list = [&#39;adaptation_2_b_.csv&#39;,&#39;adaptation_5_b_.csv&#39;,&#39;adaptation_10_b_.csv&#39;]</span>
+
+<span class="c1">#@markdown Then run this code cell to create a dataframe combining the data from all listed files. &lt;br&gt;</span>
+<span class="c1">#@markdown And make a &quot;point plot&quot; across conditions for the specified csv column. </span>
+
+<span class="n">y_column</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span> <span class="c1">#@param</span>
+
+<span class="c1">#@markdown Finally, specify whether you want to save the resulting figure or not to the workspace.</span>
+<span class="n">save_fig</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#@param</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({})</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+    <span class="n">df_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span><span class="n">df_</span><span class="p">])</span>
+
+
+<span class="n">hfig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_column</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;condition&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">);</span>
+<span class="n">g</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="n">save_fig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;all-conditions_&#39;</span> <span class="o">+</span> <span class="n">y_column</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr> 
+Written by Dr. Krista Perks for courses taught at Wesleyan University.<p><a id="setup"></a></p>
+<p><a id="one"></a></p>
+<p><a id="two"></a></p>
+<p><a id="three"></a></p>
+<p><a id="four"></a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capstone"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Data-Explorer_crayfish-superficial-flexor_pharmacology.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Duncan - Data Explorer</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../extensions/extensions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extended materials</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. Krista Perks<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

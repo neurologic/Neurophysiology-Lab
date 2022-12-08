@@ -1,0 +1,1373 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Manual &#8212; Neurophysiology Lab</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Responses" href="Responses_passive-membrane-models.html" />
+    <link rel="prev" title="Week 1. Introduction to Passive Physiology Principles" href="passive-membrane-models_landing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/NeuronImage_CourseHeader.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neurophysiology Lab</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Neurophysiology Lab
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  General
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../standards.html">
+   Standards
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../howto/howto.html">
+   How To Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Python-Introduction-Coding-Light.html">
+     Introduction to Python Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Executable-Notebooks.html">
+     Executable Notebooks (Data Explorers)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Response-Notebooks.html">
+     Response Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/Dash-Data-Explorer.html">
+     Dash Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/NiUSB-6211.html">
+     Nidaq USB 6211
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/getting-preamp.html">
+     Getting Intracellular Amplifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/stimulus-isolation-unit.html">
+     Stimulus Isolation Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/ground.html">
+     Ground
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/exponential-decay.html">
+     Exponential Decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/electrode-geometry.html">
+     Electrode Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/cap.html">
+     Complex Action Potentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/electrical-circuit-analysis.html">
+     Electrical Circuit Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../howto/crayfish-anatomy.html">
+     Crayfish Anatomy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../fifth-hour.html">
+   Fifth Hour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../materials.html">
+   Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weekly Chapters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="passive-membrane-models_landing.html">
+   Week 1. Introduction to Passive Physiology Principles
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Responses_passive-membrane-models.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eod/eod_landing.html">
+   Week 2. Electric Organ Discharge
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod/Lab-Manual_eod.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod/Data-Explorer_eod.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eod/Responses_eod.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-cap/earthworm-giant-fiber-cap_landing.html">
+   Week 3. Giant Fiber - CAP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cap/Lab-Manual_earthworm-giant-fiber-cap.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cap/Data-Explorer_earthworm-giant-fiber-cap.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cap/Responses_earthworm-giant-fiber-cap.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-cv/earthworm-giant-fiber-cv_landing.html">
+   Week 4. Giant Fiber - Conduction Velocity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cv/Lab-Manual_earthworm-giant-fiber-cv.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cv/Data-Explorer_earthworm-giant-fiber-cv.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-cv/Responses_earthworm-giant-fiber-cv.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-surgery/earthworm-giant-fiber-surgery_landing.html">
+   Week 5. Giant Fiber - AP - Surgery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-surgery/Lab-Manual_earthworm-giant-fiber-surgery.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-surgery/Data-Explorer_earthworm-giant-fiber-surgery.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-surgery/Responses_earthworm-giant-fiber-surgery.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computational-model/computational-model_landing.html">
+   Week 6. Computational Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computational-model/Lab-Manual_computational-model.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computational-model/Data-Explorer_computational-model.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computational-model/Responses_computational-model.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../earthworm-giant-fiber-ap/earthworm-giant-fiber-ap_landing.html">
+   Week 7. Giant Fiber - AP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-ap/Lab-Manual_earthworm-giant-fiber-ap.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-ap/Data-Explorer_earthworm-giant-fiber-ap.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../earthworm-giant-fiber-ap/Responses_earthworm-giant-fiber-ap.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-mro/crayfish-mro_landing.html">
+   Week 8. Muscle Receptor Organ
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-mro/Lab-Manual_crayfish-mro.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-mro/Data-Explorer_crayfish-mro.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-mro/Responses_crayfish-mro.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-erg/crayfish-erg_landing.html">
+   Week 9. ElectroRetinoGram
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Lab-Manual_crayfish-erg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Data-Explorer_crayfish-erg.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-erg/Responses_crayfish-erg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-synaptic-connectivity/crayfish-synaptic-connectivity_landing.html">
+   Week 10-11. Synaptic Connectivity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Lab-Manual_crayfish-synaptic-connectivity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Data-Explorer_crayfish-synaptic-connectivity.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-connectivity/Responses_crayfish-synaptic-connectivity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../human-bci-music/human-bci-music_landing.html">
+   Week 12. Human Motor Neuron Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Lab-Manual_human-bci-music.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Data-Explorer_EMG-basics.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../human-bci-music/Responses_EMG-basics.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../capstone/capstone_landing.html">
+   Week 13. Capstone
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/capstone_assignment-guidelines.html">
+     Capstone guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/Data-Explorer_ExcitabilityModel.html">
+     Charlotte - Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/Data-Explorer_crayfish-superficial-flexor_pharmacology.html">
+     Duncan - Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../capstone/Data-Explorer_human-emg-tens.html">
+     Alexis - Data Explorer
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Future Directions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../extensions/extensions.html">
+   Extended materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Burner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../cockroach-mechanoreceptor/cockroach-mechanoreceptor_landing.html">
+   Mechanoreceptors
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Lab-Manual_cockroach-mechanoreceptor.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Data-Explorer_cockroach-mechanoreceptor.html">
+     Sensory Coding: Cockroach mechanoreceptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cockroach-mechanoreceptor/Responses_cockroach-mechanoreceptor.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-cpg/crayfish-cpg_landing.html">
+   Neural Circuits CPG
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Lab-Manual_crayfish-cpg.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Data-Explorer_crayfish-cpg.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-cpg/Responses_crayfish-cpg.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../crayfish-synaptic-plasticity/crayfish-synaptic-plasticity_landing.html">
+   Crayfish Synaptic Plasticity
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-plasticity/Lab-Manual_crayfish-synaptic-plasticity.html">
+     Lab Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-plasticity/Data-Explorer_crayfish-synaptic-plasticity.html">
+     Data Explorer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crayfish-synaptic-plasticity/Responses_crayfish-synaptic-plasticity.html">
+     Responses
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/neurologic/Neurophysiology-Lab/issues/new?title=Issue%20on%20page%20%2Fmodules/passive-membrane-models/Lab-Manual_passive-membrane-models.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/neurologic/Neurophysiology-Lab/main?urlpath=tree/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lab Manual
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-electrical-circuit-models-of-membrane-properties">
+   Introduction: Electrical Circuit Models of Membrane Properties
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-components">
+     Electrical Circuit Components
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-models">
+     Electrical Circuit Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-potentials">
+       Membrane potentials
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passive-spread">
+       Passive spread
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-response-dynamics">
+       Membrane response dynamics
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-hardware-setup">
+     Physical Rig Hardware Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-software-setup">
+     Physical Rig Software Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-notebook-setup">
+     Python Notebook Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-membrane-potential">
+   Part I. Membrane Potential
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-applied-voltage">
+   Part II. Intracellular Recording of Applied Voltage
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-applied-voltage">
+   Part III. Extracellular Recording of Applied Voltage
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-membrane-potential-dynamics-with-applied-current">
+   Part IV. Membrane Potential Dynamics with Applied Current
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#housekeeping">
+   Housekeeping
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-resources">
+   Additional Resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resistor-decoder">
+     Resistor Decoder
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Manual</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lab Manual
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-electrical-circuit-models-of-membrane-properties">
+   Introduction: Electrical Circuit Models of Membrane Properties
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-components">
+     Electrical Circuit Components
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electrical-circuit-models">
+     Electrical Circuit Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-potentials">
+       Membrane potentials
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passive-spread">
+       Passive spread
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#membrane-response-dynamics">
+       Membrane response dynamics
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-hardware-setup">
+     Physical Rig Hardware Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#physical-rig-software-setup">
+     Physical Rig Software Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-notebook-setup">
+     Python Notebook Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-membrane-potential">
+   Part I. Membrane Potential
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-intracellular-recording-of-applied-voltage">
+   Part II. Intracellular Recording of Applied Voltage
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iii-extracellular-recording-of-applied-voltage">
+   Part III. Extracellular Recording of Applied Voltage
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-membrane-potential-dynamics-with-applied-current">
+   Part IV. Membrane Potential Dynamics with Applied Current
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#housekeeping">
+   Housekeeping
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-resources">
+   Additional Resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resistor-decoder">
+     Resistor Decoder
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-manual">
+<h1>Lab Manual<a class="headerlink" href="#lab-manual" title="Permalink to this headline">¶</a></h1>
+<p><a href="https://colab.research.google.com/github/neurologic/Neurophysiology-Lab/blob/main/modules/passive-membrane-models/Lab-Manual_passive-membrane-models.ipynb" target="_blank" rel="noopener noreferrer"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><a id="toc"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#intro">Introduction: Electrical Circuit Models of Membrane Properties</a></p></li>
+<li><p><a class="reference external" href="#setup">Setup</a></p></li>
+<li><p><a class="reference external" href="#one">Part I. Membrane voltage</a></p></li>
+<li><p><a class="reference external" href="#two">Part II. Intracellular Recording of Applied Current</a></p></li>
+<li><p><a class="reference external" href="#three">Part III. Extracellular Recording of Applied Current</a></p></li>
+<li><p><a class="reference external" href="#four">Part IV. Membrane Potential Dynamics with Applied Current</a></p></li>
+</ul>
+<p><a id="intro"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="introduction-electrical-circuit-models-of-membrane-properties">
+<h1>Introduction: Electrical Circuit Models of Membrane Properties<a class="headerlink" href="#introduction-electrical-circuit-models-of-membrane-properties" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">Table of Contents</a></p>
+<p>Today you will use electrical circuit models of a passive cell membrane to introduce yourself to some of the basic components of your essential electrophysiology toolkit. You will interrogate some of the passive properties of neural membranes and compare the difference between membrane potential “spikes” recorded intracellularly and membrane potentials recorded extracellularly.</p>
+<p>This module will help you work on:</p>
+<ul class="simple">
+<li><p>Describing passive properties of neural membranes that critically affect neural processing.</p></li>
+<li><p>Using a voltage meter.</p></li>
+<li><p>Relating basic electrical circuit components to fundamental physiological properties of neurons (Resistance, Capacitance, Serial, Parallel, Voltage, Current).</p></li>
+<li><p>Storing, managing, and visualizing data on the computer.</p></li>
+<li><p>Creating figures that summarize your data and analysis - enabling you to discuss your results.</p></li>
+</ul>
+<div class="section" id="electrical-circuit-components">
+<h2>Electrical Circuit Components<a class="headerlink" href="#electrical-circuit-components" title="Permalink to this headline">¶</a></h2>
+<p>A small set of electrical components can be used to describe many of the basic electrophysiological properties of neurons.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/Electrical_Components.png?raw=True' width="300" alt='electrical components'/>
+<p><a class="reference external" href="#resistor-decoder"><strong>Resistors</strong></a> are electrical components that resist the flow of current through a circuit. The amount of current flowing through a resistor can be expressed by Ohm’s Law: <span class="math notranslate nohighlight">\(I = V/R\)</span>, where I represents the current, V represents the voltage, and R represents the resistance. Similarly, <span class="math notranslate nohighlight">\(V = IR\)</span> determines the voltage in response to a current across a resistor.</p>
+<p>In an electrical circuit, a <strong>capacitor</strong> possesses two conducting regions with a separation of non-conducting material in between. When one conducting region accumulates a charge (due to current flow from an external voltage source), an electric field is created, which pushes the charge off of the subsequent conducting region of the capacitor. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as: <span class="math notranslate nohighlight">\(I = C * \partial{V}/\partial{t}\)</span>, where <span class="math notranslate nohighlight">\(I\)</span> represents the current, <span class="math notranslate nohighlight">\(C\)</span> represents the capacitance, and <span class="math notranslate nohighlight">\(\partial{V}/\partial{t}\)</span> represents the rate of voltage change with time. Current flows across the membrane capacitance only when voltage across the membrane changes.</p>
+<p>Since the lipid bilayer is an electrical insulator between two conducting areas (extra- and intracellular fluids), it acts as a capacitor, while ion channels act as resistors. Membrane capacitance is parallel to membrane resistance (though a circuit in series can be equivalent for some purposes).</p>
+</div>
+<div class="section" id="electrical-circuit-models">
+<h2>Electrical Circuit Models<a class="headerlink" href="#electrical-circuit-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="membrane-potentials">
+<h3>Membrane potentials<a class="headerlink" href="#membrane-potentials" title="Permalink to this headline">¶</a></h3>
+<p>This model simulates how the interaction among ionic conductances controls the membrane potential.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
+<p>For example, in this model, <span class="math notranslate nohighlight">\(R_K\)</span> is the resistance through potassium channels, <span class="math notranslate nohighlight">\(R_{Na}\)</span> is the resistance through sodium channels, and <span class="math notranslate nohighlight">\(C\)</span> is the capacitance of the lipid bilayer (not necessary for understanding steady state properties). By convension, we measure the inside of a neuron’s membrane with respect to the outside (“<em>ground</em>”).</p>
+</div>
+<div class="section" id="passive-spread">
+<h3>Passive spread<a class="headerlink" href="#passive-spread" title="Permalink to this headline">¶</a></h3>
+<p>This model simulates a cylinder-like compartment of a neuron, such as an axon.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
+<p>In this lab, the circuit you will use for this model has the following <span class="math notranslate nohighlight">\(R\)</span> values:</p>
+<ul class="simple">
+<li><p>Rinside = 1 kOhm</p></li>
+<li><p>Routside = 100 Ohm</p></li>
+<li><p>Rmembrane = 10 kOhm</p></li>
+</ul>
+<p>Note that resistances in parallel sum according to <span class="math notranslate nohighlight">\(1/R_{total} = 1/R + 1/R + ...n \)</span> while resistances in series sum according to <span class="math notranslate nohighlight">\(R_{total} = R + R + R + ...n\)</span>.</p>
+</div>
+<div class="section" id="membrane-response-dynamics">
+<h3>Membrane response dynamics<a class="headerlink" href="#membrane-response-dynamics" title="Permalink to this headline">¶</a></h3>
+<p>This model summarizes the entire membrane of the neuron into a single compartment/point to examine how resistive and capacitive properties effect how neurons respond to inward/outward current (for example synaptic events).</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
+<p>In this lab, you will start with values of <span class="math notranslate nohighlight">\(R=10MOhm\)</span> and <span class="math notranslate nohighlight">\(C=0.001uF\)</span>.</p>
+<p><a id="setup"></a></p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="physical-rig-hardware-setup">
+<h2>Physical Rig Hardware Setup<a class="headerlink" href="#physical-rig-hardware-setup" title="Permalink to this headline">¶</a></h2>
+<p>You will be using <em>An analog to digital converter</em> (ADC; the <a class="reference external" href="https://www.ni.com/en-us/support/model.usb-6211.html"><em><strong>NiUSB-6211</strong></em></a> from <em>National Instruments</em>) to measure the ‘membrane potential” in your model circuits for Parts I-III. An ADC digitizes the analog voltage input and sends it to the computer for visualization and recording of the raw (digitized) data. The electrode wires connect directly into the input of the NiDAQ ADC.</p>
+</div>
+<div class="section" id="physical-rig-software-setup">
+<h2>Physical Rig Software Setup<a class="headerlink" href="#physical-rig-software-setup" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://bonsai-rx.org/">Bonsai-rx</a> is an open-source software for managing streems of data from devices on a computer. Open the bonsai workflow (passive-membrane-models.bonsai) from the Documents/BIOL247/data/passive-membrane-models folder on the lab PC.</p>
+<p>Modify the sampling rate of Analog-to-Digital conversion (ADC rate) by clicking on the <em>Analog Input</em> node. Make sure that the sampling rate is set to 10kHz for this lab and the <strong>Analog Input</strong> <em>range</em> is -10 to 10 V.</p>
+<p>Whenever you want to visualize the electrode measurements without accumulating stored data on the PC harddrive, just <font color = 'red'><strong>disable</strong></font> the <em>Matrix Writer</em> node. You can specify a filename for your data by clicking on the <em>Matrix Writer</em> node and <font color = 'green'><strong>enable</strong></font> it to record your data to disk. By default, files are saved in the same folder as the bonsai workflow file.</p>
+<p>Hitting the <em>start</em> button on the workflow will start the digitization of data from the NiUSB.</p>
+<p>Double-clicking on the <em>Select Channels</em> nodes will enable you to visualize a live stream of the raw data from the electrodes.</p>
+</div>
+<div class="section" id="python-notebook-setup">
+<h2>Python Notebook Setup<a class="headerlink" href="#python-notebook-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@title Run this cell to initialize packages and functions </span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="one"></a></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-i-membrane-potential">
+<h1>Part I. Membrane Potential<a class="headerlink" href="#part-i-membrane-potential" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">TOC</a></p>
+<p>You will create the following circuit (ignoring capacitance) on a <em>breadboard</em>.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-active.png?raw=True' width="400" alt='model membrane'/>
+<p><strong>Setup</strong>:</p>
+<ul class="simple">
+<li><p>Use one battery for <span class="math notranslate nohighlight">\(E_K\)</span> and one battery for <span class="math notranslate nohighlight">\(E_{Na}\)</span> (make sure to measure and record the voltage of each battery… you will also use this info in future labs)</p></li>
+<li><p>Start with equal <a class="reference external" href="#resistor-decoder">resistors</a> for <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> (make sure to measure and record the value of each resistor… you will also use this info in future labs).</p></li>
+<li><p>Place the recording/measuring electrode on the ‘inside’ of the membrane</p></li>
+<li><p>Place the <em>ground</em> electrode on the ‘outside’</p></li>
+<li><p>In the Bonsai workflow, <font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+</ul>
+<p><strong>Experiment</strong>:</p>
+<ul class="simple">
+<li><p>Hit play in Bonsai. Double click on the “Membrane Potential” node if the window is not already present. Close the “Stimulus” window if it is open.</p></li>
+<li><p>Right mouse click on the bottom of the membrane potential window to change the y axis range of the graph as needed.</p></li>
+<li><p>Hover over the signal trace with your mouse to see the voltage. Record the measured ‘membrane’ potential of the model cell along with the model cell <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(E\)</span> values (and their organization).</p></li>
+</ul>
+<blockquote>
+<div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside and the Getting amplifier <em>has a gain of 10</em>.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> constant, change <span class="math notranslate nohighlight">\(R_{Na}\)</span> and record the measured ‘membrane’ potential. (make sure to measure and record the value of each electrical component… you will also use this info in future labs)</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change <span class="math notranslate nohighlight">\(R_K\)</span> and record the measured ‘membrane’ potential. (make sure to measure and record the value of each electrical component… you will also use this info in future labs)</p></li>
+<li><p>Keeping <span class="math notranslate nohighlight">\(R_K\)</span> and <span class="math notranslate nohighlight">\(R_{Na}\)</span> constant, change the polarity of one or both batteries and record what happens to the measured ‘membrane’ potential with each change in polarity configuration.</p></li>
+<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
+</ul>
+<p><a id="two"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-ii-intracellular-recording-of-applied-voltage">
+<h1>Part II. Intracellular Recording of Applied Voltage<a class="headerlink" href="#part-ii-intracellular-recording-of-applied-voltage" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">TOC</a></p>
+<p>You will use the following passive axon model (pre-made) to complete this experiment. The axon model has 13 total nodes rather than the 3 shown here.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-spread.png?raw=True' width="500" alt='model membrane'/>
+<p><strong>Setup</strong>:</p>
+<ul class="simple">
+<li><p>At the middle of the axon (node 5), place one electrode on the ‘inside’ of the membrane and one on the ‘outside’.</p></li>
+</ul>
+<blockquote>
+<div><p>Note that <em>membrane potential</em> is measured inside the cell relative to outside.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>In Bonsai, <font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+</ul>
+<p><strong>Experiment:</strong></p>
+<ul class="simple">
+<li><p>Attach a voltage source (battery) across the cell membrane at the end of the axon (node 0). The positive lead of the voltage source should go <em>inside</em> the membrane, and the negative lead should go <em>outside</em>.</p></li>
+<li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
+<li><p>At each node, record the voltage in the dictionary below by replacing the <code class="docutils literal notranslate"><span class="pre">...</span></code> with the measured value.</p></li>
+</ul>
+<blockquote>
+<div><p>Note that the Getting amplifier <em>has a gain of 10</em>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voltage_intracellular</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;0&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;1&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;2&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;3&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;4&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;5&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;6&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;7&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;8&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;9&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;10&#39;</span> <span class="p">:</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run the code cell in which you just defined your data dictionary.</p>
+<p>Then, run the following code cell to plot your data.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run to plot data.</span>
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_intracellular</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_intracellular</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span><span class="n">voltage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="three"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iii-extracellular-recording-of-applied-voltage">
+<h1>Part III. Extracellular Recording of Applied Voltage<a class="headerlink" href="#part-iii-extracellular-recording-of-applied-voltage" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">TOC</a></p>
+<p>Use the same passive axon model that you used in <a class="reference external" href="#two">Part II</a> and a voltmeter to complete this experiment.</p>
+<p><strong>Setup</strong>:</p>
+<ul class="simple">
+<li><p>At the middle of the axon, place <em>both</em> electrodes on the ‘outside’ of the membrane, with one empty node between them (one electrode at node 4 and one at node 6).</p></li>
+<li><p>In Bonsai, <font color="red"> Disable</font> the “Matrix Writer” node.</p></li>
+</ul>
+<p><strong>Experiment:</strong></p>
+<ul class="simple">
+<li><p>Attach a voltage source (battery) across the cell membrane at the end of the axon (node 0). The positive lead of the voltage source should go <em>inside</em> the membrane, and the negative lead should go <em>outside</em>.</p></li>
+<li><p>Move the voltage source along the axon one node at a time until you reach node 10.</p></li>
+<li><p>At each node, record the voltage in the dictionary below by replacing the <code class="docutils literal notranslate"><span class="pre">...</span></code> with the measured value.</p></li>
+</ul>
+<blockquote>
+<div><p>Note that the Getting amplifier <em>has a gain of 10</em>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voltage_extracellular</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;0&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;1&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;2&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;3&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;4&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;5&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;6&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;7&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;8&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;9&#39;</span> <span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;10&#39;</span> <span class="p">:</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run the code cell in which you just defined your data dictionary.</p>
+<p>Then, run the following code cell to plot your data.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title {display-mode:&quot;form&quot;}</span>
+
+<span class="c1">#@markdown Run to plot data.</span>
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_extracellular</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">voltage_extracellular</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span><span class="n">voltage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="four"></a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="part-iv-membrane-potential-dynamics-with-applied-current">
+<h1>Part IV. Membrane Potential Dynamics with Applied Current<a class="headerlink" href="#part-iv-membrane-potential-dynamics-with-applied-current" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="#toc">TOC</a></p>
+<p>For this exercise, you will use the following passive resistor-capacitor circuit model membrane.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/circuit-model-passive-rc.png?raw=True' width="300" alt='model membrane'/>
+<p>You will be using the <a class="reference external" href="http://www.gettinginstruments.com/5A.html"><em><strong>Getting Intracellular Amplifier</strong></em></a> to both deliver current and measure voltage. The Getting provides a <em>current stimulation</em>, feature that applies a “square wave” stimulus across the measurement electrodes. A square wave stimulus one that instantaneously increases in amplitude and maintains that amplitude some duration before instantaneously decreasing to 0.</p>
+<p>The Getting accepts an externally-controlled square wave stimulus through the <strong>STIM. INPUTS</strong> BNC on the front panel. This allows more precise control over the pulse duration, timing, and amplitude by using a pulse generator (“stimulator”). There are three different stimulator models currently available in the lab, that each have similar functionality, but different controls. They are all called <em>Stimulus Isolating Units</em> (<strong>SIU</strong>). The two SIUs that are at the rigs for today are the <strong>Grass SD-9</strong> and the <strong>AM-Systems</strong>.</p>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/SIU-comparisons.png?raw=True' width="900" alt='electrical components'/>
+<p><strong>Setup</strong>:</p>
+<ol>
+<li><p>Create the circuit depicted in the circuit diagram above. Start with Resistance = 5 MOhm and a “103” capacitor.</p></li>
+<li><p>Place the recording/measuring electrode on the ‘inside’ of the membrane</p></li>
+<li><p>Place the <em>ground</em> electrode on the ‘outside’</p>
+<blockquote>
+<div><p>If you are using a separate SIU and amplifier, set up the stimulus electrodes so that you can “apply” current into the model membrane (one stimulating electrode on the outside and one on the inside). You will need to use a model circuit in series rather than parallel so the recording does not short the stim.</p>
+</div></blockquote>
+</li>
+<li><p>In Bonsai, <font color="red"> Disable </font> the “Matrix Writer” node.</p></li>
+<li><p>Hit play. Double click on the <strong>Select Channels</strong> nodes to visualize the input from the Amplifier <strong>Output</strong> and <strong>Stim Monitor</strong> if the windows are not already present. Make sure that you see a signal on both channels. Adjust the y-axis range: stimulus monitor (-0.5,1.1) and membrane potential (-0.5,1.1). If the membrane potential is not visible, adjust the y-axis range so that you can see where the signal offset is, and then use the <strong>POSITION</strong> knob on the amplifier to get the <em>DC offset</em> of the amplifier back in range.</p>
+<blockquote>
+<div><p>Note that a copy of the stimulus (<em>current monitor</em>) is being sent to the NiUSB ADC. The coversion factor is 100 mV per nA.<br />
+Note that the Getting Amplifier has a <em><strong>gain</strong></em> of 10X on the membrane measurement.</p>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Experiment</strong></p>
+<ol class="simple">
+<li><p><em><strong>Baseline Configuration</strong></em></p>
+<ul class="simple">
+<li><p>Set the SIU to 500ms duration at approximately 0.5Hz and 500 milliVolts.</p></li>
+<li><p><font color="green"> Enable</font> the “Matrix Writer” node.</p></li>
+<li><p>Turn the SIU to repeat until 3 stimulus pulses have completed.</p></li>
+<li><p>Stop the data acquisition by hitting the <em>stop</em> button in Bonsai.</p></li>
+</ul>
+</li>
+<li><p><em><strong>Change Resistance</strong></em></p>
+<ul class="simple">
+<li><p>Increase Resistance relative to #1</p></li>
+<li><p>Record and repeat Stimulation protocol</p></li>
+<li><p>Decrease Resistancerelative to #1</p></li>
+<li><p>Record and repeat Stimulation protocol</p></li>
+</ul>
+</li>
+<li><p><em><strong>Change Capacitance</strong></em></p>
+<ul class="simple">
+<li><p>Return to a resistance of 5 MOhm</p></li>
+<li><p>Increase capacitance to a 104</p></li>
+<li><p>Record and repeat Stimulation protocol</p></li>
+<li><p>Decrease capacitance to a 102</p></li>
+<li><p>Record and repeat Stimulation protocol</p></li>
+</ul>
+</li>
+</ol>
+<p>Upload your data files to an external drive <strong>OR</strong> to your Google Drive.</p>
+<p><strong>Use the <a class="reference external" href="https://raw.githubusercontent.com/neurologic/Neurophysiology-Lab/main/howto/Data-Explorer.py">DataExplorer.py</a> application found in the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">How To section</a> of the course website to explore and analyze your data.</strong></p>
+<p>Stop here for a class discussion about what you notice from this final experiment and a tutorial on the <strong><a class="reference external" href="http://DataExplorer.py">DataExplorer.py</a></strong> application.</p>
+<p><strong>Experiment extensions</strong> (time permitting):</p>
+<ul class="simple">
+<li><p>What happens when you change the stimulus amplitude?</p></li>
+<li><p>What happens when you change the stimulus duration?</p></li>
+<li><p>What happens when you change the resistance of the model cell?</p></li>
+<li><p>What happens when you change the capacitance of the model cell?</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="housekeeping">
+<h1>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this headline">¶</a></h1>
+<p>Clean up your area.</p>
+<p>Copy data to an external drive or your Google Drive for later.</p>
+<p>Use the <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/howto/Dash-Data-Explorer.html">DataExplorer.py application</a> to explore your raw data in detail. Answer the questions in <a class="reference external" href="https://neurologic.github.io/Neurophysiology-Lab/modules/passive-membrane-models/Responses_passive-membrane-models.html">the Responses notebook</a>.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="additional-resources">
+<h1>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h1>
+<p><a id='resistor-decoder'></a></p>
+<div class="section" id="resistor-decoder">
+<h2>Resistor Decoder<a class="headerlink" href="#resistor-decoder" title="Permalink to this headline">¶</a></h2>
+<p>From <a class="reference external" href="http://worrydream.com/#%21/ResistorDecoder">worrydream</a>
+<img src='https://github.com/neurologic/Neurophysiology-Lab/blob/main/images/resistors-decoder_bret-victor.png?raw=True' width="700" alt='model membrane'/></p>
+<hr> 
+Written by Dr. Krista Perks for courses taught at Wesleyan University. Materials based off of William Kristan's graduate student bootcamp at UCSD and the Membrane Properties Lab in the Crawdad Lab Manual by Robert A. Wyttenbach, Bruce R. Johnson, and Ronald R. Hoy</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/passive-membrane-models"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="passive-membrane-models_landing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 1. Introduction to Passive Physiology Principles</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Responses_passive-membrane-models.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Responses</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. Krista Perks<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
